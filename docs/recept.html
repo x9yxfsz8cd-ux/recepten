@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recept</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="./index.html">🍳 Onze Recepten</a>
+  </header>
+
+  <div id="app">
+    <!-- gegenereerd door JS -->
+  </div>
+
+  <script>
+    const MOEILIJKHEID_ICOON = { makkelijk: '🟢', gemiddeld: '🟡', moeilijk: '🔴' };
+
+    let recept = null;
+    let huidigPorties = 1;
+    let basisPorties = 1;
+
+    function getParam(naam) {
+      return new URLSearchParams(window.location.search).get(naam);
+    }
+
+    function formatHoeveelheid(basis, huidig, basisPorties) {
+      if (basis === 0) return '';
+      const waarde = (basis / basisPorties) * huidig;
+      // Netjes afronden: vermijd 0.33333...
+      const afgerond = Math.round(waarde * 10) / 10;
+      return afgerond % 1 === 0 ? String(afgerond | 0) : String(afgerond);
+    }
+
+    function renderIngredient(ing) {
+      const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
+      const eenheid = ing.eenheid === 'naar smaak' ? '' : ing.eenheid;
+      const rechts = ing.eenheid === 'naar smaak'
+        ? 'naar smaak'
+        : `${hoeveelheid} ${eenheid}`.trim();
+
+      return `<li>
+        <span class="ingredient-naam">${ing.naam}</span>
+        <span class="ingredient-hoeveelheid">${rechts}</span>
+      </li>`;
+    }
+
+    function updateIngredientHoeveelheden() {
+      document.querySelectorAll('.ingredienten-lijst li').forEach((li, i) => {
+        const ing = recept.ingredienten[i];
+        const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
+        const eenheid = ing.eenheid === 'naar smaak' ? '' : ing.eenheid;
+        const rechts = ing.eenheid === 'naar smaak'
+          ? 'naar smaak'
+          : `${hoeveelheid} ${eenheid}`.trim();
+        li.querySelector('.ingredient-hoeveelheid').textContent = rechts;
+      });
+      document.querySelector('.portie-aantal').textContent = huidigPorties;
+    }
+
+    function renderRecept(r) {
+      recept = r;
+      basisPorties = r.porties;
+      huidigPorties = r.porties;
+
+      document.title = `${r.titel} — Onze Recepten`;
+
+      const img = r.afbeelding
+        ? `<img class="recept-hero" src="${r.afbeelding}" alt="${r.titel}">`
+        : `<div class="recept-hero-placeholder">🍽️</div>`;
+
+      const tags = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+      const ingredienten = r.ingredienten.map(renderIngredient).join('');
+
+      const stappen = r.stappen.map(s => `
+        <div class="stap">
+          <span class="stap-nummer">${s.nummer}</span>
+          <p class="stap-tekst">${s.tekst}</p>
+        </div>`).join('');
+
+      const voeding = r.voedingswaarden ? `
+        <div class="voeding-sectie">
+          <div class="blok-titel">Voedingswaarden per portie</div>
+          <div class="voeding-grid">
+            <div class="voeding-item">
+              <span class="voeding-waarde">${r.voedingswaarden.kcal}</span>
+              <span class="voeding-label">kcal</span>
+            </div>
+            <div class="voeding-item">
+              <span class="voeding-waarde">${r.voedingswaarden.eiwitten}g</span>
+              <span class="voeding-label">eiwit</span>
+            </div>
+            <div class="voeding-item">
+              <span class="voeding-waarde">${r.voedingswaarden.koolhydraten}g</span>
+              <span class="voeding-label">koolhydraten</span>
+            </div>
+            <div class="voeding-item">
+              <span class="voeding-waarde">${r.voedingswaarden.vetten}g</span>
+              <span class="voeding-label">vet</span>
+            </div>
+          </div>
+        </div>` : '';
+
+      const bron = r.bron
+        ? `<a class="bron-link" href="${r.bron}" target="_blank" rel="noopener">Bekijk originele bron →</a>`
+        : '';
+
+      document.getElementById('app').innerHTML = `
+        ${img}
+        <div class="recept-detail">
+          <a class="terug-link" href="./index.html">← Alle recepten</a>
+          <div class="recept-detail__header">
+            <h1 class="recept-detail__title">${r.titel}</h1>
+            <div class="recept-detail__meta">
+              <span>⏱ ${r.bereidingstijd} minuten</span>
+              <span>${MOEILIJKHEID_ICOON[r.moeilijkheidsgraad] || ''} ${r.moeilijkheidsgraad}</span>
+            </div>
+            <div class="recept-detail__tags">${tags}</div>
+          </div>
+
+          <div class="portie-schaler">
+            <label>Porties</label>
+            <button class="portie-btn" id="min-btn">−</button>
+            <span class="portie-aantal">${huidigPorties}</span>
+            <button class="portie-btn" id="plus-btn">+</button>
+          </div>
+
+          <div class="recept-content">
+            <div class="ingredienten-blok">
+              <div class="blok-titel">Ingrediënten</div>
+              <ul class="ingredienten-lijst">${ingredienten}</ul>
+            </div>
+            <div class="stappen-blok">${stappen}</div>
+          </div>
+
+          ${voeding}
+          ${bron}
+        </div>`;
+
+      document.getElementById('min-btn').addEventListener('click', () => {
+        if (huidigPorties > 1) { huidigPorties--; updateIngredientHoeveelheden(); }
+      });
+      document.getElementById('plus-btn').addEventListener('click', () => {
+        huidigPorties++;
+        updateIngredientHoeveelheden();
+      });
+    }
+
+    async function init() {
+      const id = getParam('id');
+      if (!id) { toonNietGevonden(); return; }
+
+      const res = await fetch('./data/recepten.json');
+      const data = await res.json();
+      const r = data.recepten.find(r => r.id === id);
+
+      if (!r) { toonNietGevonden(); return; }
+      renderRecept(r);
+    }
+
+    function toonNietGevonden() {
+      document.getElementById('app').innerHTML = `
+        <div class="not-found">
+          <h2>Recept niet gevonden</h2>
+          <p><a href="./index.html">← Terug naar overzicht</a></p>
+        </div>`;
+    }
+
+    init();
+  </script>
+
+</body>
+</html>

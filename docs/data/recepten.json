@@ -1,0 +1,36 @@
+{
+  "recepten": [
+    {
+      "id": "r001",
+      "titel": "Pasta al Limone",
+      "slug": "pasta-al-limone",
+      "afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
+      "bereidingstijd": 20,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 2,
+      "tags": ["vegetarisch", "snel", "Italiaans"],
+      "ingredienten": [
+        { "naam": "spaghetti", "hoeveelheid": 200, "eenheid": "g" },
+        { "naam": "citroen (rasp + sap)", "hoeveelheid": 1, "eenheid": "stuks" },
+        { "naam": "slagroom", "hoeveelheid": 100, "eenheid": "ml" },
+        { "naam": "Parmezaan, geraspt", "hoeveelheid": 50, "eenheid": "g" },
+        { "naam": "boter", "hoeveelheid": 2, "eenheid": "el" },
+        { "naam": "zout en peper", "hoeveelheid": 0, "eenheid": "naar smaak" }
+      ],
+      "stappen": [
+        { "nummer": 1, "tekst": "Kook de spaghetti al dente in ruim gezouten water. Bewaar een kopje kookwater voordat je afgiet." },
+        { "nummer": 2, "tekst": "Smelt de boter in een koekenpan op middelhoog vuur. Voeg de citroenrasp toe en bak 30 seconden. Schenk de slagroom erbij en laat even inkoken." },
+        { "nummer": 3, "tekst": "Haal de pan van het vuur. Voeg de pasta, het citroensap en de Parmezaan toe. Schep goed door en voeg een scheutje kookwater toe voor de juiste sausdikte. Breng op smaak met zout en peper." }
+      ],
+      "voedingswaarden": {
+        "kcal": 580,
+        "eiwitten": 18,
+        "koolhydraten": 72,
+        "vetten": 24
+      },
+      "bron": "",
+      "bron_type": "handmatig",
+      "datum_toegevoegd": "2026-03-23"
+    }
+  ]
+}

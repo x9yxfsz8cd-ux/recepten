@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onze Recepten</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="./index.html">🍳 Onze Recepten</a>
+  </header>
+
+  <main class="container">
+    <div class="search-bar">
+      <input type="search" id="zoekbalk" placeholder="Zoek een recept…" autocomplete="off">
+    </div>
+
+    <div class="tag-filters" id="tag-filters">
+      <!-- gegenereerd door JS -->
+    </div>
+
+    <div class="recepten-grid" id="recepten-grid">
+      <!-- gegenereerd door JS -->
+    </div>
+  </main>
+
+  <script>
+    const ALLE_TAGS = [
+      'vegetarisch', 'vegan', 'vis', 'vlees',
+      'snel', 'comfort food',
+      'Aziatisch', 'Italiaans',
+      'ontbijt', 'lunch', 'diner', 'snack'
+    ];
+
+    const MOEILIJKHEID_ICOON = { makkelijk: '🟢', gemiddeld: '🟡', moeilijk: '🔴' };
+
+    let alleRecepten = [];
+    let actiefTag = null;
+    let zoekterm = '';
+
+    async function laadRecepten() {
+      const res = await fetch('./data/recepten.json');
+      const data = await res.json();
+      alleRecepten = data.recepten;
+      renderTags();
+      renderRecepten();
+    }
+
+    function renderTags() {
+      const container = document.getElementById('tag-filters');
+      container.innerHTML = ALLE_TAGS
+        .filter(tag => alleRecepten.some(r => r.tags.includes(tag)))
+        .map(tag => `<button class="tag-btn${actiefTag === tag ? ' active' : ''}" data-tag="${tag}">${tag}</button>`)
+        .join('');
+
+      container.querySelectorAll('.tag-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          actiefTag = actiefTag === btn.dataset.tag ? null : btn.dataset.tag;
+          renderTags();
+          renderRecepten();
+        });
+      });
+    }
+
+    function renderRecepten() {
+      const grid = document.getElementById('recepten-grid');
+      let resultaat = alleRecepten;
+
+      if (actiefTag) {
+        resultaat = resultaat.filter(r => r.tags.includes(actiefTag));
+      }
+      if (zoekterm) {
+        const term = zoekterm.toLowerCase();
+        resultaat = resultaat.filter(r => r.titel.toLowerCase().includes(term));
+      }
+
+      if (resultaat.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <p>Geen recepten gevonden.</p>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = resultaat.map(r => {
+        const img = r.afbeelding
+          ? `<img class="recept-card__img" src="${r.afbeelding}" alt="${r.titel}" loading="lazy">`
+          : `<div class="recept-card__img-placeholder">🍽️</div>`;
+
+        const tags = r.tags
+          .map(t => `<span class="tag">${t}</span>`)
+          .join('');
+
+        return `
+          <a class="recept-card" href="./recept.html?id=${r.id}">
+            ${img}
+            <div class="recept-card__body">
+              <div class="recept-card__title">${r.titel}</div>
+              <div class="recept-card__meta">
+                <span>⏱ ${r.bereidingstijd} min</span>
+                <span>${MOEILIJKHEID_ICOON[r.moeilijkheidsgraad] || ''} ${r.moeilijkheidsgraad}</span>
+              </div>
+              <div class="recept-card__tags">${tags}</div>
+            </div>
+          </a>`;
+      }).join('');
+    }
+
+    document.getElementById('zoekbalk').addEventListener('input', e => {
+      zoekterm = e.target.value.trim();
+      renderRecepten();
+    });
+
+    laadRecepten();
+  </script>
+
+</body>
+</html>
