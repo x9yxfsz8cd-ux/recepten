@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recept importeren</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="manifest" href="./manifest.json">
+  <style>
+    .import-wrap {
+      max-width: 680px;
+      margin: 3rem auto;
+      padding: 0 1.5rem 4rem;
+    }
+    .import-titel {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .import-sub {
+      color: var(--mid);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .import-sectie {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .import-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.6rem;
+    }
+    .import-input,
+    .import-textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      background: var(--card-light);
+      border: 2px solid transparent;
+      border-radius: 8px;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .import-input:focus,
+    .import-textarea:focus { border-color: var(--dark); }
+    .import-input::placeholder,
+    .import-textarea::placeholder { color: var(--mid); }
+    .import-textarea { min-height: 140px; }
+    .import-hint {
+      font-size: 0.8rem;
+      color: var(--mid);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+    .import-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--dark);
+      color: var(--card-light);
+      border: none;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      margin-top: 0.5rem;
+    }
+    .import-btn:hover:not(:disabled) { opacity: 0.85; }
+    .import-btn:disabled { opacity: 0.4; cursor: default; }
+
+    .status-balk {
+      display: none;
+      padding: 1rem 1.25rem;
+      border-radius: 10px;
+      margin-top: 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .status-balk.laden { display: block; background: var(--surface); color: var(--mid); }
+    .status-balk.fout { display: block; background: #f5e6e6; color: #8b2020; }
+    .status-balk.ok { display: block; background: #e6f0e6; color: #1a5c1a; }
+
+    /* Tabbladen */
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      margin-bottom: 1.25rem;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 0.7rem;
+      border: 2px solid var(--dark);
+      background: transparent;
+      color: var(--dark);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab-btn:first-child { border-radius: 8px 0 0 8px; }
+    .tab-btn:last-child { border-radius: 0 8px 8px 0; }
+    .tab-btn.active { background: var(--dark); color: var(--card-light); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Foto upload */
+    .foto-drop {
+      border: 2px dashed var(--mid);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      color: var(--mid);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .foto-drop:hover, .foto-drop.dragover {
+      border-color: var(--dark);
+      background: var(--card-light);
+    }
+    .foto-drop input { display: none; }
+    .foto-preview {
+      margin-top: 1rem;
+      display: none;
+    }
+    .foto-preview img {
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* Preview */
+    .preview-blok { display: none; margin-top: 1.5rem; }
+    .preview-blok.zichtbaar { display: block; }
+    .preview-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+    .preview-titel {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .preview-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--mid);
+      margin-top: 0.3rem;
+    }
+    .preview-content {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 560px) { .preview-content { grid-template-columns: 1fr; } }
+    .preview-ingredienten {
+      background: var(--dark);
+      color: var(--card-light);
+      border-radius: 10px;
+      padding: 1.25rem;
+      font-size: 0.9rem;
+    }
+    .preview-stappen {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .preview-stap {
+      background: var(--mid);
+      color: var(--card-light);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .preview-stap-nr { font-weight: 700; opacity: 0.6; min-width: 1.2rem; }
+
+    /* Bron bewerkbaar */
+    .bron-edit {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--mid);
+    }
+    .bron-edit label { white-space: nowrap; font-weight: 600; }
+    .bron-edit input {
+      flex: 1;
+      padding: 0.4rem 0.6rem;
+      font-family: inherit;
+      font-size: 0.85rem;
+      background: var(--card-light);
+      border: 1px solid transparent;
+      border-radius: 4px;
+      color: var(--dark);
+      outline: none;
+    }
+    .bron-edit input:focus { border-color: var(--dark); }
+
+    .opslaan-sectie {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .opslaan-btn {
+      flex: 1;
+      padding: 0.9rem;
+      border-radius: 10px;
+      border: none;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .opslaan-btn:hover { opacity: 0.85; }
+    .opslaan-btn--opslaan { background: var(--dark); color: var(--card-light); }
+    .opslaan-btn--nieuw { background: var(--card-light); color: var(--dark); }
+  </style>
+</head>
+<body>
+
+  <div class="import-wrap">
+    <a class="terug-link" href="./index.html" style="margin-bottom:1.5rem;display:inline-flex;">Alle recepten</a>
+
+    <h1 class="import-titel">Recept importeren</h1>
+    <p class="import-sub">Voeg een recept toe via URL, tekst of foto.</p>
+
+    <!-- API sleutel -->
+    <div class="import-sectie">
+      <label class="import-label" for="api-sleutel">Claude API-sleutel</label>
+      <input class="import-input" type="password" id="api-sleutel" placeholder="sk-ant-…" autocomplete="off">
+      <p class="import-hint">
+        Wordt lokaal opgeslagen. Nooit verstuurd behalve naar api.anthropic.com.
+        <a href="https://console.anthropic.com" target="_blank" rel="noopener" style="color:var(--dark)">Sleutel aanmaken</a>
+      </p>
+    </div>
+
+    <!-- Tabbladen -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="url">URL</button>
+      <button class="tab-btn" data-tab="tekst">Tekst</button>
+      <button class="tab-btn" data-tab="foto">Foto</button>
+    </div>
+
+    <!-- URL tab -->
+    <div class="tab-content active" id="tab-url">
+      <div class="import-sectie">
+        <label class="import-label" for="invoer-url">Recept-URL</label>
+        <input class="import-input" type="url" id="invoer-url" placeholder="https://www.ah.nl/allerhande/recept/…">
+        <p class="import-hint">Albert Heijn, HelloFresh, NYT Cooking, Instagram, blogs, etc.</p>
+      </div>
+    </div>
+
+    <!-- Tekst tab -->
+    <div class="tab-content" id="tab-tekst">
+      <div class="import-sectie">
+        <label class="import-label" for="invoer-tekst">Recepttekst</label>
+        <textarea class="import-textarea" id="invoer-tekst" placeholder="Plak hier een recepttekst, Instagram-bijschrift, WhatsApp-bericht, of typ een beschrijving…"></textarea>
+      </div>
+    </div>
+
+    <!-- Foto tab -->
+    <div class="tab-content" id="tab-foto">
+      <div class="import-sectie">
+        <div class="foto-drop" id="foto-drop">
+          <p>Klik om een foto te kiezen of sleep hem hierin</p>
+          <p style="font-size:0.8rem;margin-top:0.5rem;">Screenshot van Instagram, foto van kookboek, etc.</p>
+          <input type="file" id="foto-input" accept="image/*">
+        </div>
+        <div class="foto-preview" id="foto-preview">
+          <img id="foto-img">
+        </div>
+      </div>
+    </div>
+
+    <button class="import-btn" id="importeer-btn">Recept extraheren</button>
+
+    <div class="status-balk" id="status-balk"></div>
+
+    <!-- Preview -->
+    <div class="preview-blok" id="preview-blok">
+      <div class="import-sectie">
+        <img id="pv-afbeelding" style="width:100%;max-height:280px;object-fit:cover;border-radius:8px;margin-bottom:1rem;display:none;">
+        <div class="preview-header">
+          <div>
+            <div class="preview-titel" id="pv-titel"></div>
+            <div class="preview-meta" id="pv-meta"></div>
+          </div>
+          <div id="pv-tags" style="display:flex;flex-wrap:wrap;gap:0.3rem;"></div>
+        </div>
+
+        <div class="portie-schaler" style="margin-bottom:1rem;">
+          <label>Porties</label>
+          <button class="portie-btn" id="pv-min">−</button>
+          <span class="portie-aantal" id="pv-porties"></span>
+          <button class="portie-btn" id="pv-plus">+</button>
+        </div>
+
+        <div class="preview-content">
+          <div class="preview-ingredienten">
+            <div class="blok-titel">Ingrediënten</div>
+            <ul class="ingredienten-lijst" id="pv-ingredienten"></ul>
+          </div>
+          <div class="preview-stappen" id="pv-stappen"></div>
+        </div>
+
+        <div class="bron-edit">
+          <label>Bron:</label>
+          <input type="text" id="pv-bron" placeholder="bijv. Albert Heijn, HelloFresh…">
+        </div>
+
+        <div class="opslaan-sectie">
+          <button class="opslaan-btn opslaan-btn--opslaan" id="opslaan-btn">Opslaan</button>
+          <button class="opslaan-btn opslaan-btn--nieuw" id="nieuw-btn">Nieuw recept</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const CLAUDE_API = 'https://api.anthropic.com/v1/messages';
+    const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+    let huidigRecept = null;
+    let fotoBase64 = null;
+    let actiefTab = 'url';
+
+    // ── API SLEUTEL ──
+
+    const opgeslagenSleutel = localStorage.getItem('claude_api_key') || '';
+    if (opgeslagenSleutel) document.getElementById('api-sleutel').value = opgeslagenSleutel;
+
+    document.getElementById('api-sleutel').addEventListener('change', e => {
+      localStorage.setItem('claude_api_key', e.target.value.trim());
+    });
+
+    // ── TABBLADEN ──
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(`tab-${btn.dataset.tab}`).classList.add('active');
+        actiefTab = btn.dataset.tab;
+      });
+    });
+
+    // ── FOTO UPLOAD ──
+
+    const fotoDrop = document.getElementById('foto-drop');
+    const fotoInput = document.getElementById('foto-input');
+
+    fotoDrop.addEventListener('click', () => fotoInput.click());
+    fotoDrop.addEventListener('dragover', e => { e.preventDefault(); fotoDrop.classList.add('dragover'); });
+    fotoDrop.addEventListener('dragleave', () => fotoDrop.classList.remove('dragover'));
+    fotoDrop.addEventListener('drop', e => {
+      e.preventDefault();
+      fotoDrop.classList.remove('dragover');
+      if (e.dataTransfer.files[0]) verwerkFoto(e.dataTransfer.files[0]);
+    });
+    fotoInput.addEventListener('change', () => {
+      if (fotoInput.files[0]) verwerkFoto(fotoInput.files[0]);
+    });
+
+    function verwerkFoto(file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        fotoBase64 = reader.result.split(',')[1];
+        document.getElementById('foto-img').src = reader.result;
+        document.getElementById('foto-preview').style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // ── HELPERS ──
+
+    function toonStatus(bericht, type = 'laden') {
+      const el = document.getElementById('status-balk');
+      el.textContent = bericht;
+      el.className = `status-balk ${type}`;
+    }
+    function verbergStatus() {
+      document.getElementById('status-balk').className = 'status-balk';
+    }
+    function vandaag() { return new Date().toISOString().split('T')[0]; }
+
+    function slugify(tekst) {
+      return tekst.toLowerCase()
+        .replace(/[áàäâ]/g, 'a').replace(/[éèëê]/g, 'e')
+        .replace(/[íìïî]/g, 'i').replace(/[óòöô]/g, 'o')
+        .replace(/[úùüû]/g, 'u').replace(/ñ/g, 'n')
+        .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    }
+
+    function siteNaam(url) {
+      try {
+        const host = new URL(url).hostname.replace('www.', '');
+        const namen = {
+          'ah.nl': 'Albert Heijn',
+          'allerhande.ah.nl': 'Albert Heijn',
+          'hellofresh.nl': 'HelloFresh',
+          'hellofresh.com': 'HelloFresh',
+          'marleyspoon.nl': 'Marley Spoon',
+          'marleyspoon.com': 'Marley Spoon',
+          'cooking.nytimes.com': 'NYT Cooking',
+          'instagram.com': 'Instagram',
+          'youtube.com': 'YouTube',
+          'youtu.be': 'YouTube',
+          'reddit.com': 'Reddit',
+          'tiktok.com': 'TikTok',
+        };
+        return namen[host] || host.split('.')[0].charAt(0).toUpperCase() + host.split('.')[0].slice(1);
+      } catch { return ''; }
+    }
+
+    // ── URL OPHALEN ──
+
+    async function haalPaginaOp(url) {
+      try {
+        toonStatus('Pagina ophalen…');
+        const res = await fetch(CORS_PROXY + encodeURIComponent(url));
+        if (!res.ok) throw new Error();
+        return await res.text();
+      } catch { return null; }
+    }
+
+    function extractAfbeelding(html, url) {
+      // og:image
+      const ogMatch = html.match(/<meta[^>]*property=["']og:image["'][^>]*content=["']([^"']+)["']/i)
+        || html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*property=["']og:image["']/i);
+      if (ogMatch) return ogMatch[1];
+
+      // twitter:image
+      const twMatch = html.match(/<meta[^>]*name=["']twitter:image["'][^>]*content=["']([^"']+)["']/i);
+      if (twMatch) return twMatch[1];
+
+      // JSON-LD image
+      const ldMatch = html.match(/"image"\s*:\s*"(https?:\/\/[^"]+)"/);
+      if (ldMatch) return ldMatch[1];
+
+      return '';
+    }
+
+    function extractJsonLd(html) {
+      const scripts = html.match(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi);
+      if (!scripts) return null;
+      for (const script of scripts) {
+        try {
+          const json = script.replace(/<\/?script[^>]*>/gi, '');
+          const data = JSON.parse(json);
+          const items = Array.isArray(data) ? data : data['@graph'] || [data];
+          const recipe = items.find(i =>
+            i['@type'] === 'Recipe' || (Array.isArray(i['@type']) && i['@type'].includes('Recipe'))
+          );
+          if (recipe) return recipe;
+        } catch {}
+      }
+      return null;
+    }
+
+    function htmlNaarTekst(html) {
+      return html
+        .replace(/<script[\s\S]*?<\/script>/gi, '')
+        .replace(/<style[\s\S]*?<\/style>/gi, '')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 12000);
+    }
+
+    // ── EXTRACTIE ──
+
+    async function extraheerRecept() {
+      const sleutel = document.getElementById('api-sleutel').value.trim();
+      if (!sleutel) { toonStatus('Vul eerst een API-sleutel in.', 'fout'); return; }
+      localStorage.setItem('claude_api_key', sleutel);
+
+      const url = actiefTab === 'url' ? document.getElementById('invoer-url').value.trim() : '';
+      const tekst = actiefTab === 'tekst' ? document.getElementById('invoer-tekst').value.trim() : '';
+      const heeftFoto = actiefTab === 'foto' && fotoBase64;
+
+      if (!url && !tekst && !heeftFoto) {
+        toonStatus('Vul een URL, tekst of foto in.', 'fout');
+        return;
+      }
+
+      const btn = document.getElementById('importeer-btn');
+      btn.disabled = true;
+      document.getElementById('preview-blok').classList.remove('zichtbaar');
+
+      let invoerTekst = '';
+      let gevondenAfbeelding = '';
+      let bronNaam = '';
+
+      // URL modus: pagina ophalen
+      if (url) {
+        bronNaam = siteNaam(url);
+        const html = await haalPaginaOp(url);
+        if (html) {
+          gevondenAfbeelding = extractAfbeelding(html, url);
+          const jsonLd = extractJsonLd(html);
+          if (jsonLd) {
+            // Als JSON-LD een image heeft, gebruik die
+            if (!gevondenAfbeelding && jsonLd.image) {
+              gevondenAfbeelding = Array.isArray(jsonLd.image) ? jsonLd.image[0] : (typeof jsonLd.image === 'string' ? jsonLd.image : jsonLd.image.url || '');
+            }
+            invoerTekst = `JSON-LD Recipe data van ${url}:\n${JSON.stringify(jsonLd, null, 2)}`;
+          } else {
+            invoerTekst = `Pagina-inhoud van ${url}:\n${htmlNaarTekst(html)}`;
+          }
+        } else {
+          invoerTekst = `URL (kon pagina niet ophalen, gebruik je kennis als je het recept kent): ${url}`;
+        }
+      } else if (tekst) {
+        invoerTekst = tekst;
+      }
+
+      toonStatus('Recept extraheren met AI…');
+
+      const timestamp = Date.now();
+      const schema = `{
+  "id": "r${timestamp}",
+  "titel": "",
+  "slug": "",
+  "beschrijving": "",
+  "afbeelding": "${gevondenAfbeelding}",
+  "bereidingstijd": 0,
+  "moeilijkheidsgraad": "makkelijk",
+  "porties": 4,
+  "tags": [],
+  "ingredienten": [{"naam": "", "hoeveelheid": 0, "eenheid": ""}],
+  "stappen": [{"nummer": 1, "tekst": ""}],
+  "voedingswaarden": {"kcal": 0, "eiwitten": 0, "koolhydraten": 0, "vetten": 0},
+  "bron": "${url}",
+  "bron_naam": "${bronNaam}",
+  "bron_type": "${url ? 'url' : heeftFoto ? 'foto' : 'tekst'}",
+  "datum_toegevoegd": "${vandaag()}"
+}`;
+
+      const instructie = `Extraheer het recept en vertaal ALLES naar het Nederlands. Geef ALLEEN geldige JSON terug, geen uitleg, geen markdown.
+
+Schema:
+${schema}
+
+BELANGRIJKE REGELS:
+- Neem ALLE stappen over, sla er GEEN over. Elk stap mag maximaal 3 zinnen bevatten.
+- beschrijving: 1 zin
+- afbeelding: gebruik "${gevondenAfbeelding}" als die gevuld is, verander hem NIET
+- Eenheden: g, ml, el, tl, stuks, snuf, naar smaak
+- moeilijkheidsgraad: makkelijk / gemiddeld / moeilijk
+- tags alleen uit: vegetarisch, vegan, vis, vlees, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack
+- hoeveelheid 0 + eenheid "naar smaak" voor ongemeten ingrediënten
+- Schat voedingswaarden redelijk in als ze niet gegeven zijn
+- bron_naam: de naam van de bron (bijv. "${bronNaam || 'onbekend'}")`;
+
+      // Bouw API-bericht
+      const content = [];
+
+      if (heeftFoto) {
+        content.push({
+          type: 'image',
+          source: { type: 'base64', media_type: 'image/jpeg', data: fotoBase64 }
+        });
+        content.push({ type: 'text', text: instructie + (invoerTekst ? `\n\nExtra context:\n${invoerTekst}` : '') });
+      } else {
+        content.push({ type: 'text', text: instructie + `\n\nInvoer:\n${invoerTekst}` });
+      }
+
+      try {
+        const res = await fetch(CLAUDE_API, {
+          method: 'POST',
+          headers: {
+            'x-api-key': sleutel,
+            'anthropic-version': '2023-06-01',
+            'content-type': 'application/json',
+            'anthropic-dangerous-direct-browser-access': 'true'
+          },
+          body: JSON.stringify({
+            model: 'claude-haiku-4-5-20251001',
+            max_tokens: 3000,
+            messages: [{ role: 'user', content }]
+          })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          throw new Error(err.error?.message || `HTTP ${res.status}`);
+        }
+
+        const data = await res.json();
+        const jsonTekst = data.content[0].text.trim();
+        const jsonMatch = jsonTekst.match(/\{[\s\S]*\}/);
+        if (!jsonMatch) throw new Error('Geen geldig JSON in de respons');
+
+        huidigRecept = JSON.parse(jsonMatch[0]);
+        if (!huidigRecept.slug) huidigRecept.slug = slugify(huidigRecept.titel);
+        if (!huidigRecept.afbeelding && gevondenAfbeelding) huidigRecept.afbeelding = gevondenAfbeelding;
+        if (!huidigRecept.bron_naam && bronNaam) huidigRecept.bron_naam = bronNaam;
+
+        verbergStatus();
+        toonPreview(huidigRecept);
+
+      } catch (e) {
+        toonStatus(`Fout: ${e.message}`, 'fout');
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    // ── PREVIEW ──
+
+    function toonPreview(r) {
+      const afbEl = document.getElementById('pv-afbeelding');
+      if (r.afbeelding) {
+        afbEl.src = r.afbeelding;
+        afbEl.style.display = 'block';
+        afbEl.onerror = () => { afbEl.style.display = 'none'; };
+      } else {
+        afbEl.style.display = 'none';
+      }
+
+      document.getElementById('pv-titel').textContent = r.titel;
+      document.getElementById('pv-meta').innerHTML =
+        `<span>${r.bereidingstijd} min</span><span>${r.moeilijkheidsgraad}</span><span>${r.porties} porties</span>`;
+      document.getElementById('pv-tags').innerHTML =
+        r.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+      document.getElementById('pv-ingredienten').innerHTML = r.ingredienten.map(ing => {
+        const h = ing.hoeveelheid > 0 ? `${ing.hoeveelheid} ${ing.eenheid}` : ing.eenheid;
+        return `<li><span class="ingredient-naam">${ing.naam}</span><span class="ingredient-hoeveelheid">${h}</span></li>`;
+      }).join('');
+
+      document.getElementById('pv-stappen').innerHTML = r.stappen.map(s =>
+        `<div class="preview-stap"><span class="preview-stap-nr">${s.nummer}</span><span>${s.tekst}</span></div>`
+      ).join('');
+
+      // Bron bewerkbaar
+      document.getElementById('pv-bron').value = r.bron_naam || siteNaam(r.bron) || '';
+
+      // Portieschaler
+      previewPorties = r.porties;
+      basisPorties = r.porties;
+      document.getElementById('pv-porties').textContent = previewPorties;
+
+      document.getElementById('preview-blok').classList.add('zichtbaar');
+      document.getElementById('preview-blok').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    let previewPorties = 1;
+    let basisPorties = 1;
+
+    function updatePreviewPorties() {
+      document.getElementById('pv-porties').textContent = previewPorties;
+      document.querySelectorAll('#pv-ingredienten li').forEach((li, i) => {
+        const ing = huidigRecept.ingredienten[i];
+        if (!ing) return;
+        if (ing.hoeveelheid === 0 || ing.eenheid === 'naar smaak') return;
+        const waarde = (ing.hoeveelheid / basisPorties) * previewPorties;
+        const afgerond = Math.round(waarde * 10) / 10;
+        const tekst = afgerond % 1 === 0 ? String(afgerond | 0) : String(afgerond);
+        li.querySelector('.ingredient-hoeveelheid').textContent = `${tekst} ${ing.eenheid}`;
+      });
+      // Update ook het portie-aantal in het recept dat wordt opgeslagen
+      huidigRecept.porties = previewPorties;
+    }
+
+    document.getElementById('pv-min').addEventListener('click', () => {
+      if (previewPorties > 1) { previewPorties--; updatePreviewPorties(); }
+    });
+    document.getElementById('pv-plus').addEventListener('click', () => {
+      previewPorties++;
+      updatePreviewPorties();
+    });
+
+    // ── OPSLAAN ──
+
+    async function opslaanRecept() {
+      if (!huidigRecept) return;
+
+      // Bron bijwerken vanuit het bewerkbare veld
+      huidigRecept.bron_naam = document.getElementById('pv-bron').value.trim();
+
+      let bestaand = { recepten: [] };
+      try {
+        const res = await fetch('./data/recepten.json');
+        bestaand = await res.json();
+      } catch {}
+
+      if (!bestaand.recepten.some(r => r.id === huidigRecept.id)) {
+        bestaand.recepten.push(huidigRecept);
+      }
+
+      // Download bijgewerkt bestand
+      const blob = new Blob([JSON.stringify(bestaand, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'recepten.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+
+      toonStatus('Recept opgeslagen! Vervang docs/data/recepten.json met het gedownloade bestand.', 'ok');
+    }
+
+    // ── EVENT LISTENERS ──
+
+    document.getElementById('importeer-btn').addEventListener('click', extraheerRecept);
+    document.getElementById('opslaan-btn').addEventListener('click', opslaanRecept);
+    document.getElementById('nieuw-btn').addEventListener('click', () => {
+      huidigRecept = null;
+      fotoBase64 = null;
+      document.getElementById('invoer-url').value = '';
+      document.getElementById('invoer-tekst').value = '';
+      document.getElementById('foto-preview').style.display = 'none';
+      document.getElementById('preview-blok').classList.remove('zichtbaar');
+      verbergStatus();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('invoer-url').addEventListener('keydown', e => {
+      if (e.key === 'Enter') extraheerRecept();
+    });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    }
+  </script>
+
+</body>
+</html>

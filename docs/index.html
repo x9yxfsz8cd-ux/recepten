@@ -3,27 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3A3F3C">
   <title>Onze Recepten</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="manifest" href="./manifest.json">
 </head>
 <body>
 
-  <header class="site-header">
-    <a href="./index.html">🍳 Onze Recepten</a>
-  </header>
-
   <main class="container">
-    <div class="search-bar">
-      <input type="search" id="zoekbalk" placeholder="Zoek een recept…" autocomplete="off">
+    <div class="search-bar" style="display:flex;gap:0.75rem;align-items:center;">
+      <input type="search" id="zoekbalk" placeholder="Zoek op recept of ingrediënt…" autocomplete="off" style="flex:1;margin:0;">
+      <a href="./import.html" style="white-space:nowrap;padding:0.85rem 1.1rem;background:var(--dark);color:var(--card-light);border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:600;flex-shrink:0;">+ Recept</a>
     </div>
 
-    <div class="tag-filters" id="tag-filters">
-      <!-- gegenereerd door JS -->
-    </div>
+    <div class="tag-filters" id="tag-filters"></div>
 
-    <div class="recepten-grid" id="recepten-grid">
-      <!-- gegenereerd door JS -->
-    </div>
+    <div class="recepten-grid" id="recepten-grid"></div>
   </main>
 
   <script>
@@ -33,8 +28,6 @@
       'Aziatisch', 'Italiaans',
       'ontbijt', 'lunch', 'diner', 'snack'
     ];
-
-    const MOEILIJKHEID_ICOON = { makkelijk: '🟢', gemiddeld: '🟡', moeilijk: '🔴' };
 
     let alleRecepten = [];
     let actiefTag = null;
@@ -64,6 +57,12 @@
       });
     }
 
+    function zoekMatch(r, term) {
+      if (r.titel.toLowerCase().includes(term)) return true;
+      if (r.ingredienten.some(ing => ing.naam.toLowerCase().includes(term))) return true;
+      return false;
+    }
+
     function renderRecepten() {
       const grid = document.getElementById('recepten-grid');
       let resultaat = alleRecepten;
@@ -73,34 +72,50 @@
       }
       if (zoekterm) {
         const term = zoekterm.toLowerCase();
-        resultaat = resultaat.filter(r => r.titel.toLowerCase().includes(term));
+        resultaat = resultaat.filter(r => zoekMatch(r, term));
       }
 
       if (resultaat.length === 0) {
-        grid.innerHTML = `
-          <div class="empty-state">
-            <p>Geen recepten gevonden.</p>
-          </div>`;
+        grid.innerHTML = `<div class="empty-state"><p>Geen recepten gevonden.</p></div>`;
         return;
       }
 
       grid.innerHTML = resultaat.map(r => {
         const img = r.afbeelding
           ? `<img class="recept-card__img" src="${r.afbeelding}" alt="${r.titel}" loading="lazy">`
-          : `<div class="recept-card__img-placeholder">🍽️</div>`;
+          : `<div class="recept-card__img-placeholder"></div>`;
 
-        const tags = r.tags
-          .map(t => `<span class="tag">${t}</span>`)
-          .join('');
+        const tags = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+        // Toon welke ingrediënten matchen als er gezocht wordt
+        let matchLabel = '';
+        if (zoekterm && !r.titel.toLowerCase().includes(zoekterm.toLowerCase())) {
+          const term = zoekterm.toLowerCase();
+          const matches = r.ingredienten
+            .filter(ing => ing.naam.toLowerCase().includes(term))
+            .map(ing => ing.naam);
+          if (matches.length) {
+            matchLabel = `<div class="recept-card__match">bevat ${matches.slice(0, 2).join(', ')}</div>`;
+          }
+        }
+
+        const beschrijving = r.beschrijving
+          ? `<div class="recept-card__beschrijving">${r.beschrijving}</div>`
+          : '';
 
         return `
           <a class="recept-card" href="./recept.html?id=${r.id}">
             ${img}
             <div class="recept-card__body">
               <div class="recept-card__title">${r.titel}</div>
+              ${beschrijving}
+              ${matchLabel}
               <div class="recept-card__meta">
-                <span>⏱ ${r.bereidingstijd} min</span>
-                <span>${MOEILIJKHEID_ICOON[r.moeilijkheidsgraad] || ''} ${r.moeilijkheidsgraad}</span>
+                <span>${r.bereidingstijd} min</span>
+                <span class="recept-card__meta-sep"></span>
+                <span>${r.moeilijkheidsgraad}</span>
+                <span class="recept-card__meta-sep"></span>
+                <span>${r.porties} porties</span>
               </div>
               <div class="recept-card__tags">${tags}</div>
             </div>
@@ -112,6 +127,11 @@
       zoekterm = e.target.value.trim();
       renderRecepten();
     });
+
+    // Service Worker registratie
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    }
 
     laadRecepten();
   </script>

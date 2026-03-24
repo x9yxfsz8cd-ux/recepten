@@ -3,50 +3,195 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#3A3F3C">
   <title>Recept</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="manifest" href="./manifest.json">
 </head>
 <body>
 
-  <header class="site-header">
-    <a href="./index.html">🍳 Onze Recepten</a>
-  </header>
+  <div id="app"></div>
 
-  <div id="app">
-    <!-- gegenereerd door JS -->
+  <!-- Kookmodus overlay -->
+  <div class="kookmodus-overlay" id="kookmodus-overlay" role="dialog" aria-modal="true">
+    <div class="km-header">
+      <span class="km-titel" id="km-recept-titel"></span>
+      <button class="km-sluiten" id="km-sluiten">Sluiten</button>
+    </div>
+    <div class="km-voortgang" id="km-voortgang"></div>
+    <div class="km-teller" id="km-teller"></div>
+    <div class="km-inhoud">
+      <p class="km-stap-tekst" id="km-stap-tekst"></p>
+    </div>
+    <div class="km-nav">
+      <button class="km-nav-btn km-nav-btn--vorige" id="km-vorige">Vorige</button>
+      <button class="km-nav-btn km-nav-btn--volgende" id="km-volgende">Volgende</button>
+    </div>
   </div>
 
   <script>
-    const MOEILIJKHEID_ICOON = { makkelijk: '🟢', gemiddeld: '🟡', moeilijk: '🔴' };
-
     let recept = null;
     let huidigPorties = 1;
     let basisPorties = 1;
+    let huidigeStap = 0;
+    let wakeLock = null;
+
+    // ── UTILITIES ──
 
     function getParam(naam) {
       return new URLSearchParams(window.location.search).get(naam);
     }
 
-    function formatHoeveelheid(basis, huidig, basisPorties) {
+    function formatHoeveelheid(basis, huidig, basis_porties) {
       if (basis === 0) return '';
-      const waarde = (basis / basisPorties) * huidig;
-      // Netjes afronden: vermijd 0.33333...
+      const waarde = (basis / basis_porties) * huidig;
       const afgerond = Math.round(waarde * 10) / 10;
       return afgerond % 1 === 0 ? String(afgerond | 0) : String(afgerond);
     }
 
-    function renderIngredient(ing) {
-      const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
-      const eenheid = ing.eenheid === 'naar smaak' ? '' : ing.eenheid;
-      const rechts = ing.eenheid === 'naar smaak'
-        ? 'naar smaak'
-        : `${hoeveelheid} ${eenheid}`.trim();
+    function stapSleutel() { return `stappen_${recept.id}`; }
+    function ingSleutel() { return `ing_${recept.id}`; }
 
-      return `<li>
-        <span class="ingredient-naam">${ing.naam}</span>
-        <span class="ingredient-hoeveelheid">${rechts}</span>
-      </li>`;
+    // ── STAP AFVINKEN ──
+
+    function laadAfgevinkt(sleutel) {
+      try {
+        return JSON.parse(localStorage.getItem(sleutel) || '[]');
+      } catch { return []; }
     }
+
+    function slaAfgevinktOp(sleutel, gedaan) {
+      localStorage.setItem(sleutel, JSON.stringify(gedaan));
+    }
+
+    function toggleStap(nummer) {
+      const key = stapSleutel();
+      const gedaan = laadAfgevinkt(key);
+      const idx = gedaan.indexOf(nummer);
+      if (idx === -1) gedaan.push(nummer);
+      else gedaan.splice(idx, 1);
+      slaAfgevinktOp(key, gedaan);
+
+      const el = document.querySelector(`.stap[data-stap="${nummer}"]`);
+      if (el) el.classList.toggle('stap--gedaan', gedaan.includes(nummer));
+    }
+
+    function herstelStappen() {
+      const gedaan = laadAfgevinkt(stapSleutel());
+      gedaan.forEach(n => {
+        const el = document.querySelector(`.stap[data-stap="${n}"]`);
+        if (el) el.classList.add('stap--gedaan');
+      });
+    }
+
+    // ── INGREDIËNT AFVINKEN ──
+
+    function toggleIngredient(index) {
+      const key = ingSleutel();
+      const gedaan = laadAfgevinkt(key);
+      const idx = gedaan.indexOf(index);
+      if (idx === -1) gedaan.push(index);
+      else gedaan.splice(idx, 1);
+      slaAfgevinktOp(key, gedaan);
+
+      const li = document.querySelectorAll('.ingredienten-lijst li')[index];
+      if (li) li.classList.toggle('ing--gedaan', gedaan.includes(index));
+    }
+
+    function herstelIngredienten() {
+      const gedaan = laadAfgevinkt(ingSleutel());
+      const items = document.querySelectorAll('.ingredienten-lijst li');
+      gedaan.forEach(i => { if (items[i]) items[i].classList.add('ing--gedaan'); });
+    }
+
+    // ── KOOKMODUS ──
+
+    async function vraagWakeLock() {
+      try {
+        if ('wakeLock' in navigator) {
+          wakeLock = await navigator.wakeLock.request('screen');
+        }
+      } catch {}
+    }
+
+    function geefWakeLockVrij() {
+      if (wakeLock) { wakeLock.release(); wakeLock = null; }
+    }
+
+    // Herkrijg wake lock als scherm terug zichtbaar wordt
+    document.addEventListener('visibilitychange', async () => {
+      if (document.visibilityState === 'visible' && document.getElementById('kookmodus-overlay').classList.contains('actief')) {
+        await vraagWakeLock();
+      }
+    });
+
+    function updateKookmodus() {
+      const stappen = recept.stappen;
+      const stap = stappen[huidigeStap];
+      const totaal = stappen.length;
+
+      document.getElementById('km-stap-tekst').textContent = stap.tekst;
+      document.getElementById('km-teller').textContent = `${huidigeStap + 1} van ${totaal}`;
+
+      // Voortgangsdots
+      const dots = document.getElementById('km-voortgang');
+      dots.innerHTML = stappen.map((_, i) => {
+        const klasse = i < huidigeStap ? 'gedaan' : i === huidigeStap ? 'actief' : '';
+        return `<div class="km-dot ${klasse}"></div>`;
+      }).join('');
+
+      // Knoppen
+      const vorigeBtn = document.getElementById('km-vorige');
+      const volgendeBtn = document.getElementById('km-volgende');
+
+      vorigeBtn.disabled = huidigeStap === 0;
+
+      if (huidigeStap === totaal - 1) {
+        volgendeBtn.textContent = 'Klaar';
+        volgendeBtn.className = 'km-nav-btn km-nav-btn--klaar';
+      } else {
+        volgendeBtn.textContent = 'Volgende';
+        volgendeBtn.className = 'km-nav-btn km-nav-btn--volgende';
+      }
+    }
+
+    function openKookmodus() {
+      huidigeStap = 0;
+      document.getElementById('km-recept-titel').textContent = recept.titel;
+      document.getElementById('kookmodus-overlay').classList.add('actief');
+      updateKookmodus();
+      vraagWakeLock();
+    }
+
+    function sluitKookmodus() {
+      document.getElementById('kookmodus-overlay').classList.remove('actief');
+      geefWakeLockVrij();
+    }
+
+    document.getElementById('km-sluiten').addEventListener('click', sluitKookmodus);
+
+    document.getElementById('km-vorige').addEventListener('click', () => {
+      if (huidigeStap > 0) { huidigeStap--; updateKookmodus(); }
+    });
+
+    document.getElementById('km-volgende').addEventListener('click', () => {
+      if (huidigeStap < recept.stappen.length - 1) {
+        huidigeStap++;
+        updateKookmodus();
+      } else {
+        sluitKookmodus();
+      }
+    });
+
+    // Toetsenbord navigatie in kookmodus
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('kookmodus-overlay').classList.contains('actief')) return;
+      if (e.key === 'ArrowRight' || e.key === ' ') document.getElementById('km-volgende').click();
+      if (e.key === 'ArrowLeft') document.getElementById('km-vorige').click();
+      if (e.key === 'Escape') sluitKookmodus();
+    });
+
+    // ── PORTIESCHALER ──
 
     function updateIngredientHoeveelheden() {
       document.querySelectorAll('.ingredienten-lijst li').forEach((li, i) => {
@@ -61,23 +206,34 @@
       document.querySelector('.portie-aantal').textContent = huidigPorties;
     }
 
+    // ── RENDER ──
+
+    function renderIngredient(ing) {
+      const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
+      const eenheid = ing.eenheid === 'naar smaak' ? '' : ing.eenheid;
+      const rechts = ing.eenheid === 'naar smaak'
+        ? 'naar smaak'
+        : `${hoeveelheid} ${eenheid}`.trim();
+      return `<li>
+        <span class="ingredient-naam">${ing.naam}</span>
+        <span class="ingredient-hoeveelheid">${rechts}</span>
+      </li>`;
+    }
+
     function renderRecept(r) {
       recept = r;
       basisPorties = r.porties;
       huidigPorties = r.porties;
-
       document.title = `${r.titel} — Onze Recepten`;
 
       const img = r.afbeelding
         ? `<img class="recept-hero" src="${r.afbeelding}" alt="${r.titel}">`
-        : `<div class="recept-hero-placeholder">🍽️</div>`;
+        : `<div class="recept-hero-placeholder"></div>`;
 
       const tags = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
-
       const ingredienten = r.ingredienten.map(renderIngredient).join('');
-
       const stappen = r.stappen.map(s => `
-        <div class="stap">
+        <div class="stap" data-stap="${s.nummer}" role="button" tabindex="0" aria-label="Stap ${s.nummer}">
           <span class="stap-nummer">${s.nummer}</span>
           <p class="stap-tekst">${s.tekst}</p>
         </div>`).join('');
@@ -106,18 +262,18 @@
         </div>` : '';
 
       const bron = r.bron
-        ? `<a class="bron-link" href="${r.bron}" target="_blank" rel="noopener">Bekijk originele bron →</a>`
+        ? `<a class="bron-link" href="${r.bron}" target="_blank" rel="noopener">Bekijk originele bron</a>`
         : '';
 
       document.getElementById('app').innerHTML = `
         ${img}
         <div class="recept-detail">
-          <a class="terug-link" href="./index.html">← Alle recepten</a>
+          <a class="terug-link" href="./index.html">Alle recepten</a>
           <div class="recept-detail__header">
             <h1 class="recept-detail__title">${r.titel}</h1>
             <div class="recept-detail__meta">
-              <span>⏱ ${r.bereidingstijd} minuten</span>
-              <span>${MOEILIJKHEID_ICOON[r.moeilijkheidsgraad] || ''} ${r.moeilijkheidsgraad}</span>
+              <span>${r.bereidingstijd} minuten</span>
+              <span>${r.moeilijkheidsgraad}</span>
             </div>
             <div class="recept-detail__tags">${tags}</div>
           </div>
@@ -134,13 +290,20 @@
               <div class="blok-titel">Ingrediënten</div>
               <ul class="ingredienten-lijst">${ingredienten}</ul>
             </div>
-            <div class="stappen-blok">${stappen}</div>
+            <div class="stappen-blok">
+              <button class="kookmodus-btn" id="kookmodus-btn">Start kookmodus</button>
+              ${stappen}
+            </div>
           </div>
 
           ${voeding}
-          ${bron}
+          <div style="margin-top:1.5rem;">
+            ${bron}
+            <button class="print-btn" id="print-btn">Print recept</button>
+          </div>
         </div>`;
 
+      // Portie knoppen
       document.getElementById('min-btn').addEventListener('click', () => {
         if (huidigPorties > 1) { huidigPorties--; updateIngredientHoeveelheden(); }
       });
@@ -148,6 +311,27 @@
         huidigPorties++;
         updateIngredientHoeveelheden();
       });
+
+      // Kookmodus knop
+      document.getElementById('kookmodus-btn').addEventListener('click', openKookmodus);
+
+      // Print knop
+      document.getElementById('print-btn').addEventListener('click', () => window.print());
+
+      // Ingrediënt afvinken
+      document.querySelectorAll('.ingredienten-lijst li').forEach((li, i) => {
+        li.addEventListener('click', () => toggleIngredient(i));
+      });
+      herstelIngredienten();
+
+      // Stap afvinken
+      document.querySelectorAll('.stap').forEach(el => {
+        el.addEventListener('click', () => toggleStap(+el.dataset.stap));
+        el.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') toggleStap(+el.dataset.stap);
+        });
+      });
+      herstelStappen();
     }
 
     async function init() {
@@ -166,8 +350,13 @@
       document.getElementById('app').innerHTML = `
         <div class="not-found">
           <h2>Recept niet gevonden</h2>
-          <p><a href="./index.html">← Terug naar overzicht</a></p>
+          <p><a href="./index.html">Terug naar overzicht</a></p>
         </div>`;
+    }
+
+    // Service Worker registratie
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
 
     init();

@@ -1,0 +1,24 @@
+{
+  "name": "Onze Recepten",
+  "short_name": "Recepten",
+  "description": "Persoonlijke receptenwebsite voor Shar & Robin",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#E8DFD0",
+  "theme_color": "#3A3F3C",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
