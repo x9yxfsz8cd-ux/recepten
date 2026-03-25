@@ -170,6 +170,126 @@
       "bron_naam": "Albert Heijn",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25"
+    },
+    {
+      "id": "r1774465924",
+      "titel": "Tijmchampignons met gnocchi en frisse rucola met walnoten",
+      "slug": "tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten",
+      "beschrijving": "Een snel en zalig recept met gnocchi, gebakken champignons, knoflook, walnoten en verse tijm, afgewerkt met peperige rucola en citroensap.",
+      "afbeelding": "https://s3-eu-west-1.amazonaws.com/images-marleyspoon-production/media/recipes/18580/main_photos/large/ID3661_web-1e95fc7f6be22a1aaf129ead41867e72.jpg?1538409077",
+      "bereidingstijd": 20,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "snel",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "walnoten",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 bosje verse tijm",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 citroen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "kastanjechampignonplakjes",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "gnocchi",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Italiaanse harde kaas",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "rucola",
+          "hoeveelheid": 75.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "boter of olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "water",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "citroensap",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "peper en zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Rooster de walnoten in een grote koekenpan op middelhoog vuur 2-3 minuten totdat ze goudbruin zijn en schud af en toe. Pel en hak de knoflook fijn en pluk de tijmblaadjes."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Smelt de boter in de pan, voeg knoflook en tijm toe, bak 30 seconden en voeg de champignonplakjes toe. Roerbak 6-8 minuten totdat ze mooi bruin zijn en voeg dan de sojasaus toe, roerbak nog 1-2 minuten."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Verhit een andere koekenpan met olie en bak de gnocchi 6-7 minuten tot ze goudbruin en knapperig zijn. Was de rucola goed en laat uitlekken."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg de champignons en 100-150 ml water aan de gnocchi toe en rasp de helft van de kaas erboven. Roer totdat een romige saus ontstaat en voeg indien nodig extra water toe."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Rasp de citroenschil fijn, pers een helft uit en snijd de andere in partjes. Meng de citroenrasp met de walnoten en meng de rucola met 2 tl citroensap."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Voeg de rucola aan de pan toe en roer door. Schep de gnocchi op, rasp er de rest van de kaas over, bestrooi met walnoten en geef de citroenpartjes erbij."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://marleyspoon.nl/menu/18580-tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten",
+      "bron_naam": "Marley Spoon",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-25"
     }
   ]
 }
