@@ -540,6 +540,55 @@
       "bron_naam": "HelloFresh",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25"
+    },
+    {
+      "id": "r1774469537",
+      "titel": "Recept",
+      "slug": "recept",
+      "beschrijving": "",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [],
+      "ingredienten": [
+        {
+          "naam": "Een YouTube-URL",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Geen daadwerkelijke receptgegevens (ingrediënten, bereidingsstappen, etc.)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "De werkelijke recepttekst met ingrediënten",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Bereidingsstappen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Receptnaam, porties, tijd, etc.",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.youtube.com/watch?v=Ql3Ew2elbHY",
+      "bron_naam": "YouTube",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-25"
     }
   ]
 }
