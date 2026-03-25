@@ -173,60 +173,71 @@
       "datum_toegevoegd": "2026-03-25"
     },
     {
-      "id": "r1774462499",
+      "id": "r1774465477",
       "titel": "Tijmchampignons met gnocchi en frisse rucola met walnoten",
       "slug": "tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten",
-      "beschrijving": "Een smakelijk vegetarisch gerecht met gnocchi, geurige tijmchampignons en een frisse rucolasalade met krokante walnoten.",
+      "beschrijving": "Een snel en zalig winterse gerecht met gebakken champignons, gnocchi, knapperige walnoten en peperige rucola.",
       "afbeelding": "https://s3-eu-west-1.amazonaws.com/images-marleyspoon-production/media/recipes/18580/main_photos/large/ID3661_web-1e95fc7f6be22a1aaf129ead41867e72.jpg?1538409077",
-      "bereidingstijd": 25,
-      "moeilijkheidsgraad": "gemiddeld",
+      "bereidingstijd": 20,
+      "moeilijkheidsgraad": "makkelijk",
       "porties": 2,
       "tags": [
         "vegetarisch",
+        "snel",
         "comfort food",
         "Italiaans",
         "diner"
       ],
       "ingredienten": [
         {
-          "naam": "champignons",
-          "hoeveelheid": 300.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "verse tijm",
-          "hoeveelheid": 2.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "gnocchi",
-          "hoeveelheid": 400.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "rucola",
-          "hoeveelheid": 80.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "walnoten",
-          "hoeveelheid": 40.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "olijfolie",
-          "hoeveelheid": 2.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "1 teentje knoflook",
+          "naam": "1 handvol walnoten",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "groentebouillon",
+          "naam": "1 bundel verse tijm",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 citroen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "kastanjechampignonplakjes",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "gnocchi",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Italiaanse harde kaas",
           "hoeveelheid": 100.0,
-          "eenheid": "ml"
+          "eenheid": "g"
+        },
+        {
+          "naam": "2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "rucola",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "2-4 el boter of olie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
         },
         {
           "naam": "zout en peper naar smaak",
@@ -234,23 +245,27 @@
           "eenheid": "naar smaak"
         },
         {
-          "naam": "balsamicoazijn",
-          "hoeveelheid": 1.0,
-          "eenheid": "el"
+          "naam": "100-150 ml water",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Verhit de olijfolie in een grote pan en bak de in stukken gesneden champignons met fijngehakte knoflook en tijm tot ze goudbruin zijn. Voeg de groentebouillon toe en laat 5 minuten zachtjes sudderen, kruid met zout en peper."
+          "tekst": "Rooster de walnoten in een grote koekenpan op middelhoog vuur 2-3 minuten totdat ze goudbruin zijn, schep uit en zet opzij. Pel en hak de knoflook fijn, pluk en hak de tijmblaadjes."
         },
         {
           "nummer": 2,
-          "tekst": "Kook de gnocchi ondertussen volgens de verpakking en giet af. Rooster de walnoten kort in een droge pan."
+          "tekst": "Smelt boter of verhit olie in de pan, bak knoflook en tijm 30 seconden, voeg champignonplakjes toe en roerbak 6-8 minuten totdat ze bruin zijn. Voeg sojasaus toe en roerbak 1-2 minuten totdat ze geglaceerd zijn. Hak de geroosterde walnoten grof."
         },
         {
           "nummer": 3,
-          "tekst": "Meng de gnocchi met de champignons, schep de rucola door elkaar met balsamicoazijn en olijfolie, en serveer alles samen met de walnoten."
+          "tekst": "Verhit in een andere pan olie en bak gnocchi 6-7 minuten totdat ze goudbruin zijn. Voeg de gebakken champignons en 100-150 ml water toe, rasp er de helft van de kaas boven en roer totdat een romige saus ontstaat."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Was rucola grondig, meng met 2 tl citroensap en voeg aan de pan toe. Rasp citroenschil fijn en meng met walnoten. Schep gnocchi op, rasp rest van kaas erover, bestrooi met walnoten en geef citroenen erbij."
         }
       ],
       "voedingswaarden": {
