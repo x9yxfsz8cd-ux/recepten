@@ -454,6 +454,92 @@
       "bron_naam": "Albert Heijn",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25"
+    },
+    {
+      "id": "r1774469368",
+      "titel": "Romige pasta met champignons en spek",
+      "slug": "romige-pasta-met-champignons-en-spek",
+      "beschrijving": "Een klassieke Italiaanse pasta met champignons, spek en een romige saus.",
+      "afbeelding": "https://cdn.hellofresh.com/de/cms/raf/hellofresh-logo.png",
+      "bereidingstijd": 25,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vlees",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "pasta",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "champignons",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "spek",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "slagroom",
+          "hoeveelheid": 200.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "parmezaan",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "zout en peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Kook de pasta volgens de verpakking in zout water."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Bak ondertussen de spek knapperig en voeg de champignons en knoflook toe, fruit deze gaar."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de slagroom toe en laat dit enkele minuten zachtjes koken, breng op smaak met zout en peper."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Giet de pasta af en meng deze door de saus, bestrooi met parmezaan en serveer direct."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.hellofresh.nl/recipes/romige-pasta-met-champignons-en-spek-63fe0c4be9432a2b9f09c062",
+      "bron_naam": "HelloFresh",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-25"
     }
   ]
 }
