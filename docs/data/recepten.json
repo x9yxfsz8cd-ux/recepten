@@ -292,24 +292,95 @@
       "datum_toegevoegd": "2026-03-25"
     },
     {
-      "id": "r1774467618",
-      "titel": "Recept",
-      "slug": "recept",
-      "beschrijving": "",
-      "afbeelding": "",
-      "bereidingstijd": 30,
+      "id": "r1774467929",
+      "titel": "Lasagne met geitenkaas, ricotta & courgette",
+      "slug": "lasagne-met-geitenkaas-ricotta-courgette",
+      "beschrijving": "Een romige lasagne met geitenkaas, ricotta en knapperige courgette.",
+      "afbeelding": "https://static.ah.nl/static/recepten/img_114527_1024x748_JPG.jpg",
+      "bereidingstijd": 45,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
-      "tags": [],
-      "ingredienten": [],
-      "stappen": [],
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "traditionele olijfolie",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "tuinkruiden soepgroente",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "courgettes",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "belegen geitenkaas",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "ricotta",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "pastasaus basis kappertjes en oregano",
+          "hoeveelheid": 390.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "verse lasagnebladen",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "cherrytomaten",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 190 °C. Verhit ondertussen de olie in een koekenpan en bak de soepgroente 5 minuten op middelhoog vuur."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Rasp de courgettes grof, doe in een zeef en druk met de achterkant van een lepel het vocht eruit. Rasp de geitenkaas en meng de courgette met de ricotta, de helft van de geitenkaas, peper en eventueel zout."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Schenk de pastasaus over de bodem van de ovenschaal en bestrooi met de helft van de soepgroente. Bedek met lasagnebladen en verdeel de helft van het courgettemengsel erover."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Dek af met lasagnebladen, schenk de helft van de resterende saus en de rest van de soepgroenten erover. Dek af met lasagnebladen en verdeel de rest van het courgettemengsel erover."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Eindig met de rest van de lasagnebladen en schenk de rest van de saus erover. Verdeel de tomaten en de rest van de geitenkaas erover."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Bak de lasagne in het midden van de oven in ongeveer 30 minuten gaar."
+        }
+      ],
       "voedingswaarden": {
         "kcal": 0,
         "eiwitten": 0,
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "https://www.ah.nl/allerhande/recept/R-R689400/pad-thai",
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1187050/snelle-bami-goreng",
       "bron_naam": "Albert Heijn",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25"
