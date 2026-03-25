@@ -1,207 +1,270 @@
 # Shortcut: Recept Saver
 
-## Wat doet deze shortcut?
-- Ontvang een URL, tekst of foto
-- Stuur dit naar Claude (AI) om het recept te extraheren en te vertalen naar Nederlands
-- Sla het op in Apple Notities (map "recepten")
-- Sla de JSON op in iCloud Drive zodat je de website kunt bijwerken
+Open de **Opdrachten**-app op je iPhone en volg deze stappen.
+
+Elke actie voeg je toe door onderaan in de **zoekbalk** de naam te typen.
 
 ---
 
-## Stap 0 — Claude API-sleutel aanmaken
+## Voorbereiding
 
-1. Ga naar **console.anthropic.com**
-2. Maak een account aan (gratis tier is voldoende voor persoonlijk gebruik)
-3. Ga naar **API Keys** → **Create Key**
-4. Kopieer de sleutel (begint met `sk-ant-...`)
-5. Sla hem op in Apple Notities in een notitie genaamd **"API Sleutels"** zodat de shortcut hem kan ophalen
+- Je **Claude API-sleutel** bij de hand (begint met `sk-ant-...`)
+- In **Notities**: maak een map aan genaamd **recepten**
 
 ---
 
-## Stap 1 — Nieuwe shortcut aanmaken
+## De opdracht aanmaken
 
-Open de **Shortcuts app** op iPhone → **+** rechtsboven → naam: `Recept Saver` → icoon 🍳, kleur groen.
-
----
-
-## Stap 2 — Invoer ontvangen
-
-**Voeg toe:** `Receive` → selecteer: **Tekst + URL's + Afbeeldingen**
-- "Als er geen invoer is" → **Vraag om invoer**
-- Sla op als variabele: `Invoer`
+Open Opdrachten → tik **+** rechtsboven → geef de naam `Recept Saver`
 
 ---
 
-## Stap 3 — API-sleutel ophalen
+## Actie 1: Invoer ontvangen
 
-**Voeg toe:** `Zoek Notities`
-- Filter: Naam bevat `API Sleutels`
-- Limiet: 1
+Zoek: `ontvang`
+Kies: **Ontvang invoer van deelmenu**
 
-**Voeg toe:** `Haal tekst op uit Notitie` → sla op als: `NotitieInhoud`
-
-**Voeg toe:** `Haal overeenkomsten op in tekst`
-- Invoer: `NotitieInhoud`
-- Patroon (regex): `sk-ant-[A-Za-z0-9\-_]+`
-- Sla op als: `APISleutel`
+Tik op de actie en stel in:
+- Accepteer: **Afbeeldingen**, **URL's**, **Tekst**
+- "Als er geen invoer is": kies **Vraag om invoer**
 
 ---
 
-## Stap 4 — Bepaal invoertype
+## Actie 2: Invoer opslaan als variabele
 
-**Voeg toe:** `Als`
-- Voorwaarde: `Invoer` → **is van type** → **Afbeelding**
+Zoek: `variabele`
+Kies: **Stel variabele in**
 
-**In de Als-tak:** Base64-codering van de afbeelding
+- Variabelenaam: typ `Invoer`
+- Waarde: tik → kies **Opdracht-invoer** (verschijnt automatisch)
+
+---
+
+## Actie 3: Controleer of het een foto is
+
+Zoek: `als`
+Kies: **Als**
+
+- Invoer: tik → kies variabele **Invoer**
+- Voorwaarde: **heeft type**
+- Type: **Afbeelding**
+
+---
+
+## ALS het een afbeelding is (je zit nu in de "Als"-tak):
+
+### Actie 4: Foto omzetten naar tekst
+
+Zoek: `base64`
+Kies: **Codeer met Base64**
+
+- Invoer: tik → kies variabele **Invoer**
+
+### Actie 5: Foto-data opslaan
+
+Zoek: `variabele`
+Kies: **Stel variabele in**
+
+- Variabelenaam: typ `FotoData`
+- Waarde: tik → kies **Gecodeerd met Base64** (verschijnt automatisch)
+
+### Actie 6: API-bericht samenstellen (foto)
+
+Zoek: `tekst`
+Kies: **Tekst**
+
+Plak dit in het tekstveld — **heel precies, inclusief alle tekens**:
+
 ```
-Voeg toe: Encodeer [Invoer] → base64 → sla op als: AfbeeldingBase64
-Stel tekst in:
-{
-  "type": "image",
-  "source": {
-    "type": "base64",
-    "media_type": "image/jpeg",
-    "data": "[AfbeeldingBase64]"
-  }
-}
-Sla op als: InvoerBlok
-```
-
-**In de Anders-tak:**
-```
-Stel tekst in:
-{
-  "type": "text",
-  "text": "[Invoer]"
-}
-Sla op als: InvoerBlok
-```
-
-**Voeg toe:** `Eindigen als`
-
----
-
-## Stap 5 — Claude API aanroepen
-
-**Voeg toe:** `Haal inhoud van URL op`
-
-**URL:** `https://api.anthropic.com/v1/messages`
-**Methode:** POST
-**Headers:**
-- `x-api-key`: `[APISleutel]`
-- `anthropic-version`: `2023-06-01`
-- `content-type`: `application/json`
-
-**Body (JSON):**
-```json
-{
-  "model": "claude-opus-4-6",
-  "max_tokens": 2000,
-  "messages": [
-    {
-      "role": "user",
-      "content": [
-        [InvoerBlok],
-        {
-          "type": "text",
-          "text": "Extraheer het recept uit de bovenstaande invoer en vertaal het volledig naar het Nederlands. Geef de output als geldig JSON met exact deze structuur:\n\n{\n  \"id\": \"r[timestamp]\",\n  \"titel\": \"\",\n  \"slug\": \"\",\n  \"afbeelding\": \"\",\n  \"bereidingstijd\": 0,\n  \"moeilijkheidsgraad\": \"makkelijk\",\n  \"porties\": 4,\n  \"tags\": [],\n  \"ingredienten\": [{\"naam\": \"\", \"hoeveelheid\": 0, \"eenheid\": \"\"}],\n  \"stappen\": [{\"nummer\": 1, \"tekst\": \"\"}],\n  \"voedingswaarden\": {\"kcal\": 0, \"eiwitten\": 0, \"koolhydraten\": 0, \"vetten\": 0},\n  \"bron\": \"\",\n  \"bron_type\": \"url\",\n  \"datum_toegevoegd\": \"[datum]\"\n}\n\nRegels:\n- Altijd in het Nederlands\n- Gebruik Nederlandse eenheden: g, ml, el, tl, stuks, snuf, naar smaak\n- Bereidingstijd in minuten\n- Moeilijkheidsgraad: makkelijk / gemiddeld / moeilijk\n- Tags alleen uit: vegetarisch, vegan, vis, vlees, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack\n- Stappen maximaal 3 zinnen elk\n- Geef ALLEEN de JSON terug, geen uitleg"
-        }
-      ]
-    }
-  ]
-}
+[{"type":"image","source":{"type":"base64","media_type":"image/jpeg","data":"
 ```
 
-Sla de uitvoer op als: `APIReactie`
+Tik dan in het tekstveld → tik op **Variabelen** boven het toetsenbord → kies **FotoData**
 
----
+Typ dan direct daarna (zonder spatie):
 
-## Stap 6 — JSON verwerken
-
-**Voeg toe:** `Haal waarde op in woordenboek`
-- Invoer: `APIReactie`
-- Sleutel: `content`
-→ Sla op als: `ContentArray`
-
-**Voeg toe:** `Haal item op uit lijst`
-- Invoer: `ContentArray` → Eerste item
-→ Sla op als: `EersteContent`
-
-**Voeg toe:** `Haal waarde op in woordenboek`
-- Invoer: `EersteContent`
-- Sleutel: `text`
-→ Sla op als: `ReceptJSON`
-
----
-
-## Stap 7 — Opslaan in Apple Notities
-
-**Voeg toe:** `Haal waarde op in woordenboek`
-- Invoer: `ReceptJSON` (parse als JSON)
-- Sleutel: `titel`
-→ Sla op als: `ReceptTitel`
-
-**Voeg toe:** `Maak notitie aan`
-- Map: **recepten**
-- Naam: `[ReceptTitel]`
-- Inhoud:
 ```
-🍳 [ReceptTitel]
-
-[Afbeelding als bijlage indien beschikbaar]
-
-🔗 Bekijk op website: https://x9yxfsz8cd-ux.github.io/recepten/recept.html?id=[id]
-
----
-[ReceptJSON]
+"}},{"type":"text","text":"Extraheer het recept uit deze afbeelding en vertaal het volledig naar het Nederlands. Geef een nette samenvatting met: titel, ingrediënten met hoeveelheden, en genummerde stappen. Stappen maximaal 3 zinnen. Altijd Nederlandse eenheden (g, ml, el, tl, stuks)."}]
 ```
 
----
+### Actie 7: Bericht opslaan als variabele
 
-## Stap 8 — JSON opslaan in iCloud
+Zoek: `variabele`
+Kies: **Stel variabele in**
 
-**Voeg toe:** `Haal inhoud van bestand op`
-- Pad: `iCloud Drive/recepten/recepten.json`
-→ Sla op als: `HuidigJSON`
-
-*(Als het bestand niet bestaat, sla dan een leeg `{"recepten":[]}` op als startpunt)*
-
-**Voeg toe:** `Stel tekst in` → bouw de bijgewerkte JSON handmatig samen of gebruik de Siri-suggestie "Voeg toe aan lijst"
-
-**Voeg toe:** `Sla bestand op`
-- Pad: `iCloud Drive/recepten/recepten.json`
-- Inhoud: bijgewerkte JSON
+- Variabelenaam: typ `BerichtInhoud`
+- Waarde: tik → kies **Tekst** (de uitvoer van de vorige actie)
 
 ---
 
-## Stap 9 — Share Sheet activeren
+## ANDERS (onder de "Anders"-regel — voor URL's en tekst):
 
-- Tik op de shortcut → **Deel** → **Aan beginscherm toevoegen**
-- Ga naar Instellingen shortcut → zet **"In aandeel-menu weergeven"** aan
+### Actie 8: API-bericht samenstellen (tekst)
+
+Zoek: `tekst`
+Kies: **Tekst**
+
+Plak dit in het tekstveld:
+
+```
+[{"type":"text","text":"Extraheer het recept uit de onderstaande invoer en vertaal het volledig naar het Nederlands. Geef een nette samenvatting met: titel, ingrediënten met hoeveelheden, en genummerde stappen. Stappen maximaal 3 zinnen. Altijd Nederlandse eenheden (g, ml, el, tl, stuks).\n\nInvoer:\n
+```
+
+Tik dan in het tekstveld → tik op **Variabelen** boven het toetsenbord → kies **Invoer**
+
+Typ dan direct daarna:
+
+```
+"}]
+```
+
+### Actie 9: Bericht opslaan als variabele
+
+Zoek: `variabele`
+Kies: **Stel variabele in**
+
+- Variabelenaam: typ `BerichtInhoud`
+- Waarde: tik → kies **Tekst** (de uitvoer van de vorige actie)
 
 ---
 
-## Gebruik
+## Terug naar het hoofdniveau (na "Stop als"):
 
-- **Instagram:** Bekijk een reels/post → tik op **Delen** → **Recept Saver**
-- **Foto van kookboek:** Kies de foto vanuit Foto's → Delen → Recept Saver
-- **WhatsApp-tekst:** Selecteer tekst → Delen → Recept Saver
-- **URL:** Kopieer een URL → open Shortcuts → tik op Recept Saver
+De actie **Stop als** staat er al automatisch. Alles hierna geldt voor zowel foto's als tekst/URL's.
 
 ---
 
-## Website bijwerken
+## Actie 10: Claude API aanroepen
 
-Na het opslaan van een recept:
+Zoek: `url`
+Kies: **Haal inhoud van URL op**
 
-1. Kopieer `iCloud Drive/recepten/recepten.json` naar `recepten/docs/data/recepten.json` in je Git-repo
-2. Push naar GitHub:
-   ```
-   cd ~/Documents/recepten
-   git add docs/data/recepten.json
-   git commit -m "Nieuw recept toegevoegd"
-   git push
-   ```
-3. Na ±1 minuut is het recept zichtbaar op de website
+Tik op de actie en stel in:
 
-Zie ook: `Scripts/update-site.sh` voor een snelle terminal-opdracht.
+**URL:** tik op het URL-veld en typ:
+```
+https://api.anthropic.com/v1/messages
+```
+
+**Methode:** tik op "GET" en verander naar **POST**
+
+Tik op **Toon meer** en stel in:
+
+**Kopregels** (tik op "Kopregels" → voeg drie regels toe):
+
+| Sleutel | Waarde |
+|---------|--------|
+| `x-api-key` | je API-sleutel (`sk-ant-...`) |
+| `anthropic-version` | `2023-06-01` |
+| `content-type` | `application/json` |
+
+**Berichttekst:** tik → kies **JSON**
+
+Voeg drie velden toe (tik op "Voeg nieuw veld toe"):
+
+1. Sleutel: `model` — Type: **Tekst** — Waarde: `claude-haiku-4-5-20251001`
+2. Sleutel: `max_tokens` — Type: **Getal** — Waarde: `2000`
+3. Sleutel: `messages` — Type: **Reeks**
+
+**messages invullen:**
+- Tik op `messages` → **Voeg nieuw onderdeel toe** → type: **Woordenboek**
+- In dat woordenboek, voeg twee velden toe:
+  - Sleutel: `role` — Type: **Tekst** — Waarde: `user`
+  - Sleutel: `content` — Type: **Tekst** — Waarde: tik → kies variabele **BerichtInhoud**
+
+---
+
+## Actie 11: API-resultaat opslaan
+
+Zoek: `variabele`
+Kies: **Stel variabele in**
+
+- Variabelenaam: typ `APIResultaat`
+- Waarde: tik → kies **Inhoud van URL** (verschijnt automatisch)
+
+---
+
+## Actie 12: "content" ophalen uit het resultaat
+
+Zoek: `woordenboek`
+Kies: **Haal woordenboekwaarde op**
+
+- Invoer: tik → kies variabele **APIResultaat**
+- Sleutel: typ `content`
+
+---
+
+## Actie 13: Eerste item pakken
+
+Zoek: `onderdeel`
+Kies: **Haal onderdeel op uit lijst**
+
+- Invoer: tik → kies **Woordenboekwaarde** (verschijnt automatisch)
+- Haal op: **Eerste onderdeel**
+
+---
+
+## Actie 14: De tekst eruit halen
+
+Zoek: `woordenboek`
+Kies: **Haal woordenboekwaarde op**
+
+- Invoer: tik → kies **Onderdeel uit lijst** (verschijnt automatisch)
+- Sleutel: typ `text`
+
+---
+
+## Actie 15: Recepttekst opslaan
+
+Zoek: `variabele`
+Kies: **Stel variabele in**
+
+- Variabelenaam: typ `ReceptTekst`
+- Waarde: tik → kies **Woordenboekwaarde** (verschijnt automatisch)
+
+---
+
+## Actie 16: Notitie aanmaken
+
+Zoek: `notitie`
+Kies: **Maak notitie aan**
+
+- Map: tik → kies de map **recepten**
+- Hoofdtekst: tik → kies variabele **ReceptTekst**
+
+---
+
+## Actie 17: Bevestiging tonen
+
+Zoek: `melding`
+Kies: **Toon melding**
+
+- Titel: `Recept Saver`
+- Hoofdtekst: `Recept opgeslagen!`
+
+---
+
+## Deelmenu activeren
+
+Tik bovenaan op het **i-icoon** of de naam van de opdracht → kies **Details**:
+- Zet **Toon in deelmenu** aan
+- Onder **Typen in deelmenu**: zorg dat **Afbeeldingen**, **URL's** en **Tekst** aanstaan
+
+---
+
+## Testen
+
+1. Open Safari → ga naar een receptenpagina
+2. Tik op het **deelicoon** (vierkantje met pijltje)
+3. Kies **Recept Saver**
+4. Wacht even → je krijgt een melding "Recept opgeslagen!"
+5. Open Notities → map recepten → je recept staat erin
+
+---
+
+## Delen met Robin
+
+- Shar deelt de opdracht via **AirDrop** of **iMessage** (lang indrukken op de opdracht → Deel)
+- Robin vult zijn eigen API-sleutel in bij actie 10
+- In **Notities**: tik op de map recepten → deelicoon → **Deel map** → voeg Robin toe
+- Nu zien jullie allebei dezelfde recepten
