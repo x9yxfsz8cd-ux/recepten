@@ -117,6 +117,25 @@ def strip_html(html):
     return re.sub(r'\s+', ' ', t).strip()
 
 
+def extract_json_ld_recipe(html):
+    """Zoek een JSON-LD Recipe schema in de HTML."""
+    scripts = re.findall(
+        r'<script[^>]*type="application/ld\+json"[^>]*>([\s\S]*?)</script>', html, re.I
+    )
+    for s in scripts:
+        try:
+            data = json.loads(s)
+            items = data if isinstance(data, list) else data.get("@graph", [data])
+            for item in items:
+                if isinstance(item, dict):
+                    t = item.get("@type", "")
+                    if t == "Recipe" or (isinstance(t, list) and "Recipe" in t):
+                        return item
+        except Exception:
+            pass
+    return None
+
+
 def call_claude(prompt, api_key):
     """Stuur prompt naar Claude Haiku en ontvang het antwoord."""
     body = json.dumps({
@@ -332,28 +351,56 @@ def main():
     html = fetch_simple(url)
 
     tekst = ""
-    if html:
-        tekst = strip_html(html)
+    json_ld = None
 
-    # Check of er daadwerkelijk receptinhoud in zit
-    if not tekst or not has_recipe_content(tekst):
+    if html:
+        # Probeer eerst JSON-LD (meest betrouwbare bron)
+        json_ld = extract_json_ld_recipe(html)
+        if json_ld:
+            print("  JSON-LD Recipe gevonden (beste bron)")
+            tekst = json.dumps(json_ld, ensure_ascii=False)
+        else:
+            tekst = strip_html(html)
+
+    # Als geen JSON-LD en geen receptinhoud → Playwright
+    if not json_ld and (not tekst or not has_recipe_content(tekst)):
         print("  Geen receptinhoud gevonden, probeer headless browser...")
         pw_html, pw_tekst = fetch_playwright(url)
         if pw_html:
-            html = pw_html
-            tekst = pw_tekst if pw_tekst else strip_html(pw_html)
-        if not tekst or not has_recipe_content(tekst):
-            print("  Nog steeds geen receptinhoud. Claude probeert het op basis van de URL.")
-            tekst = f"URL: {url} (pagina kon niet worden opgehaald)"
+            # Check JSON-LD in Playwright HTML
+            json_ld = extract_json_ld_recipe(pw_html)
+            if json_ld:
+                print("  JSON-LD Recipe gevonden via browser")
+                tekst = json.dumps(json_ld, ensure_ascii=False)
+                html = pw_html
+            else:
+                html = pw_html
+                tekst = pw_tekst if pw_tekst else strip_html(pw_html)
+
+    if not tekst or (not json_ld and not has_recipe_content(tekst)):
+        # Laatste poging: gebruik de URL slug
+        slug_info = url.split("/")[-1].replace("-", " ")
+        print(f"  Geen inhoud. Claude probeert op basis van: {slug_info}")
+        tekst = f"Recept: {slug_info}\nURL: {url}"
 
     # Afbeelding
     img_url = extract_og_image(html) if html else ""
+    # JSON-LD heeft soms ook een image
+    if not img_url and json_ld:
+        ld_img = json_ld.get("image", "")
+        if isinstance(ld_img, list):
+            img_url = ld_img[0] if ld_img else ""
+        elif isinstance(ld_img, dict):
+            img_url = ld_img.get("url", "")
+        elif isinstance(ld_img, str):
+            img_url = ld_img
     print(f"  Afbeelding: {'gevonden' if img_url else 'geen'}")
 
     # ── 2. Claude API ──
     print("Recept extraheren...")
+    bron_type = "JSON-LD Recipe data" if json_ld else "Pagina-inhoud"
     prompt = (
-        "Extraheer het recept uit onderstaande pagina-inhoud en vertaal alles naar het Nederlands.\n\n"
+        f"Extraheer het recept uit onderstaande {bron_type.lower()} en vertaal alles naar het Nederlands.\n\n"
         "Geef je antwoord in dit EXACTE format:\n\n"
         "TITEL: [receptnaam]\n"
         "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
@@ -362,7 +409,7 @@ def main():
         "BEREIDING:\n1. [stap]\n\n"
         "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
         "- Stappen max 3 zinnen\n- Neem ALLE stappen en ingrediënten over met EXACTE hoeveelheden\n\n"
-        f"Pagina-inhoud van {url}:\n{tekst[:10000]}"
+        f"{bron_type} van {url}:\n{tekst[:10000]}"
     )
 
     raw = call_claude(prompt, api_key)
