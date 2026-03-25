@@ -292,7 +292,7 @@
       "datum_toegevoegd": "2026-03-25"
     },
     {
-      "id": "r1774467477",
+      "id": "r1774467618",
       "titel": "Recept",
       "slug": "recept",
       "beschrijving": "",
@@ -301,18 +301,7 @@
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [],
-      "ingredienten": [
-        {
-          "naam": "De daadwerkelijke tekstinhoud van de receptpagina (kopieën en geplakt)",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "Of een werkende link met toegankelijke content",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
+      "ingredienten": [],
       "stappen": [],
       "voedingswaarden": {
         "kcal": 0,
