@@ -9,19 +9,56 @@
       "bereidingstijd": 20,
       "moeilijkheidsgraad": "makkelijk",
       "porties": 2,
-      "tags": ["vegetarisch", "snel", "Italiaans"],
+      "tags": [
+        "vegetarisch",
+        "snel",
+        "Italiaans"
+      ],
       "ingredienten": [
-        { "naam": "spaghetti", "hoeveelheid": 200, "eenheid": "g" },
-        { "naam": "citroen (rasp + sap)", "hoeveelheid": 1, "eenheid": "stuks" },
-        { "naam": "slagroom", "hoeveelheid": 100, "eenheid": "ml" },
-        { "naam": "Parmezaan, geraspt", "hoeveelheid": 50, "eenheid": "g" },
-        { "naam": "boter", "hoeveelheid": 2, "eenheid": "el" },
-        { "naam": "zout en peper", "hoeveelheid": 0, "eenheid": "naar smaak" }
+        {
+          "naam": "spaghetti",
+          "hoeveelheid": 200,
+          "eenheid": "g"
+        },
+        {
+          "naam": "citroen (rasp + sap)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "slagroom",
+          "hoeveelheid": 100,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Parmezaan, geraspt",
+          "hoeveelheid": 50,
+          "eenheid": "g"
+        },
+        {
+          "naam": "boter",
+          "hoeveelheid": 2,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout en peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
       ],
       "stappen": [
-        { "nummer": 1, "tekst": "Kook de spaghetti al dente in ruim gezouten water. Bewaar een kopje kookwater voordat je afgiet." },
-        { "nummer": 2, "tekst": "Smelt de boter in een koekenpan op middelhoog vuur. Voeg de citroenrasp toe en bak 30 seconden. Schenk de slagroom erbij en laat even inkoken." },
-        { "nummer": 3, "tekst": "Haal de pan van het vuur. Voeg de pasta, het citroensap en de Parmezaan toe. Schep goed door en voeg een scheutje kookwater toe voor de juiste sausdikte. Breng op smaak met zout en peper." }
+        {
+          "nummer": 1,
+          "tekst": "Kook de spaghetti al dente in ruim gezouten water. Bewaar een kopje kookwater voordat je afgiet."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Smelt de boter in een koekenpan op middelhoog vuur. Voeg de citroenrasp toe en bak 30 seconden. Schenk de slagroom erbij en laat even inkoken."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Haal de pan van het vuur. Voeg de pasta, het citroensap en de Parmezaan toe. Schep goed door en voeg een scheutje kookwater toe voor de juiste sausdikte. Breng op smaak met zout en peper."
+        }
       ],
       "voedingswaarden": {
         "kcal": 580,
@@ -32,6 +69,108 @@
       "bron": "",
       "bron_type": "handmatig",
       "datum_toegevoegd": "2026-03-23"
+    },
+    {
+      "id": "r1774456868",
+      "titel": "Poké bowl met zalm",
+      "slug": "poke-bowl-met-zalm",
+      "beschrijving": "Een Hawaiiaans gerecht met verse blokjes zalm op een bed van rijst met groenten en avocado.",
+      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD123759_1024x748_JPG.jpg",
+      "bereidingstijd": 25,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vis",
+        "snel",
+        "Aziatisch",
+        "lunch",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "sushirijst",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "rijstazijn",
+          "hoeveelheid": 120.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "sushizalm",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "½ rode peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "sesamolie",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "bospenen",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 komkommer",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "3 bosuien",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "eetrijpe avocado's",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "zwart sesamzaad",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Kook de rijst volgens de aanwijzingen op de verpakking. Roer ⅔ van de rijstazijn door de rijst als deze nog warm is. Laat de rijst in 1 uur afkoelen op een grote platte schaal."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd ondertussen de zalm in blokjes van 1 cm. Snijd het steeltje van de halve rode peper en snijd het vruchtvlees fijn. Meng de zalm met de peper, sojasaus en olie en zet tot gebruik afgedekt in de koelkast."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Schaaf de komkommer en bospeen in lange linten. Besprenkel met de rest van de rijstazijn. Snijd de bosuien in schuine ringetjes. Snijd de avocado's overlangs doormidden, verwijder de pit en snijd in plakjes."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Verdeel de rijst over kommen. Verdeel de zalm, komkommer, wortel, bosui en avocado erover. Bestrooi de zalm met het sesamzaad."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1188320/poke-bowl-met-zalm",
+      "bron_naam": "Albert Heijn",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-25"
     }
   ]
 }
