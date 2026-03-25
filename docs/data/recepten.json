@@ -290,6 +290,93 @@
       "bron_naam": "Marley Spoon",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25"
+    },
+    {
+      "id": "r1774466999",
+      "titel": "Croissantquiche met ham en courgette",
+      "slug": "croissantquiche-met-ham-en-courgette",
+      "beschrijving": "Een heerlijke quiche met croissantdeeg, ham, courgette en gruyère kaas, perfect voor op de brunchtafel.",
+      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD202204_1024x748_JPG.jpg",
+      "bereidingstijd": 80,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 8,
+      "tags": [
+        "vlees",
+        "comfort food",
+        "brunch",
+        "lunch",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "croissantdeeg",
+          "hoeveelheid": 340.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "rode ui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "courgette",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "verse peterselie",
+          "hoeveelheid": 15.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "middelgrote scharreleieren",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "yoghurt Griekse stijl 10%",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "geraspte Franse gruyère kaas",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Prosciutto di Parma",
+          "hoeveelheid": 90.0,
+          "eenheid": "g"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 180 °C. Bekleed de ingevette ovenschaal met het croissantdeeg en druk de naden dicht. Bedek het deeg met bakpapier en vul met blindbakvulling. Bak de bodem circa 10 minuten in de oven."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd ondertussen de ui in dunne halve ringen, schaaf de courgette in de lengte in linten en snijd de peterselie fijn. Klop de eieren los met de yoghurt, kaas, de helft van de peterselie, peper en eventueel zout."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Verdeel de rode ui en courgettelinten over de bodem van de quiche en schenk het eimengsel erover. Bak de quiche 50-55 minuten in de oven goudbruin en gaar, en dek na circa 15 minuten af met aluminiumfolie."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Laat 5 minuten afkoelen en haal uit de vorm. Verdeel de ham in roosjes erover en bestrooi met de rest van de peterselie."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1201025/one-pot-pasta-met-tomaat-en-mascarpone",
+      "bron_naam": "Albert Heijn",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-25"
     }
   ]
 }
