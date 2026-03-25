@@ -384,6 +384,76 @@
       "bron_naam": "Albert Heijn",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25"
+    },
+    {
+      "id": "r1774468939",
+      "titel": "Meringuetaartje met ijs, chocoladesaus en suikerspin",
+      "slug": "meringuetaartje-met-ijs-chocoladesaus-en-suikerspin",
+      "beschrijving": "Een leuk en betaalbaar toetje met meringuekransjes, ijs, chocolade en suikerspin.",
+      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD183705_1024x748_JPG.jpg",
+      "bereidingstijd": 15,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "snack",
+        "comfort food",
+        "ontbijt"
+      ],
+      "ingredienten": [
+        {
+          "naam": "melkchocolade",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "kokend water",
+          "hoeveelheid": 25.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "vanille-ijs",
+          "hoeveelheid": 300.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "AH Excellent mini-pavlova's",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "4 plukjes gouden suikerspin",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Breek de chocolade in stukken en leg in een hittebestendige kom. Schenk het kokend water op de chocolade en laat 2 minuten staan."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Roer door en klop met een garde tot een gladde saus. Laat het vanille-ijs zacht worden, zodat je het kunt scheppen."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Leg de meringuekransjes op de bordjes en schep de bollen van het ijs erop."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Verdeel de warme chocoladesaus over het dessert en leg op elk taartje een pluk suikerspin."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1199498/shoarma-wrap-met-kip",
+      "bron_naam": "Albert Heijn",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-25"
     }
   ]
 }
