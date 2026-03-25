@@ -745,6 +745,25 @@ BELANGRIJKE REGELS:
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
+
+    // Auto-fill en auto-start via URL parameters
+    // Gebruik: import.html?url=https://...&auto=true
+    const params = new URLSearchParams(window.location.search);
+    const autoUrl = params.get('url');
+    if (autoUrl) {
+      document.getElementById('invoer-url').value = autoUrl;
+      // Activeer URL tab
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelector('[data-tab="url"]').classList.add('active');
+      document.getElementById('tab-url').classList.add('active');
+      actiefTab = 'url';
+
+      if (params.get('auto') === 'true') {
+        // Wacht even tot de pagina geladen is, start dan automatisch
+        setTimeout(() => extraheerRecept(), 500);
+      }
+    }
   </script>
 
 </body>
