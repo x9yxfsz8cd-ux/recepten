@@ -71,17 +71,16 @@
       "datum_toegevoegd": "2026-03-23"
     },
     {
-      "id": "r1774456868",
+      "id": "r1774465753",
       "titel": "Poké bowl met zalm",
       "slug": "poke-bowl-met-zalm",
-      "beschrijving": "Een Hawaiiaans gerecht met verse blokjes zalm op een bed van rijst met groenten en avocado.",
+      "beschrijving": "Een Hawaiiaans gerecht met verse blokjes zalm op rijst en groenten.",
       "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD123759_1024x748_JPG.jpg",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
         "vis",
-        "snel",
         "Aziatisch",
         "lunch",
         "diner"
@@ -103,9 +102,9 @@
           "eenheid": "g"
         },
         {
-          "naam": "½ rode peper",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "rode peper",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
         },
         {
           "naam": "sojasaus",
@@ -123,14 +122,14 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 komkommer",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "komkommer",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "3 bosuien",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "bosuien",
+          "hoeveelheid": 3.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "eetrijpe avocado's",
@@ -150,11 +149,11 @@
         },
         {
           "nummer": 2,
-          "tekst": "Snijd ondertussen de zalm in blokjes van 1 cm. Snijd het steeltje van de halve rode peper en snijd het vruchtvlees fijn. Meng de zalm met de peper, sojasaus en olie en zet tot gebruik afgedekt in de koelkast."
+          "tekst": "Snijd de zalm in blokjes van 1 cm. Snijd het steeltje van de halve rode peper en snijd het vruchtvlees fijn. Meng de zalm met de peper, sojasaus en olie en zet afgedekt in de koelkast."
         },
         {
           "nummer": 3,
-          "tekst": "Schaaf de komkommer en bospeen in lange linten. Besprenkel met de rest van de rijstazijn. Snijd de bosuien in schuine ringetjes. Snijd de avocado's overlangs doormidden, verwijder de pit en snijd in plakjes."
+          "tekst": "Schaaf de komkommer en bospeen in lange linten met een kaasschaaf of dunschiller. Besprenkel met de rest van de rijstazijn. Snijd de bosuien in schuine ringetjes. Snijd de avocado's overlangs doormidden, verwijder de pit en snijd in plakjes."
         },
         {
           "nummer": 4,
@@ -169,113 +168,6 @@
       },
       "bron": "https://www.ah.nl/allerhande/recept/R-R1188320/poke-bowl-met-zalm",
       "bron_naam": "Albert Heijn",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-03-25"
-    },
-    {
-      "id": "r1774465477",
-      "titel": "Tijmchampignons met gnocchi en frisse rucola met walnoten",
-      "slug": "tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten",
-      "beschrijving": "Een snel en zalig winterse gerecht met gebakken champignons, gnocchi, knapperige walnoten en peperige rucola.",
-      "afbeelding": "https://s3-eu-west-1.amazonaws.com/images-marleyspoon-production/media/recipes/18580/main_photos/large/ID3661_web-1e95fc7f6be22a1aaf129ead41867e72.jpg?1538409077",
-      "bereidingstijd": 20,
-      "moeilijkheidsgraad": "makkelijk",
-      "porties": 2,
-      "tags": [
-        "vegetarisch",
-        "snel",
-        "comfort food",
-        "Italiaans",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "1 handvol walnoten",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "1 bundel verse tijm",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "1 citroen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "kastanjechampignonplakjes",
-          "hoeveelheid": 200.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "sojasaus",
-          "hoeveelheid": 2.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "gnocchi",
-          "hoeveelheid": 300.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "Italiaanse harde kaas",
-          "hoeveelheid": 100.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "2 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "rucola",
-          "hoeveelheid": 100.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "2-4 el boter of olie",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "zout en peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "100-150 ml water",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Rooster de walnoten in een grote koekenpan op middelhoog vuur 2-3 minuten totdat ze goudbruin zijn, schep uit en zet opzij. Pel en hak de knoflook fijn, pluk en hak de tijmblaadjes."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Smelt boter of verhit olie in de pan, bak knoflook en tijm 30 seconden, voeg champignonplakjes toe en roerbak 6-8 minuten totdat ze bruin zijn. Voeg sojasaus toe en roerbak 1-2 minuten totdat ze geglaceerd zijn. Hak de geroosterde walnoten grof."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Verhit in een andere pan olie en bak gnocchi 6-7 minuten totdat ze goudbruin zijn. Voeg de gebakken champignons en 100-150 ml water toe, rasp er de helft van de kaas boven en roer totdat een romige saus ontstaat."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Was rucola grondig, meng met 2 tl citroensap en voeg aan de pan toe. Rasp citroenschil fijn en meng met walnoten. Schep gnocchi op, rasp rest van kaas erover, bestrooi met walnoten en geef citroenen erbij."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
-      },
-      "bron": "https://marleyspoon.nl/menu/18580-tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten",
-      "bron_naam": "Marley Spoon",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25"
     }
