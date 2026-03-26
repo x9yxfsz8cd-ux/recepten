@@ -378,10 +378,21 @@ def main():
                 tekst = pw_tekst if pw_tekst else strip_html(pw_html)
 
     if not tekst or (not json_ld and not has_recipe_content(tekst)):
-        # Laatste poging: gebruik de URL slug
-        slug_info = url.split("/")[-1].replace("-", " ")
-        print(f"  Geen inhoud. Claude probeert op basis van: {slug_info}")
-        tekst = f"Recept: {slug_info}\nURL: {url}"
+        # Laatste poging: gebruik og:title, og:description, URL slug
+        meta_info = []
+        if html:
+            og_title = re.search(r'<meta[^>]*property="og:title"[^>]*content="([^"]+)"', html, re.I)
+            og_desc = re.search(r'<meta[^>]*property="og:description"[^>]*content="([^"]+)"', html, re.I)
+            title_tag = re.search(r'<title>([^<]+)</title>', html, re.I)
+            desc_tag = re.search(r'<meta[^>]*name="description"[^>]*content="([^"]+)"', html, re.I)
+            if og_title: meta_info.append(f"Titel: {og_title.group(1)}")
+            elif title_tag: meta_info.append(f"Titel: {title_tag.group(1)}")
+            if og_desc: meta_info.append(f"Beschrijving: {og_desc.group(1)}")
+            elif desc_tag: meta_info.append(f"Beschrijving: {desc_tag.group(1)}")
+        slug_info = url.split("/")[-1].replace("-", " ").replace("?", " ")
+        meta_info.append(f"URL slug: {slug_info}")
+        tekst = "\n".join(meta_info) + f"\nURL: {url}"
+        print(f"  Fallback op metadata: {meta_info[0] if meta_info else slug_info}")
 
     # Afbeelding
     img_url = extract_og_image(html) if html else ""
@@ -398,19 +409,37 @@ def main():
 
     # ── 2. Claude API ──
     print("Recept extraheren...")
-    bron_type = "JSON-LD Recipe data" if json_ld else "Pagina-inhoud"
-    prompt = (
-        f"Extraheer het recept uit onderstaande {bron_type.lower()} en vertaal alles naar het Nederlands.\n\n"
-        "Geef je antwoord in dit EXACTE format:\n\n"
-        "TITEL: [receptnaam]\n"
-        "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-        "PORTIES: [aantal]\nTIJD: [bereidingstijd in minuten]\nBESCHRIJVING: [1 zin]\n"
-        "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
-        "BEREIDING:\n1. [stap]\n\n"
-        "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
-        "- Stappen max 3 zinnen\n- Neem ALLE stappen en ingrediënten over met EXACTE hoeveelheden\n\n"
-        f"{bron_type} van {url}:\n{tekst[:10000]}"
-    )
+    has_full_content = json_ld or has_recipe_content(tekst) if tekst else False
+
+    if has_full_content:
+        bron_type = "JSON-LD Recipe data" if json_ld else "Pagina-inhoud"
+        prompt = (
+            f"Extraheer het recept uit onderstaande {bron_type.lower()} en vertaal alles naar het Nederlands.\n\n"
+            "Geef je antwoord in dit EXACTE format:\n\n"
+            "TITEL: [receptnaam]\n"
+            "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
+            "PORTIES: [aantal]\nTIJD: [bereidingstijd in minuten]\nBESCHRIJVING: [1 zin]\n"
+            "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
+            "BEREIDING:\n1. [stap]\n\n"
+            "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
+            "- Stappen max 3 zinnen\n- Neem ALLE stappen en ingrediënten over met EXACTE hoeveelheden\n\n"
+            f"{bron_type} van {url}:\n{tekst[:10000]}"
+        )
+    else:
+        # Fallback: vraag Claude om het recept uit zijn kennis te genereren
+        prompt = (
+            "Ik heb de volgende info over een recept. De pagina kon niet volledig worden opgehaald.\n"
+            "Gebruik je kennis om het VOLLEDIGE recept te genereren met alle ingrediënten en stappen.\n\n"
+            f"{tekst}\n\n"
+            "Geef je antwoord in dit EXACTE format:\n\n"
+            "TITEL: [receptnaam]\n"
+            "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
+            "PORTIES: [aantal]\nTIJD: [bereidingstijd in minuten]\nBESCHRIJVING: [1 zin]\n"
+            "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
+            "BEREIDING:\n1. [stap]\n\n"
+            "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
+            "- Stappen max 3 zinnen\n- Geef een compleet, realistisch recept"
+        )
 
     raw = call_claude(prompt, api_key)
     recipe = parse_recipe(raw)
