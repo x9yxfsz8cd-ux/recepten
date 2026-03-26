@@ -1502,6 +1502,127 @@
       "bron_naam": "Nigella",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543271",
+      "titel": "Tomatenrisotto met kokosmelk en basilicum met rucola, Italiaanse kaas en gemengde pittentopping",
+      "slug": "tomatenrisotto-met-kokosmelk-en-basilicum-met-rucola-italiaanse-kaas-en-gemengde-pittentopping",
+      "beschrijving": "Een Italiaans-Aziatische fusierisotto met tomaat, kokosmelk en een frisse topping van rucola en kaas.",
+      "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/HF201211_R63_W04_NL_R3241-1_MB_main_low-773ca6a2.jpg",
+      "bereidingstijd": 35,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "Rode basilicum",
+          "hoeveelheid": 10.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Knoflookteen",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Ui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Rode cherrytomaten",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Tomatenpuree",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Risottorijst",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Kokosmelk",
+          "hoeveelheid": 150.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Zonnebloem-pompoenpittenmix",
+          "hoeveelheid": 20.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Geraspte Italiaanse kaas",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Rucola",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Roomboter",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Zoutarme groentebouillon",
+          "hoeveelheid": 300.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Zwarte balsamicoazijn",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "naar smaak Peper en zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Pluk de blaadjes van het basilicum en bewaar de takjes apart. Bereid de bouillon en voeg de basilicumtakjes toe aan de bouillon. Pers de knoflook of snijd fijn, snipper de ui en halveer de rode cherrytomaten."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit 1 el olijfolie per persoon in een hapjespan met deksel op hoog vuur. Voeg de ui toe en 3/4 van de cherrytomaten en roerbak 3–4 minuten. Verlaag het vuur naar middelhoog, blus af met 1 tl zwarte balsamicoazijn per persoon en voeg de tomatenpuree, risottorijst en knoflook toe. Roer goed door en bak nog 1–2 minuten verder."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Verlaag het vuur, voeg de kokosmelk en de bouillon toe aan de hapjespan. Dek de pan af en laat het geheel 15–18 minuten sudderen op laag vuur, roer regelmatig door en voeg eventueel water toe als de rijst te snel droogkookt. Verhit ondertussen een koekenpan zonder olie op hoog vuur en rooster de pittenmix tot de pitten beginnen te poffen. Haal uit de pan en bewaar apart, snijd de basilicumblaadjes in reepjes."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg zodra de risottorijst gaar is, 1/2 el roomboter per persoon, de helft van het basilicum, de helft van de Italiaanse kaas en de helft van de pittenmix toe. Roer goed door en breng op smaak met peper en zout. Verdeel de rucola over diepe borden, schep de risotto erop en garneer met het overige basilicum, Italiaanse kaas, pittenmix en cherrytomaten."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.hellofresh.nl/recipes/tomatenrisotto-met-kokosmelk-en-basilicum-605b53b1f04068731e5293e9",
+      "bron_naam": "HelloFresh",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
