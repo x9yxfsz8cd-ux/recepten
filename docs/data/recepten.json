@@ -630,19 +630,19 @@
       "datum_toegevoegd": "2026-03-26"
     },
     {
-      "id": "r1774535930",
+      "id": "r1774536203",
       "titel": "Halloumi & Oesterzwam Pita's met Tzatziki",
       "slug": "halloumi-oesterzwam-pita-s-met-tzatziki",
-      "beschrijving": "Geroosterde halloumi of oesterzwammen met kruidige marinade, geserveerd op pita met zelfgemaakte tzatziki.",
-      "afbeelding": "",
-      "bereidingstijd": 35,
-      "moeilijkheidsgraad": "makkelijk",
+      "beschrijving": "Geroosterde halloumi of oesterzwammen in een heerlijke kruidige marinade, geserveerd op pita's met zelfgemaakte tzatziki en verse toppings.",
+      "afbeelding": "https://scontent-ams2-1.cdninstagram.com/v/t51.71878-15/502964679_1246887130287810_3217221532481064768_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=106&amp;ccb=7-5&amp;_nc_sid=18de74&amp;efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&amp;_nc_ohc=YWhXvc5QdZkQ7kNvwGkRstf&amp;_nc_oc=AdrJrHUSQMEEkUVaxG_pYpL_9b93wB_gU9pPgImbZUepmeRz3EkzopeITn8zXaSZz824LwTFQlU-GnAvlazf1ILX&amp;_nc_zt=23&amp;_nc_ht=scontent-ams2-1.cdninstagram.com&amp;_nc_gid=45Mm6ZB2eR5cLWilfiStYg&amp;_nc_ss=7a389&amp;oh=00_AfxDv-sSx01ITnrEYW-BUXlL1JeBIP0_rC8Jfm7Qor36tg&amp;oe=69CB2925",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
         "vegetarisch",
-        "comfort food",
         "lunch",
-        "diner"
+        "diner",
+        "snack"
       ],
       "ingredienten": [
         {
@@ -691,27 +691,12 @@
           "eenheid": "naar smaak"
         },
         {
-          "naam": "pita's",
+          "naam": "pita's (zelfgebakken)",
           "hoeveelheid": 4.0,
           "eenheid": "stuks"
         },
         {
-          "naam": "komkommer naar keuze",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "tomaat naar keuze",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "granaatappelpitjes naar keuze",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "verse kruiden naar keuze",
+          "naam": "komkommer, tomaat, granaatappelpitjes en verse kruiden naar keuze",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
@@ -749,18 +734,22 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Verwarm de oven voor op 200 graden en maak de marinade door alle ingrediënten goed te mengen. Snijd de halloumi in friet-vormige reepjes of scheur de oesterzwammen in stukjes en bedek met de marinade."
+          "tekst": "Verwarm de oven voor op 200 graden. Maak de marinade door alle ingrediënten goed te mengen."
         },
         {
           "nummer": 2,
-          "tekst": "Verdeel de halloumi of oesterzwam over een met bakpapier beklede bakplaat met ruimte ertussen en rooster voor 15-20 minuten."
+          "tekst": "Snijd de halloumi in friet-vormige reepjes of scheur de oesterzwammen in stukjes. Bedek met de marinade."
         },
         {
           "nummer": 3,
-          "tekst": "Maak ondertussen de tzatziki: rasp de komkommer, knijp het vocht eruit, hak de knoflook en dille fijn en meng met yoghurt, zout, citroensap en komkommer."
+          "tekst": "Verdeel de halloumi en/of oesterzwam over een met bakpapier beklede bakplaat met wat ruimte ertussen. Rooster voor 15-20 minuten."
         },
         {
           "nummer": 4,
+          "tekst": "Maak ondertussen de tzatziki: rasp de komkommer en knijp het vocht uit via een schone theedoek. Hak de knoflook en dille fijn en meng met de Griekse yoghurt, zout, citroensap en geraspte komkommer."
+        },
+        {
+          "nummer": 5,
           "tekst": "Serveer de halloumi of oesterzwammen op een pita met tzatziki en toppings naar keuze."
         }
       ],
@@ -771,8 +760,8 @@
         "vetten": 0
       },
       "bron": "https://www.instagram.com/reel/C680GO8K7Cz/",
-      "bron_naam": "@veggilaine (Instagram)",
-      "bron_type": "instagram",
+      "bron_naam": "@lauracvm (Instagram)",
+      "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
     }
   ]
