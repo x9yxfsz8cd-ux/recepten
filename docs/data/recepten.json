@@ -763,6 +763,92 @@
       "bron_naam": "@lauracvm (Instagram)",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774537532",
+      "titel": "** Broccoli Pesto met Halloumi",
+      "slug": "broccoli-pesto-met-halloumi",
+      "beschrijving": "** Romige broccoli pesto met goudbruine halloumi en pasta.",
+      "afbeelding": "https://nl.easeus.com/images/en/screenshot/mobimover-mac/custom/picture/choose-picture.png",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "** vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "[ONBEKEND] g broccoli",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "pasta (conchiglie)",
+          "hoeveelheid": 350.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 teentje knoflook, fijngesneden",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "[ONBEKEND] g parmezaanse kaas",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "halloumi",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "enkele takjes basilicum",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "scheutje citroensap (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zout en vers gemalen zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Broccoli zacht koken."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Pasta volgens pakketinstructies koken en uitlekken."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Halloumi in blokjes snijden en goudbruin bakken."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Pasta en pesto mengen, halloumiblokkies toevoegen, parmezaan erover raspen en citroensap toevoegen. Garneren met basilicum."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://nl.easeus.com/iphone-data-overzetten/gedeelde-albums-werken-niet.html",
+      "bron_naam": "Niet zichtbaar (gedeeld via iCloud Photos door Shar Roeters)",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
