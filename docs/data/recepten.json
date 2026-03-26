@@ -456,85 +456,6 @@
       "datum_toegevoegd": "2026-03-25"
     },
     {
-      "id": "r1774485484",
-      "titel": "Pasta Aglio e Olio",
-      "slug": "pasta-aglio-e-olio",
-      "beschrijving": "Een klassiek Italiaans gerecht met pasta, knoflook en olijfolie dat eenvoudig maar onweerstaanbaar smakelijk is.",
-      "afbeelding": "https://i.ytimg.com/vi/bJUiWdM__Qw/maxresdefault.jpg",
-      "bereidingstijd": 15,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 2,
-      "tags": [
-        "vegetarisch",
-        "Italiaans",
-        "snel",
-        "comfort food",
-        "diner",
-        "snack"
-      ],
-      "ingredienten": [
-        {
-          "naam": "spaghetti",
-          "hoeveelheid": 300.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "extra vierge olijfolie",
-          "hoeveelheid": 6.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "6 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "gedroogde rode chili",
-          "hoeveelheid": 1.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "zout en zwarte peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "1 handvol verse peterselie",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "Parmezaanse kaas (naar wens)",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Breng een grote pot met gezouten water aan de kook en kook de spaghetti volgens de verpakking tot al dente. Zet apart, bewaar 120 ml kookwater."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Hak de knoflook fijn en verhit de olijfolie in een grote pan op laag-middelhoog vuur. Voeg knoflook en rode chili toe en bak 2-3 minuten tot geurig, zorg dat het niet bruin wordt."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Voeg de gekookte pasta toe aan de pan met wat kookwater en meng alles goed. Kruid met zout en peper, garneer met verse peterselie en Parmezaanse kaas."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
-      },
-      "bron": "https://www.youtube.com/watch?v=bJUiWdM__Qw",
-      "bron_naam": "YouTube",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
-    },
-    {
       "id": "r1774487176",
       "titel": "Mini-hamburgers met vegetarische nuggets met mangoketchup, frisse salade en aardappelschijfjes",
       "slug": "mini-hamburgers-met-vegetarische-nuggets-met-mangoketchup-frisse-salade-en-aardappelschijfjes",
@@ -632,6 +553,79 @@
       },
       "bron": "https://www.hellofresh.nl/recipes/mini-hamburgers-met-vegetarische-nuggets-63c7cdb400ace46356b3d778",
       "bron_naam": "HelloFresh",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774487934",
+      "titel": "Pasta Aglio e Olio",
+      "slug": "pasta-aglio-e-olio",
+      "beschrijving": "Een eenvoudig maar elegant Italiaans pastagerecht met knoflook, olie en rode peper.",
+      "afbeelding": "https://i.ytimg.com/vi/bJUiWdM__Qw/maxresdefault.jpg",
+      "bereidingstijd": 20,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "snel",
+        "Italiaans",
+        "diner",
+        "snack"
+      ],
+      "ingredienten": [
+        {
+          "naam": "1/2 stuk knoflook, uiteen en geschild",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 bos peterselie, gewassen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie van goede kwaliteit",
+          "hoeveelheid": 125.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "rode pepervlokken",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "droge linguine",
+          "hoeveelheid": 225.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1/2 stuk citroen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Breng een grote pot met veel zout en water aan de kook. Snijd de knoflookteentjes dun en hak de peterseliebladerenerg fijn (zonder de dikke stengels)."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verwarm de olijfolie in een grote sautépan op middelhoog vuur tot het glinster, voeg de gesneden knoflook toe en roer constant tot deze licht bruin begint te worden. Voeg de rode pepervlokken toe en haal de pan van het vuur zodat de knoflook zacht goudbruin verder gaat bakken."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Kook de linguine tot al dente, voeg deze bij de olijfolie met ongeveer 60 ml gereserveerd pastawater, pers de citroen uit en meng er de fijngesneden peterselie door. Breng op smaak met zout en peper en serveer meteen."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.youtube.com/watch?v=bJUiWdM__Qw",
+      "bron_naam": "YouTube",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
     }
