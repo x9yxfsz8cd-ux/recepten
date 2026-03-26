@@ -826,6 +826,99 @@
       "bron_naam": "Foodiesmagazine",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543204",
+      "titel": "Broccolisoep met gerookte zalm en bieslook",
+      "slug": "broccolisoep-met-gerookte-zalm-en-bieslook",
+      "beschrijving": "Een groene broccolisoep met roze zalmsnippers en bieslook, gemakkelijk en smaakvol.",
+      "afbeelding": "https://www.projectgezond.nl/content/uploads/2020/09/BroccolisoepGerookteZalmBieslook-384x512.png",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vis",
+        "comfort food",
+        "snel",
+        "lunch",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "water of groentebouillon",
+          "hoeveelheid": 1200.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "ui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "teentje knoflook",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "broccoli",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "groentebouillon",
+          "hoeveelheid": 750.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "kookroom",
+          "hoeveelheid": 50.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "gerookte zalm",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "bieslook",
+          "hoeveelheid": 10.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "olie naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "peper en zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Snipper de ui en hak de knoflook fijn. Snijd de broccoli in roosjes. Verhit een scheutje olie in een soeppan en fruit de ui en knoflook 2 minuten zachtjes aan."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Giet de groentebouillon bij en breng aan de kook. Voeg de broccoliroosjes toe en kook ze in ongeveer 10 minuten gaar. Pureer de soep helemaal glad in een blender of met een staafmixer. Voeg de kookroom toe en warm de soep goed door."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Snijd de gerookte zalm in snippers en hak de bieslook in kleine stukjes. Maak de soep op smaak met peper en eventueel zout. Schep de soep in de kommen en top af met gerookte zalmsnippers en bieslook."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.projectgezond.nl/recepten/broccolisoep-met-gerookte-zalm-en-bieslook",
+      "bron_naam": "Projectgezond",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
