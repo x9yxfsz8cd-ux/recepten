@@ -630,33 +630,63 @@
       "datum_toegevoegd": "2026-03-26"
     },
     {
-      "id": "r1774489814",
-      "titel": "Recept",
-      "slug": "recept",
-      "beschrijving": "",
+      "id": "r1774489863",
+      "titel": "Broccoli Pesto Pasta met Halloumi",
+      "slug": "broccoli-pesto-pasta-met-halloumi",
+      "beschrijving": "Romige broccoli pesto pasta met goudbruine halloumi blokjes en Parmezaanse kaas.",
       "afbeelding": "",
-      "bereidingstijd": 30,
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
-      "tags": [],
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
       "ingredienten": [
         {
-          "naam": "✅ Een afbeeldinganalyse (onvolledig recept)",
+          "naam": "pasta (zoals conchiglie)",
+          "hoeveelheid": 350.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "broccoli",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 teentje knoflook, fijngehakt",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "❌ Geen online bron gelinkt",
+          "naam": "enkele takjes basilicum",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "De online bron/link delen, óf",
+          "naam": "halloumi",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Parmezaanse kaas",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "De volledige recepttekst van de online bron kopiëren?",
+          "naam": "citroensap",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zout en vers gemalen zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie (voor bakken)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
@@ -664,15 +694,19 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "De link naar de online bron (of de volledige tekst ervan)"
+          "tekst": "Broccoli koken tot zacht, uitlekken en met fijngehakte knoflook en basilicum tot pesto mengen."
         },
         {
           "nummer": 2,
-          "tekst": "De volledige ingrediëntenlijst (hoofdingrediënt, hoeveelheden olie, zout, peper, etc.)"
+          "tekst": "Pasta koken volgens pakketinstructies en uitlekken."
         },
         {
           "nummer": 3,
-          "tekst": "De bereidingsstappen"
+          "tekst": "Halloumi in blokjes snijden en in een pan tot goudbruin bakken."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Pasta en pesto mengen, halloumi-blokjes toevoegen, Parmezaanse kaas raspen en afmaken met citroensap en peper naar smaak."
         }
       ],
       "voedingswaarden": {
@@ -682,7 +716,7 @@
         "vetten": 0
       },
       "bron": "Foto",
-      "bron_naam": "Foto",
+      "bron_naam": "**Shar Roeters** (gedeeld via iCloud Photos, geëxpireerd op 25 april)",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
     }
