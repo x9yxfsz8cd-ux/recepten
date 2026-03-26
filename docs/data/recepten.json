@@ -919,6 +919,96 @@
       "bron_naam": "Projectgezond",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543212",
+      "titel": "Traybake met orzo, asperge, prei en rucola",
+      "slug": "traybake-met-orzo-asperge-prei-en-rucola",
+      "beschrijving": "Een smakelijke ovenschotel met orzo pasta, groene asperges en prei, afgewerkt met hazelnoten en rucola.",
+      "afbeelding": "https://www.leckerbeckje.nl/wp-content/uploads/2023/05/IMG_8249.jpeg",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "orzo",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "groentebouillon",
+          "hoeveelheid": 750.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "prei, in dunne ringetjes gesneden",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "groene asperges",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "citroen (rasp en sap)",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "1 handje hazelnoten, kleingehakt en kort geroosterd",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "rucola",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout en peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Zet de oven op 200 graden. Kook 750 ml water en verkruimel bouillonblokjes in een ovenschaal, giet het water erop."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Doe de orzo in de ovenschaal met de preiringetjes, citroenrasp en peper en schep door elkaar. Leg de asperges er bovenop, druk een beetje onder water en besprenkel met 1 el olijfolie."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Zet ongeveer 20 minuten in de oven. Als je het uit de oven haalt, schep de hazelnoten, citroensap en rucola er door."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Proef en voeg eventueel nog extra zout en peper toe. Verdeel over de borden en enjoy!"
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.leckerbeckje.nl/2023/05/15/traybake-met-orzo-asperge-prei-en-rucola/",
+      "bron_naam": "Leckerbeckje",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
