@@ -765,45 +765,55 @@
       "datum_toegevoegd": "2026-03-26"
     },
     {
-      "id": "r1774537532",
-      "titel": "** Broccoli Pesto met Halloumi",
-      "slug": "broccoli-pesto-met-halloumi",
-      "beschrijving": "** Romige broccoli pesto met goudbruine halloumi en pasta.",
-      "afbeelding": "https://nl.easeus.com/images/en/screenshot/mobimover-mac/custom/picture/choose-picture.png",
-      "bereidingstijd": 30,
+      "id": "r1774537596",
+      "titel": "Broccoli Pesto Pasta met Halloumi",
+      "slug": "broccoli-pesto-pasta-met-halloumi",
+      "beschrijving": "Een verrukkelijke pasta met romige broccoli pesto, goudbruine halloumi en frisse basilicum.",
+      "afbeelding": "https://hoe-lang-broccoli-koken.nl/wp-content/uploads/2024/09/2773-broccoli-pesto-pasta-recept.jpg",
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
-        "** vegetarisch",
+        "vegetarisch",
         "comfort food",
         "Italiaans",
         "diner"
       ],
       "ingredienten": [
         {
-          "naam": "[ONBEKEND] g broccoli",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "pasta (conchiglie)",
+          "naam": "pasta (bijv. conchiglie)",
           "hoeveelheid": 350.0,
           "eenheid": "g"
         },
         {
-          "naam": "1 teentje knoflook, fijngesneden",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "[ONBEKEND] g parmezaanse kaas",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "broccoli",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
         },
         {
           "naam": "halloumi",
           "hoeveelheid": 200.0,
           "eenheid": "g"
+        },
+        {
+          "naam": "1 teentje knoflook, fijngehakt",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "pijnboompitten",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Parmezaanse kaas",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
         },
         {
           "naam": "enkele takjes basilicum",
@@ -824,19 +834,27 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Broccoli zacht koken."
+          "tekst": "Broccoli in water koken tot zacht (ongeveer 8-10 minuten), afgieten en apart zetten."
         },
         {
           "nummer": 2,
-          "tekst": "Pasta volgens pakketinstructies koken en uitlekken."
+          "tekst": "Broccoli, pijnboompitten, Parmezaanse kaas en knoflook in een staafmixer pureren; genoeg olijfolie toevoegen zodat de pesto goed mengbaar is, op smaak afmaken met zout en peper."
         },
         {
           "nummer": 3,
-          "tekst": "Halloumi in blokjes snijden en goudbruin bakken."
+          "tekst": "Pasta gelijktijdig volgens pakketinstructies koken en afgieten."
         },
         {
           "nummer": 4,
-          "tekst": "Pasta en pesto mengen, halloumiblokkies toevoegen, parmezaan erover raspen en citroensap toevoegen. Garneren met basilicum."
+          "tekst": "Halloumi in blokjes snijden en in een pan tot goudbruin frituren."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Warme pasta met broccoli pesto mengen, halloumi toevoegen en enkele druppels citroensap (optioneel) erbij doen."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Aanvullen met geraspte Parmezaanse kaas en basilicum als garnering serveren."
         }
       ],
       "voedingswaarden": {
@@ -845,8 +863,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "https://nl.easeus.com/iphone-data-overzetten/gedeelde-albums-werken-niet.html",
-      "bron_naam": "Niet zichtbaar (gedeeld via iCloud Photos door Shar Roeters)",
+      "bron": "https://hoe-lang-broccoli-koken.nl/broccoli-pesto-pasta-recept/",
+      "bron_naam": "ZICHTBARE INGREDIËNTEN:",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
     }
