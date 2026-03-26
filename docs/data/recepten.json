@@ -1412,6 +1412,96 @@
       "bron_naam": "Jennyalvares",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543261",
+      "titel": "Linguine met citroen, knoflook en tijm champignons",
+      "slug": "linguine-met-citroen-knoflook-en-tijm-champignons",
+      "beschrijving": "Een snelle en elegante Italiaanse pasta met verse champignons die alleen worden gemarineerd in olie, knoflook, citroen en tijm.",
+      "afbeelding": "http://www.nigella.com/assets/uploads/recipes/5df3e33c-b796-4033-bdb2-680c8f-612e12fd0b37b.jpg",
+      "bereidingstijd": 15,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "linguine",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "champignons",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 4.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "4 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "2 citroenen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "verse tijm (of 1 tl gedroogd)",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "Zout en peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "parmezaanse kaas (optioneel)",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Breng een grote pot met gezouten water aan de kook en kook de linguine volgens de pakketaanwijzing tot al dente."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Maak ondertussen de champignons schoon en snij ze in dunne plakjes. Pers de knoflook uit en meng deze met de olijfolie, het sap van beide citroenen, verse tijm, zout en peper in een grote kom."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de champignonplakjes toe aan de marinade en laat ze 5-10 minuten intrekken zodat ze de smaken opnemen."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Giet de gekookte pasta af, spaar 1 kopje pasta-water. Voeg de pasta direct toe aan de champignondressing en meng goed, voeg eventueel wat pasta-water toe voor een fluweelachtige textuur."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Verdeel over serveerschotels en garneer met geraspte parmezaanse kaas en extra tijm."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.nigella.com/recipes/linguine-with-lemon-garlic-and-thyme-mushrooms",
+      "bron_naam": "Nigella",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
