@@ -1733,6 +1733,92 @@
       "bron_naam": "HelloFresh",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543289",
+      "titel": "Spinaziestamppot met gebakken halloumi",
+      "slug": "spinaziestamppot-met-gebakken-halloumi",
+      "beschrijving": "Een lichte stamppot met zoete aardappel en mosterd, afgewerkt met gebakken halloumi.",
+      "afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/3d9c5d7de8dd71aed368e11deccc431d84fccdcb165594417a52054714488403/filled-600x600.webp",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "1 kg zoete aardappelen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "kruimige aardappelen",
+          "hoeveelheid": 600.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "spinazie",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "halloumi",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "milde mosterd",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Schil en snij de zoete aardappelen en kruimige aardappelen in stukken. Kook ze in gezouten water tot ze gaar zijn (ongeveer 15-20 minuten)."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit 1 el olijfolie in een pan en fruit de fijngehakte knoflook. Voeg de spinazie toe en bak tot deze is ingevallen."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Stamp de gekookte aardappelen grof, meng met de spinazie, mosterd, zout en zwarte peper. Snij de halloumi in plakken, bak deze in de resterende olijfolie tot goudbruin en serveer op de stamppot."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://picnic.app/nl/recepten/64099e0aacf4d4624ddf65c6/spinaziestamppot-met-gebakken-halloumi?path=store%2Fpage%3Bid%3Drecipe-details-page%2Crecipe_id%3D64099e0aacf4d4624ddf65c6%2CsharedPage%3Dtrue",
+      "bron_naam": "Picnic",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
