@@ -704,6 +704,128 @@
       "bron_naam": "Kookboek",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543194",
+      "titel": "Aubergines in kaneel met feta, olijven & bulgur",
+      "slug": "aubergines-in-kaneel-met-feta-olijven-bulgur",
+      "beschrijving": "Een heerlijk Midden-Oosters gerecht met geroosterde aubergine, gekruide bulgur, feta en granaatappelpitten.",
+      "afbeelding": "https://www.foodiesmagazine.nl/app/uploads/2019/11/78-79-aubergines-in-kaneel-met-feta-olijven-en-gekruide-bulgur-klein.jpg",
+      "bereidingstijd": 35,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 3,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Aziatisch",
+        "lunch",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "bulgur",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "groentebouillon",
+          "hoeveelheid": 400.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "groene olijven",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "aubergine",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "rode ui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "kaneel",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "1/2 tl nootmuskaat",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "bladpeterselie",
+          "hoeveelheid": 25.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "rucola",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "citroen (sap)",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "extra vierge olijfolie",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "feta",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "granaatappelpitten",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 200°C. Doe de bulgur, bouillon en olijven in een kleine braadslede. Snijd de aubergine en ui en meng ze in een tweede braadslede met kaneel, nootmuskaat, zout en olijfolie, zodat alles in één laag ligt."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Zet beide braadsledes 25 minuten in de oven tot de aubergine knapperig en gaar is en de bulgur luchtig is en alle bouillon heeft opgenomen."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Roer de bladpeterselie, rucola, citroensap en extra vierge olijfolie door de bulgur, proef en voeg naar smaak zout en extra citroensap toe."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Laat alles afkoelen, doe de bulgur in bakjes, schep de geroosterde aubergine erbovenop en strooi de feta en granaatappelpitten eroverheen. Zet in de koelkast tot gebruik."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.foodiesmagazine.nl/recepten/aubergines-in-kaneel-met-feta-olijven-bulgur/",
+      "bron_naam": "Foodiesmagazine",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
