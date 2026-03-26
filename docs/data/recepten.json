@@ -630,67 +630,6 @@
       "datum_toegevoegd": "2026-03-26"
     },
     {
-      "id": "r1774488661",
-      "titel": "Gegrilde Kip met Oregano Marinade",
-      "slug": "gegrilde-kip-met-oregano-marinade",
-      "beschrijving": "Gegrilde kip met aromatische oregano marinade, perfect uit de oven.",
-      "afbeelding": "",
-      "bereidingstijd": 30,
-      "moeilijkheidsgraad": "makkelijk",
-      "porties": 2,
-      "tags": [
-        "vlees",
-        "snel",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "gedroogde oregano",
-          "hoeveelheid": 1,
-          "eenheid": "el"
-        },
-        {
-          "naam": "knoflookpoeder",
-          "hoeveelheid": 1,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "uienpoeder",
-          "hoeveelheid": 1,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "gerookte paprikapoeder",
-          "hoeveelheid": 1,
-          "eenheid": "tl"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Meng alle ingrediënten van de marinade samen in een kom."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Wrijf de marinade goed in op de kip."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Bak de kip in de oven totdat deze gaar en goudbruin is."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
-      },
-      "bron": "Instagram",
-      "bron_naam": "Instagram",
-      "bron_type": "screenshot",
-      "datum_toegevoegd": "2026-03-26"
-    },
-    {
       "id": "r1774489047",
       "titel": "Broccoli Pesto Pasta met Halloumi",
       "slug": "broccoli-pesto-pasta-met-halloumi",
@@ -768,6 +707,58 @@
       "bron": "Kookboek",
       "bron_naam": "Kookboek",
       "bron_type": "foto",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774489418",
+      "titel": "Halloumi & Oesterzwam Pita's",
+      "slug": "halloumi-oesterzwam-pita-s",
+      "beschrijving": "",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [],
+      "ingredienten": [
+        {
+          "naam": "Details te verzinnen die mogelijk niet kloppen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Het recept van de creator mogelijk verkeerd weer te geven",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Auteursrechten te schenden door het volledig over te nemen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "**Je helpen het recept zelf compleet te maken** - kun je de volledige screenshot delen?"
+        },
+        {
+          "nummer": 2,
+          "tekst": "**Een eigen vergelijkbaar recept maken** geïnspireerd door halloumi & oesterzwammen pita's"
+        },
+        {
+          "nummer": 3,
+          "tekst": "**Je wijzen op @veggilaine's profiel** waar het originele recept staat"
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://instagram.com/veggilaine",
+      "bron_naam": "veggilaine (Instagram)",
+      "bron_type": "instagram",
       "datum_toegevoegd": "2026-03-26"
     }
   ]
