@@ -263,12 +263,32 @@ def verify_recipe_from_image(image_b64, media_type, api_key):
                 print(f"  Algemeen zoeken: {zoekterm}")
                 web_tekst, web_url = search_recipe_online(zoekterm)
 
-        # Probeer ook een afbeelding te vinden
+        # Probeer ook een afbeelding te vinden van de online bron
         if web_url:
             try:
                 page_html = fetch_simple(web_url)
                 if page_html:
                     afbeelding_url = extract_og_image(page_html)
+            except Exception:
+                pass
+
+        # Instagram: haal de grootste afbeelding op via Playwright als og:image faalt
+        if not afbeelding_url and (ig_account or 'instagram.com' in web_url):
+            try:
+                from playwright.sync_api import sync_playwright
+                ig_url = web_url if 'instagram.com' in web_url else f"https://www.instagram.com/{ig_account}/"
+                with sync_playwright() as p:
+                    browser = p.chromium.launch(headless=True)
+                    page = browser.new_page()
+                    page.goto(ig_url, timeout=15000)
+                    page.wait_for_timeout(5000)
+                    imgs = page.eval_on_selector_all(
+                        'img[src*="cdninstagram"]',
+                        'els => els.map(e => ({src: e.src, size: e.naturalWidth * e.naturalHeight})).sort((a,b) => b.size - a.size)'
+                    )
+                    browser.close()
+                if imgs:
+                    afbeelding_url = imgs[0]['src']
             except Exception:
                 pass
 
@@ -534,15 +554,42 @@ def body_to_html(body):
 
 
 def download_image_base64(url):
-    """Download afbeelding en return als base64 string."""
+    """Download afbeelding en return als base64 string. Fallback via Playwright bij 403."""
     if not url:
         return ""
+    # Directe download
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urllib.request.urlopen(req, context=CTX, timeout=15) as resp:
             return base64.b64encode(resp.read()).decode()
     except Exception:
-        return ""
+        pass
+
+    # Fallback: download via Playwright (omzeilt CDN-blokkades zoals Instagram)
+    try:
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            page.goto("about:blank")
+            b64 = page.evaluate(f'''async () => {{
+                try {{
+                    const resp = await fetch("{url}");
+                    const blob = await resp.blob();
+                    return new Promise((resolve) => {{
+                        const reader = new FileReader();
+                        reader.onloadend = () => resolve(reader.result.split(",")[1]);
+                        reader.readAsDataURL(blob);
+                    }});
+                }} catch {{ return ""; }}
+            }}''')
+            browser.close()
+            if b64:
+                return b64
+    except Exception:
+        pass
+
+    return ""
 
 
 def create_note(titel, html_body):
