@@ -68,7 +68,8 @@
       },
       "bron": "",
       "bron_type": "handmatig",
-      "datum_toegevoegd": "2026-03-23"
+      "datum_toegevoegd": "2026-03-23",
+      "bron_naam": "Handmatig"
     },
     {
       "id": "r1774465753",
@@ -288,170 +289,6 @@
       },
       "bron": "https://marleyspoon.nl/menu/18580-tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten",
       "bron_naam": "Marley Spoon",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-03-25"
-    },
-    {
-      "id": "r1774467929",
-      "titel": "Lasagne met geitenkaas, ricotta & courgette",
-      "slug": "lasagne-met-geitenkaas-ricotta-courgette",
-      "beschrijving": "Een romige lasagne met geitenkaas, ricotta en knapperige courgette.",
-      "afbeelding": "https://static.ah.nl/static/recepten/img_114527_1024x748_JPG.jpg",
-      "bereidingstijd": 45,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
-      "tags": [
-        "vegetarisch",
-        "comfort food",
-        "Italiaans",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "traditionele olijfolie",
-          "hoeveelheid": 1.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "tuinkruiden soepgroente",
-          "hoeveelheid": 250.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "courgettes",
-          "hoeveelheid": 2.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "belegen geitenkaas",
-          "hoeveelheid": 100.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "ricotta",
-          "hoeveelheid": 250.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "pastasaus basis kappertjes en oregano",
-          "hoeveelheid": 390.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "verse lasagnebladen",
-          "hoeveelheid": 250.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "cherrytomaten",
-          "hoeveelheid": 250.0,
-          "eenheid": "g"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Verwarm de oven voor op 190 °C. Verhit ondertussen de olie in een koekenpan en bak de soepgroente 5 minuten op middelhoog vuur."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Rasp de courgettes grof, doe in een zeef en druk met de achterkant van een lepel het vocht eruit. Rasp de geitenkaas en meng de courgette met de ricotta, de helft van de geitenkaas, peper en eventueel zout."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Schenk de pastasaus over de bodem van de ovenschaal en bestrooi met de helft van de soepgroente. Bedek met lasagnebladen en verdeel de helft van het courgettemengsel erover."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Dek af met lasagnebladen, schenk de helft van de resterende saus en de rest van de soepgroenten erover. Dek af met lasagnebladen en verdeel de rest van het courgettemengsel erover."
-        },
-        {
-          "nummer": 5,
-          "tekst": "Eindig met de rest van de lasagnebladen en schenk de rest van de saus erover. Verdeel de tomaten en de rest van de geitenkaas erover."
-        },
-        {
-          "nummer": 6,
-          "tekst": "Bak de lasagne in het midden van de oven in ongeveer 30 minuten gaar."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
-      },
-      "bron": "https://www.ah.nl/allerhande/recept/R-R1187050/snelle-bami-goreng",
-      "bron_naam": "Albert Heijn",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-03-25"
-    },
-    {
-      "id": "r1774468939",
-      "titel": "Meringuetaartje met ijs, chocoladesaus en suikerspin",
-      "slug": "meringuetaartje-met-ijs-chocoladesaus-en-suikerspin",
-      "beschrijving": "Een leuk en betaalbaar toetje met meringuekransjes, ijs, chocolade en suikerspin.",
-      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD183705_1024x748_JPG.jpg",
-      "bereidingstijd": 15,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
-      "tags": [
-        "snack",
-        "comfort food",
-        "ontbijt"
-      ],
-      "ingredienten": [
-        {
-          "naam": "melkchocolade",
-          "hoeveelheid": 50.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "kokend water",
-          "hoeveelheid": 25.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "vanille-ijs",
-          "hoeveelheid": 300.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "AH Excellent mini-pavlova's",
-          "hoeveelheid": 4.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "4 plukjes gouden suikerspin",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Breek de chocolade in stukken en leg in een hittebestendige kom. Schenk het kokend water op de chocolade en laat 2 minuten staan."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Roer door en klop met een garde tot een gladde saus. Laat het vanille-ijs zacht worden, zodat je het kunt scheppen."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Leg de meringuekransjes op de bordjes en schep de bollen van het ijs erop."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Verdeel de warme chocoladesaus over het dessert en leg op elk taartje een pluk suikerspin."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
-      },
-      "bron": "https://www.ah.nl/allerhande/recept/R-R1199498/shoarma-wrap-met-kip",
-      "bron_naam": "Albert Heijn",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25"
     },
@@ -864,7 +701,7 @@
         "vetten": 0
       },
       "bron": "https://hoe-lang-broccoli-koken.nl/broccoli-pesto-pasta-recept/",
-      "bron_naam": "ZICHTBARE INGREDIËNTEN:",
+      "bron_naam": "Kookboek",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
     }
