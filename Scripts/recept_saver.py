@@ -109,6 +109,56 @@ def extract_og_image(html):
     return ""
 
 
+def extract_youtube_data(url):
+    """Haal beschrijving + transcript op van een YouTube video."""
+    video_id = None
+    m = re.search(r'(?:v=|youtu\.be/|shorts/)([a-zA-Z0-9_-]{11})', url)
+    if m:
+        video_id = m.group(1)
+    if not video_id:
+        return None
+
+    result = {"video_id": video_id, "titel": "", "beschrijving": "", "transcript": ""}
+
+    # 1. Haal beschrijving + titel uit de pagina HTML
+    try:
+        req = urllib.request.Request(
+            f"https://www.youtube.com/watch?v={video_id}",
+            headers={"User-Agent": "Mozilla/5.0", "Accept-Language": "nl"}
+        )
+        with urllib.request.urlopen(req, context=CTX, timeout=15) as resp:
+            html = resp.read().decode("utf-8", errors="ignore")
+
+        desc_match = re.search(r'"shortDescription"\s*:\s*"((?:[^"\\]|\\.)*)"', html)
+        if desc_match:
+            result["beschrijving"] = desc_match.group(1).encode().decode('unicode_escape')
+
+        title_match = re.search(r'"title"\s*:\s*"((?:[^"\\]|\\.)*)"', html)
+        if title_match:
+            result["titel"] = title_match.group(1)
+
+        # og:image
+        og = re.search(r'<meta[^>]*property="og:image"[^>]*content="([^"]+)"', html, re.I)
+        if og:
+            result["afbeelding"] = og.group(1)
+    except Exception:
+        pass
+
+    # 2. Haal transcript op
+    try:
+        from youtube_transcript_api import YouTubeTranscriptApi
+        api = YouTubeTranscriptApi()
+        try:
+            transcript = api.fetch(video_id, languages=["nl", "en"])
+        except Exception:
+            transcript = api.fetch(video_id)
+        result["transcript"] = " ".join(snippet.text for snippet in transcript)
+    except Exception:
+        pass
+
+    return result
+
+
 def strip_html(html):
     """Verwijder HTML tags → platte tekst."""
     t = re.sub(r'<script[\s\S]*?</script>', '', html, flags=re.I)
@@ -348,6 +398,81 @@ def main():
 
     # ── 1. Pagina ophalen ──
     print(f"Ophalen: {url}")
+
+    # YouTube: speciale behandeling
+    is_youtube = "youtube.com" in url or "youtu.be" in url
+    if is_youtube:
+        print("  YouTube gedetecteerd — beschrijving + transcript ophalen...")
+        yt = extract_youtube_data(url)
+        if yt:
+            yt_parts = []
+            if yt["titel"]:
+                yt_parts.append(f"Video titel: {yt['titel']}")
+            if yt["beschrijving"]:
+                yt_parts.append(f"Video beschrijving:\n{yt['beschrijving']}")
+            if yt["transcript"]:
+                yt_parts.append(f"Video transcript (gesproken tekst):\n{yt['transcript'][:5000]}")
+
+            if yt_parts:
+                tekst = "\n\n".join(yt_parts)
+                img_url = yt.get("afbeelding", "")
+                html = None  # geen HTML pagina nodig
+
+                print(f"  Titel: {yt['titel']}")
+                print(f"  Beschrijving: {len(yt.get('beschrijving',''))} chars")
+                print(f"  Transcript: {len(yt.get('transcript',''))} chars")
+                print(f"  Afbeelding: {'gevonden' if img_url else 'geen'}")
+
+                # Skip de rest van stap 1
+                print("Recept extraheren...")
+                prompt = (
+                    "Extraheer het recept uit onderstaande YouTube video-data en vertaal alles naar het Nederlands.\n"
+                    "De beschrijving bevat vaak het recept. Het transcript bevat gesproken instructies.\n"
+                    "Combineer beide bronnen voor het meest complete recept.\n\n"
+                    "Geef je antwoord in dit EXACTE format:\n\n"
+                    "TITEL: [receptnaam]\n"
+                    "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
+                    "PORTIES: [aantal]\nTIJD: [bereidingstijd in minuten]\nBESCHRIJVING: [1 zin]\n"
+                    "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
+                    "BEREIDING:\n1. [stap]\n\n"
+                    "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
+                    "- Stappen max 3 zinnen\n- Neem ALLE ingrediënten en stappen over met EXACTE hoeveelheden\n\n"
+                    f"YouTube video data:\n{tekst[:10000]}"
+                )
+
+                raw = call_claude(prompt, api_key)
+                recipe = parse_recipe(raw)
+                print(f"  Titel: {recipe['titel']}")
+                print(f"  Tags: {', '.join(recipe['tags'])}")
+                print(f"  {recipe['tijd']} min · {recipe['porties']} porties")
+                print(f"  {len(recipe['ingredienten'])} ingrediënten, {len(recipe['stappen'])} stappen")
+
+                # Spring naar stap 3
+                print("Website bijwerken...")
+                recipe_id = update_website(recipe, url, img_url, bron_naam)
+                website_url = f"{WEBSITE_BASE}/recept.html?id={recipe_id}"
+                print(f"  {website_url}")
+
+                print("Notitie aanmaken...")
+                img_b64 = download_image_base64(img_url)
+                img_html_note = f'<p><img src="data:image/jpeg;base64,{img_b64}" style="width:100%"></p>' if img_b64 else ""
+                hashtags = " ".join(f"#{t.replace(' ', '')}" for t in recipe["tags"])
+                recept_html_note = body_to_html(recipe["body"])
+                meta_parts = []
+                if recipe["tijd"]: meta_parts.append(f"{recipe['tijd']} min")
+                meta_parts.append(f"{recipe['porties']} porties")
+                full_html = (
+                    f"<h1>{html_mod.escape(recipe['titel'])}</h1>\n{img_html_note}\n"
+                    f'<p style="color:gray">{" · ".join(meta_parts)}</p>\n<p>{hashtags}</p>\n'
+                    f"{recept_html_note}\n<br>\n<hr>\n"
+                    f'<p><a href="{html_mod.escape(website_url)}">Bekijk op receptensite</a></p>\n'
+                    f'<p>Bron: <a href="{html_mod.escape(url)}">{html_mod.escape(bron_naam)}</a></p>'
+                )
+                note_name = create_note(recipe["titel"], full_html)
+                if note_name: print(f"  Notitie: {note_name}")
+                print(f"\nKlaar! {recipe['titel']}")
+                return recipe["titel"]
+
     html = fetch_simple(url)
 
     tekst = ""
