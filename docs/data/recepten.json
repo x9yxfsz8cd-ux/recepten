@@ -1115,6 +1115,103 @@
       "bron_naam": "Uitpaulineskeuken",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543228",
+      "titel": "Gesmoorde prei met eieren en za'atar",
+      "slug": "gesmoorde-prei-met-eieren-en-za-atar",
+      "beschrijving": "Een gemakkelijke en voedzame maaltijd met gesmoorde prei, spinazie en eieren, geïnspireerd door de shakshuka.",
+      "afbeelding": "https://favorflav.com/images/004_braised_eggs_and_omelettes.jpg",
+      "bereidingstijd": 15,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 6,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "brunch",
+        "snel"
+      ],
+      "ingredienten": [
+        {
+          "naam": "boter",
+          "hoeveelheid": 30.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "2 flinke preien (530 g), schoongemaakt, in ringen van ½ cm",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "komijnzaad, geroosterd en licht geplet",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "2 kleine ingemaakte citroenen (30 g), pitten verwijderd, schil en vruchtvlees fijngehakt",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "groentebouillon",
+          "hoeveelheid": 300.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "fijne spinazie",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "6 grote eieren",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "feta, in blokjes van 2 cm",
+          "hoeveelheid": 90.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "za'atar",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout en zwarte peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Doe de boter met 1 el olijfolie in een grote sauteerpan op halfhoog tot hoog vuur. Voeg zodra de boter begint te schuimen de prei toe met ½ tl zout en peper, en bak onder regelmatig omscheppen 3 minuten tot gaar. Voeg komijn, citroen en groentebouillon toe en laat 4-5 minuten zachtjes borrelend koken tot de vloeistof grotendeels is verdampt."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Schep de spinazie door het preimengsel, laat hem 1 minuut slinken en draai het vuur halfhoog. Maak met de bolle kant van een opscheplepel 6 kuiltjes en breek in elk kuiltje een ei, bestrooi met zout en verdeel de feta rondom. Zet het deksel op de pan en laat 4-5 minuten smoren tot de eiwitten gaar zijn."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Roer de za'atar door de overgebleven el olie en besprenkel de eieren ermee. Serveer het gerecht direct uit de pan."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://favorflav.com/nl/recipes/vega/gesmoorde-prei-met-eieren-en-zaatar/",
+      "bron_naam": "Favorflav",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
