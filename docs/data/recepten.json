@@ -456,33 +456,73 @@
       "datum_toegevoegd": "2026-03-25"
     },
     {
-      "id": "r1774485389",
-      "titel": "Recept",
-      "slug": "recept",
-      "beschrijving": "",
+      "id": "r1774485484",
+      "titel": "Pasta Aglio e Olio",
+      "slug": "pasta-aglio-e-olio",
+      "beschrijving": "Een klassiek Italiaans gerecht met pasta, knoflook en olijfolie dat eenvoudig maar onweerstaanbaar smakelijk is.",
       "afbeelding": "https://i.ytimg.com/vi/bJUiWdM__Qw/maxresdefault.jpg",
-      "bereidingstijd": 30,
+      "bereidingstijd": 15,
       "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
-      "tags": [],
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "snel",
+        "comfort food",
+        "diner",
+        "snack"
+      ],
       "ingredienten": [
         {
-          "naam": "De volledige transcriptie of beschrijving van de video",
+          "naam": "spaghetti",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "extra vierge olijfolie",
+          "hoeveelheid": 6.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "6 teentjes knoflook",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "Een linkpagina naar het receptblog",
+          "naam": "gedroogde rode chili",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "zout en zwarte peper naar smaak",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "Of de tekstuele receptinhoud van de bron",
+          "naam": "1 handvol verse peterselie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Parmezaanse kaas (naar wens)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
       ],
-      "stappen": [],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Breng een grote pot met gezouten water aan de kook en kook de spaghetti volgens de verpakking tot al dente. Zet apart, bewaar 120 ml kookwater."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Hak de knoflook fijn en verhit de olijfolie in een grote pan op laag-middelhoog vuur. Voeg knoflook en rode chili toe en bak 2-3 minuten tot geurig, zorg dat het niet bruin wordt."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de gekookte pasta toe aan de pan met wat kookwater en meng alles goed. Kruid met zout en peper, garneer met verse peterselie en Parmezaanse kaas."
+        }
+      ],
       "voedingswaarden": {
         "kcal": 0,
         "eiwitten": 0,
