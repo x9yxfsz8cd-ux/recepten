@@ -1212,6 +1212,104 @@
       "bron_naam": "Favorflav",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543235",
+      "titel": "Pita shoarma van oesterzwam",
+      "slug": "pita-shoarma-van-oesterzwam",
+      "beschrijving": "Een heerlijk comfortfood gerecht waarbij je makkelijk aan je dagelijkse portie groenten komt.",
+      "afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/8b1dc6655be5477960fd169798f7cde0fe8e444b4990eb1a9d4ae414769d9dce/filled-600x600.webp",
+      "bereidingstijd": 25,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "snel",
+        "lunch",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "oesterzwammen",
+          "hoeveelheid": 450.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "shoarmakruiden",
+          "hoeveelheid": 30.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "pitabroodjes",
+          "hoeveelheid": 8.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "volle yoghurt",
+          "hoeveelheid": 300.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "1 stuk komkommer",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "dille",
+          "hoeveelheid": 15.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "granaatappelpitjes",
+          "hoeveelheid": 90.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Snij de oesterzwammen in repen, meng met de shoarmakruiden en bak ze in olijfolie in een pan tot ze gaar zijn."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Meng de yoghurt met fijngehakte knoflook, zout en peper tot een saus."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Vul de pitabroodjes met de gegrilde oesterzwammen, gesneden komkommer, yoghurtsaus, dille en granaatappelpitjes."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://picnic.app/nl/recepten/634569afe50ef539d0ae43c1/pita-shoarma-van-oesterzwam?path=store%2Fpage%3Bid%3Drecipe-details-page%2Crecipe_id%3D634569afe50ef539d0ae43c1%2CsharedPage%3Dtrue",
+      "bron_naam": "Picnic",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
