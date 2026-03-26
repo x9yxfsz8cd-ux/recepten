@@ -1623,6 +1623,116 @@
       "bron_naam": "HelloFresh",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543281",
+      "titel": "Winterse risotto met aardpeer, comté en hazelnoten",
+      "slug": "winterse-risotto-met-aardpeer-comte-en-hazelnoten",
+      "beschrijving": "Een heerlijke winterse risotto met geroosterde aardpeer, smeltende comté en knapperige hazelnoten.",
+      "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/5dde922df3e6147286036a6f-0c27599a.jpg",
+      "bereidingstijd": 45,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "Sjalot",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Prei",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Risottorijst",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Aardpeer",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Hazelnoten",
+          "hoeveelheid": 30.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Citroen",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Verse bladpeterselie",
+          "hoeveelheid": 5.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Geraspte comté",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Groentebouillon",
+          "hoeveelheid": 400.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Roomboter",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Witte balsamicoazijn",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "Peper en zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Bereid de bouillon voor met 300 ml extra water. Snipper de sjalot, snijd de prei in dunne halve ringen en was deze. Verhit 2 el roomboter in een pan met deksel en fruit de sjalot 1 minuut op middelhoog vuur, voeg de prei toe en bak nog 5 minuten."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Voeg de risottorijst toe en bak al roerend 1 minuut. Voeg de witte balsamicoazijn en 1/3 van de bouillon toe en laat de rijstkorrels de bouillon langzaam opnemen terwijl je regelmatig roert. Voeg zodra de bouillon is opgenomen weer 1/3 van de bouillon toe en herhaal dit met de rest. De risotto is gaar na ongeveer 20-25 minuten wanneer de korrel van buiten zacht is en nog een lichte bite heeft van binnen."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Schil of was de aardpeer en snijd deze in dunne plakjes. Hak de hazelnoten grof. Verhit de resterende 1 el roomboter in een koekenpan en bak de aardpeerplakjes 10-12 minuten op middelhoog vuur tot ze goudbruin zijn. Breng op smaak met peper en zout, voeg de hazelnoten toe en bak nog 2 minuten mee."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Roer een scheutje water door de risotto en laat deze afgedekt 5 minuten afkoelen. Rasp de schil van de citroen en pers deze uit. Snijd de peterselie fijn. Roer vervolgens de comté en 2 tl citroensap door de risotto en breng op smaak met peper en zout."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Verdeel de risotto over de borden en garneer met de aardpeer en hazelnoten. Bestrooi met peterselie, citroenrasp naar smaak en zwarte peper."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.hellofresh.nl/recipes/winterse-risotto-met-aardpeer-5dde922df3e6147286036a6f",
+      "bron_naam": "HelloFresh",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
