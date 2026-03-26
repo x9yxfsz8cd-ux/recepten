@@ -689,6 +689,86 @@
       "bron_naam": "Instagram",
       "bron_type": "screenshot",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774489047",
+      "titel": "Broccoli Pesto Pasta met Halloumi",
+      "slug": "broccoli-pesto-pasta-met-halloumi",
+      "beschrijving": "Een Italiaans pastagerecht met zelfgemaakte broccoli pesto en gebakken halloumi.",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "knoflookteen, fijngehakt",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "vers gemalen zwarte peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "pasta, zoals conchiglie",
+          "hoeveelheid": 350.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "halloumi",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "scheutje citroensap (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "enkele takjes basilicum",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Kook de broccoli tot zacht. Blend de broccoli, noten en Parmezaanse kaas met een staafmenger en voeg zoveel olijfolie toe tot de pesto een goede consistentie heeft. Voeg de knoflook toe en breng op smaak met zout en peper."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Kook de pasta volgens de instructies op de verpakking en giet af."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Snijd de halloumi in blokjes en bak tot goudbruin."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Meng de pasta en pesto, voeg de halloumi toe, rasp er wat Parmezaanse kaas over en druppel er wat citroensap over (als je dat graag hebt). Garneer met een takje basilicum."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Kookboek",
+      "bron_naam": "Kookboek",
+      "bron_type": "foto",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
