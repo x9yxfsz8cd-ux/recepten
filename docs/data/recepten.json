@@ -628,6 +628,63 @@
       "bron_naam": "YouTube",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774489814",
+      "titel": "Recept",
+      "slug": "recept",
+      "beschrijving": "",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [],
+      "ingredienten": [
+        {
+          "naam": "✅ Een afbeeldinganalyse (onvolledig recept)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "❌ Geen online bron gelinkt",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "De online bron/link delen, óf",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "De volledige recepttekst van de online bron kopiëren?",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "De link naar de online bron (of de volledige tekst ervan)"
+        },
+        {
+          "nummer": 2,
+          "tekst": "De volledige ingrediëntenlijst (hoofdingrediënt, hoeveelheden olie, zout, peper, etc.)"
+        },
+        {
+          "nummer": 3,
+          "tekst": "De bereidingsstappen"
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Foto",
+      "bron_naam": "Foto",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
