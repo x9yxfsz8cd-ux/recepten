@@ -1819,6 +1819,1209 @@
       "bron_naam": "Picnic",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543355",
+      "titel": "Gnocchi-traybake met feta en balsamico",
+      "slug": "gnocchi-traybake-met-feta-en-balsamico",
+      "beschrijving": "Een eenvoudige ovenschotel met gnocchi, groenten en feta die in één pan klaar is.",
+      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD151850_1024x748_JPG.jpg",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "snel",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "1 kg gnocchi",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "feta",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "tros pruimtomaatjes",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 rode ui",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "4 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 6.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "balsamico-crème",
+          "hoeveelheid": 4.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 200 °C. Snijd de rode ui in halve ringen, halveer de pruimtomaatjes en hak de knoflook fijn."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verdeel de gnocchi, rode ui, tomaatjes en knoflook over een bakplaat, besprenkel met olijfolie, zout en peper."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Bak 20 minuten in de voorverwarmde oven, verkruimel vervolgens de feta erover en besprenkel met balsamico-crème."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543362",
+      "titel": "Gennaro's Klassieke Spaghetti Carbonara",
+      "slug": "gennaro-s-klassieke-spaghetti-carbonara",
+      "beschrijving": "Een authentieke Italiaanse pasta met pancetta, ei en Parmezaanse kaas.",
+      "afbeelding": "",
+      "bereidingstijd": 25,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "Italiaans",
+        "vlees",
+        "comfort food",
+        "diner",
+        "snel"
+      ],
+      "ingredienten": [
+        {
+          "naam": "eierdooiers",
+          "hoeveelheid": 3.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Parmezaanse kaas",
+          "hoeveelheid": 80.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "pancetta",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "gedroogde spaghetti",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "knoflook",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Extra vierge olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Doe de eierdooiers in een kom, rasp de Parmezaanse kaas erbij, breng op smaak met peper en meng goed met een vork. Hak ondertussen de pancetta fijn."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Kook de spaghetti in een grote pan met kokend gezouten water tot al dente. Verwarm intussen een medium koekenpan op middelhoog vuur, pel de knoflook, plet deze en voeg toe aan de pan, laat 1 minuut de olie op smaak brengen. Roer de gehakte pancetta erdoor en bak 4 minuten tot het knapperig begint te worden."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Verwijder de knoflook uit de pan, giet de spaghetti af en voeg toe aan de pancetta. Hussel goed door, haal de pan van het vuur en voeg een scheut kookwater toe."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Giet het eimengsel erbij en hussel goed door – de warmte gaart het ei zachtjes. Voeg meer kookwater toe tot het mooi glanzend is en breng op smaak met peper."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Serveer direct met geraspte Parmezaanse kaas en een extra draai peper."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543369",
+      "titel": "Gepofte Zoete Aardappel",
+      "slug": "gepofte-zoete-aardappel",
+      "beschrijving": "Geroosterde zoete aardappelen gevuld met een verse tomatensalsa en feta.",
+      "afbeelding": "https://uitpaulineskeuken.nl/wp-content/smush-webp/2013/11/gepofte-zoete-aardappel-1-300x150.jpg.webp",
+      "bereidingstijd": 50,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "grote zoete aardappelen",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "tomaat",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "rode ui",
+          "hoeveelheid": 0.25,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "rode peper",
+          "hoeveelheid": 0.25,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "0.5 teen knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "feta",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 handje peterselie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "peper en zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 200 graden. Boen de aardappelen schoon, verwijder oneffenheden met een mesje en prik ze in met een vork. Leg ze in een ovenschaal, besprenkel met olijfolie en poffen 45 minuten tot ze zacht zijn."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Maak ondertussen de salsa: was en snij de tomaat in blokjes (zaadlijsten verwijderen), snipper de rode ui, hak het halve teentje knoflook en de peterselie fijn, halveer het pepertje (zaadjes verwijderen) en hak fijn. Roer alles samen, breng op smaak met zout en olijfolie, en verkruimel de feta erover."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Breek de warme zoete aardappel voorzichtig open met een vork, verdeel de salsa over de holte en serveer warm."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543376",
+      "titel": "Zalm met citroen",
+      "slug": "zalm-met-citroen",
+      "beschrijving": "Zacht gestoomde zalm in zilverpapier met citroenboterdressing.",
+      "afbeelding": "https://www.24kitchen.nl/files/styles/social_media_share/public/2023-08/lekkersnel12jul-11.jpg?itok=7VXUG8jo",
+      "bereidingstijd": 20,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 1,
+      "tags": [
+        "vis",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "citroen",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "zalm",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "boter",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Badia kruiden naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Zout en peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Oven voorverwarmen op 160°C. Zalm afdeppen met keukenpapier en in een ovenschaal met zilverpapier leggen. De halve citroen fijnraspen en met de boter mengen, samen met peper, zout en citroensap van 1,5 citroen."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Boter op de zalm leggen en 4 citroenschijfjes erop plaatsen. Zilverpapier goed dichtplooien zodat de zalm volledig is ingepakt."
+        },
+        {
+          "nummer": 3,
+          "tekst": "20 minuten in de oven bakken tot de zalm gaar is."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543383",
+      "titel": "Pittige harissa-spruitjes & broccoli met halloumi & spinazie",
+      "slug": "pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie",
+      "beschrijving": "Een pittige oven-schotel met geroosterde groenten, halloumi en spinazie, geserveerd op platbrood met yoghurt.",
+      "afbeelding": "https://www.groentenabonnement.nl/wp-content/uploads/2020/10/Broccoli-met-halloumi.jpg",
+      "bereidingstijd": 35,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "1 stronk broccoli, in roosjes",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "spruitjes",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "halloumi, in blokjes",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "harissa",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "spinazie, grof gesneden",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 snufje zeezout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1/2 citroen, sap",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "platbrood, om te serveren",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "yoghurt, om te serveren",
+          "hoeveelheid": 4.0,
+          "eenheid": "el"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 180°C hetelucht of 200°C elektrisch."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Schep broccoli, spruitjes, halloumi, harissa en olijfolie in een braadslede en zet deze in de oven voor 25 minuten."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Schep de spinazie erdoor en laat nog 1 minuut garen. Proef en voeg zeezout en citroensap toe."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Schep het mengsel met yoghurt op platbrood en serveer direct."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543390",
+      "titel": "Zelf Pizzadeeg Maken",
+      "slug": "zelf-pizzadeeg-maken",
+      "beschrijving": "Homemade pizzadeeg dat rijst en vervolgens wordt uitgerold voor drie pizza's.",
+      "afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2019/01/pizzadee-recept-1200x630-c-default.jpg",
+      "bereidingstijd": 80,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 3,
+      "tags": [
+        "vegetarisch",
+        "snel",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "bloem (type 00)",
+          "hoeveelheid": 375.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "water (lauw)",
+          "hoeveelheid": 225.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 7.5,
+          "eenheid": "g"
+        },
+        {
+          "naam": "droge gist",
+          "hoeveelheid": 1.5,
+          "eenheid": "g"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 3.5,
+          "eenheid": "g"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Doe bloem in een grote kom, meng gist door lauw water en laat even staan, voeg zout toe aan bloem en roer kort."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Giet gistwater en olijfolie bij bloem, roer kort door tot het samenkomt en kneed met de hand of machine tot soepel deeg (ongeveer 10 minuten)."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Vorm een bal, leg terug in kom, dek af met vochtige theedoek en laat rijzen op kamertemperatuur 60 minuten."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Bestuif werkvlak met bloem, verdeel deeg in 3 bollen en rol elke bol uit tot pizzabodem."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Leg op bakplaat of pizzasteen."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543401",
+      "titel": "Gerookte-paprikarisotto met gegratineerde geitenkaas",
+      "slug": "gerookte-paprikarisotto-met-gegratineerde-geitenkaas",
+      "beschrijving": "Romige risotto met gerookte paprika, afgetooid met gegratineerde geitenkaas en walnoten.",
+      "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/gerookte-paprikarisotto-met-gegratineerde-geitenkaas-68e0799f-1ef24d02.jpg",
+      "bereidingstijd": 35,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "Risottorijst",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Rode puntpaprika",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Geraspte pecorino DOP",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Uien",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Knoflooktenen",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Verse geitenkaas",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Walnootstukjes",
+          "hoeveelheid": 40.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Tomaten",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Honing",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Gerookt paprikapoeder",
+          "hoeveelheid": 1.5,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "Vers basilicum",
+          "hoeveelheid": 20.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Zoutarme groentebouillon",
+          "hoeveelheid": 1200.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Olijfolie",
+          "hoeveelheid": 4.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Extra vierge olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Plantaardige roomboter",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Peper en zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 220 graden. Verwijder de zaadlijsten van de puntpaprika's, snijd in grove stukken, leg op een bakplaat met bakpapier samen met 1/2 teentje knoflook per persoon, meng met 1/2 el olijfolie per persoon, breng op smaak met zout en bak 10-15 minuten tot donker, halverwege scheppend."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd de tomaat in blokjes, snipper de ui en pers de overige knoflook of snijd fijn. Bereid de bouillon."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Verhit 1/2 el roomboter per persoon in een pan met deksel, fruit de knoflook en ui 1-2 minuten op laag vuur, voeg risottorijst toe en bak 1 minuut roerend, voeg dan 1/3 van de bouillon toe en laat langzaam opnemen. Voeg steeds opnieuw 1/3 bouillon toe zodra deze is opgenomen tot de risotto na ongeveer 20-25 minuten gaar is."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Haal de gegrilde knoflook uit zijn schil, voeg samen met gegrilde paprika in een hoge kom, voeg per persoon 1/2 el olijfolie, 1 mespuntje gerookt paprikapoeder en pecorino toe en mix met staafmixer tot pasta, voeg aan risotto toe en meng goed door."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Snijd de geitenkaas in plakken, leg op bakplaat met bakpapier, breng op smaak met peper en zout, verdeel honing en walnootstukjes erover en bak 5-10 minuten tot gegratineerd."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Pluk basilicumblaadjes en snijd grof, meng tomaatblokjes met helft basilicum in een kom, voeg 1/2 el extra vierge olijfolie toe en breng op smaak met peper en zout."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Verdeel risotto over diepe borden, leg gegratineerde geitenkaas met walnoten erop, garneer met overig basilicum en serveer met tomaat-basilicumsalsa."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543409",
+      "titel": "Lorenzo's pasta",
+      "slug": "lorenzo-s-pasta",
+      "beschrijving": "Klassieke Italiaanse pasta met geroosterde tomaten, knapperige bacon en Parmigiano.",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vlees",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "kleine tomaten",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "pasta naar keuze",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "bacon",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "naar smaak zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "naar smaak peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "suiker",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "Parmigiano geraspte kaas",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "pasta kookwater",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Zet water op voor pasta en snijd tomaten doormidden. Bak tomaten met olijfolie, zout, peper en suiker 20-25 minuten op middelvuur. Bak bacon apart 5 minuten knapperig."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Kook pasta volgens verpakking en voeg deze 4 minuten voor het einde van de kooktijd toe aan de tomatensaus. Meng alles 4 minuten goed door elkaar."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg pasta kookwater, Parmigiano, bacon en olijfolie toe en blijf mengen tot je de perfecte consistentie bereikt hebt (circa 2 minuten)."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543416",
+      "titel": "Elly's appeltaart",
+      "slug": "elly-s-appeltaart",
+      "beschrijving": "Een klassieke appeltaart met kruimeltop, gemaakt met zelfrijzend bakmeel en gevuld met appels, cranberries en kaneel.",
+      "afbeelding": "https://www.laurasbakery.nl/wp-content/smush-webp/2013/07/omas-appeltaart-nieuw-uitgelicht.jpg.webp",
+      "bereidingstijd": 210,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 8,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "snack"
+      ],
+      "ingredienten": [
+        {
+          "naam": "zelfrijzend bakmeel",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "roomboter",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "witte basterdsuiker",
+          "hoeveelheid": 160.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "ei",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "1 snufje zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "appels",
+          "hoeveelheid": 1500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "fijne kristalsuiker",
+          "hoeveelheid": 25.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "cranberries",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "kaneel",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "custardpoeder",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "citroen (sap)",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 160°C, vet de springvorm (Ø 24 cm) in en bekleed de bodem met bakpapier. Doe het meel, zachte boter, basterdsuiker en zout in een kom, klop het ei los en voeg 2/3 ervan toe, kneed alles tot een samenhangende deegbal. Verpak het deeg in folie en laat het 30 minuten in de koelkast rusten."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Schil de appels, verwijder de klokhuizen, snijd ze in stukjes en meng ze met citroensap, suiker, kaneel, cranberries en custardpoeder. Gebruik 2/3 van het gekoelde deeg om de bodem en rand van de springvorm te bekleden en druk goed aan."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Schep het appelmengsel in de vorm en verkruimel de rest van het deeg erover. Bestrijk de kruimels met het restje losgeklopt ei en bak de taart ongeveer 75 minuten in het midden van de oven, dek af met aluminiumfolie als de bovenkant te snel donker wordt."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543424",
+      "titel": "Gazpacho",
+      "slug": "gazpacho",
+      "beschrijving": "Een verfrissende, ijskoude tomatensorep perfect voor warme dagen, bereid met verse groenten en olijfolie.",
+      "afbeelding": "https://hips.hearstapps.com/hmg-prod/images/gazpacho-index-6691419fe48a9.jpg?crop=1.00xw:1.00xh;0,0&amp;resize=1200:*",
+      "bereidingstijd": 15,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "Aziatisch",
+        "lunch",
+        "snel"
+      ],
+      "ingredienten": [
+        {
+          "naam": "rijpe tomaten",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 rode paprika",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 komkommer",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1-2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "extra vergine olijfolie",
+          "hoeveelheid": 70.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "rode wijnazijn of citroensap",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "koud water of afgekoelde bouillon",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Zwarte peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Snijd alle groenten in stukken en doe ze samen met de olijfolie, azijn (of citroensap), knoflook en water of bouillon in een blender of gebruik een staafmixer. Blend tot een gladde soep."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Breng goed op smaak met zout, peper en eventueel extra zuur of smaakmakers zoals miso, sojasaus of Worcestersaus. De soep mag stevig gekruid zijn."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Giet de soep in een afsluitbare container en zet minstens 1 uur in de koelkast. Schenk in kommen, top af met toppings naar keuze (croutons, kruiden, spekjes, komkummer, kaas, chili crisp) en drizzle met olijfolie."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543430",
+      "titel": "Citroenpasta met chili vlokken",
+      "slug": "citroenpasta-met-chili-vlokken",
+      "beschrijving": "Fijne Italiaanse pasta met gekarameliseerde citroen, chili en Parmezaanse kaas.",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "citroenen",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "linguine of spaghetti",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "extra vergine olijfolie",
+          "hoeveelheid": 4.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "keukenzout",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "1 snufje suiker",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "ongezouten boter",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "chilipeper vlokken",
+          "hoeveelheid": 0.75,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "Parmezaanse kaas geraspt",
+          "hoeveelheid": 65.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "naar smaak zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "bleekselderij blaadjes gehakt (optioneel)",
+          "hoeveelheid": 120.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "peterselie gehakt (optioneel)",
+          "hoeveelheid": 80.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "zeezout vlokken voor garnering",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Breng grote pan gezouten water aan de kook. Rasp schil van 2 citroenen fijn en zet apart. Snijd bovenkant en onderkant van andere 2 citroenen af, snijd ze in kwarten, verwijder pitten en snijd dwars in dunne driehoekjes."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Blancheer citroensneetjes 2 minuten in kokend water, schep eruit met schuimspaan op theedoek en dep goed droog. Kook pasta in zelfde water tot al dente (8-10 min) en bewaar 120 ml pastawater."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Verhit 1 el olie op hoog vuur in koekenpan en bak gedroogde citroenen met snufje zout en suiker tot gebruind en gekarameliseerd (3-5 min), schep op bord."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Smelt boter met resterende olie op middelvuur, voeg chilipeper en citroenschil toe en bak tot geurig (1 min). Klop pastawater erdoor met garde."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Voeg pasta, sap van 1 citroen, kaas en peper toe en roer tot goed bedekt. Voeg gebakken citroenen en kruiden toe, proef en voeg eventueel extra citroensap toe. Serveer direct met zeezout vlokken."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Apple Notities",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543437",
+      "titel": "Traybake met orzo, asperge, prei en rucola",
+      "slug": "traybake-met-orzo-asperge-prei-en-rucola",
+      "beschrijving": "Een eenvoudige ovenschotel met pasta, groenten en rucola.",
+      "afbeelding": "https://www.leckerbeckje.nl/wp-content/uploads/2023/05/IMG_8249.jpeg",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "orzo",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "asperge",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "prei",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "rucola",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Zout en peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Zet de oven op 200°C voor."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd de asperges en prei in stukken, meng met orzo en olijfolie, kruid met zout en peper."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Bak in de oven voor 25 minuten, voeg rucola toe en serveer."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.leckerbeckje.nl/2023/05/15/traybake-met-orzo-asperge-prei-en-rucola/",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543442",
+      "titel": "Gesmoorde prei met eieren en za'atar",
+      "slug": "gesmoorde-prei-met-eieren-en-za-atar",
+      "beschrijving": "Een eenvoudig gerecht van gesmoorde prei afgewerkt met gebakken eieren en za'atar.",
+      "afbeelding": "https://favorflav.com/images/004_braised_eggs_and_omelettes.jpg",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "snel",
+        "diner",
+        "lunch"
+      ],
+      "ingredienten": [
+        {
+          "naam": "[hoeveelheden niet gespecificeerd] prei",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "[hoeveelheden niet gespecificeerd] eieren",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "[hoeveelheden niet gespecificeerd] za'atar",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "[stappen niet gespecificeerd in de tekst]"
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://favorflav.com/nl/recipes/vega/gesmoorde-prei-met-eieren-en-zaatar/",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543449",
+      "titel": "Winterse risotto met aardpeer",
+      "slug": "winterse-risotto-met-aardpeer",
+      "beschrijving": "Een romige risotto met aardpeer, perfect voor winterse dagen.",
+      "afbeelding": "https://www.24kitchen.nl/files/styles/social_media_share/public/2017-11/S20009_Winterserisotto%20met%20knapperige%20aardpeer_Bewerkt.jpg?itok=efyfo_8K",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "onbekende hoeveelheid aardpeer",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "onbekende hoeveelheid risottorijst",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "onbekende hoeveelheid uien",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "onbekende hoeveelheid bouillon",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "onbekende hoeveelheid boter",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "onbekende hoeveelheid Parmezaanse kaas",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Onvoldoende informatie beschikbaar om bereidingsstappen op te stellen."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.hellofresh.nl/recipes/winterse-risotto-met-aardpeer/",
+      "bron_naam": "Apple Notities",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
