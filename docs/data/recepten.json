@@ -1009,6 +1009,112 @@
       "bron_naam": "Leckerbeckje",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543219",
+      "titel": "Ravioli uit de oven met mozzarella",
+      "slug": "ravioli-uit-de-oven-met-mozzarella",
+      "beschrijving": "Een familierecept met ravioli, groenten en gesmolten mozzarella dat binnen 20 minuten op tafel staat.",
+      "afbeelding": "https://uitpaulineskeuken.nl/wp-content/smush-webp/2019/03/ravioli-uit-de-oven-7455.jpg.webp",
+      "bereidingstijd": 25,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "snel",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "ravioli (bijv. 5 kazen)",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "paprika's",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "cherrytomaten",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "passata (gezeefde tomatensaus)",
+          "hoeveelheid": 800.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "ui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "grote bol mozzarella",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "oregano",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "1 takje verse basilicum",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Peper en zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 200 graden hetelucht. Kook de ravioli gaar in ruim water met zout volgens de verpakking (verse ravioli is in 5 minuten klaar)."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Pel en snipper de ui en hak de knoflook fijn. Fruit dit aan in wat olijfolie. Snijd de paprika's in blokjes en halveer de cherrytomaatjes. Bak deze mee."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de passata toe en breng de saus op smaak met peper, zout en oregano."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg de gekookte ravioli toe aan de saus en roer om. Verdeel het over een grote ovenschaal en verdeel de mozzarella erover."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Zet deze voor ongeveer 10 minuten in de oven. De ravioli is klaar als de mozzarella gesmolten is. Garneer met verse basilicum en serveer meteen."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://uitpaulineskeuken.nl/recept/ravioli-uit-de-oven",
+      "bron_naam": "Uitpaulineskeuken",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
