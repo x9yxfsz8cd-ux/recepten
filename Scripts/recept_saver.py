@@ -57,56 +57,131 @@ def slugify(t):
     return re.sub(r'[^a-z0-9]+', '-', t).strip('-')
 
 
-def search_recipe_online(query):
-    """Zoek een recept online via Google en haal de beste match op."""
+def search_duckduckgo(query):
+    """Zoek via DuckDuckGo HTML (werkt zonder JS, geen blokkades)."""
     try:
-        from playwright.sync_api import sync_playwright
-        with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
-            search_url = f"https://www.google.com/search?q={urllib.parse.quote(query + ' recept')}"
-            page.goto(search_url, timeout=15000)
-            page.wait_for_timeout(3000)
+        url = f"https://html.duckduckgo.com/html/?q={urllib.parse.quote(query)}"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, context=CTX, timeout=10) as resp:
+            html = resp.read().decode("utf-8", errors="ignore")
 
-            # Haal zoekresultaten op
-            links = page.eval_on_selector_all(
-                'a[href^="http"]:not([href*="google"])',
-                'els => els.map(e => ({href: e.href, text: e.innerText.slice(0, 100)}))'
-            )
-            browser.close()
+        results = []
+        for m in re.finditer(r'<a[^>]*class="result__a"[^>]*href="[^"]*uddg=([^&"]+)', html):
+            href = urllib.parse.unquote(m.group(1))
+            results.append(href)
 
-        # Filter op recepten-sites en blogs (skip social media, youtube, etc.)
-        skip = ['google.', 'youtube.', 'facebook.', 'twitter.', 'instagram.', 'tiktok.', 'pinterest.']
-        recipe_links = [l for l in links if l['href'] and not any(s in l['href'].lower() for s in skip) and len(l['text']) > 10]
-
-        return recipe_links[:5]
+        return list(dict.fromkeys(results))[:10]
     except Exception as e:
-        print(f"  Zoeken mislukt: {e}")
+        print(f"  DuckDuckGo fout: {e}")
         return []
+
+
+def fetch_instagram_caption(instagram_url):
+    """Haal de volledige caption op van een Instagram post/reel via og:description."""
+    try:
+        req = urllib.request.Request(instagram_url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, context=CTX, timeout=10) as resp:
+            html = resp.read().decode("utf-8", errors="ignore")
+
+        desc = re.search(r'<meta[^>]*property="og:description"[^>]*content="([^"]*)"', html, re.I)
+        if desc:
+            import html as html_module
+            caption = html_module.unescape(desc.group(1))
+            # Strip "X likes, Y comments - user on date:" prefix
+            caption = re.sub(r'^\d[\d,.]+\s+likes?,\s*\d[\d,.]+\s+comments?\s*-\s*\w+\s+on\s+\w+\s+\d+,\s*\d+:\s*"?', '', caption)
+            caption = caption.rstrip('"')
+            return caption
+        return ""
+    except Exception:
+        return ""
+
+
+def search_recipe_online(query):
+    """Zoek een recept online en haal de inhoud op."""
+    print(f"  Online zoeken: {query}")
+    urls = search_duckduckgo(query + " recept")
+
+    if not urls:
+        print("  Geen zoekresultaten")
+        return "", ""
+
+    # Filter op bruikbare sites
+    skip = ['youtube.', 'facebook.', 'twitter.', 'tiktok.', 'pinterest.', 'accounts.']
+    urls = [u for u in urls if not any(s in u.lower() for s in skip)]
+
+    # Instagram links apart behandelen
+    instagram_urls = [u for u in urls if 'instagram.com' in u]
+    other_urls = [u for u in urls if 'instagram.com' not in u]
+
+    # 1. Probeer Instagram caption (vaak het volledige recept)
+    for ig_url in instagram_urls[:2]:
+        print(f"    Instagram caption: {ig_url[:80]}")
+        caption = fetch_instagram_caption(ig_url)
+        if caption and len(caption) > 100:
+            print(f"    Caption gevonden! ({len(caption)} chars)")
+            return caption, ig_url
+
+    # 2. Probeer receptensites
+    for url in other_urls[:5]:
+        print(f"    Probeer: {url[:80]}")
+        page_html = fetch_simple(url)
+        if page_html:
+            json_ld = extract_json_ld_recipe(page_html)
+            if json_ld:
+                print(f"    JSON-LD gevonden!")
+                return json.dumps(json_ld, ensure_ascii=False), url
+            plat = strip_html(page_html)
+            if has_recipe_content(plat):
+                print(f"    Receptinhoud gevonden!")
+                return plat[:8000], url
+
+    # 3. Playwright als fallback voor eerste resultaat
+    if other_urls:
+        try:
+            from playwright.sync_api import sync_playwright
+            best = other_urls[0]
+            print(f"    Playwright: {best[:80]}")
+            with sync_playwright() as p:
+                browser = p.chromium.launch(headless=True)
+                page = browser.new_page()
+                page.goto(best, timeout=15000)
+                page.wait_for_timeout(5000)
+                pw_tekst = page.inner_text("body")
+                browser.close()
+            if has_recipe_content(pw_tekst):
+                return pw_tekst[:8000], best
+        except Exception:
+            pass
+
+    return "", ""
 
 
 def verify_recipe_from_image(image_b64, media_type, api_key):
     """
     Stap 1: Claude leest de afbeelding en extraheert wat het kan + identificeert de bron.
-    Stap 2: Als er een bron is (creator, boek), zoek online naar het volledige recept.
+    Stap 2: Als er een bron is (creator, boek, Instagram account), zoek online.
     Stap 3: Combineer alles voor het meest complete recept.
     """
     # Stap 1: Lees de afbeelding
     print("  Afbeelding analyseren...")
     body = json.dumps({
         "model": "claude-haiku-4-5-20251001",
-        "max_tokens": 1500,
+        "max_tokens": 2000,
         "messages": [{
             "role": "user",
             "content": [
                 {"type": "image", "source": {"type": "base64", "media_type": media_type, "data": image_b64}},
                 {"type": "text", "text": (
-                    "Analyseer deze afbeelding van een recept. Geef:\n"
-                    "1. TITEL: de naam van het recept\n"
-                    "2. BRON: de creator, account, kookboek of website (als zichtbaar)\n"
-                    "3. ZICHTBAAR: alle ingrediënten en stappen die je kunt lezen, met exacte hoeveelheden\n"
-                    "4. COMPLEET: ja/nee — is het volledige recept zichtbaar?\n\n"
-                    "Geef alles in het Nederlands."
+                    "Analyseer deze afbeelding van een recept. Geef EXACT dit format:\n\n"
+                    "TITEL: [naam van het recept]\n"
+                    "BRON: [Instagram account/@naam, kookboek titel+auteur, of website — alleen als zichtbaar]\n"
+                    "COMPLEET: [ja/nee — zijn ALLE ingrediënten en stappen zichtbaar?]\n"
+                    "TYPE: [instagram/kookboek/website/overig]\n\n"
+                    "ZICHTBARE INGREDIENTEN:\n"
+                    "- [alles wat je kunt lezen met exacte hoeveelheden]\n\n"
+                    "ZICHTBARE STAPPEN:\n"
+                    "1. [alles wat je kunt lezen]\n\n"
+                    "Geef alles in het Nederlands. Wees heel precies met hoeveelheden."
                 )}
             ]
         }]
@@ -121,80 +196,97 @@ def verify_recipe_from_image(image_b64, media_type, api_key):
         data = json.loads(resp.read())
 
     analyse = data["content"][0]["text"]
-    print(f"  Analyse: {analyse[:200]}...")
+    print(f"  Analyse: {analyse[:300]}...")
 
-    # Extract bron en titel (flexibele parsing — werkt met diverse formats)
-    titel_m = re.search(r'(?:TITEL|titel|Titel)[:\s]+(.+)', analyse)
-    if not titel_m:
-        titel_m = re.search(r'(?:^|\n)#+ (.+)', analyse)
-    bron_m = re.search(r'(?:BRON|bron|Bron|Creator|Account|Kookboek)[:\s]+(.+)', analyse)
-    if not bron_m:
-        bron_m = re.search(r'@(\w+)', analyse)
-    compleet_m = re.search(r'(?:COMPLEET|compleet|Compleet)[:\s]*(ja|nee)', analyse, re.I)
+    # Extract metadata (flexibele parsing)
+    def find(patterns, text, default=""):
+        for p in patterns:
+            m = re.search(p, text, re.I)
+            if m:
+                val = m.group(1).strip().strip('*').strip()
+                if val and val.lower() not in ['onbekend', 'niet zichtbaar', 'n/a', '-']:
+                    return val
+        return default
 
-    titel = titel_m.group(1).strip() if titel_m else ""
-    bron = bron_m.group(1).strip() if bron_m else ""
-    is_compleet = compleet_m.group(1).lower() == "ja" if compleet_m else False
+    titel = find([r'TITEL:\s*(.+)', r'(?:^|\n)#+\s*(?:\d+\.)?\s*(.+)'], analyse)
+    bron = find([r'BRON:\s*(.+)', r'(?:Creator|Account|Kookboek|Auteur)[:\s]+(.+)'], analyse)
+    bron_type = find([r'TYPE:\s*(.+)'], analyse, "overig").lower()
+    is_compleet = 'ja' in find([r'COMPLEET:\s*(.+)'], analyse, "nee").lower()
+
+    # Schoon bron op — verwijder onbruikbare waarden
+    skip_bron = ['niet zichtbaar', 'onbekend', 'icloud', 'shar roeters', 'gedeeld via', 'n/a']
+    if any(s in bron.lower() for s in skip_bron):
+        bron = ""
+
+    # Strip markdown formatting van titel
+    titel = titel.strip('*').strip('#').strip()
+
+    # Detecteer Instagram account (@naam)
+    ig_account = ""
+    ig_match = re.search(r'@(\w{3,})', analyse)
+    if ig_match:
+        ig_account = ig_match.group(1)
+    elif bron:
+        ig_match2 = re.search(r'@(\w{3,})', bron)
+        if ig_match2:
+            ig_account = ig_match2.group(1)
 
     print(f"  Titel: {titel}")
     print(f"  Bron: {bron}")
+    print(f"  Type: {bron_type}")
+    print(f"  Instagram: @{ig_account}" if ig_account else "  Instagram: -")
     print(f"  Compleet: {'ja' if is_compleet else 'nee'}")
 
-    # Stap 2: Als niet compleet of bron gevonden → zoek online
+    # Stap 2: Zoek online — altijd als niet compleet, of als we een bron hebben
     web_tekst = ""
     web_url = ""
-    if bron or titel:
-        zoekterm = f"{bron} {titel}".strip()
-        print(f"  Online zoeken: {zoekterm}")
-        resultaten = search_recipe_online(zoekterm)
-        if resultaten:
-            print(f"  {len(resultaten)} resultaten gevonden")
-            # Probeer het eerste resultaat op te halen
-            for r in resultaten:
-                print(f"    Probeer: {r['href'][:80]}")
-                page_html = fetch_simple(r['href'])
-                if page_html:
-                    # Check JSON-LD
-                    json_ld = extract_json_ld_recipe(page_html)
-                    if json_ld:
-                        web_tekst = f"JSON-LD Recipe data:\n{json.dumps(json_ld, ensure_ascii=False)}"
-                        web_url = r['href']
-                        print(f"    JSON-LD gevonden!")
-                        break
-                    # Check platte tekst
-                    plat = strip_html(page_html)
-                    if has_recipe_content(plat):
-                        web_tekst = plat[:8000]
-                        web_url = r['href']
-                        print(f"    Receptinhoud gevonden!")
-                        break
+    afbeelding_url = ""
 
-            # Als simpele fetch mislukt, probeer Playwright
-            if not web_tekst and resultaten:
-                best = resultaten[0]['href']
-                try:
-                    from playwright.sync_api import sync_playwright
-                    with sync_playwright() as p:
-                        browser = p.chromium.launch(headless=True)
-                        page = browser.new_page()
-                        page.goto(best, timeout=15000)
-                        page.wait_for_timeout(5000)
-                        pw_tekst = page.inner_text("body")
-                        browser.close()
-                    if has_recipe_content(pw_tekst):
-                        web_tekst = pw_tekst[:8000]
-                        web_url = best
-                        print(f"    Via browser: receptinhoud gevonden!")
-                except Exception:
-                    pass
+    if not is_compleet or bron or ig_account:
+        # Zoekstrategie hangt af van het type
+        if ig_account or 'instagram' in bron_type:
+            # Instagram: zoek naar de post en haal caption op
+            zoekterm = f"{ig_account or bron} {titel}"
+            print(f"  Instagram zoeken: {zoekterm}")
+            web_tekst, web_url = search_recipe_online(zoekterm)
+
+        elif 'kookboek' in bron_type or 'boek' in bron.lower():
+            # Kookboek: zoek op boektitel + receptnaam
+            zoekterm = f"{bron} {titel}"
+            print(f"  Kookboek zoeken: {zoekterm}")
+            web_tekst, web_url = search_recipe_online(zoekterm)
+
+        else:
+            # Algemeen: zoek op titel + bron
+            zoekterm = f"{bron} {titel}".strip() if bron else titel
+            if zoekterm:
+                print(f"  Algemeen zoeken: {zoekterm}")
+                web_tekst, web_url = search_recipe_online(zoekterm)
+
+        # Probeer ook een afbeelding te vinden
+        if web_url:
+            try:
+                page_html = fetch_simple(web_url)
+                if page_html:
+                    afbeelding_url = extract_og_image(page_html)
+            except Exception:
+                pass
+
+        if web_tekst:
+            print(f"  Online bron gevonden: {web_url[:80]}")
+        else:
+            print("  Geen online bron gevonden — alleen afbeelding-data gebruiken")
 
     return {
         "analyse": analyse,
         "titel": titel,
         "bron": bron,
+        "bron_type": bron_type,
+        "ig_account": ig_account,
         "is_compleet": is_compleet,
         "web_tekst": web_tekst,
         "web_url": web_url,
+        "afbeelding_url": afbeelding_url,
     }
 
 
@@ -603,7 +695,9 @@ def main():
 
         bron_url = verificatie.get("web_url") or "Foto"
         bron_naam = verificatie.get("bron") or "Foto"
-        img_url = ""  # geen afbeelding URL bij foto's
+        if verificatie.get("ig_account"):
+            bron_naam = f"@{verificatie['ig_account']} (Instagram)"
+        img_url = verificatie.get("afbeelding_url", "")
 
         return save_recipe(recipe, bron_url, bron_naam, img_url, api_key)
 
