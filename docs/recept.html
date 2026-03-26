@@ -206,17 +206,69 @@
       document.querySelector('.portie-aantal').textContent = huidigPorties;
     }
 
+    // ── INGREDIËNT SCHALING ──
+    // Klik op een hoeveelheid → pas aan → alles schaalt mee
+
+    function startIngredientEdit(li, index) {
+      const ing = recept.ingredienten[index];
+      if (ing.hoeveelheid === 0 || ing.eenheid === 'naar smaak') return;
+
+      const hSpan = li.querySelector('.ingredient-hoeveelheid');
+      const huidigeWaarde = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
+
+      // Vervang span door input
+      const input = document.createElement('input');
+      input.type = 'number';
+      input.value = huidigeWaarde;
+      input.step = 'any';
+      input.min = '0';
+      input.style.cssText = 'width:4rem;padding:0.2rem 0.4rem;font:inherit;font-size:0.9rem;font-weight:600;background:rgba(245,239,230,0.15);border:1px solid rgba(245,239,230,0.4);border-radius:4px;color:var(--card-light);text-align:right;outline:none;';
+
+      const eenheid = ing.eenheid;
+      const eenheidSpan = document.createElement('span');
+      eenheidSpan.textContent = ` ${eenheid}`;
+      eenheidSpan.style.fontSize = '0.9rem';
+
+      hSpan.textContent = '';
+      hSpan.appendChild(input);
+      hSpan.appendChild(eenheidSpan);
+      input.focus();
+      input.select();
+
+      const bevestig = () => {
+        const nieuweWaarde = parseFloat(input.value);
+        if (!nieuweWaarde || nieuweWaarde <= 0) {
+          updateIngredientHoeveelheden();
+          return;
+        }
+        // Bereken de verhouding: nieuwe waarde / oorspronkelijke waarde voor dit ingrediënt
+        const basisWaarde = ing.hoeveelheid / basisPorties;
+        const factor = nieuweWaarde / basisWaarde;
+        huidigPorties = Math.round(factor * 10) / 10;
+        // Update portie-display en alle hoeveelheden
+        updateIngredientHoeveelheden();
+      };
+
+      input.addEventListener('blur', bevestig);
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') { input.blur(); }
+        if (e.key === 'Escape') { updateIngredientHoeveelheden(); }
+      });
+    }
+
     // ── RENDER ──
 
-    function renderIngredient(ing) {
+    function renderIngredient(ing, index) {
       const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
       const eenheid = ing.eenheid === 'naar smaak' ? '' : ing.eenheid;
       const rechts = ing.eenheid === 'naar smaak'
         ? 'naar smaak'
         : `${hoeveelheid} ${eenheid}`.trim();
-      return `<li>
+      const klikbaar = ing.hoeveelheid > 0 && ing.eenheid !== 'naar smaak'
+        ? ' style="cursor:pointer" title="Klik om aan te passen"' : '';
+      return `<li data-ing-index="${index}">
         <span class="ingredient-naam">${ing.naam}</span>
-        <span class="ingredient-hoeveelheid">${rechts}</span>
+        <span class="ingredient-hoeveelheid"${klikbaar}>${rechts}</span>
       </li>`;
     }
 
@@ -231,7 +283,7 @@
         : `<div class="recept-hero-placeholder"></div>`;
 
       const tags = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
-      const ingredienten = r.ingredienten.map(renderIngredient).join('');
+      const ingredienten = r.ingredienten.map((ing, i) => renderIngredient(ing, i)).join('');
       const stappen = r.stappen.map(s => `
         <div class="stap" data-stap="${s.nummer}" role="button" tabindex="0" aria-label="Stap ${s.nummer}">
           <span class="stap-nummer">${s.nummer}</span>
@@ -318,9 +370,14 @@
       // Print knop
       document.getElementById('print-btn').addEventListener('click', () => window.print());
 
-      // Ingrediënt afvinken
+      // Ingrediënt: klik op naam = afvinken, klik op hoeveelheid = aanpassen
       document.querySelectorAll('.ingredienten-lijst li').forEach((li, i) => {
-        li.addEventListener('click', () => toggleIngredient(i));
+        const naam = li.querySelector('.ingredient-naam');
+        const hoeveelheid = li.querySelector('.ingredient-hoeveelheid');
+        if (naam) naam.addEventListener('click', (e) => { e.stopPropagation(); toggleIngredient(i); });
+        if (hoeveelheid && recept.ingredienten[i].hoeveelheid > 0) {
+          hoeveelheid.addEventListener('click', (e) => { e.stopPropagation(); startIngredientEdit(li, i); });
+        }
       });
       herstelIngredienten();
 
