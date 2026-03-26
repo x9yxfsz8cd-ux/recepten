@@ -628,6 +628,67 @@
       "bron_naam": "YouTube",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774488661",
+      "titel": "Gegrilde Kip met Oregano Marinade",
+      "slug": "gegrilde-kip-met-oregano-marinade",
+      "beschrijving": "Gegrilde kip met aromatische oregano marinade, perfect uit de oven.",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 2,
+      "tags": [
+        "vlees",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "gedroogde oregano",
+          "hoeveelheid": 1,
+          "eenheid": "el"
+        },
+        {
+          "naam": "knoflookpoeder",
+          "hoeveelheid": 1,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "uienpoeder",
+          "hoeveelheid": 1,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "gerookte paprikapoeder",
+          "hoeveelheid": 1,
+          "eenheid": "tl"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Meng alle ingrediënten van de marinade samen in een kom."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Wrijf de marinade goed in op de kip."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Bak de kip in de oven totdat deze gaar en goudbruin is."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Instagram",
+      "bron_naam": "Instagram",
+      "bron_type": "screenshot",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
