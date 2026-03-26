@@ -630,63 +630,104 @@
       "datum_toegevoegd": "2026-03-26"
     },
     {
-      "id": "r1774489863",
-      "titel": "Broccoli Pesto Pasta met Halloumi",
-      "slug": "broccoli-pesto-pasta-met-halloumi",
-      "beschrijving": "Romige broccoli pesto pasta met goudbruine halloumi blokjes en Parmezaanse kaas.",
+      "id": "r1774516887",
+      "titel": "Halloumi & Oesterzwam Pita's met Tzatziki",
+      "slug": "halloumi-oesterzwam-pita-s-met-tzatziki",
+      "beschrijving": "Gegrilde halloumi of oesterzwam met een kruidige marinade, geserveerd in pita's met zelfgemaakte tzatziki en verse toppings.",
       "afbeelding": "",
-      "bereidingstijd": 25,
+      "bereidingstijd": 20,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
         "vegetarisch",
-        "comfort food",
-        "Italiaans",
-        "diner"
+        "snel",
+        "lunch",
+        "diner",
+        "snack"
       ],
       "ingredienten": [
         {
-          "naam": "pasta (zoals conchiglie)",
-          "hoeveelheid": 350.0,
+          "naam": "gedroogde oregano",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "knoflookpoeder",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "uienpoeder",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "geroofde paprikapoeder",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "maple syrup",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "extra vierge olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "tomatenketchup",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "halloumi of oesterzwam",
+          "hoeveelheid": 300.0,
           "eenheid": "g"
         },
         {
-          "naam": "broccoli",
-          "hoeveelheid": 200.0,
-          "eenheid": "g"
+          "naam": "pita (zelfgebakken of kant-en-klaar)",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "1 teentje knoflook, fijngehakt",
+          "naam": "½ komkommer (voor tzatziki)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "enkele takjes basilicum",
+          "naam": "1 teentje knoflook (voor tzatziki)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "halloumi",
-          "hoeveelheid": 200.0,
+          "naam": "Griekse yoghurt",
+          "hoeveelheid": 300.0,
           "eenheid": "g"
         },
         {
-          "naam": "Parmezaanse kaas",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "verse dille",
+          "hoeveelheid": 15.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "zout (voor tzatziki)",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl"
         },
         {
           "naam": "citroensap",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
         },
         {
-          "naam": "zout en vers gemalen zwarte peper",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "olijfolie (voor bakken)",
+          "naam": "komkommer, tomaat, granaatappelpitjes en verse kruiden (naar keuze)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
@@ -694,19 +735,15 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Broccoli koken tot zacht, uitlekken en met fijngehakte knoflook en basilicum tot pesto mengen."
+          "tekst": "Meng alle ingrediënten voor de marinade. Snij halloumi in plakken of zet oesterzwammen heel, bestrijk met marinade en laat 10 minuten intrekken."
         },
         {
           "nummer": 2,
-          "tekst": "Pasta koken volgens pakketinstructies en uitlekken."
+          "tekst": "Bereid ondertussen de tzatziki: rasp komkommer, knijp uit, meng met fijngehakte knoflook, Griekse yoghurt, dille, zout en citroensap."
         },
         {
           "nummer": 3,
-          "tekst": "Halloumi in blokjes snijden en in een pan tot goudbruin bakken."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Pasta en pesto mengen, halloumi-blokjes toevoegen, Parmezaanse kaas raspen en afmaken met citroensap en peper naar smaak."
+          "tekst": "Grill of bak halloumi/oesterzwam 2-3 minuten per kant tot goudbruin, warm de pita's op, vul met gegrilde ingrediënten, tzatziki en toppings naar keuze."
         }
       ],
       "voedingswaarden": {
@@ -716,7 +753,7 @@
         "vetten": 0
       },
       "bron": "Foto",
-      "bron_naam": "**Shar Roeters** (gedeeld via iCloud Photos, geëxpireerd op 25 april)",
+      "bron_naam": "@lauracvm (Instagram account \"Veggielaine\")",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
     }
