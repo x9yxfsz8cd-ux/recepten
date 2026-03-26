@@ -533,6 +533,107 @@
       "bron_naam": "YouTube",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774487176",
+      "titel": "Mini-hamburgers met vegetarische nuggets met mangoketchup, frisse salade en aardappelschijfjes",
+      "slug": "mini-hamburgers-met-vegetarische-nuggets-met-mangoketchup-frisse-salade-en-aardappelschijfjes",
+      "beschrijving": "Een heerlijke vegetarische maaltijd met krokante vegan nuggets, frisse salade en mangoketchup van The Ketchup Project.",
+      "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/HF_Y23_HelloFresh_Y20_R22_W20_BNL_Q5456-1_Main_low-edfcd160.jpg",
+      "bereidingstijd": 25,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "Mini-hamburgerbol",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Aardappelschijfjes",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Vegan nuggets",
+          "hoeveelheid": 10.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "IJsbergsla",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Mangoketchup",
+          "hoeveelheid": 60.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Tomaat",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Yoghurtdressing",
+          "hoeveelheid": 40.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Zonnebloemolie",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Plantaardige roomboter",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Plantaardige mayonaise",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "naar smaak Peper en zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verhit 1/2 el roomboter per persoon in een koekenpan op middelhoog vuur. Bak de aardappelschijfjes in 15 minuten knapperig en breng op smaak met peper en zout. Snijd ondertussen de tomaten in blokjes en snijd de ijsbergsla fijn."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit 1/2 el zonnebloemolie per persoon in een andere koekenpan op middelhoog vuur. Bak de vegan nuggets 6-8 minuten, of tot ze krokant zijn."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Meng in een saladekom de ijsbergsla en tomatenblokjes met de yoghurtdressing. Breng op smaak met peper en zout."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Snijd de hamburgerbroodjes open en besmeer met de mangoketchup. Verdeel wat van de salade over de broodjes en leg hierop de vegan nuggets. Serveer met de overige salade, aardappelschijfjes en mayonaise."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.hellofresh.nl/recipes/mini-hamburgers-met-vegetarische-nuggets-63c7cdb400ace46356b3d778",
+      "bron_naam": "HelloFresh",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
