@@ -1310,6 +1310,108 @@
       "bron_naam": "Picnic",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774543245",
+      "titel": "Sui kau soep met noedels",
+      "slug": "sui-kau-soep-met-noedels",
+      "beschrijving": "Een verwarmende Aziatische soep met heerlijke garnalen wontons, noedels, paksoi en een zacht eitje.",
+      "afbeelding": "https://jennyalvares.com/wp-content/uploads/2021/05/IMG_8740-3.jpg",
+      "bereidingstijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 1,
+      "tags": [
+        "vis",
+        "Aziatisch",
+        "diner",
+        "comfort food"
+      ],
+      "ingredienten": [
+        {
+          "naam": "verse kippenbouillon",
+          "hoeveelheid": 500.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "wonton bouillonpoeder",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "gemberplakje",
+          "hoeveelheid": 3.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "bosui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "vissaus",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "sesamolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "sui kau (garnalen wontons)",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "1/2 stuks paksoi",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "ei",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "1 handvol dunne eiernoedels of wonton noedels of ramen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "naar smaak chili olie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Kook het eitje in 6 minuten gaar. Zet de bouillon op het vuur in een steelpannetje, voeg het witte gedeelte van de bosui en gemberplakjes toe, en breng op smaak met sojasaus, vissaus, bouillonpoeder en sesamolie. Laat ongeveer 10 minuten zachtjes koken."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd de paksoi in grove stukken, blancheer deze 2 minuten in de kokende bouillon en doe deze in je kom. Laat de sui kau 3-4 minuten garen tot ze boven drijven, haal ze eruit en doe ze ook in de kom."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de noedels toe aan de bouillon en kook volgens verpakking (meestal 3-4 minuten). Snijd ondertussen het groene deel van de bosui in ringetjes, giet bouillon en noedels in de kom en maak af met het eitje, bosui en eventueel chili olie."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://jennyalvares.com/sui-kau-soep/",
+      "bron_naam": "Jennyalvares",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-26"
     }
   ]
 }
