@@ -701,7 +701,7 @@
         "vetten": 0
       },
       "bron": "https://hoe-lang-broccoli-koken.nl/broccoli-pesto-pasta-recept/",
-      "bron_naam": "Kookboek",
+      "bron_naam": "Kookboek (onbekend)",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -1499,7 +1499,7 @@
         "vetten": 0
       },
       "bron": "https://www.nigella.com/recipes/linguine-with-lemon-garlic-and-thyme-mushrooms",
-      "bron_naam": "Nigella",
+      "bron_naam": "Nigella Lawson",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -1902,8 +1902,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "https://picnic.app/nl/go/gz805w3",
+      "bron_naam": "Picnic",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -1993,8 +1993,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "https://www.jamieoliver.com/recipes/pasta/gennaro-s-classic-spaghetti-carbonara/",
+      "bron_naam": "Jamie Oliver",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2079,8 +2079,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "https://uitpaulineskeuken.nl/recept/gepofte-zoete-aardappel",
+      "bron_naam": "Uit Paulines Keuken",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2145,8 +2145,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "",
+      "bron_naam": "Eigen recept",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2240,8 +2240,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "",
+      "bron_naam": "De Vegetarische Bakplaat (kookboek)",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2316,8 +2316,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "",
+      "bron_naam": "Eigen recept",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2454,8 +2454,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "",
+      "bron_naam": "Eigen recept",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2541,8 +2541,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "",
+      "bron_naam": "Lorenzo's recept",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2637,8 +2637,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "",
+      "bron_naam": "Elly's recept (familie)",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2724,8 +2724,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
+      "bron": "",
+      "bron_naam": "Eigen recept",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2834,72 +2834,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Apple Notities",
-      "bron_naam": "Apple Notities",
-      "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
-    },
-    {
-      "id": "r1774543449",
-      "titel": "Winterse risotto met aardpeer",
-      "slug": "winterse-risotto-met-aardpeer",
-      "beschrijving": "Een romige risotto met aardpeer, perfect voor winterse dagen.",
-      "afbeelding": "https://www.24kitchen.nl/files/styles/social_media_share/public/2017-11/S20009_Winterserisotto%20met%20knapperige%20aardpeer_Bewerkt.jpg?itok=efyfo_8K",
-      "bereidingstijd": 30,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
-      "tags": [
-        "vegetarisch",
-        "comfort food",
-        "Italiaans",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "onbekende hoeveelheid aardpeer",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "onbekende hoeveelheid risottorijst",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "onbekende hoeveelheid uien",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "onbekende hoeveelheid bouillon",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "onbekende hoeveelheid boter",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "onbekende hoeveelheid Parmezaanse kaas",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Onvoldoende informatie beschikbaar om bereidingsstappen op te stellen."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
-      },
-      "bron": "https://www.hellofresh.nl/recipes/winterse-risotto-met-aardpeer/",
-      "bron_naam": "Apple Notities",
+      "bron": "",
+      "bron_naam": "Eigen recept",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     }
