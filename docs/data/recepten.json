@@ -1781,7 +1781,7 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "https://picnic.app/nl/go/gz805w3",
+      "bron": "https://picnic.app/nl/recipes/6335ac2a1aec0e1af4fc62fa",
       "bron_naam": "Picnic",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
@@ -2333,8 +2333,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "",
-      "bron_naam": "Eigen recept",
+      "bron": "https://www.hellofresh.nl/recipes/gerookte-paprikarisotto-met-gegratineerde-geitenkaas",
+      "bron_naam": "HelloFresh",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
@@ -2713,8 +2713,8 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "",
-      "bron_naam": "Eigen recept",
+      "bron": "https://marleyspoon.nl/menu/600615-courgette-citroenpasta-met-garnalen",
+      "bron_naam": "Marley Spoon",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
     },
