@@ -2838,6 +2838,116 @@
       "bron_naam": "Eigen recept",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26"
+    },
+    {
+      "id": "r1774683772",
+      "titel": "Tomatenrisotto met Kokosmelk en Basilicum",
+      "slug": "tomatenrisotto-met-kokosmelk-en-basilicum",
+      "beschrijving": "Een romig en aromatisch risotto met verse tomaten, kokosmelk en basilicum voor een Italiaans-tropische fusiegerecht.",
+      "afbeelding": "https://cdn.hellofresh.com/de/cms/raf/hellofresh-logo.png",
+      "bereidingstijd": 35,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "arborio rijst",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "tomatenpassata",
+          "hoeveelheid": 400.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "kokosmelk",
+          "hoeveelheid": 200.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "1 l groentebouillon",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 grote ui",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "3 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "droge witte wijn",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "parmezaan",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 bosje verse basilicum",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zout en peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "suiker",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Snipper de ui en knoflook fijn. Verhit de olijfolie in een grote pan en fruit ui en knoflook tot glazig, voeg vervolgens de arborio rijst toe en roer 2 minuten."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Blus af met witte wijn, laat deze volledig opkoken. Voeg vervolgens tomatenpassata toe en roer goed door."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de groentebouillon geleidelijk toe, één schep tegelijk, en roer regelmatig totdat de rijst zacht en romig is (ongeveer 18-20 minuten). Laat de rijst goed gaar worden voordat je nieuwe bouillon toevoegt."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Stir in de kokosmelk, parmezaan en fijngesneden basilicum. Breng op smaak met zout, peper en een snufje suiker."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Serveer direct en garneer met extra basilicum en parmezaan naar wens."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.hellofresh.nl/recipes/tomatenrisotto-met-kokosmelk-en-basilicum-5e7a7cd8e2a0d42fee652d72",
+      "bron_naam": "HelloFresh",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-03-28"
     }
   ]
 }
