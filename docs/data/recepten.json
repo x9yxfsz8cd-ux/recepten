@@ -2827,6 +2827,104 @@
       "bron_naam": "HelloFresh",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-28"
+    },
+    {
+      "id": "r1775131494",
+      "titel": "Bonen 'risotto' (Bonensotto)",
+      "slug": "bonen-risotto-bonensotto",
+      "beschrijving": "Een romige bonenschotel met de textuur van risotto, gemaakt met boterzachte witte bonen in plaats van rijst.",
+      "afbeelding": "https://substackcdn.com/image/fetch/$s_!J3uS!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1030a721-8a23-451f-afa8-8f4977ccfe50_2506x3342.jpeg",
+      "bereidingstijd": 40,
+      "actieve_tijd": 30,
+      "passieve_tijd": 10,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "1 pot (570 g) queen butter beans (of andere witte bonen van goede kwaliteit)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "grote preien, alleen het wit en lichtgroen, in ringetjes",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "sjalotten, gesnipperd",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "4 telen knoflook, fijngehakt",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "kippenbouillon of groentebouillon",
+          "hoeveelheid": 150.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Parmezaanse kaas, geraspt",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 handvol verse dragon en peterselie, fijngehakt",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 handvol verse salieblaadjes",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Boter",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Goede olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Peper en zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verhit een flinke scheut olijfolie en een klont boter in een diepe, grote pan. Fruit de sjalot, knoflook en prei op laag vuur, kruid met zout. Neem uitgebreid de tijd zodat de prei helemaal zacht en zoet wordt, niet bruin."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Doe de bonen met het vocht uit de pot erbij en schep goed om. Giet de bouillon erbij en laat dit ongeveer tien minuten zachtjes pruttelen zodat alle smaken in elkaar trekken en de saus indikt. Voeg zo nodig wat bouillon of water toe als het te droog is."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Roer op het laatst de Parmezaanse kaas en verse kruiden (dragon en peterselie) erdoorheen tot je een superromige substantie hebt. Bak ondertussen in een klein koekenpannetje de salieblaadjes in een laagje hete olie tot ze donkergroen en krokant zijn. Schep de bonensotto in diepe borden en maak af met de krokante salie en extra zout en zwarte peper."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://moniquevanloon.substack.com/p/ik-heb-eindelijk-cor-gevonden",
+      "bron_naam": "Moniquevanloon",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-02"
     }
   ]
 }
