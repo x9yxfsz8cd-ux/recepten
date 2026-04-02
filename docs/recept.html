@@ -290,7 +290,8 @@
           <p class="stap-tekst">${s.tekst}</p>
         </div>`).join('');
 
-      const voeding = r.voedingswaarden ? `
+      const heeftVoeding = r.voedingswaarden && (r.voedingswaarden.kcal || r.voedingswaarden.eiwitten || r.voedingswaarden.koolhydraten || r.voedingswaarden.vetten);
+      const voeding = heeftVoeding ? `
         <div class="voeding-sectie">
           <div class="blok-titel">Voedingswaarden per portie</div>
           <div class="voeding-grid">
