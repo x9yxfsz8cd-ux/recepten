@@ -475,7 +475,12 @@ def parse_recipe(raw):
     tags_str = get(r'TAGS:\s*(.+)')
     tags = [t.strip() for t in tags_str.split(",") if t.strip()]
     porties = int(get(r'PORTIES:\s*(\d+)', "4"))
-    tijd = int(get(r'TIJD:\s*(\d+)', "30"))
+    actieve_tijd = int(get(r'ACTIEVE_TIJD:\s*(\d+)', "0"))
+    passieve_tijd = int(get(r'PASSIEVE_TIJD:\s*(\d+)', "0"))
+    # Fallback op oude TIJD: veld
+    if not actieve_tijd:
+        oude_tijd = int(get(r'TIJD:\s*(\d+)', "30"))
+        actieve_tijd = oude_tijd
     beschrijving = get(r'BESCHRIJVING:\s*(.+)')
 
     parts = raw.split("===", 1)
@@ -502,7 +507,9 @@ def parse_recipe(raw):
         stappen.append({"nummer": int(m.group(1)), "tekst": m.group(2)})
 
     return {
-        "titel": titel, "tags": tags, "porties": porties, "tijd": tijd,
+        "titel": titel, "tags": tags, "porties": porties,
+        "actieve_tijd": actieve_tijd, "passieve_tijd": passieve_tijd,
+        "bereidingstijd": actieve_tijd + passieve_tijd,
         "beschrijving": beschrijving, "body": body,
         "ingredienten": ingredienten, "stappen": stappen
     }
@@ -632,7 +639,9 @@ def update_website(recipe_data, url, img_url, bron_naam):
         "slug": slugify(recipe_data["titel"]),
         "beschrijving": recipe_data["beschrijving"],
         "afbeelding": img_url,
-        "bereidingstijd": recipe_data["tijd"],
+        "bereidingstijd": recipe_data.get("bereidingstijd", recipe_data.get("actieve_tijd", 30)),
+        "actieve_tijd": recipe_data.get("actieve_tijd", 0),
+        "passieve_tijd": recipe_data.get("passieve_tijd", 0),
         "moeilijkheidsgraad": "gemiddeld",
         "porties": recipe_data["porties"],
         "tags": recipe_data["tags"],
@@ -675,7 +684,14 @@ def save_recipe(recipe, bron_url, bron_naam, img_url, api_key):
     hashtags = " ".join(f"#{t.replace(' ', '')}" for t in recipe["tags"])
     recept_html = body_to_html(recipe["body"])
     meta_parts = []
-    if recipe["tijd"]: meta_parts.append(f"{recipe['tijd']} min")
+    actieve = recipe.get("actieve_tijd", 0)
+    passieve = recipe.get("passieve_tijd", 0)
+    if actieve:
+        meta_parts.append(f"{actieve} min actief")
+        if passieve:
+            meta_parts.append(f"{passieve} min oven/rust")
+    elif recipe.get("bereidingstijd"):
+        meta_parts.append(f"{recipe['bereidingstijd']} min")
     meta_parts.append(f"{recipe['porties']} porties")
 
     full_html = (
@@ -728,7 +744,7 @@ def main():
             "\n\nGeef je antwoord in dit EXACTE format:\n\n"
             "TITEL: [receptnaam]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-            "PORTIES: [aantal]\nTIJD: [bereidingstijd in minuten]\nBESCHRIJVING: [1 zin]\n"
+            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\n"
             "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
             "BEREIDING:\n1. [stap]\n\n"
             "Regels: altijd Nederlands, eenheden g/ml/el/tl/stuks, stappen max 3 zinnen, neem ALLES over."
@@ -797,7 +813,7 @@ def main():
                     "Geef je antwoord in dit EXACTE format:\n\n"
                     "TITEL: [receptnaam]\n"
                     "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-                    "PORTIES: [aantal]\nTIJD: [bereidingstijd in minuten]\nBESCHRIJVING: [1 zin]\n"
+                    "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\n"
                     "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
                     "BEREIDING:\n1. [stap]\n\n"
                     "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
@@ -809,7 +825,7 @@ def main():
                 recipe = parse_recipe(raw)
                 print(f"  Titel: {recipe['titel']}")
                 print(f"  Tags: {', '.join(recipe['tags'])}")
-                print(f"  {recipe['tijd']} min · {recipe['porties']} porties")
+                print(f"  {recipe.get('bereidingstijd', recipe.get('actieve_tijd', 0))} min · {recipe['porties']} porties")
                 print(f"  {len(recipe['ingredienten'])} ingrediënten, {len(recipe['stappen'])} stappen")
 
                 # Spring naar stap 3
@@ -824,7 +840,7 @@ def main():
                 hashtags = " ".join(f"#{t.replace(' ', '')}" for t in recipe["tags"])
                 recept_html_note = body_to_html(recipe["body"])
                 meta_parts = []
-                if recipe["tijd"]: meta_parts.append(f"{recipe['tijd']} min")
+                if recipe.get("bereidingstijd", recipe.get("actieve_tijd", 0)): meta_parts.append(f"{recipe.get('bereidingstijd', recipe.get('actieve_tijd', 0))} min")
                 meta_parts.append(f"{recipe['porties']} porties")
                 full_html = (
                     f"<h1>{html_mod.escape(recipe['titel'])}</h1>\n{img_html_note}\n"
@@ -908,7 +924,7 @@ def main():
             "Geef je antwoord in dit EXACTE format:\n\n"
             "TITEL: [receptnaam]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-            "PORTIES: [aantal]\nTIJD: [bereidingstijd in minuten]\nBESCHRIJVING: [1 zin]\n"
+            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\n"
             "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
             "BEREIDING:\n1. [stap]\n\n"
             "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
@@ -924,7 +940,7 @@ def main():
             "Geef je antwoord in dit EXACTE format:\n\n"
             "TITEL: [receptnaam]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-            "PORTIES: [aantal]\nTIJD: [bereidingstijd in minuten]\nBESCHRIJVING: [1 zin]\n"
+            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\n"
             "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
             "BEREIDING:\n1. [stap]\n\n"
             "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
@@ -935,7 +951,7 @@ def main():
     recipe = parse_recipe(raw)
     print(f"  Titel: {recipe['titel']}")
     print(f"  Tags: {', '.join(recipe['tags'])}")
-    print(f"  {recipe['tijd']} min · {recipe['porties']} porties")
+    print(f"  {recipe.get('bereidingstijd', recipe.get('actieve_tijd', 0))} min · {recipe['porties']} porties")
     print(f"  {len(recipe['ingredienten'])} ingrediënten, {len(recipe['stappen'])} stappen")
 
     # ── 3. Opslaan ──

@@ -324,7 +324,8 @@
           <div class="recept-detail__header">
             <h1 class="recept-detail__title">${r.titel}</h1>
             <div class="recept-detail__meta">
-              <span>${r.bereidingstijd} minuten</span>
+              <span>${r.actieve_tijd ? r.actieve_tijd + ' min actief' : r.bereidingstijd + ' min'}</span>
+              ${r.passieve_tijd ? `<span>${r.passieve_tijd} min oven/rust</span>` : ''}
               <span>${r.moeilijkheidsgraad}</span>
             </div>
             <div class="recept-detail__tags">${tags}</div>
