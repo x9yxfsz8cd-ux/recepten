@@ -6,7 +6,7 @@
       "slug": "pasta-al-limone",
       "beschrijving": "Romige Italiaanse pasta met verse citroen en Parmezaan. Klaar in 20 minuten.",
       "afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
-      "bereidingstijd": 20,
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "makkelijk",
       "porties": 2,
       "tags": [
@@ -69,7 +69,9 @@
       "bron": "",
       "bron_type": "handmatig",
       "datum_toegevoegd": "2026-03-23",
-      "bron_naam": "Handmatig"
+      "bron_naam": "Handmatig",
+      "actieve_tijd": 15,
+      "passieve_tijd": 10
     },
     {
       "id": "r1774465753",
@@ -77,7 +79,7 @@
       "slug": "poke-bowl-met-zalm",
       "beschrijving": "Een Hawaiiaans gerecht met verse blokjes zalm op rijst en groenten.",
       "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD123759_1024x748_JPG.jpg",
-      "bereidingstijd": 25,
+      "bereidingstijd": 35,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -170,7 +172,9 @@
       "bron": "https://www.ah.nl/allerhande/recept/R-R1188320/poke-bowl-met-zalm",
       "bron_naam": "Albert Heijn",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-25"
+      "datum_toegevoegd": "2026-03-25",
+      "actieve_tijd": 20,
+      "passieve_tijd": 15
     },
     {
       "id": "r1774465924",
@@ -178,7 +182,7 @@
       "slug": "tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten",
       "beschrijving": "Een snel en zalig recept met gnocchi, gebakken champignons, knoflook, walnoten en verse tijm, afgewerkt met peperige rucola en citroensap.",
       "afbeelding": "https://s3-eu-west-1.amazonaws.com/images-marleyspoon-production/media/recipes/18580/main_photos/large/ID3661_web-1e95fc7f6be22a1aaf129ead41867e72.jpg?1538409077",
-      "bereidingstijd": 20,
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
@@ -290,7 +294,9 @@
       "bron": "https://marleyspoon.nl/menu/18580-tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten",
       "bron_naam": "Marley Spoon",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-25"
+      "datum_toegevoegd": "2026-03-25",
+      "actieve_tijd": 25,
+      "passieve_tijd": 0
     },
     {
       "id": "r1774487176",
@@ -298,7 +304,7 @@
       "slug": "mini-hamburgers-met-vegetarische-nuggets-met-mangoketchup-frisse-salade-en-aardappelschijfjes",
       "beschrijving": "Een heerlijke vegetarische maaltijd met krokante vegan nuggets, frisse salade en mangoketchup van The Ketchup Project.",
       "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/HF_Y23_HelloFresh_Y20_R22_W20_BNL_Q5456-1_Main_low-edfcd160.jpg",
-      "bereidingstijd": 25,
+      "bereidingstijd": 20,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
@@ -391,7 +397,9 @@
       "bron": "https://www.hellofresh.nl/recipes/mini-hamburgers-met-vegetarische-nuggets-63c7cdb400ace46356b3d778",
       "bron_naam": "HelloFresh",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 20,
+      "passieve_tijd": 0
     },
     {
       "id": "r1774487934",
@@ -399,7 +407,7 @@
       "slug": "pasta-aglio-e-olio",
       "beschrijving": "Een eenvoudig maar elegant Italiaans pastagerecht met knoflook, olie en rode peper.",
       "afbeelding": "https://i.ytimg.com/vi/bJUiWdM__Qw/maxresdefault.jpg",
-      "bereidingstijd": 20,
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
@@ -464,7 +472,9 @@
       "bron": "https://www.youtube.com/watch?v=bJUiWdM__Qw",
       "bron_naam": "YouTube",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 10
     },
     {
       "id": "r1774536203",
@@ -599,7 +609,9 @@
       "bron": "https://www.instagram.com/reel/C680GO8K7Cz/",
       "bron_naam": "@lauracvm (Instagram)",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 15
     },
     {
       "id": "r1774537596",
@@ -607,7 +619,7 @@
       "slug": "broccoli-pesto-pasta-met-halloumi",
       "beschrijving": "Een verrukkelijke pasta met romige broccoli pesto, goudbruine halloumi en frisse basilicum.",
       "afbeelding": "https://hoe-lang-broccoli-koken.nl/wp-content/uploads/2024/09/2773-broccoli-pesto-pasta-recept.jpg",
-      "bereidingstijd": 25,
+      "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -703,7 +715,9 @@
       "bron": "https://hoe-lang-broccoli-koken.nl/broccoli-pesto-pasta-recept/",
       "bron_naam": "Kookboek (onbekend)",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 20,
+      "passieve_tijd": 10
     },
     {
       "id": "r1774543194",
@@ -711,7 +725,7 @@
       "slug": "aubergines-in-kaneel-met-feta-olijven-bulgur",
       "beschrijving": "Een heerlijk Midden-Oosters gerecht met geroosterde aubergine, gekruide bulgur, feta en granaatappelpitten.",
       "afbeelding": "https://www.foodiesmagazine.nl/app/uploads/2019/11/78-79-aubergines-in-kaneel-met-feta-olijven-en-gekruide-bulgur-klein.jpg",
-      "bereidingstijd": 35,
+      "bereidingstijd": 40,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 3,
       "tags": [
@@ -825,7 +839,9 @@
       "bron": "https://www.foodiesmagazine.nl/recepten/aubergines-in-kaneel-met-feta-olijven-bulgur/",
       "bron_naam": "Foodiesmagazine",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 25
     },
     {
       "id": "r1774543204",
@@ -833,7 +849,7 @@
       "slug": "broccolisoep-met-gerookte-zalm-en-bieslook",
       "beschrijving": "Een groene broccolisoep met roze zalmsnippers en bieslook, gemakkelijk en smaakvol.",
       "afbeelding": "https://www.projectgezond.nl/content/uploads/2020/09/BroccolisoepGerookteZalmBieslook-384x512.png",
-      "bereidingstijd": 30,
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -918,7 +934,9 @@
       "bron": "https://www.projectgezond.nl/recepten/broccolisoep-met-gerookte-zalm-en-bieslook",
       "bron_naam": "Projectgezond",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 10
     },
     {
       "id": "r1774543212",
@@ -1008,7 +1026,9 @@
       "bron": "https://www.leckerbeckje.nl/2023/05/15/traybake-met-orzo-asperge-prei-en-rucola/",
       "bron_naam": "Leckerbeckje",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 10,
+      "passieve_tijd": 20
     },
     {
       "id": "r1774543219",
@@ -1016,7 +1036,7 @@
       "slug": "ravioli-uit-de-oven-met-mozzarella",
       "beschrijving": "Een familierecept met ravioli, groenten en gesmolten mozzarella dat binnen 20 minuten op tafel staat.",
       "afbeelding": "https://uitpaulineskeuken.nl/wp-content/smush-webp/2019/03/ravioli-uit-de-oven-7455.jpg.webp",
-      "bereidingstijd": 25,
+      "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -1114,7 +1134,9 @@
       "bron": "https://uitpaulineskeuken.nl/recept/ravioli-uit-de-oven",
       "bron_naam": "Uitpaulineskeuken",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 20,
+      "passieve_tijd": 10
     },
     {
       "id": "r1774543228",
@@ -1122,7 +1144,7 @@
       "slug": "gesmoorde-prei-met-eieren-en-za-atar",
       "beschrijving": "Een gemakkelijke en voedzame maaltijd met gesmoorde prei, spinazie en eieren, geïnspireerd door de shakshuka.",
       "afbeelding": "https://favorflav.com/images/004_braised_eggs_and_omelettes.jpg",
-      "bereidingstijd": 15,
+      "bereidingstijd": 20,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 6,
       "tags": [
@@ -1211,7 +1233,9 @@
       "bron": "https://favorflav.com/nl/recipes/vega/gesmoorde-prei-met-eieren-en-zaatar/",
       "bron_naam": "Favorflav",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 20,
+      "passieve_tijd": 0
     },
     {
       "id": "r1774543235",
@@ -1219,7 +1243,7 @@
       "slug": "pita-shoarma-van-oesterzwam",
       "beschrijving": "Een heerlijk comfortfood gerecht waarbij je makkelijk aan je dagelijkse portie groenten komt.",
       "afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/8b1dc6655be5477960fd169798f7cde0fe8e444b4990eb1a9d4ae414769d9dce/filled-600x600.webp",
-      "bereidingstijd": 25,
+      "bereidingstijd": 15,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -1309,7 +1333,9 @@
       "bron": "https://picnic.app/nl/recepten/634569afe50ef539d0ae43c1/pita-shoarma-van-oesterzwam?path=store%2Fpage%3Bid%3Drecipe-details-page%2Crecipe_id%3D634569afe50ef539d0ae43c1%2CsharedPage%3Dtrue",
       "bron_naam": "Picnic",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 0
     },
     {
       "id": "r1774543245",
@@ -1317,7 +1343,7 @@
       "slug": "sui-kau-soep-met-noedels",
       "beschrijving": "Een verwarmende Aziatische soep met heerlijke garnalen wontons, noedels, paksoi en een zacht eitje.",
       "afbeelding": "https://jennyalvares.com/wp-content/uploads/2021/05/IMG_8740-3.jpg",
-      "bereidingstijd": 30,
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 1,
       "tags": [
@@ -1411,7 +1437,9 @@
       "bron": "https://jennyalvares.com/sui-kau-soep/",
       "bron_naam": "Jennyalvares",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 10
     },
     {
       "id": "r1774543261",
@@ -1419,7 +1447,7 @@
       "slug": "linguine-met-citroen-knoflook-en-tijm-champignons",
       "beschrijving": "Een snelle en elegante Italiaanse pasta met verse champignons die alleen worden gemarineerd in olie, knoflook, citroen en tijm.",
       "afbeelding": "http://www.nigella.com/assets/uploads/recipes/5df3e33c-b796-4033-bdb2-680c8f-612e12fd0b37b.jpg",
-      "bereidingstijd": 15,
+      "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -1501,7 +1529,9 @@
       "bron": "https://www.nigella.com/recipes/linguine-with-lemon-garlic-and-thyme-mushrooms",
       "bron_naam": "Nigella Lawson",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 20,
+      "passieve_tijd": 10
     },
     {
       "id": "r1774543281",
@@ -1509,7 +1539,7 @@
       "slug": "winterse-risotto-met-aardpeer-comte-en-hazelnoten",
       "beschrijving": "Een heerlijke winterse risotto met geroosterde aardpeer, smeltende comté en knapperige hazelnoten.",
       "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/5dde922df3e6147286036a6f-0c27599a.jpg",
-      "bereidingstijd": 45,
+      "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
@@ -1611,7 +1641,9 @@
       "bron": "https://www.hellofresh.nl/recipes/winterse-risotto-met-aardpeer-5dde922df3e6147286036a6f",
       "bron_naam": "HelloFresh",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 25,
+      "passieve_tijd": 5
     },
     {
       "id": "r1774543289",
@@ -1619,7 +1651,7 @@
       "slug": "spinaziestamppot-met-gebakken-halloumi",
       "beschrijving": "Een lichte stamppot met zoete aardappel en mosterd, afgewerkt met gebakken halloumi.",
       "afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/3d9c5d7de8dd71aed368e11deccc431d84fccdcb165594417a52054714488403/filled-600x600.webp",
-      "bereidingstijd": 30,
+      "bereidingstijd": 35,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -1697,7 +1729,9 @@
       "bron": "https://picnic.app/nl/recepten/64099e0aacf4d4624ddf65c6/spinaziestamppot-met-gebakken-halloumi?path=store%2Fpage%3Bid%3Drecipe-details-page%2Crecipe_id%3D64099e0aacf4d4624ddf65c6%2CsharedPage%3Dtrue",
       "bron_naam": "Picnic",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 20,
+      "passieve_tijd": 15
     },
     {
       "id": "r1774543355",
@@ -1784,7 +1818,9 @@
       "bron": "https://picnic.app/nl/recipes/6335ac2a1aec0e1af4fc62fa",
       "bron_naam": "Picnic",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 10,
+      "passieve_tijd": 20
     },
     {
       "id": "r1774543362",
@@ -1875,7 +1911,9 @@
       "bron": "https://www.jamieoliver.com/recipes/pasta/gennaro-s-classic-spaghetti-carbonara/",
       "bron_naam": "Jamie Oliver",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 10
     },
     {
       "id": "r1774543369",
@@ -1883,7 +1921,7 @@
       "slug": "gepofte-zoete-aardappel",
       "beschrijving": "Geroosterde zoete aardappelen gevuld met een verse tomatensalsa en feta.",
       "afbeelding": "https://uitpaulineskeuken.nl/wp-content/smush-webp/2013/11/gepofte-zoete-aardappel-1-300x150.jpg.webp",
-      "bereidingstijd": 50,
+      "bereidingstijd": 40,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
@@ -1961,7 +1999,9 @@
       "bron": "https://uitpaulineskeuken.nl/recept/gepofte-zoete-aardappel",
       "bron_naam": "Uit Paulines Keuken",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 25
     },
     {
       "id": "r1774543376",
@@ -1969,7 +2009,7 @@
       "slug": "zalm-met-citroen",
       "beschrijving": "Zacht gestoomde zalm in zilverpapier met citroenboterdressing.",
       "afbeelding": "https://www.24kitchen.nl/files/styles/social_media_share/public/2023-08/lekkersnel12jul-11.jpg?itok=7VXUG8jo",
-      "bereidingstijd": 20,
+      "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 1,
       "tags": [
@@ -2027,7 +2067,9 @@
       "bron": "",
       "bron_naam": "Eigen recept",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 10,
+      "passieve_tijd": 20
     },
     {
       "id": "r1774543383",
@@ -2035,7 +2077,7 @@
       "slug": "pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie",
       "beschrijving": "Een pittige oven-schotel met geroosterde groenten, halloumi en spinazie, geserveerd op platbrood met yoghurt.",
       "afbeelding": "https://www.groentenabonnement.nl/wp-content/uploads/2020/10/Broccoli-met-halloumi.jpg",
-      "bereidingstijd": 35,
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -2122,7 +2164,9 @@
       "bron": "",
       "bron_naam": "De Vegetarische Bakplaat (kookboek)",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 10,
+      "passieve_tijd": 15
     },
     {
       "id": "r1774543390",
@@ -2130,7 +2174,7 @@
       "slug": "zelf-pizzadeeg-maken",
       "beschrijving": "Homemade pizzadeeg dat rijst en vervolgens wordt uitgerold voor drie pizza's.",
       "afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2019/01/pizzadee-recept-1200x630-c-default.jpg",
-      "bereidingstijd": 80,
+      "bereidingstijd": 75,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 3,
       "tags": [
@@ -2198,7 +2242,9 @@
       "bron": "",
       "bron_naam": "Eigen recept",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 60
     },
     {
       "id": "r1774543401",
@@ -2206,7 +2252,7 @@
       "slug": "gerookte-paprikarisotto-met-gegratineerde-geitenkaas",
       "beschrijving": "Romige risotto met gerookte paprika, afgetooid met gegratineerde geitenkaas en walnoten.",
       "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/gerookte-paprikarisotto-met-gegratineerde-geitenkaas-68e0799f-1ef24d02.jpg",
-      "bereidingstijd": 35,
+      "bereidingstijd": 50,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -2336,7 +2382,9 @@
       "bron": "https://www.hellofresh.nl/recipes/gerookte-paprikarisotto-met-gegratineerde-geitenkaas",
       "bron_naam": "HelloFresh",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 30,
+      "passieve_tijd": 20
     },
     {
       "id": "r1774543409",
@@ -2344,7 +2392,7 @@
       "slug": "lorenzo-s-pasta",
       "beschrijving": "Klassieke Italiaanse pasta met geroosterde tomaten, knapperige bacon en Parmigiano.",
       "afbeelding": "",
-      "bereidingstijd": 30,
+      "bereidingstijd": 27,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -2423,7 +2471,9 @@
       "bron": "",
       "bron_naam": "Lorenzo's recept",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 12
     },
     {
       "id": "r1774543416",
@@ -2431,7 +2481,7 @@
       "slug": "elly-s-appeltaart",
       "beschrijving": "Een klassieke appeltaart met kruimeltop, gemaakt met zelfrijzend bakmeel en gevuld met appels, cranberries en kaneel.",
       "afbeelding": "https://www.laurasbakery.nl/wp-content/smush-webp/2013/07/omas-appeltaart-nieuw-uitgelicht.jpg.webp",
-      "bereidingstijd": 210,
+      "bereidingstijd": 55,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 8,
       "tags": [
@@ -2519,7 +2569,9 @@
       "bron": "",
       "bron_naam": "Elly's recept (familie)",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 20,
+      "passieve_tijd": 35
     },
     {
       "id": "r1774543424",
@@ -2527,7 +2579,7 @@
       "slug": "gazpacho",
       "beschrijving": "Een verfrissende, ijskoude tomatensorep perfect voor warme dagen, bereid met verse groenten en olijfolie.",
       "afbeelding": "https://hips.hearstapps.com/hmg-prod/images/gazpacho-index-6691419fe48a9.jpg?crop=1.00xw:1.00xh;0,0&amp;resize=1200:*",
-      "bereidingstijd": 15,
+      "bereidingstijd": 75,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
@@ -2606,7 +2658,9 @@
       "bron": "",
       "bron_naam": "Eigen recept",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 60
     },
     {
       "id": "r1774543430",
@@ -2614,7 +2668,7 @@
       "slug": "citroenpasta-met-chili-vlokken",
       "beschrijving": "Fijne Italiaanse pasta met gekarameliseerde citroen, chili en Parmezaanse kaas.",
       "afbeelding": "",
-      "bereidingstijd": 30,
+      "bereidingstijd": 37,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -2716,7 +2770,9 @@
       "bron": "https://marleyspoon.nl/menu/600615-courgette-citroenpasta-met-garnalen",
       "bron_naam": "Marley Spoon",
       "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26"
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 25,
+      "passieve_tijd": 12
     },
     {
       "id": "r1774683772",
@@ -2724,7 +2780,7 @@
       "slug": "tomatenrisotto-met-kokosmelk-en-basilicum",
       "beschrijving": "Een romig en aromatisch risotto met verse tomaten, kokosmelk en basilicum voor een Italiaans-tropische fusiegerecht.",
       "afbeelding": "https://cdn.hellofresh.com/de/cms/raf/hellofresh-logo.png",
-      "bereidingstijd": 35,
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -2826,7 +2882,9 @@
       "bron": "https://www.hellofresh.nl/recipes/tomatenrisotto-met-kokosmelk-en-basilicum-5e7a7cd8e2a0d42fee652d72",
       "bron_naam": "HelloFresh",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-03-28"
+      "datum_toegevoegd": "2026-03-28",
+      "actieve_tijd": 25,
+      "passieve_tijd": 0
     },
     {
       "id": "r1775131494",
@@ -2834,9 +2892,9 @@
       "slug": "bonen-risotto-bonensotto",
       "beschrijving": "Een romige bonenschotel met de textuur van risotto, gemaakt met boterzachte witte bonen in plaats van rijst.",
       "afbeelding": "https://substackcdn.com/image/fetch/$s_!J3uS!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1030a721-8a23-451f-afa8-8f4977ccfe50_2506x3342.jpeg",
-      "bereidingstijd": 40,
-      "actieve_tijd": 30,
-      "passieve_tijd": 10,
+      "bereidingstijd": 35,
+      "actieve_tijd": 20,
+      "passieve_tijd": 15,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
