@@ -199,14 +199,14 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 bosje verse tijm",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "tijm",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "1 citroen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "citroen",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "kastanjechampignonplakjes",
@@ -229,9 +229,9 @@
           "eenheid": "g"
         },
         {
-          "naam": "2 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "rucola",
@@ -365,7 +365,7 @@
           "eenheid": "el"
         },
         {
-          "naam": "naar smaak Peper en zout",
+          "naam": "peper en zout",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
@@ -419,14 +419,14 @@
       ],
       "ingredienten": [
         {
-          "naam": "1/2 stuk knoflook, uiteen en geschild",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook, uiteen en geschild",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
         },
         {
-          "naam": "1 bos peterselie, gewassen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "peterselie, gewassen",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "olijfolie van goede kwaliteit",
@@ -444,9 +444,9 @@
           "eenheid": "g"
         },
         {
-          "naam": "1/2 stuk citroen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "citroen",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
         }
       ],
       "stappen": [
@@ -533,9 +533,9 @@
           "eenheid": "tl"
         },
         {
-          "naam": "1 blok halloumi of 300 g oesterzwam",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "halloumi of 300 g oesterzwam",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "pita's (zelfgebakken)",
@@ -548,14 +548,14 @@
           "eenheid": "naar smaak"
         },
         {
-          "naam": "½ komkommer",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "komkommer",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
         },
         {
-          "naam": "1 teentje knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "Griekse yoghurt",
@@ -645,9 +645,9 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 teentje knoflook, fijngehakt",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook, fijngehakt",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "pijnboompitten",
@@ -767,9 +767,9 @@
           "eenheid": "tl"
         },
         {
-          "naam": "1/2 tl nootmuskaat",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "nootmuskaat",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl"
         },
         {
           "naam": "zeezout",
@@ -979,9 +979,9 @@
           "eenheid": "stuks"
         },
         {
-          "naam": "1 handje hazelnoten, kleingehakt en kort geroosterd",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "hazelnoten, kleingehakt en kort geroosterd",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "rucola",
@@ -1073,9 +1073,9 @@
           "eenheid": "stuks"
         },
         {
-          "naam": "2 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "grote bol mozzarella",
@@ -1088,9 +1088,9 @@
           "eenheid": "tl"
         },
         {
-          "naam": "1 takje verse basilicum",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "basilicum",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "Peper en zout",
@@ -1165,9 +1165,9 @@
           "eenheid": "el"
         },
         {
-          "naam": "2 flinke preien (530 g), schoongemaakt, in ringen van ½ cm",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "preien (530 g), schoongemaakt, in ringen van ½ cm",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "komijnzaad, geroosterd en licht geplet",
@@ -1175,9 +1175,9 @@
           "eenheid": "tl"
         },
         {
-          "naam": "2 kleine ingemaakte citroenen (30 g), pitten verwijderd, schil en vruchtvlees fijngehakt",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "citroenen (30 g), pitten verwijderd, schil en vruchtvlees fijngehakt",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "groentebouillon",
@@ -1190,9 +1190,9 @@
           "eenheid": "g"
         },
         {
-          "naam": "6 grote eieren",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "eieren",
+          "hoeveelheid": 6.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "feta, in blokjes van 2 cm",
@@ -1275,9 +1275,9 @@
           "eenheid": "ml"
         },
         {
-          "naam": "1 stuk komkommer",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "komkommer",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "dille",
@@ -1290,9 +1290,9 @@
           "eenheid": "g"
         },
         {
-          "naam": "2 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "zout",
@@ -1394,9 +1394,9 @@
           "eenheid": "stuks"
         },
         {
-          "naam": "1/2 stuks paksoi",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "paksoi",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
         },
         {
           "naam": "ei",
@@ -1404,12 +1404,12 @@
           "eenheid": "stuks"
         },
         {
-          "naam": "1 handvol dunne eiernoedels of wonton noedels of ramen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "dunne eiernoedels of wonton noedels of ramen",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "naar smaak chili olie",
+          "naam": "chili olie",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
@@ -1473,14 +1473,14 @@
           "eenheid": "el"
         },
         {
-          "naam": "4 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "2 citroenen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "citroenen",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "verse tijm (of 1 tl gedroogd)",
@@ -1661,9 +1661,9 @@
       ],
       "ingredienten": [
         {
-          "naam": "1 kg zoete aardappelen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "zoete aardappelen",
+          "hoeveelheid": 1000.0,
+          "eenheid": "g"
         },
         {
           "naam": "kruimige aardappelen",
@@ -1686,9 +1686,9 @@
           "eenheid": "tl"
         },
         {
-          "naam": "2 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "olijfolie",
@@ -1750,9 +1750,9 @@
       ],
       "ingredienten": [
         {
-          "naam": "1 kg gnocchi",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "gnocchi",
+          "hoeveelheid": 1000.0,
+          "eenheid": "g"
         },
         {
           "naam": "feta",
@@ -1765,14 +1765,14 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 rode ui",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "ui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "4 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "olijfolie",
@@ -1827,7 +1827,7 @@
       "titel": "Gennaro's Klassieke Spaghetti Carbonara",
       "slug": "gennaro-s-klassieke-spaghetti-carbonara",
       "beschrijving": "Een authentieke Italiaanse pasta met pancetta, ei en Parmezaanse kaas.",
-      "afbeelding": "",
+      "afbeelding": "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -1951,9 +1951,9 @@
           "eenheid": "stuks"
         },
         {
-          "naam": "0.5 teen knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
         },
         {
           "naam": "feta",
@@ -1961,9 +1961,9 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 handje peterselie",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "peterselie",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "peper en zout naar smaak",
@@ -2087,9 +2087,9 @@
       ],
       "ingredienten": [
         {
-          "naam": "1 stronk broccoli, in roosjes",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "broccoli, in roosjes",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "spruitjes",
@@ -2117,14 +2117,14 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 snufje zeezout",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "zeezout",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "1/2 citroen, sap",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "citroen, sap",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
         },
         {
           "naam": "platbrood, om te serveren",
@@ -2391,7 +2391,7 @@
       "titel": "Lorenzo's pasta",
       "slug": "lorenzo-s-pasta",
       "beschrijving": "Klassieke Italiaanse pasta met geroosterde tomaten, knapperige bacon en Parmigiano.",
-      "afbeelding": "",
+      "afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
       "bereidingstijd": 27,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2423,12 +2423,12 @@
           "eenheid": "el"
         },
         {
-          "naam": "naar smaak zout",
+          "naam": "zout",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "naar smaak peper",
+          "naam": "peper",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
@@ -2511,9 +2511,9 @@
           "eenheid": "stuks"
         },
         {
-          "naam": "1 snufje zout",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "zout",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "appels",
@@ -2595,19 +2595,19 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 rode paprika",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "paprika",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "1 komkommer",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "komkommer",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "1-2 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "extra vergine olijfolie",
@@ -2667,7 +2667,7 @@
       "titel": "Citroenpasta met chili vlokken",
       "slug": "citroenpasta-met-chili-vlokken",
       "beschrijving": "Fijne Italiaanse pasta met gekarameliseerde citroen, chili en Parmezaanse kaas.",
-      "afbeelding": "",
+      "afbeelding": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=800&q=80",
       "bereidingstijd": 37,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2699,9 +2699,9 @@
           "eenheid": "tl"
         },
         {
-          "naam": "1 snufje suiker",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "suiker",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "ongezouten boter",
@@ -2719,7 +2719,7 @@
           "eenheid": "g"
         },
         {
-          "naam": "naar smaak zwarte peper",
+          "naam": "zwarte peper",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
@@ -2806,19 +2806,19 @@
           "eenheid": "ml"
         },
         {
-          "naam": "1 l groentebouillon",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "groentebouillon",
+          "hoeveelheid": 1.0,
+          "eenheid": "l"
         },
         {
-          "naam": "1 grote ui",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "ui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "3 teentjes knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook",
+          "hoeveelheid": 3.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "olijfolie",
@@ -2836,9 +2836,9 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 bosje verse basilicum",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "basilicum",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "zout en peper naar smaak",
@@ -2904,9 +2904,9 @@
       ],
       "ingredienten": [
         {
-          "naam": "1 pot (570 g) queen butter beans (of andere witte bonen van goede kwaliteit)",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "queen butter beans (of andere witte bonen van goede kwaliteit)",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "grote preien, alleen het wit en lichtgroen, in ringetjes",
@@ -2919,9 +2919,9 @@
           "eenheid": "stuks"
         },
         {
-          "naam": "4 telen knoflook, fijngehakt",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflook, fijngehakt",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "kippenbouillon of groentebouillon",
@@ -2934,14 +2934,14 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 handvol verse dragon en peterselie, fijngehakt",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "dragon en peterselie, fijngehakt",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "1 handvol verse salieblaadjes",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "salieblaadjes",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
         },
         {
           "naam": "Boter",
