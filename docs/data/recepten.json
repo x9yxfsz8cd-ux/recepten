@@ -3055,6 +3055,105 @@
       "bron_naam": "YouTube",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-10"
+    },
+    {
+      "id": "r1775814179",
+      "titel": "Pasta Pesto met Mozzarella en Tomaat",
+      "slug": "pasta-pesto-met-mozzarella-en-tomaat",
+      "beschrijving": "Een frisse en eenvoudige Italiaanse pastaschotel met zelfgemaakte pesto, romige mozzarella en verse tomaten.",
+      "afbeelding": "",
+      "bereidingstijd": 15,
+      "actieve_tijd": 15,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "snel",
+        "lunch",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "pasta (bijv. penne of fusilli)",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "verse basilicum",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "pijnboompitten",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie extra vierge",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Parmezaanse kaas, geraspte",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "cherry tomaten",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "verse mozzarella (bufala of fior di latte)",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "1/2 tl zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Kook de pasta volgens de verpakking in gezouten water. Giet af en reserveer 100 ml kookvocht."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Maak de pesto: maal basilicum, pijnboompitten, knoflook en zout fijn in een blender of vijzel. Voeg olijfolie en Parmezaanse kaas toe en mix tot een gladde pasta."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Halveer de cherry tomaten en scheur de mozzarella in stukken. Meng de pasta met de pesto en voeg kookvocht toe tot gewenste consistentie."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Verdeel over borden, top met tomaten en mozzarella, en garneer met zwarte peper en extra basilicum."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.jumbo.com/recepten/pasta-pesto-met-mozzarella-en-tomaat-560310",
+      "bron_naam": "Jumbo",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-10"
     }
   ]
 }
