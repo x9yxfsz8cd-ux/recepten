@@ -402,81 +402,6 @@
       "passieve_tijd": 0
     },
     {
-      "id": "r1774487934",
-      "titel": "Pasta Aglio e Olio",
-      "slug": "pasta-aglio-e-olio",
-      "beschrijving": "Een eenvoudig maar elegant Italiaans pastagerecht met knoflook, olie en rode peper.",
-      "afbeelding": "https://i.ytimg.com/vi/bJUiWdM__Qw/maxresdefault.jpg",
-      "bereidingstijd": 25,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 2,
-      "tags": [
-        "vegetarisch",
-        "snel",
-        "Italiaans",
-        "diner",
-        "snack"
-      ],
-      "ingredienten": [
-        {
-          "naam": "1/2 stuk knoflook, uiteen en geschild",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "1 bos peterselie, gewassen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "olijfolie van goede kwaliteit",
-          "hoeveelheid": 125.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "rode pepervlokken",
-          "hoeveelheid": 1.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "droge linguine",
-          "hoeveelheid": 225.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "1/2 stuk citroen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Breng een grote pot met veel zout en water aan de kook. Snijd de knoflookteentjes dun en hak de peterseliebladerenerg fijn (zonder de dikke stengels)."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Verwarm de olijfolie in een grote sautépan op middelhoog vuur tot het glinster, voeg de gesneden knoflook toe en roer constant tot deze licht bruin begint te worden. Voeg de rode pepervlokken toe en haal de pan van het vuur zodat de knoflook zacht goudbruin verder gaat bakken."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Kook de linguine tot al dente, voeg deze bij de olijfolie met ongeveer 60 ml gereserveerd pastawater, pers de citroen uit en meng er de fijngesneden peterselie door. Breng op smaak met zout en peper en serveer meteen."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
-      },
-      "bron": "https://www.youtube.com/watch?v=bJUiWdM__Qw",
-      "bron_naam": "YouTube",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 15,
-      "passieve_tijd": 10
-    },
-    {
       "id": "r1774536203",
       "titel": "Halloumi & Oesterzwam Pita's met Tzatziki",
       "slug": "halloumi-oesterzwam-pita-s-met-tzatziki",
@@ -3053,6 +2978,81 @@
       },
       "bron": "https://www.ah.nl/allerhande/recept/R-R1198498/pasta-alla-norma",
       "bron_naam": "Albert Heijn",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-10"
+    },
+    {
+      "id": "r1775811945",
+      "titel": "Pasta Aglio e Olio",
+      "slug": "pasta-aglio-e-olio",
+      "beschrijving": "Een eenvoudige maar elegante Italiaanse pastagerecht met knoflook, olie en rode pepervlokken.",
+      "afbeelding": "https://i.ytimg.com/vi/bJUiWdM__Qw/maxresdefault.jpg",
+      "bereidingstijd": 20,
+      "actieve_tijd": 20,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "snel",
+        "Italiaans",
+        "diner",
+        "snack"
+      ],
+      "ingredienten": [
+        {
+          "naam": "1/2 bol knoflook, gescheiden en geschild",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 bos peterselie, gereinigd",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie van goede kwaliteit",
+          "hoeveelheid": 120.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "rode pepervlokken",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "droge linguine",
+          "hoeveelheid": 225.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1/2 citroen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Vul een grote pot met veel zout en zet water aan de kook. Snij de knoflookteentjes dun en zet apart. Pik de peterselieblaadjes van hun steeltjes en hak fijn."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Voeg de olijfolie toe aan een grote sautépan en verhit over middelhoog vuur tot het glinster. Voeg de gesneden knoflook toe en roer constant tot deze net goudbruin begint te kleuren. Voeg de rode pepervlokken toe en haal van het vuur."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Kook de pasta al dente volgens de verpakking. Leng de pasta af en voeg ongeveer 60 ml pasta-kookwater toe aan de knoflookolie. Voeg citroensap en peterselie toe, meng goed en breng op smaak met zout en peper. Serveer onmiddellijk."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.youtube.com/watch?v=bJUiWdM__Qw",
+      "bron_naam": "YouTube",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-10"
     }
