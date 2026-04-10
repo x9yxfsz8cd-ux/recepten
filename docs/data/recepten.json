@@ -2983,6 +2983,78 @@
       "bron_naam": "Moniquevanloon",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-02"
+    },
+    {
+      "id": "r1775811914",
+      "titel": "Wraprolletjes met roomkaas, babyromaine en paprika",
+      "slug": "wraprolletjes-met-roomkaas-babyromaine-en-paprika",
+      "beschrijving": "Vrolijke bietenwraps met roomkaas en babyromaine, perfect voor in de lunchbox.",
+      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD177177_1024x748_JPG.jpg",
+      "bereidingstijd": 15,
+      "actieve_tijd": 15,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "lunch",
+        "snack"
+      ],
+      "ingredienten": [
+        {
+          "naam": "oranje paprika's",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "kropje babyromainesla",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "bietenwraps",
+          "hoeveelheid": 6.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "zuivelspread naturel",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "milde olijfolie",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Maak de paprika's schoon en snijd in de lengte in dunne repen. Halveer de babyromainesla in de lengte en snijd in de lengte in reepjes."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Bestrijk de wraps met de zuivelspread, besprenkel met olie en beleg met de sla en paprika. Rol strak op."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Snijd 1 cm van de zijkanten van de wraps en snijd de wraps in gelijke stukken (in totaal 32)."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Prik op elke tapasprikker 4 rolletjes en verdeel over de lunchtrommels."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1198498/pasta-alla-norma",
+      "bron_naam": "Albert Heijn",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-10"
     }
   ]
 }
