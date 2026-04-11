@@ -893,6 +893,7 @@ def main():
     json_ld = None
 
     json_ld_rejected = False
+    original_img_url = extract_og_image(html) if html else ""
     if html:
         # Probeer eerst JSON-LD (meest betrouwbare bron)
         json_ld = extract_json_ld_recipe(html, url)
@@ -948,6 +949,8 @@ def main():
 
     # Afbeelding
     img_url = extract_og_image(html) if html else ""
+    if not img_url:
+        img_url = original_img_url
     # JSON-LD heeft soms ook een image
     if not img_url and json_ld:
         ld_img = json_ld.get("image", "")
