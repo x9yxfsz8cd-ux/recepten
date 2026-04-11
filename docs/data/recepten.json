@@ -3044,11 +3044,11 @@
       "datum_toegevoegd": "2026-04-10"
     },
     {
-      "id": "r1775903406",
+      "id": "r1775904513",
       "titel": "Pasta Pesto",
       "slug": "pasta-pesto",
-      "beschrijving": "Een klassiek Italiaans pastagerecht met zelfgemaakte basilicumpesto en vers parmezaan.",
-      "afbeelding": "",
+      "beschrijving": "Een klassiek Italiaans pastagerecht met zelfgemaakte basilicumpesto en vers pasta.",
+      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD177177_1024x748_JPG.jpg",
       "bereidingstijd": 15,
       "actieve_tijd": 15,
       "passieve_tijd": 0,
@@ -3058,17 +3058,17 @@
         "vegetarisch",
         "Italiaans",
         "snel",
-        "diner",
-        "lunch"
+        "lunch",
+        "diner"
       ],
       "ingredienten": [
         {
-          "naam": "spaghetti of penne",
+          "naam": "pasta (bijvoorbeeld spaghetti of penne)",
           "hoeveelheid": 400.0,
           "eenheid": "g"
         },
         {
-          "naam": "verse basilicum",
+          "naam": "basilicum (vers)",
           "hoeveelheid": 50.0,
           "eenheid": "g"
         },
@@ -3078,19 +3078,19 @@
           "eenheid": "g"
         },
         {
-          "naam": "2 spitskool knoflooktenen",
+          "naam": "2 teentjes knoflook",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "parmezaan",
-          "hoeveelheid": 100.0,
-          "eenheid": "g"
+          "naam": "olijfolie",
+          "hoeveelheid": 80.0,
+          "eenheid": "ml"
         },
         {
-          "naam": "olijfolie",
-          "hoeveelheid": 100.0,
-          "eenheid": "ml"
+          "naam": "Parmezaanse kaas (gerieven)",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
         },
         {
           "naam": "zout",
@@ -3103,23 +3103,28 @@
           "eenheid": "naar smaak"
         },
         {
-          "naam": "zout en peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "citroensap",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "pasta-kookwater",
+          "hoeveelheid": 250.0,
+          "eenheid": "ml"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Breng een grote pot met water aan de kook en voeg zout toe. Kook de pasta volgens de verpakking tot al dente."
+          "tekst": "Breng een pot met water aan de kook, voeg zout toe en kook de pasta volgens de instructies op de verpakking tot al dente. Zet het kookwater apart en giet de pasta af."
         },
         {
           "nummer": 2,
-          "tekst": "Zet inmiddels de basilicum, pijnboompitten, knoflook en parmezaan in een blender of foodprocessor. Pureer tot een pasta en voeg geleidelijk olijfolie toe."
+          "tekst": "Maak de pesto: blend de basilicum, pijnboompitten, knoflook, zout en peper fijn in een foodprocessor. Voeg de olijfolie langzaam toe terwijl je blijft mixen. Roer de Parmezaanse kaas en citroensap erdoor."
         },
         {
           "nummer": 3,
-          "tekst": "Giet de pasta af en meng deze direct met de pesto. Proef af met zout en peper, en serveer direct met extra parmezaan en verse basilicum."
+          "tekst": "Meng de warme pasta met de pesto en voeg geleidelijk pasta-kookwater toe tot je gewenste consistentie bereikt. Breng op smaak met zout en peper en serveer direct."
         }
       ],
       "voedingswaarden": {
