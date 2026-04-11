@@ -420,8 +420,15 @@ def strip_html(html):
     return re.sub(r'\s+', ' ', t).strip()
 
 
-def extract_json_ld_recipe(html):
-    """Zoek een JSON-LD Recipe schema in de HTML."""
+def extract_json_ld_recipe(html, url=""):
+    """Zoek een JSON-LD Recipe schema in de HTML.
+    Valideert optioneel tegen de URL-slug om verkeerde recepten te voorkomen
+    (bijv. AH Allerhande toont soms aanbevelingen in JSON-LD).
+    """
+    url_slug = url.split("/")[-1].split("?")[0] if url else ""
+    slug_words = set(re.sub(r'[^a-z\s]', '', url_slug.replace("-", " ").lower()).split())
+
+    recipes = []
     scripts = re.findall(
         r'<script[^>]*type="application/ld\+json"[^>]*>([\s\S]*?)</script>', html, re.I
     )
@@ -433,10 +440,36 @@ def extract_json_ld_recipe(html):
                 if isinstance(item, dict):
                     t = item.get("@type", "")
                     if t == "Recipe" or (isinstance(t, list) and "Recipe" in t):
-                        return item
+                        recipes.append(item)
         except Exception:
             pass
-    return None
+
+    if not recipes:
+        return None
+
+    # Als er maar 1 recept is en geen URL-slug om te valideren, gebruik het
+    if len(recipes) == 1 and not slug_words:
+        return recipes[0]
+
+    # Valideer: kijk welk recept het beste matcht met de URL-slug
+    if slug_words:
+        best_match = None
+        best_score = 0
+        for r in recipes:
+            name = r.get("name", "").lower()
+            name_words = set(re.sub(r'[^a-z\s]', '', name).split())
+            overlap = len(slug_words & name_words)
+            if overlap > best_score:
+                best_score = overlap
+                best_match = r
+        # Alleen gebruiken als er minstens 1 woord overeenkomt
+        if best_score >= 1:
+            return best_match
+        else:
+            print(f"  JSON-LD recept '{recipes[0].get('name', '?')[:50]}' matcht niet met URL '{url_slug}' — overgeslagen")
+            return None
+
+    return recipes[0]
 
 
 def call_claude(prompt, api_key):
@@ -861,7 +894,7 @@ def main():
 
     if html:
         # Probeer eerst JSON-LD (meest betrouwbare bron)
-        json_ld = extract_json_ld_recipe(html)
+        json_ld = extract_json_ld_recipe(html, url)
         if json_ld:
             print("  JSON-LD Recipe gevonden (beste bron)")
             tekst = json.dumps(json_ld, ensure_ascii=False)
@@ -874,7 +907,7 @@ def main():
         pw_html, pw_tekst = fetch_playwright(url)
         if pw_html:
             # Check JSON-LD in Playwright HTML
-            json_ld = extract_json_ld_recipe(pw_html)
+            json_ld = extract_json_ld_recipe(pw_html, url)
             if json_ld:
                 print("  JSON-LD Recipe gevonden via browser")
                 tekst = json.dumps(json_ld, ensure_ascii=False)
@@ -937,7 +970,7 @@ def main():
             "Ik heb de volgende info over een recept. De pagina kon niet volledig worden opgehaald.\n"
             "Gebruik je kennis om het VOLLEDIGE recept te genereren met alle ingrediënten en stappen.\n\n"
             f"{tekst}\n\n"
-            "Geef je antwoord in dit EXACTE format:\n\n"
+            "Geef je antwoord in dit EXACTE formaat:\n\n"
             "TITEL: [receptnaam]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
             "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\n"

@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#3A3F3C">
+  <meta property="og:title" content="Recept">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="">
   <title>Recept</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="manifest" href="./manifest.json">
@@ -278,6 +282,23 @@
       huidigPorties = r.porties;
       document.title = `${r.titel} — Onze Recepten`;
 
+      // Dynamische OG meta tags
+      function setMeta(attr, attrValue, content) {
+        let el = document.querySelector(`meta[${attr}="${attrValue}"]`);
+        if (!el) {
+          el = document.createElement('meta');
+          el.setAttribute(attr, attrValue);
+          document.head.appendChild(el);
+        }
+        el.setAttribute('content', content);
+      }
+      setMeta('property', 'og:title', r.titel);
+      setMeta('property', 'og:description', r.beschrijving || '');
+      setMeta('property', 'og:type', 'article');
+      if (r.afbeelding) {
+        setMeta('property', 'og:image', r.afbeelding);
+      }
+
       const img = r.afbeelding
         ? `<img class="recept-hero" src="${r.afbeelding}" alt="${r.titel}">`
         : `<div class="recept-hero-placeholder"></div>`;
@@ -290,7 +311,8 @@
           <p class="stap-tekst">${s.tekst}</p>
         </div>`).join('');
 
-      const voeding = r.voedingswaarden ? `
+      const heeftVoeding = r.voedingswaarden && (r.voedingswaarden.kcal || r.voedingswaarden.eiwitten || r.voedingswaarden.koolhydraten || r.voedingswaarden.vetten);
+      const voeding = heeftVoeding ? `
         <div class="voeding-sectie">
           <div class="blok-titel">Voedingswaarden per portie</div>
           <div class="voeding-grid">
@@ -313,9 +335,13 @@
           </div>
         </div>` : '';
 
-      const bron = r.bron
-        ? `<a class="bron-link" href="${r.bron}" target="_blank" rel="noopener">Bekijk originele bron</a>`
-        : '';
+      let bron = '';
+      if (r.bron_naam && r.bron_naam !== 'Handmatig') {
+        const naam = r.bron_naam;
+        bron = r.bron
+          ? `<span class="bron-label">Originele bron: <a class="bron-link" href="${r.bron}" target="_blank" rel="noopener">${naam}</a></span>`
+          : `<span class="bron-label">Originele bron: ${naam}</span>`;
+      }
 
       document.getElementById('app').innerHTML = `
         ${img}
