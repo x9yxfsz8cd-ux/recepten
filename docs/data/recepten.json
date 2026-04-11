@@ -3111,6 +3111,94 @@
       "bron_naam": "Albert Heijn",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-11"
+    },
+    {
+      "id": "r1775903142",
+      "titel": "Koninklijke cupcakes",
+      "slug": "koninklijke-cupcakes",
+      "beschrijving": "Zelfgemaakte cupcakes met oranje glazuur en zilveren kroontjes, perfect voor Koningsdag.",
+      "afbeelding": "https://static.ah.nl/static/recepten/img_104736_1024x748_JPG.jpg",
+      "bereidingstijd": 95,
+      "actieve_tijd": 15,
+      "passieve_tijd": 80,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 12,
+      "tags": [
+        "snack",
+        "ontbijt",
+        "comfort food"
+      ],
+      "ingredienten": [
+        {
+          "naam": "ongezouten roomboter",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "middelgrote eieren",
+          "hoeveelheid": 3.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "fijne kristalsuiker",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "zelfrijzend bakmeel",
+          "hoeveelheid": 175.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "sinaasappel",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "Dr. Oetker wit glazuur",
+          "hoeveelheid": 125.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Dr. Oetker rode kleurstof",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "Dr. Oetker gele kleurstof",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "Dr. Oetker zachte parels zilver",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 180 °C. Smelt de boter in een steelpan op laag vuur en zet het vuur uit als ⅔ gesmolten is. Breek de eieren boven een kom en klop schuimig met een mixer. Voeg de suiker toe en klop tot een stevig lichtgeel eierschuim (ca. 5 minuten). Zeef het zelfrijzend bakmeel boven het eierschuim, schenk de gesmolten boter erbij en spatel alles door elkaar."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Boen de sinaasappel schoon, rasp de oranje schil erboven en pers de vrucht uit. Voeg het sap toe aan het beslag en meng erdoor. Leg de papieren cupcakevormpjes in de muffinvorm en vul ze voor ⅔ met het beslag. Bak de cupcakes in ca. 20 minuten goudbruin en gaar in het midden van de oven."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Neem de cupcakes uit de oven en laat ze 1 uur helemaal afkoelen. Doe het glazuur in een kommetje en meng de rode en gele kleurstof erdoor. Bestrijk de cupcakes met het oranje glazuur en maak op elke cupcake een kroontje van zilveren parels."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1190308/spaghetti-bolognese",
+      "bron_naam": "Albert Heijn",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-11"
     }
   ]
 }
