@@ -593,15 +593,67 @@ def body_to_html(body):
     return "\n".join(html_lines)
 
 
-def download_image_base64(url):
-    """Download afbeelding en return als base64 string. Fallback via Playwright bij 403."""
+def download_image_to_file(url):
+    """Download afbeelding, resize voor Notes, sla op als temp bestand. Returns pad of leeg."""
     if not url:
         return ""
+    b64_data, media_type = download_image_base64(url)
+    if not b64_data:
+        return ""
+    import tempfile
+    raw = base64.b64decode(b64_data)
+    ext_map = {"image/jpeg": ".jpg", "image/png": ".png", "image/gif": ".gif", "image/webp": ".jpg"}
+    ext = ext_map.get(media_type, ".jpg")
+    with tempfile.NamedTemporaryFile(suffix=ext, delete=False) as tmp:
+        tmp.write(raw)
+        tmp_path = tmp.name
+    # Resize naar max 600px voor Notes (sips is ingebouwd in macOS)
+    try:
+        out_path = tmp_path + "_resized.jpg"
+        subprocess.run(["sips", "-Z", "600", "-s", "format", "jpeg",
+                        "-s", "formatOptions", "70", tmp_path, "--out", out_path],
+                       capture_output=True, timeout=10)
+        if os.path.exists(out_path) and os.path.getsize(out_path) > 1000:
+            os.unlink(tmp_path)
+            return out_path
+        if os.path.exists(out_path):
+            os.unlink(out_path)
+    except Exception:
+        pass
+    return tmp_path
+
+
+def download_image_base64(url):
+    """Download afbeelding en return als (base64_string, media_type) tuple. Fallback via Playwright bij 403."""
+    if not url:
+        return ("", "")
+    def _detect_media_type(content_type, data_bytes):
+        """Detecteer media type via Content-Type header en magic bytes."""
+        # Check magic bytes eerst (meest betrouwbaar)
+        if data_bytes[:8] == b'\x89PNG\r\n\x1a\n':
+            return "image/png"
+        if data_bytes[:3] == b'\xff\xd8\xff':
+            return "image/jpeg"
+        if data_bytes[:4] == b'GIF8':
+            return "image/gif"
+        if data_bytes[:4] == b'RIFF' and data_bytes[8:12] == b'WEBP':
+            return "image/webp"
+        # Fallback naar Content-Type header
+        if content_type:
+            ct = content_type.lower().split(";")[0].strip()
+            if ct.startswith("image/"):
+                return ct
+        return "image/jpeg"  # veilige default
     # Directe download
     try:
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         with urllib.request.urlopen(req, context=CTX, timeout=15) as resp:
-            return base64.b64encode(resp.read()).decode()
+            content_type = resp.headers.get("Content-Type", "")
+            data = resp.read()
+            if len(data) < 1000:  # te klein voor een echte afbeelding
+                raise ValueError("Downloaded data too small")
+            media_type = _detect_media_type(content_type, data)
+            return (base64.b64encode(data).decode(), media_type)
     except Exception:
         pass
 
@@ -612,27 +664,32 @@ def download_image_base64(url):
             browser = p.chromium.launch(headless=True)
             page = browser.new_page()
             page.goto("about:blank")
-            b64 = page.evaluate(f'''async () => {{
+            result = page.evaluate(f'''async () => {{
                 try {{
                     const resp = await fetch("{url}");
                     const blob = await resp.blob();
+                    const type = blob.type || "";
                     return new Promise((resolve) => {{
                         const reader = new FileReader();
-                        reader.onloadend = () => resolve(reader.result.split(",")[1]);
+                        reader.onloadend = () => resolve({{b64: reader.result.split(",")[1], type: type}});
                         reader.readAsDataURL(blob);
                     }});
-                }} catch {{ return ""; }}
+                }} catch {{ return {{b64: "", type: ""}}; }}
             }}''')
             browser.close()
-            if b64:
-                return b64
+            if result and result.get("b64"):
+                b64 = result["b64"]
+                media_type = result.get("type", "image/jpeg")
+                if not media_type.startswith("image/"):
+                    media_type = "image/jpeg"
+                return (b64, media_type)
     except Exception:
         pass
 
-    return ""
+    return ("", "")
 
 
-def create_note(titel, html_body):
+def create_note(titel, html_body, image_path=""):
     """Maak een notitie aan in Apple Notities via AppleScript."""
     escaped = html_body.replace('\\', '\\\\').replace('"', '\\"')
     script = f'''
@@ -656,7 +713,27 @@ def create_note(titel, html_body):
     '''
     r = subprocess.run(["osascript", "-e", script], capture_output=True, text=True)
     if r.returncode == 0:
-        return r.stdout.strip()
+        note_name = r.stdout.strip()
+        # Voeg afbeelding toe als attachment (betrouwbaarder dan data URI)
+        if image_path and os.path.exists(image_path):
+            import time
+            time.sleep(0.5)
+            titel_esc = titel.replace('"', '\"')
+            attach_script = f"""
+            tell application "Notes"
+                tell account "iCloud"
+                    tell folder "recepten"
+                        set theNote to first note whose name is "{titel_esc}"
+                        make new attachment at theNote with data POSIX file "{image_path}"
+                    end tell
+                end tell
+            end tell"""
+            subprocess.run(["osascript", "-e", attach_script], capture_output=True, text=True)
+            try:
+                os.unlink(image_path)
+            except Exception:
+                pass
+        return note_name
     else:
         print(f"  Notitie fout: {r.stderr[:200]}")
         return None
@@ -712,8 +789,7 @@ def save_recipe(recipe, bron_url, bron_naam, img_url, api_key):
     print(f"  {website_url}")
 
     print("Notitie aanmaken...")
-    img_b64 = download_image_base64(img_url)
-    img_html = f'<p><img src="data:image/jpeg;base64,{img_b64}" style="width:100%"></p>' if img_b64 else ""
+    image_path = download_image_to_file(img_url)
     hashtags = " ".join(f"#{t.replace(' ', '')}" for t in recipe["tags"])
     recept_html = body_to_html(recipe["body"])
     meta_parts = []
@@ -728,13 +804,13 @@ def save_recipe(recipe, bron_url, bron_naam, img_url, api_key):
     meta_parts.append(f"{recipe['porties']} porties")
 
     full_html = (
-        f"<h1>{html_mod.escape(recipe['titel'])}</h1>\n{img_html}\n"
+        f"<h1>{html_mod.escape(recipe['titel'])}</h1>\n"
         f'<p style="color:gray">{" · ".join(meta_parts)}</p>\n<p>{hashtags}</p>\n'
         f"{recept_html}\n<br>\n<hr>\n"
         f'<p><a href="{html_mod.escape(website_url)}">Bekijk op receptensite</a></p>\n'
         f'<p>Bron: <a href="{html_mod.escape(bron_url)}">{html_mod.escape(bron_naam)}</a></p>'
     )
-    note_name = create_note(recipe["titel"], full_html)
+    note_name = create_note(recipe["titel"], full_html, image_path)
     if note_name: print(f"  Notitie: {note_name}")
     print(f"\nKlaar! {recipe['titel']}")
     return recipe["titel"]
@@ -868,21 +944,20 @@ def main():
                 print(f"  {website_url}")
 
                 print("Notitie aanmaken...")
-                img_b64 = download_image_base64(img_url)
-                img_html_note = f'<p><img src="data:image/jpeg;base64,{img_b64}" style="width:100%"></p>' if img_b64 else ""
+                image_path = download_image_to_file(img_url)
                 hashtags = " ".join(f"#{t.replace(' ', '')}" for t in recipe["tags"])
                 recept_html_note = body_to_html(recipe["body"])
                 meta_parts = []
                 if recipe.get("bereidingstijd", recipe.get("actieve_tijd", 0)): meta_parts.append(f"{recipe.get('bereidingstijd', recipe.get('actieve_tijd', 0))} min")
                 meta_parts.append(f"{recipe['porties']} porties")
                 full_html = (
-                    f"<h1>{html_mod.escape(recipe['titel'])}</h1>\n{img_html_note}\n"
+                    f"<h1>{html_mod.escape(recipe['titel'])}</h1>\n"
                     f'<p style="color:gray">{" · ".join(meta_parts)}</p>\n<p>{hashtags}</p>\n'
                     f"{recept_html_note}\n<br>\n<hr>\n"
                     f'<p><a href="{html_mod.escape(website_url)}">Bekijk op receptensite</a></p>\n'
                     f'<p>Bron: <a href="{html_mod.escape(url)}">{html_mod.escape(bron_naam)}</a></p>'
                 )
-                note_name = create_note(recipe["titel"], full_html)
+                note_name = create_note(recipe["titel"], full_html, image_path)
                 if note_name: print(f"  Notitie: {note_name}")
                 print(f"\nKlaar! {recipe['titel']}")
                 return recipe["titel"]
