@@ -892,6 +892,7 @@ def main():
     tekst = ""
     json_ld = None
 
+    json_ld_rejected = False
     if html:
         # Probeer eerst JSON-LD (meest betrouwbare bron)
         json_ld = extract_json_ld_recipe(html, url)
@@ -899,11 +900,23 @@ def main():
             print("  JSON-LD Recipe gevonden (beste bron)")
             tekst = json.dumps(json_ld, ensure_ascii=False)
         else:
+            # Check of er WEL JSON-LD was maar afgewezen (slug mismatch)
+            raw_scripts = re.findall(r'<script[^>]*type="application/ld\+json"[^>]*>([\s\S]*?)</script>', html, re.I)
+            for s in raw_scripts:
+                try:
+                    d = json.loads(s)
+                    items = d if isinstance(d, list) else d.get("@graph", [d])
+                    if any(isinstance(i, dict) and ("Recipe" == i.get("@type", "") or (isinstance(i.get("@type"), list) and "Recipe" in i.get("@type", []))) for i in items):
+                        json_ld_rejected = True
+                        break
+                except Exception:
+                    pass
             tekst = strip_html(html)
 
-    # Als geen JSON-LD en geen receptinhoud → Playwright
-    if not json_ld and (not tekst or not has_recipe_content(tekst)):
-        print("  Geen receptinhoud gevonden, probeer headless browser...")
+    # Als geen JSON-LD (of afgewezen) en geen receptinhoud → Playwright
+    if not json_ld and (json_ld_rejected or not tekst or not has_recipe_content(tekst)):
+        reason = "JSON-LD afgewezen (slug mismatch)" if json_ld_rejected else "Geen receptinhoud gevonden"
+        print(f"  {reason}, probeer headless browser...")
         pw_html, pw_tekst = fetch_playwright(url)
         if pw_html:
             # Check JSON-LD in Playwright HTML
