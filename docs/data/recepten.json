@@ -3044,11 +3044,11 @@
       "datum_toegevoegd": "2026-04-10"
     },
     {
-      "id": "r1775903109",
-      "titel": "Wraprolletjes met roomkaas, babyromaine en paprika",
-      "slug": "wraprolletjes-met-roomkaas-babyromaine-en-paprika",
-      "beschrijving": "Vrolijke bietenwraps met roomkaas, babyromaine en paprika, perfect voor de lunchbox.",
-      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD177177_1024x748_JPG.jpg",
+      "id": "r1775903397",
+      "titel": "Pasta Pesto",
+      "slug": "pasta-pesto",
+      "beschrijving": "Een klassiek Italiaans gerecht met verse pasta bedekt in romige basilicum pesto.",
+      "afbeelding": "",
       "bereidingstijd": 15,
       "actieve_tijd": 15,
       "passieve_tijd": 0,
@@ -3056,49 +3056,65 @@
       "porties": 4,
       "tags": [
         "vegetarisch",
+        "Italiaans",
         "snel",
-        "lunch",
-        "snack"
+        "diner",
+        "lunch"
       ],
       "ingredienten": [
         {
-          "naam": "oranje paprika's",
-          "hoeveelheid": 2.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "kropje babyromainesla",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "bietenwraps",
-          "hoeveelheid": 6.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "zuivelspread naturel",
-          "hoeveelheid": 150.0,
+          "naam": "pasta (spaghetti of penne)",
+          "hoeveelheid": 400.0,
           "eenheid": "g"
         },
         {
-          "naam": "milde olijfolie",
-          "hoeveelheid": 1.0,
+          "naam": "verse basilicum",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "pijnboompitten",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Parmezaanse kaas",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "zout en peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "citroensap",
+          "hoeveelheid": 2.0,
           "eenheid": "el"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Maak de paprika's schoon en snijd in de lengte in dunne repen. Halveer de babyromainesla in de lengte en snijd in reepjes."
+          "tekst": "Kook de pasta volgens de instructies op de verpakking in gezouten water tot al dente. Zet het water apart en giet de pasta af."
         },
         {
           "nummer": 2,
-          "tekst": "Bestrijk de wraps met de zuivelspread, besprenkel met olie en beleg met de sla en paprika. Rol strak op en snijd 1 cm van de zijkanten af, snijd de wraps in gelijke stukken."
+          "tekst": "Maak de pesto: maal basilicum, pijnboompitten, knoflook en Parmezaanse kaas fijn in een blender of foodprocessor. Voeg olijfolie en citroensap toe en mix tot een glad mengsel. Breng op smaak met zout en peper."
         },
         {
           "nummer": 3,
-          "tekst": "Prik op elke tapasprikker 4 rolletjes en verdeel over de lunchtrommels."
+          "tekst": "Meng de pesto met de warme pasta en voeg zo nodig wat pastawater toe voor een creamier saus. Serveer direct met extra Parmezaanse kaas en basilicum."
         }
       ],
       "voedingswaarden": {
@@ -3108,94 +3124,6 @@
         "vetten": 0
       },
       "bron": "https://www.ah.nl/allerhande/recept/R-R1198498/pasta-pesto",
-      "bron_naam": "Albert Heijn",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-04-11"
-    },
-    {
-      "id": "r1775903142",
-      "titel": "Koninklijke cupcakes",
-      "slug": "koninklijke-cupcakes",
-      "beschrijving": "Zelfgemaakte cupcakes met oranje glazuur en zilveren kroontjes, perfect voor Koningsdag.",
-      "afbeelding": "https://static.ah.nl/static/recepten/img_104736_1024x748_JPG.jpg",
-      "bereidingstijd": 95,
-      "actieve_tijd": 15,
-      "passieve_tijd": 80,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 12,
-      "tags": [
-        "snack",
-        "ontbijt",
-        "comfort food"
-      ],
-      "ingredienten": [
-        {
-          "naam": "ongezouten roomboter",
-          "hoeveelheid": 150.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "middelgrote eieren",
-          "hoeveelheid": 3.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "fijne kristalsuiker",
-          "hoeveelheid": 150.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "zelfrijzend bakmeel",
-          "hoeveelheid": 175.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "sinaasappel",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "Dr. Oetker wit glazuur",
-          "hoeveelheid": 125.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "Dr. Oetker rode kleurstof",
-          "hoeveelheid": 1.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "Dr. Oetker gele kleurstof",
-          "hoeveelheid": 1.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "Dr. Oetker zachte parels zilver",
-          "hoeveelheid": 2.0,
-          "eenheid": "el"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Verwarm de oven voor op 180 °C. Smelt de boter in een steelpan op laag vuur en zet het vuur uit als ⅔ gesmolten is. Breek de eieren boven een kom en klop schuimig met een mixer. Voeg de suiker toe en klop tot een stevig lichtgeel eierschuim (ca. 5 minuten). Zeef het zelfrijzend bakmeel boven het eierschuim, schenk de gesmolten boter erbij en spatel alles door elkaar."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Boen de sinaasappel schoon, rasp de oranje schil erboven en pers de vrucht uit. Voeg het sap toe aan het beslag en meng erdoor. Leg de papieren cupcakevormpjes in de muffinvorm en vul ze voor ⅔ met het beslag. Bak de cupcakes in ca. 20 minuten goudbruin en gaar in het midden van de oven."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Neem de cupcakes uit de oven en laat ze 1 uur helemaal afkoelen. Doe het glazuur in een kommetje en meng de rode en gele kleurstof erdoor. Bestrijk de cupcakes met het oranje glazuur en maak op elke cupcake een kroontje van zilveren parels."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
-      },
-      "bron": "https://www.ah.nl/allerhande/recept/R-R1190308/spaghetti-bolognese",
       "bron_naam": "Albert Heijn",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-11"
