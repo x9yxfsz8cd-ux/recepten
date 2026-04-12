@@ -1024,7 +1024,9 @@ def main():
 
     # Afbeelding
     img_url = extract_og_image(html) if html else ""
-    if not img_url:
+    if not img_url and not json_ld_rejected:
+        # Alleen original_img_url gebruiken als JSON-LD NIET was afgewezen,
+        # want bij slug mismatch hoort de og:image bij het verkeerde recept
         img_url = original_img_url
     # JSON-LD heeft soms ook een image
     if not img_url and json_ld:
