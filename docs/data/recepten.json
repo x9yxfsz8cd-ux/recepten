@@ -3254,6 +3254,111 @@
       "bron_naam": "Leukerecepten",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-13"
+    },
+    {
+      "id": "r1776084796",
+      "titel": "Kabeljauw met beurre blancsaus",
+      "slug": "kabeljauw-met-beurre-blancsaus",
+      "beschrijving": "Heerlijke kabeljauw bestrooid met peper en zout, gebakken in roomboter en geserveerd met bimi en aardappelpuree met een schuimige beurre blancsaus op smaak gebracht met dille en citroen.",
+      "afbeelding": "https://static-images.jumbo.com/product_images/Recipe_504145-01_560x560_2.jpg",
+      "bereidingstijd": 25,
+      "actieve_tijd": 25,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vis",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "sjalotje",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "witte wijn",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "kabeljauwhaasjes",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "bloem",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "gezouten roomboter",
+          "hoeveelheid": 175.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "bimi",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "aardappelpuree met boter",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "citroen",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "verse dille",
+          "hoeveelheid": 5.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "zeef",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Snipper het sjalotje en breng met de wijn in een steelpannetje aan de kook. Laat op middelhoog vuur ca. 5 minuten inkoken tot de helft (50 ml). Zeef de ingekookte wijn en doe terug in het pannetje. Zet het vuur uit."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd intussen de kabeljauw in vier gelijke stukken en bestrooi met peper en zout. Doe de bloem in een diep bord en haal de stukken vis door de bloem. Schud de overtollige bloem eraf."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Smelt 25 g roomboter in een koekenpan en bak hierin de vis in 3 minuten per kant gaar. Snijd de rest van de koude boter in blokjes."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Kook intussen de bimi beetgaar in 3 minuten in kokend water. Verwarm de aardappelpuree volgens de aanwijzingen op de verpakking. Boen de citroen schoon en verdeel de dille in kleine plukjes."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Verwarm de ingekookte wijn in het steelpannetje. Klop de rest van de boter met een garde door de wijn tot een schuimige saus en breng op smaak met peper."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Verwarm de borden voor met heet water. Verdeel de saus over de borden en verdeel er de vis, bimi en aardappelpuree over. Rasp er de citroenschil boven en garneer met de dille."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.jumbo.com/recepten/tikka-masala-met-kip-en-naanbrood-504145",
+      "bron_naam": "Jumbo",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-13"
     }
   ]
 }
