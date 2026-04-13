@@ -426,7 +426,11 @@ def extract_json_ld_recipe(html, url=""):
     (bijv. AH Allerhande toont soms aanbevelingen in JSON-LD).
     """
     url_slug = url.split("/")[-1].split("?")[0] if url else ""
-    slug_words = set(re.sub(r'[^a-z\s]', '', url_slug.replace("-", " ").lower()).split())
+    # Stopwoorden die geen betekenis hebben voor receptmatch
+    stop_words = {"met", "en", "van", "de", "het", "een", "in", "op", "voor",
+                  "of", "uit", "aan", "bij", "door", "om", "als", "naar", "tot",
+                  "te", "je", "the", "and", "with", "a", "an", "or", "for", "from"}
+    slug_words = set(re.sub(r'[^a-z\s]', '', url_slug.replace("-", " ").lower()).split()) - stop_words
 
     recipes = []
     scripts = re.findall(
@@ -457,7 +461,7 @@ def extract_json_ld_recipe(html, url=""):
         best_score = 0
         for r in recipes:
             name = r.get("name", "").lower()
-            name_words = set(re.sub(r'[^a-z\s]', '', name).split())
+            name_words = set(re.sub(r'[^a-z\s]', '', name).split()) - stop_words
             overlap = len(slug_words & name_words)
             if overlap > best_score:
                 best_score = overlap
@@ -1004,6 +1008,10 @@ def main():
             else:
                 html = pw_html
                 tekst = pw_tekst if pw_tekst else strip_html(pw_html)
+        elif json_ld_rejected:
+            # Playwright faalde EN JSON-LD was afgewezen: originele HTML bevat verkeerd recept
+            tekst = ""
+            html = None
 
     if not tekst or (not json_ld and not has_recipe_content(tekst)):
         # Laatste poging: gebruik og:title, og:description, URL slug
@@ -1021,6 +1029,7 @@ def main():
         meta_info.append(f"URL slug: {slug_info}")
         tekst = "\n".join(meta_info) + f"\nURL: {url}"
         print(f"  Fallback op metadata: {meta_info[0] if meta_info else slug_info}")
+        print("  ⚠️  Pagina niet bereikbaar — recept wordt gegenereerd op basis van URL")
 
     # Afbeelding
     img_url = extract_og_image(html) if html else ""
