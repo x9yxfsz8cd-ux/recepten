@@ -3554,6 +3554,111 @@
       "bron_naam": "YouTube",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-13"
+    },
+    {
+      "id": "r1776084897",
+      "titel": "Tortilla wraps met kip",
+      "slug": "tortilla-wraps-met-kip",
+      "beschrijving": "Sappige kipfilet in knapperige tortilla wraps met verse groenten en sausaus.",
+      "afbeelding": "",
+      "bereidingstijd": 20,
+      "actieve_tijd": 20,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vlees",
+        "snel",
+        "lunch",
+        "diner",
+        "snack"
+      ],
+      "ingredienten": [
+        {
+          "naam": "kipfilet",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "tortilla wraps (bloem)",
+          "hoeveelheid": 8.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "paprika (rood)",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "komkommer",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "rode ui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "sla",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "mayonaise",
+          "hoeveelheid": 150.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "sriracha",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "paprikapoeder",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "peper",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Kruid de kipfilets met paprikapoeder, zout en peper aan beide zijden. Bak ze in olijfolie 6-7 minuten per zijde op middelhoog vuur tot ze gaar zijn."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Laat de kip enkele minuten rusten en snij deze daarna in dunne reepjes. Meng intussen mayonaise met sriracha voor de saus."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Warm de tortilla's kort op in een droge pan, verdeel de saus erover en vul ze met kip, paprika, komkommer, ui en sla. Vouw de wraps dicht en serveer direct."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.smulweb.nl/recepten/1496583/Tortilla-wraps-met-kip",
+      "bron_naam": "Smulweb",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-13"
     }
   ]
 }
