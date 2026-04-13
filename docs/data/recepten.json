@@ -3981,88 +3981,148 @@
       "datum_toegevoegd": "2026-04-13"
     },
     {
-      "id": "r1776085124",
-      "titel": "Kabeljauw met beurre blancsaus",
-      "slug": "kabeljauw-met-beurre-blancsaus",
-      "beschrijving": "Heerlijke kabeljauw bestrooid met peper en zout, gebakken in roomboter en geserveerd met bimi en aardappelpuree met een schuimige beurre blancsaus van wijn, boter, dille en citroen.",
+      "id": "r1776085295",
+      "titel": "Tikka Masala met Kip en Naanbrood",
+      "slug": "tikka-masala-met-kip-en-naanbrood",
+      "beschrijving": "Een smakelijke Indiase curry met gemarineerde kip, rijke tomatensaus en zelfgemaakte naanbrood.",
       "afbeelding": "",
-      "bereidingstijd": 25,
-      "actieve_tijd": 25,
-      "passieve_tijd": 0,
+      "bereidingstijd": 50,
+      "actieve_tijd": 30,
+      "passieve_tijd": 20,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
-        "vis",
+        "vlees",
         "comfort food",
+        "Aziatisch",
         "diner"
       ],
       "ingredienten": [
         {
-          "naam": "sjalotje",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
+          "naam": "kippfilet",
+          "hoeveelheid": 800.0,
+          "eenheid": "g"
         },
         {
-          "naam": "witte wijn",
-          "hoeveelheid": 100.0,
+          "naam": "yoghurt",
+          "hoeveelheid": 200.0,
           "eenheid": "ml"
         },
         {
-          "naam": "kabeljauwhaasjes",
-          "hoeveelheid": 4.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "bloem",
-          "hoeveelheid": 1.0,
+          "naam": "tikka masala-kruidenmix",
+          "hoeveelheid": 3.0,
           "eenheid": "el"
         },
         {
-          "naam": "gezouten roomboter",
-          "hoeveelheid": 175.0,
+          "naam": "gember-knoflookpasta",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "kokosmelk",
+          "hoeveelheid": 400.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "tomaten uit blik",
+          "hoeveelheid": 400.0,
           "eenheid": "g"
         },
         {
-          "naam": "bimi",
+          "naam": "tomatenpuree",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "room",
           "hoeveelheid": 200.0,
-          "eenheid": "g"
+          "eenheid": "ml"
         },
         {
-          "naam": "aardappelpuree met boter",
-          "hoeveelheid": 500.0,
-          "eenheid": "g"
+          "naam": "2 uien",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
         },
         {
-          "naam": "citroen",
+          "naam": "3 knoflooktenen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout",
           "hoeveelheid": 1.0,
-          "eenheid": "stuks"
+          "eenheid": "tl"
         },
         {
-          "naam": "verse dille",
-          "hoeveelheid": 5.0,
+          "naam": "peper",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "Handvol koriander",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "tarwebloem",
+          "hoeveelheid": 300.0,
           "eenheid": "g"
+        },
+        {
+          "naam": "yoghurt",
+          "hoeveelheid": 150.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "bakpoeder",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "olie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "nigellazaad",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Snipper het sjalotje en breng met de wijn in een steelpannetje aan de kook. Laat op middelhoog vuur ca. 5 minuten inkoken tot de helft (50 ml). Zeef de ingekookte wijn en doe terug in het pannetje, zet het vuur uit."
+          "tekst": "Snijd de kip in blokjes en marineer 20 minuten in yoghurt, tikka masala-kruidenmix en gember-knoflookpasta."
         },
         {
           "nummer": 2,
-          "tekst": "Snijd intussen de kabeljauw in vier gelijke stukken, bestrooi met peper en zout. Doe de bloem in een diep bord en haal de stukken vis door de bloem, schud de overtollige bloem eraf. Smelt 25 g roomboter in een koekenpan en bak hierin de vis in 3 minuten per kant gaar."
+          "tekst": "Verhit olie in een grote pan en bak de gemarineerde kip 5 minuten tot het bruin is. Voeg fijngehakte uien toe en bak 3 minuten mee."
         },
         {
           "nummer": 3,
-          "tekst": "Snijd de rest van de koude boter in blokjes. Kook intussen de bimi beetgaar in 3 minuten in kokend water. Verwarm de aardappelpuree volgens de aanwijzingen op de verpakking. Boen de citroen schoon en verdeel de dille in kleine plukjes."
+          "tekst": "Voeg tomatenpuree, blikken tomaten en kokosmelk toe. Laat 10 minuten zachtjes doorkoken en voeg room toe. Breng op smaak met zout en peper."
         },
         {
           "nummer": 4,
-          "tekst": "Verwarm de ingekookte wijn in het steelpannetje. Klop de rest van de boter met een garde door de wijn tot een schuimige saus. Breng op smaak met peper."
+          "tekst": "Voor het naanbrood: meng bloem, bakpoeder en zout. Kneed met yoghurt en olie tot een deeg en laat 10 minuten rusten."
         },
         {
           "nummer": 5,
-          "tekst": "Verwarm de borden voor met heet water. Verdeel de saus over de borden en verdeel er de vis, bimi en aardappelpuree over. Rasp er de citroenschil boven en garneer met de dille."
+          "tekst": "Verdeel het deeg in 8 ballen en rol deze uit tot platte cirkels. Bestrooi met nigellazaad en bak in een hete pan 2-3 minuten per zijde tot goudbruin."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Garneer de curry met verse koriander en serveer met het warme naanbrood."
         }
       ],
       "voedingswaarden": {
