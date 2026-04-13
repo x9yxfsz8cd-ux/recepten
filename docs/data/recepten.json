@@ -3127,6 +3127,133 @@
       "bron_naam": "Albert Heijn",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-12"
+    },
+    {
+      "id": "r1776084756",
+      "titel": "Pad Thai – Thaise noedel roerbak",
+      "slug": "pad-thai-thaise-noedel-roerbak",
+      "beschrijving": "Een authentieke Thaise noedelroerbak met de perfecte balans van hartig, zoet en zuur, gemaakt met simpele ingrediënten.",
+      "afbeelding": "https://www.leukerecepten.nl/app/uploads/2025/03/pad-thai-recept.jpg",
+      "bereidingstijd": 50,
+      "actieve_tijd": 20,
+      "passieve_tijd": 30,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "Aziatisch",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "rijstnoedels (plat)",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "bosui",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "rode ui",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "2 tenen knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 handje pinda's",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "vissaus",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "limoensap",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "eieren",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "taugé",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "champignons",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 handje verse koriander",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zonnebloemolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "chilivlokjes",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "kip of tofu (optioneel)",
+          "hoeveelheid": 120.0,
+          "eenheid": "g"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Leg de rijstnoedels van te voren in koud water tot ze zachter worden, ongeveer 30 minuten. Snijd de bosui in dunne ringen, houd wat apart voor garnering. Hak de rode ui en knoflook fijn. Snijd de champignons in dunne plakjes. Klop de eieren los in een kommetje."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit de zonnebloemolie in een grote koekenpan of wok op middelhoog vuur. Voeg de rode ui, knoflook en de helft van de bosui toe en roerbak ongeveer 2 minuten. Voeg de champignonplakjes toe en bak nog 3 tot 4 minuten tot ze zacht zijn. Voeg eventueel de tofu of kipstukjes toe en bak mee tot ze warm zijn."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Laat de noedels goed uitlekken en voeg ze toe aan de pan. Schep alles goed door elkaar. Voeg de vissaus, limoensap en sojasaus toe en roer goed door."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Schuif het geheel naar één kant van de pan en giet het losgeklopte ei aan de lege kant. Laat het kort stollen en roer dan door zodat je roerei krijgt. Meng het ei vervolgens door de rest van de pad thai."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Hak de pinda's grof en snijd de koriander. Voeg samen met de taugé toe aan de pan en meng alles nog even kort door. Serveer met de overgebleven bosui, eventueel extra koriander en chilivlokken."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.leukerecepten.nl/recepten/pad-thai/",
+      "bron_naam": "Leukerecepten",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-13"
     }
   ]
 }
