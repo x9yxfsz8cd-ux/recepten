@@ -3955,6 +3955,135 @@
       "bron_naam": "24kitchen",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-13"
+    },
+    {
+      "id": "r1776084987",
+      "titel": "Nasi goreng",
+      "slug": "nasi-goreng",
+      "beschrijving": "Een heerlijk Aziatisch recept om zelf nasi goreng met ei te maken.",
+      "afbeelding": "https://www.lekkerensimpel.com/wp-content/uploads/2021/01/IMG_9161.jpg",
+      "bereidingstijd": 35,
+      "actieve_tijd": 35,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "Aziatisch",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "rijst (basmati- of witte rijst)",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "kleine rode ui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "paprika",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "prei",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "1 teen knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "ketjap manis",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "sambal",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "trassi",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "komijn",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "laos",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "gedroogde koriander",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "kurkuma",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "bosui",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "eieren",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Begin met het koken van de rijst volgens de aanwijzingen op de verpakking."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Ondertussen snipper je de ui, pel en snijd je de knoflook fijn en snijd ook de paprika in blokjes. Was de prei en snijd in kleine halve ringen."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Giet het water van de rijst af en laat de rijst afkoelen."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Giet een scheutje olie in een hapjespan (of wok) en bak de ui, knoflook, paprika en prei aan voor ongeveer 5 minuten. Voeg dan de kruiden toe, even roeren en dan kan de rijst erbij samen met de sambal en ketjap."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Bak nog eens 5 minuten."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Snijd ondertussen een bosuitje in ringetjes en bak twee spiegeleitjes in een koekenpan."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Schep de nasi goreng op twee borden, eitjes erbij, pindasaus en eventueel wat kroepoek. Eet smakelijk!"
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.lekkerensimpel.com/nasi-goreng/",
+      "bron_naam": "Lekkerensimpel",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-13"
     }
   ]
 }
