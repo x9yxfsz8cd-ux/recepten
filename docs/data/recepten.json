@@ -3981,10 +3981,10 @@
       "datum_toegevoegd": "2026-04-13"
     },
     {
-      "id": "r1776085414",
+      "id": "r1776085448",
       "titel": "Tikka Masala met Kip en Naanbrood",
       "slug": "tikka-masala-met-kip-en-naanbrood",
-      "beschrijving": "Een authentieke Indische tikka masala met zacht gekruide kip, romige tomatensaus en zelfgemaakt naanbrood.",
+      "beschrijving": "Een smakelijk Indiaas gerecht met gemarineerde kip in een romige tomaten-kruidensaus, geserveerd met zacht naanbrood.",
       "afbeelding": "",
       "bereidingstijd": 65,
       "actieve_tijd": 35,
@@ -4009,54 +4009,9 @@
           "eenheid": "ml"
         },
         {
-          "naam": "tikka masala-kruidenmix",
-          "hoeveelheid": 2.0,
+          "naam": "tikka masala kruidenmix",
+          "hoeveelheid": 3.0,
           "eenheid": "el"
-        },
-        {
-          "naam": "limoensap",
-          "hoeveelheid": 1.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "2 teentjes knoflook, fijngehakt",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "geroosterde sesamolie",
-          "hoeveelheid": 1.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "zout en peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "olie",
-          "hoeveelheid": 2.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "1 ui, fijngesneden",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "3 teentjes knoflook, fijngehakt",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "gemberwortel, geraspte",
-          "hoeveelheid": 1.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "tomatenpuree",
-          "hoeveelheid": 400.0,
-          "eenheid": "g"
         },
         {
           "naam": "kokosmelk",
@@ -4064,54 +4019,24 @@
           "eenheid": "ml"
         },
         {
-          "naam": "bouillon",
-          "hoeveelheid": 200.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "guaram masala",
-          "hoeveelheid": 1.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "curcuma",
-          "hoeveelheid": 1.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "zout en peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "handje verse koriander",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "bloem",
-          "hoeveelheid": 500.0,
+          "naam": "blikjes tomatenpassata",
+          "hoeveelheid": 400.0,
           "eenheid": "g"
         },
         {
-          "naam": "1 zakje droge gist",
+          "naam": "2 uitjes",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "lauwwarm water",
-          "hoeveelheid": 300.0,
-          "eenheid": "ml"
+          "naam": "4 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
         },
         {
-          "naam": "zout",
-          "hoeveelheid": 2.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "suiker",
-          "hoeveelheid": 1.0,
-          "eenheid": "tl"
+          "naam": "1 stukje gemberwortel (3 cm)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
         },
         {
           "naam": "olie",
@@ -4119,47 +4044,65 @@
           "eenheid": "el"
         },
         {
-          "naam": "nigella-zaden (optioneel)",
+          "naam": "kurkuma",
           "hoeveelheid": 1.0,
-          "eenheid": "el"
+          "eenheid": "tl"
+        },
+        {
+          "naam": "slagroom",
+          "hoeveelheid": 200.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "Peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "naanbrood",
+          "hoeveelheid": 8.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "1 handje verse koriander",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 limoen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Snijd de kipfilet in blokken van ongeveer 4 cm. Mix de yoghurt met tikka masala-kruidenmix, limoensap, knoflook en sesamolie. Marineer de kip minstens 30 minuten in deze mengsel."
+          "tekst": "Snijd de kipfilet in blokken van 3 cm en meng deze in een kom met 100 ml yoghurt, 1 el tikka masala kruidenmix, zout en peper. Laat 30 minuten marineren."
         },
         {
           "nummer": 2,
-          "tekst": "Voor het naanbrood: meng bloem, gist, zout en suiker. Voeg lauwwarm water en olie toe en kneed tot glad deeg. Laat 30 minuten rusten onder een vochtige doek."
+          "tekst": "Snipper de uitjes fijn en pers de knoflook uit. Rasp de gember. Verhit de olie in een grote pan en bak de kip 5-6 minuten tot goudbruin, schep uit en zet apart."
         },
         {
           "nummer": 3,
-          "tekst": "Verhit olie in een grote pan en bak de gemarineerde kipblokken 8-10 minuten goudbruin. Zet apart."
+          "tekst": "Bak de ui, knoflook en gember in dezelfde pan 2 minuten. Voeg 2 el tikka masala kruidenmix en kurkuma toe en roer 1 minuut goed door."
         },
         {
           "nummer": 4,
-          "tekst": "In dezelfde pan: fruit de ui zacht, voeg knoflook en gember toe en bak 1 minuut. Voeg tomatenpuree toe en bak 2 minuten."
+          "tekst": "Schenk de tomatenpassata en kokosmelk erbij en laat 10 minuten zachtjes koken. Voeg de slagroom toe en breng op smaak met zout en peper."
         },
         {
           "nummer": 5,
-          "tekst": "Giet kokosmelk en bouillon erin, voeg guaram masala en curcuma toe. Breng aan de kook."
+          "tekst": "Leg de kipblokken terug in de pan en laat 5 minuten zachtjes meekoken tot de kip gaar is."
         },
         {
           "nummer": 6,
-          "tekst": "Voeg de kip terug toe en laat 15 minuten zachtjes sudderen tot de saus dikt. Kruid af met zout, peper en verse koriander."
-        },
-        {
-          "nummer": 7,
-          "tekst": "Verdeel het naandeeg in 8 bollen. Rol uit tot ovale schijfjes van ongeveer 5 mm dik."
-        },
-        {
-          "nummer": 8,
-          "tekst": "Verhit een droge koekenpan of grill op hoog vuur. Bak elk naanbrood 2-3 minuten per kant tot goudbruin en met blaren."
-        },
-        {
-          "nummer": 9,
-          "tekst": "Bestrooi het warme naanbrood met nigella-zaden en een stukje boter. Serveer samen met de tikka masala en eventueel rijst of groenten."
+          "tekst": "Verwarm de naanbroden volgens verpakking. Serveer de tikka masala in diepe borden, garneer met verse koriander en limoenpartjes, en serveer met naanbrood."
         }
       ],
       "voedingswaarden": {
