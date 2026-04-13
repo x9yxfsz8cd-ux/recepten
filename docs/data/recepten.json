@@ -3659,6 +3659,111 @@
       "bron_naam": "Smulweb",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-13"
+    },
+    {
+      "id": "r1776084923",
+      "titel": "One-Pot Pasta met Romige Tomatensaus",
+      "slug": "one-pot-pasta-met-romige-tomatensaus",
+      "beschrijving": "Een heerlijk eenvoudig pasta gerecht waarbij alles in één pan samen kookt tot een romige, smakelijke maaltijd.",
+      "afbeelding": "",
+      "bereidingstijd": 20,
+      "actieve_tijd": 20,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner",
+        "snel"
+      ],
+      "ingredienten": [
+        {
+          "naam": "penne of fusilli pasta",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "groente- of kipbouillon",
+          "hoeveelheid": 800.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "tomaten (blikje, gehakt)",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "zware slagroom",
+          "hoeveelheid": 200.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "ui (fijngesneden)",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "3 teentjes knoflook (fijngehakt)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "gedroogde oregano",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "gedroogde basilicum",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "zout en zwarte peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "parmezaanse kaas (geraspte)",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "suiker (optioneel, tegen zuurheid)",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verhit de olijfolie in een grote pan op middelhoog vuur en fruit de ui en knoflook 2-3 minuten tot zij zacht zijn. Voeg de gedroogde kruiden toe en roer goed door."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Giet de bouillon en tomaten (met vocht) in de pan, voeg de droge pasta toe en breng alles aan de kook. Laat 10-12 minuten zachtjes koken, tot de pasta nog net al dente is, en roer regelmatig."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Giet de slagroom erin, voeg zout, peper en eventueel een tl suiker toe en laat nog 2 minuten zachtjes koken tot alles goed is gemengd. Serveer warm met geraspte parmezaanse kaas."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://ohmyfoodness.nl/recepten/one-pot-pasta-met-romige-tomatensaus/",
+      "bron_naam": "Ohmyfoodness",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-13"
     }
   ]
 }
