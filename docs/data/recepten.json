@@ -3508,6 +3508,52 @@
       "bron_naam": "Bbcgoodfood",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-13"
+    },
+    {
+      "id": "r1776084877",
+      "titel": "Recept",
+      "slug": "recept",
+      "beschrijving": "",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "actieve_tijd": 30,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [],
+      "ingredienten": [
+        {
+          "naam": "De video-titel",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "De beschrijving van de video",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Het transcript (gesproken instructies)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Eventueel een ingrediëntenlijst",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.youtube.com/watch?v=ZMBFquHxmSk",
+      "bron_naam": "YouTube",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-13"
     }
   ]
 }
