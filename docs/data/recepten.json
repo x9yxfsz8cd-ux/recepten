@@ -3359,6 +3359,155 @@
       "bron_naam": "Jumbo",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-13"
+    },
+    {
+      "id": "r1776084851",
+      "titel": "Makkelijke boterrijst met kip",
+      "slug": "makkelijke-boterrijst-met-kip",
+      "beschrijving": "Een gezonde variant van je favoriete vrijdagavond curry met malse kipfilet in romige saus.",
+      "afbeelding": "https://images.immediate.co.uk/production/volatile/sites/30/2020/08/butter-chicken-cf6f9e2.jpg?resize=440%2C230",
+      "bereidingstijd": 50,
+      "actieve_tijd": 15,
+      "passieve_tijd": 35,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vlees",
+        "Aziatisch",
+        "diner",
+        "comfort food"
+      ],
+      "ingredienten": [
+        {
+          "naam": "kippendijen zonder huid en been",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "0,5-1 citroen geperst (naar smaak)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "gemalen komijn",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "paprikapoeder",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "heet chillipoeder",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "natuurlijke yoghurt",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "plantaardige olie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "1 grote ui fijngehakt",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "3 teentjes knoflook fijngehakt",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 groene chili zaadjes verwijderd en fijngesneden (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "duimgrote stuk ginger geraspte",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "garam masala",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "gemalen methi",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "tomatenpuree",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "kippenbouillon",
+          "hoeveelheid": 300.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "getoaste amandelen in schilfers",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "gekookte basmatirijst",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "naan brood",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "mangochutney of limoenpickle",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "verse koriander",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "limoenschijfjes",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Meng alle marinadeingrediënten in een kom met wat zout en peper. Snijd de kip in hapklare stukjes en meng met de marinade. Dek af en zet minstens 1 uur of liever een nacht in de koelkast."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit de olie in een grote, zware pan. Voeg ui, knoflook, groene chili, ginger en wat zout en peper toe. Fruit op middelhoog vuur 10 minuten tot zacht."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de specerijen en tomatenpuree toe en kook nog 2 minuten tot geurig, voeg dan de bouillon en gemarineerde kip toe. Kook 15 minuten, voeg eventueel resterende marinade toe en laat nog 5 minuten sudderen. Bestrooi met de getoaste amandelen en serveer met rijst, naan brood, chutney, koriander en limoenschijfjes."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.bbcgoodfood.com/recipes/easy-butter-chicken",
+      "bron_naam": "Bbcgoodfood",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-13"
     }
   ]
 }
