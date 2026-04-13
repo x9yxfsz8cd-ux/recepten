@@ -3866,6 +3866,95 @@
       "bron_naam": "Rutgerbakt",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-13"
+    },
+    {
+      "id": "r1776084973",
+      "titel": "Gnocchi met romige pestosaus",
+      "slug": "gnocchi-met-romige-pestosaus",
+      "beschrijving": "Zachte gnocchi in een romige pestosaus met pijnboompitten en Parmezaanse kaas.",
+      "afbeelding": "",
+      "bereidingstijd": 20,
+      "actieve_tijd": 20,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "gnocchi (vers of diepvries)",
+          "hoeveelheid": 800.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "verse basilicum",
+          "hoeveelheid": 150.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "pijnboompitten",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "2 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "extra vergine olijfolie",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "zware room",
+          "hoeveelheid": 200.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Parmezaanse kaas (geraspd)",
+          "hoeveelheid": 75.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "zout en peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "citroensap",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Breng een grote pot met gezouten water aan de kook. Voeg de gnocchi toe en kook tot ze bovenkomen en nog 2 minuten verder garen, ongeveer 3-5 minuten totaal."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Maak ondertussen de pestosaus: rooster de pijnboompitten kort in een droge pan, hak dan de basilicum en knoflook fijn en meng met olijfolie, citroensap en de helft van de geraspte kaas tot een gladde pasta."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de room toe aan de pestosaus en verwarm voorzichtig (niet koken). Giet de gnocchi af en schep door de saus, breng op smaak met zout en peper, en serveer met resterende Parmezaanse kaas."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.24kitchen.nl/recepten/gnocchi-met-romige-pestosaus",
+      "bron_naam": "24kitchen",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-13"
     }
   ]
 }
