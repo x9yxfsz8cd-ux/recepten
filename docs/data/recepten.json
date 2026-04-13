@@ -3764,6 +3764,108 @@
       "bron_naam": "Ohmyfoodness",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-13"
+    },
+    {
+      "id": "r1776084946",
+      "titel": "Klassieke Appeltaart",
+      "slug": "klassieke-appeltaart",
+      "beschrijving": "Een traditionele Nederlandse appeltaart met knapperig bladerdeeg en geurig appelfruit.",
+      "afbeelding": "",
+      "bereidingstijd": 80,
+      "actieve_tijd": 30,
+      "passieve_tijd": 50,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 8,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner",
+        "snack"
+      ],
+      "ingredienten": [
+        {
+          "naam": "bladerdeeg (diepvries)",
+          "hoeveelheid": 320.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 kg appels (bijv. Granny Smith)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "suiker",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "boter",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "bloem",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "kaneel",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "citroensap",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 1.0,
+          "eenheid": "snuf"
+        },
+        {
+          "naam": "1 ei (voor glans)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "rozijnen (optioneel)",
+          "hoeveelheid": 30.0,
+          "eenheid": "g"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 200°C. Pel de appels, verwijder het klokhuis en snijd ze in dunne schijfjes."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Smelt de boter in een pan, voeg de appels, suiker, kaneel, citroensap en zout toe. Stoof 8-10 minuten tot de appels beetgaar zijn. Werk de rozijnen en bloem erdoor en laat afkoelen."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Leg twee derde van het bladerdeeg in een ingevette springvorm, vul met het appelmengsel en dek af met de rest van het deeg. Zet de randen vast."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Bestrijk met losgeklopt ei en bak 40-50 minuten tot goudbruin."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Laat de taart 10 minuten afkoelen voordat je hem uit de vorm haalt."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://rutgerbakt.nl/taart-recepten/klassieke-appeltaart/",
+      "bron_naam": "Rutgerbakt",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-13"
     }
   ]
 }
