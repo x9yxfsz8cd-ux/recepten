@@ -2985,11 +2985,11 @@
       "datum_toegevoegd": "2026-04-02"
     },
     {
-      "id": "r1776154140",
+      "id": "r1776154415",
       "titel": "Recept",
       "slug": "recept",
       "beschrijving": "",
-      "afbeelding": "https://www.leukerecepten.nl/app/uploads/2024/05/lasagne-met-tonijn-vierkant.jpg",
+      "afbeelding": "",
       "bereidingstijd": 30,
       "actieve_tijd": 30,
       "passieve_tijd": 0,
@@ -2998,49 +2998,40 @@
       "tags": [],
       "ingredienten": [
         {
-          "naam": "Een specifieke receptpagina met ingrediëntenlijst en bereidingsstappen",
+          "naam": "De afbeelding bevat vijf complete appelsalade-recepten met ingrediënten en stappen",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "Of meer context over welk gerecht u wilt maken",
+          "naam": "De online bron geeft alleen categorieën/links, geen receptinhoud",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "De directe link naar het specifieke recept op Leuke Recepten delen?",
+          "naam": "**Waldorf Salad** (klassiek, populair)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "Aangeven welk recept u wilt hebben (bijv. Pasta carbonara, Massaman curry)?",
+          "naam": "**Cider Gelatin Salad** (meest gedetailleerd)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "Een foto of document delen met daadwerkelijke receptinformatie?",
+          "naam": "**Blushing Apple Salad** (meest interessant)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
       ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "**De afbeelding bevat geen receptinformatie** - het is alleen een vintage illustratie zonder leesbare ingrediënten of instructies"
-        },
-        {
-          "nummer": 2,
-          "tekst": "**De online bron is onvolledig** - het betreft alleen de homepage van Leuke Recepten.nl met navigatiemenus en recepttitels, maar geen daadwerkelijke receptdetails met ingrediënten en bereidingsstappen"
-        }
-      ],
+      "stappen": [],
       "voedingswaarden": {
         "kcal": 0,
         "eiwitten": 0,
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "https://www.leukerecepten.nl/",
-      "bron_naam": "Foto",
+      "bron": "https://www.kookwinkel.nl/kookboeken",
+      "bron_naam": "Kookboek (pagina 5, uitgave 8-11105 zichtbaar onderaan)",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-14"
     }
