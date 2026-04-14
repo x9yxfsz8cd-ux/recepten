@@ -2983,6 +2983,61 @@
       "bron_naam": "Moniquevanloon",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-02"
+    },
+    {
+      "id": "r1776154040",
+      "titel": "Recept",
+      "slug": "recept",
+      "beschrijving": "",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "actieve_tijd": 30,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [],
+      "ingredienten": [
+        {
+          "naam": "De online bron (URL of tekst met ingrediënten en stappen)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "En/of binnenbladzijden van het kookboek met het daadwerkelijke recept",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "De link naar de online bron delen, óf",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "De receptpagina's/ingrediënten en stappen aanleveren?",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "**De afbeelding** toont alleen de voorkant van het \"New Orleans Cook Book\" - zonder zichtbare ingrediënten of bereidingsstappen"
+        },
+        {
+          "nummer": 2,
+          "tekst": "**Geen online bron** is aangeleverd met exacte hoeveelheden en instructies"
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "Foto",
+      "bron_naam": "Foto",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-14"
     }
   ]
 }
