@@ -2985,11 +2985,11 @@
       "datum_toegevoegd": "2026-04-02"
     },
     {
-      "id": "r1776154040",
+      "id": "r1776154140",
       "titel": "Recept",
       "slug": "recept",
       "beschrijving": "",
-      "afbeelding": "",
+      "afbeelding": "https://www.leukerecepten.nl/app/uploads/2024/05/lasagne-met-tonijn-vierkant.jpg",
       "bereidingstijd": 30,
       "actieve_tijd": 30,
       "passieve_tijd": 0,
@@ -2998,22 +2998,27 @@
       "tags": [],
       "ingredienten": [
         {
-          "naam": "De online bron (URL of tekst met ingrediënten en stappen)",
+          "naam": "Een specifieke receptpagina met ingrediëntenlijst en bereidingsstappen",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "En/of binnenbladzijden van het kookboek met het daadwerkelijke recept",
+          "naam": "Of meer context over welk gerecht u wilt maken",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "De link naar de online bron delen, óf",
+          "naam": "De directe link naar het specifieke recept op Leuke Recepten delen?",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "De receptpagina's/ingrediënten en stappen aanleveren?",
+          "naam": "Aangeven welk recept u wilt hebben (bijv. Pasta carbonara, Massaman curry)?",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Een foto of document delen met daadwerkelijke receptinformatie?",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
@@ -3021,11 +3026,11 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "**De afbeelding** toont alleen de voorkant van het \"New Orleans Cook Book\" - zonder zichtbare ingrediënten of bereidingsstappen"
+          "tekst": "**De afbeelding bevat geen receptinformatie** - het is alleen een vintage illustratie zonder leesbare ingrediënten of instructies"
         },
         {
           "nummer": 2,
-          "tekst": "**Geen online bron** is aangeleverd met exacte hoeveelheden en instructies"
+          "tekst": "**De online bron is onvolledig** - het betreft alleen de homepage van Leuke Recepten.nl met navigatiemenus en recepttitels, maar geen daadwerkelijke receptdetails met ingrediënten en bereidingsstappen"
         }
       ],
       "voedingswaarden": {
@@ -3034,7 +3039,7 @@
         "koolhydraten": 0,
         "vetten": 0
       },
-      "bron": "Foto",
+      "bron": "https://www.leukerecepten.nl/",
       "bron_naam": "Foto",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-14"
