@@ -3104,6 +3104,96 @@
       "bron_naam": "Lekkereensimpel",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-25"
+    },
+    {
+      "id": "r1777147706",
+      "titel": "Authentic Spaghetti Aglio e Olio",
+      "slug": "authentic-spaghetti-aglio-e-olio",
+      "beschrijving": "Een klassiek Italiaans pastagerecht met alleen olijfolie, knoflook en rode pepervlokken, klaar in minder dan 15 minuten.",
+      "afbeelding": "https://www.savoringitaly.com/wp-content/uploads/2023/02/aglio-olio.jpg",
+      "bereidingstijd": 15,
+      "actieve_tijd": 15,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 6,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "spaghetti",
+          "hoeveelheid": 450.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "extra virgin olijfolie",
+          "hoeveelheid": 120.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "6 teentjes knoflook (fijn gesneden)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "rode pepervlokken (naar smaak)",
+          "hoeveelheid": 1.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "Zeezout of kosjerzout (naar smaak)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "vers gehakte Italiaanse peterselie",
+          "hoeveelheid": 60.0,
+          "eenheid": "ml"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Breng een grote pot met gezouten water aan de kook en voeg de spaghetti toe. Roer voortdurend terwijl het kookt."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit de olijfolie in een grote sautépan op middelhoog vuur. Zodra het olie glinstert, zet het vuur op medium en voeg de knoflook toe."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Bak de knoflook 3-5 minuten tot het lichtgoudbruin is, voeg dan de rode pepervlokken toe en roer goed door. Haal de pan van het vuur."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Kook de pasta tot net voor al dente (1 minuut minder dan op de verpakking staat). Giet de pasta af en reserveer 120 ml zetmeel-houdend pastakookwater."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Voeg onmiddellijk de afgegoten pasta en het gereserveerde pastakookwater toe aan de knoflook-oliemengsel. Roer voortdurend gedurende 1-2 minuten tot de pasta al dente is."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Roer de peterselie en een theelepel zout door (optioneel wat reserveren voor garnering). Controleer de smaak en voeg naar wens meer zout of pepervlokken toe."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Serveer de pasta onmiddellijk op warme borden en eet genieten!"
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 380,
+        "eiwitten": 13,
+        "koolhydraten": 52,
+        "vetten": 14
+      },
+      "bron": "https://www.savoringitaly.com/spaghetti-aglio-e-olio/",
+      "bron_naam": "Foto",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-25"
     }
   ]
 }
