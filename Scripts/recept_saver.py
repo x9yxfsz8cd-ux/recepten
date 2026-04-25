@@ -518,7 +518,20 @@ def parse_recipe(raw):
     if not actieve_tijd:
         oude_tijd = int(get(r'TIJD:\s*(\d+)', "30"))
         actieve_tijd = oude_tijd
-    beschrijving = get(r'BESCHRIJVING:\s*(.+)')
+    beschrijving = get(r'BESCHRIJVING:[ \t]*([^\n]+)')
+    bron_chef = get(r'BRON_CHEF:[ \t]*([^\n]+)')
+    bron_boek = get(r'BRON_BOEK:[ \t]*([^\n]+)')
+    # Verwijder lege placeholders
+    if bron_chef and (bron_chef.startswith('[') or bron_chef.startswith('BRON_')):
+        bron_chef = ""
+    if bron_boek and (bron_boek.startswith('[') or bron_boek.startswith('BRON_')):
+        bron_boek = ""
+
+    # Voedingswaarden
+    kcal = int(get(r'KCAL:\s*(\d+)', "0"))
+    eiwitten = int(get(r'EIWITTEN:\s*(\d+)', "0"))
+    koolhydraten = int(get(r'KOOLHYDRATEN:\s*(\d+)', "0"))
+    vetten = int(get(r'VETTEN:\s*(\d+)', "0"))
 
     parts = raw.split("===", 1)
     body = parts[1].strip() if len(parts) > 1 else raw
@@ -548,7 +561,9 @@ def parse_recipe(raw):
         "actieve_tijd": actieve_tijd, "passieve_tijd": passieve_tijd,
         "bereidingstijd": actieve_tijd + passieve_tijd,
         "beschrijving": beschrijving, "body": body,
-        "ingredienten": ingredienten, "stappen": stappen
+        "ingredienten": ingredienten, "stappen": stappen,
+        "bron_chef": bron_chef, "bron_boek": bron_boek,
+        "voedingswaarden": {"kcal": kcal, "eiwitten": eiwitten, "koolhydraten": koolhydraten, "vetten": vetten}
     }
 
 
@@ -694,44 +709,60 @@ def download_image_base64(url):
 
 
 def create_note(titel, html_body, image_path=""):
-    """Maak een notitie aan in Apple Notities via AppleScript."""
+    """Maak een notitie aan in Apple Notities via AppleScript (temp-bestand voor grote scripts)."""
+    NOTES_FOLDER = "Recepten"
     escaped = html_body.replace('\\', '\\\\').replace('"', '\\"')
-    script = f'''
-    tell application "Notes"
-        tell account "iCloud"
-            if not (exists folder "recepten") then
-                make new folder with properties {{name:"recepten"}}
-            end if
-            tell folder "recepten"
-                -- Verwijder bestaande met dezelfde naam
-                set oldNotes to every note whose name is "{titel.replace(chr(34), chr(92)+chr(34))}"
-                repeat with n in oldNotes
-                    delete n
-                end repeat
-                -- Maak nieuwe
-                set newNote to make new note with properties {{body:"{escaped}"}}
-                return name of newNote
-            end tell
-        end tell
-    end tell
-    '''
-    r = subprocess.run(["osascript", "-e", script], capture_output=True, text=True)
+    titel_esc = titel.replace('\\', '\\\\').replace('"', '\\"')
+    script = f'''tell application "Notes"
+    set allFolders to every folder
+    set folderRef to missing value
+    repeat with f in allFolders
+        if name of f is "{NOTES_FOLDER}" then
+            set folderRef to f
+            exit repeat
+        end if
+    end repeat
+    if folderRef is missing value then
+        set folderRef to make new folder with properties {{name:"{NOTES_FOLDER}"}}
+    end if
+    set notesList to every note of folderRef
+    repeat with n in notesList
+        if name of n is "{titel_esc}" then
+            delete n
+        end if
+    end repeat
+    set newNote to make new note at folderRef with properties {{body:"{escaped}"}}
+    return name of newNote
+end tell'''
+
+    import tempfile
+    with tempfile.NamedTemporaryFile(mode='w', suffix='.applescript', delete=False) as f:
+        f.write(script)
+        script_path = f.name
+
+    r = subprocess.run(["osascript", script_path], capture_output=True, text=True)
+    try:
+        os.unlink(script_path)
+    except Exception:
+        pass
+
     if r.returncode == 0:
         note_name = r.stdout.strip()
-        # Voeg afbeelding toe als attachment (betrouwbaarder dan data URI)
         if image_path and os.path.exists(image_path):
-            import time
             time.sleep(0.5)
-            titel_esc = titel.replace('"', '\"')
-            attach_script = f"""
-            tell application "Notes"
-                tell account "iCloud"
-                    tell folder "recepten"
-                        set theNote to first note whose name is "{titel_esc}"
-                        make new attachment at theNote with data POSIX file "{image_path}"
-                    end tell
-                end tell
-            end tell"""
+            attach_script = f'''tell application "Notes"
+    set allFolders to every folder
+    repeat with f in allFolders
+        if name of f is "{NOTES_FOLDER}" then
+            repeat with n in (every note of f)
+                if name of n is "{titel_esc}" then
+                    make new attachment at n with data POSIX file "{image_path}"
+                    return "ok"
+                end if
+            end repeat
+        end if
+    end repeat
+end tell'''
             subprocess.run(["osascript", "-e", attach_script], capture_output=True, text=True)
             try:
                 os.unlink(image_path)
@@ -747,6 +778,15 @@ def update_website(recipe_data, url, img_url, bron_naam):
     """Voeg recept toe aan recepten.json en push naar GitHub."""
     recipe_id = f"r{int(time.time())}"
 
+    # Bron display met chef/boek info
+    display_bron = bron_naam
+    if recipe_data.get("bron_chef") and recipe_data["bron_chef"] != bron_naam:
+        display_bron = f"{recipe_data['bron_chef']} via {bron_naam}"
+    elif recipe_data.get("bron_boek"):
+        display_bron = recipe_data["bron_boek"]
+
+    voedingswaarden = recipe_data.get("voedingswaarden", {"kcal": 0, "eiwitten": 0, "koolhydraten": 0, "vetten": 0})
+
     website_recipe = {
         "id": recipe_id,
         "titel": recipe_data["titel"],
@@ -761,9 +801,9 @@ def update_website(recipe_data, url, img_url, bron_naam):
         "tags": recipe_data["tags"],
         "ingredienten": recipe_data["ingredienten"],
         "stappen": recipe_data["stappen"],
-        "voedingswaarden": {"kcal": 0, "eiwitten": 0, "koolhydraten": 0, "vetten": 0},
+        "voedingswaarden": voedingswaarden,
         "bron": url,
-        "bron_naam": bron_naam,
+        "bron_naam": display_bron,
         "bron_type": "url",
         "datum_toegevoegd": time.strftime("%Y-%m-%d")
     }
@@ -794,30 +834,75 @@ def save_recipe(recipe, bron_url, bron_naam, img_url, api_key):
 
     print("Notitie aanmaken...")
     image_path = download_image_to_file(img_url)
-    hashtags = " ".join(f"#{t.replace(' ', '')}" for t in recipe["tags"])
-    recept_html = body_to_html(recipe["body"])
-    meta_parts = []
-    actieve = recipe.get("actieve_tijd", 0)
-    passieve = recipe.get("passieve_tijd", 0)
-    if actieve:
-        meta_parts.append(f"{actieve} min actief")
-        if passieve:
-            meta_parts.append(f"{passieve} min oven/rust")
-    elif recipe.get("bereidingstijd"):
-        meta_parts.append(f"{recipe['bereidingstijd']} min")
-    meta_parts.append(f"{recipe['porties']} porties")
-
-    full_html = (
-        f"<h1>{html_mod.escape(recipe['titel'])}</h1>\n"
-        f'<p style="color:gray">{" · ".join(meta_parts)}</p>\n<p>{hashtags}</p>\n'
-        f"{recept_html}\n<br>\n<hr>\n"
-        f'<p><a href="{html_mod.escape(website_url)}">Bekijk op receptensite</a></p>\n'
-        f'<p>Bron: <a href="{html_mod.escape(bron_url)}">{html_mod.escape(bron_naam)}</a></p>'
-    )
+    full_html = format_note_html(recipe, bron_url, bron_naam, website_url)
     note_name = create_note(recipe["titel"], full_html, image_path)
     if note_name: print(f"  Notitie: {note_name}")
     print(f"\nKlaar! {recipe['titel']}")
     return recipe["titel"]
+
+
+def format_note_html(recipe, bron_url, bron_naam, website_url):
+    """Formatteer recept als Apple Notes HTML (correct formaat met div/ul/ol)."""
+    actieve = recipe.get("actieve_tijd", 0)
+    passieve = recipe.get("passieve_tijd", 0)
+    bereid = actieve or recipe.get("bereidingstijd", 30)
+    tijdstr = f"{bereid} min"
+    if passieve:
+        tijdstr += f" + {passieve} min"
+    tijdstr += f" . {recipe['porties']} porties"
+
+    hashtags = " ".join(f"#{t.replace(' ', '')}" for t in recipe["tags"])
+
+    # Bron display
+    display_bron = bron_naam
+    if recipe.get("bron_chef") and recipe["bron_chef"] != bron_naam:
+        display_bron = f"{recipe['bron_chef']} via {bron_naam}"
+    elif recipe.get("bron_boek"):
+        display_bron = recipe["bron_boek"]
+
+    # Ingrediënten als bullet list
+    ing_items = []
+    for ing in recipe.get("ingredienten", []):
+        naam = html_mod.escape(ing.get("naam", ""))
+        h = ing.get("hoeveelheid", 0)
+        eenheid = ing.get("eenheid", "")
+        if eenheid == "naar smaak" or not h:
+            ing_items.append(f"<li>{naam} (naar smaak)</li>")
+        else:
+            h_str = str(int(h)) if h == int(h) else str(h)
+            ing_items.append(f"<li>{h_str} {html_mod.escape(eenheid)} {naam}</li>")
+
+    # Stappen als genummerde lijst
+    stap_items = []
+    for stap in sorted(recipe.get("stappen", []), key=lambda s: s.get("nummer", 0)):
+        stap_items.append(f"<li>{html_mod.escape(stap.get('tekst', ''))}</li>")
+
+    # Voedingswaarden
+    v = recipe.get("voedingswaarden", {})
+    voed_html = ""
+    if v and v.get("kcal", 0) > 0:
+        voed_html = (
+            '<div><br></div>'
+            '<div><b><span style="font-size: 18px">Voedingswaarden per portie</span></b></div>'
+            f'<div>{v["kcal"]} kcal | {v["eiwitten"]}g eiwit | {v["koolhydraten"]}g koolhydraten | {v["vetten"]}g vet</div>'
+        )
+
+    parts = [
+        f'<div><b><span style="font-size: 24px">{html_mod.escape(recipe["titel"])}</span></b></div>',
+        f'<div><font color="#808080">{tijdstr}</font></div>',
+        f'<div>{html_mod.escape(hashtags)}</div>',
+        '<div><br></div>',
+        '<div><b><span style="font-size: 18px">Ingredienten</span></b></div>',
+        '<ul>', '\n'.join(ing_items), '</ul>',
+        '<div><br></div>',
+        '<div><b><span style="font-size: 18px">Bereiding</span></b></div>',
+        '<ol>', '\n'.join(stap_items), '</ol>',
+        voed_html,
+        '<div><br></div>',
+        f'<div><a href="{html_mod.escape(website_url)}"><u>Bekijk op receptensite</u></a></div>',
+        f'<div>Bron: <a href="{html_mod.escape(bron_url)}">{html_mod.escape(display_bron)}</a></div>',
+    ]
+    return '\n'.join(parts)
 
 
 def main():
@@ -857,7 +942,7 @@ def main():
             "\n\nGeef je antwoord in dit EXACTE format:\n\n"
             "TITEL: [receptnaam]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\n"
+            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\nBRON_CHEF: [naam chef/kok als specifiek bekend, anders leeg]\nBRON_BOEK: [naam kookboek als relevant, anders leeg]\nKCAL: [geschatte calorieën per portie]\nEIWITTEN: [geschatte gram eiwit per portie]\nKOOLHYDRATEN: [geschatte gram koolhydraten per portie]\nVETTEN: [geschatte gram vet per portie]\n"
             "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
             "BEREIDING:\n1. [stap]\n\n"
             "Regels: altijd Nederlands, eenheden g/ml/el/tl/stuks, stappen max 3 zinnen, neem ALLES over."
@@ -926,7 +1011,7 @@ def main():
                     "Geef je antwoord in dit EXACTE format:\n\n"
                     "TITEL: [receptnaam]\n"
                     "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-                    "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\n"
+                    "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\nBRON_CHEF: [naam chef/kok als specifiek bekend, anders leeg]\nBRON_BOEK: [naam kookboek als relevant, anders leeg]\nKCAL: [geschatte calorieën per portie]\nEIWITTEN: [geschatte gram eiwit per portie]\nKOOLHYDRATEN: [geschatte gram koolhydraten per portie]\nVETTEN: [geschatte gram vet per portie]\n"
                     "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
                     "BEREIDING:\n1. [stap]\n\n"
                     "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
@@ -1059,7 +1144,7 @@ def main():
             "Geef je antwoord in dit EXACTE format:\n\n"
             "TITEL: [receptnaam]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\n"
+            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\nBRON_CHEF: [naam chef/kok als specifiek bekend, anders leeg]\nBRON_BOEK: [naam kookboek als relevant, anders leeg]\nKCAL: [geschatte calorieën per portie]\nEIWITTEN: [geschatte gram eiwit per portie]\nKOOLHYDRATEN: [geschatte gram koolhydraten per portie]\nVETTEN: [geschatte gram vet per portie]\n"
             "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
             "BEREIDING:\n1. [stap]\n\n"
             "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
@@ -1075,7 +1160,7 @@ def main():
             "Geef je antwoord in dit EXACTE formaat:\n\n"
             "TITEL: [receptnaam]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\n"
+            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\nBRON_CHEF: [naam chef/kok als specifiek bekend, anders leeg]\nBRON_BOEK: [naam kookboek als relevant, anders leeg]\nKCAL: [geschatte calorieën per portie]\nEIWITTEN: [geschatte gram eiwit per portie]\nKOOLHYDRATEN: [geschatte gram koolhydraten per portie]\nVETTEN: [geschatte gram vet per portie]\n"
             "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
             "BEREIDING:\n1. [stap]\n\n"
             "Regels:\n- Altijd Nederlands\n- Eenheden: g, ml, el, tl, stuks\n"
