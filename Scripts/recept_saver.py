@@ -827,6 +827,11 @@ def update_website(recipe_data, url, img_url, bron_naam):
 
 def save_recipe(recipe, bron_url, bron_naam, img_url, api_key):
     """Sla recept op in website + Notities. Gedeelde functie."""
+    # Aborteer als er niets bruikbaars is gevonden
+    if recipe["titel"] in ("Recept", "") or not recipe["ingredienten"] or not recipe["stappen"]:
+        print(f"  ⚠️  Geen bruikbaar recept gevonden. Sla niet op.")
+        return None
+
     print("Website bijwerken...")
     recipe_id = update_website(recipe, bron_url, img_url, bron_naam)
     website_url = f"{WEBSITE_BASE}/recept.html?id={recipe_id}"
@@ -940,12 +945,12 @@ def main():
             "De afbeelding kan extra context geven.\n\n"
             + "\n\n---\n\n".join(bronnen) +
             "\n\nGeef je antwoord in dit EXACTE format:\n\n"
-            "TITEL: [receptnaam]\n"
+            "TITEL: [receptnaam in het NEDERLANDS]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
-            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\nBRON_CHEF: [naam chef/kok als specifiek bekend, anders leeg]\nBRON_BOEK: [naam kookboek als relevant, anders leeg]\nKCAL: [geschatte calorieën per portie]\nEIWITTEN: [geschatte gram eiwit per portie]\nKOOLHYDRATEN: [geschatte gram koolhydraten per portie]\nVETTEN: [geschatte gram vet per portie]\n"
-            "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
-            "BEREIDING:\n1. [stap]\n\n"
-            "Regels: altijd Nederlands, eenheden g/ml/el/tl/stuks, stappen max 3 zinnen, neem ALLES over."
+            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin in het Nederlands]\nBRON_CHEF: [naam chef/kok als specifiek bekend, anders leeg]\nBRON_BOEK: [naam kookboek als relevant, anders leeg]\nKCAL: [geschatte calorieën per portie]\nEIWITTEN: [geschatte gram eiwit per portie]\nKOOLHYDRATEN: [geschatte gram koolhydraten per portie]\nVETTEN: [geschatte gram vet per portie]\n"
+            "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt in het Nederlands]\n\n"
+            "BEREIDING:\n1. [stap in het Nederlands]\n\n"
+            "Regels: ALLES in het Nederlands (ook de titel), eenheden g/ml/el/tl/stuks, stappen max 3 zinnen, neem ALLES over."
         )
 
         print("Recept extraheren...")
@@ -992,7 +997,9 @@ def main():
             if yt["transcript"]:
                 yt_parts.append(f"Video transcript (gesproken tekst):\n{yt['transcript'][:5000]}")
 
-            if yt_parts:
+            # Alleen doorgaan als er echt bruikbare data is (niet alleen een fout-titel)
+        heeft_inhoud = bool(yt.get("beschrijving")) or bool(yt.get("transcript"))
+        if yt_parts and heeft_inhoud:
                 tekst = "\n\n".join(yt_parts)
                 img_url = yt.get("afbeelding", "")
                 html = None  # geen HTML pagina nodig
@@ -1009,7 +1016,7 @@ def main():
                     "De beschrijving bevat vaak het recept. Het transcript bevat gesproken instructies.\n"
                     "Combineer beide bronnen voor het meest complete recept.\n\n"
                     "Geef je antwoord in dit EXACTE format:\n\n"
-                    "TITEL: [receptnaam]\n"
+                    "TITEL: [receptnaam in het NEDERLANDS]\n"
                     "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
                     "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\nBRON_CHEF: [naam chef/kok als specifiek bekend, anders leeg]\nBRON_BOEK: [naam kookboek als relevant, anders leeg]\nKCAL: [geschatte calorieën per portie]\nEIWITTEN: [geschatte gram eiwit per portie]\nKOOLHYDRATEN: [geschatte gram koolhydraten per portie]\nVETTEN: [geschatte gram vet per portie]\n"
                     "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
@@ -1026,30 +1033,7 @@ def main():
                 print(f"  {recipe.get('bereidingstijd', recipe.get('actieve_tijd', 0))} min · {recipe['porties']} porties")
                 print(f"  {len(recipe['ingredienten'])} ingrediënten, {len(recipe['stappen'])} stappen")
 
-                # Spring naar stap 3
-                print("Website bijwerken...")
-                recipe_id = update_website(recipe, url, img_url, bron_naam)
-                website_url = f"{WEBSITE_BASE}/recept.html?id={recipe_id}"
-                print(f"  {website_url}")
-
-                print("Notitie aanmaken...")
-                image_path = download_image_to_file(img_url)
-                hashtags = " ".join(f"#{t.replace(' ', '')}" for t in recipe["tags"])
-                recept_html_note = body_to_html(recipe["body"])
-                meta_parts = []
-                if recipe.get("bereidingstijd", recipe.get("actieve_tijd", 0)): meta_parts.append(f"{recipe.get('bereidingstijd', recipe.get('actieve_tijd', 0))} min")
-                meta_parts.append(f"{recipe['porties']} porties")
-                full_html = (
-                    f"<h1>{html_mod.escape(recipe['titel'])}</h1>\n"
-                    f'<p style="color:gray">{" · ".join(meta_parts)}</p>\n<p>{hashtags}</p>\n'
-                    f"{recept_html_note}\n<br>\n<hr>\n"
-                    f'<p><a href="{html_mod.escape(website_url)}">Bekijk op receptensite</a></p>\n'
-                    f'<p>Bron: <a href="{html_mod.escape(url)}">{html_mod.escape(bron_naam)}</a></p>'
-                )
-                note_name = create_note(recipe["titel"], full_html, image_path)
-                if note_name: print(f"  Notitie: {note_name}")
-                print(f"\nKlaar! {recipe['titel']}")
-                return recipe["titel"]
+                return save_recipe(recipe, url, bron_naam, img_url, api_key)
 
     html = fetch_simple(url)
 
@@ -1142,7 +1126,7 @@ def main():
         prompt = (
             f"Extraheer het recept uit onderstaande {bron_type.lower()} en vertaal alles naar het Nederlands.\n\n"
             "Geef je antwoord in dit EXACTE format:\n\n"
-            "TITEL: [receptnaam]\n"
+            "TITEL: [receptnaam in het NEDERLANDS]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
             "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\nBRON_CHEF: [naam chef/kok als specifiek bekend, anders leeg]\nBRON_BOEK: [naam kookboek als relevant, anders leeg]\nKCAL: [geschatte calorieën per portie]\nEIWITTEN: [geschatte gram eiwit per portie]\nKOOLHYDRATEN: [geschatte gram koolhydraten per portie]\nVETTEN: [geschatte gram vet per portie]\n"
             "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
@@ -1158,7 +1142,7 @@ def main():
             "Gebruik je kennis om het VOLLEDIGE recept te genereren met alle ingrediënten en stappen.\n\n"
             f"{tekst}\n\n"
             "Geef je antwoord in dit EXACTE formaat:\n\n"
-            "TITEL: [receptnaam]\n"
+            "TITEL: [receptnaam in het NEDERLANDS]\n"
             "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
             "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig: snijden, roeren, bakken]\nPASSIEVE_TIJD: [minuten wachten: oven, rusten, marineren — 0 als er geen passieve tijd is]\nBESCHRIJVING: [1 zin]\nBRON_CHEF: [naam chef/kok als specifiek bekend, anders leeg]\nBRON_BOEK: [naam kookboek als relevant, anders leeg]\nKCAL: [geschatte calorieën per portie]\nEIWITTEN: [geschatte gram eiwit per portie]\nKOOLHYDRATEN: [geschatte gram koolhydraten per portie]\nVETTEN: [geschatte gram vet per portie]\n"
             "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
