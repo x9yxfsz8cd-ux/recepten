@@ -1,40 +1,36 @@
 #!/usr/bin/env python3
 """
-Genereert een 'Recept Saver' shortcut-bestand voor de Opdrachten-app.
+Genereert een 'Recept Saver' shortcut voor de Opdrachten-app (iPhone/Mac).
+
+Het resulterende .shortcut bestand:
+- Accepteert URL's, tekst, of foto's via het deelmenu
+- Vraagt de API-sleutel bij installatie (importvraag)
+- Stuurt het recept naar Claude en vraagt om HTML voor Apple Notes
+- Slaat de notitie op in de map 'Recepten'
 """
 import plistlib
 import uuid
 import subprocess
-import sys
 import os
 
-API_KEY_PLACEHOLDER = "PLAK_HIER_JE_API_SLEUTEL"
+# ── Token helpers ──
 
 def gen_uuid():
     return str(uuid.uuid4()).upper()
 
-# ── Token helpers ──
-
 def text_str(s):
-    """Gewone tekst zonder variabelen."""
     return {
-        "Value": {
-            "string": s,
-            "attachmentsByRange": {}
-        },
+        "Value": {"string": s, "attachmentsByRange": {}},
         "WFSerializationType": "WFTextTokenString"
     }
 
 def text_with_var(before, var_attachment, after=""):
-    """Tekst met één variabele erin."""
     pos = len(before)
     s = before + "\ufffc" + after
     return {
         "Value": {
             "string": s,
-            "attachmentsByRange": {
-                f"{{{pos}, 1}}": var_attachment
-            }
+            "attachmentsByRange": {f"{{{pos}, 1}}": var_attachment}
         },
         "WFSerializationType": "WFTextTokenString"
     }
@@ -49,15 +45,9 @@ def ext_input():
     return {"Type": "ExtensionInput"}
 
 def token_attachment(ref):
-    return {
-        "Value": ref,
-        "WFSerializationType": "WFTextTokenAttachment"
-    }
-
-# ── Dictionary field helpers ──
+    return {"Value": ref, "WFSerializationType": "WFTextTokenAttachment"}
 
 def dict_field(key_str, value, item_type=0):
-    """item_type: 0=text, 3=number, 4=array, 1=boolean, 2=dictionary"""
     return {
         "WFItemType": item_type,
         "WFKey": text_str(key_str),
@@ -66,80 +56,182 @@ def dict_field(key_str, value, item_type=0):
 
 def dict_value(fields):
     return {
-        "Value": {
-            "WFDictionaryFieldValueItems": fields
-        },
+        "Value": {"WFDictionaryFieldValueItems": fields},
         "WFSerializationType": "WFDictionaryFieldValue"
     }
 
-# ── Build the shortcut ──
+
+# ── Prompt ──
+
+HTML_TEMPLATE = (
+    '<div><b><span style=\\"font-size: 24px\\">NAAM</span></b></div>'
+    '<div><font color=\\"#808080\\">X min . Y porties</font></div>'
+    '<div>#tag1 #tag2</div>'
+    '<div><br></div>'
+    '<div><b><span style=\\"font-size: 18px\\">Ingredienten</span></b></div>'
+    '<ul><li>hoeveelheid eenheid ingredient</li></ul>'
+    '<div><br></div>'
+    '<div><b><span style=\\"font-size: 18px\\">Bereiding</span></b></div>'
+    '<ol><li>Stap 1.</li></ol>'
+    '<div><br></div>'
+    '<div>Bron: sitenaam</div>'
+)
+
+REGELS = (
+    '\\n\\nRegels:\\n'
+    '- Tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack\\n'
+    '- Eenheden: g, ml, el, tl, stuks\\n'
+    '- Stappen max 3 zinnen\\n'
+    '- Geef ALLEEN de HTML terug, geen andere tekst'
+)
+
+PROMPT_URL = (
+    'Extraheer het recept uit de onderstaande invoer en vertaal naar het Nederlands. '
+    'Geef ALLEEN de HTML-notitie terug in dit format:\\n\\n'
+    + HTML_TEMPLATE + REGELS + '\\n\\nInvoer:\\n'
+)
+
+PROMPT_FOTO = (
+    'Extraheer het recept uit deze afbeelding en vertaal naar het Nederlands. '
+    'Geef ALLEEN de HTML-notitie terug in dit format:\\n\\n'
+    + HTML_TEMPLATE + REGELS
+)
+
+
+# ── Acties bouwen ──
 
 actions = []
 
-# --- Actie 1: Tekst (bouw het volledige JSON-verzoek) ---
-# We bouwen de hele API body als tekst, met de Shortcut Input erin
-prompt_text = (
-    "Extraheer het recept uit de onderstaande invoer en vertaal het "
-    "volledig naar het Nederlands. Geef een nette samenvatting met: "
-    "titel, ingrediënten met hoeveelheden, en genummerde stappen. "
-    "Stappen maximaal 3 zinnen. Altijd Nederlandse eenheden "
-    "(g, ml, el, tl, stuks).\\n\\nInvoer:\\n"
-)
-
-json_before = (
-    '{"model":"claude-haiku-4-5-20251001","max_tokens":2000,'
-    '"messages":[{"role":"user","content":[{"type":"text","text":"'
-    + prompt_text
-)
-json_after = '"}]}]}'
-
-text_uuid = gen_uuid()
-actions.append({
-    "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
-    "WFWorkflowActionParameters": {
-        "UUID": text_uuid,
-        "WFTextActionText": text_with_var(json_before, ext_input(), json_after)
-    }
-})
-
-# --- Actie 2: Stel variabele in → "Verzoek" ---
+# Invoer opslaan
 actions.append({
     "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
     "WFWorkflowActionParameters": {
-        "WFVariableName": "Verzoek",
-        "WFInput": token_attachment(action_output(text_uuid, "Text"))
+        "WFVariableName": "Invoer",
+        "WFInput": token_attachment(ext_input())
     }
 })
 
-# --- Actie 3: Haal inhoud van URL op (Claude API) ---
-download_uuid = gen_uuid()
+# Als het een afbeelding is
+if_uuid = gen_uuid()
+actions.append({
+    "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+    "WFWorkflowActionParameters": {
+        "UUID": if_uuid,
+        "GroupingIdentifier": if_uuid,
+        "WFControlFlowMode": 0,
+        "WFCondition": 8,
+        "WFInput": token_attachment(var_named("Invoer")),
+        "WFContentItemClass": "WFImageContentItem"
+    }
+})
+
+# Foto-tak: base64 coderen
+b64_uuid = gen_uuid()
+actions.append({
+    "WFWorkflowActionIdentifier": "is.workflow.actions.base64encode",
+    "WFWorkflowActionParameters": {
+        "UUID": b64_uuid,
+        "WFInput": token_attachment(var_named("Invoer")),
+        "WFEncodeMode": "Encode",
+        "WFBase64LineBreakMode": "None"
+    }
+})
+
+foto_before = (
+    '{"model":"claude-haiku-4-5-20251001","max_tokens":3000,"messages":[{"role":"user","content":['
+    '{"type":"image","source":{"type":"base64","media_type":"image/jpeg","data":"'
+)
+foto_after = '"}},{"type":"text","text":"' + PROMPT_FOTO + '"}]}]}'
+
+foto_body_uuid = gen_uuid()
+actions.append({
+    "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
+    "WFWorkflowActionParameters": {
+        "UUID": foto_body_uuid,
+        "WFTextActionText": text_with_var(foto_before, action_output(b64_uuid, "Base64 Encoded"), foto_after)
+    }
+})
+
+actions.append({
+    "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+    "WFWorkflowActionParameters": {
+        "WFVariableName": "APIBody",
+        "WFInput": token_attachment(action_output(foto_body_uuid, "Text"))
+    }
+})
+
+# Anders-tak (URL/tekst)
+actions.append({
+    "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+    "WFWorkflowActionParameters": {
+        "UUID": if_uuid,
+        "GroupingIdentifier": if_uuid,
+        "WFControlFlowMode": 1
+    }
+})
+
+url_before = (
+    '{"model":"claude-haiku-4-5-20251001","max_tokens":3000,"messages":[{"role":"user","content":[{"type":"text","text":"'
+    + PROMPT_URL
+)
+url_after = '"}]}]}'
+
+url_body_uuid = gen_uuid()
+actions.append({
+    "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
+    "WFWorkflowActionParameters": {
+        "UUID": url_body_uuid,
+        "WFTextActionText": text_with_var(url_before, var_named("Invoer"), url_after)
+    }
+})
+
+actions.append({
+    "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+    "WFWorkflowActionParameters": {
+        "WFVariableName": "APIBody",
+        "WFInput": token_attachment(action_output(url_body_uuid, "Text"))
+    }
+})
+
+# Einde als
+actions.append({
+    "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+    "WFWorkflowActionParameters": {
+        "UUID": if_uuid,
+        "GroupingIdentifier": if_uuid,
+        "WFControlFlowMode": 2
+    }
+})
+
+# Claude API aanroepen
+api_uuid = gen_uuid()
 actions.append({
     "WFWorkflowActionIdentifier": "is.workflow.actions.downloadurl",
     "WFWorkflowActionParameters": {
-        "UUID": download_uuid,
+        "UUID": api_uuid,
         "WFURL": text_str("https://api.anthropic.com/v1/messages"),
         "WFHTTPMethod": "POST",
         "WFHTTPHeaders": dict_value([
-            dict_field("x-api-key", text_str(API_KEY_PLACEHOLDER)),
+            dict_field("x-api-key", text_str("IMPORTVRAAG_API_SLEUTEL")),
             dict_field("anthropic-version", text_str("2023-06-01")),
             dict_field("content-type", text_str("application/json")),
             dict_field("anthropic-dangerous-direct-browser-access", text_str("true")),
         ]),
         "WFHTTPBodyType": "File",
-        "WFRequestVariable": token_attachment(var_named("Verzoek")),
+        "WFRequestVariable": token_attachment(var_named("APIBody")),
     }
 })
 
-# --- Actie 4: Stel variabele in → "APIResultaat" ---
+# API-resultaat opslaan
 actions.append({
     "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
     "WFWorkflowActionParameters": {
         "WFVariableName": "APIResultaat",
-        "WFInput": token_attachment(action_output(download_uuid, "Contents of URL"))
+        "WFInput": token_attachment(action_output(api_uuid, "Contents of URL"))
     }
 })
 
-# --- Actie 5: Haal woordenboekwaarde op → "content" ---
+# content[0].text ophalen
 dict1_uuid = gen_uuid()
 actions.append({
     "WFWorkflowActionIdentifier": "is.workflow.actions.getvalueforkey",
@@ -150,18 +242,16 @@ actions.append({
     }
 })
 
-# --- Actie 6: Haal onderdeel op uit lijst → eerste ---
 list_uuid = gen_uuid()
 actions.append({
     "WFWorkflowActionIdentifier": "is.workflow.actions.getitemfromlist",
     "WFWorkflowActionParameters": {
         "UUID": list_uuid,
         "WFInput": token_attachment(action_output(dict1_uuid, "Dictionary Value")),
-        "WFItemSpecifier": "First Item"  # might need to be integer 0
+        "WFItemSpecifier": "First Item"
     }
 })
 
-# --- Actie 7: Haal woordenboekwaarde op → "text" ---
 dict2_uuid = gen_uuid()
 actions.append({
     "WFWorkflowActionIdentifier": "is.workflow.actions.getvalueforkey",
@@ -172,51 +262,56 @@ actions.append({
     }
 })
 
-# --- Actie 8: Stel variabele in → "ReceptTekst" ---
 actions.append({
     "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
     "WFWorkflowActionParameters": {
-        "WFVariableName": "ReceptTekst",
+        "WFVariableName": "ReceptHTML",
         "WFInput": token_attachment(action_output(dict2_uuid, "Dictionary Value"))
     }
 })
 
-# --- Actie 9: Maak notitie aan ---
+# Maak rijke tekst van HTML
+richtext_uuid = gen_uuid()
 actions.append({
-    "WFWorkflowActionIdentifier": "is.workflow.actions.evernote.new",
+    "WFWorkflowActionIdentifier": "is.workflow.actions.makerichtextfromhtml",
     "WFWorkflowActionParameters": {
-        # Apple Notes "Create Note" uses the identifier for Apple Notes
+        "UUID": richtext_uuid,
+        "WFInput": token_attachment(var_named("ReceptHTML"))
     }
 })
 
-# Actually, Apple Notes "Create Note" has a different identifier.
-# Let me use the correct one.
-actions.pop()  # remove the wrong one
-
+# Notitie aanmaken in map Recepten
 actions.append({
     "WFWorkflowActionIdentifier": "com.apple.mobilenotes.SharingExtension",
     "WFWorkflowActionParameters": {
-        "WFCreateNoteInput": token_attachment(var_named("ReceptTekst")),
+        "WFCreateNoteInput": token_attachment(action_output(richtext_uuid, "Rich Text")),
+        "WFFolderName": text_str("Recepten")
     }
 })
 
-# --- Actie 10: Toon melding ---
+# Bevestiging
 actions.append({
     "WFWorkflowActionIdentifier": "is.workflow.actions.notification",
     "WFWorkflowActionParameters": {
         "WFNotificationActionTitle": text_str("Recept Saver"),
-        "WFNotificationActionBody": text_str("Recept opgeslagen!")
+        "WFNotificationActionBody": text_str("Recept opgeslagen in Recepten!")
     }
 })
 
+
 # ── Workflow wrapper ──
+
+api_action_idx = next(
+    i for i, a in enumerate(actions)
+    if a.get("WFWorkflowActionIdentifier") == "is.workflow.actions.downloadurl"
+)
 
 shortcut = {
     "WFWorkflowMinimumClientVersion": 900,
     "WFWorkflowMinimumClientVersionString": "900",
     "WFWorkflowIcon": {
-        "WFWorkflowIconStartColor": 463140863,  # green-ish
-        "WFWorkflowIconGlyphNumber": 59511,  # cooking pot icon
+        "WFWorkflowIconStartColor": 431817727,
+        "WFWorkflowIconGlyphNumber": 59511,
     },
     "WFWorkflowClientVersion": "2302.0.4",
     "WFWorkflowHasShortcutInputVariables": True,
@@ -225,14 +320,14 @@ shortcut = {
         "WFURLContentItem",
         "WFImageContentItem"
     ],
-    "WFWorkflowTypes": ["WatchKit", "NCWidget"],
+    "WFWorkflowTypes": ["NCWidget"],
     "WFWorkflowImportQuestions": [
         {
-            "ActionIndex": 2,  # index of the download action
+            "ActionIndex": api_action_idx,
             "Category": "Parameter",
             "DefaultValue": "",
             "ParameterKey": "WFHTTPHeaders",
-            "Text": "Vul je Claude API-sleutel in (sk-ant-...)"
+            "Text": "Vul je Claude API-sleutel in (begint met sk-ant-...)"
         }
     ],
     "WFWorkflowOutputContentItemClasses": [],
@@ -240,7 +335,8 @@ shortcut = {
     "WFWorkflowName": "Recept Saver"
 }
 
-# ── Save and sign ──
+
+# ── Opslaan en ondertekenen ──
 
 output_dir = os.path.dirname(os.path.abspath(__file__))
 unsigned_path = os.path.join(output_dir, "ReceptSaver_unsigned.plist")
@@ -251,7 +347,6 @@ with open(unsigned_path, "wb") as f:
 
 print(f"Unsigned plist opgeslagen: {unsigned_path}")
 
-# Sign it
 result = subprocess.run(
     ["shortcuts", "sign", "--mode", "anyone", "--input", unsigned_path, "--output", signed_path],
     capture_output=True, text=True
@@ -259,8 +354,8 @@ result = subprocess.run(
 
 if result.returncode == 0:
     print(f"Signed shortcut opgeslagen: {signed_path}")
-    os.remove(unsigned_path)
-    print("Klaar! Open het bestand om de shortcut te importeren.")
+    os.unlink(unsigned_path)
+    print("Klaar! Stuur Recept Saver.shortcut naar je iPhone om te installeren.")
 else:
     print(f"Fout bij ondertekenen: {result.stderr}")
-    print("Het unsigned bestand staat nog klaar voor handmatig ondertekenen.")
+    print(f"Unsigned bestand beschikbaar: {unsigned_path}")
