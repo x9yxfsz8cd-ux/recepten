@@ -2985,53 +2985,37 @@
       "datum_toegevoegd": "2026-04-02"
     },
     {
-      "id": "r1777147299",
-      "titel": "Romige pasta met spinazie",
-      "slug": "romige-pasta-met-spinazie",
-      "beschrijving": "Een klassieke Italiaanse pastaschotel met romige saus, verse spinazie en Parmezaanse kaas.",
+      "id": "r1777160405",
+      "titel": "Knoflookkip",
+      "slug": "knoflookkip",
+      "beschrijving": "Een klassiek en smaakvolle kip bereid met veel knoflook, boter en kruiden.",
       "afbeelding": "",
-      "bereidingstijd": 20,
+      "bereidingstijd": 45,
       "actieve_tijd": 20,
-      "passieve_tijd": 0,
+      "passieve_tijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
-        "vegetarisch",
+        "vlees",
         "comfort food",
-        "Italiaans",
         "diner",
         "snel"
       ],
       "ingredienten": [
         {
-          "naam": "pasta (penne of fettuccine)",
-          "hoeveelheid": 400.0,
-          "eenheid": "g"
+          "naam": "kipfilets of kipborsten",
+          "hoeveelheid": 8.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "verse spinazie",
-          "hoeveelheid": 250.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "room",
-          "hoeveelheid": 200.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "melk",
-          "hoeveelheid": 100.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "2 knoflookteentjes",
+          "naam": "8 teentjes knoflook, fijngehakt",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "Parmezaanse kaas",
-          "hoeveelheid": 75.0,
-          "eenheid": "g"
+          "naam": "boter",
+          "hoeveelheid": 4.0,
+          "eenheid": "el"
         },
         {
           "naam": "olijfolie",
@@ -3039,27 +3023,42 @@
           "eenheid": "el"
         },
         {
-          "naam": "zout",
+          "naam": "kippenbouillon",
+          "hoeveelheid": 250.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "witte wijn (optioneel)",
+          "hoeveelheid": 125.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "gedroogde oregano",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "gedroogde basilicum",
           "hoeveelheid": 1.0,
           "eenheid": "tl"
         },
         {
-          "naam": "zwarte peper",
-          "hoeveelheid": 0.5,
+          "naam": "thijm",
+          "hoeveelheid": 1.0,
           "eenheid": "tl"
         },
         {
-          "naam": "nootmuskaat",
-          "hoeveelheid": 0.25,
-          "eenheid": "tl"
+          "naam": "zout en zwarte peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
         },
         {
-          "naam": "boter",
-          "hoeveelheid": 50.0,
-          "eenheid": "g"
+          "naam": "verse peterselie, fijngehakt",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
         },
         {
-          "naam": "1 ui",
+          "naam": "1 citroen, uitgeperst",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
@@ -3067,133 +3066,27 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Zet een grote pot water met zout op het vuur en breng aan de kook. Voeg de pasta toe en kook volgens de aanwijzingen op de verpakking tot al dente."
+          "tekst": "Verhit de olijfolie en boter in een grote pan op middelhoog vuur. Kruid de kipfilets aan beide zijden met zout, peper en de gedroogde kruiden. Bak de kip 5-6 minuten per zijde tot deze goudbruin is; verwijder en zet opzij."
         },
         {
           "nummer": 2,
-          "tekst": "Verhit intussen de olijfolie en boter in een grote pan, snipper de ui en pers de knoflook erbij en fruit 2 minuten tot geurig."
+          "tekst": "Voeg de fijngehakte knoflook toe aan dezelfde pan en bak 1 minuut tot het geurig wordt. Giet de witte wijn en kippenbouillon in de pan en breng aan de kook; schraap de aangebrande stukjes van de bodem los."
         },
         {
           "nummer": 3,
-          "tekst": "Voeg de spinazie toe en laat deze 2-3 minuten slinken, roer regelmatig."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Giet room en melk erbij, voeg zout, peper en nootmuskaat toe en laat 5 minuten zachtjes doorkoken."
-        },
-        {
-          "nummer": 5,
-          "tekst": "Rasp de Parmezaanse kaas en voeg het grootste gedeelte toe aan de saus, reserveer wat voor afwerking."
-        },
-        {
-          "nummer": 6,
-          "tekst": "Giet de gekookte pasta af en schep deze door de spinaziesaus, zorg dat alles goed met elkaar vermengd is."
-        },
-        {
-          "nummer": 7,
-          "tekst": "Verdeel over borden, bestrooi met de resterende Parmezaanse kaas en serveer direct met vers brood."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 420,
-        "eiwitten": 16,
-        "koolhydraten": 48,
-        "vetten": 18
-      },
-      "bron": "https://www.lekkereensimpel.nl/recepten/romige-pasta-met-spinazie/",
-      "bron_naam": "Lekkereensimpel",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-04-25"
-    },
-    {
-      "id": "r1777147706",
-      "titel": "Authentic Spaghetti Aglio e Olio",
-      "slug": "authentic-spaghetti-aglio-e-olio",
-      "beschrijving": "Een klassiek Italiaans pastagerecht met alleen olijfolie, knoflook en rode pepervlokken, klaar in minder dan 15 minuten.",
-      "afbeelding": "https://www.savoringitaly.com/wp-content/uploads/2023/02/aglio-olio.jpg",
-      "bereidingstijd": 15,
-      "actieve_tijd": 15,
-      "passieve_tijd": 0,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 6,
-      "tags": [
-        "vegetarisch",
-        "Italiaans",
-        "snel",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "spaghetti",
-          "hoeveelheid": 450.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "extra virgin olijfolie",
-          "hoeveelheid": 120.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "6 teentjes knoflook (fijn gesneden)",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "rode pepervlokken (naar smaak)",
-          "hoeveelheid": 1.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "Zeezout of kosjerzout (naar smaak)",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "vers gehakte Italiaanse peterselie",
-          "hoeveelheid": 60.0,
-          "eenheid": "ml"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Breng een grote pot met gezouten water aan de kook en voeg de spaghetti toe. Roer voortdurend terwijl het kookt."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Verhit de olijfolie in een grote sautépan op middelhoog vuur. Zodra het olie glinstert, zet het vuur op medium en voeg de knoflook toe."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Bak de knoflook 3-5 minuten tot het lichtgoudbruin is, voeg dan de rode pepervlokken toe en roer goed door. Haal de pan van het vuur."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Kook de pasta tot net voor al dente (1 minuut minder dan op de verpakking staat). Giet de pasta af en reserveer 120 ml zetmeel-houdend pastakookwater."
-        },
-        {
-          "nummer": 5,
-          "tekst": "Voeg onmiddellijk de afgegoten pasta en het gereserveerde pastakookwater toe aan de knoflook-oliemengsel. Roer voortdurend gedurende 1-2 minuten tot de pasta al dente is."
-        },
-        {
-          "nummer": 6,
-          "tekst": "Roer de peterselie en een theelepel zout door (optioneel wat reserveren voor garnering). Controleer de smaak en voeg naar wens meer zout of pepervlokken toe."
-        },
-        {
-          "nummer": 7,
-          "tekst": "Serveer de pasta onmiddellijk op warme borden en eet genieten!"
+          "tekst": "Plaats de kip terug in de pan en laat op laag vuur 12-15 minuten zachtjes sudderen tot de kip gaar is. Voeg het citroensap en verse peterselie toe, controleer de kruiding en serveer direct."
         }
       ],
       "voedingswaarden": {
         "kcal": 380,
-        "eiwitten": 13,
-        "koolhydraten": 52,
-        "vetten": 14
+        "eiwitten": 42,
+        "koolhydraten": 3,
+        "vetten": 21
       },
-      "bron": "https://www.savoringitaly.com/spaghetti-aglio-e-olio/",
-      "bron_naam": "Foto",
+      "bron": "https://www.allrecipes.com/recipe/8652/garlic-chicken/",
+      "bron_naam": "Allrecipes",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-04-25"
+      "datum_toegevoegd": "2026-04-26"
     }
   ]
 }
