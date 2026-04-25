@@ -2985,7 +2985,7 @@
       "datum_toegevoegd": "2026-04-02"
     },
     {
-      "id": "r1777147102",
+      "id": "r1777147191",
       "titel": "Recept",
       "slug": "recept",
       "beschrijving": "",
@@ -2996,31 +2996,23 @@
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [],
-      "ingredienten": [
-        {
-          "naam": "Het transcript kopiëren uit de YouTube-pagina (ondertitels/transcript-knop)",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "De videobeschrijving kopieën",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "Of beide plakken in je volgende bericht",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
+      "ingredienten": [],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "**Videobeschrijving** (description) van YouTube"
+          "tekst": "De titel van het recept/de video noemen"
         },
         {
           "nummer": 2,
-          "tekst": "**Transcript** (gesproken tekst) van de video"
+          "tekst": "Een screenshot of beschrijving van de ingrediënten delen"
+        },
+        {
+          "nummer": 3,
+          "tekst": "De naam van de chef/creator vermelden"
+        },
+        {
+          "nummer": 4,
+          "tekst": "De video zelf bekijken en de ingrediënten/stappen noemen"
         }
       ],
       "voedingswaarden": {
