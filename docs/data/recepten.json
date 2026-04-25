@@ -2983,6 +2983,56 @@
       "bron_naam": "Moniquevanloon",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-02"
+    },
+    {
+      "id": "r1777147102",
+      "titel": "Recept",
+      "slug": "recept",
+      "beschrijving": "",
+      "afbeelding": "",
+      "bereidingstijd": 30,
+      "actieve_tijd": 30,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [],
+      "ingredienten": [
+        {
+          "naam": "Het transcript kopiëren uit de YouTube-pagina (ondertitels/transcript-knop)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "De videobeschrijving kopieën",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Of beide plakken in je volgende bericht",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "**Videobeschrijving** (description) van YouTube"
+        },
+        {
+          "nummer": 2,
+          "tekst": "**Transcript** (gesproken tekst) van de video"
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 0,
+        "eiwitten": 0,
+        "koolhydraten": 0,
+        "vetten": 0
+      },
+      "bron": "https://www.youtube.com/watch?v=sqFRVBJYtRo",
+      "bron_naam": "YouTube",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-25"
     }
   ]
 }
