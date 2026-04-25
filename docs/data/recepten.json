@@ -2985,44 +2985,123 @@
       "datum_toegevoegd": "2026-04-02"
     },
     {
-      "id": "r1777147191",
-      "titel": "Recept",
-      "slug": "recept",
-      "beschrijving": "",
+      "id": "r1777147299",
+      "titel": "Romige pasta met spinazie",
+      "slug": "romige-pasta-met-spinazie",
+      "beschrijving": "Een klassieke Italiaanse pastaschotel met romige saus, verse spinazie en Parmezaanse kaas.",
       "afbeelding": "",
-      "bereidingstijd": 30,
-      "actieve_tijd": 30,
+      "bereidingstijd": 20,
+      "actieve_tijd": 20,
       "passieve_tijd": 0,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
-      "tags": [],
-      "ingredienten": [],
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner",
+        "snel"
+      ],
+      "ingredienten": [
+        {
+          "naam": "pasta (penne of fettuccine)",
+          "hoeveelheid": 400.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "verse spinazie",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "room",
+          "hoeveelheid": 200.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "melk",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "2 knoflookteentjes",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Parmezaanse kaas",
+          "hoeveelheid": 75.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "zwarte peper",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "nootmuskaat",
+          "hoeveelheid": 0.25,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "boter",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 ui",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "De titel van het recept/de video noemen"
+          "tekst": "Zet een grote pot water met zout op het vuur en breng aan de kook. Voeg de pasta toe en kook volgens de aanwijzingen op de verpakking tot al dente."
         },
         {
           "nummer": 2,
-          "tekst": "Een screenshot of beschrijving van de ingrediënten delen"
+          "tekst": "Verhit intussen de olijfolie en boter in een grote pan, snipper de ui en pers de knoflook erbij en fruit 2 minuten tot geurig."
         },
         {
           "nummer": 3,
-          "tekst": "De naam van de chef/creator vermelden"
+          "tekst": "Voeg de spinazie toe en laat deze 2-3 minuten slinken, roer regelmatig."
         },
         {
           "nummer": 4,
-          "tekst": "De video zelf bekijken en de ingrediënten/stappen noemen"
+          "tekst": "Giet room en melk erbij, voeg zout, peper en nootmuskaat toe en laat 5 minuten zachtjes doorkoken."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Rasp de Parmezaanse kaas en voeg het grootste gedeelte toe aan de saus, reserveer wat voor afwerking."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Giet de gekookte pasta af en schep deze door de spinaziesaus, zorg dat alles goed met elkaar vermengd is."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Verdeel over borden, bestrooi met de resterende Parmezaanse kaas en serveer direct met vers brood."
         }
       ],
       "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
+        "kcal": 420,
+        "eiwitten": 16,
+        "koolhydraten": 48,
+        "vetten": 18
       },
-      "bron": "https://www.youtube.com/watch?v=sqFRVBJYtRo",
-      "bron_naam": "YouTube",
+      "bron": "https://www.lekkereensimpel.nl/recepten/romige-pasta-met-spinazie/",
+      "bron_naam": "Lekkereensimpel",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-25"
     }
