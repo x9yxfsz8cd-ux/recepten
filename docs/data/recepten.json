@@ -3221,6 +3221,123 @@
       "bron_naam": "Yotam Ottolenghi via Ottolenghi",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-26"
+    },
+    {
+      "id": "r1777221980",
+      "titel": "Zoete aardappelsoep met tahini",
+      "slug": "zoete-aardappelsoep-met-tahini",
+      "beschrijving": "Een romige, aromatische soep van zoete aardappel met tahini, komijn en koriander, afgewerkt met geroosterde pompoenpitten.",
+      "afbeelding": "https://www.bruna.nl/images/active/carrousel/fullsize/9789059565388_front.jpg",
+      "bereidingstijd": 35,
+      "actieve_tijd": 15,
+      "passieve_tijd": 20,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner",
+        "lunch"
+      ],
+      "ingredienten": [
+        {
+          "naam": "zoete aardappel, geschild en in blokjes",
+          "hoeveelheid": 800.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 grote ui, grof gesneden",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "3 teentjes knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 liter groenteobouillon",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "tahini",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "citroensap",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "komijn",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "koriander gemalen",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "cayennepeper",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout en peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "geroosterde pompoenpitten (garneering)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "extra tahini (garneering)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verhit de olijfolie in een grote pan en fruit de ui en knoflook 5 minuten op medium vuur tot ze zacht zijn."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Voeg de zoete aardappelblokjes, komijn, koriander en cayennepeper toe en bak nog 5 minuten al roerend."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Giet de groenteobouillon erbij, breng aan de kook en laat 20 minuten zacht koken tot de aardappel gaar is."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Pureer de soep glad met een staafmixer, roer de tahini en citroensap erdoor en breng op smaak met zout en peper."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Serveer de soep in kommen en garneer met geroosterde pompoenpitten en een drizzle tahini."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 285,
+        "eiwitten": 8,
+        "koolhydraten": 32,
+        "vetten": 14
+      },
+      "bron": "https://www.bruna.nl/boeken/plenty-more-9789059565388",
+      "bron_naam": "Yotam Ottolenghi via Plenty More — Yotam Ottolenghi - blz. 84",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-26"
     }
   ]
 }
