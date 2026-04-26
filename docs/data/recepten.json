@@ -1,79 +1,6 @@
 {
   "recepten": [
     {
-      "id": "r001",
-      "titel": "Pasta al Limone",
-      "slug": "pasta-al-limone",
-      "beschrijving": "Romige Italiaanse pasta met verse citroen en Parmezaan. Klaar in 20 minuten.",
-      "afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
-      "bereidingstijd": 25,
-      "moeilijkheidsgraad": "makkelijk",
-      "porties": 2,
-      "tags": [
-        "vegetarisch",
-        "snel",
-        "Italiaans"
-      ],
-      "ingredienten": [
-        {
-          "naam": "spaghetti",
-          "hoeveelheid": 200,
-          "eenheid": "g"
-        },
-        {
-          "naam": "citroen (rasp + sap)",
-          "hoeveelheid": 1,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "slagroom",
-          "hoeveelheid": 100,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "Parmezaan, geraspt",
-          "hoeveelheid": 50,
-          "eenheid": "g"
-        },
-        {
-          "naam": "boter",
-          "hoeveelheid": 2,
-          "eenheid": "el"
-        },
-        {
-          "naam": "zout en peper",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Kook de spaghetti al dente in ruim gezouten water. Bewaar een kopje kookwater voordat je afgiet."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Smelt de boter in een koekenpan op middelhoog vuur. Voeg de citroenrasp toe en bak 30 seconden. Schenk de slagroom erbij en laat even inkoken."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Haal de pan van het vuur. Voeg de pasta, het citroensap en de Parmezaan toe. Schep goed door en voeg een scheutje kookwater toe voor de juiste sausdikte. Breng op smaak met zout en peper."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 580,
-        "eiwitten": 18,
-        "koolhydraten": 72,
-        "vetten": 24
-      },
-      "bron": "",
-      "bron_type": "handmatig",
-      "datum_toegevoegd": "2026-03-23",
-      "bron_naam": "Handmatig",
-      "actieve_tijd": 15,
-      "passieve_tijd": 10
-    },
-    {
       "id": "r1774465753",
       "titel": "Poké bowl met zalm",
       "slug": "poke-bowl-met-zalm",
@@ -2004,249 +1931,6 @@
       "passieve_tijd": 25
     },
     {
-      "id": "r1774543376",
-      "titel": "Zalm met citroen",
-      "slug": "zalm-met-citroen",
-      "beschrijving": "Zacht gestoomde zalm in zilverpapier met citroenboterdressing.",
-      "afbeelding": "https://www.24kitchen.nl/files/styles/social_media_share/public/2023-08/lekkersnel12jul-11.jpg?itok=7VXUG8jo",
-      "bereidingstijd": 30,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 1,
-      "tags": [
-        "vis",
-        "snel",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "citroen",
-          "hoeveelheid": 2.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "zalm",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "boter",
-          "hoeveelheid": 150.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "Badia kruiden naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "Zout en peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Oven voorverwarmen op 160°C. Zalm afdeppen met keukenpapier en in een ovenschaal met zilverpapier leggen. De halve citroen fijnraspen en met de boter mengen, samen met peper, zout en citroensap van 1,5 citroen."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Boter op de zalm leggen en 4 citroenschijfjes erop plaatsen. Zilverpapier goed dichtplooien zodat de zalm volledig is ingepakt."
-        },
-        {
-          "nummer": 3,
-          "tekst": "20 minuten in de oven bakken tot de zalm gaar is."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 650,
-        "eiwitten": 32,
-        "koolhydraten": 2,
-        "vetten": 58
-      },
-      "bron": "",
-      "bron_naam": "Eigen recept",
-      "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 10,
-      "passieve_tijd": 20
-    },
-    {
-      "id": "r1774543383",
-      "titel": "Pittige harissa-spruitjes & broccoli met halloumi & spinazie",
-      "slug": "pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie",
-      "beschrijving": "Een pittige oven-schotel met geroosterde groenten, halloumi en spinazie, geserveerd op platbrood met yoghurt.",
-      "afbeelding": "https://www.groentenabonnement.nl/wp-content/uploads/2020/10/Broccoli-met-halloumi.jpg",
-      "bereidingstijd": 25,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
-      "tags": [
-        "vegetarisch",
-        "comfort food",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "broccoli, in roosjes",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "spruitjes",
-          "hoeveelheid": 500.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "halloumi, in blokjes",
-          "hoeveelheid": 250.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "harissa",
-          "hoeveelheid": 2.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "olijfolie",
-          "hoeveelheid": 2.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "spinazie, grof gesneden",
-          "hoeveelheid": 150.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "zeezout",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "citroen, sap",
-          "hoeveelheid": 0.5,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "platbrood, om te serveren",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "yoghurt, om te serveren",
-          "hoeveelheid": 4.0,
-          "eenheid": "el"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Verwarm de oven voor op 180°C hetelucht of 200°C elektrisch."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Schep broccoli, spruitjes, halloumi, harissa en olijfolie in een braadslede en zet deze in de oven voor 25 minuten."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Schep de spinazie erdoor en laat nog 1 minuut garen. Proef en voeg zeezout en citroensap toe."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Schep het mengsel met yoghurt op platbrood en serveer direct."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 340,
-        "eiwitten": 18,
-        "koolhydraten": 22,
-        "vetten": 20
-      },
-      "bron": "",
-      "bron_naam": "De Vegetarische Bakplaat (kookboek)",
-      "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 10,
-      "passieve_tijd": 15
-    },
-    {
-      "id": "r1774543390",
-      "titel": "Zelf Pizzadeeg Maken",
-      "slug": "zelf-pizzadeeg-maken",
-      "beschrijving": "Homemade pizzadeeg dat rijst en vervolgens wordt uitgerold voor drie pizza's.",
-      "afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2019/01/pizzadee-recept-1200x630-c-default.jpg",
-      "bereidingstijd": 75,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 3,
-      "tags": [
-        "vegetarisch",
-        "snel",
-        "comfort food",
-        "Italiaans",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "bloem (type 00)",
-          "hoeveelheid": 375.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "water (lauw)",
-          "hoeveelheid": 225.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "zout",
-          "hoeveelheid": 7.5,
-          "eenheid": "g"
-        },
-        {
-          "naam": "droge gist",
-          "hoeveelheid": 1.5,
-          "eenheid": "g"
-        },
-        {
-          "naam": "olijfolie",
-          "hoeveelheid": 3.5,
-          "eenheid": "g"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Doe bloem in een grote kom, meng gist door lauw water en laat even staan, voeg zout toe aan bloem en roer kort."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Giet gistwater en olijfolie bij bloem, roer kort door tot het samenkomt en kneed met de hand of machine tot soepel deeg (ongeveer 10 minuten)."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Vorm een bal, leg terug in kom, dek af met vochtige theedoek en laat rijzen op kamertemperatuur 60 minuten."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Bestuif werkvlak met bloem, verdeel deeg in 3 bollen en rol elke bol uit tot pizzabodem."
-        },
-        {
-          "nummer": 5,
-          "tekst": "Leg op bakplaat of pizzasteen."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 380,
-        "eiwitten": 10,
-        "koolhydraten": 72,
-        "vetten": 4
-      },
-      "bron": "",
-      "bron_naam": "Eigen recept",
-      "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 15,
-      "passieve_tijd": 60
-    },
-    {
       "id": "r1774543401",
       "titel": "Gerookte-paprikarisotto met gegratineerde geitenkaas",
       "slug": "gerookte-paprikarisotto-met-gegratineerde-geitenkaas",
@@ -2385,282 +2069,6 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 30,
       "passieve_tijd": 20
-    },
-    {
-      "id": "r1774543409",
-      "titel": "Lorenzo's pasta",
-      "slug": "lorenzo-s-pasta",
-      "beschrijving": "Klassieke Italiaanse pasta met geroosterde tomaten, knapperige bacon en Parmigiano.",
-      "afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
-      "bereidingstijd": 27,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
-      "tags": [
-        "vlees",
-        "comfort food",
-        "Italiaans",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "kleine tomaten",
-          "hoeveelheid": 400.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "pasta naar keuze",
-          "hoeveelheid": 400.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "bacon",
-          "hoeveelheid": 150.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "olijfolie",
-          "hoeveelheid": 3.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "zout",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "peper",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "suiker",
-          "hoeveelheid": 1.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "Parmigiano geraspte kaas",
-          "hoeveelheid": 50.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "pasta kookwater",
-          "hoeveelheid": 100.0,
-          "eenheid": "ml"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Zet water op voor pasta en snijd tomaten doormidden. Bak tomaten met olijfolie, zout, peper en suiker 20-25 minuten op middelvuur. Bak bacon apart 5 minuten knapperig."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Kook pasta volgens verpakking en voeg deze 4 minuten voor het einde van de kooktijd toe aan de tomatensaus. Meng alles 4 minuten goed door elkaar."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Voeg pasta kookwater, Parmigiano, bacon en olijfolie toe en blijf mengen tot je de perfecte consistentie bereikt hebt (circa 2 minuten)."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 560,
-        "eiwitten": 22,
-        "koolhydraten": 68,
-        "vetten": 20
-      },
-      "bron": "",
-      "bron_naam": "Lorenzo's recept",
-      "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 15,
-      "passieve_tijd": 12
-    },
-    {
-      "id": "r1774543416",
-      "titel": "Elly's appeltaart",
-      "slug": "elly-s-appeltaart",
-      "beschrijving": "Een klassieke appeltaart met kruimeltop, gemaakt met zelfrijzend bakmeel en gevuld met appels, cranberries en kaneel.",
-      "afbeelding": "https://www.laurasbakery.nl/wp-content/smush-webp/2013/07/omas-appeltaart-nieuw-uitgelicht.jpg.webp",
-      "bereidingstijd": 55,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 8,
-      "tags": [
-        "vegetarisch",
-        "comfort food",
-        "snack"
-      ],
-      "ingredienten": [
-        {
-          "naam": "zelfrijzend bakmeel",
-          "hoeveelheid": 300.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "roomboter",
-          "hoeveelheid": 200.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "witte basterdsuiker",
-          "hoeveelheid": 160.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "ei",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "zout",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "appels",
-          "hoeveelheid": 1500.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "fijne kristalsuiker",
-          "hoeveelheid": 25.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "cranberries",
-          "hoeveelheid": 50.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "kaneel",
-          "hoeveelheid": 2.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "custardpoeder",
-          "hoeveelheid": 2.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "citroen (sap)",
-          "hoeveelheid": 0.5,
-          "eenheid": "stuks"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Verwarm de oven voor op 160°C, vet de springvorm (Ø 24 cm) in en bekleed de bodem met bakpapier. Doe het meel, zachte boter, basterdsuiker en zout in een kom, klop het ei los en voeg 2/3 ervan toe, kneed alles tot een samenhangende deegbal. Verpak het deeg in folie en laat het 30 minuten in de koelkast rusten."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Schil de appels, verwijder de klokhuizen, snijd ze in stukjes en meng ze met citroensap, suiker, kaneel, cranberries en custardpoeder. Gebruik 2/3 van het gekoelde deeg om de bodem en rand van de springvorm te bekleden en druk goed aan."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Schep het appelmengsel in de vorm en verkruimel de rest van het deeg erover. Bestrijk de kruimels met het restje losgeklopt ei en bak de taart ongeveer 75 minuten in het midden van de oven, dek af met aluminiumfolie als de bovenkant te snel donker wordt."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 380,
-        "eiwitten": 4,
-        "koolhydraten": 52,
-        "vetten": 18
-      },
-      "bron": "",
-      "bron_naam": "Elly's recept (familie)",
-      "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 20,
-      "passieve_tijd": 35
-    },
-    {
-      "id": "r1774543424",
-      "titel": "Gazpacho",
-      "slug": "gazpacho",
-      "beschrijving": "Een verfrissende, ijskoude tomatensorep perfect voor warme dagen, bereid met verse groenten en olijfolie.",
-      "afbeelding": "https://hips.hearstapps.com/hmg-prod/images/gazpacho-index-6691419fe48a9.jpg?crop=1.00xw:1.00xh;0,0&amp;resize=1200:*",
-      "bereidingstijd": 75,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 2,
-      "tags": [
-        "vegetarisch",
-        "Aziatisch",
-        "lunch",
-        "snel"
-      ],
-      "ingredienten": [
-        {
-          "naam": "rijpe tomaten",
-          "hoeveelheid": 500.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "paprika",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "komkommer",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "knoflook",
-          "hoeveelheid": 2.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "extra vergine olijfolie",
-          "hoeveelheid": 70.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "rode wijnazijn of citroensap",
-          "hoeveelheid": 3.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "koud water of afgekoelde bouillon",
-          "hoeveelheid": 100.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "Zout naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "Zwarte peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Snijd alle groenten in stukken en doe ze samen met de olijfolie, azijn (of citroensap), knoflook en water of bouillon in een blender of gebruik een staafmixer. Blend tot een gladde soep."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Breng goed op smaak met zout, peper en eventueel extra zuur of smaakmakers zoals miso, sojasaus of Worcestersaus. De soep mag stevig gekruid zijn."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Giet de soep in een afsluitbare container en zet minstens 1 uur in de koelkast. Schenk in kommen, top af met toppings naar keuze (croutons, kruiden, spekjes, komkummer, kaas, chili crisp) en drizzle met olijfolie."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 220,
-        "eiwitten": 3,
-        "koolhydraten": 12,
-        "vetten": 18
-      },
-      "bron": "",
-      "bron_naam": "Eigen recept",
-      "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 15,
-      "passieve_tijd": 60
     },
     {
       "id": "r1774543430",
@@ -2985,25 +2393,25 @@
       "datum_toegevoegd": "2026-04-02"
     },
     {
-      "id": "r1777220685",
-      "titel": "Boter Chicken",
-      "slug": "boter-chicken",
-      "beschrijving": "Een romige Aziatische kipschotel met kokos en garam masala, klaar in ongeveer 40 minuten.",
+      "id": "r1777220835",
+      "titel": "Boter Kip",
+      "slug": "boter-kip",
+      "beschrijving": "Een romig Aziatisch kipgerecht met kokos en garam masala uit het kookboek van Yotam Ottolenghi.",
       "afbeelding": "",
-      "bereidingstijd": 36,
-      "actieve_tijd": 16,
+      "bereidingstijd": 35,
+      "actieve_tijd": 15,
       "passieve_tijd": 20,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
         "vlees",
         "Aziatisch",
-        "diner",
-        "comfort food"
+        "comfort food",
+        "diner"
       ],
       "ingredienten": [
         {
-          "naam": "kippenborsten in blokjes",
+          "naam": "kipfilet, in blokjes",
           "hoeveelheid": 700.0,
           "eenheid": "g"
         },
@@ -3033,17 +2441,17 @@
           "eenheid": "tl"
         },
         {
-          "naam": "ui fijngesneden",
+          "naam": "ui, fijngesneden",
           "hoeveelheid": 1.0,
           "eenheid": "stuks"
         },
         {
-          "naam": "3 teentjes knoflook geperst",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "knoflooktenen, geperst",
+          "hoeveelheid": 3.0,
+          "eenheid": "stuks"
         },
         {
-          "naam": "2 cm verse gember geraspt",
+          "naam": "2 cm verse gember, geraspt",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
@@ -3058,7 +2466,7 @@
           "eenheid": "naar smaak"
         },
         {
-          "naam": "verse koriander voor garnering",
+          "naam": "koriander voor garnering",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
@@ -3066,7 +2474,7 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Verhit de zonnebloemolie in een grote pan en fruit de fijngesneden ui, knoflook en geraspte gember gedurende 5 minuten."
+          "tekst": "Verhit de zonnebloemolie in een grote pan en fruit de ui, knoflook en gember gedurende 5 minuten tot ze geurig zijn."
         },
         {
           "nummer": 2,
@@ -3074,29 +2482,29 @@
         },
         {
           "nummer": 3,
-          "tekst": "Voeg de kippenblokjes toe en bruin ze circa 5 minuten rond."
+          "tekst": "Voeg de kipfiletblokjes toe en braad ze tot ze aan alle kanten bruin zijn, ongeveer 5 minuten."
         },
         {
           "nummer": 4,
-          "tekst": "Schenk de tomatenpuree en kokosmelk erbij en breng het aan de kook."
+          "tekst": "Giet de tomatenpuree en kokosmelk erbij en breng het geheel aan de kook."
         },
         {
           "nummer": 5,
-          "tekst": "Laat het mengsel 20 minuten zachtjes sudderen tot de saus ingedikt is."
+          "tekst": "Laat het 20 minuten op laag vuur sudderen tot de saus is ingedikt en de kip gaar is."
         },
         {
           "nummer": 6,
-          "tekst": "Breng op smaak met zout en garneer met verse koriander voordat je serveeert."
+          "tekst": "Breng op smaak met zout, garneer met verse koriander en serveer met basmatirijst."
         }
       ],
       "voedingswaarden": {
-        "kcal": 420,
+        "kcal": 380,
         "eiwitten": 42,
         "koolhydraten": 8,
-        "vetten": 22
+        "vetten": 20
       },
-      "bron": "Boter Chicken uit Ottolenghi Simple\n\nIngrediënten (4 personen):\n- 4 kippenborsten (ca. 700g), in blokjes\n- 400ml kokosmelk\n- 3 el tomatenpuree\n- 2 tl garam masala\n- 1 tl kurkuma, 1 tl paprikapoeder\n- 1 ui fijngesneden, 3 teentjes knoflook geperst\n- 2 cm verse gember geraspt\n- 2 el zonnebloemolie, zout\n\nBereiding:\n1. Verhit olie, fruit ui knoflook gember 5 min.\n2. Voeg kruiden toe, roer 1 min.\n3. Kip erbij, bruin bakken ca 5 min.\n4. Tomatenpuree en kokosmelk erbij, kook.\n5. 20 min sudderen tot saus ingedikt.\n6. Op smaak met zout, garneer koriander.",
-      "bron_naam": "Ottolenghi via ",
+      "bron": "",
+      "bron_naam": "Yotam Ottolenghi via Ottolenghi Simple",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-26"
     }
