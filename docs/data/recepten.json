@@ -2983,6 +2983,122 @@
       "bron_naam": "Moniquevanloon",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-02"
+    },
+    {
+      "id": "r1777220685",
+      "titel": "Boter Chicken",
+      "slug": "boter-chicken",
+      "beschrijving": "Een romige Aziatische kipschotel met kokos en garam masala, klaar in ongeveer 40 minuten.",
+      "afbeelding": "",
+      "bereidingstijd": 36,
+      "actieve_tijd": 16,
+      "passieve_tijd": 20,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vlees",
+        "Aziatisch",
+        "diner",
+        "comfort food"
+      ],
+      "ingredienten": [
+        {
+          "naam": "kippenborsten in blokjes",
+          "hoeveelheid": 700.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "kokosmelk",
+          "hoeveelheid": 400.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "tomatenpuree",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "garam masala",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "kurkuma",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "paprikapoeder",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "ui fijngesneden",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "3 teentjes knoflook geperst",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "2 cm verse gember geraspt",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zonnebloemolie",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "verse koriander voor garnering",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verhit de zonnebloemolie in een grote pan en fruit de fijngesneden ui, knoflook en geraspte gember gedurende 5 minuten."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Voeg de garam masala, kurkuma en paprikapoeder toe en roer goed door, ongeveer 1 minuut."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de kippenblokjes toe en bruin ze circa 5 minuten rond."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Schenk de tomatenpuree en kokosmelk erbij en breng het aan de kook."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Laat het mengsel 20 minuten zachtjes sudderen tot de saus ingedikt is."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Breng op smaak met zout en garneer met verse koriander voordat je serveeert."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 420,
+        "eiwitten": 42,
+        "koolhydraten": 8,
+        "vetten": 22
+      },
+      "bron": "Boter Chicken uit Ottolenghi Simple\n\nIngrediënten (4 personen):\n- 4 kippenborsten (ca. 700g), in blokjes\n- 400ml kokosmelk\n- 3 el tomatenpuree\n- 2 tl garam masala\n- 1 tl kurkuma, 1 tl paprikapoeder\n- 1 ui fijngesneden, 3 teentjes knoflook geperst\n- 2 cm verse gember geraspt\n- 2 el zonnebloemolie, zout\n\nBereiding:\n1. Verhit olie, fruit ui knoflook gember 5 min.\n2. Voeg kruiden toe, roer 1 min.\n3. Kip erbij, bruin bakken ca 5 min.\n4. Tomatenpuree en kokosmelk erbij, kook.\n5. 20 min sudderen tot saus ingedikt.\n6. Op smaak met zout, garneer koriander.",
+      "bron_naam": "Ottolenghi via ",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-26"
     }
   ]
 }
