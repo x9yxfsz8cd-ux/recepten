@@ -780,10 +780,17 @@ def update_website(recipe_data, url, img_url, bron_naam):
 
     # Bron display met chef/boek info
     display_bron = bron_naam
-    if recipe_data.get("bron_chef") and recipe_data["bron_chef"] != bron_naam:
-        display_bron = f"{recipe_data['bron_chef']} via {bron_naam}"
-    elif recipe_data.get("bron_boek"):
-        display_bron = recipe_data["bron_boek"]
+    chef = recipe_data.get("bron_chef", "")
+    boek = recipe_data.get("bron_boek", "")
+    if chef and chef != bron_naam:
+        if boek:
+            display_bron = boek if chef.lower() in boek.lower() else f"{chef} via {boek}"
+        elif bron_naam:
+            display_bron = f"{chef} via {bron_naam}"
+        else:
+            display_bron = chef
+    elif boek:
+        display_bron = boek
 
     voedingswaarden = recipe_data.get("voedingswaarden", {"kcal": 0, "eiwitten": 0, "koolhydraten": 0, "vetten": 0})
 
@@ -810,7 +817,9 @@ def update_website(recipe_data, url, img_url, bron_naam):
 
     with open(RECEPTEN_JSON, "r") as f:
         db = json.load(f)
-    db["recepten"] = [r for r in db["recepten"] if r.get("bron") != url]
+    # Verwijder duplicaat op URL — maar NIET als url leeg is (tekst-invoer)
+    if url:
+        db["recepten"] = [r for r in db["recepten"] if r.get("bron") != url]
     db["recepten"].append(website_recipe)
     with open(RECEPTEN_JSON, "w") as f:
         json.dump(db, f, indent=2, ensure_ascii=False)
@@ -860,10 +869,18 @@ def format_note_html(recipe, bron_url, bron_naam, website_url):
 
     # Bron display
     display_bron = bron_naam
-    if recipe.get("bron_chef") and recipe["bron_chef"] != bron_naam:
-        display_bron = f"{recipe['bron_chef']} via {bron_naam}"
-    elif recipe.get("bron_boek"):
-        display_bron = recipe["bron_boek"]
+    chef = recipe.get("bron_chef", "")
+    boek = recipe.get("bron_boek", "")
+    if chef and chef != bron_naam:
+        if boek:
+            # Chef + boek: toon "Chef via Boek" maar alleen als chef niet al in boeknaam zit
+            display_bron = boek if chef.lower() in boek.lower() else f"{chef} via {boek}"
+        elif bron_naam:
+            display_bron = f"{chef} via {bron_naam}"
+        else:
+            display_bron = chef
+    elif boek:
+        display_bron = boek
 
     # Ingrediënten als bullet list
     ing_items = []
@@ -905,7 +922,8 @@ def format_note_html(recipe, bron_url, bron_naam, website_url):
         voed_html,
         '<div><br></div>',
         f'<div><a href="{html_mod.escape(website_url)}"><u>Bekijk op receptensite</u></a></div>',
-        f'<div>Bron: <a href="{html_mod.escape(bron_url)}">{html_mod.escape(display_bron)}</a></div>',
+        (f'<div>Bron: <a href="{html_mod.escape(bron_url)}">{html_mod.escape(display_bron)}</a></div>'
+         if bron_url else f'<div>Bron: {html_mod.escape(display_bron)}</div>'),
     ]
     return '\n'.join(parts)
 
@@ -978,6 +996,40 @@ def main():
         sys.exit(1)
 
     api_key = get_api_key()
+
+    # Detecteer of input een URL is of gewone tekst (Substack-post, WhatsApp-bericht, etc.)
+    is_url = url.startswith(("http://", "https://"))
+    if not is_url:
+        print("Tekst-invoer gedetecteerd (geen URL) — stuur direct naar Claude...")
+        bron_naam = "Tekst"
+        prompt = (
+            "Extraheer het recept uit de onderstaande tekst en vertaal alles naar het Nederlands.\n\n"
+            "Geef je antwoord in dit EXACTE formaat:\n\n"
+            "TITEL: [receptnaam in het NEDERLANDS]\n"
+            "TAGS: [komma-gescheiden tags uit: vis, vlees, vegetarisch, vegan, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack]\n"
+            "PORTIES: [aantal]\nACTIEVE_TIJD: [minuten actief bezig]\nPASSIEVE_TIJD: [minuten wachten — 0 als geen]\nBESCHRIJVING: [1 zin]\n"
+            "BRON_CHEF: [naam chef/kok als vermeld in de tekst, anders leeg]\n"
+            "BRON_BOEK: [naam kookboek als vermeld in de tekst, anders leeg]\n"
+            "KCAL: [geschatte calorieën per portie]\nEIWITTEN: [gram]\nKOOLHYDRATEN: [gram]\nVETTEN: [gram]\n"
+            "===\nINGREDIENTEN:\n- [hoeveelheid] [eenheid] [ingrediënt]\n\n"
+            "BEREIDING:\n1. [stap]\n\n"
+            "Regels: ALLES in het Nederlands, eenheden g/ml/el/tl/stuks, stappen max 3 zinnen.\n\n"
+            f"Tekst:\n{url}"
+        )
+        print("Recept extraheren...")
+        raw = call_claude(prompt, api_key)
+        recipe = parse_recipe(raw)
+        print(f"  Titel: {recipe['titel']}")
+        print(f"  Tags: {', '.join(recipe['tags'])}")
+        print(f"  {recipe.get('bereidingstijd', 0)} min · {recipe['porties']} porties")
+        print(f"  {len(recipe['ingredienten'])} ingrediënten, {len(recipe['stappen'])} stappen")
+        # Gebruik bron_chef/bron_boek als bron_naam als die beschikbaar zijn
+        if recipe.get("bron_boek"):
+            bron_naam = recipe["bron_boek"]
+        elif recipe.get("bron_chef"):
+            bron_naam = recipe["bron_chef"]
+        return save_recipe(recipe, "", bron_naam, "", api_key)
+
     bron_naam = get_site_name(url)
 
     # ── 1. Pagina ophalen ──
