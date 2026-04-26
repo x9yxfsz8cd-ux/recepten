@@ -2983,6 +2983,89 @@
       "bron_naam": "Moniquevanloon",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-02"
+    },
+    {
+      "id": "r1777223515",
+      "titel": "Krokante gnocchi met paprika en rozemarijn",
+      "slug": "krokante-gnocchi-met-paprika-en-rozemarijn",
+      "beschrijving": "Geroosterde gnocchi met paprika en rozemarijn, afgewerkt met Parmezaanse kaas.",
+      "afbeelding": "",
+      "bereidingstijd": 33,
+      "actieve_tijd": 10,
+      "passieve_tijd": 23,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "gnocchi (vers of uit de koeling)",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 rode paprika, in blokjes",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 gele paprika, in blokjes",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "2 teentjes knoflook, fijngehakt",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "3 takjes verse rozemarijn",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "zout en peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "Parmezaanse kaas om te serveren",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 220°C. Meng gnocchi, paprika en knoflook met olijfolie, rozemarijn, zout en peper op een bakplaat."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Rooster 20-25 minuten in de oven, halverwege omscheppen, tot de gnocchi krokant zijn en de paprika geroosterd."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Serveer direct met versgeraspte Parmezaanse kaas."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 380,
+        "eiwitten": 12,
+        "koolhydraten": 48,
+        "vetten": 16
+      },
+      "bron": "",
+      "bron_naam": "Tekst",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-26"
     }
   ]
 }
