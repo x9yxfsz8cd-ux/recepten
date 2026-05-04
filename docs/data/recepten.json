@@ -3066,6 +3066,106 @@
       "bron_naam": "Tekst",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-26"
+    },
+    {
+      "id": "r1777886225",
+      "titel": "Waterkerssoep met geitenkaas",
+      "slug": "waterkerssoep-met-geitenkaas",
+      "beschrijving": "Een romige waterkerssoep met aardappel en kippenbouillon, afgewerkt met geitenkaas en geroosterd stokbrood.",
+      "afbeelding": "https://www.top-recept.nl/assets/images/ingredienten/aardappel.jpg",
+      "bereidingstijd": 35,
+      "actieve_tijd": 25,
+      "passieve_tijd": 10,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "lunch",
+        "diner",
+        "voorgerecht"
+      ],
+      "ingredienten": [
+        {
+          "naam": "1 ui",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 teentje knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "boter",
+          "hoeveelheid": 25.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 aardappel",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 l kippenbouillon",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "waterkers",
+          "hoeveelheid": 250.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "geitenkaas",
+          "hoeveelheid": 100.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 stokbrood",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "room",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Snipper de ui en knoflook en fruit ze zacht in boter. Schil de aardappel, hak in kleine blokjes en voeg toe met de kippenbouillon. Laat 10 minuten doorkoken en kruid met peper en zout."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Maak de waterkers schoon, spoel goed en laat uitlekken. Haal de soep van het vuur en roer de waterkers erdoor. Mix direct fijn (dit behoud de groene kleur)."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Snij het stokbrood in plakken en rooster kort. Roer de room door de soep, kruid opnieuw en lepel in kommen. Werk af met geroosterd stokbrood en geitenkaas."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 280,
+        "eiwitten": 12,
+        "koolhydraten": 28,
+        "vetten": 14
+      },
+      "bron": "https://www.top-recept.nl/recept/303179/waterkerssoep-met-geitenkaas.html",
+      "bron_naam": "Solo Open Kitchen via [niet duidelijk zichtbaar]",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-05-04"
     }
   ]
 }
