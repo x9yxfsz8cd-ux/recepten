@@ -3269,6 +3269,113 @@
       "bron_naam": "Mindyourfeed",
       "bron_type": "url",
       "datum_toegevoegd": "2026-05-06"
+    },
+    {
+      "id": "r1778095438",
+      "titel": "Bio Bietjesstamppot",
+      "slug": "bio-bietjesstamppot",
+      "beschrijving": "Een heerlijke, plantaardige stamppot met biologische bietjes en aardappelen, afgemaakt met mosterd en ketjap manis.",
+      "afbeelding": "https://scontent-ams2-1.cdninstagram.com/v/t51.82787-15/584527283_18546528337039118_7628131197000860859_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&amp;_nc_cat=106&amp;ccb=7-5&amp;_nc_sid=18de74&amp;efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&amp;_nc_ohc=etPgawPNFrIQ7kNvwGYwhaL&amp;_nc_oc=AdqLsSFSpRgFuO-PvAAauhV34CW2x7YMaNZ3xUgKPSnZZGXhuMQkW-ZD6HM9xdw_ov85OC-1O9QpZbSwNgAmCF2k&amp;_nc_zt=23&amp;_nc_ht=scontent-ams2-1.cdninstagram.com&amp;_nc_gid=90pr5r0vPSvKnj6m4NkuuA&amp;_nc_ss=7f689&amp;oh=00_Af6IuHpInWP2xRglX643hasoPc8dnaLwau3qdvwaeidqKw&amp;oe=6A01680E",
+      "bereidingstijd": 45,
+      "actieve_tijd": 25,
+      "passieve_tijd": 20,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "aardappelen",
+          "hoeveelheid": 1000.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "voorgekookte biologische bietjes",
+          "hoeveelheid": 500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "plantaardige boter",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "plantaardige melk",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "mosterd",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "ketjap manis",
+          "hoeveelheid": 3.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "ui (geel of rood)",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "plantaardige spekjes (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "plantaardige gehaktballen (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "jus (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Kook de aardappelen volgens de verpakkingsinstructies voor stamppot."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd de ui klein en bak die samen met de plantaardige spekjes op. Snijd de bietjes in blokjes van een halve centimeter en bewaar het bietensap."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Stamp de aardappelen samen met het bietensap, boter, melk, mosterd, ketjap manis, peper en zout tot een stampot. Voeg op het laatste moment de bietjes toe en stamp nog even door."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Schep de spekjes en ui erdoor heen en serveer met rucola, gehaktballen en jus."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 280,
+        "eiwitten": 6,
+        "koolhydraten": 42,
+        "vetten": 10
+      },
+      "bron": "https://www.instagram.com/reel/DRMNCVsCBB1/",
+      "bron_naam": "Titia Hoogendoorn via Instagram",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-05-06"
     }
   ]
 }
