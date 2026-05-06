@@ -3376,6 +3376,122 @@
       "bron_naam": "Titia Hoogendoorn via Instagram",
       "bron_type": "url",
       "datum_toegevoegd": "2026-05-06"
+    },
+    {
+      "id": "r1778096391",
+      "titel": "Elly's appeltaart",
+      "slug": "elly-s-appeltaart",
+      "beschrijving": "Een klassieke Nederlandse appeltaart met een boterdeegbodem, appelvulling en kruimeltopje.",
+      "afbeelding": "",
+      "bereidingstijd": 135,
+      "actieve_tijd": 30,
+      "passieve_tijd": 105,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 8,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner",
+        "snack"
+      ],
+      "ingredienten": [
+        {
+          "naam": "bakpapier",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zelfrijzend bakmeel",
+          "hoeveelheid": 300.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "roomboter (kamertemperatuur)",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "witte basterdsuiker",
+          "hoeveelheid": 160.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "1 snuifje zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "ei (losgeklopt)",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "appels (Goudreinnet, Elstar of Jonagold)",
+          "hoeveelheid": 1500.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "fijne kristalsuiker",
+          "hoeveelheid": 25.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "kaneel",
+          "hoeveelheid": 2.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "cranberries (niet geweld)",
+          "hoeveelheid": 50.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "custardpoeder",
+          "hoeveelheid": 2.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "citroen (sap)",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 165°C en vet een springvorm van circa 24 cm in. Knip een rondje bakpapier voor de bodem en vet dit ook in."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Klop 200 g boter zacht met een mixer, voeg 160 g witte basterdsuiker toe en roer tot een glad mengsel. Zeef 300 g zelfrijzend bakmeel erbij, voeg een snuifje zout en 3/4 van het losgeklopte ei toe en kneed tot een samenhangend, niet-kleverig deeg. Laat dit 30 minuten in de koelkast rusten."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Bekleed het bakblik met 3/4 van het deeg, druk op de bodem en maak walletjes voor de rand ongeveer 2 cm onder de rand. Zet het bakblik terug in de koelkast."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Schil de appels, snijd in schijfjes en besprenkel met citroensap. Voeg kaneel, kristalsuiker, custardpoeder en citroensap toe en meng goed."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Doe het appelmengsel in de vorm en verkruimel de rest van het deeg erover. Bestrijk met de rest van het ei."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Bak circa 75 minuten op 165°C; controleer tussendoor en dek af met aluminiumfolie als de taart te snel donker wordt."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 385,
+        "eiwitten": 4,
+        "koolhydraten": 48,
+        "vetten": 20
+      },
+      "bron": "",
+      "bron_naam": "Elly de Graaff",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-05-06"
     }
   ]
 }
