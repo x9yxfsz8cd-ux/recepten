@@ -3395,6 +3395,111 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-05-06",
       "afbeelding_2": "./images/ellys-appeltaart-2.jpg"
+    },
+    {
+      "id": "r1778096916",
+      "titel": "Spaghetti met tonijn- en ansjovisaus",
+      "slug": "spaghetti-met-tonijn-en-ansjovisaus",
+      "beschrijving": "Een intensieve Italiaanse pastaschotel met tonijn, ansjovis en kappertjes, traditioneel gerecht voor Vasten.",
+      "afbeelding": "https://blog.giallozafferano.it/ricettedilibellula/wp-content/uploads/2020/03/Pasta-sugo-tonno-acciughe.jpg",
+      "bereidingstijd": 30,
+      "actieve_tijd": 10,
+      "passieve_tijd": 20,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vis",
+        "Italiaans",
+        "diner",
+        "lunch"
+      ],
+      "ingredienten": [
+        {
+          "naam": "Spaghetti",
+          "hoeveelheid": 200.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Tomatenpuree",
+          "hoeveelheid": 160.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Tonijn in olie",
+          "hoeveelheid": 80.0,
+          "eenheid": "g"
+        },
+        {
+          "naam": "Kappertjes",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Ansjovis onder zout",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "1 ciuffo Peterselie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "1 spicchio Knoflook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "naar smaak Olijfolie extra vergine",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "naar smaak Zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Zet de ansjovis en kappertjes in twee aparte schaaltjes om uit te weken."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit een beetje olijfolie in een pan met fijngehakte knoflook op laag vuur gedurende 1 minuut."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de uitgelekte tonijn toe en laat deze 2 minuten fruiten."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg de in stukken gebroken ansjovis en fijngestampte kappertjes toe, samen met fijngehakte peterselie."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Giet de tomatenpuree erbij met een pollepel warm water en laat dit ongeveer 20 minuten op laag vuur sudderen terwijl je af en toe roert, tot je een mooie saus hebt; kruid af met zout."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Kook de pasta in ruim kokend gezout water en giet af tot al dente; voeg toe aan de pan met saus."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Meng de pasta met de saus op hoog vuur gedurende 2 minuten. Serveer met fijngehakte peterselie en eventueel rode peper naar wens."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 420,
+        "eiwitten": 28,
+        "koolhydraten": 48,
+        "vetten": 12
+      },
+      "bron": "https://blog.giallozafferano.it/ricettedilibellula/spaghetti-sugo-tonno-acciughe/",
+      "bron_naam": "Le ricette di Libellula via Blog",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-05-06"
     }
   ]
 }
