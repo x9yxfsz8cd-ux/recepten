@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#3A3F3C">
+  <meta name="theme-color" content="#0d1117">
   <meta property="og:title" content="Onze Recepten">
   <meta property="og:description" content="Persoonlijke receptenverzameling van Shar & Robin">
   <meta property="og:type" content="website">
@@ -17,12 +17,12 @@
   <main class="container">
     <div class="search-bar" style="display:flex;gap:0.75rem;align-items:center;">
       <input type="search" id="zoekbalk" placeholder="Zoek op recept of ingrediënt…" autocomplete="off" style="flex:1;margin:0;">
-      <select id="sorteer" style="padding:0.85rem 1.1rem;border:none;border-radius:8px;background:var(--surface);color:var(--dark);font-family:inherit;font-size:0.9rem;font-weight:500;cursor:pointer;flex-shrink:0;appearance:auto;">
+      <select id="sorteer" style="padding:0.85rem 1.1rem;border:1px solid var(--border);border-radius:8px;background:var(--glass-card);color:var(--text);font-family:inherit;font-size:0.9rem;font-weight:500;cursor:pointer;flex-shrink:0;appearance:auto;backdrop-filter:blur(12px);">
         <option value="nieuwste">Nieuwste eerst</option>
         <option value="az">A-Z</option>
         <option value="snelste">Snelste eerst</option>
       </select>
-      <a href="./import.html" style="white-space:nowrap;padding:0.85rem 1.1rem;background:var(--dark);color:var(--card-light);border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:600;flex-shrink:0;">+ Recept</a>
+      <a href="./import.html" style="white-space:nowrap;padding:0.85rem 1.1rem;background:var(--accent-subtle);color:var(--accent);border:1px solid rgba(88,166,255,0.28);border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:600;flex-shrink:0;backdrop-filter:blur(12px);">+ Recept</a>
     </div>
 
     <div class="tag-filters" id="tag-filters"></div>
