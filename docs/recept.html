@@ -303,6 +303,10 @@
         ? `<img class="recept-hero" src="${r.afbeelding}" alt="${r.titel}">`
         : `<div class="recept-hero-placeholder"></div>`;
 
+      const img2 = r.afbeelding_2
+        ? `<img class="recept-foto-extra" src="${r.afbeelding_2}" alt="${r.titel} — bereiding">`
+        : '';
+
       const tags = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
       const ingredienten = r.ingredienten.map((ing, i) => renderIngredient(ing, i)).join('');
       const stappen = r.stappen.map(s => `
@@ -345,6 +349,7 @@
 
       document.getElementById('app').innerHTML = `
         ${img}
+        ${img2}
         <div class="recept-detail">
           <a class="terug-link" href="./index.html">Alle recepten</a>
           <div class="recept-detail__header">
