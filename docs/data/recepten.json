@@ -3166,6 +3166,109 @@
       "bron_naam": "Solo Open Kitchen via [niet duidelijk zichtbaar]",
       "bron_type": "url",
       "datum_toegevoegd": "2026-05-04"
+    },
+    {
+      "id": "r1778095207",
+      "titel": "Pittige tonijnsalade",
+      "slug": "pittige-tonijnsalade",
+      "beschrijving": "Een makkelijk recept voor pittige tonijnsalade, perfect op brood of als borrelhapje.",
+      "afbeelding": "https://www.mindyourfeed.nl/wp-content/uploads/2017/02/pittige-tonijnsalade-1.jpg",
+      "bereidingstijd": 5,
+      "actieve_tijd": 5,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vis",
+        "snel",
+        "lunch",
+        "snack"
+      ],
+      "ingredienten": [
+        {
+          "naam": "1 blikje tonijn (op water, MSC)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "½ limoen",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "¼ rode peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "3 augurken",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "2 takjes verse bieslook",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "mayonaise",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "Griekse yoghurt",
+          "hoeveelheid": 1.0,
+          "eenheid": "el"
+        },
+        {
+          "naam": "mosterd",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "sambal",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "kurkuma",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "komijn",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Laat het blikje tonijn uitlekken en schep de tonijn in een schaaltje."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snij de kop en kont van de augurken af en snij daarna heel fijn. Verwijder de zaadjes van de rode peper en snij de peper in kleine blokjes."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Maak de dressing in een tweede schaaltje door het sap van ½ limoen te mengen met de mayonaise, Griekse yoghurt, mosterd, sambal, kurkuma en komijn."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg de augurk en rode peper toe aan de tonijn, schenk de dressing erbij en meng goed door. Knip vers bieslook over de salade en serveer op brood of als borrelhapje."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 94,
+        "eiwitten": 15,
+        "koolhydraten": 5,
+        "vetten": 2
+      },
+      "bron": "https://www.mindyourfeed.nl/recepten/lunch/pittige-tonijnsalade/",
+      "bron_naam": "Mindyourfeed",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-05-06"
     }
   ]
 }
