@@ -3284,7 +3284,6 @@
       "titel": "Elly's appeltaart",
       "slug": "elly-s-appeltaart",
       "beschrijving": "Een klassieke Nederlandse appeltaart met een boterdeegbodem, appelvulling en kruimeltopje.",
-      "afbeelding": "./images/ellys-appeltaart-1.jpg",
       "bereidingstijd": 135,
       "actieve_tijd": 30,
       "passieve_tijd": 105,
@@ -3393,8 +3392,7 @@
       "bron": "",
       "bron_naam": "Elly de Graaff",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-05-06",
-      "afbeelding_2": "./images/ellys-appeltaart-2.jpg"
+      "datum_toegevoegd": "2026-05-06"
     },
     {
       "id": "r1778096916",
