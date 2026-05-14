@@ -15,9 +15,9 @@
   --text-dim:      #293544;
 
   /* ── Teenage Engineering orange ── */
-  --accent:        #f97316;
-  --accent-subtle: rgba(249, 115, 22, 0.09);
-  --accent-border: rgba(249, 115, 22, 0.22);
+  --accent:        #f0c84a;
+  --accent-subtle: rgba(240, 200, 74, 0.09);
+  --accent-border: rgba(240, 200, 74, 0.22);
 
   /* ── GitHub/Linear blue — links & interactive ── */
   --blue:          #58a6ff;
@@ -42,7 +42,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse 60% 45% at 8% 12%, rgba(249, 115, 22, 0.07) 0%, transparent 100%),
+    radial-gradient(ellipse 60% 45% at 8% 12%, rgba(240, 200, 74, 0.07) 0%, transparent 100%),
     radial-gradient(ellipse 50% 50% at 92% 88%, rgba(88, 166, 255, 0.05) 0%, transparent 100%);
   background-attachment: fixed;
   color: var(--text);
@@ -148,7 +148,7 @@ body::after {
 }
 .search-bar input:focus {
   border-color: var(--accent-border);
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.07);
+  box-shadow: 0 0 0 3px rgba(240, 200, 74, 0.07);
 }
 .search-bar input::placeholder { color: var(--text-muted); }
 
@@ -194,8 +194,8 @@ body::after {
   transition: background 0.12s, border-color 0.12s;
 }
 .toevoeg-btn:hover {
-  background: rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.38);
+  background: rgba(240, 200, 74, 0.15);
+  border-color: rgba(240, 200, 74, 0.38);
 }
 
 /* ── TAG FILTERS ── */
@@ -581,8 +581,8 @@ body::after {
   transition: background 0.12s, border-color 0.12s;
 }
 .kookmodus-btn:hover {
-  background: rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.38);
+  background: rgba(240, 200, 74, 0.15);
+  border-color: rgba(240, 200, 74, 0.38);
 }
 
 /* ── STAP — Linear solid ── */
@@ -685,7 +685,7 @@ body::after {
   transition: background 0.3s;
 }
 .km-dot.actief { background: var(--accent); }
-.km-dot.gedaan { background: rgba(249, 115, 22, 0.25); }
+.km-dot.gedaan { background: rgba(240, 200, 74, 0.25); }
 
 .km-inhoud {
   flex: 1;
@@ -748,8 +748,8 @@ body::after {
   color: var(--accent);
 }
 .km-nav-btn--volgende:hover:not(:disabled) {
-  background: rgba(249, 115, 22, 0.15);
-  border-color: rgba(249, 115, 22, 0.38);
+  background: rgba(240, 200, 74, 0.15);
+  border-color: rgba(240, 200, 74, 0.38);
 }
 .km-nav-btn--klaar {
   background: rgba(63, 185, 80, 0.09);
