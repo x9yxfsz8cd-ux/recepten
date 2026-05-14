@@ -15,14 +15,18 @@
 <body>
 
   <main class="container">
-    <div class="search-bar" style="display:flex;gap:0.75rem;align-items:center;">
-      <input type="search" id="zoekbalk" placeholder="Zoek op recept of ingrediënt…" autocomplete="off" style="flex:1;margin:0;">
-      <select id="sorteer" style="padding:0.85rem 1.1rem;border:1px solid var(--border);border-radius:8px;background:var(--glass-card);color:var(--text);font-family:inherit;font-size:0.9rem;font-weight:500;cursor:pointer;flex-shrink:0;appearance:auto;backdrop-filter:blur(12px);">
+    <header class="page-header">
+      <h1 class="page-title">Onze Recepten</h1>
+      <p class="page-sub">Shar &amp; Robin</p>
+    </header>
+    <div class="search-bar">
+      <input type="search" id="zoekbalk" placeholder="Zoek op recept of ingrediënt…" autocomplete="off">
+      <select id="sorteer" class="sorteer-select">
         <option value="nieuwste">Nieuwste eerst</option>
-        <option value="az">A-Z</option>
+        <option value="az">A–Z</option>
         <option value="snelste">Snelste eerst</option>
       </select>
-      <a href="./import.html" style="white-space:nowrap;padding:0.85rem 1.1rem;background:var(--accent-subtle);color:var(--accent);border:1px solid rgba(88,166,255,0.28);border-radius:8px;text-decoration:none;font-size:0.9rem;font-weight:600;flex-shrink:0;backdrop-filter:blur(12px);">+ Recept</a>
+      <a href="./import.html" class="toevoeg-btn">+ Recept</a>
     </div>
 
     <div class="tag-filters" id="tag-filters"></div>

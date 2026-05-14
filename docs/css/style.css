@@ -1,38 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap');
 
 :root {
-  /* GitHub dark palette */
-  --bg:            #0d1117;
-  --surface:       #161b22;
-  --surface-2:     #21262d;
-  --border:        #30363d;
-  --text:          #e6edf3;
-  --text-muted:    #7d8590;
-  --accent:        #58a6ff;
-  --accent-subtle: rgba(88, 166, 255, 0.1);
+  /* ── Base — GitHub dark core ── */
+  --bg:            #080c10;
+  --surface:       #0d1117;
+  --surface-2:     #131920;
+  --border:        #1a2332;
+  --border-2:      #253041;
 
-  /* Liquid glass */
-  --glass-card:    rgba(22, 27, 34, 0.72);
-  --glass-border:  rgba(255, 255, 255, 0.07);
-  --glass-hi:      rgba(255, 255, 255, 0.13);
+  /* ── Text ── */
+  --text:          #dce4ed;
+  --text-muted:    #4d6070;
+  --text-dim:      #293544;
 
-  /* Legacy aliases — inline HTML styles use these */
-  --card-light:    #e6edf3;
-  --mid:           #7d8590;
-  --dark:          #21262d;
+  /* ── Teenage Engineering orange ── */
+  --accent:        #f97316;
+  --accent-subtle: rgba(249, 115, 22, 0.09);
+  --accent-border: rgba(249, 115, 22, 0.22);
+
+  /* ── GitHub/Linear blue — links & interactive ── */
+  --blue:          #58a6ff;
+  --blue-dim:      rgba(88, 166, 255, 0.09);
+
+  /* ── Apple liquid glass ── */
+  --glass:         rgba(10, 14, 20, 0.82);
+  --glass-card:    rgba(13, 17, 23, 0.82);
+  --glass-border:  rgba(255, 255, 255, 0.048);
+  --glass-hi:      rgba(255, 255, 255, 0.08);
+
+  /* ── Legacy aliases (used in inline HTML & JS) ── */
+  --card-light:    #dce4ed;
+  --mid:           #4d6070;
+  --dark:          #131920;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse 70% 55% at 15% 30%, rgba(88, 166, 255, 0.08) 0%, transparent 100%),
-    radial-gradient(ellipse 55% 60% at 85% 75%, rgba(139, 92, 246, 0.06) 0%, transparent 100%),
-    radial-gradient(ellipse 50% 40% at 50% 110%, rgba(63, 185, 80, 0.04) 0%, transparent 100%);
+    radial-gradient(ellipse 60% 45% at 8% 12%, rgba(249, 115, 22, 0.07) 0%, transparent 100%),
+    radial-gradient(ellipse 50% 50% at 92% 88%, rgba(88, 166, 255, 0.05) 0%, transparent 100%);
   background-attachment: fixed;
   color: var(--text);
   min-height: 100vh;
@@ -40,14 +50,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── HEADER ── */
+/* Subtle grain — Teenage Engineering */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── SITE HEADER (sticky nav, if used) ── */
 .site-header {
-  background: rgba(13, 17, 23, 0.82);
+  background: rgba(8, 12, 16, 0.92);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 1px solid var(--border);
   color: var(--text);
-  padding: 1.1rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,22 +77,18 @@ body {
   top: 0;
   z-index: 100;
 }
-
 .site-header a {
   color: var(--text);
   text-decoration: none;
   font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
 }
-
 .site-header nav a {
   font-family: 'Inter', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 400;
+  font-size: 0.85rem;
   color: var(--text-muted);
-  transition: color 0.2s;
+  transition: color 0.15s;
 }
 .site-header nav a:hover { color: var(--text); }
 
@@ -81,62 +98,134 @@ body {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
-.container > .search-bar:first-child { margin-top: 2.5rem; }
 
-/* ── SEARCH + FILTERS ── */
-.search-bar { margin: 2rem 0 1rem; }
+/* ── PAGE HEADER — Stripe editorial moment ── */
+.page-header {
+  padding: 3.5rem 0 1.75rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.page-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.75;
+}
+
+/* ── SEARCH BAR ── */
+.search-bar {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0 0 1.25rem;
+}
 
 .search-bar input {
-  width: 100%;
-  padding: 0.85rem 1.2rem;
+  flex: 1;
+  min-width: 0;
+  padding: 0.8rem 1.15rem;
   font-family: inherit;
-  font-size: 1rem;
-  background: var(--glass-card);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid var(--glass-border);
-  border-top-color: var(--glass-hi);
-  border-radius: 12px;
+  font-size: 0.95rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
   color: var(--text);
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 .search-bar input:focus {
-  border-color: rgba(88, 166, 255, 0.45);
-  box-shadow: 0 0 0 3px var(--accent-subtle);
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.07);
 }
 .search-bar input::placeholder { color: var(--text-muted); }
 
+/* ── SORT SELECT ── */
+.sorteer-select {
+  padding: 0.8rem 2.2rem 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%234d6070' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  flex-shrink: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color 0.12s;
+}
+.sorteer-select:focus {
+  outline: none;
+  border-color: var(--accent-border);
+}
+
+/* ── ADD BUTTON ── */
+.toevoeg-btn {
+  white-space: nowrap;
+  padding: 0.8rem 1.1rem;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+  transition: background 0.12s, border-color 0.12s;
+}
+.toevoeg-btn:hover {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.38);
+}
+
+/* ── TAG FILTERS ── */
 .tag-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
+  gap: 0.4rem;
   margin-bottom: 2rem;
 }
 
 .tag-btn {
-  padding: 0.32rem 0.85rem;
-  border-radius: 100px;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
   border: 1px solid var(--border);
-  background: rgba(33, 38, 45, 0.55);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: transparent;
   color: var(--text-muted);
-  font-family: inherit;
-  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
   font-weight: 500;
+  letter-spacing: 0.04em;
   cursor: pointer;
-  transition: all 0.15s;
-  letter-spacing: 0.015em;
+  transition: all 0.12s;
 }
 .tag-btn:hover {
-  border-color: rgba(88, 166, 255, 0.35);
+  border-color: var(--border-2);
   color: var(--text);
-  background: rgba(88, 166, 255, 0.07);
+  background: var(--surface-2);
 }
 .tag-btn.active {
   background: var(--accent-subtle);
-  border-color: rgba(88, 166, 255, 0.45);
+  border-color: var(--accent-border);
   color: var(--accent);
 }
 
@@ -144,79 +233,63 @@ body {
 .recepten-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.25rem;
+  gap: 1rem;
   padding-bottom: 3rem;
 }
 
+/* ── RECEPT CARD — Linear solid surface, no blur ── */
 .recept-card {
-  background: var(--glass-card);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid var(--glass-border);
-  border-top-color: var(--glass-hi);
-  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
   color: var(--text);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.32);
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.2s;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
 }
 .recept-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(88, 166, 255, 0.25);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(88, 166, 255, 0.1);
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 1px var(--accent-border), 0 8px 32px rgba(0, 0, 0, 0.45);
+  transform: translateY(-2px);
 }
 
 .recept-card__img {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
 }
 
 .recept-card__img-placeholder {
   width: 100%;
-  aspect-ratio: 4/3;
-  background: var(--surface);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64' fill='none'%3E%3Cpath d='M20 12v20M16 12c0 4.4 3.6 8 8 8s8-3.6 8-8M24 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4' stroke='%237d8590' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 12v6c0 3.3 2.7 6 6 6h0v8M46 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4M38 12c0 6 8 6 8 12' stroke='%237d8590' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='12' y1='48' x2='52' y2='48' stroke='%237d8590' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  aspect-ratio: 16 / 9;
+  background: var(--surface-2);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64' fill='none'%3E%3Cpath d='M20 12v20M16 12c0 4.4 3.6 8 8 8s8-3.6 8-8M24 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4' stroke='%234d6070' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 12v6c0 3.3 2.7 6 6 6h0v8M46 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4M38 12c0 6 8 6 8 12' stroke='%234d6070' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='12' y1='48' x2='52' y2='48' stroke='%234d6070' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 56px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-size: 48px 48px;
 }
 
 .recept-card__body {
-  padding: 1rem 1.15rem 1.2rem;
+  padding: 1.1rem 1.2rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.35rem;
   flex: 1;
 }
 
 .recept-card__title {
   font-family: 'Playfair Display', serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.3;
-  letter-spacing: 0.01em;
   color: var(--text);
 }
 
-.recept-card__meta {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
 .recept-card__beschrijving {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   line-height: 1.5;
   display: -webkit-box;
@@ -226,21 +299,31 @@ body {
 }
 
 .recept-card__bron {
-  font-size: 0.73rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
   color: var(--text-muted);
-  opacity: 0.55;
-  font-style: italic;
+  opacity: 0.5;
 }
 
 .recept-card__match {
-  font-size: 0.77rem;
+  font-size: 0.76rem;
   color: var(--accent);
-  font-style: italic;
+}
+
+.recept-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
 }
 
 .recept-card__meta-sep::before {
-  content: '·';
-  opacity: 0.4;
+  content: '/';
+  opacity: 0.28;
   margin: 0 0.1rem;
 }
 
@@ -252,40 +335,36 @@ body {
   padding-top: 0.65rem;
 }
 
+/* ── TAGS — uniform mono style ── */
 .tag {
-  padding: 0.18rem 0.55rem;
-  border-radius: 100px;
-  background: rgba(88, 166, 255, 0.08);
-  border: 1px solid rgba(88, 166, 255, 0.15);
-  color: rgba(88, 166, 255, 0.8);
-  font-size: 0.71rem;
+  padding: 0.14rem 0.5rem;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
-}
-.tag:nth-child(3n+2) {
-  background: rgba(139, 92, 246, 0.08);
-  border-color: rgba(139, 92, 246, 0.16);
-  color: rgba(162, 120, 255, 0.85);
-}
-.tag:nth-child(3n) {
-  background: rgba(63, 185, 80, 0.08);
-  border-color: rgba(63, 185, 80, 0.16);
-  color: rgba(63, 185, 80, 0.82);
+  letter-spacing: 0.05em;
 }
 
-/* ── LEGE STAAT ── */
+/* ── EMPTY STATE ── */
 .empty-state {
   text-align: center;
   padding: 4rem 2rem;
   color: var(--text-muted);
   grid-column: 1 / -1;
 }
-.empty-state p { font-size: 1.1rem; }
+.empty-state p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
 
 /* ── DETAIL PAGINA ── */
 .recept-hero {
   width: 100%;
-  max-height: 420px;
+  max-height: 440px;
   object-fit: cover;
   display: block;
 }
@@ -296,36 +375,33 @@ body {
   object-fit: cover;
   display: block;
   border-top: 1px solid var(--border);
-  opacity: 0.85;
+  opacity: 0.8;
 }
 
 .recept-hero-placeholder {
   width: 100%;
-  height: 300px;
-  background: var(--surface);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 64 64' fill='none'%3E%3Cpath d='M20 12v20M16 12c0 4.4 3.6 8 8 8s8-3.6 8-8M24 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4' stroke='%237d8590' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 12v6c0 3.3 2.7 6 6 6h0v8M46 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4M38 12c0 6 8 6 8 12' stroke='%237d8590' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='12' y1='48' x2='52' y2='48' stroke='%237d8590' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  height: 280px;
+  background: var(--surface-2);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 64 64' fill='none'%3E%3Cpath d='M20 12v20M16 12c0 4.4 3.6 8 8 8s8-3.6 8-8M24 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4' stroke='%234d6070' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 12v6c0 3.3 2.7 6 6 6h0v8M46 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4M38 12c0 6 8 6 8 12' stroke='%234d6070' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='12' y1='48' x2='52' y2='48' stroke='%234d6070' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 88px 88px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-size: 80px 80px;
 }
 
 .recept-detail {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 4rem;
+  padding: 2.5rem 1.5rem 5rem;
 }
 
-.recept-detail__header { margin-bottom: 1.5rem; }
+.recept-detail__header { margin-bottom: 2rem; }
 
 .recept-detail__title {
   font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.15;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   margin-bottom: 0.75rem;
   color: var(--text);
 }
@@ -333,11 +409,14 @@ body {
 .recept-detail__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  font-weight: 400;
   color: var(--text-muted);
-  font-size: 0.88rem;
-  font-weight: 500;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 .recept-detail__meta span { display: flex; align-items: center; gap: 0.3rem; }
 
@@ -348,58 +427,60 @@ body {
   margin-bottom: 2rem;
 }
 
-/* ── PORTIESCHALER ── */
+/* ── PORTIE SCHALER — Apple glass ── */
 .portie-schaler {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  background: var(--glass-card);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+  background: var(--glass);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
   border: 1px solid var(--glass-border);
   border-top-color: var(--glass-hi);
-  padding: 0.6rem 1rem;
-  border-radius: 12px;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
   width: fit-content;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .portie-schaler label {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--text-muted);
-  letter-spacing: 0.02em;
 }
 
 .portie-btn {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text);
-  font-size: 1.1rem;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
-  transition: all 0.15s;
+  transition: all 0.12s;
 }
 .portie-btn:hover {
   background: var(--accent-subtle);
-  border-color: rgba(88, 166, 255, 0.4);
+  border-color: var(--accent-border);
   color: var(--accent);
 }
 
 .portie-aantal {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
   min-width: 2ch;
   text-align: center;
-  color: var(--text);
+  color: var(--accent);
 }
 
 /* ── CONTENT GRID ── */
@@ -415,27 +496,28 @@ body {
   .recept-detail__title { font-size: 1.5rem; }
 }
 
-/* ── INGREDIËNTEN BLOK ── */
+/* ── INGREDIËNTEN BLOK — Apple glass, sticky ── */
 .ingredienten-blok {
-  background: rgba(13, 17, 23, 0.86);
-  backdrop-filter: blur(28px) saturate(150%);
-  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  background: var(--glass);
+  backdrop-filter: blur(32px) saturate(160%);
+  -webkit-backdrop-filter: blur(32px) saturate(160%);
   border: 1px solid var(--glass-border);
   border-top-color: var(--glass-hi);
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 1.5rem;
   position: sticky;
   top: 1rem;
-  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
   color: var(--text);
 }
 
 .blok-titel {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   color: var(--text-muted);
 }
 
@@ -449,28 +531,28 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 0.5rem;
-  font-size: 0.92rem;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: opacity 0.15s;
   user-select: none;
 }
-.ingredienten-lijst li:last-child { border-bottom: none; padding-bottom: 0; }
-.ingredienten-lijst li:hover { opacity: 0.7; }
-
-.ingredienten-lijst li.ing--gedaan { opacity: 0.28; }
+.ingredienten-lijst li:last-child { border-bottom: none; }
+.ingredienten-lijst li:hover { opacity: 0.6; }
+.ingredienten-lijst li.ing--gedaan { opacity: 0.22; }
 .ingredienten-lijst li.ing--gedaan .ingredient-naam {
   text-decoration: line-through;
-  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-decoration-color: rgba(255, 255, 255, 0.2);
 }
 
 .ingredient-naam { flex: 1; }
 .ingredient-hoeveelheid {
-  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
   white-space: nowrap;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: var(--accent);
 }
 
@@ -478,76 +560,74 @@ body {
 .stappen-blok {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
 .kookmodus-btn {
   display: inline-block;
-  margin-bottom: 0.6rem;
-  padding: 0.58rem 1.2rem;
+  margin-bottom: 0.75rem;
+  padding: 0.55rem 1.1rem;
   background: var(--accent-subtle);
-  border: 1px solid rgba(88, 166, 255, 0.28);
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 0.87rem;
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.76rem;
   font-weight: 600;
+  letter-spacing: 0.05em;
   color: var(--accent);
   cursor: pointer;
-  letter-spacing: 0.02em;
-  transition: background 0.15s, border-color 0.15s;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.12s, border-color 0.12s;
 }
 .kookmodus-btn:hover {
-  background: rgba(88, 166, 255, 0.17);
-  border-color: rgba(88, 166, 255, 0.48);
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.38);
 }
 
+/* ── STAP — Linear solid ── */
 .stap {
-  background: var(--glass-card);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid var(--glass-border);
-  border-top-color: rgba(255, 255, 255, 0.09);
-  border-radius: 12px;
-  padding: 1.1rem 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
   color: var(--text);
   cursor: pointer;
-  transition: opacity 0.2s, border-color 0.15s;
+  transition: border-color 0.12s, opacity 0.15s;
   user-select: none;
 }
-.stap:hover { border-color: rgba(255, 255, 255, 0.13); }
-
-.stap--gedaan { opacity: 0.32; }
+.stap:hover { border-color: var(--border-2); }
+.stap--gedaan { opacity: 0.28; }
 .stap--gedaan .stap-tekst {
   text-decoration: line-through;
-  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-decoration-color: rgba(255, 255, 255, 0.2);
 }
-.stap--gedaan .stap-nummer::after { content: ' ✓'; font-size: 1rem; }
+.stap--gedaan .stap-nummer::after { content: ' ✓'; font-size: 0.85rem; }
 
+/* ── STAP NUMMER — Teenage Engineering ── */
 .stap-nummer {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 600;
   line-height: 1;
-  min-width: 1.5rem;
+  min-width: 2rem;
   color: var(--accent);
-  opacity: 0.65;
+  opacity: 0.7;
 }
 
 .stap-tekst {
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-size: 0.93rem;
+  line-height: 1.7;
+  padding-top: 0.1rem;
 }
 
-/* ── KOOKMODUS OVERLAY ── */
+/* ── KOOKMODUS OVERLAY — Apple glass fullscreen ── */
 .kookmodus-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(13, 17, 23, 0.97);
+  background: rgba(8, 12, 16, 0.97);
   backdrop-filter: blur(48px) saturate(150%);
   -webkit-backdrop-filter: blur(48px) saturate(150%);
   color: var(--text);
@@ -566,28 +646,31 @@ body {
 }
 
 .km-titel {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--text-muted);
 }
 
 .km-sluiten {
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   border: 1px solid var(--border);
-  color: var(--text);
-  padding: 0.4rem 0.9rem;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.73rem;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: border-color 0.12s, color 0.12s;
 }
-.km-sluiten:hover { background: rgba(255, 255, 255, 0.1); }
+.km-sluiten:hover { border-color: var(--border-2); color: var(--text); }
 
 .km-voortgang {
   display: flex;
-  gap: 0.35rem;
+  gap: 0.3rem;
   padding: 1rem 1.5rem 0;
   flex-shrink: 0;
 }
@@ -600,7 +683,7 @@ body {
   transition: background 0.3s;
 }
 .km-dot.actief { background: var(--accent); }
-.km-dot.gedaan { background: rgba(88, 166, 255, 0.3); }
+.km-dot.gedaan { background: rgba(249, 115, 22, 0.25); }
 
 .km-inhoud {
   flex: 1;
@@ -620,10 +703,12 @@ body {
 
 .km-teller {
   text-align: center;
-  font-size: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 1rem;
-  letter-spacing: 0.07em;
   flex-shrink: 0;
   padding: 0 1.5rem;
 }
@@ -638,50 +723,46 @@ body {
 .km-nav-btn {
   flex: 1;
   padding: 0.9rem;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: var(--text);
-  font-family: inherit;
-  font-size: 1rem;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
   cursor: pointer;
-  transition: background 0.15s, border-color 0.15s;
+  transition: all 0.12s;
 }
 .km-nav-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: var(--border-2);
+  color: var(--text);
+  background: var(--surface-2);
 }
 .km-nav-btn:disabled { opacity: 0.18; cursor: default; }
 .km-nav-btn--volgende {
   background: var(--accent-subtle);
-  border-color: rgba(88, 166, 255, 0.28);
+  border-color: var(--accent-border);
   color: var(--accent);
 }
 .km-nav-btn--volgende:hover:not(:disabled) {
-  background: rgba(88, 166, 255, 0.18);
-  border-color: rgba(88, 166, 255, 0.45);
+  background: rgba(249, 115, 22, 0.15);
+  border-color: rgba(249, 115, 22, 0.38);
 }
 .km-nav-btn--klaar {
-  background: rgba(63, 185, 80, 0.1);
+  background: rgba(63, 185, 80, 0.09);
   color: #3fb950;
-  border-color: rgba(63, 185, 80, 0.28);
+  border-color: rgba(63, 185, 80, 0.22);
 }
-.km-nav-btn--klaar:hover { background: rgba(63, 185, 80, 0.18); }
+.km-nav-btn--klaar:hover { background: rgba(63, 185, 80, 0.16); }
 
 /* ── VOEDINGSWAARDEN ── */
 .voeding-sectie {
   margin-top: 2rem;
-  background: var(--glass-card);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid var(--glass-border);
-  border-top-color: var(--glass-hi);
-  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
   padding: 1.25rem 1.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .voeding-grid {
@@ -697,45 +778,51 @@ body {
 
 .voeding-item { text-align: center; }
 .voeding-waarde {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.35rem;
+  font-weight: 600;
   display: block;
   color: var(--text);
 }
 .voeding-label {
-  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
 
 /* ── BRON ── */
 .bron-label {
   display: block;
   margin-top: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
   color: var(--text-muted);
-  font-size: 0.84rem;
 }
 .bron-link {
-  color: var(--accent);
+  color: var(--blue);
   text-decoration: none;
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  transition: color 0.12s;
 }
-.bron-link:hover { opacity: 1; }
+.bron-link:hover { color: var(--text); }
 
-/* ── TERUG KNOP ── */
+/* ── TERUG LINK ── */
 .terug-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.87rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  transition: color 0.2s;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+  transition: color 0.12s;
 }
+.terug-link::before { content: '←'; }
 .terug-link:hover { color: var(--text); }
 
 /* ── NIET GEVONDEN ── */
@@ -751,23 +838,23 @@ body {
   display: inline-block;
   margin-top: 1.5rem;
   margin-left: 1rem;
-  padding: 0.45rem 0.9rem;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.85rem;
+  background: transparent;
   border: 1px solid var(--border);
   color: var(--text-muted);
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.82rem;
-  font-weight: 500;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: all 0.12s;
 }
 .print-btn:hover {
-  background: rgba(255, 255, 255, 0.09);
+  border-color: var(--border-2);
   color: var(--text);
 }
 
-/* ── PRINT WEERGAVE ── */
+/* ── PRINT ── */
 @media print {
   body {
     background: #fff;
@@ -776,24 +863,25 @@ body {
     line-height: 1.5;
     background-image: none;
   }
+  body::after { display: none; }
 
-  .site-header,
-  .terug-link,
-  .portie-schaler,
-  .kookmodus-btn,
-  .kookmodus-overlay,
-  .voeding-sectie,
-  .bron-label,
-  .print-btn,
+  .site-header, .terug-link, .portie-schaler, .kookmodus-btn,
+  .kookmodus-overlay, .voeding-sectie, .bron-label, .print-btn,
   .recept-detail__tags { display: none !important; }
 
   .recept-hero { max-height: 250px; }
   .recept-detail { padding: 1rem 0; }
   .recept-detail__title { font-size: 22pt; color: #1a1a1a; }
-  .recept-detail__meta { color: #555; font-size: 10pt; margin-bottom: 1rem; border-bottom: 1px solid #ccc; padding-bottom: 0.75rem; }
-
+  .recept-detail__meta {
+    color: #555;
+    font-size: 9pt;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.75rem;
+    text-transform: none;
+    letter-spacing: 0;
+  }
   .recept-content { display: grid; grid-template-columns: 1fr 1.5fr; gap: 1.5rem; }
-
   .ingredienten-blok {
     background: #f5f5f0;
     color: #1a1a1a;
@@ -804,14 +892,11 @@ body {
     break-inside: avoid;
     backdrop-filter: none;
   }
-
   .ingredienten-lijst li { border-bottom-color: #ddd; cursor: default; font-size: 10pt; }
   .ingredienten-lijst li.ing--gedaan { opacity: 1; }
   .ingredienten-lijst li.ing--gedaan .ingredient-naam { text-decoration: none; }
   .ingredient-hoeveelheid { color: #333; }
-
   .blok-titel { color: #555; font-size: 8pt; }
-
   .stap {
     background: #f5f5f0;
     color: #1a1a1a;
@@ -825,6 +910,6 @@ body {
   .stap--gedaan { opacity: 1; }
   .stap--gedaan .stap-tekst { text-decoration: none; }
   .stap--gedaan .stap-nummer::after { content: ''; }
-  .stap-nummer { color: #888; }
+  .stap-nummer { color: #888; font-size: 1rem; }
   .stap-tekst { font-size: 10pt; }
 }
