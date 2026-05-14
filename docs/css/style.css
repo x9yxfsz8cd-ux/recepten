@@ -856,6 +856,82 @@ body::after {
   color: var(--text);
 }
 
+/* ── SKELETON LOADING ── */
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.skeleton-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.skeleton-body {
+  padding: 1.1rem 1.2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.skeleton-img,
+.skeleton-line {
+  background: linear-gradient(
+    90deg,
+    var(--surface-2) 0%,
+    var(--border-2) 50%,
+    var(--surface-2) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+.skeleton-line          { height: 0.8rem; width: 90%; }
+.skeleton-line--title   { width: 70%; height: 1rem; }
+.skeleton-line--short   { width: 55%; }
+.skeleton-line--meta    { width: 60%; margin-top: 0.2rem; }
+.skeleton-line--tags    { width: 40%; height: 0.65rem; margin-top: 0.35rem; }
+
+/* ── GEKLEURDE PLACEHOLDERS ── */
+.ph--vlees  { background-color: rgba(220, 80,  80,  0.08) !important; }
+.ph--vis    { background-color: rgba(88,  166, 255, 0.08) !important; }
+.ph--groen  { background-color: rgba(63,  185, 80,  0.08) !important; }
+.ph--geel   { background-color: rgba(240, 200, 74,  0.10) !important; }
+
+/* ── EMPTY STATE ── */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.empty-state__icon {
+  font-size: 2rem;
+  opacity: 0.25;
+  margin-bottom: 0.25rem;
+}
+.empty-state p {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+.empty-state__sub {
+  font-size: 0.75rem !important;
+  opacity: 0.55;
+}
+
 /* ── PRINT ── */
 @media print {
   body {

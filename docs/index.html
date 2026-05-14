@@ -47,6 +47,21 @@
     let zoekterm = '';
     let sorteerOptie = 'nieuwste';
 
+    function toonSkeletons() {
+      const skelet = `
+        <div class="skeleton-card">
+          <div class="skeleton-img"></div>
+          <div class="skeleton-body">
+            <div class="skeleton-line skeleton-line--title"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line skeleton-line--short"></div>
+            <div class="skeleton-line skeleton-line--meta"></div>
+            <div class="skeleton-line skeleton-line--tags"></div>
+          </div>
+        </div>`;
+      document.getElementById('recepten-grid').innerHTML = Array(6).fill(skelet).join('');
+    }
+
     async function laadRecepten() {
       const res = await fetch('./data/recepten.json');
       const data = await res.json();
@@ -99,14 +114,25 @@
       }
 
       if (resultaat.length === 0) {
-        grid.innerHTML = `<div class="empty-state"><p>Geen recepten gevonden.</p></div>`;
+        const label = zoekterm ? `"${zoekterm}"` : actiefTag ? `#${actiefTag}` : '';
+        grid.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state__icon">◌</div>
+            <p>${label ? `Niets gevonden voor ${label}` : 'Geen recepten gevonden.'}</p>
+            ${label ? `<p class="empty-state__sub">Probeer een andere zoekterm of filter</p>` : ''}
+          </div>`;
         return;
-     }
+      }
 
       grid.innerHTML = resultaat.map(r => {
+        const phKlasse = r.tags.includes('vlees') ? 'ph--vlees'
+          : r.tags.includes('vis') ? 'ph--vis'
+          : (r.tags.includes('vegetarisch') || r.tags.includes('vegan')) ? 'ph--groen'
+          : r.tags.includes('ontbijt') ? 'ph--geel'
+          : '';
         const img = r.afbeelding
           ? `<img class="recept-card__img" src="${r.afbeelding}" alt="${r.titel}" loading="lazy">`
-          : `<div class="recept-card__img-placeholder"></div>`;
+          : `<div class="recept-card__img-placeholder ${phKlasse}"></div>`;
 
         const tags = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
@@ -166,6 +192,7 @@
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
 
+    toonSkeletons();
     laadRecepten();
   </script>
 
