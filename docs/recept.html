@@ -426,13 +426,16 @@
     async function init() {
       const id = getParam('id');
       if (!id) { toonNietGevonden(); return; }
-
-      const res = await fetch('./data/recepten.json');
-      const data = await res.json();
-      const r = data.recepten.find(r => r.id === id);
-
-      if (!r) { toonNietGevonden(); return; }
-      renderRecept(r);
+      try {
+        const res = await fetch('./data/recepten.json');
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        const r = data.recepten.find(r => r.id === id);
+        if (!r) { toonNietGevonden(); return; }
+        renderRecept(r);
+      } catch {
+        toonNietGevonden();
+      }
     }
 
     function toonNietGevonden() {

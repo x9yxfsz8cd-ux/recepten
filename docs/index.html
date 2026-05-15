@@ -63,11 +63,21 @@
     }
 
     async function laadRecepten() {
-      const res = await fetch('./data/recepten.json');
-      const data = await res.json();
-      alleRecepten = data.recepten;
-      renderTags();
-      renderRecepten();
+      try {
+        const res = await fetch('./data/recepten.json');
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        alleRecepten = data.recepten;
+        renderTags();
+        renderRecepten();
+      } catch {
+        document.getElementById('recepten-grid').innerHTML = `
+          <div class="empty-state">
+            <div class="empty-state__icon">⚠</div>
+            <p>Kon recepten niet laden</p>
+            <p class="empty-state__sub">Controleer je internetverbinding en ververs de pagina</p>
+          </div>`;
+      }
     }
 
     function renderTags() {

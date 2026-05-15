@@ -1,7 +1,8 @@
-const CACHE = 'recepten-v1';
+const CACHE = 'recepten-v7';
 const STATISCH = [
   './index.html',
   './recept.html',
+  './import.html',
   './css/style.css',
   './manifest.json'
 ];
