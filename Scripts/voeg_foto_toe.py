@@ -18,12 +18,16 @@ def dialoog(script):
     return r.stdout.strip() if r.returncode == 0 else None
 
 def kies_recept():
-    titels = [r["titel"] for r in recepten]
+    zonder_foto = [r for r in recepten if not r.get("afbeelding")]
+    if not zonder_foto:
+        dialoog('display alert "Alle recepten hebben al een foto." as informational')
+        return None
+    titels = [r["titel"] for r in zonder_foto]
     lijst  = ", ".join(f'"{t}"' for t in titels)
-    keuze  = dialoog(f'choose from list {{{lijst}}} with prompt "Voor welk recept is de foto?" without multiple selections allowed')
+    keuze  = dialoog(f'choose from list {{{lijst}}} with prompt "Voor welk recept is de foto? ({len(zonder_foto)} zonder foto)" without multiple selections allowed')
     if not keuze or keuze == "false":
         return None
-    return next(r for r in recepten if r["titel"] == keuze)
+    return next(r for r in zonder_foto if r["titel"] == keuze)
 
 def kies_foto():
     pad = dialoog('POSIX path of (choose file of type {"public.image"} with prompt "Kies een foto:")')
