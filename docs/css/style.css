@@ -856,6 +856,43 @@ body::after {
   color: var(--text);
 }
 
+/* ── IN HUIS TOGGLE ── */
+.in-huis-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 12, 16, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  z-index: 2;
+  opacity: 0.35;
+  flex-shrink: 0;
+}
+.recept-card:hover .in-huis-btn { opacity: 1; }
+.in-huis-btn.actief {
+  opacity: 1;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #080c10;
+}
+.in-huis-btn:hover:not(.actief) {
+  border-color: var(--accent-border);
+  color: var(--accent);
+  opacity: 1;
+}
+
+.card--in-huis { border-color: var(--accent-border); }
+
 /* ── SKELETON LOADING ── */
 @keyframes shimmer {
   0%   { background-position: 200% 0; }

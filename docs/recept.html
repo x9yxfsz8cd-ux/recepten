@@ -160,6 +160,16 @@
     }
 
     function openKookmodus() {
+      // Auto-uitvinken: ingrediënten zijn kennelijk in gebruik
+      try {
+        const inHuis = JSON.parse(localStorage.getItem('in_huis') || '[]');
+        const idx = inHuis.indexOf(recept.id);
+        if (idx !== -1) {
+          inHuis.splice(idx, 1);
+          localStorage.setItem('in_huis', JSON.stringify(inHuis));
+        }
+      } catch {}
+
       huidigeStap = 0;
       document.getElementById('km-recept-titel').textContent = recept.titel;
       document.getElementById('kookmodus-overlay').classList.add('actief');
