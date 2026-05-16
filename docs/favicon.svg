@@ -1,3 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <text x="1" y="26" font-size="26" font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif">🤌</text>
+  <!-- Achtergrond -->
+  <rect width="32" height="32" rx="7" fill="#0d1117"/>
+  <!-- Chef hat puff (boog) -->
+  <path d="M9 20 C9 20 8.5 7 16 7 C23.5 7 23 20 23 20 Z" fill="#f0c84a"/>
+  <!-- Chef hat band -->
+  <rect x="6" y="19" width="20" height="6" rx="2" fill="#f0c84a"/>
 </svg>
