@@ -312,12 +312,12 @@
         setMeta('property', 'og:image', r.afbeelding);
       }
 
-      const img = r.afbeelding
-        ? `<img class="recept-hero" src="${r.afbeelding}" alt="${r.titel}">`
-        : `<div class="recept-hero-placeholder"></div>`;
+      const headerFoto = r.afbeelding
+        ? `<img class="recept-header-foto" src="${r.afbeelding}" alt="${r.titel}">`
+        : '';
 
-      const img2 = r.afbeelding_2
-        ? `<img class="recept-foto-extra" src="${r.afbeelding_2}" alt="${r.titel} — bereiding">`
+      const beschrijvingHtml = r.beschrijving
+        ? `<p class="recept-detail__beschrijving">${r.beschrijving}</p>`
         : '';
 
       const tags = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
@@ -361,18 +361,20 @@
       }
 
       document.getElementById('app').innerHTML = `
-        ${img}
-        ${img2}
         <div class="recept-detail">
           <a class="terug-link" href="./index.html">Alle recepten</a>
-          <div class="recept-detail__header">
-            <h1 class="recept-detail__title">${r.titel}</h1>
-            <div class="recept-detail__meta">
-              <span>${r.actieve_tijd ? r.actieve_tijd + ' min actief' : r.bereidingstijd + ' min'}</span>
-              ${r.passieve_tijd ? `<span>${r.passieve_tijd} min oven/rust</span>` : ''}
-              <span>${r.moeilijkheidsgraad}</span>
+          <div class="recept-detail__header${r.afbeelding ? '' : ' recept-detail__header--geen-foto'}">
+            <div class="recept-detail__header-tekst">
+              <h1 class="recept-detail__title">${r.titel}</h1>
+              ${beschrijvingHtml}
+              <div class="recept-detail__meta">
+                <span>${r.actieve_tijd ? r.actieve_tijd + ' min actief' : r.bereidingstijd + ' min'}</span>
+                ${r.passieve_tijd ? `<span>${r.passieve_tijd} min oven/rust</span>` : ''}
+                <span>${r.moeilijkheidsgraad}</span>
+              </div>
+              <div class="recept-detail__tags">${tags}</div>
             </div>
-            <div class="recept-detail__tags">${tags}</div>
+            ${headerFoto}
           </div>
 
           <div class="portie-schaler">

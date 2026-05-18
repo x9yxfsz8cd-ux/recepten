@@ -364,30 +364,14 @@ body::after {
 }
 
 /* ── DETAIL PAGINA ── */
-.recept-hero {
+/* ── RECIPE HEADER FOTO — contained, editorial ── */
+.recept-header-foto {
   width: 100%;
-  max-height: 440px;
+  aspect-ratio: 3/4;
   object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
   display: block;
-}
-
-.recept-foto-extra {
-  width: 100%;
-  max-height: 340px;
-  object-fit: cover;
-  display: block;
-  border-top: 1px solid var(--border);
-  opacity: 0.8;
-}
-
-.recept-hero-placeholder {
-  width: 100%;
-  height: 280px;
-  background: var(--surface-2);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 64 64' fill='none'%3E%3Cpath d='M20 12v20M16 12c0 4.4 3.6 8 8 8s8-3.6 8-8M24 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4' stroke='%234d6070' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 12v6c0 3.3 2.7 6 6 6h0v8M46 32v4c0 2.2-1.8 4-4 4h0c-2.2 0-4-1.8-4-4v-4M38 12c0 6 8 6 8 12' stroke='%234d6070' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cline x1='12' y1='48' x2='52' y2='48' stroke='%234d6070' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 80px 80px;
 }
 
 .recept-detail {
@@ -396,7 +380,25 @@ body::after {
   padding: 2.5rem 1.5rem 5rem;
 }
 
-.recept-detail__header { margin-bottom: 2rem; }
+/* ── RECIPE HEADER — editorial split: tekst links, foto rechts ── */
+.recept-detail__header {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 2.5rem;
+  align-items: start;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.recept-detail__header--geen-foto {
+  grid-template-columns: 1fr;
+}
+
+.recept-detail__header-tekst {
+  display: flex;
+  flex-direction: column;
+}
 
 .recept-detail__title {
   font-family: 'Space Grotesk', sans-serif;
@@ -406,6 +408,13 @@ body::after {
   letter-spacing: -0.025em;
   margin-bottom: 0.75rem;
   color: var(--text-heading);
+}
+
+.recept-detail__beschrijving {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.1rem;
 }
 
 .recept-detail__meta {
@@ -426,7 +435,6 @@ body::after {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-bottom: 2rem;
 }
 
 /* ── PORTIE SCHALER — Apple glass ── */
@@ -493,7 +501,15 @@ body::after {
   align-items: start;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
+  .recept-detail__header {
+    grid-template-columns: 1fr;
+  }
+  .recept-header-foto {
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+    order: -1;
+  }
   .recept-content { grid-template-columns: 1fr; }
   .recept-detail__title { font-size: 1.5rem; }
 }
@@ -984,7 +1000,8 @@ body::after {
   .kookmodus-overlay, .voeding-sectie, .bron-label, .print-btn,
   .recept-detail__tags { display: none !important; }
 
-  .recept-hero { max-height: 250px; }
+  .recept-header-foto { max-height: 200px; aspect-ratio: auto; border: none; }
+  .recept-detail__header { grid-template-columns: 1fr 160px; gap: 1rem; }
   .recept-detail { padding: 1rem 0; }
   .recept-detail__title { font-size: 22pt; color: #1a1a1a; }
   .recept-detail__meta {
