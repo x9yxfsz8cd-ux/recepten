@@ -299,109 +299,6 @@
       "passieve_tijd": 0
     },
     {
-      "id": "r1774487176",
-      "titel": "Mini-hamburgers met vegetarische nuggets met mangoketchup, frisse salade en aardappelschijfjes",
-      "slug": "mini-hamburgers-met-vegetarische-nuggets-met-mangoketchup-frisse-salade-en-aardappelschijfjes",
-      "beschrijving": "Een heerlijke vegetarische maaltijd met krokante vegan nuggets, frisse salade en mangoketchup van The Ketchup Project.",
-      "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/HF_Y23_HelloFresh_Y20_R22_W20_BNL_Q5456-1_Main_low-edfcd160.jpg",
-      "bereidingstijd": 20,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 2,
-      "tags": [
-        "vegetarisch",
-        "comfort food",
-        "snel",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "Mini-hamburgerbol",
-          "hoeveelheid": 4.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "Aardappelschijfjes",
-          "hoeveelheid": 200.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "Vegan nuggets",
-          "hoeveelheid": 10.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "IJsbergsla",
-          "hoeveelheid": 0.5,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "Mangoketchup",
-          "hoeveelheid": 60.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "Tomaat",
-          "hoeveelheid": 2.0,
-          "eenheid": "stuks"
-        },
-        {
-          "naam": "Yoghurtdressing",
-          "hoeveelheid": 40.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "Zonnebloemolie",
-          "hoeveelheid": 1.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "Plantaardige roomboter",
-          "hoeveelheid": 1.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "Plantaardige mayonaise",
-          "hoeveelheid": 2.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "peper en zout",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Verhit 1/2 el roomboter per persoon in een koekenpan op middelhoog vuur. Bak de aardappelschijfjes in 15 minuten knapperig en breng op smaak met peper en zout. Snijd ondertussen de tomaten in blokjes en snijd de ijsbergsla fijn."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Verhit 1/2 el zonnebloemolie per persoon in een andere koekenpan op middelhoog vuur. Bak de vegan nuggets 6-8 minuten, of tot ze krokant zijn."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Meng in een saladekom de ijsbergsla en tomatenblokjes met de yoghurtdressing. Breng op smaak met peper en zout."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Snijd de hamburgerbroodjes open en besmeer met de mangoketchup. Verdeel wat van de salade over de broodjes en leg hierop de vegan nuggets. Serveer met de overige salade, aardappelschijfjes en mayonaise."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 550,
-        "eiwitten": 18,
-        "koolhydraten": 62,
-        "vetten": 25
-      },
-      "bron": "https://www.hellofresh.nl/recipes/mini-hamburgers-met-vegetarische-nuggets-63c7cdb400ace46356b3d778",
-      "bron_naam": "HelloFresh",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 20,
-      "passieve_tijd": 0
-    },
-    {
       "id": "r1774487934",
       "titel": "Pasta Aglio e Olio",
       "slug": "pasta-aglio-e-olio",
@@ -2681,7 +2578,7 @@
       "titel": "Tomatenrisotto met Kokosmelk en Basilicum",
       "slug": "tomatenrisotto-met-kokosmelk-en-basilicum",
       "beschrijving": "Een romig en aromatisch risotto met verse tomaten, kokosmelk en basilicum voor een Italiaans-tropische fusiegerecht.",
-      "afbeelding": "https://cdn.hellofresh.com/de/cms/raf/hellofresh-logo.png",
+      "afbeelding": "./img/tomatenrisotto-kokosmelk.jpg",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2891,7 +2788,7 @@
       "titel": "Krokante gnocchi met paprika en rozemarijn",
       "slug": "krokante-gnocchi-met-paprika-en-rozemarijn",
       "beschrijving": "Geroosterde gnocchi met paprika en rozemarijn, afgewerkt met Parmezaanse kaas.",
-      "afbeelding": "",
+      "afbeelding": "https://koken.maruc.nl/storage/media/66/conversions/krokante-gnocchi-met-paprika-en-rozemarijn-1689881117-show.jpg",
       "bereidingstijd": 33,
       "actieve_tijd": 10,
       "passieve_tijd": 23,
@@ -2968,106 +2865,6 @@
       "bron_naam": "Tekst",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-26"
-    },
-    {
-      "id": "r1777886225",
-      "titel": "Waterkerssoep met geitenkaas",
-      "slug": "waterkerssoep-met-geitenkaas",
-      "beschrijving": "Een romige waterkerssoep met aardappel en kippenbouillon, afgewerkt met geitenkaas en geroosterd stokbrood.",
-      "afbeelding": "https://www.top-recept.nl/assets/images/ingredienten/aardappel.jpg",
-      "bereidingstijd": 35,
-      "actieve_tijd": 25,
-      "passieve_tijd": 10,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
-      "tags": [
-        "vegetarisch",
-        "comfort food",
-        "lunch",
-        "diner",
-        "voorgerecht"
-      ],
-      "ingredienten": [
-        {
-          "naam": "1 ui",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "1 teentje knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "boter",
-          "hoeveelheid": 25.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "1 aardappel",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "1 l kippenbouillon",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "waterkers",
-          "hoeveelheid": 250.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "geitenkaas",
-          "hoeveelheid": 100.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "1 stokbrood",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "room",
-          "hoeveelheid": 100.0,
-          "eenheid": "ml"
-        },
-        {
-          "naam": "peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "zout naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Snipper de ui en knoflook en fruit ze zacht in boter. Schil de aardappel, hak in kleine blokjes en voeg toe met de kippenbouillon. Laat 10 minuten doorkoken en kruid met peper en zout."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Maak de waterkers schoon, spoel goed en laat uitlekken. Haal de soep van het vuur en roer de waterkers erdoor. Mix direct fijn (dit behoud de groene kleur)."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Snij het stokbrood in plakken en rooster kort. Roer de room door de soep, kruid opnieuw en lepel in kommen. Werk af met geroosterd stokbrood en geitenkaas."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 280,
-        "eiwitten": 12,
-        "koolhydraten": 28,
-        "vetten": 14
-      },
-      "bron": "https://www.top-recept.nl/recept/303179/waterkerssoep-met-geitenkaas.html",
-      "bron_naam": "Solo Open Kitchen via [niet duidelijk zichtbaar]",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-05-04"
     },
     {
       "id": "r1778095207",
@@ -3392,7 +3189,8 @@
       "bron": "",
       "bron_naam": "Elly de Graaff",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-05-06"
+      "datum_toegevoegd": "2026-05-06",
+      "afbeelding": "./img/ellys-appeltaart.jpg"
     },
     {
       "id": "r1778096916",
