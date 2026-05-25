@@ -3159,6 +3159,155 @@
       "bron_naam": "Le ricette di Libellula via Blog",
       "bron_type": "url",
       "datum_toegevoegd": "2026-05-06"
+    },
+    {
+      "id": "r1779695622",
+      "titel": "Groene orzo met vegan pesto en prei",
+      "beschrijving": "Bio en babyvriendelijke variatie op groene orzo. De vegan pesto op basis van basilicum, spinazie en kokosmelk maakt het gerecht romig en voedzaam — ook geschikt als puree voor baby's.",
+      "afbeelding": "./img/groene-orzo-vegan-pesto.jpg",
+      "bereidingstijd": 30,
+      "actieve_tijd": 30,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "Makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegan",
+        "diner",
+        "snel"
+      ],
+      "datum_toegevoegd": "2026-05-25",
+      "bron": "https://imginn.com/p/DYOq24qo4D3/",
+      "bron_naam": "Instagram",
+      "voedingswaarden": {},
+      "ingredienten": [
+        {
+          "naam": "basilicum",
+          "hoeveelheid": 50,
+          "eenheid": "g"
+        },
+        {
+          "naam": "knoflook (voor pesto)",
+          "hoeveelheid": 1,
+          "eenheid": "teentje"
+        },
+        {
+          "naam": "cashew- of walnoten",
+          "hoeveelheid": 40,
+          "eenheid": "g"
+        },
+        {
+          "naam": "edelgist vlokken",
+          "hoeveelheid": 3,
+          "eenheid": "el"
+        },
+        {
+          "naam": "notenpasta (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "extra vierge olijfolie",
+          "hoeveelheid": 80,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "spinazie (voor pesto)",
+          "hoeveelheid": 100,
+          "eenheid": "g"
+        },
+        {
+          "naam": "kokosmelk",
+          "hoeveelheid": 400,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "orzo",
+          "hoeveelheid": 400,
+          "eenheid": "g"
+        },
+        {
+          "naam": "prei",
+          "hoeveelheid": 2,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "knoflook",
+          "hoeveelheid": 1,
+          "eenheid": "teentje"
+        },
+        {
+          "naam": "ui",
+          "hoeveelheid": 1,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "bouillon",
+          "hoeveelheid": 500,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "doperwten (diepvries)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "citroen",
+          "hoeveelheid": 1,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "spinazie (voor gerecht)",
+          "hoeveelheid": 100,
+          "eenheid": "g"
+        },
+        {
+          "naam": "peper en zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Maak de vegan pesto: doe de basilicum, knoflook, (geweekte) noten en edelgist vlokken in een blender samen met de olijfolie en blend tot een grove massa."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Voeg de kokosmelk en de helft van de spinazie (100 g) toe aan de blender en blend tot een gladde, romige saus."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Maak de preien schoon, halveer ze in de lengte en snij in reepjes. Snipper de ui en het teentje knoflook fijn."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Verhit een scheutje olijfolie in een ruime pan. Bak de prei, ui en knoflook 5 minuten op middelhoog vuur."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Voeg de orzo toe en bak 1 minuut mee. Giet daarna de groene pestosaus erbij en roer goed door."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Laat de orzo in ongeveer 10 minuten gaar worden op laag-middelhoog vuur. Schep regelmatig door en proef of de orzo zacht genoeg is. Voeg bouillon toe als het te droog wordt."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Rasp de schil van de citroen over de pan en voeg het sap van een halve citroen toe."
+        },
+        {
+          "nummer": 8,
+          "tekst": "Voeg de rest van de spinazie (100 g) en de doperwten toe. Schep door en laat de spinazie slinken."
+        },
+        {
+          "nummer": 9,
+          "tekst": "Voor baby: schep een deel uit de pan vóórdat je peper en zout toevoegt. Staafmix tot puree of prak grover naar behoefte."
+        },
+        {
+          "nummer": 10,
+          "tekst": "Breng de rest op smaak met peper en zout. Voeg eventueel vegan gehakt toe en laat nog 2 minuten meebakken."
+        }
+      ]
     }
   ]
 }
