@@ -40,6 +40,7 @@ html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
   background-color: var(--bg);
   background-image:
     radial-gradient(ellipse 60% 45% at 8% 12%, rgba(240, 200, 74, 0.07) 0%, transparent 100%),
@@ -350,19 +351,6 @@ body::after {
   letter-spacing: 0.05em;
 }
 
-/* ── EMPTY STATE ── */
-.empty-state {
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--text-muted);
-  grid-column: 1 / -1;
-}
-.empty-state p {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-}
-
 /* ── DETAIL PAGINA ── */
 /* ── RECIPE HEADER FOTO — contained, editorial ── */
 .recept-header-foto {
@@ -513,6 +501,16 @@ body::after {
   .recept-content { grid-template-columns: 1fr; }
   .recept-detail__title { font-size: 1.5rem; }
   .ingredienten-blok { position: static; }
+}
+
+@media (max-width: 480px) {
+  /* Zoekbalk: input volledige breedte op eerste rij, sort+knop op tweede rij */
+  .search-bar { flex-wrap: wrap; }
+  .search-bar input { flex-basis: 100%; }
+  .sorteer-select { flex: 1; }
+
+  /* In-huis knop altijd zichtbaar op touch */
+  .in-huis-btn { opacity: 0.7; }
 }
 
 /* ── INGREDIËNTEN BLOK — Apple glass, sticky ── */
