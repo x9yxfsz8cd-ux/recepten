@@ -512,6 +512,7 @@ body::after {
   }
   .recept-content { grid-template-columns: 1fr; }
   .recept-detail__title { font-size: 1.5rem; }
+  .ingredienten-blok { position: static; }
 }
 
 /* ── INGREDIËNTEN BLOK — Apple glass, sticky ── */
