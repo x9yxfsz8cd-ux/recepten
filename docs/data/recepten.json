@@ -3308,6 +3308,138 @@
           "tekst": "Breng de rest op smaak met peper en zout. Voeg eventueel vegan gehakt toe en laat nog 2 minuten meebakken."
         }
       ]
+    },
+    {
+      "id": "r1780140773",
+      "titel": "Vegetarische lasagna met geroosterde groenten",
+      "beschrijving": "Laagjes geroosterde champignons, paprika, courgette en spinazie met romige ricotta, tomatensaus en gesmolten mozzarella.",
+      "afbeelding": "./img/vegetarische-lasagna.jpg",
+      "bereidingstijd": 90,
+      "actieve_tijd": 40,
+      "passieve_tijd": 50,
+      "moeilijkheidsgraad": "Gemiddeld",
+      "porties": 8,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner"
+      ],
+      "datum_toegevoegd": "2026-05-30",
+      "bron": "https://www.loveandlemons.com/vegetarian-lasagna/",
+      "bron_naam": "Love and Lemons",
+      "voedingswaarden": {},
+      "ingredienten": [
+        {
+          "naam": "champignons (gehalveerd)",
+          "hoeveelheid": 225,
+          "eenheid": "g"
+        },
+        {
+          "naam": "rode paprika (in stukken van 2 cm)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "courgette (in blokjes van 1 cm)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "ui (in stukken)",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "lasagnebladen",
+          "hoeveelheid": 15,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "tomatensaus (marinara)",
+          "hoeveelheid": 700,
+          "eenheid": "ml"
+        },
+        {
+          "naam": "verse spinazie",
+          "hoeveelheid": 75,
+          "eenheid": "g"
+        },
+        {
+          "naam": "mozzarella (geraspt)",
+          "hoeveelheid": 200,
+          "eenheid": "g"
+        },
+        {
+          "naam": "pecorino (geraspt)",
+          "hoeveelheid": 50,
+          "eenheid": "g"
+        },
+        {
+          "naam": "ricotta",
+          "hoeveelheid": 700,
+          "eenheid": "g"
+        },
+        {
+          "naam": "knoflook (geraspt)",
+          "hoeveelheid": 3,
+          "eenheid": "teentjes"
+        },
+        {
+          "naam": "citroenrasp",
+          "hoeveelheid": 2,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "peper en zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "verse basilicum of peterselie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 220°C. Bekleed een bakplaat met bakpapier en vet een ovenschaal van 23x33 cm in met olijfolie."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Meng de champignons, paprika, courgette en ui met olijfolie, zout en peper. Rooster 20-25 minuten in de oven tot de groenten gaar en licht gekleurd zijn. Verlaag de oventemperatuur daarna naar 200°C."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Kook de lasagnebladen volgens de verpakking al dente. Giet af en schep om met een scheut olijfolie zodat ze niet aan elkaar kleven."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Meng de ricotta met de knoflook, citroenrasp, zout en peper in een kom."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Schep 200 ml tomatensaus op de bodem van de ovenschaal. Leg er een laag lasagnebladen op, schep de helft van het ricottamengsel erover, verdeel de helft van de spinazie en de helft van de geroosterde groenten, en druppel 200 ml saus erover."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Herhaal: lasagnebladen, rest van de ricotta, spinazie, groenten en 200 ml saus. Sluit af met de laatste lasagnebladen."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Verdeel de resterende saus over de bovenkant. Bestrooi met de mozzarella en pecorino. Bak 30 minuten tot de kaas goudbruin en bubbelend is."
+        },
+        {
+          "nummer": 8,
+          "tekst": "Laat de lasagna 20 minuten rusten voor het aansnijden. Garneer met verse basilicum of peterselie."
+        }
+      ]
     }
   ]
 }
