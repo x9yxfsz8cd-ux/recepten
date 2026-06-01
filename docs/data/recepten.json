@@ -2648,58 +2648,79 @@
     },
     {
       "id": "r1777223515",
-      "titel": "Krokante gnocchi met paprika en rozemarijn",
+      "titel": "Krokante gnocchi met paprika & rozemarijn",
       "slug": "krokante-gnocchi-met-paprika-en-rozemarijn",
-      "beschrijving": "Geroosterde gnocchi met paprika en rozemarijn, afgewerkt met Parmezaanse kaas.",
+      "beschrijving": "Nooit genoeg manieren om krokante gnocchi te maken. Deze variant met rode paprika en rozemarijn is een heerlijk alternatief. Gebruik een grote, liefst metalen bakplaat zodat de gnocchi extra knapperig worden.",
       "afbeelding": "https://koken.maruc.nl/storage/media/66/conversions/krokante-gnocchi-met-paprika-en-rozemarijn-1689881117-show.jpg",
-      "bereidingstijd": 33,
-      "actieve_tijd": 10,
-      "passieve_tijd": 23,
-      "moeilijkheidsgraad": "gemiddeld",
+      "bereidingstijd": 45,
+      "actieve_tijd": 15,
+      "passieve_tijd": 30,
+      "moeilijkheidsgraad": "Makkelijk",
       "porties": 2,
       "tags": [
         "vegetarisch",
         "comfort food",
+        "snel",
         "diner"
       ],
       "ingredienten": [
         {
-          "naam": "gnocchi (vers of uit de koeling)",
-          "hoeveelheid": 500.0,
+          "naam": "gnocchi",
+          "hoeveelheid": 500,
           "eenheid": "g"
         },
         {
-          "naam": "1 rode paprika, in blokjes",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "gemengde rode, gele en babypaprika's, in stukjes",
+          "hoeveelheid": 500,
+          "eenheid": "g"
         },
         {
-          "naam": "1 gele paprika, in blokjes",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "2 teentjes knoflook, fijngehakt",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "3 takjes verse rozemarijn",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "kerstomaten, gehalveerd",
+          "hoeveelheid": 200,
+          "eenheid": "g"
         },
         {
           "naam": "olijfolie",
-          "hoeveelheid": 3.0,
+          "hoeveelheid": 2,
           "eenheid": "el"
         },
         {
-          "naam": "zout en peper",
+          "naam": "laurierblaadjes",
+          "hoeveelheid": 2,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "knoflook",
+          "hoeveelheid": 2,
+          "eenheid": "teentjes"
+        },
+        {
+          "naam": "chilivlokken",
+          "hoeveelheid": 1,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "rozemarijn (flinke takjes)",
+          "hoeveelheid": 2,
+          "eenheid": "takjes"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl"
+        },
+        {
+          "naam": "versgemalen zwarte peper",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "Parmezaanse kaas om te serveren",
+          "naam": "ricotta",
+          "hoeveelheid": 4,
+          "eenheid": "el"
+        },
+        {
+          "naam": "versgesneden peterselie",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
@@ -2707,15 +2728,19 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Verwarm de oven voor op 220°C. Meng gnocchi, paprika en knoflook met olijfolie, rozemarijn, zout en peper op een bakplaat."
+          "tekst": "Verwarm de oven voor tot 200°C hetelucht / 220°C elektrisch."
         },
         {
           "nummer": 2,
-          "tekst": "Rooster 20-25 minuten in de oven, halverwege omscheppen, tot de gnocchi krokant zijn en de paprika geroosterd."
+          "tekst": "Laat de gnocchi in een grote schaal glijden, schenk er een volle ketel kokend water over en laat ze zo 2 minuten staan. Giet ze af en laat ze uitlekken."
         },
         {
           "nummer": 3,
-          "tekst": "Serveer direct met versgeraspte Parmezaanse kaas."
+          "tekst": "Doe de gnocchi en alle overige ingrediënten, behalve de ricotta en peterselie, in een grote bakplaat waar alles in een enkele laag op past. Zet het geheel 30 minuten in de oven, tot de gnocchi knapperig en goudkleurig zijn."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Proef en voeg indien nodig wat zout en peper toe. Verdeel de ricotta erover en bestrooi met de peterselie. Direct serveren."
         }
       ],
       "voedingswaarden": {
@@ -2725,7 +2750,7 @@
         "vetten": 16
       },
       "bron": "",
-      "bron_naam": "Tekst",
+      "bron_naam": "Rukmini Iyer — De Groene Bakplaat",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-26"
     },
