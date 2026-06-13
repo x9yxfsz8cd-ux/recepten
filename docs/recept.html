@@ -30,6 +30,7 @@
     <div class="km-inhoud">
       <p class="km-stap-tekst" id="km-stap-tekst"></p>
     </div>
+    <div class="km-timer-blok" id="km-timer-blok"></div>
     <div class="km-nav">
       <button class="km-nav-btn km-nav-btn--vorige" id="km-vorige">Vorige</button>
       <button class="km-nav-btn km-nav-btn--volgende" id="km-volgende">Volgende</button>
@@ -42,6 +43,12 @@
     let basisPorties = 1;
     let huidigeStap = 0;
     let wakeLock = null;
+
+    // ── TIMER STATE ──
+    let timerSeconden = 0;
+    let timerResterend = 0;
+    let timerLoopt = false;
+    let timerInterval = null;
 
     // ── UTILITIES ──
 
@@ -111,6 +118,99 @@
       gedaan.forEach(i => { if (items[i]) items[i].classList.add('ing--gedaan'); });
     }
 
+    // ── TIMER ──
+
+    function parseerDuur(tekst) {
+      // Bereik: "10-12 minuten" → bovengrens
+      const bereik = tekst.match(/(\d+)\s*[-–]\s*(\d+)\s*(min(?:uut|uten)?|sec(?:onden?)?)/i);
+      if (bereik) {
+        const boven = parseInt(bereik[2]);
+        return /min/i.test(bereik[3]) ? boven * 60 : boven;
+      }
+      // Decimaal: "1,5 min" → 90s
+      const komma = tekst.match(/(\d+)[,.](\d)\s*(min(?:uut|uten)?)/i);
+      if (komma) {
+        return Math.round((parseInt(komma[1]) + parseInt(komma[2]) / 10) * 60);
+      }
+      // Enkelvoud: "10 minuten", "30 seconden"
+      const enkel = tekst.match(/(\d+)\s*(min(?:uut|uten)?|sec(?:onden?)?)/i);
+      if (enkel) {
+        const v = parseInt(enkel[1]);
+        return /min/i.test(enkel[2]) ? v * 60 : v;
+      }
+      return 0;
+    }
+
+    function formatTimer(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+      timerLoopt = false;
+    }
+
+    function startTimerInterval() {
+      timerLoopt = true;
+      timerInterval = setInterval(() => {
+        timerResterend--;
+        if (timerResterend <= 0) {
+          timerResterend = 0;
+          stopTimer();
+          if (navigator.vibrate) navigator.vibrate([400, 100, 400, 100, 400]);
+        }
+        renderTimer();
+      }, 1000);
+    }
+
+    function renderTimer() {
+      const blok = document.getElementById('km-timer-blok');
+      if (!blok) return;
+      if (timerSeconden === 0) { blok.innerHTML = ''; return; }
+
+      if (timerResterend <= 0) {
+        blok.innerHTML = `<div class="km-timer-klaar">Tijd is om!</div>`;
+        return;
+      }
+
+      if (!timerLoopt && timerResterend === timerSeconden) {
+        // Nog niet gestart: toon startknop
+        blok.innerHTML = `<button class="km-timer-start" id="km-timer-start">Timer ▸ ${formatTimer(timerSeconden)}</button>`;
+        document.getElementById('km-timer-start').addEventListener('click', () => {
+          startTimerInterval();
+          renderTimer();
+        });
+      } else {
+        // Actief of gepauzeerd
+        const gepauzeerd = !timerLoopt ? ' km-timer-gepauzeerd' : '';
+        blok.innerHTML = `
+          <div class="km-timer-display${gepauzeerd}">${formatTimer(timerResterend)}</div>
+          <div class="km-timer-knoppen">
+            <button class="km-timer-knop" id="km-timer-pauze">${timerLoopt ? 'Pauze' : 'Hervat'}</button>
+            <button class="km-timer-knop" id="km-timer-reset">Reset</button>
+          </div>`;
+        document.getElementById('km-timer-pauze').addEventListener('click', () => {
+          if (timerLoopt) { stopTimer(); } else { startTimerInterval(); }
+          renderTimer();
+        });
+        document.getElementById('km-timer-reset').addEventListener('click', () => {
+          stopTimer();
+          timerResterend = timerSeconden;
+          renderTimer();
+        });
+      }
+    }
+
+    function initialiseerTimer(tekst) {
+      stopTimer();
+      timerSeconden = parseerDuur(tekst);
+      timerResterend = timerSeconden;
+      renderTimer();
+    }
+
     // ── KOOKMODUS ──
 
     async function vraagWakeLock() {
@@ -139,6 +239,7 @@
 
       document.getElementById('km-stap-tekst').textContent = stap.tekst;
       document.getElementById('km-teller').textContent = `${huidigeStap + 1} van ${totaal}`;
+      initialiseerTimer(stap.tekst);
 
       // Voortgangsdots
       const dots = document.getElementById('km-voortgang');
@@ -181,6 +282,7 @@
     }
 
     function sluitKookmodus() {
+      stopTimer();
       document.getElementById('kookmodus-overlay').classList.remove('actief');
       geefWakeLockVrij();
     }
@@ -399,6 +501,7 @@
           <div style="margin-top:1.5rem;">
             ${bron}
             <button class="print-btn" id="print-btn">Print recept</button>
+            <button class="boodschappen-btn" id="boodschappen-btn">Kopieer boodschappenlijst</button>
           </div>
         </div>`;
 
@@ -416,6 +519,46 @@
 
       // Print knop
       document.getElementById('print-btn').addEventListener('click', () => window.print());
+
+      // Boodschappenlijst knop
+      document.getElementById('boodschappen-btn').addEventListener('click', () => {
+        const inHuis = (() => { try { return JSON.parse(localStorage.getItem('in_huis') || '[]'); } catch { return []; } })();
+        const alleInHuis = inHuis.includes(recept.id);
+        const ingredienten = alleInHuis ? [] : recept.ingredienten;
+
+        if (ingredienten.length === 0) {
+          const btn = document.getElementById('boodschappen-btn');
+          const origineel = btn.textContent;
+          btn.textContent = 'Alles al in huis!';
+          btn.classList.add('bevestigd');
+          setTimeout(() => { btn.textContent = origineel; btn.classList.remove('bevestigd'); }, 2000);
+          return;
+        }
+
+        const regels = ingredienten.map(ing => {
+          if (ing.eenheid === 'naar smaak') return `- ${ing.naam} (naar smaak)`;
+          const hoeveelheid = ing.hoeveelheid === 0 ? ''
+            : (() => {
+                const v = (ing.hoeveelheid / basisPorties) * huidigPorties;
+                const a = Math.round(v * 10) / 10;
+                return (a % 1 === 0 ? String(a | 0) : String(a)) + ' ';
+              })();
+          return `- ${ing.naam}: ${hoeveelheid}${ing.eenheid}`.trimEnd();
+        });
+
+        const tekst = `${recept.titel} (${huidigPorties} porties)\n\n${regels.join('\n')}`;
+        navigator.clipboard.writeText(tekst).then(() => {
+          const btn = document.getElementById('boodschappen-btn');
+          const origineel = btn.textContent;
+          btn.textContent = 'Gekopieerd!';
+          btn.classList.add('bevestigd');
+          setTimeout(() => { btn.textContent = origineel; btn.classList.remove('bevestigd'); }, 2000);
+        }).catch(() => {
+          const btn = document.getElementById('boodschappen-btn');
+          btn.textContent = 'Kopiëren mislukt';
+          setTimeout(() => { btn.textContent = 'Kopieer boodschappenlijst'; }, 2000);
+        });
+      });
 
       // Ingrediënt: klik op naam = afvinken, klik op hoeveelheid = aanpassen
       document.querySelectorAll('.ingredienten-lijst li').forEach((li, i) => {

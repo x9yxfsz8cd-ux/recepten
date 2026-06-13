@@ -160,31 +160,91 @@
     .tab-content.active { display: block; }
 
     /* Foto upload */
-    .foto-drop {
+    .foto-knoppen {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .foto-knop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1.5rem 1rem;
       border: 1px dashed var(--border-2);
       border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
+      background: transparent;
       color: var(--text-muted);
       cursor: pointer;
       transition: border-color 0.15s, background 0.15s, color 0.15s;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.76rem;
-      letter-spacing: 0.03em;
-      line-height: 1.8;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      text-align: center;
     }
-    .foto-drop:hover, .foto-drop.dragover {
+    .foto-knop:hover, .foto-knop.dragover {
       border-color: var(--accent-border);
       background: var(--accent-subtle);
       color: var(--accent);
     }
-    .foto-drop input { display: none; }
-    .foto-preview { margin-top: 1rem; display: none; }
-    .foto-preview img {
-      max-width: 100%;
-      max-height: 300px;
-      object-fit: contain;
-      border-radius: 8px;
+    .foto-knop svg { opacity: 0.7; }
+    .foto-knop:hover svg, .foto-knop.dragover svg { opacity: 1; }
+    .foto-drop-zone {
+      border: 1px dashed var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.03em;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .foto-drop-zone.dragover {
+      border-color: var(--accent-border);
+      background: var(--accent-subtle);
+    }
+    .foto-drop-zone input { display: none; }
+    .foto-thumbs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .foto-thumb {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .foto-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .foto-thumb__del {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 11px;
+      line-height: 18px;
+      text-align: center;
+      padding: 0;
+    }
+    @media (max-width: 480px) {
+      .foto-knop { padding: 1.75rem 1rem; font-size: 0.78rem; }
     }
 
     /* Preview */
@@ -362,14 +422,30 @@
     <!-- Foto tab -->
     <div class="tab-content" id="tab-foto">
       <div class="import-sectie">
-        <div class="foto-drop" id="foto-drop">
-          <p>Klik om een foto te kiezen of sleep hem hierin</p>
-          <p style="font-size:0.8rem;margin-top:0.5rem;">Screenshot van Instagram, foto van kookboek, etc.</p>
-          <input type="file" id="foto-input" accept="image/*">
+        <div class="foto-knoppen">
+          <button class="foto-knop" id="foto-camera-knop">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            Maak foto
+          </button>
+          <button class="foto-knop" id="foto-galerij-knop">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21,15 16,10 5,21"/>
+            </svg>
+            Kies foto's
+          </button>
         </div>
-        <div class="foto-preview" id="foto-preview">
-          <img id="foto-img">
+        <div class="foto-drop-zone" id="foto-drop-zone">
+          Sleep foto's hierin of gebruik de knoppen hierboven &bull; meerdere foto's voor recepten op meerdere pagina's
+          <input type="file" id="foto-input-camera" accept="image/*" capture="environment">
+          <input type="file" id="foto-input-galerij" accept="image/*" multiple>
+          <input type="file" id="foto-input-drop" accept="image/*" multiple>
         </div>
+        <div class="foto-thumbs" id="foto-thumbs"></div>
       </div>
     </div>
 
@@ -421,7 +497,6 @@
     const CLAUDE_API = 'https://api.anthropic.com/v1/messages';
     const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
     let huidigRecept = null;
-    let fotoBase64 = null;
     let actiefTab = 'url';
 
     // ── API SLEUTEL ──
@@ -447,29 +522,59 @@
 
     // ── FOTO UPLOAD ──
 
-    const fotoDrop = document.getElementById('foto-drop');
-    const fotoInput = document.getElementById('foto-input');
+    let fotoLijst = []; // { base64, mediaType, dataUrl }
 
-    fotoDrop.addEventListener('click', () => fotoInput.click());
-    fotoDrop.addEventListener('dragover', e => { e.preventDefault(); fotoDrop.classList.add('dragover'); });
-    fotoDrop.addEventListener('dragleave', () => fotoDrop.classList.remove('dragover'));
-    fotoDrop.addEventListener('drop', e => {
+    const dropZone = document.getElementById('foto-drop-zone');
+    const inputCamera  = document.getElementById('foto-input-camera');
+    const inputGalerij = document.getElementById('foto-input-galerij');
+
+    document.getElementById('foto-camera-knop').addEventListener('click', () => inputCamera.click());
+    document.getElementById('foto-galerij-knop').addEventListener('click', () => inputGalerij.click());
+
+    dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+    dropZone.addEventListener('drop', e => {
       e.preventDefault();
-      fotoDrop.classList.remove('dragover');
-      if (e.dataTransfer.files[0]) verwerkFoto(e.dataTransfer.files[0]);
-    });
-    fotoInput.addEventListener('change', () => {
-      if (fotoInput.files[0]) verwerkFoto(fotoInput.files[0]);
+      dropZone.classList.remove('dragover');
+      verwerkFotos(Array.from(e.dataTransfer.files));
     });
 
-    function verwerkFoto(file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        fotoBase64 = reader.result.split(',')[1];
-        document.getElementById('foto-img').src = reader.result;
-        document.getElementById('foto-preview').style.display = 'block';
-      };
-      reader.readAsDataURL(file);
+    inputCamera.addEventListener('change', () => {
+      if (inputCamera.files[0]) verwerkFotos([inputCamera.files[0]]);
+      inputCamera.value = '';
+    });
+    inputGalerij.addEventListener('change', () => {
+      if (inputGalerij.files.length) verwerkFotos(Array.from(inputGalerij.files));
+      inputGalerij.value = '';
+    });
+
+    function verwerkFotos(files) {
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const dataUrl = reader.result;
+          const base64 = dataUrl.split(',')[1];
+          const mediaType = file.type || 'image/jpeg';
+          fotoLijst.push({ base64, mediaType, dataUrl });
+          renderFotoThumbs();
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function renderFotoThumbs() {
+      const container = document.getElementById('foto-thumbs');
+      container.innerHTML = fotoLijst.map((f, i) => `
+        <div class="foto-thumb">
+          <img src="${f.dataUrl}" alt="Foto ${i + 1}">
+          <button class="foto-thumb__del" data-idx="${i}" title="Verwijderen">&times;</button>
+        </div>`).join('');
+      container.querySelectorAll('.foto-thumb__del').forEach(btn => {
+        btn.addEventListener('click', () => {
+          fotoLijst.splice(Number(btn.dataset.idx), 1);
+          renderFotoThumbs();
+        });
+      });
     }
 
     // ── HELPERS ──
@@ -577,7 +682,7 @@
 
       const url = actiefTab === 'url' ? document.getElementById('invoer-url').value.trim() : '';
       const tekst = actiefTab === 'tekst' ? document.getElementById('invoer-tekst').value.trim() : '';
-      const heeftFoto = actiefTab === 'foto' && fotoBase64;
+      const heeftFoto = actiefTab === 'foto' && fotoLijst.length > 0;
 
       if (!url && !tekst && !heeftFoto) {
         toonStatus('Vul een URL, tekst of foto in.', 'fout');
@@ -657,9 +762,11 @@ BELANGRIJKE REGELS:
       const content = [];
 
       if (heeftFoto) {
-        content.push({
-          type: 'image',
-          source: { type: 'base64', media_type: 'image/jpeg', data: fotoBase64 }
+        fotoLijst.forEach(f => {
+          content.push({
+            type: 'image',
+            source: { type: 'base64', media_type: f.mediaType, data: f.base64 }
+          });
         });
         content.push({ type: 'text', text: instructie + (invoerTekst ? `\n\nExtra context:\n${invoerTekst}` : '') });
       } else {
@@ -807,10 +914,10 @@ BELANGRIJKE REGELS:
     document.getElementById('opslaan-btn').addEventListener('click', opslaanRecept);
     document.getElementById('nieuw-btn').addEventListener('click', () => {
       huidigRecept = null;
-      fotoBase64 = null;
+      fotoLijst = [];
       document.getElementById('invoer-url').value = '';
       document.getElementById('invoer-tekst').value = '';
-      document.getElementById('foto-preview').style.display = 'none';
+      document.getElementById('foto-thumbs').innerHTML = '';
       document.getElementById('preview-blok').classList.remove('zichtbaar');
       verbergStatus();
       window.scrollTo({ top: 0, behavior: 'smooth' });

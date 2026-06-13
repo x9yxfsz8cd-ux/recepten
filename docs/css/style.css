@@ -773,6 +773,66 @@ body::after {
 }
 .km-nav-btn--klaar:hover { background: rgba(63, 185, 80, 0.16); }
 
+/* ── TIMER ── */
+.km-timer-blok {
+  padding: 0 1.5rem 0.75rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.km-timer-start {
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  padding: 0.55rem 1.25rem;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+.km-timer-start:hover { background: rgba(240, 200, 74, 0.15); border-color: rgba(240, 200, 74, 0.38); }
+.km-timer-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  line-height: 1;
+}
+.km-timer-display.km-timer-gepauzeerd { opacity: 0.45; }
+.km-timer-knoppen { display: flex; gap: 0.5rem; }
+.km-timer-knop {
+  padding: 0.4rem 1rem;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.km-timer-knop:hover { border-color: var(--border-2); color: var(--text); background: var(--surface-2); }
+.km-timer-klaar {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3fb950;
+  letter-spacing: 0.06em;
+  animation: km-klaar-pulse 0.65s ease-in-out infinite alternate;
+}
+@keyframes km-klaar-pulse {
+  from { opacity: 0.6; transform: scale(0.97); }
+  to   { opacity: 1;   transform: scale(1.03); }
+}
+
 /* ── VOEDINGSWAARDEN ── */
 .voeding-sectie {
   margin-top: 2rem;
@@ -869,6 +929,28 @@ body::after {
 .print-btn:hover {
   border-color: var(--border-2);
   color: var(--text);
+}
+
+.boodschappen-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  padding: 0.4rem 0.85rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+.boodschappen-btn:hover { border-color: var(--border-2); color: var(--text); }
+.boodschappen-btn.bevestigd {
+  border-color: rgba(63, 185, 80, 0.4);
+  color: #3fb950;
 }
 
 /* ── IN HUIS TOGGLE ── */
@@ -997,7 +1079,7 @@ body::after {
 
   .site-header, .terug-link, .portie-schaler, .kookmodus-btn,
   .kookmodus-overlay, .voeding-sectie, .bron-label, .print-btn,
-  .recept-detail__tags { display: none !important; }
+  .boodschappen-btn, .recept-detail__tags { display: none !important; }
 
   .recept-header-foto { max-height: 200px; aspect-ratio: auto; border: none; }
   .recept-detail__header { grid-template-columns: 1fr 160px; gap: 1rem; }
