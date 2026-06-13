@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project rapport — Receptensite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #1c2128;
+      --border: rgba(255,255,255,0.08);
+      --border-2: rgba(255,255,255,0.16);
+      --text: #e6edf3;
+      --text-muted: #768390;
+      --text-heading: #ffffff;
+      --accent: #f0c84a;
+      --accent-subtle: rgba(240,200,74,0.07);
+      --accent-border: rgba(240,200,74,0.22);
+      --green: #3fb950;
+      --blue: #58a6ff;
+      --red: #f85149;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    .wrap { max-width: 760px; margin: 0 auto; }
+
+    /* Header */
+    .rapport-header {
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .rapport-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-heading);
+      margin-bottom: 0.5rem;
+    }
+    .rapport-sub {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+    .rapport-sub a { color: var(--blue); text-decoration: none; }
+
+    /* Sections */
+    section { margin-bottom: 2.5rem; }
+    h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-heading);
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 1.25rem 0 0.5rem;
+    }
+    p { margin-bottom: 0.6rem; color: var(--text); }
+    ul, ol { padding-left: 1.25rem; margin-bottom: 0.6rem; }
+    li { margin-bottom: 0.25rem; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: var(--text-heading); font-weight: 600; }
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82em;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.1em 0.4em;
+      color: var(--accent);
+    }
+
+    /* Code blocks */
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      overflow-x: auto;
+      margin: 0.75rem 0 1rem;
+    }
+    pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    /* Cards / info blocks */
+    .kaart {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .kaart-titel {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    /* Tag pills */
+    .pill {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 20px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin: 0.1rem 0.15rem 0.1rem 0;
+    }
+    .pill--groen  { background: rgba(63,185,80,0.1);  color: var(--green); border: 1px solid rgba(63,185,80,0.2); }
+    .pill--geel   { background: var(--accent-subtle); color: var(--accent); border: 1px solid var(--accent-border); }
+    .pill--blauw  { background: rgba(88,166,255,0.08); color: var(--blue); border: 1px solid rgba(88,166,255,0.2); }
+    .pill--rood   { background: rgba(248,81,73,0.08); color: var(--red); border: 1px solid rgba(248,81,73,0.2); }
+    .pill--grijs  { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); }
+
+    /* File table */
+    .file-table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1rem; font-size: 0.84rem; }
+    .file-table th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: left;
+      padding: 0.4rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .file-table td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .file-table tr:last-child td { border-bottom: none; }
+    .file-table td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); white-space: nowrap; }
+
+    /* Recipe list */
+    .recept-rij { display: flex; gap: 0.75rem; padding: 0.45rem 0; border-bottom: 1px solid var(--border); font-size: 0.83rem; align-items: baseline; }
+    .recept-rij:last-child { border-bottom: none; }
+    .recept-id { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text-muted); min-width: 120px; }
+    .recept-titel { flex: 1; color: var(--text); }
+    .recept-foto { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--green); }
+
+    /* Warning box */
+    .waarschuwing {
+      background: rgba(248,81,73,0.06);
+      border: 1px solid rgba(248,81,73,0.18);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      margin: 0.75rem 0;
+      font-size: 0.84rem;
+      color: #f9a8a4;
+    }
+    .info {
+      background: rgba(88,166,255,0.06);
+      border: 1px solid rgba(88,166,255,0.18);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      margin: 0.75rem 0;
+      font-size: 0.84rem;
+      color: #93c5fd;
+    }
+
+    @media (max-width: 600px) {
+      .recept-id { min-width: 80px; font-size: 0.62rem; }
+      .file-table td:first-child { font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="rapport-header">
+    <div class="rapport-label">Project rapport — voor Claude</div>
+    <h1>Receptensite</h1>
+    <p class="rapport-sub">
+      Repo: <a href="https://github.com/x9yxfsz8cd-ux/recepten">x9yxfsz8cd-ux/recepten</a> &bull;
+      Site: <a href="https://x9yxfsz8cd-ux.github.io/recepten/">x9yxfsz8cd-ux.github.io/recepten/</a> &bull;
+      Werkmap: <code>/Users/shar/Recepten</code>
+    </p>
+  </div>
+
+  <!-- OVERZICHT -->
+  <section>
+    <h2>Wat is dit?</h2>
+    <p>Een persoonlijke receptensite voor Shar &amp; Robin. Statische PWA op GitHub Pages. Geen framework, geen build-stap — vanilla HTML/CSS/JS. Recepten staan in één JSON-bestand. Nieuwe recepten worden via een import-pagina toegevoegd (Claude API vision + URL scraping).</p>
+    <div class="kaart">
+      <div class="kaart-titel">Stack</div>
+      <ul>
+        <li><strong>Frontend:</strong> Vanilla HTML/CSS/JS, geen framework</li>
+        <li><strong>Hosting:</strong> GitHub Pages, branch <code>main</code>, map <code>docs/</code></li>
+        <li><strong>Data:</strong> <code>docs/data/recepten.json</code> — één JSON-array</li>
+        <li><strong>PWA:</strong> Service Worker (<code>docs/sw.js</code>), cache-first strategie</li>
+        <li><strong>Fonts:</strong> Space Grotesk (koppen), Inter (body), JetBrains Mono (meta/code)</li>
+        <li><strong>Thema:</strong> GitHub dark + Apple liquid glass accenten + butter yellow <code>#f0c84a</code></li>
+        <li><strong>AI import:</strong> Claude API (<code>claude-haiku-4-5-20251001</code>), direct vanuit browser</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BESTANDSSTRUCTUUR -->
+  <section>
+    <h2>Bestandsstructuur</h2>
+    <table class="file-table">
+      <tr><th>Bestand</th><th>Beschrijving</th></tr>
+      <tr><td>docs/index.html</td><td>Homepagina — receptenkaartjes, zoeken, filteren op tag, "in huis"-filter, sortering</td></tr>
+      <tr><td>docs/recept.html</td><td>Receptdetailpagina — ingrediënten, stappen, portieschaler, kookmodus, timer, boodschappenlijst</td></tr>
+      <tr><td>docs/import.html</td><td>Recept importeren via URL / tekst / foto (Claude API)</td></tr>
+      <tr><td>docs/css/style.css</td><td>Volledig design system — ~1100 regels, CSS custom properties</td></tr>
+      <tr><td>docs/data/recepten.json</td><td>Alle 34 recepten</td></tr>
+      <tr><td>docs/sw.js</td><td>Service Worker, huidig cache: <code>recepten-v12</code></td></tr>
+      <tr><td>docs/manifest.json</td><td>PWA manifest</td></tr>
+      <tr><td>docs/favicon.svg</td><td>Koksmuts SVG, geel op donker</td></tr>
+      <tr><td>docs/img/</td><td>Lokale receptfoto's (JPEG)</td></tr>
+      <tr><td>Scripts/</td><td>Hulpscripts voor foto's importeren (Python/macOS)</td></tr>
+    </table>
+  </section>
+
+  <!-- DATA MODEL -->
+  <section>
+    <h2>Data model — recepten.json</h2>
+    <p>Elk recept heeft dit schema:</p>
+    <pre><code>{
+  "id": "r001",                        // stabiele string-ID
+  "titel": "Pasta al Limone",
+  "slug": "pasta-al-limone",
+  "beschrijving": "Korte omschrijving.",
+  "afbeelding": "https://... of ./img/naam.jpg",
+  "bereidingstijd": 25,                // totale tijd in minuten
+  "actieve_tijd": 15,                  // optioneel — actief koken
+  "passieve_tijd": 10,                 // optioneel — wachten/oven
+  "moeilijkheidsgraad": "makkelijk",   // makkelijk / gemiddeld / moeilijk
+  "porties": 2,
+  "tags": ["vegetarisch", "snel", "Italiaans"],
+  "ingredienten": [
+    { "naam": "spaghetti", "hoeveelheid": 200, "eenheid": "g" },
+    { "naam": "zout",      "hoeveelheid": 0,   "eenheid": "naar smaak" }
+  ],
+  "stappen": [
+    { "nummer": 1, "tekst": "Kook de pasta..." }
+  ],
+  "voedingswaarden": {
+    "kcal": 580, "eiwitten": 18, "koolhydraten": 72, "vetten": 24
+  },
+  "bron": "https://...",               // originele URL, leeg bij handmatig
+  "bron_naam": "Albert Heijn",         // "Handmatig" als het handmatig is
+  "bron_type": "url",                  // url / tekst / foto / handmatig
+  "datum_toegevoegd": "2026-03-23"
+}</code></pre>
+    <div class="info">Eenheden: <code>g</code>, <code>ml</code>, <code>el</code>, <code>tl</code>, <code>stuks</code>, <code>snuf</code>, <code>naar smaak</code>. Bij <code>naar smaak</code> is <code>hoeveelheid</code> altijd <code>0</code>.</div>
+    <p>Geldige tags (vaste lijst):
+      <span class="pill pill--groen">vegetarisch</span>
+      <span class="pill pill--groen">vegan</span>
+      <span class="pill pill--blauw">vis</span>
+      <span class="pill pill--rood">vlees</span>
+      <span class="pill pill--geel">snel</span>
+      <span class="pill pill--geel">comfort food</span>
+      <span class="pill pill--blauw">Aziatisch</span>
+      <span class="pill pill--blauw">Italiaans</span>
+      <span class="pill pill--grijs">ontbijt</span>
+      <span class="pill pill--grijs">lunch</span>
+      <span class="pill pill--grijs">diner</span>
+      <span class="pill pill--grijs">snack</span>
+    </p>
+  </section>
+
+  <!-- LOCALSTORAGE -->
+  <section>
+    <h2>localStorage state</h2>
+    <table class="file-table">
+      <tr><th>Key</th><th>Waarde</th><th>Gebruikt in</th></tr>
+      <tr>
+        <td>in_huis</td>
+        <td>JSON array van <code>recept.id</code> strings — recepten waarvoor alle ingrediënten in huis zijn</td>
+        <td>index.html (filter), recept.html (boodschappenlijst)</td>
+      </tr>
+      <tr>
+        <td>stappen_&lt;id&gt;</td>
+        <td>JSON array van stapnummers die afgevinkt zijn</td>
+        <td>recept.html</td>
+      </tr>
+      <tr>
+        <td>ing_&lt;id&gt;</td>
+        <td>JSON array van ingrediënt-indices die afgevinkt zijn</td>
+        <td>recept.html</td>
+      </tr>
+      <tr>
+        <td>claude_api_key</td>
+        <td>Claude API-sleutel (sk-ant-…) — plaintext</td>
+        <td>import.html</td>
+      </tr>
+    </table>
+    <div class="waarschuwing">De API-sleutel staat in plaintext in localStorage. Dit is bewust gekozen — het is een privésite op een persoonlijk apparaat. Nooit op een gedeeld apparaat gebruiken.</div>
+  </section>
+
+  <!-- CSS DESIGN SYSTEM -->
+  <section>
+    <h2>CSS design system</h2>
+    <p>Alle kleur/spacing tokens staan als CSS custom properties op <code>:root</code> in <code>style.css</code>. Licht/donker volgt automatisch <code>prefers-color-scheme</code>.</p>
+    <pre><code>/* Kernkleuren */
+--bg: #0d1117          /* pagina-achtergrond */
+--surface: #161b22     /* kaarten */
+--surface-2: #1c2128   /* inputs, hover */
+--border: rgba(255,255,255,0.08)
+--border-2: rgba(255,255,255,0.16)
+--text: #e6edf3
+--text-muted: #768390
+--text-heading: #ffffff
+--accent: #f0c84a      /* butter yellow — primaire accentkleur */
+--accent-subtle: rgba(240,200,74,0.07)
+--accent-border: rgba(240,200,74,0.22)
+--glass: rgba(22,27,34,0.65)   /* liquid glass achtergrond */
+--glass-border: rgba(255,255,255,0.07)
+--glass-hi: rgba(255,255,255,0.12)</code></pre>
+    <h3>Stijlpatroon</h3>
+    <ul>
+      <li><strong>Kaarten:</strong> <code>background: var(--surface); border: 1px solid var(--border); border-radius: 12px</code> — geen blur</li>
+      <li><strong>Liquid glass</strong> (ingrediëntenblok, kookmodus-overlay): <code>backdrop-filter: blur(24px) saturate(150%)</code></li>
+      <li><strong>Knoppen:</strong> border + transparante achtergrond, hover via <code>var(--surface-2)</code></li>
+      <li><strong>Accent-knoppen:</strong> <code>background: var(--accent-subtle); border: 1px solid var(--accent-border); color: var(--accent)</code></li>
+      <li><strong>Grain overlay:</strong> <code>body::after</code> met SVG <code>feTurbulence</code> noise</li>
+      <li><strong>Nooit</strong> bestaande class- of variabelenamen hernoemen</li>
+    </ul>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <h2>Functies per pagina</h2>
+
+    <h3>index.html — Homepagina</h3>
+    <ul>
+      <li>Receptenkaartjes in een responsive grid, geladen uit <code>recepten.json</code></li>
+      <li>Zoeken op naam en ingrediëntnaam</li>
+      <li>Filteren op tag (uit vaste lijst)</li>
+      <li>Sortering: nieuwste eerst / A–Z / snelste eerst</li>
+      <li>"In huis"-filter: toont alleen recepten waarvan je alle ingrediënten hebt</li>
+      <li>Per kaartje een boodschappicoontje om recept als "in huis" te markeren</li>
+      <li>Skeleton loading animatie tijdens laden</li>
+      <li>Gekleurde placeholder als er geen foto is (vlees=rood, vis=blauw, vegan=groen, etc.)</li>
+    </ul>
+
+    <h3>recept.html — Receptdetail</h3>
+    <ul>
+      <li>Editoriaal split-header: tekst links, foto rechts (2-koloms grid)</li>
+      <li>Portieschaler (−/+) die alle hoeveelheden herberekent</li>
+      <li>Klik op een hoeveelheid → inline edit → alles schaalt mee</li>
+      <li>Ingrediënten afvinken (persisteert via <code>ing_&lt;id&gt;</code> in localStorage)</li>
+      <li>Stappen afvinken (persisteert via <code>stappen_&lt;id&gt;</code> in localStorage)</li>
+      <li>Kookmodus: fullscreen overlay, stap voor stap, voortgangsbalk, wake lock</li>
+      <li>Timer in kookmodus: parseert Nederlandse tijdsduren uit staptekst, aftellen met pauze/reset, trilt bij nul</li>
+      <li>Boodschappenlijst-knop: kopieert ontbrekende ingrediënten (geschaald) naar klembord</li>
+      <li>Voedingswaarden-blok (indien aanwezig)</li>
+      <li>Bronvermelding met link</li>
+      <li>Printweergave (knoppen en overlay verborgen)</li>
+    </ul>
+
+    <h3>import.html — Recept importeren</h3>
+    <ul>
+      <li>Drie tabs: URL / Tekst / Foto</li>
+      <li><strong>URL:</strong> haalt pagina op via CORS-proxy, extraheert JSON-LD of platte tekst, stuurt naar Claude</li>
+      <li><strong>Tekst:</strong> plak recepttekst, WhatsApp-bericht, Instagram-bijschrift, etc.</li>
+      <li><strong>Foto:</strong> twee knoppen (camera/galerij), meerdere foto's mogelijk voor recepten op meerdere pagina's, thumbnail strip</li>
+      <li>Claude Haiku extraheert recept als JSON (Nederlandstalig)</li>
+      <li>Preview met portieschaler vóór opslaan</li>
+      <li>Opslaan downloadt bijgewerkte <code>recepten.json</code> — handmatig in repo plaatsen</li>
+      <li>API-sleutel opgeslagen in localStorage, eenmalig invullen</li>
+      <li>URL-parameter: <code>import.html?url=https://...&amp;auto=true</code> voor directe import</li>
+    </ul>
+  </section>
+
+  <!-- SERVICE WORKER -->
+  <section>
+    <h2>Service Worker &amp; PWA</h2>
+    <p>Cache-first strategie. Bij elke update: verhoog <code>CACHE</code> in <code>sw.js</code>, anders krijgen bestaande gebruikers de wijzigingen niet.</p>
+    <pre><code>// sw.js — huidig versienummer
+const CACHE = 'recepten-v12';</code></pre>
+    <p>Bij elke deploy met wijzigingen in CSS/JS/HTML: bump naar <code>v13</code>, <code>v14</code>, etc.</p>
+  </section>
+
+  <!-- TIMER PARSING -->
+  <section>
+    <h2>Timer — tijdsduur parsing</h2>
+    <p>Functie <code>parseerDuur(tekst)</code> in <code>recept.html</code> vangt:</p>
+    <ul>
+      <li><code>10-12 minuten</code> → bovengrens = 720 seconden</li>
+      <li><code>1,5 min</code> → 90 seconden</li>
+      <li><code>10 minuten</code> / <code>10 min</code> / <code>10 minuut</code> → 600 seconden</li>
+      <li><code>30 seconden</code> / <code>30 sec</code> → 30 seconden</li>
+    </ul>
+    <p>Geen match → geen timer getoond. Timer reset automatisch bij overstap naar volgende stap.</p>
+  </section>
+
+  <!-- RECEPT IMPORT WORKFLOW -->
+  <section>
+    <h2>Nieuwe recepten toevoegen</h2>
+    <ol>
+      <li>Open <code>/import.html</code> in Safari (desktop of mobiel)</li>
+      <li>Kies tab: URL (blog/AH/HelloFresh), Tekst (Instagram, WhatsApp) of Foto (kookboek)</li>
+      <li>Claude Haiku extraheert het recept → preview verschijnt</li>
+      <li>Pas aan indien nodig (bron, porties)</li>
+      <li>Klik "Opslaan" → download <code>recepten.json</code></li>
+      <li>Vervang <code>docs/data/recepten.json</code> in de repo en push naar <code>main</code></li>
+      <li>Foto: sla op in <code>docs/img/</code> en update <code>afbeelding</code> veld in JSON</li>
+    </ol>
+    <div class="info">De import-pagina staat ook live op de site — handig op mobiel voor kookboekfoto's.</div>
+  </section>
+
+  <!-- RECEPTENLIJST -->
+  <section>
+    <h2>Huidige recepten (34)</h2>
+    <div class="kaart" style="padding:0.75rem 1rem;">
+      <div class="recept-rij" style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--text-muted);border-bottom:1px solid var(--border);padding-bottom:0.35rem;margin-bottom:0.1rem;">
+        <span style="min-width:120px;">ID</span><span style="flex:1">Titel</span><span>Foto</span>
+      </div>
+      <div class="recept-rij"><span class="recept-id">r001</span><span class="recept-titel">Pasta al Limone</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774465753</span><span class="recept-titel">Poké bowl met zalm</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774465924</span><span class="recept-titel">Tijmchampignons met gnocchi en frisse rucola</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774487934</span><span class="recept-titel">Pasta Aglio e Olio</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774537596</span><span class="recept-titel">Broccoli Pesto Pasta met Halloumi</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543194</span><span class="recept-titel">Aubergines in kaneel met feta, olijven &amp; bulgur</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543204</span><span class="recept-titel">Broccolisoep met gerookte zalm en bieslook</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543212</span><span class="recept-titel">Traybake met orzo, asperge, prei en rucola</span><span class="recept-titel">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543219</span><span class="recept-titel">Ravioli uit de oven met mozzarella</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543228</span><span class="recept-titel">Gesmoorde prei met eieren en za'atar</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543235</span><span class="recept-titel">Pita shoarma van oesterzwam</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543245</span><span class="recept-titel">Sui kau soep met noedels</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543261</span><span class="recept-titel">Linguine met citroen, knoflook en tijmchampignons</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543281</span><span class="recept-titel">Winterse risotto met aardpeer, comté en hazelnoten</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543289</span><span class="recept-titel">Spinaziestamppot met gebakken halloumi</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543355</span><span class="recept-titel">Gnocchi-traybake met feta en balsamico</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543362</span><span class="recept-titel">Gennaro's Klassieke Spaghetti Carbonara</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543369</span><span class="recept-titel">Gepofte Zoete Aardappel</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543376</span><span class="recept-titel">Zalm met citroen</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543383</span><span class="recept-titel">Pittige harissa-spruitjes &amp; broccoli met halloumi</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543390</span><span class="recept-titel">Zelf Pizzadeeg Maken</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543401</span><span class="recept-titel">Gerookte-paprikarisotto met gegratineerde geitenkaas</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543409</span><span class="recept-titel">Lorenzo's pasta</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543424</span><span class="recept-titel">Gazpacho</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774543430</span><span class="recept-titel">Citroenpasta met chili vlokken</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1774683772</span><span class="recept-titel">Tomatenrisotto met Kokosmelk en Basilicum</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1775131494</span><span class="recept-titel">Bonen 'risotto' (Bonensotto)</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1777223515</span><span class="recept-titel">Krokante gnocchi met paprika &amp; rozemarijn</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1778095207</span><span class="recept-titel">Pittige tonijnsalade</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1778095438</span><span class="recept-titel">Bio Bietjesstamppot</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1778096391</span><span class="recept-titel">Elly's appeltaart</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1778096916</span><span class="recept-titel">Spaghetti met tonijn- en ansjovisaus</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1779695622</span><span class="recept-titel">Groene orzo met vegan pesto en prei</span><span class="recept-foto">ja</span></div>
+      <div class="recept-rij"><span class="recept-id">r1780140773</span><span class="recept-titel">Vegetarische lasagna met geroosterde groenten</span><span class="recept-foto">ja</span></div>
+    </div>
+  </section>
+
+  <!-- CONVENTIES -->
+  <section>
+    <h2>Conventies &amp; valkuilen</h2>
+    <ul>
+      <li>Hernoem nooit bestaande CSS-klassen of <code>--variabelen</code></li>
+      <li>Geen externe dependencies toevoegen — alles in vanilla JS/CSS</li>
+      <li>Bij elke deploy met gewijzigde statische bestanden: bump <code>CACHE</code> in <code>sw.js</code></li>
+      <li>Nieuwe recepten: genereer ID als <code>r</code> + <code>Date.now()</code></li>
+      <li>Afbeeldingen: sla lokaal op in <code>docs/img/</code>, gebruik relatief pad <code>./img/naam.jpg</code></li>
+      <li>Externe afbeeldingURLs (Unsplash, Notion S3) kunnen verlopen — liever lokaal</li>
+      <li><code>staptekst</code> is platte tekst — geen HTML-tags</li>
+      <li>De <code>in_huis</code> localStorage-key bevat recept-IDs (niet ingrediëntnamen)</li>
+      <li>Claude model voor import: <code>claude-haiku-4-5-20251001</code></li>
+    </ul>
+  </section>
+
+  <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:var(--text-muted);text-align:center;">
+    Gegenereerd door Claude Code &bull; Laatste commit: <code>982da03</code>
+  </div>
+
+</div>
+</body>
+</html>
