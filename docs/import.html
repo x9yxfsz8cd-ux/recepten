@@ -374,6 +374,15 @@
       </p>
     </div>
 
+    <!-- GitHub token -->
+    <div class="import-sectie">
+      <label class="import-label" for="github-token">GitHub token (voor opslaan op mobiel)</label>
+      <input class="import-input" type="password" id="github-token" placeholder="ghp_…" autocomplete="off">
+      <p class="import-hint">
+        Persoonlijk token met <em>repo</em>-rechten. Wordt lokaal opgeslagen en alleen naar api.github.com verstuurd.
+      </p>
+    </div>
+
     <!-- Tabbladen -->
     <div class="tab-bar">
       <button class="tab-btn active" data-tab="url">URL</button>
@@ -485,6 +494,13 @@
 
     document.getElementById('api-sleutel').addEventListener('change', e => {
       localStorage.setItem('claude_api_key', e.target.value.trim());
+    });
+
+    const opgeslagenToken = localStorage.getItem('github_token') || '';
+    if (opgeslagenToken) document.getElementById('github-token').value = opgeslagenToken;
+
+    document.getElementById('github-token').addEventListener('change', e => {
+      localStorage.setItem('github_token', e.target.value.trim());
     });
 
     // ── TABBLADEN ──
@@ -866,6 +882,55 @@ BELANGRIJKE REGELS:
       // Bron bijwerken vanuit het bewerkbare veld
       huidigRecept.bron_naam = document.getElementById('pv-bron').value.trim();
 
+      const githubToken = document.getElementById('github-token').value.trim()
+        || localStorage.getItem('github_token') || '';
+
+      if (githubToken) {
+        // GitHub API: direct committen
+        toonStatus('Bezig met opslaan…', '');
+        try {
+          const REPO = 'x9yxfsz8cd-ux/recepten';
+          const PAD = 'docs/data/recepten.json';
+          const API = `https://api.github.com/repos/${REPO}/contents/${PAD}`;
+          const headers = {
+            'Authorization': `Bearer ${githubToken}`,
+            'Accept': 'application/vnd.github+json',
+            'Content-Type': 'application/json'
+          };
+
+          // Huidige inhoud + SHA ophalen
+          const getRes = await fetch(API, { headers });
+          if (!getRes.ok) throw new Error(`GitHub GET mislukt: ${getRes.status}`);
+          const getMeta = await getRes.json();
+          const sha = getMeta.sha;
+          const huidigJson = JSON.parse(atob(getMeta.content.replace(/\n/g, '')));
+
+          // Recept toevoegen (geen duplicaten)
+          if (!huidigJson.recepten.some(r => r.id === huidigRecept.id)) {
+            huidigJson.recepten.push(huidigRecept);
+          }
+
+          // Terug committen
+          const nieuweInhoud = btoa(unescape(encodeURIComponent(JSON.stringify(huidigJson, null, 2))));
+          const putRes = await fetch(API, {
+            method: 'PUT',
+            headers,
+            body: JSON.stringify({
+              message: `Recept toegevoegd: ${huidigRecept.titel}`,
+              content: nieuweInhoud,
+              sha
+            })
+          });
+          if (!putRes.ok) throw new Error(`GitHub PUT mislukt: ${putRes.status}`);
+
+          toonStatus('Recept toegevoegd! De site wordt over ~1 minuut bijgewerkt.', 'ok');
+        } catch (err) {
+          toonStatus(`Opslaan mislukt: ${err.message}`, 'fout');
+        }
+        return;
+      }
+
+      // Fallback: JSON downloaden
       let bestaand = { recepten: [] };
       try {
         const res = await fetch('./data/recepten.json');
@@ -876,7 +941,6 @@ BELANGRIJKE REGELS:
         bestaand.recepten.push(huidigRecept);
       }
 
-      // Download bijgewerkt bestand
       const blob = new Blob([JSON.stringify(bestaand, null, 2)], { type: 'application/json' });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);

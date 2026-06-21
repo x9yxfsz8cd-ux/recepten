@@ -522,12 +522,12 @@ body {
   align-items: start;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .recept-detail__header { grid-template-columns: 1fr; }
   .recept-header-foto { aspect-ratio: 16/9; border-radius: var(--radius-sm); order: -1; }
   .recept-content { grid-template-columns: 1fr; }
   .recept-detail__title { font-size: 1.625rem; }
-  .ingredienten-blok { position: static; }
+  .ingredienten-blok { position: static !important; top: unset !important; }
 }
 
 @media (max-width: 480px) {
