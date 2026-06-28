@@ -1065,6 +1065,52 @@ body {
 .empty-state p { font-size: 0.9375rem; }
 .empty-state__sub { font-size: 0.875rem !important; opacity: 0.55; }
 
+/* ── BOTTOM TAB BAR ── */
+.bottom-tab-bar { display: none; }
+
+@media (max-width: 768px) {
+  .bottom-tab-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: var(--glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-top: 0.5px solid var(--border);
+    padding: 0.375rem 0 0;
+    padding-bottom: env(safe-area-inset-bottom, 0.25rem);
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .tab-bar-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.125rem;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.625rem;
+    font-weight: 500;
+    padding: 0.25rem 1.5rem;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.15s;
+    letter-spacing: -0.01em;
+  }
+
+  .tab-bar-link.active { color: var(--accent); }
+  .tab-bar-link svg { width: 22px; height: 22px; }
+
+  .toevoeg-btn { display: none !important; }
+
+  .recepten-grid { padding-bottom: 5rem; }
+  .recept-detail { padding-bottom: 5rem; }
+  .import-main { padding-bottom: 5rem; }
+}
+
 /* ── PRINT ── */
 @media print {
   body {
@@ -1078,7 +1124,7 @@ body {
 
   .site-header, .terug-link, .portie-schaler, .kookmodus-btn,
   .kookmodus-overlay, .voeding-sectie, .bron-label, .print-btn,
-  .boodschappen-btn, .recept-detail__tags { display: none !important; }
+  .boodschappen-btn, .recept-detail__tags, .bottom-tab-bar { display: none !important; }
 
   .recept-header-foto { max-height: 200px; aspect-ratio: auto; border: none; box-shadow: none; }
   .recept-detail__header { grid-template-columns: 1fr 160px; gap: 1rem; border-bottom: 1px solid #ccc; }

@@ -1,8 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <!-- Achtergrond -->
-  <rect width="32" height="32" rx="7" fill="#0d1117"/>
-  <!-- Chef hat puff (boog) -->
-  <path d="M9 20 C9 20 8.5 7 16 7 C23.5 7 23 20 23 20 Z" fill="#f0c84a"/>
-  <!-- Chef hat band -->
-  <rect x="6" y="19" width="20" height="6" rx="2" fill="#f0c84a"/>
+  <defs>
+    <linearGradient id="g" x1=".15" y1="0" x2=".85" y2="1">
+      <stop offset="0%" stop-color="#FF9F0A"/>
+      <stop offset="100%" stop-color="#FF2D55"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="7.5" fill="url(#g)"/>
+  <g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" y1="7" x2="12" y2="14"/>
+    <line x1="16" y1="7" x2="16" y2="14"/>
+    <line x1="20" y1="7" x2="20" y2="14"/>
+    <path d="M12 14c0 3.5 1.5 5 4 5s4-1.5 4-5"/>
+    <line x1="16" y1="19" x2="16" y2="26"/>
+  </g>
 </svg>
