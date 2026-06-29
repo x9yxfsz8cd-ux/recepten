@@ -2655,7 +2655,7 @@
       "bereidingstijd": 45,
       "actieve_tijd": 15,
       "passieve_tijd": 30,
-      "moeilijkheidsgraad": "Makkelijk",
+      "moeilijkheidsgraad": "makkelijk",
       "porties": 2,
       "tags": [
         "vegetarisch",
@@ -3187,13 +3187,14 @@
     },
     {
       "id": "r1779695622",
+      "slug": "groene-orzo-vegan-pesto",
       "titel": "Groene orzo met vegan pesto en prei",
       "beschrijving": "Bio en babyvriendelijke variatie op groene orzo. De vegan pesto op basis van basilicum, spinazie en kokosmelk maakt het gerecht romig en voedzaam — ook geschikt als puree voor baby's.",
       "afbeelding": "./img/groene-orzo-vegan-pesto.jpg",
       "bereidingstijd": 30,
       "actieve_tijd": 30,
       "passieve_tijd": 0,
-      "moeilijkheidsgraad": "Makkelijk",
+      "moeilijkheidsgraad": "makkelijk",
       "porties": 4,
       "tags": [
         "vegan",
@@ -3336,13 +3337,14 @@
     },
     {
       "id": "r1780140773",
+      "slug": "vegetarische-lasagna-geroosterde-groenten",
       "titel": "Vegetarische lasagna met geroosterde groenten",
       "beschrijving": "Laagjes geroosterde champignons, paprika, courgette en spinazie met romige ricotta, tomatensaus en gesmolten mozzarella.",
       "afbeelding": "./img/vegetarische-lasagna.jpg",
       "bereidingstijd": 90,
       "actieve_tijd": 40,
       "passieve_tijd": 50,
-      "moeilijkheidsgraad": "Gemiddeld",
+      "moeilijkheidsgraad": "gemiddeld",
       "porties": 8,
       "tags": [
         "vegetarisch",

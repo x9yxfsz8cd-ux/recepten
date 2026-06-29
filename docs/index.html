@@ -53,7 +53,7 @@
       'vegetarisch', 'vegan', 'vis', 'vlees',
       'snel', 'comfort food',
       'Aziatisch', 'Italiaans',
-      'ontbijt', 'lunch', 'diner', 'snack'
+      'ontbijt', 'brunch', 'lunch', 'diner', 'snack'
     ];
 
     let alleRecepten = [];
@@ -118,7 +118,7 @@
         : '';
 
       const tags = ALLE_TAGS
-        .filter(tag => alleRecepten.some(r => r.tags.includes(tag)))
+        .filter(tag => alleRecepten.some(r => (r.tags || []).includes(tag)))
         .map(tag => `<button class="tag-btn${actiefTag === tag ? ' active' : ''}" data-tag="${tag}">${tag}</button>`)
         .join('');
 
@@ -143,20 +143,20 @@
 
     function zoekMatch(r, term) {
       if (r.titel.toLowerCase().includes(term)) return true;
-      if (r.ingredienten.some(ing => ing.naam.toLowerCase().includes(term))) return true;
+      if ((r.ingredienten || []).some(ing => ing.naam.toLowerCase().includes(term))) return true;
       return false;
     }
 
     function renderRecepten() {
       const grid = document.getElementById('recepten-grid');
-      let resultaat = alleRecepten;
+      let resultaat = [...alleRecepten];
 
       if (filterInHuis) {
         const inHuisLijst = getInHuis();
         resultaat = resultaat.filter(r => inHuisLijst.includes(r.id));
       }
       if (actiefTag) {
-        resultaat = resultaat.filter(r => r.tags.includes(actiefTag));
+        resultaat = resultaat.filter(r => (r.tags || []).includes(actiefTag));
       }
       if (zoekterm) {
         const term = zoekterm.toLowerCase();
@@ -226,7 +226,7 @@
               ${bronNaam}
               ${matchLabel}
               <div class="recept-card__meta">
-                <span>${r.actieve_tijd ? r.actieve_tijd + ' min actief' : r.bereidingstijd + ' min'}${r.passieve_tijd ? ' + ' + r.passieve_tijd + ' wachten' : ''}</span>
+                <span>${r.actieve_tijd ? r.actieve_tijd + ' min actief' : (r.bereidingstijd ? r.bereidingstijd + ' min' : '')}${r.passieve_tijd ? ' + ' + r.passieve_tijd + ' wachten' : ''}</span>
                 <span class="recept-card__meta-sep"></span>
                 <span>${r.moeilijkheidsgraad}</span>
                 <span class="recept-card__meta-sep"></span>

@@ -134,28 +134,31 @@
 
     function parseerDuur(tekst) {
       // Bereik: "10-12 minuten" → bovengrens
-      const bereik = tekst.match(/(\d+)\s*[-–]\s*(\d+)\s*(min(?:uut|uten)?|sec(?:onden?)?)/i);
+      const bereik = tekst.match(/(\d+)\s*[-–]\s*(\d+)\s*(uur|min(?:uut|uten)?|sec(?:onden?)?)/i);
       if (bereik) {
         const boven = parseInt(bereik[2]);
-        return /min/i.test(bereik[3]) ? boven * 60 : boven;
+        return /uur/i.test(bereik[3]) ? boven * 3600 : /min/i.test(bereik[3]) ? boven * 60 : boven;
       }
-      // Decimaal: "1,5 min" → 90s
-      const komma = tekst.match(/(\d+)[,.](\d)\s*(min(?:uut|uten)?)/i);
+      // Decimaal: "1,5 min" → 90s, "1,25 uur" → 4500s
+      const komma = tekst.match(/(\d+)[,.](\d+)\s*(uur|min(?:uut|uten)?)/i);
       if (komma) {
-        return Math.round((parseInt(komma[1]) + parseInt(komma[2]) / 10) * 60);
+        const waarde = parseInt(komma[1]) + parseInt(komma[2]) / Math.pow(10, komma[2].length);
+        return Math.round(/uur/i.test(komma[3]) ? waarde * 3600 : waarde * 60);
       }
-      // Enkelvoud: "10 minuten", "30 seconden"
-      const enkel = tekst.match(/(\d+)\s*(min(?:uut|uten)?|sec(?:onden?)?)/i);
+      // Enkelvoud: "10 minuten", "2 uur", "30 seconden"
+      const enkel = tekst.match(/(\d+)\s*(uur|min(?:uut|uten)?|sec(?:onden?)?)/i);
       if (enkel) {
         const v = parseInt(enkel[1]);
-        return /min/i.test(enkel[2]) ? v * 60 : v;
+        return /uur/i.test(enkel[2]) ? v * 3600 : /min/i.test(enkel[2]) ? v * 60 : v;
       }
       return 0;
     }
 
     function formatTimer(sec) {
-      const m = Math.floor(sec / 60);
+      const u = Math.floor(sec / 3600);
+      const m = Math.floor((sec % 3600) / 60);
       const s = sec % 60;
+      if (u > 0) return `${u}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
       return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
     }
 
@@ -319,7 +322,7 @@
     // Toetsenbord navigatie in kookmodus
     document.addEventListener('keydown', e => {
       if (!document.getElementById('kookmodus-overlay').classList.contains('actief')) return;
-      if (e.key === 'ArrowRight' || e.key === ' ') document.getElementById('km-volgende').click();
+      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); document.getElementById('km-volgende').click(); }
       if (e.key === 'ArrowLeft') document.getElementById('km-vorige').click();
       if (e.key === 'Escape') sluitKookmodus();
     });
@@ -445,26 +448,15 @@
         </div>`).join('');
 
       const heeftVoeding = r.voedingswaarden && (r.voedingswaarden.kcal || r.voedingswaarden.eiwitten || r.voedingswaarden.koolhydraten || r.voedingswaarden.vetten);
+      const vw = r.voedingswaarden || {};
       const voeding = heeftVoeding ? `
         <div class="voeding-sectie">
           <div class="blok-titel">Voedingswaarden per portie</div>
           <div class="voeding-grid">
-            <div class="voeding-item">
-              <span class="voeding-waarde">${r.voedingswaarden.kcal}</span>
-              <span class="voeding-label">kcal</span>
-            </div>
-            <div class="voeding-item">
-              <span class="voeding-waarde">${r.voedingswaarden.eiwitten}g</span>
-              <span class="voeding-label">eiwit</span>
-            </div>
-            <div class="voeding-item">
-              <span class="voeding-waarde">${r.voedingswaarden.koolhydraten}g</span>
-              <span class="voeding-label">koolhydraten</span>
-            </div>
-            <div class="voeding-item">
-              <span class="voeding-waarde">${r.voedingswaarden.vetten}g</span>
-              <span class="voeding-label">vet</span>
-            </div>
+            ${vw.kcal != null ? `<div class="voeding-item"><span class="voeding-waarde">${vw.kcal}</span><span class="voeding-label">kcal</span></div>` : ''}
+            ${vw.eiwitten != null ? `<div class="voeding-item"><span class="voeding-waarde">${vw.eiwitten}g</span><span class="voeding-label">eiwit</span></div>` : ''}
+            ${vw.koolhydraten != null ? `<div class="voeding-item"><span class="voeding-waarde">${vw.koolhydraten}g</span><span class="voeding-label">koolhydraten</span></div>` : ''}
+            ${vw.vetten != null ? `<div class="voeding-item"><span class="voeding-waarde">${vw.vetten}g</span><span class="voeding-label">vet</span></div>` : ''}
           </div>
         </div>` : '';
 

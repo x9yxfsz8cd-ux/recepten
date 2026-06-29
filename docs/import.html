@@ -898,7 +898,7 @@ BELANGRIJKE REGELS:
 
       if (githubToken) {
         // GitHub API: direct committen
-        toonStatus('Bezig met opslaan…', '');
+        toonStatus('Bezig met opslaan…', 'laden');
         try {
           const REPO = 'x9yxfsz8cd-ux/recepten';
           const PAD = 'docs/data/recepten.json';
@@ -914,7 +914,7 @@ BELANGRIJKE REGELS:
           if (!getRes.ok) throw new Error(`GitHub GET mislukt: ${getRes.status}`);
           const getMeta = await getRes.json();
           const sha = getMeta.sha;
-          const huidigJson = JSON.parse(atob(getMeta.content.replace(/\n/g, '')));
+          const huidigJson = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(getMeta.content.replace(/\n/g, '')), c => c.charCodeAt(0))));
 
           // Recept toevoegen (geen duplicaten)
           if (!huidigJson.recepten.some(r => r.id === huidigRecept.id)) {

@@ -1,10 +1,14 @@
-const CACHE = 'recepten-v16';
+const CACHE = 'recepten-v17';
 const STATISCH = [
   './index.html',
   './recept.html',
   './import.html',
   './css/style.css',
-  './manifest.json'
+  './manifest.json',
+  './favicon.svg',
+  './favicon.png',
+  './img/icon-192.png',
+  './img/icon-512.png'
 ];
 
 self.addEventListener('install', e => {
