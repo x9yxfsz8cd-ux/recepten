@@ -270,19 +270,6 @@
       navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
 
-    // Pull-to-refresh
-    let ptStart = 0, ptPulling = false;
-    document.addEventListener('touchstart', e => {
-      if (window.scrollY === 0) ptStart = e.touches[0].clientY;
-    }, { passive: true });
-    document.addEventListener('touchmove', e => {
-      if (ptStart && e.touches[0].clientY - ptStart > 80 && window.scrollY === 0) ptPulling = true;
-    }, { passive: true });
-    document.addEventListener('touchend', () => {
-      if (ptPulling) { ptPulling = false; ptStart = 0; laadRecepten(); }
-      ptStart = 0;
-    });
-
     toonSkeletons();
     laadRecepten();
   </script>

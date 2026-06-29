@@ -1,4 +1,4 @@
-const CACHE = 'recepten-v19';
+const CACHE = 'recepten-v20';
 const STATISCH = [
   './index.html',
   './recept.html',
@@ -8,7 +8,8 @@ const STATISCH = [
   './favicon.svg',
   './favicon.png',
   './img/icon-192.png',
-  './img/icon-512.png'
+  './img/icon-512.png',
+  './data/recepten.json'
 ];
 
 self.addEventListener('install', e => {
