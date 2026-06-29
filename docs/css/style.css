@@ -254,7 +254,7 @@ body {
 }
 
 .tag-btn {
-  padding: 0.3rem 0.875rem;
+  padding: 0.5rem 0.875rem;
   border-radius: 980px;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -487,8 +487,8 @@ body {
 }
 
 .portie-btn {
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: var(--surface-2);
@@ -522,7 +522,7 @@ body {
   align-items: start;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .recept-detail__header { grid-template-columns: 1fr; }
   .recept-header-foto { aspect-ratio: 16/9; border-radius: var(--radius-sm); order: -1; }
   .recept-content { grid-template-columns: 1fr; }
@@ -534,7 +534,6 @@ body {
   .search-bar { flex-wrap: wrap; }
   .search-bar input { flex-basis: 100%; }
   .sorteer-select { flex: 1; }
-  .in-huis-btn { opacity: 0.7; }
 }
 
 /* ── INGREDIËNTEN BLOK ── */
@@ -695,7 +694,7 @@ body {
   background: var(--surface-2);
   border: none;
   color: var(--text-muted);
-  padding: 0.4rem 1rem;
+  padding: 0.625rem 1.25rem;
   border-radius: 980px;
   font-family: inherit;
   font-size: 0.875rem;
@@ -822,7 +821,7 @@ body {
 .km-timer-display.km-timer-gepauzeerd { opacity: 0.38; }
 .km-timer-knoppen { display: flex; gap: 0.5rem; }
 .km-timer-knop {
-  padding: 0.375rem 1.125rem;
+  padding: 0.625rem 1.25rem;
   border-radius: 980px;
   border: 1px solid var(--border);
   background: var(--surface-2);
@@ -961,8 +960,8 @@ body {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  width: 2rem;
-  height: 2rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 50%;
   border: none;
   background: var(--glass);
@@ -975,11 +974,14 @@ body {
   justify-content: center;
   transition: all 0.15s;
   z-index: 2;
-  opacity: 0.4;
+  opacity: 0.7;
   flex-shrink: 0;
   box-shadow: 0 1px 4px rgba(0,0,0,.12);
 }
-.recept-card:hover .in-huis-btn { opacity: 1; }
+@media (hover: hover) {
+  .in-huis-btn { opacity: 0.4; }
+  .recept-card:hover .in-huis-btn { opacity: 1; }
+}
 .in-huis-btn.actief {
   opacity: 1;
   background: var(--accent);
