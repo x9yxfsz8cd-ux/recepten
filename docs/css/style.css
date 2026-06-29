@@ -97,6 +97,14 @@
   --card-light: #1c1c1e; --mid: rgba(235,235,245,.6); --dark: #2c2c2e;
 }
 
+/* ── PAGE TRANSITION ── */
+@keyframes fade-in  { from { opacity: 0; } }
+@keyframes fade-out { to   { opacity: 0; } }
+
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: fade-out 0.15s ease-out; }
+::view-transition-new(root) { animation: fade-in  0.15s ease-in; }
+
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 17px; scroll-behavior: smooth; }
@@ -999,8 +1007,8 @@ body {
 
 /* ── SKELETON LOADING ── */
 @keyframes shimmer {
-  0%   { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0%   { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 .skeleton-card {
@@ -1027,12 +1035,12 @@ body {
 .skeleton-line {
   background: linear-gradient(
     90deg,
-    var(--surface-2) 0%,
-    var(--border-2) 50%,
-    var(--surface-2) 100%
+    var(--surface-2) 25%,
+    var(--glass-hi) 50%,
+    var(--surface-2) 75%
   );
-  background-size: 200% 100%;
-  animation: shimmer 1.6s ease-in-out infinite;
+  background-size: 400% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
   border-radius: var(--radius-sm);
 }
 

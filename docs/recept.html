@@ -32,7 +32,7 @@
   <div id="app"></div>
 
   <!-- Kookmodus overlay -->
-  <div class="kookmodus-overlay" id="kookmodus-overlay" role="dialog" aria-modal="true">
+  <div class="kookmodus-overlay" id="kookmodus-overlay" role="dialog" aria-modal="true" aria-label="Kookmodus">
     <div class="km-header">
       <span class="km-titel" id="km-recept-titel"></span>
       <button class="km-sluiten" id="km-sluiten">Sluiten</button>
@@ -295,6 +295,7 @@
       document.getElementById('bottom-tab-bar')?.style.setProperty('display', 'none');
       updateKookmodus();
       vraagWakeLock();
+      document.getElementById('km-sluiten').focus();
     }
 
     function sluitKookmodus() {
@@ -319,12 +320,34 @@
       }
     });
 
-    // Toetsenbord navigatie in kookmodus
+    // Swipe navigatie in kookmodus
+    let swipeX0 = null;
+    document.getElementById('kookmodus-overlay').addEventListener('touchstart', e => {
+      swipeX0 = e.touches[0].clientX;
+    }, { passive: true });
+    document.getElementById('kookmodus-overlay').addEventListener('touchend', e => {
+      if (swipeX0 === null) return;
+      const dx = e.changedTouches[0].clientX - swipeX0;
+      swipeX0 = null;
+      if (Math.abs(dx) < 60) return;
+      if (dx > 0) document.getElementById('km-vorige').click();
+      else document.getElementById('km-volgende').click();
+    });
+
+    // Toetsenbord navigatie + focus trap in kookmodus
     document.addEventListener('keydown', e => {
-      if (!document.getElementById('kookmodus-overlay').classList.contains('actief')) return;
+      const overlay = document.getElementById('kookmodus-overlay');
+      if (!overlay.classList.contains('actief')) return;
       if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); document.getElementById('km-volgende').click(); }
       if (e.key === 'ArrowLeft') document.getElementById('km-vorige').click();
       if (e.key === 'Escape') sluitKookmodus();
+      if (e.key === 'Tab') {
+        const focusable = overlay.querySelectorAll('button:not([disabled])');
+        if (focusable.length === 0) return;
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
 
     // ── PORTIESCHALER ──
