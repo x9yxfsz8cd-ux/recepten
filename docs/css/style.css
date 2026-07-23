@@ -40,6 +40,9 @@
   --text: #DDDDD6; --text-muted: #7A7A72;
   --accent: #FF6D3F; --accent-subtle: rgba(255,109,63,.08); --green: #66BB6A;
 }
+[data-theme="dark"] .sorteer-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23DDDDD6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
 [data-theme="light"] {
   --bg: #F5F5F0; --surface: #FFFFFF; --surface-2: #EDEDEA;
   --border: #D4D4CC; --border-hard: #1A1A1A;
@@ -53,8 +56,8 @@
   top: 1rem;
   right: 1rem;
   z-index: 300;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: 2px solid var(--border-hard);
   background: var(--surface);
   color: var(--text);
@@ -111,7 +114,7 @@ body {
 .search-bar {
   display: flex;
   gap: 0;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.5rem;
 }
 .search-bar input {
   flex: 1;
@@ -184,7 +187,7 @@ body {
 .tag-btn {
   padding: 0.5rem 0.75rem;
   min-height: 2.75rem;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   background: transparent;
   font-family: var(--mono);
   font-size: 0.6875rem;
@@ -240,10 +243,10 @@ body {
   aspect-ratio: 16 / 10;
   background: var(--surface-2);
 }
-.ph--vlees  { background-color: rgba(255, 59,  48,  0.06) !important; }
-.ph--vis    { background-color: rgba(0,  122, 255, 0.06) !important; }
-.ph--groen  { background-color: rgba(52, 199,  89,  0.06) !important; }
-.ph--geel   { background-color: rgba(255, 204,   0,  0.06) !important; }
+.ph--vlees  { background-color: rgba(255, 87, 34, 0.06) !important; }
+.ph--vis    { background-color: rgba(33, 150, 243, 0.06) !important; }
+.ph--groen  { background-color: rgba(76, 175, 80, 0.06) !important; }
+.ph--geel   { background-color: rgba(255, 193, 7, 0.06) !important; }
 
 .recept-card__body {
   padding: 1.25rem;
@@ -471,10 +474,12 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: -2px;
   padding: 1rem 1.25rem;
   border: 2px solid var(--border-hard);
   background: var(--surface);
+  position: relative;
+  z-index: 1;
 }
 .portie-label {
   font-family: var(--mono);
@@ -658,6 +663,7 @@ body {
   display: flex;
   gap: 2px;
   padding: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0);
   background: var(--border-hard);
   border-top: 2px solid var(--border-hard);
 }
@@ -716,7 +722,7 @@ body {
   font-variant-numeric: tabular-nums;
 }
 .km-timer-display.km-timer-gepauzeerd { opacity: 0.38; }
-.km-timer-knoppen { display: flex; gap: 2px; justify-content: center; }
+.km-timer-knoppen { display: flex; gap: 2px; justify-content: center; background: var(--border-hard); display: inline-flex; }
 .km-timer-knop {
   padding: 0.625rem 1.25rem;
   min-height: 2.75rem;
@@ -749,7 +755,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 2px;
-  background: var(--border);
+  background: var(--border-hard);
+  border: 2px solid var(--border-hard);
 }
 .voeding-item {
   background: var(--surface);
@@ -809,6 +816,7 @@ body {
   background: none;
   border: 2px solid var(--border);
   padding: 0.625rem 1rem;
+  min-height: 2.75rem;
   cursor: pointer;
   transition: opacity 0.1s;
 }
@@ -825,6 +833,7 @@ body {
   background: none;
   border: 2px solid var(--border);
   padding: 0.625rem 1rem;
+  min-height: 2.75rem;
   cursor: pointer;
   transition: all 0.1s;
 }
@@ -844,7 +853,8 @@ body {
   align-items: center;
   gap: 0.375rem;
   margin-bottom: 1.5rem;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
+  min-height: 2.75rem;
   transition: color 0.1s;
 }
 .terug-link::before { content: '<'; font-size: 1rem; line-height: 1; }
@@ -913,7 +923,7 @@ body {
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.375rem;
 }
 
 .skeleton-img,
@@ -963,7 +973,7 @@ body {
     background: var(--surface);
     border-top: 2px solid var(--border-hard);
     padding: 0.375rem 0 0;
-    padding-bottom: env(safe-area-inset-bottom, 0.25rem);
+    padding-bottom: env(safe-area-inset-bottom, 0.375rem);
     justify-content: space-around;
     align-items: center;
   }
