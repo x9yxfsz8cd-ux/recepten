@@ -3467,6 +3467,85 @@
           "tekst": "Laat de lasagna 20 minuten rusten voor het aansnijden. Garneer met verse basilicum of peterselie."
         }
       ]
+    },
+    {
+      "id": "r1751158800",
+      "slug": "kokoskoek",
+      "titel": "Kokoskoek(taart)",
+      "beschrijving": "Smeuïge kokoskoek die iets tussen een cake en een taart in zit. Alles in een kom, roeren en bakken — makkelijker wordt het niet.",
+      "afbeelding": "",
+      "bereidingstijd": 40,
+      "actieve_tijd": 10,
+      "passieve_tijd": 30,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 8,
+      "tags": [
+        "vegetarisch",
+        "snack"
+      ],
+      "datum_toegevoegd": "2026-06-29",
+      "bron": "https://www.carolabaktzoethoudertjes.nl/post/kokoskoek-of-kokostaart-of-toch-kokoskoektaart",
+      "bron_type": "website",
+      "bron_naam": "Carola Bakt Zoethoudertjes",
+      "ingredienten": [
+        {
+          "naam": "roomboter (kamertemperatuur)",
+          "hoeveelheid": 125,
+          "eenheid": "g"
+        },
+        {
+          "naam": "fijne kristalsuiker",
+          "hoeveelheid": 275,
+          "eenheid": "g"
+        },
+        {
+          "naam": "vanillesuiker",
+          "hoeveelheid": 1,
+          "eenheid": "zakje"
+        },
+        {
+          "naam": "eieren",
+          "hoeveelheid": 2,
+          "eenheid": "stuks"
+        },
+        {
+          "naam": "geraspte kokos",
+          "hoeveelheid": 100,
+          "eenheid": "g"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 1,
+          "eenheid": "snuf"
+        },
+        {
+          "naam": "zelfrijzend bakmeel",
+          "hoeveelheid": 125,
+          "eenheid": "g"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 200°C. Bekleed een springvorm van 20-22 cm met bakpapier en vet de rand in."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Doe de zachte boter, suiker, vanillesuiker, eieren, geraspte kokos, snuf zout en zelfrijzend bakmeel in een kom. Roer alles goed door elkaar tot een glad beslag."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Schep het beslag in de springvorm en verdeel gelijkmatig."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Bak de kokoskoek 25-30 minuten goudbruin in het midden van de oven."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Laat de koek een paar uur afkoelen in de vorm voor het aansnijden."
+        }
+      ]
     }
   ]
 }
