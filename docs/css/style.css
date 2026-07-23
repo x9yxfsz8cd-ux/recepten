@@ -1,5 +1,4 @@
 /* ── TEENAGE ENGINEERING DESIGN SYSTEM ── */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
   color-scheme: light dark;
@@ -227,6 +226,7 @@ body {
   overflow: hidden;
 }
 @media (hover: hover) { .recept-card:hover { background: var(--bg); } }
+.recept-card:active { background: var(--surface-2); }
 
 .recept-card__img {
   width: 100%;
@@ -471,9 +471,10 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--border-hard);
+  background: var(--surface);
 }
 .portie-label {
   font-family: var(--mono);

@@ -13,6 +13,9 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="icon" href="./favicon.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="./img/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="manifest" href="./manifest.json">
 </head>
@@ -386,7 +389,7 @@
       input.value = huidigeWaarde;
       input.step = 'any';
       input.min = '0';
-      input.style.cssText = 'width:4rem;padding:0.2rem 0.4rem;font:inherit;font-size:0.9rem;font-weight:600;font-variant-numeric:tabular-nums;background:var(--accent-subtle);border:1px solid var(--accent-border);border-radius:8px;color:var(--accent);text-align:right;outline:none;';
+      input.style.cssText = 'width:4.5rem;padding:0.25rem 0.4rem;font-family:var(--mono);font-size:0.8125rem;font-weight:700;font-variant-numeric:tabular-nums;background:var(--surface);border:2px solid var(--accent);color:var(--accent);text-align:right;outline:none;';
 
       const eenheid = ing.eenheid;
       const eenheidSpan = document.createElement('span');
