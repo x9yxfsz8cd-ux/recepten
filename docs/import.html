@@ -10,349 +10,70 @@
   <link rel="stylesheet" href="./css/style.css">
   <link rel="manifest" href="./manifest.json">
   <style>
-    .import-wrap {
-      max-width: 680px;
-      margin: 3rem auto;
-      padding: 0 1.5rem 4rem;
-    }
-    .import-titel {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.4rem;
-      color: var(--text-heading);
-    }
-    .import-sub {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
-    .import-sectie {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.25rem;
-    }
-    .import-label {
-      display: block;
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-    .import-input,
-    .import-textarea {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      font-family: inherit;
-      font-size: 0.95rem;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      resize: vertical;
-    }
-    .import-input:focus,
-    .import-textarea:focus {
-      border-color: var(--accent-border);
-      box-shadow: 0 0 0 3.5px var(--accent-subtle);
-    }
-    .import-input::placeholder,
-    .import-textarea::placeholder { color: var(--text-muted); }
+    .import-wrap { max-width: 680px; margin: 2rem auto; padding: 0 1.5rem 4rem; }
+    .import-titel { font-family: var(--mono); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; color: var(--text); }
+    .import-sub { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 2rem; }
+    .import-sectie { background: var(--surface); border: 2px solid var(--border-hard); padding: 1.5rem; margin-bottom: 1.25rem; }
+    .import-label { display: block; font-family: var(--mono); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.6rem; }
+    .import-input, .import-textarea { width: 100%; padding: 0.75rem 1rem; font-family: var(--mono); font-size: 0.8125rem; background: var(--surface); border: 2px solid var(--border-hard); color: var(--text); outline: none; resize: vertical; }
+    .import-input:focus, .import-textarea:focus { border-color: var(--accent); }
+    .import-input::placeholder, .import-textarea::placeholder { color: var(--text-muted); }
     .import-textarea { min-height: 140px; }
-    .import-hint {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-      line-height: 1.6;
-    }
-    .import-hint a { color: var(--blue); text-decoration: none; }
-    .import-hint a:hover { color: var(--text); }
-    .import-btn {
-      width: 100%;
-      padding: 0.9rem;
-      background: var(--accent);
-      color: #ffffff;
-      border: none;
-      border-radius: 980px;
-      font-family: inherit;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.12s;
-      margin-top: 0.5rem;
-      letter-spacing: -0.011em;
-    }
-    .import-btn:hover:not(:disabled) { opacity: 0.85; }
+    .import-hint { font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.5; }
+    .import-hint a { color: var(--accent); text-decoration: none; }
+    .import-hint a:hover { text-decoration: underline; }
+    .import-btn { width: 100%; padding: 0.85rem; background: var(--border-hard); color: var(--bg); border: 2px solid var(--border-hard); font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; transition: opacity 0.1s; margin-top: 0.5rem; }
+    .import-btn:hover:not(:disabled) { opacity: 0.8; }
     .import-btn:disabled { opacity: 0.35; cursor: default; }
 
-    .status-balk {
-      display: none;
-      padding: 0.85rem 1.15rem;
-      border-radius: 10px;
-      margin-top: 1.25rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      border-left: 3px solid transparent;
-    }
-    .status-balk.laden {
-      display: block;
-      background: var(--surface);
-      border-color: var(--accent);
-      color: var(--text-muted);
-    }
-    .status-balk.fout {
-      display: block;
-      background: rgba(220, 80, 80, 0.08);
-      border-left-color: #dc5050;
-      color: #f87171;
-    }
-    .status-balk.ok {
-      display: block;
-      background: rgba(52, 199, 89, 0.08);
-      border-left-color: var(--green);
-      color: var(--green);
-    }
+    .status-balk { display: none; padding: 0.85rem 1.15rem; margin-top: 1.25rem; font-family: var(--mono); font-size: 0.75rem; font-weight: 700; border-left: 4px solid transparent; }
+    .status-balk.laden { display: block; background: var(--surface); border-color: var(--accent); color: var(--text-muted); }
+    .status-balk.fout { display: block; background: rgba(220,80,80,.06); border-color: #dc5050; color: #f87171; }
+    .status-balk.ok { display: block; background: rgba(76,175,80,.06); border-color: var(--green); color: var(--green); }
 
-    /* Tabbladen */
-    .tab-bar {
-      display: flex;
-      gap: 0.4rem;
-      margin-bottom: 1.25rem;
-    }
-    .tab-btn {
-      flex: 1;
-      padding: 0.55rem 0.75rem;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text-muted);
-      font-family: inherit;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      cursor: pointer;
-      border-radius: 980px;
-      transition: all 0.12s;
-      letter-spacing: -0.011em;
-    }
-    .tab-btn:hover { border-color: var(--border-2); color: var(--text); }
-    .tab-btn.active {
-      background: var(--accent);
-      border-color: transparent;
-      color: #ffffff;
-    }
+    .tab-bar { display: flex; gap: 2px; margin-bottom: 1.25rem; background: var(--border-hard); border: 2px solid var(--border-hard); }
+    .tab-btn { flex: 1; padding: 0.65rem 0.75rem; border: none; background: var(--surface); color: var(--text-muted); font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; transition: all 0.1s; }
+    .tab-btn:hover { background: var(--bg); color: var(--text); }
+    .tab-btn.active { background: var(--accent); color: #fff; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
-    /* Foto upload */
-    .foto-knoppen {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-    .foto-knop {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 1.5rem 1rem;
-      border: 1px dashed var(--border-2);
-      border-radius: 14px;
-      background: transparent;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: border-color 0.15s, background 0.15s, color 0.15s;
-      font-family: inherit;
-      font-size: 0.9375rem;
-      line-height: 1.5;
-      text-align: center;
-    }
-    .foto-knop:hover, .foto-knop.dragover {
-      border-color: var(--accent-border);
-      background: var(--accent-subtle);
-      color: var(--accent);
-    }
+    .foto-knoppen { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border-hard); border: 2px solid var(--border-hard); margin-bottom: 0.75rem; }
+    .foto-knop { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; padding: 1.5rem 1rem; border: none; background: var(--surface); color: var(--text-muted); cursor: pointer; transition: background 0.1s, color 0.1s; font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; text-align: center; }
+    .foto-knop:hover, .foto-knop.dragover { background: var(--bg); color: var(--accent); }
     .foto-knop svg { opacity: 0.7; }
     .foto-knop:hover svg, .foto-knop.dragover svg { opacity: 1; }
-    .foto-drop-zone {
-      border: 1px dashed var(--border);
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.875rem;
-      transition: border-color 0.15s, background 0.15s;
-    }
-    .foto-drop-zone.dragover {
-      border-color: var(--accent-border);
-      background: var(--accent-subtle);
-    }
+    .foto-drop-zone { border: 2px dashed var(--border); padding: 1rem; text-align: center; color: var(--text-muted); font-size: 0.8125rem; transition: border-color 0.1s; }
+    .foto-drop-zone.dragover { border-color: var(--accent); }
     .foto-drop-zone input { display: none; }
-    .foto-thumbs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-    }
-    .foto-thumb {
-      position: relative;
-      width: 80px;
-      height: 80px;
-      border-radius: 6px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .foto-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .foto-thumb__del {
-      position: absolute;
-      top: -4px;
-      right: -4px;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.7);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      line-height: 28px;
-      text-align: center;
-      padding: 0;
-    }
-    @media (max-width: 480px) {
-      .foto-knop { padding: 1.75rem 1rem; }
-    }
+    .foto-thumbs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    .foto-thumb { position: relative; width: 80px; height: 80px; overflow: hidden; border: 2px solid var(--border-hard); }
+    .foto-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .foto-thumb__del { position: absolute; top: -2px; right: -2px; width: 28px; height: 28px; background: var(--border-hard); color: var(--bg); border: none; cursor: pointer; font-size: 14px; line-height: 28px; text-align: center; padding: 0; }
+    @media (max-width: 480px) { .foto-knop { padding: 1.75rem 1rem; } }
 
-    /* Preview */
     .preview-blok { display: none; margin-top: 1.5rem; }
     .preview-blok.zichtbaar { display: block; }
-    .preview-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-      gap: 1rem;
-    }
-    .preview-titel {
-      font-size: 1.375rem;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      color: var(--text-heading);
-    }
-    .preview-meta {
-      display: flex;
-      gap: 0.75rem;
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      margin-top: 0.3rem;
-      font-variant-numeric: tabular-nums;
-    }
-    .preview-content {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+    .preview-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem; gap: 1rem; }
+    .preview-titel { font-size: 1.25rem; font-weight: 700; color: var(--text); }
+    .preview-meta { display: flex; gap: 0.75rem; font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem; font-variant-numeric: tabular-nums; }
+    .preview-content { display: grid; grid-template-columns: 1fr 1.4fr; gap: 2px; background: var(--border-hard); border: 2px solid var(--border-hard); margin-top: 1rem; }
     @media (max-width: 560px) { .preview-content { grid-template-columns: 1fr; } }
-    .preview-ingredienten {
-      background: var(--glass);
-      backdrop-filter: blur(24px) saturate(150%);
-      -webkit-backdrop-filter: blur(24px) saturate(150%);
-      border: 1px solid var(--glass-border);
-      border-top-color: var(--glass-hi);
-      border-radius: 12px;
-      padding: 1.25rem;
-    }
-    .preview-stappen {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .preview-stap {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem 1.25rem;
-      font-size: 0.88rem;
-      line-height: 1.6;
-      display: flex;
-      gap: 0.75rem;
-    }
-    .preview-stap-nr {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: var(--accent);
-      font-variant-numeric: tabular-nums;
-      min-width: 1.5rem;
-    }
+    .preview-ingredienten { background: var(--surface); padding: 1.25rem; }
+    .preview-stappen { display: flex; flex-direction: column; gap: 0.5rem; background: var(--surface); padding: 1.25rem; }
+    .preview-stap { background: var(--surface); border: 1px solid var(--border); padding: 1rem 1.25rem; font-size: 0.875rem; line-height: 1.6; display: flex; gap: 0.75rem; }
+    .preview-stap-nr { font-family: var(--mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; min-width: 1.5rem; }
 
-    /* Bron bewerkbaar */
-    .bron-edit {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      margin-top: 1rem;
-    }
-    .bron-edit label {
-      font-size: 0.8125rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      white-space: nowrap;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-    .bron-edit input {
-      flex: 1;
-      padding: 0.4rem 0.7rem;
-      font-family: inherit;
-      font-size: 0.9375rem;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.12s, box-shadow 0.12s;
-    }
-    .bron-edit input:focus { border-color: var(--accent-border); }
+    .bron-edit { display: flex; gap: 0.5rem; align-items: center; margin-top: 1rem; }
+    .bron-edit label { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; font-weight: 700; color: var(--text-muted); }
+    .bron-edit input { flex: 1; padding: 0.4rem 0.7rem; font-family: var(--mono); font-size: 0.8125rem; background: var(--surface); border: 2px solid var(--border-hard); color: var(--text); outline: none; }
+    .bron-edit input:focus { border-color: var(--accent); }
 
-    .opslaan-sectie {
-      margin-top: 1.5rem;
-      display: flex;
-      gap: 0.75rem;
-    }
-    .opslaan-btn {
-      flex: 1;
-      padding: 0.9rem;
-      border-radius: 980px;
-      border: 1px solid transparent;
-      font-family: inherit;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      letter-spacing: -0.011em;
-      cursor: pointer;
-      transition: opacity 0.12s;
-    }
-    .opslaan-btn--opslaan {
-      background: var(--accent);
-      color: #ffffff;
-      border-color: transparent;
-    }
+    .opslaan-sectie { margin-top: 1.5rem; display: flex; gap: 2px; background: var(--border-hard); }
+    .opslaan-btn { flex: 1; padding: 0.85rem; border: none; font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; transition: opacity 0.1s; }
+    .opslaan-btn--opslaan { background: var(--accent); color: #fff; }
     .opslaan-btn--opslaan:hover { opacity: 0.85; }
-    .opslaan-btn--nieuw {
-      background: var(--surface-2);
-      color: var(--text-muted);
-      border-color: var(--border);
-    }
+    .opslaan-btn--nieuw { background: var(--surface); color: var(--text-muted); }
     .opslaan-btn--nieuw:hover { opacity: 0.7; }
   </style>
 </head>
