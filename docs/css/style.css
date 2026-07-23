@@ -35,6 +35,40 @@
   }
 }
 
+[data-theme="dark"] {
+  --bg: #141413; --surface: #1E1E1C; --surface-2: #282825;
+  --border: #333330; --border-hard: #444440;
+  --text: #DDDDD6; --text-muted: #7A7A72;
+  --accent: #FF6D3F; --accent-subtle: rgba(255,109,63,.08); --green: #66BB6A;
+}
+[data-theme="light"] {
+  --bg: #F5F5F0; --surface: #FFFFFF; --surface-2: #EDEDEA;
+  --border: #D4D4CC; --border-hard: #1A1A1A;
+  --text: #1A1A1A; --text-muted: #999990;
+  --accent: #FF5722; --accent-subtle: rgba(255,87,34,.06); --green: #4CAF50;
+}
+
+/* ── THEME TOGGLE ── */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 300;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--border-hard);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: opacity 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover: hover) { .theme-toggle:hover { opacity: 0.7; } }
+
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; }
@@ -294,8 +328,6 @@ body {
 .recept-detail__header {
   display: grid;
   grid-template-columns: 1fr 260px;
-  gap: 2px;
-  background: var(--border-hard);
   border: 2px solid var(--border-hard);
   margin-bottom: 2rem;
 }
@@ -306,7 +338,9 @@ body {
 .recept-detail__header-tekst {
   background: var(--surface);
   padding: 2rem;
+  border-right: 2px solid var(--border-hard);
 }
+.recept-detail__header--geen-foto .recept-detail__header-tekst { border-right: none; }
 
 .recept-detail__title {
   font-family: var(--sans);
@@ -359,18 +393,17 @@ body {
 .recept-content {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 2px;
-  background: var(--border-hard);
   border: 2px solid var(--border-hard);
   align-items: start;
 }
 
 @media (max-width: 900px) {
   .recept-detail__header { grid-template-columns: 1fr; }
+  .recept-detail__header-tekst { border-right: none; border-bottom: 2px solid var(--border-hard); }
   .recept-header-foto { aspect-ratio: 16/9; order: -1; }
   .recept-content { grid-template-columns: 1fr; }
   .recept-detail__title { font-size: 1.5rem; }
-  .ingredienten-blok { position: static !important; top: unset !important; }
+  .ingredienten-blok { position: static !important; top: unset !important; border-right: none; border-bottom: 2px solid var(--border-hard); }
 }
 
 @media (max-width: 480px) {
@@ -386,6 +419,7 @@ body {
   position: sticky;
   top: 0;
   color: var(--text);
+  border-right: 2px solid var(--border-hard);
 }
 
 .blok-titel {
@@ -739,13 +773,26 @@ body {
   margin-top: 0.25rem;
 }
 
+/* ── RECEPT ACTIES ── */
+.recept-acties {
+  margin-top: 1.5rem;
+  border: 2px solid var(--border-hard);
+  padding: 1.5rem;
+  background: var(--surface);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 /* ── BRON ── */
 .bron-label {
   font-family: var(--mono);
   font-size: 0.75rem;
   color: var(--text-muted);
-  margin-top: 0.75rem;
   display: block;
+  width: 100%;
+  margin-bottom: 0.25rem;
 }
 .bron-link { color: var(--accent); text-decoration: none; }
 @media (hover: hover) { .bron-link:hover { text-decoration: underline; } }
@@ -762,7 +809,6 @@ body {
   border: 2px solid var(--border);
   padding: 0.625rem 1rem;
   cursor: pointer;
-  margin-top: 0.75rem;
   transition: opacity 0.1s;
 }
 @media (hover: hover) { .print-btn:hover { border-color: var(--text); color: var(--text); } }
@@ -779,8 +825,6 @@ body {
   border: 2px solid var(--border);
   padding: 0.625rem 1rem;
   cursor: pointer;
-  margin-top: 0.5rem;
-  width: 100%;
   transition: all 0.1s;
 }
 @media (hover: hover) { .boodschappen-btn:hover { border-color: var(--text); color: var(--text); } }
@@ -963,7 +1007,8 @@ body {
 
   .site-header, .terug-link, .portie-schaler, .kookmodus-btn,
   .kookmodus-overlay, .voeding-sectie, .bron-label, .print-btn,
-  .boodschappen-btn, .recept-detail__tags, .bottom-tab-bar { display: none !important; }
+  .boodschappen-btn, .recept-detail__tags, .bottom-tab-bar,
+  .theme-toggle, .recept-acties { display: none !important; }
 
   .recept-header-foto { max-height: 200px; aspect-ratio: auto; border: none; }
   .recept-detail__header { grid-template-columns: 1fr 160px; gap: 1rem; border: 1px solid #ccc; background: transparent; }
