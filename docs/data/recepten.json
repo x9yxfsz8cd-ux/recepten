@@ -2384,13 +2384,13 @@
         },
         {
           "naam": "bleekselderij blaadjes gehakt (optioneel)",
-          "hoeveelheid": 120.0,
-          "eenheid": "ml"
+          "hoeveelheid": 8,
+          "eenheid": "el"
         },
         {
           "naam": "peterselie gehakt (optioneel)",
-          "hoeveelheid": 80.0,
-          "eenheid": "ml"
+          "hoeveelheid": 5,
+          "eenheid": "el"
         },
         {
           "naam": "zeezout vlokken voor garnering",
@@ -2689,7 +2689,7 @@
         {
           "naam": "knoflook",
           "hoeveelheid": 2,
-          "eenheid": "teentjes"
+          "eenheid": "stuks"
         },
         {
           "naam": "chilivlokken",
@@ -2699,7 +2699,7 @@
         {
           "naam": "rozemarijn (flinke takjes)",
           "hoeveelheid": 2,
-          "eenheid": "takjes"
+          "eenheid": "stuks"
         },
         {
           "naam": "zeezout",
@@ -2770,9 +2770,9 @@
       ],
       "ingredienten": [
         {
-          "naam": "1 blikje tonijn (op water, MSC)",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "tonijn (op water, MSC)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks"
         },
         {
           "naam": "limoen",
@@ -2792,7 +2792,7 @@
         {
           "naam": "verse bieslook",
           "hoeveelheid": 2,
-          "eenheid": "takjes"
+          "eenheid": "stuks"
         },
         {
           "naam": "mayonaise",
@@ -3004,9 +3004,9 @@
           "eenheid": "g"
         },
         {
-          "naam": "1 snuifje zout",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "zout",
+          "hoeveelheid": 1,
+          "eenheid": "snuf"
         },
         {
           "naam": "ei (losgeklopt)",
@@ -3128,12 +3128,12 @@
         {
           "naam": "peterselie",
           "hoeveelheid": 1,
-          "eenheid": "bosje"
+          "eenheid": "stuks"
         },
         {
           "naam": "knoflook",
           "hoeveelheid": 1,
-          "eenheid": "teentje"
+          "eenheid": "stuks"
         },
         {
           "naam": "olijfolie extra vierge",
@@ -3216,7 +3216,7 @@
         {
           "naam": "knoflook (voor pesto)",
           "hoeveelheid": 1,
-          "eenheid": "teentje"
+          "eenheid": "stuks"
         },
         {
           "naam": "cashew- of walnoten",
@@ -3261,7 +3261,7 @@
         {
           "naam": "knoflook",
           "hoeveelheid": 1,
-          "eenheid": "teentje"
+          "eenheid": "stuks"
         },
         {
           "naam": "ui",
@@ -3417,7 +3417,7 @@
         {
           "naam": "knoflook (geraspt)",
           "hoeveelheid": 3,
-          "eenheid": "teentjes"
+          "eenheid": "stuks"
         },
         {
           "naam": "citroenrasp",
@@ -3503,7 +3503,7 @@
         {
           "naam": "vanillesuiker",
           "hoeveelheid": 1,
-          "eenheid": "zakje"
+          "eenheid": "stuks"
         },
         {
           "naam": "eieren",

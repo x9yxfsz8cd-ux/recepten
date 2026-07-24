@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F5F5F0">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1A1A18">
   <title>Recept importeren</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="icon" href="./favicon.png" type="image/png" sizes="32x32">
@@ -24,9 +26,9 @@
     .import-textarea { min-height: 140px; }
     .import-hint { font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.5; }
     .import-hint a { color: var(--accent); text-decoration: none; }
-    .import-hint a:hover { text-decoration: underline; }
+    @media (hover: hover) { .import-hint a:hover { text-decoration: underline; } }
     .import-btn { width: 100%; padding: 0.85rem; background: var(--accent); color: #fff; border: 2px solid var(--accent); font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; transition: opacity 0.1s; margin-top: 0.5rem; }
-    .import-btn:hover:not(:disabled) { opacity: 0.8; }
+    @media (hover: hover) { .import-btn:hover:not(:disabled) { opacity: 0.8; } }
     .import-btn:disabled { opacity: 0.35; cursor: default; }
 
     .status-balk { display: none; padding: 0.85rem 1.15rem; margin-top: 1.25rem; font-family: var(--mono); font-size: 0.75rem; font-weight: 700; border-left: 4px solid transparent; }
@@ -36,16 +38,18 @@
 
     .tab-bar { display: flex; gap: 2px; margin-bottom: 1.25rem; background: var(--border-hard); border: 2px solid var(--border-hard); }
     .tab-btn { flex: 1; padding: 0.65rem 0.75rem; border: none; background: var(--surface); color: var(--text-muted); font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; transition: all 0.1s; }
-    .tab-btn:hover { background: var(--bg); color: var(--text); }
+    @media (hover: hover) { .tab-btn:hover { background: var(--bg); color: var(--text); } }
     .tab-btn.active { background: var(--accent); color: #fff; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
 
     .foto-knoppen { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border-hard); border: 2px solid var(--border-hard); margin-bottom: 0.75rem; }
     .foto-knop { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; padding: 1.5rem 1rem; border: none; background: var(--surface); color: var(--text-muted); cursor: pointer; transition: background 0.1s, color 0.1s; font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; text-align: center; }
-    .foto-knop:hover, .foto-knop.dragover { background: var(--bg); color: var(--accent); }
+    .foto-knop.dragover { background: var(--bg); color: var(--accent); }
+    @media (hover: hover) { .foto-knop:hover { background: var(--bg); color: var(--accent); } }
     .foto-knop svg { opacity: 0.7; }
-    .foto-knop:hover svg, .foto-knop.dragover svg { opacity: 1; }
+    .foto-knop.dragover svg { opacity: 1; }
+    @media (hover: hover) { .foto-knop:hover svg { opacity: 1; } }
     .foto-drop-zone { border: 2px dashed var(--border); padding: 1rem; text-align: center; color: var(--text-muted); font-size: 0.8125rem; transition: border-color 0.1s; }
     .foto-drop-zone.dragover { border-color: var(--accent); }
     .foto-drop-zone input { display: none; }
@@ -75,9 +79,9 @@
     .opslaan-sectie { margin-top: 1.5rem; display: flex; gap: 2px; background: var(--border-hard); border: 2px solid var(--border-hard); }
     .opslaan-btn { flex: 1; padding: 0.85rem; border: none; font-family: var(--mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; transition: opacity 0.1s; }
     .opslaan-btn--opslaan { background: var(--accent); color: #fff; }
-    .opslaan-btn--opslaan:hover { opacity: 0.85; }
+    @media (hover: hover) { .opslaan-btn--opslaan:hover { opacity: 0.85; } }
     .opslaan-btn--nieuw { background: var(--surface); color: var(--text-muted); }
-    .opslaan-btn--nieuw:hover { opacity: 0.7; }
+    @media (hover: hover) { .opslaan-btn--nieuw:hover { opacity: 0.7; } }
   </style>
 </head>
 <body>
