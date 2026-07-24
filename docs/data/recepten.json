@@ -4,7 +4,7 @@
       "id": "r001",
       "titel": "Pasta al Limone",
       "slug": "pasta-al-limone",
-      "beschrijving": "Romige Italiaanse pasta met verse citroen en Parmezaan. Klaar in 20 minuten.",
+      "beschrijving": "Romige Italiaanse pasta met verse citroen en Parmezaan. Klaar in 25 minuten.",
       "afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "makkelijk",
@@ -349,7 +349,7 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Breng een grote pot met veel zout en water aan de kook. Snijd de knoflookteentjes dun en hak de peterseliebladerenerg fijn (zonder de dikke stengels)."
+          "tekst": "Breng een grote pot met veel zout en water aan de kook. Snijd de knoflookteentjes dun en hak de peterseliebladeren erg fijn (zonder de dikke stengels)."
         },
         {
           "nummer": 2,
@@ -621,11 +621,6 @@
       ],
       "ingredienten": [
         {
-          "naam": "water of groentebouillon",
-          "hoeveelheid": 1200.0,
-          "eenheid": "ml"
-        },
-        {
           "naam": "ui",
           "hoeveelheid": 1.0,
           "eenheid": "stuks"
@@ -740,8 +735,8 @@
         },
         {
           "naam": "hazelnoten, kleingehakt en kort geroosterd",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
+          "hoeveelheid": 30,
+          "eenheid": "g"
         },
         {
           "naam": "rucola",
@@ -1165,8 +1160,8 @@
         },
         {
           "naam": "dunne eiernoedels of wonton noedels of ramen",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
+          "hoeveelheid": 100,
+          "eenheid": "g"
         },
         {
           "naam": "chili olie",
@@ -1681,7 +1676,7 @@
       "slug": "gepofte-zoete-aardappel",
       "beschrijving": "Geroosterde zoete aardappelen gevuld met een verse tomatensalsa en feta.",
       "afbeelding": "https://uitpaulineskeuken.nl/wp-content/smush-webp/2013/11/gepofte-zoete-aardappel-1-300x150.jpg.webp",
-      "bereidingstijd": 40,
+      "bereidingstijd": 60,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
@@ -1761,7 +1756,7 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 25
+      "passieve_tijd": 45
     },
     {
       "id": "r1774543376",
@@ -1790,7 +1785,7 @@
         },
         {
           "naam": "boter",
-          "hoeveelheid": 150.0,
+          "hoeveelheid": 30,
           "eenheid": "g"
         },
         {
@@ -1807,7 +1802,7 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Oven voorverwarmen op 160°C. Zalm afdeppen met keukenpapier en in een ovenschaal met zilverpapier leggen. De halve citroen fijnraspen en met 150 g boter mengen, samen met peper, zout en citroensap van 1,5 citroen."
+          "tekst": "Oven voorverwarmen op 160°C. Zalm afdeppen met keukenpapier en in een ovenschaal met zilverpapier leggen. De halve citroen fijnraspen en met 30 g boter mengen, samen met peper, zout en citroensap van 1,5 citroen."
         },
         {
           "nummer": 2,
@@ -1837,7 +1832,7 @@
       "slug": "pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie",
       "beschrijving": "Een pittige oven-schotel met geroosterde groenten, halloumi en spinazie, geserveerd op platbrood met yoghurt.",
       "afbeelding": "https://www.groentenabonnement.nl/wp-content/uploads/2020/10/Broccoli-met-halloumi.jpg",
-      "bereidingstijd": 25,
+      "bereidingstijd": 35,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -1879,7 +1874,7 @@
         {
           "naam": "zeezout",
           "hoeveelheid": 1.0,
-          "eenheid": "stuks"
+          "eenheid": "snuf"
         },
         {
           "naam": "citroen, sap",
@@ -1926,7 +1921,7 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
-      "passieve_tijd": 15
+      "passieve_tijd": 25
     },
     {
       "id": "r1774543390",
@@ -1939,7 +1934,6 @@
       "porties": 3,
       "tags": [
         "vegetarisch",
-        "snel",
         "comfort food",
         "Italiaans",
         "diner"
@@ -2151,7 +2145,7 @@
       "titel": "Lorenzo's pasta",
       "slug": "lorenzo-s-pasta",
       "beschrijving": "Klassieke Italiaanse pasta met geroosterde tomaten, knapperige bacon en Parmigiano.",
-      "afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
+      "afbeelding": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=800&q=80",
       "bereidingstijd": 27,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2240,15 +2234,13 @@
       "titel": "Gazpacho",
       "slug": "gazpacho",
       "beschrijving": "Een verfrissende, ijskoude tomatensorep perfect voor warme dagen, bereid met verse groenten en olijfolie.",
-      "afbeelding": "https://hips.hearstapps.com/hmg-prod/images/gazpacho-index-6691419fe48a9.jpg?crop=1.00xw:1.00xh;0,0&amp;resize=1200:*",
+      "afbeelding": "https://hips.hearstapps.com/hmg-prod/images/gazpacho-index-6691419fe48a9.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*",
       "bereidingstijd": 75,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
       "tags": [
         "vegetarisch",
-        "Aziatisch",
-        "lunch",
-        "snel"
+        "lunch"
       ],
       "ingredienten": [
         {
@@ -2363,7 +2355,7 @@
         {
           "naam": "suiker",
           "hoeveelheid": 1.0,
-          "eenheid": "stuks"
+          "eenheid": "snuf"
         },
         {
           "naam": "ongezouten boter",
@@ -2553,7 +2545,7 @@
       "titel": "Bonen 'risotto' (Bonensotto)",
       "slug": "bonen-risotto-bonensotto",
       "beschrijving": "Een romige bonenschotel met de textuur van risotto, gemaakt met boterzachte witte bonen in plaats van rijst.",
-      "afbeelding": "https://substackcdn.com/image/fetch/$s_!J3uS!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1030a721-8a23-451f-afa8-8f4977ccfe50_2506x3342.jpeg",
+      "afbeelding": "https://substack-post-media.s3.amazonaws.com/public/images/1030a721-8a23-451f-afa8-8f4977ccfe50_2506x3342.jpeg",
       "bereidingstijd": 35,
       "actieve_tijd": 20,
       "passieve_tijd": 15,
@@ -2566,9 +2558,9 @@
       ],
       "ingredienten": [
         {
-          "naam": "queen butter beans (of andere witte bonen van goede kwaliteit)",
-          "hoeveelheid": 1.0,
-          "eenheid": "stuks"
+          "naam": "witte bonen (queen butter beans), pot",
+          "hoeveelheid": 700,
+          "eenheid": "g"
         },
         {
           "naam": "grote preien, alleen het wit en lichtgroen, in ringetjes",
@@ -3571,8 +3563,8 @@
       "ingredienten": [
         {
           "naam": "falafelballetjes (kant-en-klaar)",
-          "hoeveelheid": 1,
-          "eenheid": "verpakking"
+          "hoeveelheid": 12,
+          "eenheid": "stuks"
         },
         {
           "naam": "flatbreads",
@@ -3586,8 +3578,8 @@
         },
         {
           "naam": "cherrytomaatjes, gehalveerd",
-          "hoeveelheid": 1,
-          "eenheid": "handje"
+          "hoeveelheid": 150,
+          "eenheid": "g"
         },
         {
           "naam": "komkommer, in blokjes",
@@ -3646,7 +3638,13 @@
           "nummer": 5,
           "tekst": "Verwarm de 4 flatbreads kort in de oven of magnetron. Verdeel de tomatensalade, falafel, 50g verkruimelde feta en ingelegde uiringen erover. Lepel de saus erop en serveer direct."
         }
-      ]
+      ],
+      "voedingswaarden": {
+        "kcal": 620,
+        "eiwitten": 22,
+        "koolhydraten": 68,
+        "vetten": 28
+      }
     }
   ]
 }
