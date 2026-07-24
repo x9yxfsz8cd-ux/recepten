@@ -316,8 +316,8 @@
       ],
       "ingredienten": [
         {
-          "naam": "knoflook, uiteen en geschild",
-          "hoeveelheid": 0.5,
+          "naam": "knoflookbol, uiteen en geschild",
+          "hoeveelheid": 1,
           "eenheid": "stuks"
         },
         {
@@ -344,6 +344,11 @@
           "naam": "citroen",
           "hoeveelheid": 0.5,
           "eenheid": "stuks"
+        },
+        {
+          "naam": "zout en peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
         }
       ],
       "stappen": [
@@ -2770,24 +2775,24 @@
           "eenheid": "naar smaak"
         },
         {
-          "naam": "½ limoen",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "limoen",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks"
         },
         {
-          "naam": "¼ rode peper",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "rode peper",
+          "hoeveelheid": 0.25,
+          "eenheid": "stuks"
         },
         {
-          "naam": "3 augurken",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "augurken",
+          "hoeveelheid": 3,
+          "eenheid": "stuks"
         },
         {
-          "naam": "2 takjes verse bieslook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "naam": "verse bieslook",
+          "hoeveelheid": 2,
+          "eenheid": "takjes"
         },
         {
           "naam": "mayonaise",
@@ -2925,6 +2930,11 @@
           "naam": "jus (optioneel)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
+        },
+        {
+          "naam": "rucola",
+          "hoeveelheid": 50,
+          "eenheid": "g"
         }
       ],
       "stappen": [
@@ -3049,7 +3059,7 @@
         },
         {
           "nummer": 4,
-          "tekst": "Schil de appels, snijd in schijfjes en besprenkel met citroensap. Voeg kaneel, kristalsuiker, custardpoeder en citroensap toe en meng goed."
+          "tekst": "Schil de appels, snijd in schijfjes en besprenkel met citroensap. Voeg kaneel, kristalsuiker, custardpoeder, 50 g cranberries en citroensap toe en meng goed."
         },
         {
           "nummer": 5,
@@ -3116,22 +3126,22 @@
           "eenheid": "stuks"
         },
         {
-          "naam": "1 ciuffo Peterselie",
+          "naam": "peterselie",
+          "hoeveelheid": 1,
+          "eenheid": "bosje"
+        },
+        {
+          "naam": "knoflook",
+          "hoeveelheid": 1,
+          "eenheid": "teentje"
+        },
+        {
+          "naam": "olijfolie extra vierge",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         },
         {
-          "naam": "1 spicchio Knoflook",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "naar smaak Olijfolie extra vergine",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "naar smaak Zout",
+          "naam": "zout",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
@@ -3537,7 +3547,13 @@
           "nummer": 5,
           "tekst": "Laat de koek een paar uur afkoelen in de vorm voor het aansnijden."
         }
-      ]
+      ],
+      "voedingswaarden": {
+        "kcal": 380,
+        "eiwitten": 4,
+        "koolhydraten": 48,
+        "vetten": 20
+      }
     },
     {
       "id": "r1751158900",
@@ -3545,9 +3561,9 @@
       "titel": "Falafel wraps met flatbread en feta",
       "beschrijving": "Snelle vegetarische wraps met krokante falafel, frisse tomatensalade, ingelegde rode ui en een romige hummus-yoghurtsaus.",
       "afbeelding": "https://denisekortlever.com/wp-content/uploads/2021/02/falafel-flatbread-wrap-roze-ui-2-846x1024-1.jpg",
-      "bereidingstijd": 15,
+      "bereidingstijd": 30,
       "actieve_tijd": 15,
-      "passieve_tijd": 0,
+      "passieve_tijd": 15,
       "moeilijkheidsgraad": "makkelijk",
       "porties": 2,
       "tags": [
@@ -3613,6 +3629,11 @@
         },
         {
           "naam": "olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak"
+        },
+        {
+          "naam": "zout en peper",
           "hoeveelheid": 0,
           "eenheid": "naar smaak"
         }
