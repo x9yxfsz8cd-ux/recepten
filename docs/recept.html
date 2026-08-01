@@ -559,7 +559,8 @@
       // Mae modus
       const maeToggle = document.getElementById('mae-toggle');
       if (maeToggle) {
-        let maeActief = localStorage.getItem('mae_modus') === 'true';
+        const maeKey = `mae_${recept.id}`;
+        let maeActief = localStorage.getItem(maeKey) === 'true';
         const maeKeywords = /zout|peper|kruiden|chili|harissa|sojasaus|ketjap|tabasco|sambal|cayenne|paprikapoeder|mosterd|za'atar|shoarma/i;
 
         function updateMaeModus() {
@@ -598,7 +599,7 @@
 
         maeToggle.addEventListener('click', () => {
           maeActief = !maeActief;
-          localStorage.setItem('mae_modus', maeActief);
+          localStorage.setItem(maeKey, maeActief);
           updateMaeModus();
         });
       }
