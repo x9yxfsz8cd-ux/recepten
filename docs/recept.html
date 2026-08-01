@@ -521,7 +521,12 @@
             <button class="portie-btn" id="min-btn">−</button>
             <span class="portie-aantal">${huidigPorties}</span>
             <button class="portie-btn" id="plus-btn">+</button>
+            ${r.tags.includes('babyvriendelijk') ? `<button class="mae-toggle" id="mae-toggle">Mae modus</button>` : ''}
           </div>
+          ${r.tags.includes('babyvriendelijk') ? `<div class="mae-banner" id="mae-banner" style="display:none">
+            <div class="mae-banner__title">Mae modus actief</div>
+            <div class="mae-banner__tekst">Stappen met kruiden/zout zijn gemarkeerd. Schep Mae's portie apart vóór het op smaak brengen.</div>
+          </div>` : ''}
 
           <div class="recept-content">
             <div class="ingredienten-blok">
@@ -550,6 +555,53 @@
         huidigPorties++;
         updateIngredientHoeveelheden();
       });
+
+      // Mae modus
+      const maeToggle = document.getElementById('mae-toggle');
+      if (maeToggle) {
+        let maeActief = localStorage.getItem('mae_modus') === 'true';
+        const maeKeywords = /zout|peper|kruiden|chili|harissa|sojasaus|ketjap|tabasco|sambal|cayenne|paprikapoeder|mosterd|za'atar|shoarma/i;
+
+        function updateMaeModus() {
+          const banner = document.getElementById('mae-banner');
+          maeToggle.classList.toggle('mae-toggle--actief', maeActief);
+          banner.style.display = maeActief ? '' : 'none';
+
+          document.querySelectorAll('.stap').forEach(stap => {
+            const tekst = stap.querySelector('.stap-tekst')?.textContent || '';
+            const bestaandeTip = stap.querySelector('.mae-tip');
+            if (bestaandeTip) bestaandeTip.remove();
+
+            if (maeActief && maeKeywords.test(tekst)) {
+              const tip = document.createElement('div');
+              tip.className = 'mae-tip';
+              tip.textContent = 'Mae: schep haar portie apart vóór deze stap';
+              stap.appendChild(tip);
+            }
+          });
+
+          // Also mark ingredients
+          document.querySelectorAll('.ingredienten-lijst li').forEach((li, i) => {
+            const naam = recept.ingredienten[i]?.naam || '';
+            const bestaand = li.querySelector('.mae-skip');
+            if (bestaand) bestaand.remove();
+            if (maeActief && maeKeywords.test(naam)) {
+              const skip = document.createElement('span');
+              skip.className = 'mae-skip';
+              skip.textContent = 'overslaan voor Mae';
+              li.appendChild(skip);
+            }
+          });
+        }
+
+        if (maeActief) updateMaeModus();
+
+        maeToggle.addEventListener('click', () => {
+          maeActief = !maeActief;
+          localStorage.setItem('mae_modus', maeActief);
+          updateMaeModus();
+        });
+      }
 
       // Kookmodus knop
       document.getElementById('kookmodus-btn').addEventListener('click', openKookmodus);
