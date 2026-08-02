@@ -1,4 +1,4 @@
-const CACHE = 'recepten-v34';
+const CACHE = 'recepten-v35';
 const STATISCH = [
   './index.html',
   './recept.html',
