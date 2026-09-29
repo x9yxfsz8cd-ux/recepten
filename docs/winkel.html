@@ -189,8 +189,8 @@
 
     async function init() {
       const [rRes, pRes] = await Promise.all([
-        fetch('./data/recepten.json'),
-        fetch('./data/ah-producten.json').catch(() => null),
+        fetch('./data/recepten.json', { cache: 'no-cache' }),
+        fetch('./data/ah-producten.json', { cache: 'no-cache' }).catch(() => null),
       ]);
       recepten = (await rRes.json()).recepten;
       if (pRes && pRes.ok) producten = await pRes.json().catch(() => ({}));

@@ -667,7 +667,7 @@
         <div class="hero-wrap">
           ${r.afbeelding
             ? `<img class="recept-hero" src="${r.afbeelding}" alt="">`
-            : `<div class="recept-hero-placeholder"></div>`}
+            : `<div class="recept-hero-placeholder"><span>${r.titel.trim()[0] || '?'}</span></div>`}
           <div class="hero-acties">
             <a class="rondknop" href="./index.html" aria-label="Terug">
               <svg class="ic" viewBox="0 0 24 24"><use href="#i-terug"/></svg></a>
@@ -842,8 +842,8 @@
       if (!id) { toonNietGevonden(); return; }
 
       const [res, ahRes] = await Promise.all([
-        fetch('./data/recepten.json'),
-        fetch('./data/ah-producten.json').catch(() => null),
+        fetch('./data/recepten.json', { cache: 'no-cache' }),
+        fetch('./data/ah-producten.json', { cache: 'no-cache' }).catch(() => null),
       ]);
       const data = await res.json();
       // Productfoto's zijn een extra: zonder AH-data werkt de pagina gewoon

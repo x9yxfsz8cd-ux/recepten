@@ -712,7 +712,7 @@ BELANGRIJKE REGELS:
 
       let bestaand = { recepten: [] };
       try {
-        const res = await fetch('./data/recepten.json');
+        const res = await fetch('./data/recepten.json', { cache: 'no-cache' });
         bestaand = await res.json();
       } catch {}
 

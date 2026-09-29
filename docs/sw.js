@@ -2,7 +2,7 @@
    De productfoto's moeten offline beschikbaar zijn: juist in de kelder van een
    supermarkt heb je geen bereik, en daar is het winkelscherm voor bedoeld. */
 
-const CACHE = 'recepten-v5';
+const CACHE = 'recepten-v6';
 
 const STATISCH = [
   './',
@@ -24,8 +24,8 @@ async function vulCache() {
 
   try {
     const [recepten, producten] = await Promise.all([
-      fetch('./data/recepten.json').then(r => r.json()),
-      fetch('./data/ah-producten.json').then(r => r.json()).catch(() => ({})),
+      fetch('./data/recepten.json', { cache: 'no-cache' }).then(r => r.json()),
+      fetch('./data/ah-producten.json', { cache: 'no-cache' }).then(r => r.json()).catch(() => ({})),
     ]);
     await cache.put('./data/recepten.json',
       new Response(JSON.stringify({ recepten: recepten.recepten }),
@@ -66,7 +66,9 @@ self.addEventListener('fetch', e => {
   // Data: netwerk eerst, zodat nieuwe recepten meteen doorkomen
   if (url.pathname.endsWith('.json')) {
     e.respondWith(
-      fetch(e.request)
+      // no-cache dwingt hercontrole af; anders serveert de HTTP-cache van de
+      // browser oude receptdata en zie je wijzigingen niet terug
+      fetch(new Request(e.request, { cache: 'no-cache' }))
         .then(res => {
           const kopie = res.clone();
           caches.open(CACHE).then(c => c.put(e.request, kopie));

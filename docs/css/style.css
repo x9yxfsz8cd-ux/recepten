@@ -147,6 +147,16 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:.5rem .75rem
 .recept-card__img,.recept-card__img-placeholder{
   width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:13px;
   background:var(--laag-2); display:block }
+/* Nog geen foto? Dan de beginletter in de serif, zodat de kaart bedoeld
+   oogt in plaats van stuk. */
+.recept-card__img-placeholder{ display:grid; place-items:center;
+  border:1px solid var(--lijn) }
+.recept-card__img-placeholder span{ font-family:var(--serif); font-weight:400;
+  font-size:2.2rem; color:var(--inkt-3); font-variation-settings:"opsz" 72;
+  line-height:1 }
+.recept-hero-placeholder{ display:grid; place-items:center }
+.recept-hero-placeholder span{ font-family:var(--serif); font-size:3.4rem;
+  color:var(--inkt-3); font-variation-settings:"opsz" 96 }
 .recept-card__title{ font-family:var(--serif); font-size:min(.88rem,22px);
   overflow-wrap:break-word; font-weight:400;
   line-height:1.24; letter-spacing:-.012em; font-variation-settings:"opsz" 18;

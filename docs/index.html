@@ -67,7 +67,7 @@
     let kookfilter = null;          // 'vaak' | 'nooit' | null
 
     async function laadRecepten() {
-      const res = await fetch('./data/recepten.json');
+      const res = await fetch('./data/recepten.json', { cache: 'no-cache' });
       alleRecepten = (await res.json()).recepten;
       if (alleenFavorieten) {
         document.getElementById('kop-titel').textContent = 'Favorieten';
@@ -139,7 +139,7 @@
       grid.innerHTML = lijst.map(r => {
         const img = r.afbeelding
           ? `<img class="recept-card__img" src="${r.afbeelding}" alt="" loading="lazy">`
-          : `<div class="recept-card__img-placeholder"></div>`;
+          : `<div class="recept-card__img-placeholder"><span>${r.titel.trim()[0] || '?'}</span></div>`;
         const aan = fav.includes(r.id);
         // De totale tijd, want daar plan je op — niet de actieve tijd
         const tijd = r.bereidingstijd || r.actieve_tijd;
