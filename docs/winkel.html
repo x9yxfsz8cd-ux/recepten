@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
+  <title>In de winkel</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-boek"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H5.5A1.5 1.5 0 0 1 4 15.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h4.5a1.5 1.5 0 0 0 1.5-1.5z"/></g>
+  <g id="i-mand"><path d="M4.5 9h15l-1.4 9.2a2 2 0 0 1-2 1.8H7.9a2 2 0 0 1-2-1.8z"/><path d="M8.5 9l2.2-4.6M15.5 9l-2.2-4.6"/></g>
+  <g id="i-hart"><path d="M12 20s-7.5-4.7-7.5-10A4.2 4.2 0 0 1 8.7 6c1.4 0 2.6.7 3.3 1.9C12.7 6.7 13.9 6 15.3 6a4.2 4.2 0 0 1 4.2 4c0 5.3-7.5 10-7.5 10z"/></g>
+  <g id="i-zoek"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l4.5 4.5"/></g>
+  <g id="i-vink"><path d="M5 12.5l4.5 4.5L19 7"/></g>
+  <g id="i-chevron"><path d="M8 10l4 4 4-4"/></g>
+</defs></svg>
+
+  <header class="site-header">
+    <div>
+      <h1 class="grote-titel">In de winkel</h1>
+      <p class="ondertitel" id="samenvatting">Kies een recept</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="search-bar">
+      <label class="zoekveld">
+        <svg class="ic klein" viewBox="0 0 24 24"><use href="#i-zoek"/></svg>
+        <input type="search" id="zoekbalk" placeholder="Zoek een recept" autocomplete="off">
+      </label>
+    </div>
+
+    <div class="winkel-recent" id="recent"></div>
+    <div id="lijst"></div>
+  </main>
+
+  <nav class="tabbalk" aria-label="Hoofdnavigatie">
+    <a class="tab" href="./index.html">
+      <svg class="ic" viewBox="0 0 24 24"><use href="#i-boek"/></svg><em>Recepten</em></a>
+    <a class="tab" href="./winkel.html" aria-current="page">
+      <svg class="ic" viewBox="0 0 24 24"><use href="#i-mand"/></svg><em>Winkel</em></a>
+    <a class="tab" href="./index.html?favoriet=1">
+      <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
+  </nav>
+
+  <script src="./js/gedeeld.js"></script>
+  <script>
+    /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
+       wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
+
+    const GEKOCHT = 'gekocht';          // per recept, los van de kookvinkjes
+    const LAATSTE = 'winkel_laatste';
+
+    // Schappen in de volgorde waarin je een AH doorloopt
+    const SCHAPVOLGORDE = [
+      'Groente, aardappelen', 'Fruit, verse sappen', 'Bakkerij', 'Kaas',
+      'Vleeswaren', 'Vis', 'Vlees, kip', 'Zuivel, eieren',
+      'Vegetarisch, vegan en plantaardig', 'Pasta, rijst, wereldkeuken',
+      'Soepen, sauzen, kruiden, olie', 'Ontbijtgranen, beleg', 'Diepvries',
+      'Borrel, chips, snacks', 'Frisdrank, sappen, water', 'Koffie, thee',
+      'Bier, wijn, aperitieven',
+    ];
+
+    // Wat je standaard in huis hebt. Dit is een aanname, dus je kunt hem openklappen.
+    const VOORRAADKAST = ['zout','peper','olie','olijfolie','zonnebloemolie','boter',
+      'roomboter','water','suiker','bloem','azijn'];
+
+    let recepten = [], producten = {}, huidig = null, zoekterm = '';
+
+    function isVoorraad(naam) {
+      return naam.toLowerCase().split(/[^a-zà-ÿ]+/).filter(Boolean)
+        .some(w => VOORRAADKAST.some(v => w.startsWith(v)));
+    }
+
+    function gekochtVoor(id) {
+      try { return JSON.parse(localStorage.getItem(GEKOCHT) || '{}')[id] || []; }
+      catch { return []; }
+    }
+    function wisselGekocht(id, sleutel) {
+      let alles = {};
+      try { alles = JSON.parse(localStorage.getItem(GEKOCHT) || '{}'); } catch {}
+      const lijst = alles[id] || [];
+      const i = lijst.indexOf(sleutel);
+      if (i === -1) lijst.push(sleutel); else lijst.splice(i, 1);
+      alles[id] = lijst;
+      localStorage.setItem(GEKOCHT, JSON.stringify(alles));
+      return i === -1;
+    }
+
+    function renderRecent() {
+      const el = document.getElementById('recent');
+      let lijst = [...recepten];
+      if (zoekterm) {
+        const t = zoekterm.toLowerCase();
+        lijst = lijst.filter(r => r.titel.toLowerCase().includes(t));
+      } else {
+        lijst.sort((a, b) => aantalGemaakt(b.id) - aantalGemaakt(a.id)
+                          || (b.datum_toegevoegd || '').localeCompare(a.datum_toegevoegd || ''));
+        lijst = lijst.slice(0, 12);
+      }
+      el.innerHTML = lijst.map(r => `
+        <a class="winkel-rk" href="?id=${r.id}" ${huidig && r.id === huidig.id ? 'aria-current="true"' : ''}>
+          <img src="${r.afbeelding || ''}" alt="" loading="lazy">
+          <span>${r.titel}</span>
+        </a>`).join('');
+    }
+
+    function renderLijst() {
+      const el = document.getElementById('lijst');
+      if (!huidig) {
+        el.innerHTML = `<div class="empty-state">Kies hierboven een recept om te zien wat je nodig hebt.</div>`;
+        document.getElementById('samenvatting').textContent = 'Kies een recept';
+        return;
+      }
+
+      const gekocht = gekochtVoor(huidig.id);
+      const nodig = [], kast = [];
+      huidig.ingredienten.forEach((ing, i) => {
+        (isVoorraad(ing.naam) ? kast : nodig).push({ ing, i });
+      });
+
+      // Groeperen op het schap waar AH het product heeft staan
+      const groepen = new Map();
+      nodig.forEach(x => {
+        const p = x.ing.ah ? producten[x.ing.ah] : null;
+        const schap = (p && p.schap) || 'Overig';
+        if (!groepen.has(schap)) groepen.set(schap, []);
+        groepen.get(schap).push({ ...x, p });
+      });
+      const gesorteerd = [...groepen.entries()].sort((a, b) => {
+        const ia = SCHAPVOLGORDE.indexOf(a[0]), ib = SCHAPVOLGORDE.indexOf(b[0]);
+        return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+      });
+
+      const open = nodig.filter(x => !gekocht.includes(String(x.i))).length;
+      document.getElementById('samenvatting').textContent =
+        `${huidig.titel} · ${huidig.porties} porties · ${open} te halen`;
+
+      const regel = ({ ing, i, p }) => {
+        const aan = gekocht.includes(String(i));
+        const pakken = p ? aantalVerpakkingen(ing.hoeveelheid, ing.eenheid, p.eenheid) : null;
+        const onder = p
+          ? (pakken && pakken > 1
+              ? `<span class="ingredient-ah let">${pakken} pakken van ${p.eenheid}</span>`
+              : `<span class="ingredient-ah">${p.titel}${p.eenheid ? ' · ' + p.eenheid : ''}</span>`)
+          : `<span class="ingredient-ah">geen AH-product gevonden</span>`;
+        const foto = p && p.afbeelding
+          ? `<img class="ingredient-foto" src="${p.afbeelding}" alt="" loading="lazy">`
+          : `<span class="ingredient-foto--leeg"></span>`;
+        const hoev = ing.eenheid === 'naar smaak' || !ing.hoeveelheid
+          ? 'naar smaak'
+          : `${formatHoeveelheid(ing.hoeveelheid, huidig.porties, huidig.porties)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();
+        return `<li class="${aan ? 'ing--gedaan' : ''}">
+          <button class="vink" data-i="${i}" aria-pressed="${aan}" aria-label="Gekocht">
+            <svg viewBox="0 0 24 24"><use href="#i-vink"/></svg></button>
+          ${foto}
+          <span class="ingredient-naam">${ing.naam}${onder}</span>
+          <span class="ingredient-hoeveelheid">${hoev}</span></li>`;
+      };
+
+      el.innerHTML = gesorteerd.map(([schap, items]) => `
+        <div class="groepkop">${schap}</div>
+        <ul class="ingredienten-lijst">${items.map(regel).join('')}</ul>`).join('')
+        + (kast.length ? `
+        <button class="inklap" id="kast-knop" aria-expanded="false">
+          <span>Heb je waarschijnlijk al — ${kast.length}</span>
+          <svg class="ic klein" viewBox="0 0 24 24"><use href="#i-chevron"/></svg>
+        </button>
+        <ul class="ingredienten-lijst" id="kast-lijst" hidden>
+          ${kast.map(x => regel({ ...x, p: x.ing.ah ? producten[x.ing.ah] : null })).join('')}
+        </ul>` : '');
+
+      el.querySelectorAll('.vink').forEach(k => k.addEventListener('click', () => {
+        wisselGekocht(huidig.id, k.dataset.i);
+        renderLijst();
+      }));
+      const knop = document.getElementById('kast-knop');
+      if (knop) knop.addEventListener('click', () => {
+        const l = document.getElementById('kast-lijst');
+        l.hidden = !l.hidden;
+        knop.setAttribute('aria-expanded', String(!l.hidden));
+      });
+    }
+
+    async function init() {
+      const [rRes, pRes] = await Promise.all([
+        fetch('./data/recepten.json'),
+        fetch('./data/ah-producten.json').catch(() => null),
+      ]);
+      recepten = (await rRes.json()).recepten;
+      if (pRes && pRes.ok) producten = await pRes.json().catch(() => ({}));
+
+      const id = new URLSearchParams(location.search).get('id')
+              || localStorage.getItem(LAATSTE);
+      huidig = recepten.find(r => r.id === id) || null;
+      if (huidig) localStorage.setItem(LAATSTE, huidig.id);
+
+      renderRecent();
+      renderLijst();
+    }
+
+    document.getElementById('zoekbalk').addEventListener('input', e => {
+      zoekterm = e.target.value.trim();
+      renderRecent();
+    });
+
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(() => {});
+    init();
+  </script>
+</body>
+</html>

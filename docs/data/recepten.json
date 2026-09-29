@@ -5,7 +5,7 @@
       "titel": "Pasta al Limone",
       "slug": "pasta-al-limone",
       "beschrijving": "Romige Italiaanse pasta met verse citroen en Parmezaan. Klaar in 20 minuten.",
-      "afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
+      "afbeelding": "img/recept/pasta-al-limone.jpg",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "makkelijk",
       "porties": 2,
@@ -77,14 +77,15 @@
       "datum_toegevoegd": "2026-03-23",
       "bron_naam": "Handmatig",
       "actieve_tijd": 15,
-      "passieve_tijd": 10
+      "passieve_tijd": 10,
+      "bron_afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80"
     },
     {
       "id": "r1774465753",
       "titel": "Poké bowl met zalm",
       "slug": "poke-bowl-met-zalm",
       "beschrijving": "Een Hawaiiaans gerecht met verse blokjes zalm op rijst en groenten.",
-      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD123759_1024x748_JPG.jpg",
+      "afbeelding": "img/recept/poke-bowl-met-zalm.jpg",
       "bereidingstijd": 35,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -191,14 +192,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25",
       "actieve_tijd": 20,
-      "passieve_tijd": 15
+      "passieve_tijd": 15,
+      "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD123759_1024x748_JPG.jpg"
     },
     {
       "id": "r1774465924",
       "titel": "Tijmchampignons met gnocchi en frisse rucola met walnoten",
       "slug": "tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten",
       "beschrijving": "Een snel en zalig recept met gnocchi, gebakken champignons, knoflook, walnoten en verse tijm, afgewerkt met peperige rucola en citroensap.",
-      "afbeelding": "https://s3-eu-west-1.amazonaws.com/images-marleyspoon-production/media/recipes/18580/main_photos/large/ID3661_web-1e95fc7f6be22a1aaf129ead41867e72.jpg?1538409077",
+      "afbeelding": "img/recept/tijmchampignons-met-gnocchi-en-frisse-rucola-met-walnoten.jpg",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
@@ -326,14 +328,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25",
       "actieve_tijd": 25,
-      "passieve_tijd": 0
+      "passieve_tijd": 0,
+      "bron_afbeelding": "https://s3-eu-west-1.amazonaws.com/images-marleyspoon-production/media/recipes/18580/main_photos/large/ID3661_web-1e95fc7f6be22a1aaf129ead41867e72.jpg?1538409077"
     },
     {
       "id": "r1774487176",
       "titel": "Mini-hamburgers met vegetarische nuggets met mangoketchup, frisse salade en aardappelschijfjes",
       "slug": "mini-hamburgers-met-vegetarische-nuggets-met-mangoketchup-frisse-salade-en-aardappelschijfjes",
       "beschrijving": "Een heerlijke vegetarische maaltijd met krokante vegan nuggets, frisse salade en mangoketchup van The Ketchup Project.",
-      "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/HF_Y23_HelloFresh_Y20_R22_W20_BNL_Q5456-1_Main_low-edfcd160.jpg",
+      "afbeelding": "img/recept/mini-hamburgers-met-vegetarische-nuggets-met-mangoketchup-frisse-salade-en-aardappelschijfjes.jpg",
       "bereidingstijd": 20,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
@@ -440,14 +443,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
-      "passieve_tijd": 0
+      "passieve_tijd": 0,
+      "bron_afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/HF_Y23_HelloFresh_Y20_R22_W20_BNL_Q5456-1_Main_low-edfcd160.jpg"
     },
     {
       "id": "r1774487934",
       "titel": "Pasta Aglio e Olio",
       "slug": "pasta-aglio-e-olio",
       "beschrijving": "Een eenvoudig maar elegant Italiaans pastagerecht met knoflook, olie en rode peper.",
-      "afbeelding": "https://i.ytimg.com/vi/bJUiWdM__Qw/maxresdefault.jpg",
+      "afbeelding": "img/recept/pasta-aglio-e-olio.jpg",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
@@ -521,7 +525,8 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 10
+      "passieve_tijd": 10,
+      "bron_afbeelding": "https://i.ytimg.com/vi/bJUiWdM__Qw/maxresdefault.jpg"
     },
     {
       "id": "r1774536203",
@@ -682,7 +687,7 @@
       "titel": "Broccoli Pesto Pasta met Halloumi",
       "slug": "broccoli-pesto-pasta-met-halloumi",
       "beschrijving": "Een verrukkelijke pasta met romige broccoli pesto, goudbruine halloumi en frisse basilicum.",
-      "afbeelding": "https://hoe-lang-broccoli-koken.nl/wp-content/uploads/2024/09/2773-broccoli-pesto-pasta-recept.jpg",
+      "afbeelding": "img/recept/broccoli-pesto-pasta-met-halloumi.jpg",
       "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -791,14 +796,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
-      "passieve_tijd": 10
+      "passieve_tijd": 10,
+      "bron_afbeelding": "https://hoe-lang-broccoli-koken.nl/wp-content/uploads/2024/09/2773-broccoli-pesto-pasta-recept.jpg"
     },
     {
       "id": "r1774543194",
       "titel": "Aubergines in kaneel met feta, olijven & bulgur",
       "slug": "aubergines-in-kaneel-met-feta-olijven-bulgur",
       "beschrijving": "Een heerlijk Midden-Oosters gerecht met geroosterde aubergine, gekruide bulgur, feta en granaatappelpitten.",
-      "afbeelding": "https://www.foodiesmagazine.nl/app/uploads/2019/11/78-79-aubergines-in-kaneel-met-feta-olijven-en-gekruide-bulgur-klein.jpg",
+      "afbeelding": "img/recept/aubergines-in-kaneel-met-feta-olijven-bulgur.jpg",
       "bereidingstijd": 40,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 3,
@@ -930,15 +936,16 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 25
+      "passieve_tijd": 25,
+      "bron_afbeelding": "https://www.foodiesmagazine.nl/app/uploads/2019/11/78-79-aubergines-in-kaneel-met-feta-olijven-en-gekruide-bulgur-klein.jpg"
     },
     {
       "id": "r1774543204",
       "titel": "Broccolisoep met gerookte zalm en bieslook",
       "slug": "broccolisoep-met-gerookte-zalm-en-bieslook",
       "beschrijving": "Een groene broccolisoep met roze zalmsnippers en bieslook, gemakkelijk en smaakvol.",
-      "afbeelding": "https://www.projectgezond.nl/content/uploads/2020/09/BroccolisoepGerookteZalmBieslook-384x512.png",
-      "bereidingstijd": 25,
+      "afbeelding": "img/recept/broccolisoep-met-gerookte-zalm-en-bieslook.jpg",
+      "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -949,12 +956,6 @@
         "diner"
       ],
       "ingredienten": [
-        {
-          "naam": "water of groentebouillon",
-          "hoeveelheid": 1200,
-          "eenheid": "ml",
-          "ah": "water"
-        },
         {
           "naam": "ui",
           "hoeveelheid": 1,
@@ -1035,14 +1036,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 10
+      "passieve_tijd": 10,
+      "bron_afbeelding": "https://www.projectgezond.nl/content/uploads/2020/09/BroccolisoepGerookteZalmBieslook-384x512.png"
     },
     {
       "id": "r1774543212",
       "titel": "Traybake met orzo, asperge, prei en rucola",
       "slug": "traybake-met-orzo-asperge-prei-en-rucola",
       "beschrijving": "Een smakelijke ovenschotel met orzo pasta, groene asperges en prei, afgewerkt met hazelnoten en rucola.",
-      "afbeelding": "https://www.leckerbeckje.nl/wp-content/uploads/2023/05/IMG_8249.jpeg",
+      "afbeelding": "img/recept/traybake-met-orzo-asperge-prei-en-rucola.jpg",
       "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -1136,14 +1138,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
-      "passieve_tijd": 20
+      "passieve_tijd": 20,
+      "bron_afbeelding": "https://www.leckerbeckje.nl/wp-content/uploads/2023/05/IMG_8249.jpeg"
     },
     {
       "id": "r1774543219",
       "titel": "Ravioli uit de oven met mozzarella",
       "slug": "ravioli-uit-de-oven-met-mozzarella",
       "beschrijving": "Een familierecept met ravioli, groenten en gesmolten mozzarella dat binnen 20 minuten op tafel staat.",
-      "afbeelding": "https://uitpaulineskeuken.nl/wp-content/uploads/2026/04/ravioli-uit-de-oven-7455.jpg",
+      "afbeelding": "img/recept/ravioli-uit-de-oven-met-mozzarella.jpg",
       "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -1255,14 +1258,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
-      "passieve_tijd": 10
+      "passieve_tijd": 10,
+      "bron_afbeelding": "https://uitpaulineskeuken.nl/wp-content/uploads/2026/04/ravioli-uit-de-oven-7455.jpg"
     },
     {
       "id": "r1774543228",
       "titel": "Gesmoorde prei met eieren en za'atar",
       "slug": "gesmoorde-prei-met-eieren-en-za-atar",
       "beschrijving": "Een gemakkelijke en voedzame maaltijd met gesmoorde prei, spinazie en eieren, geïnspireerd door de shakshuka.",
-      "afbeelding": "https://favorflav.com/images/004_braised_eggs_and_omelettes.jpg",
+      "afbeelding": "img/recept/gesmoorde-prei-met-eieren-en-za-atar.jpg",
       "bereidingstijd": 20,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 6,
@@ -1298,10 +1302,10 @@
           "ah": "komijnzaad"
         },
         {
-          "naam": "citroenen (30 g), pitten verwijderd, schil en vruchtvlees fijngehakt",
+          "naam": "ingemaakte citroenen (30 g), pitten verwijderd, schil en vruchtvlees fijngehakt",
           "hoeveelheid": 2,
           "eenheid": "stuks",
-          "ah": "citroenen"
+          "ah": "ingemaakte citroenen"
         },
         {
           "naam": "groentebouillon",
@@ -1365,15 +1369,16 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
-      "passieve_tijd": 0
+      "passieve_tijd": 0,
+      "bron_afbeelding": "https://favorflav.com/images/004_braised_eggs_and_omelettes.jpg"
     },
     {
       "id": "r1774543235",
       "titel": "Pita shoarma van oesterzwam",
       "slug": "pita-shoarma-van-oesterzwam",
       "beschrijving": "Een heerlijk comfortfood gerecht waarbij je makkelijk aan je dagelijkse portie groenten komt.",
-      "afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/8b1dc6655be5477960fd169798f7cde0fe8e444b4990eb1a9d4ae414769d9dce/filled-600x600.webp",
-      "bereidingstijd": 15,
+      "afbeelding": "img/recept/pita-shoarma-van-oesterzwam.jpg",
+      "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -1476,14 +1481,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 0
+      "passieve_tijd": 0,
+      "bron_afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/8b1dc6655be5477960fd169798f7cde0fe8e444b4990eb1a9d4ae414769d9dce/filled-600x600.webp"
     },
     {
       "id": "r1774543245",
       "titel": "Sui kau soep met noedels",
       "slug": "sui-kau-soep-met-noedels",
       "beschrijving": "Een verwarmende Aziatische soep met heerlijke garnalen wontons, noedels, paksoi en een zacht eitje.",
-      "afbeelding": "https://jennyalvares.com/wp-content/uploads/2021/05/IMG_8740-3.jpg",
+      "afbeelding": "img/recept/sui-kau-soep-met-noedels.jpg",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 1,
@@ -1592,14 +1598,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 10
+      "passieve_tijd": 10,
+      "bron_afbeelding": "https://jennyalvares.com/wp-content/uploads/2021/05/IMG_8740-3.jpg"
     },
     {
       "id": "r1774543261",
       "titel": "Linguine met citroen, knoflook en tijm champignons",
       "slug": "linguine-met-citroen-knoflook-en-tijm-champignons",
       "beschrijving": "Een snelle en elegante Italiaanse pasta met verse champignons die alleen worden gemarineerd in olie, knoflook, citroen en tijm.",
-      "afbeelding": "http://www.nigella.com/assets/uploads/recipes/5df3e33c-b796-4033-bdb2-680c8f-612e12fd0b37b.jpg",
+      "afbeelding": "img/recept/linguine-met-citroen-knoflook-en-tijm-champignons.jpg",
       "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -1612,73 +1619,77 @@
       "ingredienten": [
         {
           "naam": "linguine",
-          "hoeveelheid": 400,
+          "hoeveelheid": 500,
           "eenheid": "g",
           "ah": "linguine"
         },
         {
-          "naam": "champignons",
-          "hoeveelheid": 500,
+          "naam": "kastanjechampignons",
+          "hoeveelheid": 225,
           "eenheid": "g",
-          "ah": "champignons"
+          "ah": "kastanjechampignons"
         },
         {
-          "naam": "olijfolie",
-          "hoeveelheid": 4,
-          "eenheid": "el",
+          "naam": "extra vierge olijfolie",
+          "hoeveelheid": 80,
+          "eenheid": "ml",
           "ah": "olijfolie"
         },
         {
-          "naam": "knoflook",
-          "hoeveelheid": 4,
+          "naam": "zeezoutvlokken",
+          "hoeveelheid": 2,
+          "eenheid": "tl",
+          "ah": "zeezoutvlokken"
+        },
+        {
+          "naam": "knoflook, geperst",
+          "hoeveelheid": 1,
           "eenheid": "stuks",
           "ah": "knoflook"
         },
         {
-          "naam": "citroenen",
-          "hoeveelheid": 2,
+          "naam": "citroen (rasp en sap)",
+          "hoeveelheid": 1,
           "eenheid": "stuks",
-          "ah": "citroenen"
+          "ah": "citroen"
         },
         {
-          "naam": "verse tijm (of 1 tl gedroogd)",
-          "hoeveelheid": 2,
-          "eenheid": "tl",
+          "naam": "verse tijm, blaadjes van 4 takjes",
+          "hoeveelheid": 4,
+          "eenheid": "stuks",
           "ah": "tijm"
         },
         {
-          "naam": "Zout en peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak",
-          "ah": "zout en peper"
+          "naam": "platte peterselie, gehakt",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "platte peterselie"
         },
         {
-          "naam": "parmezaanse kaas (optioneel)",
-          "hoeveelheid": 50,
-          "eenheid": "g",
+          "naam": "Parmezaanse kaas, geraspt",
+          "hoeveelheid": 3,
+          "eenheid": "el",
           "ah": "parmezaanse kaas"
+        },
+        {
+          "naam": "versgemalen zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "versgemalen zwarte peper"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Breng een grote pot met gezouten water aan de kook en kook de linguine volgens de pakketaanwijzing tot al dente."
+          "tekst": "Snijd de champignons in dunne plakjes en doe ze in een grote kom met de olijfolie, het zout, de geperste knoflook, het citroensap en de citroenrasp en de tijmblaadjes."
         },
         {
           "nummer": 2,
-          "tekst": "Maak ondertussen de champignons schoon en snij ze in dunne plakjes. Pers de knoflook uit en meng deze met de olijfolie, het sap van beide citroenen, verse tijm, zout en peper in een grote kom."
+          "tekst": "Kook de pasta volgens de aanwijzingen op de verpakking en giet losjes af, zodat er wat water achterblijft. Doe de afgegoten pasta snel bij het champignonmengsel in de kom."
         },
         {
           "nummer": 3,
-          "tekst": "Voeg de champignonplakjes toe aan de marinade en laat ze 5-10 minuten intrekken zodat ze de smaken opnemen."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Giet de gekookte pasta af, spaar 1 kopje pasta-water. Voeg de pasta direct toe aan de champignondressing en meng goed, voeg eventueel wat pasta-water toe voor een fluweelachtige textuur."
-        },
-        {
-          "nummer": 5,
-          "tekst": "Verdeel over serveerschotels en garneer met geraspte parmezaanse kaas en extra tijm."
+          "tekst": "Schep alles goed door elkaar. Voeg de gehakte peterselie, de geraspte kaas en peper naar smaak toe, schep nog een keer om en eet met plezier."
         }
       ],
       "voedingswaarden": {
@@ -1692,14 +1703,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
-      "passieve_tijd": 10
+      "passieve_tijd": 10,
+      "bron_afbeelding": "http://www.nigella.com/assets/uploads/recipes/5df3e33c-b796-4033-bdb2-680c8f-612e12fd0b37b.jpg"
     },
     {
       "id": "r1774543281",
       "titel": "Winterse risotto met aardpeer, comté en hazelnoten",
       "slug": "winterse-risotto-met-aardpeer-comte-en-hazelnoten",
       "beschrijving": "Een heerlijke winterse risotto met geroosterde aardpeer, smeltende comté en knapperige hazelnoten.",
-      "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/5dde922df3e6147286036a6f-0c27599a.jpg",
+      "afbeelding": "img/recept/winterse-risotto-met-aardpeer-comte-en-hazelnoten.jpg",
       "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
@@ -1816,15 +1828,16 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 25,
-      "passieve_tijd": 5
+      "passieve_tijd": 5,
+      "bron_afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/5dde922df3e6147286036a6f-0c27599a.jpg"
     },
     {
       "id": "r1774543289",
       "titel": "Spinaziestamppot met gebakken halloumi",
       "slug": "spinaziestamppot-met-gebakken-halloumi",
       "beschrijving": "Een lichte stamppot met zoete aardappel en mosterd, afgewerkt met gebakken halloumi.",
-      "afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/3d9c5d7de8dd71aed368e11deccc431d84fccdcb165594417a52054714488403/filled-600x600.webp",
-      "bereidingstijd": 35,
+      "afbeelding": "img/recept/spinaziestamppot-met-gebakken-halloumi.jpg",
+      "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -1913,14 +1926,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
-      "passieve_tijd": 15
+      "passieve_tijd": 15,
+      "bron_afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/3d9c5d7de8dd71aed368e11deccc431d84fccdcb165594417a52054714488403/filled-600x600.webp"
     },
     {
       "id": "r1774543355",
       "titel": "Gnocchi-traybake met feta en balsamico",
       "slug": "gnocchi-traybake-met-feta-en-balsamico",
       "beschrijving": "Een eenvoudige ovenschotel met gnocchi, groenten en feta die in één pan klaar is.",
-      "afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD151850_1024x748_JPG.jpg",
+      "afbeelding": "img/recept/gnocchi-traybake-met-feta-en-balsamico.jpg",
       "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -1939,7 +1953,7 @@
         },
         {
           "naam": "feta",
-          "hoeveelheid": 500,
+          "hoeveelheid": 125,
           "eenheid": "g",
           "ah": "feta"
         },
@@ -1950,10 +1964,10 @@
           "ah": "tros pruimtomaatjes"
         },
         {
-          "naam": "ui",
+          "naam": "rode ui",
           "hoeveelheid": 1,
           "eenheid": "stuks",
-          "ah": "ui"
+          "ah": "rode ui"
         },
         {
           "naam": "knoflook",
@@ -1963,13 +1977,13 @@
         },
         {
           "naam": "olijfolie",
-          "hoeveelheid": 6,
+          "hoeveelheid": 3,
           "eenheid": "el",
           "ah": "olijfolie"
         },
         {
           "naam": "balsamico-crème",
-          "hoeveelheid": 4,
+          "hoeveelheid": 2,
           "eenheid": "el",
           "ah": "balsamico-crème"
         },
@@ -2011,14 +2025,15 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
-      "passieve_tijd": 20
+      "passieve_tijd": 20,
+      "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD151850_1024x748_JPG.jpg"
     },
     {
       "id": "r1774543369",
       "titel": "Gepofte Zoete Aardappel",
       "slug": "gepofte-zoete-aardappel",
       "beschrijving": "Geroosterde zoete aardappelen gevuld met een verse tomatensalsa en feta.",
-      "afbeelding": "https://uitpaulineskeuken.nl/wp-content/uploads/2026/04/gepofte-zoete-aardappel-1.jpg",
+      "afbeelding": "img/recept/gepofte-zoete-aardappel.jpg",
       "bereidingstijd": 40,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
@@ -2108,7 +2123,8 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 25
+      "passieve_tijd": 25,
+      "bron_afbeelding": "https://uitpaulineskeuken.nl/wp-content/uploads/2026/04/gepofte-zoete-aardappel-1.jpg"
     },
     {
       "id": "r1774543376",
@@ -2188,7 +2204,7 @@
       "titel": "Pittige harissa-spruitjes & broccoli met halloumi & spinazie",
       "slug": "pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie",
       "beschrijving": "Een pittige oven-schotel met geroosterde groenten, halloumi en spinazie, geserveerd op platbrood met yoghurt.",
-      "afbeelding": "https://www.groentenabonnement.nl/wp-content/uploads/2020/10/Broccoli-met-halloumi.jpg",
+      "afbeelding": "img/recept/pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie.jpg",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2288,14 +2304,15 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
-      "passieve_tijd": 15
+      "passieve_tijd": 15,
+      "bron_afbeelding": "https://www.groentenabonnement.nl/wp-content/uploads/2020/10/Broccoli-met-halloumi.jpg"
     },
     {
       "id": "r1774543390",
       "titel": "Zelf Pizzadeeg Maken",
       "slug": "zelf-pizzadeeg-maken",
       "beschrijving": "Homemade pizzadeeg dat rijst en vervolgens wordt uitgerold voor drie pizza's.",
-      "afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2019/01/pizzadee-recept-1200x630-c-default.jpg",
+      "afbeelding": "img/recept/zelf-pizzadeeg-maken.jpg",
       "bereidingstijd": 75,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 3,
@@ -2371,14 +2388,15 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 60
+      "passieve_tijd": 60,
+      "bron_afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2019/01/pizzadee-recept-1200x630-c-default.jpg"
     },
     {
       "id": "r1774543401",
       "titel": "Gerookte-paprikarisotto met gegratineerde geitenkaas",
       "slug": "gerookte-paprikarisotto-met-gegratineerde-geitenkaas",
       "beschrijving": "Romige risotto met gerookte paprika, afgetooid met gegratineerde geitenkaas en walnoten.",
-      "afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/gerookte-paprikarisotto-met-gegratineerde-geitenkaas-68e0799f-1ef24d02.jpg",
+      "afbeelding": "img/recept/gerookte-paprikarisotto-met-gegratineerde-geitenkaas.jpg",
       "bereidingstijd": 50,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2527,14 +2545,15 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 30,
-      "passieve_tijd": 20
+      "passieve_tijd": 20,
+      "bron_afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/gerookte-paprikarisotto-met-gegratineerde-geitenkaas-68e0799f-1ef24d02.jpg"
     },
     {
       "id": "r1774543409",
       "titel": "Lorenzo's pasta",
       "slug": "lorenzo-s-pasta",
       "beschrijving": "Klassieke Italiaanse pasta met geroosterde tomaten, knapperige bacon en Parmigiano.",
-      "afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80",
+      "afbeelding": "img/recept/lorenzo-s-pasta.jpg",
       "bereidingstijd": 27,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2625,14 +2644,15 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 12
+      "passieve_tijd": 12,
+      "bron_afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80"
     },
     {
       "id": "r1774543416",
       "titel": "Elly's appeltaart",
       "slug": "elly-s-appeltaart",
       "beschrijving": "Een klassieke appeltaart met kruimeltop, gemaakt met zelfrijzend bakmeel en gevuld met appels, cranberries en kaneel.",
-      "afbeelding": "https://www.laurasbakery.nl/wp-content/smush-webp/2013/07/omas-appeltaart-nieuw-uitgelicht.jpg.webp",
+      "afbeelding": "img/recept/elly-s-appeltaart.jpg",
       "bereidingstijd": 55,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 8,
@@ -2734,112 +2754,15 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
-      "passieve_tijd": 35
-    },
-    {
-      "id": "r1774543424",
-      "titel": "Gazpacho",
-      "slug": "gazpacho",
-      "beschrijving": "Een verfrissende, ijskoude tomatensorep perfect voor warme dagen, bereid met verse groenten en olijfolie.",
-      "afbeelding": "https://hips.hearstapps.com/hmg-prod/images/gazpacho-index-6691419fe48a9.jpg?crop=1.00xw:1.00xh;0,0&amp;resize=1200:*",
-      "bereidingstijd": 75,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 2,
-      "tags": [
-        "vegetarisch",
-        "Aziatisch",
-        "lunch",
-        "snel"
-      ],
-      "ingredienten": [
-        {
-          "naam": "rijpe tomaten",
-          "hoeveelheid": 500,
-          "eenheid": "g",
-          "ah": "tomaten"
-        },
-        {
-          "naam": "paprika",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
-          "ah": "paprika"
-        },
-        {
-          "naam": "komkommer",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
-          "ah": "komkommer"
-        },
-        {
-          "naam": "knoflook",
-          "hoeveelheid": 2,
-          "eenheid": "stuks",
-          "ah": "knoflook"
-        },
-        {
-          "naam": "extra vergine olijfolie",
-          "hoeveelheid": 70,
-          "eenheid": "ml",
-          "ah": "olijfolie"
-        },
-        {
-          "naam": "rode wijnazijn of citroensap",
-          "hoeveelheid": 3,
-          "eenheid": "el",
-          "ah": "rode wijnazijn"
-        },
-        {
-          "naam": "koud water of afgekoelde bouillon",
-          "hoeveelheid": 100,
-          "eenheid": "ml",
-          "ah": "water"
-        },
-        {
-          "naam": "Zout naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak",
-          "ah": "zout"
-        },
-        {
-          "naam": "Zwarte peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak",
-          "ah": "zwarte peper"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Snijd alle groenten in stukken en doe ze samen met de olijfolie, azijn (of citroensap), knoflook en water of bouillon in een blender of gebruik een staafmixer. Blend tot een gladde soep."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Breng goed op smaak met zout, peper en eventueel extra zuur of smaakmakers zoals miso, sojasaus of Worcestersaus. De soep mag stevig gekruid zijn."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Giet de soep in een afsluitbare container en zet minstens 1 uur in de koelkast. Schenk in kommen, top af met toppings naar keuze (croutons, kruiden, spekjes, komkummer, kaas, chili crisp) en drizzle met olijfolie."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 220,
-        "eiwitten": 3,
-        "koolhydraten": 12,
-        "vetten": 18
-      },
-      "bron": "",
-      "bron_naam": "Eigen recept",
-      "bron_type": "notitie",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 15,
-      "passieve_tijd": 60
+      "passieve_tijd": 35,
+      "bron_afbeelding": "https://www.laurasbakery.nl/wp-content/smush-webp/2013/07/omas-appeltaart-nieuw-uitgelicht.jpg.webp"
     },
     {
       "id": "r1774543430",
       "titel": "Citroenpasta met chili vlokken",
       "slug": "citroenpasta-met-chili-vlokken",
       "beschrijving": "Fijne Italiaanse pasta met gekarameliseerde citroen, chili en Parmezaanse kaas.",
-      "afbeelding": "https://s3-eu-west-1.amazonaws.com/images-marleyspoon-production/media/recipes/600615/main_photos/large/sf_creamy_lemon_shrimp_spaghetti-5a3fdc3cc10cb05d9878a349537ec055.jpeg",
+      "afbeelding": "img/recept/citroenpasta-met-chili-vlokken.jpg",
       "bereidingstijd": 37,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2956,14 +2879,15 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 25,
-      "passieve_tijd": 12
+      "passieve_tijd": 12,
+      "bron_afbeelding": "https://s3-eu-west-1.amazonaws.com/images-marleyspoon-production/media/recipes/600615/main_photos/large/sf_creamy_lemon_shrimp_spaghetti-5a3fdc3cc10cb05d9878a349537ec055.jpeg"
     },
     {
       "id": "r1774683772",
       "titel": "Tomatenrisotto met Kokosmelk en Basilicum",
       "slug": "tomatenrisotto-met-kokosmelk-en-basilicum",
       "beschrijving": "Een romig en aromatisch risotto met verse tomaten, kokosmelk en basilicum voor een Italiaans-tropische fusiegerecht.",
-      "afbeelding": "https://cdn.hellofresh.com/de/cms/raf/hellofresh-logo.png",
+      "afbeelding": "img/recept/tomatenrisotto-met-kokosmelk-en-basilicum.jpg",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -3080,14 +3004,15 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-28",
       "actieve_tijd": 25,
-      "passieve_tijd": 0
+      "passieve_tijd": 0,
+      "bron_afbeelding": "https://cdn.hellofresh.com/de/cms/raf/hellofresh-logo.png"
     },
     {
       "id": "r1775131494",
       "titel": "Bonen 'risotto' (Bonensotto)",
       "slug": "bonen-risotto-bonensotto",
       "beschrijving": "Een romige bonenschotel met de textuur van risotto, gemaakt met boterzachte witte bonen in plaats van rijst.",
-      "afbeelding": "https://substackcdn.com/image/fetch/$s_!J3uS!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1030a721-8a23-451f-afa8-8f4977ccfe50_2506x3342.jpeg",
+      "afbeelding": "img/recept/bonen-risotto-bonensotto.jpg",
       "bereidingstijd": 35,
       "actieve_tijd": 20,
       "passieve_tijd": 15,
@@ -3189,19 +3114,18 @@
       "bron": "https://moniquevanloon.substack.com/p/ik-heb-eindelijk-cor-gevonden",
       "bron_naam": "Moniquevanloon",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-04-02"
+      "datum_toegevoegd": "2026-04-02",
+      "bron_afbeelding": "https://substackcdn.com/image/fetch/$s_!J3uS!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1030a721-8a23-451f-afa8-8f4977ccfe50_2506x3342.jpeg"
     },
     {
       "id": "r1790714175",
-      "titel": "Pastasalade met Tonijn",
-      "slug": "pastasalade-met-tonijn",
-      "beschrijving": "Een frisse en voedzame pastasalade met tonijn, groenten en een citroendressing, perfect voor lunch of als lichte maaltijd.",
-      "afbeelding": "",
-      "bereidingstijd": 15,
-      "actieve_tijd": 15,
-      "passieve_tijd": 0,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
+      "titel": "Pastasalade tonijn",
+      "slug": "pastasalade-tonijn",
+      "beschrijving": "Simpele koude pastasalade met tonijn, olijven, augurk en rode ui. Binnen 20 minuten klaar en juist lekkerder als hij even heeft staan intrekken.",
+      "afbeelding": "https://www.eefkooktzo.nl/wp-content/uploads/2023/05/Pasta-salade-met-tonijn.jpg",
+      "bereidingstijd": 20,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 2,
       "tags": [
         "vis",
         "snel",
@@ -3210,108 +3134,212 @@
       ],
       "ingredienten": [
         {
-          "naam": "pasta (penne of fusilli)",
-          "hoeveelheid": 400.0,
-          "eenheid": "g"
+          "naam": "pasta",
+          "hoeveelheid": 125,
+          "eenheid": "g",
+          "ah": "pasta"
         },
         {
-          "naam": "2 blikken tonijn (à 185 g, uitgelekt)",
+          "naam": "mayonaise",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "mayonaise"
+        },
+        {
+          "naam": "rode ui, in halve ringen",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "rode ui"
+        },
+        {
+          "naam": "cherrytomaten",
+          "hoeveelheid": 125,
+          "eenheid": "g",
+          "ah": "cherrytomaten"
+        },
+        {
+          "naam": "olijven",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "olijven"
+        },
+        {
+          "naam": "blik tonijn op oliebasis (ca. 150 g)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "tonijn op oliebasis"
+        },
+        {
+          "naam": "augurken, in kleine blokjes",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "augurken"
+        },
+        {
+          "naam": "peterselie, vers en fijngesneden",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "peterselie"
+        },
+        {
+          "naam": "peper en zout",
           "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "1 rode paprika",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "1 gele paprika",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "1 rode ui",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "cherry tomaten",
-          "hoeveelheid": 150.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "1 komkommer",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "zwarte olijven",
-          "hoeveelheid": 100.0,
-          "eenheid": "g"
-        },
-        {
-          "naam": "1 bosje peterselie",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "olijfolie",
-          "hoeveelheid": 3.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "citroensap",
-          "hoeveelheid": 2.0,
-          "eenheid": "el"
-        },
-        {
-          "naam": "dijon mosterd",
-          "hoeveelheid": 1.0,
-          "eenheid": "tl"
-        },
-        {
-          "naam": "2 teentjes knoflook (fijngehakt)",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
-        },
-        {
-          "naam": "Zout en peper naar smaak",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak"
+          "eenheid": "naar smaak",
+          "ah": "peper en zout"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Kook de pasta volgens de verpakking tot al dente. Giet af en spoel kort af met koud water, laat uitlekken."
+          "tekst": "Kook de pasta beetgaar in ruim water met een snuf zout. Giet af en spoel de pasta af onder de koude kraan. Dit stopt het kookproces en koelt de pasta direct goed af."
         },
         {
           "nummer": 2,
-          "tekst": "Snij de paprika's, ui, tomaten en komkommer in kleine stukken. Hak de peterselie fijn."
+          "tekst": "Doe de gekookte pasta in een ruime kom en voeg alle overige ingrediënten toe. Schep goed om en breng op smaak met peper en zout."
         },
         {
           "nummer": 3,
-          "tekst": "Maak een dressing door olijfolie, citroensap, mosterd en knoflook te mengen. Breng op smaak met zout en peper."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Vermeng de afgekoelde pasta met de groenten, tonijn en olijven in een grote schaal."
-        },
-        {
-          "nummer": 5,
-          "tekst": "Giet de dressing over de salade en roer goed door. Garneer met peterselie en serveer direct of laat even rusten in de koelkast."
+          "tekst": "Klaar is je pastasalade. Het lekkerst is als je hem 1 à 2 uur in de koelkast laat staan voor je hem serveert, dan trekken de smaken lekker in."
         }
       ],
       "voedingswaarden": {
-        "kcal": 0,
-        "eiwitten": 0,
-        "koolhydraten": 0,
-        "vetten": 0
+        "kcal": 501,
+        "eiwitten": 32,
+        "koolhydraten": 58,
+        "vetten": 16
       },
       "bron": "https://www.eefkooktzo.nl/pastasalade-tonijn/",
-      "bron_naam": "Eefkooktzo",
+      "bron_naam": "Eef Kookt Zo",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-09-29"
+      "datum_toegevoegd": "2026-09-29",
+      "actieve_tijd": 5,
+      "passieve_tijd": 15
+    },
+    {
+      "id": "r1790714176",
+      "titel": "Romige noedelsoep met gyoza",
+      "slug": "romige-noedelsoep-met-gyoza",
+      "beschrijving": "Snelle romige noedelsoep met udon, gyoza en een basis van currypasta, pindakaas en miso. Binnen 20 minuten op tafel.",
+      "afbeelding": "https://www.eefkooktzo.nl/wp-content/uploads/2026/09/romige-noedelsoep-met-gyoza.jpg",
+      "bereidingstijd": 20,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "snel",
+        "Aziatisch",
+        "diner",
+        "comfort food"
+      ],
+      "ingredienten": [
+        {
+          "naam": "currypasta (rood of geel)",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "currypasta"
+        },
+        {
+          "naam": "pindakaas",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "pindakaas"
+        },
+        {
+          "naam": "bouillon",
+          "hoeveelheid": 1,
+          "eenheid": "l",
+          "ah": "bouillon"
+        },
+        {
+          "naam": "kokosmelk",
+          "hoeveelheid": 500,
+          "eenheid": "ml",
+          "ah": "kokosmelk"
+        },
+        {
+          "naam": "udon noedels, voorgekookt",
+          "hoeveelheid": 600,
+          "eenheid": "g",
+          "ah": "udon noedels"
+        },
+        {
+          "naam": "gyoza met kip",
+          "hoeveelheid": 12,
+          "eenheid": "stuks",
+          "ah": "gyoza kip"
+        },
+        {
+          "naam": "miso",
+          "hoeveelheid": 0.5,
+          "eenheid": "el",
+          "ah": "miso"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "sojasaus"
+        },
+        {
+          "naam": "edamame boontjes",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "edamame boontjes"
+        },
+        {
+          "naam": "bosui, in dunne ringen",
+          "hoeveelheid": 6,
+          "eenheid": "stuks",
+          "ah": "bosui"
+        },
+        {
+          "naam": "zwarte sesamzaadjes",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "zwarte sesamzaadjes"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verhit een ruime soeppan met een klein beetje olie. Voeg hier de currypasta en de pindakaas aan toe."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verwarm dit even terwijl je roert. Zorg dat het niet aanbakt."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Giet de bouillon en de kokosmelk erbij. Breng aan de kook."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg nu de voorgekookte udon noedels en de gyoza erbij. Doe de deksel op de pan en kook dit ongeveer 5 minuten tot alles gaar is."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Vlak voor het einde van de kooktijd voeg je nog een halve eetlepel misopasta toe en een klein scheutje sojasaus naar smaak."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Verdeel de noedels over vier kommen. Verdeel hier de bouillon en de gyoza overheen."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Maak de kommen af met fijngesneden bosui, edamame boontjes en zwarte sesamzaadjes."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 618,
+        "eiwitten": 26,
+        "koolhydraten": 83,
+        "vetten": 21
+      },
+      "bron": "https://www.eefkooktzo.nl/romige-noedelsoep-met-gyoza/",
+      "bron_naam": "Eef Kookt Zo",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-09-29",
+      "actieve_tijd": 10,
+      "passieve_tijd": 10
     }
   ]
 }

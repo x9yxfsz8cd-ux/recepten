@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#3A3F3C">
+  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Recept">
   <meta property="og:description" content="">
   <meta property="og:type" content="article">
@@ -13,6 +14,19 @@
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-boek"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H5.5A1.5 1.5 0 0 1 4 15.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h4.5a1.5 1.5 0 0 0 1.5-1.5z"/></g>
+  <g id="i-mand"><path d="M4.5 9h15l-1.4 9.2a2 2 0 0 1-2 1.8H7.9a2 2 0 0 1-2-1.8z"/><path d="M8.5 9l2.2-4.6M15.5 9l-2.2-4.6"/></g>
+  <g id="i-hart"><path d="M12 20s-7.5-4.7-7.5-10A4.2 4.2 0 0 1 8.7 6c1.4 0 2.6.7 3.3 1.9C12.7 6.7 13.9 6 15.3 6a4.2 4.2 0 0 1 4.2 4c0 5.3-7.5 10-7.5 10z"/></g>
+  <g id="i-terug"><path d="M15 5l-7 7 7 7"/></g>
+  <g id="i-mandje"><path d="M4.5 9h15l-1.4 9.2a2 2 0 0 1-2 1.8H7.9a2 2 0 0 1-2-1.8z"/><path d="M8.5 9l2.2-4.6M15.5 9l-2.2-4.6"/></g>
+  <g id="i-vink"><path d="M5 12.5l4.5 4.5L19 7"/></g>
+  <g id="i-klok"><circle cx="12" cy="12" r="8"/><path d="M12 7.5V12l3 1.8"/></g>
+  <g id="i-min"><path d="M7 12h10"/></g>
+  <g id="i-plus"><path d="M12 7v10M7 12h10"/></g>
+  <g id="i-chevron"><path d="M8 10l4 4 4-4"/></g>
+</defs></svg>
 
   <div id="app"></div>
 
@@ -25,13 +39,26 @@
     <div class="km-voortgang" id="km-voortgang"></div>
     <div class="km-teller" id="km-teller"></div>
     <div class="km-inhoud">
+      <div class="km-ingredienten" id="km-ingredienten"></div>
       <p class="km-stap-tekst" id="km-stap-tekst"></p>
+      <button class="km-timer-knop" id="km-timer-knop" hidden></button>
     </div>
     <div class="km-nav">
       <button class="km-nav-btn km-nav-btn--vorige" id="km-vorige">Vorige</button>
       <button class="km-nav-btn km-nav-btn--volgende" id="km-volgende">Volgende</button>
     </div>
   </div>
+
+  <nav class="tabbalk" aria-label="Hoofdnavigatie">
+    <a class="tab" href="./index.html" aria-current="page">
+      <svg class="ic" viewBox="0 0 24 24"><use href="#i-boek"/></svg><em>Recepten</em></a>
+    <a class="tab" href="./winkel.html" id="tab-winkel">
+      <svg class="ic" viewBox="0 0 24 24"><use href="#i-mand"/></svg><em>Winkel</em></a>
+    <a class="tab" href="./index.html?favoriet=1">
+      <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
+  </nav>
+
+  <script src="./js/gedeeld.js"></script>
 
   <script>
     let recept = null;
@@ -46,15 +73,75 @@
       return new URLSearchParams(window.location.search).get(naam);
     }
 
-    function formatHoeveelheid(basis, huidig, basis_porties) {
-      if (basis === 0) return '';
-      const waarde = (basis / basis_porties) * huidig;
-      const afgerond = Math.round(waarde * 10) / 10;
-      return afgerond % 1 === 0 ? String(afgerond | 0) : String(afgerond);
-    }
-
     function stapSleutel() { return `stappen_${recept.id}`; }
     function ingSleutel() { return `ing_${recept.id}`; }
+
+    // ── BOODSCHAPPENLIJST ──
+    // Vaste voorraadkast: ingrediënten die je standaard in huis hebt en
+    // dus NIET op de boodschappenlijst hoeven. Pas deze lijst gerust aan.
+    const VOORRAADKAST = [
+      'zout', 'peper', 'olie', 'olijfolie', 'zonnebloemolie', 'bakolie',
+      'boter', 'roomboter', 'water', 'suiker', 'bloem', 'azijn',
+      'knoflook', 'ui', 'uien'
+    ];
+
+    // Naam van de Apple Shortcut die de items in Herinneringen zet
+    const SHORTCUT_NAAM = 'Boodschappen';
+
+    // Naam van de Shortcut die een échte timer in de Klok-app zet.
+    // De timer in de pagina stopt zodra iOS Safari naar de achtergrond duwt;
+    // alleen de Klok-app blijft doorlopen met het scherm uit.
+    const SHORTCUT_TIMER = 'Kooktimer';
+
+    function isVoorraad(naam) {
+      const tokens = naam.toLowerCase().split(/[^a-zà-ÿ]+/).filter(Boolean);
+      return tokens.some(t => VOORRAADKAST.some(v => t.startsWith(v)));
+    }
+
+    // Bouwt de boodschappenlijst voor de HUIDIGE porties, zonder voorraadkast-items
+    function buildBoodschappen() {
+      return recept.ingredienten
+        .filter(ing => !isVoorraad(ing.naam))
+        .map(ing => {
+          if (ing.eenheid === 'naar smaak' || ing.hoeveelheid === 0) return ing.naam;
+          const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
+          const eenheid = ing.eenheid === 'stuks' ? 'x' : ing.eenheid;
+          return `${ing.naam} (${hoeveelheid} ${eenheid})`.replace(' x)', 'x)');
+        });
+    }
+
+    function toonToast(bericht) {
+      let el = document.getElementById('boodschappen-toast');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = 'boodschappen-toast';
+        el.className = 'boodschappen-toast';
+        document.body.appendChild(el);
+      }
+      el.textContent = bericht;
+      el.classList.add('zichtbaar');
+      clearTimeout(el._timer);
+      el._timer = setTimeout(() => el.classList.remove('zichtbaar'), 3200);
+    }
+
+    async function zetOpBoodschappenlijst() {
+      const items = buildBoodschappen();
+      if (!items.length) {
+        toonToast('Alles al in huis — niks toe te voegen');
+        return;
+      }
+      const tekst = items.join('\n');
+
+      // Kopieer als vangnet (werkt overal)
+      try { await navigator.clipboard.writeText(tekst); } catch {}
+
+      // Roep de Apple Shortcut aan die de items in Herinneringen zet
+      const url = `shortcuts://run-shortcut?name=${encodeURIComponent(SHORTCUT_NAAM)}`
+        + `&input=text&text=${encodeURIComponent(tekst)}`;
+      window.location.href = url;
+
+      toonToast(`${items.length} item${items.length === 1 ? '' : 's'} → boodschappenlijst`);
+    }
 
     // ── STAP AFVINKEN ──
 
@@ -78,6 +165,7 @@
 
       const el = document.querySelector(`.stap[data-stap="${nummer}"]`);
       if (el) el.classList.toggle('stap--gedaan', gedaan.includes(nummer));
+      werkBadgesBij();
     }
 
     function herstelStappen() {
@@ -99,13 +187,25 @@
       slaAfgevinktOp(key, gedaan);
 
       const li = document.querySelectorAll('.ingredienten-lijst li')[index];
-      if (li) li.classList.toggle('ing--gedaan', gedaan.includes(index));
+      if (li) {
+        const aan = gedaan.includes(index);
+        li.classList.toggle('ing--gedaan', aan);
+        const v = li.querySelector('.vink');
+        if (v) v.setAttribute('aria-pressed', String(aan));
+      }
+      werkBadgesBij();
     }
 
     function herstelIngredienten() {
       const gedaan = laadAfgevinkt(ingSleutel());
       const items = document.querySelectorAll('.ingredienten-lijst li');
-      gedaan.forEach(i => { if (items[i]) items[i].classList.add('ing--gedaan'); });
+      gedaan.forEach(i => {
+        if (!items[i]) return;
+        items[i].classList.add('ing--gedaan');
+        const v = items[i].querySelector('.vink');
+        if (v) v.setAttribute('aria-pressed', 'true');
+      });
+      werkBadgesBij();
     }
 
     // ── KOOKMODUS ──
@@ -135,7 +235,32 @@
       const totaal = stappen.length;
 
       document.getElementById('km-stap-tekst').textContent = stap.tekst;
-      document.getElementById('km-teller').textContent = `${huidigeStap + 1} van ${totaal}`;
+      document.getElementById('km-teller').textContent = `Stap ${huidigeStap + 1} van ${totaal}`;
+
+      // Wat je bij déze stap nodig hebt, met de hoeveelheid voor het gekozen
+      // aantal porties. Zo hoef je tijdens het koken niet terug te bladeren.
+      const nodig = ingredientenVoorStap(stap.tekst);
+      const strook = document.getElementById('km-ingredienten');
+      strook.innerHTML = nodig.map(ing => {
+        const hoeveelheid = ing.eenheid === 'naar smaak' || ing.hoeveelheid === 0
+          ? 'naar smaak'
+          : `${formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();
+        return `<span class="km-ing"><b>${hoeveelheid}</b> ${ing.naam}</span>`;
+      }).join('');
+      strook.hidden = nodig.length === 0;
+
+      // Staat er een tijd in de stap, dan één grote knop om die timer te zetten
+      const timerKnop = document.getElementById('km-timer-knop');
+      const seconden = secondenInTekst(stap.tekst);
+      if (seconden) {
+        timerKnop.hidden = false;
+        timerKnop.innerHTML =
+          `<svg class="ic klein" viewBox="0 0 24 24"><use href="#i-klok"/></svg>Timer ${tijdTekst(seconden)}`;
+        timerKnop.onclick = () => startTimer(seconden, `Stap ${huidigeStap + 1}`);
+      } else {
+        timerKnop.hidden = true;
+        timerKnop.onclick = null;
+      }
 
       // Voortgangsdots
       const dots = document.getElementById('km-voortgang');
@@ -183,7 +308,12 @@
         huidigeStap++;
         updateKookmodus();
       } else {
+        // Laatste stap: dit is het moment waarop we weten dat je het maakte
+        noteerGemaakt(recept.id);
+        const regel = document.querySelector('#gemaakt-regel span');
+        if (regel) regel.textContent = gemaaktLangeTekst(recept.id);
         sluitKookmodus();
+        toonToast('Genoteerd — ' + gemaaktTekst(recept.id));
       }
     });
 
@@ -260,7 +390,231 @@
       });
     }
 
+    // ── FAVORIETEN ──
+    // Eén lijst met recept-id's in localStorage, gedeeld met het overzicht.
+
+
+    function hartKnop(id, extraKlasse = '') {
+      const aan = isFavoriet(id);
+      return `<button class="hart-btn ${extraKlasse}" data-recept="${id}"
+        aria-pressed="${aan}" aria-label="${aan ? 'Uit favorieten halen' : 'Aan favorieten toevoegen'}"
+        ><svg viewBox="0 0 24 24"><use href="#i-hart"/></svg></button>`;
+    }
+
+    function koppelHart(knop) {
+      if (!knop) return;
+      knop.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+        const aan = wisselFavoriet(knop.dataset.recept);
+        knop.setAttribute('aria-pressed', String(aan));
+        knop.setAttribute('aria-label', aan ? 'Uit favorieten halen' : 'Aan favorieten toevoegen');
+      });
+    }
+
+    // ── FASE-TABS ──
+    // Laat zien in welke fase je zit, met per fase wat er nog open staat.
+
+    function zetFaseTabsOp() {
+      const tabs = [...document.querySelectorAll('.fase-tab')];
+      const pil = document.getElementById('fase-pil');
+      if (!tabs.length || !pil) return;
+
+      function verplaatsPil(tab) {
+        pil.style.width = tab.offsetWidth + 'px';
+        pil.style.transform = `translateX(${tab.offsetLeft - 2}px)`;
+      }
+
+      function kies(fase) {
+        tabs.forEach(t => {
+          const aan = t.dataset.fase === fase;
+          t.setAttribute('aria-selected', String(aan));
+          const paneel = document.getElementById('paneel-' + t.dataset.fase);
+          if (paneel) paneel.hidden = !aan;
+          if (aan) verplaatsPil(t);
+        });
+      }
+
+      tabs.forEach(t => t.addEventListener('click', () => kies(t.dataset.fase)));
+      kies('ingredienten');
+      // De pil staat pas goed als de breedtes bekend zijn
+      requestAnimationFrame(() => verplaatsPil(tabs.find(t => t.getAttribute('aria-selected') === 'true')));
+      window.addEventListener('resize', () => {
+        const actief = tabs.find(t => t.getAttribute('aria-selected') === 'true');
+        if (actief) verplaatsPil(actief);
+      });
+      werkBadgesBij();
+    }
+
+    // Toont hoeveel ingrediënten en stappen er nog open staan
+    function werkBadgesBij() {
+      const paren = [
+        ['badge-ingredienten', '.ingredienten-lijst li', 'ing--gedaan'],
+        ['badge-bereiding', '.stap', 'stap--gedaan'],
+      ];
+      paren.forEach(([badgeId, selector, gedaanKlasse]) => {
+        const badge = document.getElementById(badgeId);
+        if (!badge) return;
+        const alles = document.querySelectorAll(selector);
+        const open = [...alles].filter(el => !el.classList.contains(gedaanKlasse)).length;
+        badge.textContent = open === 0 ? '✓' : String(open);
+        badge.dataset.klaar = open === 0 ? 'ja' : 'nee';
+      });
+    }
+
+    // ── TIMER ──
+
+    let timer = { resterend: 0, totaal: 0, label: '', loopt: false, tik: null };
+
+    function tijdTekst(seconden) {
+      const m = Math.floor(seconden / 60), s = seconden % 60;
+      return `${m}:${String(s).padStart(2, '0')}`;
+    }
+
+    function timerBalk() {
+      let el = document.getElementById('timer-balk');
+      if (el) return el;
+      el = document.createElement('div');
+      el.id = 'timer-balk';
+      el.className = 'timer-balk';
+      el.innerHTML = `
+        <svg class="timer-ring" viewBox="0 0 44 44" aria-hidden="true">
+          <circle class="timer-ring__baan" cx="22" cy="22" r="19"></circle>
+          <circle class="timer-ring__voortgang" cx="22" cy="22" r="19"
+                  stroke-dasharray="119.4" stroke-dashoffset="0"></circle>
+        </svg>
+        <div class="timer-info">
+          <div class="timer-tijd" id="timer-tijd">0:00</div>
+          <div class="timer-label" id="timer-label"></div>
+        </div>
+        <div class="timer-acties">
+          <button class="timer-btn" id="timer-klok" aria-label="Ook in Klok-app zetten" title="Zet in Klok-app">
+            <svg viewBox="0 0 16 16"><path d="M8 1.2a6.8 6.8 0 100 13.6A6.8 6.8 0 008 1.2zm0 1.6a5.2 5.2 0 110 10.4A5.2 5.2 0 018 2.8zm-.8 1.6v4l3.2 1.9.8-1.3-2.4-1.4V4.4z"/></svg>
+          </button>
+          <button class="timer-btn" id="timer-pauze" aria-label="Pauzeer"></button>
+          <button class="timer-btn" id="timer-stop" aria-label="Stop">
+            <svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>
+          </button>
+        </div>`;
+      document.body.appendChild(el);
+      el.querySelector('#timer-pauze').addEventListener('click', pauzeerTimer);
+      el.querySelector('#timer-stop').addEventListener('click', stopTimer);
+      el.querySelector('#timer-klok').addEventListener('click', zetTimerInKlok);
+      return el;
+    }
+
+    function tekenTimer() {
+      const el = timerBalk();
+      el.querySelector('#timer-tijd').textContent = tijdTekst(timer.resterend);
+      el.querySelector('#timer-label').textContent = timer.label;
+      const ring = el.querySelector('.timer-ring__voortgang');
+      const omtrek = 119.4;
+      const deel = timer.totaal ? timer.resterend / timer.totaal : 0;
+      ring.style.strokeDashoffset = String(omtrek * (1 - deel));
+      el.querySelector('#timer-pauze').innerHTML = timer.loopt
+        ? '<svg viewBox="0 0 16 16"><rect x="4" y="3" width="3" height="10" rx="1"/><rect x="9" y="3" width="3" height="10" rx="1"/></svg>'
+        : '<svg viewBox="0 0 16 16"><path d="M4 3l9 5-9 5z"/></svg>';
+      el.classList.toggle('afgelopen', timer.resterend === 0 && timer.totaal > 0);
+    }
+
+    function startTimer(seconden, label) {
+      clearInterval(timer.tik);
+      timer = { resterend: seconden, totaal: seconden, label, loopt: true, tik: null };
+      const el = timerBalk();
+      el.classList.add('zichtbaar');
+      tekenTimer();
+      timer.tik = setInterval(() => {
+        if (!timer.loopt) return;
+        timer.resterend = Math.max(0, timer.resterend - 1);
+        tekenTimer();
+        if (timer.resterend === 0) {
+          clearInterval(timer.tik);
+          timer.loopt = false;
+          piep();
+          toonToast(`Timer klaar — ${timer.label}`);
+        }
+      }, 1000);
+    }
+
+    // Draagt de lopende timer over aan de Klok-app. De timer in de pagina is
+    // alleen betrouwbaar zolang het scherm aan staat en Safari vooraan is;
+    // de Klok-app loopt door en geeft een melding.
+    function zetTimerInKlok() {
+      if (!timer.resterend) return;
+      const naam = `${timer.label} — ${recept.titel}`;
+      const invoer = `${timer.resterend}|${naam}`;
+      window.location.href = `shortcuts://run-shortcut?name=${encodeURIComponent(SHORTCUT_TIMER)}`
+        + `&input=text&text=${encodeURIComponent(invoer)}`;
+    }
+
+    function pauzeerTimer() {
+      if (timer.resterend === 0) return;
+      timer.loopt = !timer.loopt;
+      tekenTimer();
+    }
+
+    function stopTimer() {
+      clearInterval(timer.tik);
+      timer.loopt = false;
+      const el = document.getElementById('timer-balk');
+      if (el) { el.classList.remove('zichtbaar', 'afgelopen'); }
+    }
+
+    // Kort geluid zonder extern bestand
+    function piep() {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        [0, 0.35, 0.7].forEach(vertraging => {
+          const osc = ctx.createOscillator(), gain = ctx.createGain();
+          osc.frequency.value = 880;
+          osc.connect(gain); gain.connect(ctx.destination);
+          const t = ctx.currentTime + vertraging;
+          gain.gain.setValueAtTime(0.0001, t);
+          gain.gain.exponentialRampToValueAtTime(0.25, t + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.25);
+          osc.start(t); osc.stop(t + 0.3);
+        });
+      } catch {}
+    }
+
+    // Zoekt een tijdsaanduiding in een stap. Bij een bereik ("6-8 min") nemen
+    // we de bovenkant: liever te lang wachten dan aangebrand.
+    function secondenInTekst(tekst) {
+      const m = tekst.match(/(\d+)\s*(?:-|–|\s*tot\s*)?\s*(\d+)?\s*(min(?:uut|uten)?|sec(?:onde|onden)?|uur)\b/i);
+      if (!m) return 0;
+      const waarde = parseInt(m[2] || m[1], 10);
+      const eenheid = m[3].toLowerCase();
+      const seconden = eenheid.startsWith('sec') ? waarde
+                     : eenheid === 'uur' ? waarde * 3600
+                     : waarde * 60;
+      return (!seconden || seconden > 4 * 3600) ? 0 : seconden;
+    }
+
+    function stapMetTimer(tekst, nummer) {
+      const seconden = secondenInTekst(tekst);
+      if (!seconden) return '';
+      return `<button class="stap-timer-knop" data-seconden="${seconden}" data-stap="${nummer}"
+        aria-label="Timer van ${tijdTekst(seconden)} starten">${tijdTekst(seconden)}</button>`;
+    }
+
+    // Welke ingrediënten noemt deze stap? Vergelijkt op het kernwoord van de
+    // ingrediëntnaam, zodat "2 preien, in ringetjes" ook matcht op "prei".
+    function ingredientenVoorStap(stapTekst) {
+      const tekst = stapTekst.toLowerCase();
+      return recept.ingredienten.filter(ing => {
+        const woorden = ing.naam.toLowerCase()
+          .split(/[^a-zà-ÿ]+/)
+          .filter(w => w.length > 3);
+        return woorden.some(w => {
+          const stam = w.length > 5 ? w.slice(0, -1) : w;   // meervoud opvangen
+          return tekst.includes(stam);
+        });
+      });
+    }
+
     // ── RENDER ──
+
+    let ahProducten = {};
 
     function renderIngredient(ing, index) {
       const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
@@ -270,8 +624,19 @@
         : `${hoeveelheid} ${eenheid}`.trim();
       const klikbaar = ing.hoeveelheid > 0 && ing.eenheid !== 'naar smaak'
         ? ' style="cursor:pointer" title="Klik om aan te passen"' : '';
+      const product = ing.ah ? ahProducten[ing.ah] : null;
+      const foto = product && product.afbeelding
+        ? `<img class="ingredient-foto" src="${product.afbeelding}" alt="" loading="lazy">`
+        : '<span class="ingredient-foto--leeg"></span>';
+      // Prijzen horen in de winkel, niet bij het fornuis
+      const ahRegel = product
+        ? `<span class="ingredient-ah">${product.titel}${product.eenheid ? ' · ' + product.eenheid : ''}</span>`
+        : '';
       return `<li data-ing-index="${index}">
-        <span class="ingredient-naam">${ing.naam}</span>
+        <button class="vink" data-i="${index}" aria-pressed="false" aria-label="Afvinken">
+          <svg viewBox="0 0 24 24"><use href="#i-vink"/></svg></button>
+        ${foto}
+        <span class="ingredient-naam">${ing.naam}${ahRegel}</span>
         <span class="ingredient-hoeveelheid"${klikbaar}>${rechts}</span>
       </li>`;
     }
@@ -299,16 +664,31 @@
         setMeta('property', 'og:image', r.afbeelding);
       }
 
-      const img = r.afbeelding
-        ? `<img class="recept-hero" src="${r.afbeelding}" alt="${r.titel}">`
-        : `<div class="recept-hero-placeholder"></div>`;
+      const img = `
+        <div class="hero-wrap">
+          ${r.afbeelding
+            ? `<img class="recept-hero" src="${r.afbeelding}" alt="">`
+            : `<div class="recept-hero-placeholder"></div>`}
+          <div class="hero-acties">
+            <a class="rondknop" href="./index.html" aria-label="Terug">
+              <svg class="ic" viewBox="0 0 24 24"><use href="#i-terug"/></svg></a>
+            <a class="rondknop" href="./winkel.html?id=${r.id}" aria-label="Wat heb ik nodig">
+              <svg class="ic" viewBox="0 0 24 24"><use href="#i-mandje"/></svg></a>
+          </div>
+        </div>`;
+
+      // De foto nog eens, uitvergroot en vervaagd: daar komt de kleur van het
+      // scherm vandaan in donkere modus. Echte pixels, geen verzonnen verloop.
+      const echo = r.afbeelding
+        ? `<div class="echo" aria-hidden="true"><img src="${r.afbeelding}" alt=""></div>`
+        : '';
 
       const tags = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
       const ingredienten = r.ingredienten.map((ing, i) => renderIngredient(ing, i)).join('');
       const stappen = r.stappen.map(s => `
         <div class="stap" data-stap="${s.nummer}" role="button" tabindex="0" aria-label="Stap ${s.nummer}">
           <span class="stap-nummer">${s.nummer}</span>
-          <p class="stap-tekst">${s.tekst}</p>
+          <p class="stap-tekst">${s.tekst}${stapMetTimer(s.tekst, s.nummer)}</p>
         </div>`).join('');
 
       const heeftVoeding = r.voedingswaarden && (r.voedingswaarden.kcal || r.voedingswaarden.eiwitten || r.voedingswaarden.koolhydraten || r.voedingswaarden.vetten);
@@ -344,41 +724,66 @@
       }
 
       document.getElementById('app').innerHTML = `
+        ${echo}
         ${img}
         <div class="recept-detail">
-          <a class="terug-link" href="./index.html">Alle recepten</a>
           <div class="recept-detail__header">
-            <h1 class="recept-detail__title">${r.titel}</h1>
+            <div class="recept-detail__titelrij">
+              <h1 class="recept-detail__title">${r.titel}</h1>
+            </div>
             <div class="recept-detail__meta">
               <span>${r.actieve_tijd ? r.actieve_tijd + ' min actief' : r.bereidingstijd + ' min'}</span>
-              ${r.passieve_tijd ? `<span>${r.passieve_tijd} min oven/rust</span>` : ''}
+              <span class="pip"></span>
               <span>${r.moeilijkheidsgraad}</span>
+              ${r.passieve_tijd ? `<span class="pip"></span><span>${r.passieve_tijd} min oven</span>` : ''}
+              ${r.bron_naam && r.bron_naam !== 'Handmatig' ? `<span class="pip"></span><span>${r.bron_naam}</span>` : ''}
+            </div>
+            <div class="gemaakt" id="gemaakt-regel">
+              <svg class="ic klein" viewBox="0 0 24 24"><use href="#i-vink"/></svg>
+              <span>${gemaaktLangeTekst(r.id)}</span>
+              ${hartKnop(r.id, 'hart-btn--detail')}
             </div>
             <div class="recept-detail__tags">${tags}</div>
           </div>
 
-          <div class="portie-schaler">
-            <label>Porties</label>
-            <button class="portie-btn" id="min-btn">−</button>
-            <span class="portie-aantal">${huidigPorties}</span>
-            <button class="portie-btn" id="plus-btn">+</button>
+          <div class="fase-balk">
+            <div class="fase-tabs" role="tablist">
+              <span class="fase-tabs__pil" id="fase-pil"></span>
+              <button class="fase-tab" role="tab" data-fase="ingredienten" aria-selected="true"
+                      aria-controls="paneel-ingredienten">Ingrediënten<span class="fase-tab__badge" id="badge-ingredienten"></span></button>
+              <button class="fase-tab" role="tab" data-fase="bereiding" aria-selected="false"
+                      aria-controls="paneel-bereiding">Bereiding<span class="fase-tab__badge" id="badge-bereiding"></span></button>
+              <button class="fase-tab" role="tab" data-fase="info" aria-selected="false"
+                      aria-controls="paneel-info">Info</button>
+            </div>
           </div>
 
-          <div class="recept-content">
-            <div class="ingredienten-blok">
-              <div class="blok-titel">Ingrediënten</div>
-              <ul class="ingredienten-lijst">${ingredienten}</ul>
+          <div class="fase-paneel" id="paneel-ingredienten" role="tabpanel">
+            <div class="portie-schaler">
+              <label>Porties</label>
+              <button class="portie-btn" id="min-btn" aria-label="Minder porties"><svg class="ic klein" viewBox="0 0 24 24"><use href="#i-min"/></svg></button>
+              <span class="portie-aantal">${huidigPorties}</span>
+              <button class="portie-btn" id="plus-btn" aria-label="Meer porties"><svg class="ic klein" viewBox="0 0 24 24"><use href="#i-plus"/></svg></button>
             </div>
+            <div class="ingredienten-blok">
+              <ul class="ingredienten-lijst">${ingredienten}</ul>
+              <button class="boodschappen-btn" id="boodschappen-btn">Zet op boodschappenlijst</button>
+            </div>
+          </div>
+
+          <div class="fase-paneel" id="paneel-bereiding" role="tabpanel" hidden>
             <div class="stappen-blok">
               <button class="kookmodus-btn" id="kookmodus-btn">Start kookmodus</button>
               ${stappen}
             </div>
           </div>
 
-          ${voeding}
-          <div style="margin-top:1.5rem;">
-            ${bron}
-            <button class="print-btn" id="print-btn">Print recept</button>
+          <div class="fase-paneel" id="paneel-info" role="tabpanel" hidden>
+            ${voeding}
+            <div style="margin-top:1.5rem;">
+              ${bron}
+              <button class="print-btn" id="print-btn">Print recept</button>
+            </div>
           </div>
         </div>`;
 
@@ -394,11 +799,26 @@
       // Kookmodus knop
       document.getElementById('kookmodus-btn').addEventListener('click', openKookmodus);
 
+      // Boodschappenlijst knop
+      document.getElementById('boodschappen-btn').addEventListener('click', zetOpBoodschappenlijst);
+
       // Print knop
       document.getElementById('print-btn').addEventListener('click', () => window.print());
 
+      // Fase-tabs, hartje en de timerknoppen in de stappen
+      zetFaseTabsOp();
+      koppelHart(document.querySelector('.hart-btn'));
+      document.querySelectorAll('.stap-timer-knop').forEach(knop => {
+        knop.addEventListener('click', e => {
+          e.stopPropagation();          // niet meteen de stap afvinken
+          startTimer(+knop.dataset.seconden, `Stap ${knop.dataset.stap}`);
+        });
+      });
+
       // Ingrediënt: klik op naam = afvinken, klik op hoeveelheid = aanpassen
       document.querySelectorAll('.ingredienten-lijst li').forEach((li, i) => {
+        const vink = li.querySelector('.vink');
+        if (vink) vink.addEventListener('click', e => { e.stopPropagation(); toggleIngredient(i); });
         const naam = li.querySelector('.ingredient-naam');
         const hoeveelheid = li.querySelector('.ingredient-hoeveelheid');
         if (naam) naam.addEventListener('click', (e) => { e.stopPropagation(); toggleIngredient(i); });
@@ -422,8 +842,13 @@
       const id = getParam('id');
       if (!id) { toonNietGevonden(); return; }
 
-      const res = await fetch('./data/recepten.json');
+      const [res, ahRes] = await Promise.all([
+        fetch('./data/recepten.json'),
+        fetch('./data/ah-producten.json').catch(() => null),
+      ]);
       const data = await res.json();
+      // Productfoto's zijn een extra: zonder AH-data werkt de pagina gewoon
+      if (ahRes && ahRes.ok) ahProducten = await ahRes.json().catch(() => ({}));
       const r = data.recepten.find(r => r.id === id);
 
       if (!r) { toonNietGevonden(); return; }

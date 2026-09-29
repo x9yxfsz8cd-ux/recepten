@@ -1,32 +1,69 @@
-const CACHE = 'recepten-v1';
+/* Service worker.
+   De productfoto's moeten offline beschikbaar zijn: juist in de kelder van een
+   supermarkt heb je geen bereik, en daar is het winkelscherm voor bedoeld. */
+
+const CACHE = 'recepten-v4';
+
 const STATISCH = [
+  './',
   './index.html',
   './recept.html',
+  './winkel.html',
+  './import.html',
   './css/style.css',
-  './manifest.json'
+  './js/gedeeld.js',
+  './manifest.json',
 ];
 
+// Data en afbeeldingen halen we bij installatie binnen, maar een mislukte
+// afbeelding mag de hele installatie niet laten klappen.
+async function vulCache() {
+  const cache = await caches.open(CACHE);
+  await cache.addAll(STATISCH);
+
+  try {
+    const [recepten, producten] = await Promise.all([
+      fetch('./data/recepten.json').then(r => r.json()),
+      fetch('./data/ah-producten.json').then(r => r.json()).catch(() => ({})),
+    ]);
+    await cache.put('./data/recepten.json',
+      new Response(JSON.stringify({ recepten: recepten.recepten }),
+        { headers: { 'Content-Type': 'application/json' } }));
+
+    const paden = new Set();
+    recepten.recepten.forEach(r => {
+      if (r.afbeelding && !r.afbeelding.startsWith('http')) paden.add('./' + r.afbeelding);
+    });
+    Object.values(producten).forEach(p => {
+      if (p && p.afbeelding && !String(p.afbeelding).startsWith('http')) {
+        paden.add('./' + p.afbeelding);
+      }
+    });
+    await Promise.all([...paden].map(pad =>
+      cache.add(pad).catch(() => {})       // één kapotte foto mag niets breken
+    ));
+  } catch {}
+}
+
 self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(STATISCH))
-  );
   self.skipWaiting();
+  e.waitUntil(vulCache());
 });
 
 self.addEventListener('activate', e => {
   e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    )
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', e => {
-  const url = e.request.url;
+  if (e.request.method !== 'GET') return;
+  const url = new URL(e.request.url);
 
-  // Recepten JSON: netwerk eerst, val terug op cache
-  if (url.includes('recepten.json')) {
+  // Data: netwerk eerst, zodat nieuwe recepten meteen doorkomen
+  if (url.pathname.endsWith('.json')) {
     e.respondWith(
       fetch(e.request)
         .then(res => {
@@ -39,22 +76,17 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Externe bronnen (Google Fonts, afbeeldingen): netwerk, cache bijwerken
-  if (!url.startsWith(self.location.origin)) {
-    e.respondWith(
-      caches.match(e.request).then(cached => {
-        const netwerk = fetch(e.request).then(res => {
-          caches.open(CACHE).then(c => c.put(e.request, res.clone()));
-          return res;
-        });
-        return cached || netwerk;
-      })
-    );
-    return;
-  }
-
-  // Alles overig: cache eerst
+  // Al het andere: cache eerst. Dat maakt de app snel en offline bruikbaar.
   e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request))
+    caches.match(e.request).then(gevonden => gevonden || fetch(e.request)
+      .then(res => {
+        if (res.ok && url.origin === location.origin) {
+          const kopie = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, kopie));
+        }
+        return res;
+      })
+      .catch(() => gevonden)
+    )
   );
 });
