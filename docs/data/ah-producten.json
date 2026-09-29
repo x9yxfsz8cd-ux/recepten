@@ -100,6 +100,17 @@
     "titel": "AH Basilicum",
     "url": "https://www.ah.nl/producten/product/wi611642"
   },
+  "bayo bonen chipotle": {
+    "afbeelding": "img/ah/bayo-bonen-chipotle.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313537313032?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "150 g",
+    "id": 591884,
+    "prijs": 2.69,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Tabasco, chilipepersaus",
+    "titel": "AH Hot sauce chipotle",
+    "url": "https://www.ah.nl/producten/product/wi591884"
+  },
   "bieslook": {
     "afbeelding": "img/ah/bieslook.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_6d5172757268704252342d6262425a71757075704241?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -436,6 +447,17 @@
     "url": "https://www.ah.nl/producten/product/wi236942"
   },
   "gemberplakje": null,
+  "geraspte cheddar": {
+    "afbeelding": "img/ah/geraspte-cheddar.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545236393638333132?revLabel=3&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "150 g",
+    "id": 454161,
+    "prijs": 2.99,
+    "schap": "Kaas",
+    "subschap": "Cheddar kaas",
+    "titel": "AH Cheddar geraspte kaas",
+    "url": "https://www.ah.nl/producten/product/wi454161"
+  },
   "geraspte comté": {
     "afbeelding": "img/ah/geraspte-comt.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_5934686f5a736b615176537878446a313551746c3941?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -626,6 +648,7 @@
     "titel": "AH Parmigiano reggiano",
     "url": "https://www.ah.nl/producten/product/wi163822"
   },
+  "jalapenopepers": null,
   "kaneel": {
     "afbeelding": "img/ah/kaneel.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4652625f587a3261534b5768487951694943774d3341?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -660,6 +683,17 @@
     "titel": "AH Keukenzout met jodium",
     "url": "https://www.ah.nl/producten/product/wi3372"
   },
+  "kipfilet": {
+    "afbeelding": "img/ah/kipfilet.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239393132353833?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "150 g",
+    "id": 543332,
+    "prijs": 2.59,
+    "schap": "Vleeswaren",
+    "subschap": "Kipfilet en kalkoenfilet (voorverpakt)",
+    "titel": "AH Scharrel kipfilet naturel",
+    "url": "https://www.ah.nl/producten/product/wi543332"
+  },
   "kippenbouillon": {
     "afbeelding": "img/ah/kippenbouillon.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130303036373838?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -671,6 +705,7 @@
     "titel": "Knorr Kippen bouillon",
     "url": "https://www.ah.nl/producten/product/wi237242"
   },
+  "kippenbouillonblokje": null,
   "knoflook": {
     "afbeelding": "img/ah/knoflook.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239393536393638?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -758,6 +793,17 @@
     "subschap": "Kruimige aardappelen",
     "titel": "AH Kruimige aardappelen",
     "url": "https://www.ah.nl/producten/product/wi123955"
+  },
+  "langgraanrijst": {
+    "afbeelding": "img/ah/langgraanrijst.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130303934393435?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "1 kg",
+    "id": 197575,
+    "prijs": 1.19,
+    "schap": "Pasta, rijst, wereldkeuken",
+    "subschap": "Surinaamse rijst",
+    "titel": "AH Langgraan rijst",
+    "url": "https://www.ah.nl/producten/product/wi197575"
   },
   "linguine": {
     "afbeelding": "img/ah/linguine.jpg",
@@ -1236,6 +1282,17 @@
     "url": "https://www.ah.nl/producten/product/wi111767"
   },
   "salieblaadjes": null,
+  "salsa": {
+    "afbeelding": "img/ah/salsa.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239393438353239?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "300 g",
+    "id": 31473,
+    "prijs": 1.25,
+    "schap": "Pasta, rijst, wereldkeuken",
+    "subschap": "Tomatendip",
+    "titel": "AH Salsa Mild",
+    "url": "https://www.ah.nl/producten/product/wi31473"
+  },
   "sesamolie": {
     "afbeelding": "img/ah/sesamolie.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313932353137?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1291,6 +1348,17 @@
     "subschap": "Japanse sojasaus",
     "titel": "AH Sojasaus",
     "url": "https://www.ah.nl/producten/product/wi496227"
+  },
+  "sour cream": {
+    "afbeelding": "img/ah/sour-cream.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_625f477279485972535f756c49624f42573354566b41?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "125 g",
+    "id": 3869,
+    "prijs": 1.19,
+    "schap": "Zuivel, eieren",
+    "subschap": "Zure room",
+    "titel": "AH Sour cream",
+    "url": "https://www.ah.nl/producten/product/wi3869"
   },
   "spaghetti": {
     "afbeelding": "img/ah/spaghetti.jpg",
@@ -1359,6 +1427,17 @@
     "titel": "AH Sushi zalm",
     "url": "https://www.ah.nl/producten/product/wi587652"
   },
+  "tex-mex kruiden voor burrito": {
+    "afbeelding": "img/ah/tex-mex-kruiden-voor-burrito.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_326e65674555686f5435655a30684354794672376877?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "2-3 pers|35 min",
+    "id": 574721,
+    "prijs": 6.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Gesneden verspakketten",
+    "titel": "AH Gesneden verspakket tex-mex burrito's",
+    "url": "https://www.ah.nl/producten/product/wi574721"
+  },
   "tijm": {
     "afbeelding": "img/ah/tijm.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_78396c7a6961767951593256457a414b58685f765051?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1415,6 +1494,17 @@
     "url": "https://www.ah.nl/producten/product/wi481844"
   },
   "tonijn op oliebasis": null,
+  "tortillawraps": {
+    "afbeelding": "img/ah/tortillawraps.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4358374e444e466554454b6c5962346a4e336d4a5a67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "5 stuks",
+    "id": 399573,
+    "prijs": 2.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Groentewraps",
+    "titel": "No Fairytales Bieten tortilla wraps",
+    "url": "https://www.ah.nl/producten/product/wi399573"
+  },
   "tros pruimtomaatjes": null,
   "udon noedels": {
     "afbeelding": "img/ah/udon-noedels.jpg",

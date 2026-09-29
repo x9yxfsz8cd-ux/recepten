@@ -50,6 +50,7 @@
   </nav>
 
   <script src="./js/gedeeld.js"></script>
+  <script src="./js/ingredient-icoon.js"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -150,9 +151,7 @@
               ? `<span class="ingredient-ah let">${pakken} pakken van ${p.eenheid}</span>`
               : `<span class="ingredient-ah">${p.titel}${p.eenheid ? ' · ' + p.eenheid : ''}</span>`)
           : `<span class="ingredient-ah">geen AH-product gevonden</span>`;
-        const foto = p && p.afbeelding
-          ? `<img class="ingredient-foto" src="${p.afbeelding}" alt="" loading="lazy">`
-          : `<span class="ingredient-foto--leeg"></span>`;
+        const foto = ingredientVakje(ing.naam, p);
         const hoev = ing.eenheid === 'naar smaak' || !ing.hoeveelheid
           ? 'naar smaak'
           : `${formatHoeveelheid(ing.hoeveelheid, huidig.porties, huidig.porties)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();

@@ -59,6 +59,7 @@
   </nav>
 
   <script src="./js/gedeeld.js"></script>
+  <script src="./js/ingredient-icoon.js"></script>
 
   <script>
     let recept = null;
@@ -625,9 +626,7 @@
       const klikbaar = ing.hoeveelheid > 0 && ing.eenheid !== 'naar smaak'
         ? ' style="cursor:pointer" title="Klik om aan te passen"' : '';
       const product = ing.ah ? ahProducten[ing.ah] : null;
-      const foto = product && product.afbeelding
-        ? `<img class="ingredient-foto" src="${product.afbeelding}" alt="" loading="lazy">`
-        : '<span class="ingredient-foto--leeg"></span>';
+      const foto = ingredientVakje(ing.naam, product);
       // Prijzen horen in de winkel, niet bij het fornuis
       const ahRegel = product
         ? `<span class="ingredient-ah">${product.titel}${product.eenheid ? ' · ' + product.eenheid : ''}</span>`

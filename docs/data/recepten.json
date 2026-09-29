@@ -2131,7 +2131,7 @@
       "titel": "Zalm met citroen",
       "slug": "zalm-met-citroen",
       "beschrijving": "Zacht gestoomde zalm in zilverpapier met citroenboterdressing.",
-      "afbeelding": "https://www.24kitchen.nl/files/styles/social_media_share/public/2023-08/lekkersnel12jul-11.jpg?itok=7VXUG8jo",
+      "afbeelding": "",
       "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 1,
@@ -2553,7 +2553,7 @@
       "titel": "Lorenzo's pasta",
       "slug": "lorenzo-s-pasta",
       "beschrijving": "Klassieke Italiaanse pasta met geroosterde tomaten, knapperige bacon en Parmigiano.",
-      "afbeelding": "img/recept/lorenzo-s-pasta.jpg",
+      "afbeelding": "",
       "bereidingstijd": 27,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2644,8 +2644,7 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 12,
-      "bron_afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80"
+      "passieve_tijd": 12
     },
     {
       "id": "r1774543416",
@@ -2762,7 +2761,7 @@
       "titel": "Citroenpasta met chili vlokken",
       "slug": "citroenpasta-met-chili-vlokken",
       "beschrijving": "Fijne Italiaanse pasta met gekarameliseerde citroen, chili en Parmezaanse kaas.",
-      "afbeelding": "img/recept/citroenpasta-met-chili-vlokken.jpg",
+      "afbeelding": "",
       "bereidingstijd": 37,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2874,20 +2873,19 @@
         "koolhydraten": 72,
         "vetten": 18
       },
-      "bron": "https://marleyspoon.nl/menu/600615-courgette-citroenpasta-met-garnalen",
-      "bron_naam": "Marley Spoon",
+      "bron": "",
+      "bron_naam": "Handmatig",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 25,
-      "passieve_tijd": 12,
-      "bron_afbeelding": "https://s3-eu-west-1.amazonaws.com/images-marleyspoon-production/media/recipes/600615/main_photos/large/sf_creamy_lemon_shrimp_spaghetti-5a3fdc3cc10cb05d9878a349537ec055.jpeg"
+      "passieve_tijd": 12
     },
     {
       "id": "r1774683772",
       "titel": "Tomatenrisotto met Kokosmelk en Basilicum",
       "slug": "tomatenrisotto-met-kokosmelk-en-basilicum",
       "beschrijving": "Een romig en aromatisch risotto met verse tomaten, kokosmelk en basilicum voor een Italiaans-tropische fusiegerecht.",
-      "afbeelding": "img/recept/tomatenrisotto-met-kokosmelk-en-basilicum.jpg",
+      "afbeelding": "",
       "bereidingstijd": 25,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -3004,8 +3002,7 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-28",
       "actieve_tijd": 25,
-      "passieve_tijd": 0,
-      "bron_afbeelding": "https://cdn.hellofresh.com/de/cms/raf/hellofresh-logo.png"
+      "passieve_tijd": 0
     },
     {
       "id": "r1775131494",
@@ -3340,6 +3337,145 @@
       "datum_toegevoegd": "2026-09-29",
       "actieve_tijd": 10,
       "passieve_tijd": 10
+    },
+    {
+      "id": "r1790801000",
+      "titel": "Burrito met kip",
+      "slug": "burrito-met-kip",
+      "beschrijving": "Een gevulde, opgerolde bloemtortilla in San Francisco-stijl, met refried beans, gegrilde kip, rijst, guacamole en cheddar.",
+      "afbeelding": "img/recept/burrito-met-kip.jpg",
+      "bereidingstijd": 35,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 6,
+      "tags": [
+        "vlees",
+        "diner",
+        "comfort food"
+      ],
+      "ingredienten": [
+        {
+          "naam": "water",
+          "hoeveelheid": 400,
+          "eenheid": "ml",
+          "ah": "water"
+        },
+        {
+          "naam": "kippenbouillonblokje",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "kippenbouillonblokje"
+        },
+        {
+          "naam": "langgraanrijst",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "langgraanrijst"
+        },
+        {
+          "naam": "kipfilet",
+          "hoeveelheid": 400,
+          "eenheid": "g",
+          "ah": "kipfilet"
+        },
+        {
+          "naam": "zonnebloemolie",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "zonnebloemolie"
+        },
+        {
+          "naam": "tex-mex kruiden voor burrito's",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "tex-mex kruiden voor burrito"
+        },
+        {
+          "naam": "rode ui",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "rode ui"
+        },
+        {
+          "naam": "eetrijpe avocado's",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "avocado"
+        },
+        {
+          "naam": "tortillawraps",
+          "hoeveelheid": 6,
+          "eenheid": "stuks",
+          "ah": "tortillawraps"
+        },
+        {
+          "naam": "salsa in pot",
+          "hoeveelheid": 230,
+          "eenheid": "g",
+          "ah": "salsa"
+        },
+        {
+          "naam": "bayo bonen met chipotle in blik",
+          "hoeveelheid": 440,
+          "eenheid": "g",
+          "ah": "bayo bonen chipotle"
+        },
+        {
+          "naam": "sour cream",
+          "hoeveelheid": 125,
+          "eenheid": "g",
+          "ah": "sour cream"
+        },
+        {
+          "naam": "geraspte cheddar",
+          "hoeveelheid": 150,
+          "eenheid": "g",
+          "ah": "geraspte cheddar"
+        },
+        {
+          "naam": "jalapenopepers in pot",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "jalapenopepers"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Breng het bouillonblokje in het water aan de kook. Bereid hierin de rijst volgens de aanwijzingen op de verpakking. Giet af en laat afgedekt staan tot gebruik."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Halveer ondertussen de kipfilets in de lengte zodat je 4 gelijke stukken hebt. Meng de olie met de burritokruiden en wat zout en schep om met de kip. Verhit de grillpan zonder olie of boter en gril de kip in 12 minuten op middelhoog vuur goudbruin en gaar. Keer regelmatig. Neem uit de pan en trek met 2 vorken het vlees uit elkaar."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Snijd de ui in dunne halve ringen. Schep om met 2 el vocht uit de pot jalapeños. Halveer de avocado's, verwijder de pitten en schep het vruchtvlees uit de schil. Prak grof en breng op smaak met peper en eventueel zout."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Verwarm de tortillawraps volgens de aanwijzingen op de verpakking. Besmeer steeds 1 wrap in het midden in de breedte met 1 tl salsa, laat de randen vrij. Verdeel er 2 el bonenspread, 1 el sour cream, 1 el rijst, 2 el kip, 2 el avocado, 2 el cheddar, wat halve uienringen en wat jalapeños over."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Vouw eerst de brede kant over de vulling en dan de zijkanten naar binnen en rol verder op. Maak zo de rest van de burrito's. Snijd ze in grote stukken en serveer met de rest van de salsa."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 750,
+        "eiwitten": 35,
+        "koolhydraten": 58,
+        "vetten": 39
+      },
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1195139/burrito-met-kip",
+      "bron_naam": "Albert Heijn",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-09-30",
+      "actieve_tijd": 35,
+      "passieve_tijd": 0,
+      "benodigdheden": [
+        "grillpan"
+      ],
+      "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD147728_1024x748_JPG.jpg"
     }
   ]
 }
