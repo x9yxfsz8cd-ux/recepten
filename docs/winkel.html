@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>In de winkel</title>
-  <link rel="stylesheet" href="./css/style.css?v=761613">
+  <link rel="stylesheet" href="./css/style.css?v=762791">
   <link rel="manifest" href="./manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
@@ -49,8 +49,8 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=761613"></script>
-  <script src="./js/ingredient-icoon.js?v=761613"></script>
+  <script src="./js/gedeeld.js?v=762791"></script>
+  <script src="./js/ingredient-icoon.js?v=762791"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -159,7 +159,7 @@
           <button class="vink" data-i="${i}" aria-pressed="${aan}" aria-label="Gekocht">
             <svg viewBox="0 0 24 24"><use href="#i-vink"/></svg></button>
           ${foto}
-          <span class="ingredient-naam">${ing.naam}${onder}</span>
+          <span class="ingredient-naam">${metHoofdletter(ing.naam)}${onder}</span>
           <span class="ingredient-hoeveelheid">${hoev}</span></li>`;
       };
 

@@ -72,6 +72,15 @@ function gemaaktLangeTekst(id) {
   return `${n}× gemaakt · laatst ${mooi}`;
 }
 
+/* ── Weergave ── */
+
+/* Alleen de eerste letter. text-transform:capitalize zou er "Kleine Tomaten"
+   van maken, en zo schrijf je geen Nederlands. */
+function metHoofdletter(tekst) {
+  const t = String(tekst || '').trim();
+  return t ? t[0].toUpperCase() + t.slice(1) : t;
+}
+
 /* ── Hoeveelheden ── */
 
 function formatHoeveelheid(basis, huidig, basisPorties) {

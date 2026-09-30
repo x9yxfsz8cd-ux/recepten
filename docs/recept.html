@@ -10,7 +10,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=761613">
+  <link rel="stylesheet" href="./css/style.css?v=762791">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
@@ -59,9 +59,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=761613"></script>
-  <script src="./js/ingredient-icoon.js?v=761613"></script>
-  <script src="./js/opslag.js?v=761613"></script>
+  <script src="./js/gedeeld.js?v=762791"></script>
+  <script src="./js/ingredient-icoon.js?v=762791"></script>
+  <script src="./js/opslag.js?v=762791"></script>
 
   <script>
     let recept = null;
@@ -248,7 +248,7 @@
         const hoeveelheid = ing.eenheid === 'naar smaak' || ing.hoeveelheid === 0
           ? 'naar smaak'
           : `${formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();
-        return `<span class="km-ing"><b>${hoeveelheid}</b> ${ing.naam}</span>`;
+        return `<span class="km-ing"><b>${hoeveelheid}</b> ${metHoofdletter(ing.naam)}</span>`;
       }).join('');
       strook.hidden = nodig.length === 0;
 
@@ -713,7 +713,7 @@
         <button class="vink" data-i="${index}" aria-pressed="false" aria-label="Afvinken">
           <svg viewBox="0 0 24 24"><use href="#i-vink"/></svg></button>
         ${foto}
-        <span class="ingredient-naam">${ing.naam}${ahRegel}</span>
+        <span class="ingredient-naam">${metHoofdletter(ing.naam)}${ahRegel}</span>
         <span class="ingredient-hoeveelheid"${klikbaar}>${rechts}</span>
       </li>`;
     }
@@ -768,7 +768,7 @@
         ? `<div class="echo" aria-hidden="true"><img src="${r.afbeelding}" alt=""></div>`
         : '';
 
-      const tags = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
+      const tags = r.tags.map(t => `<span class="tag">${metHoofdletter(t)}</span>`).join('');
       const ingredienten = r.ingredienten.map((ing, i) => renderIngredient(ing, i)).join('');
       const stappen = r.stappen.map(s => `
         <div class="stap" data-stap="${s.nummer}" role="button" tabindex="0" aria-label="Stap ${s.nummer}">
