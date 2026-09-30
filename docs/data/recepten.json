@@ -1467,15 +1467,35 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Snij de oesterzwammen in repen, meng met de shoarmakruiden en bak ze in olijfolie in een pan tot ze gaar zijn."
+          "tekst": "Verwarm de oven voor op 230 °C."
         },
         {
           "nummer": 2,
-          "tekst": "Meng de yoghurt met fijngehakte knoflook, zout en peper tot een saus."
+          "tekst": "Scheur de oesterzwammen in grove stukken — scheuren geeft een betere structuur dan snijden. Pluk de dille en hak de helft fijn."
         },
         {
           "nummer": 3,
-          "tekst": "Vul de pitabroodjes met de gegrilde oesterzwammen, gesneden komkommer, yoghurtsaus, dille en granaatappelpitjes."
+          "tekst": "Pers de knoflook in een kleine kom. Snijd de komkommer in plakjes."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Meng de shoarmakruiden met de oesterzwammen en de olijfolie."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Verhit een ruime koekenpan op hoog vuur en bak de oesterzwammen ongeveer 4 minuten. Zet apart."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Verwarm de pitabroodjes volgens de aanwijzingen op de verpakking."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Meng ondertussen de yoghurt met de knoflook en de fijngehakte dille. Breng op smaak met zout en peper."
+        },
+        {
+          "nummer": 8,
+          "tekst": "Serveer de pitabroodjes met de oesterzwamshoarma, de plakjes komkommer en de dille-yoghurtsaus. Garneer met de rest van de dille en de granaatappelpitjes."
         }
       ],
       "voedingswaarden": {
@@ -1861,7 +1881,7 @@
           "ah": "zoete aardappelen"
         },
         {
-          "naam": "kruimige aardappelen",
+          "naam": "kruimige aardappelen (voorgekookt)",
           "hoeveelheid": 600,
           "eenheid": "g",
           "ah": "kruimige aardappelen"
@@ -1912,15 +1932,23 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Schil en snij de zoete aardappelen en kruimige aardappelen in stukken. Kook ze in gezouten water tot ze gaar zijn (ongeveer 15-20 minuten)."
+          "tekst": "Breng een pan water aan de kook. Schil de zoete aardappelen en snijd ze in stukjes. Kook ze samen met de voorgekookte kruimige aardappelen in 15 tot 20 minuten gaar."
         },
         {
           "nummer": 2,
-          "tekst": "Verhit 1 el olijfolie in een pan en fruit de fijngehakte knoflook. Voeg de spinazie toe en bak tot deze is ingevallen."
+          "tekst": "Pel de knoflook en snijd fijn. Verhit olijfolie in een ruime koekenpan en fruit de knoflook. Voeg de spinazie toe en bak kort tot die begint te slinken. Breng op smaak met peper en zout."
         },
         {
           "nummer": 3,
-          "tekst": "Stamp de gekookte aardappelen grof, meng met de spinazie, mosterd, zout en zwarte peper. Snij de halloumi in plakken, bak deze in de resterende olijfolie tot goudbruin en serveer op de stamppot."
+          "tekst": "Snijd de halloumi in smalle plakjes. Verhit olijfolie in een koekenpan en bak de plakken 1 tot 2 minuten per kant tot ze goudbruin en licht knapperig zijn."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Giet de aardappelen af, maar bewaar 3 el kookvocht. Doe ze terug in de pan, voeg de mosterd toe en stamp tot een grove puree — gebruik wat kookvocht als hij te droog is."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Roer de spinazie door de puree. Serveer de stamppot met de krokante halloumi."
         }
       ],
       "voedingswaarden": {
@@ -1966,7 +1994,7 @@
           "ah": "feta"
         },
         {
-          "naam": "tros pruimtomaatjes",
+          "naam": "tros pruimtomaatjes (heel)",
           "hoeveelheid": 500,
           "eenheid": "g",
           "ah": "tros pruimtomaatjes"
@@ -2011,15 +2039,27 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Verwarm de oven voor op 200 °C. Snijd de rode ui in halve ringen, halveer de pruimtomaatjes en hak de knoflook fijn."
+          "tekst": "Verwarm de oven voor op 200 °C."
         },
         {
           "nummer": 2,
-          "tekst": "Verdeel de gnocchi, rode ui, tomaatjes en knoflook over een bakplaat, besprenkel met olijfolie, zout en peper."
+          "tekst": "Kook de gnocchi volgens de aanwijzingen op de verpakking. Laat goed uitlekken en dep ze een beetje droog."
         },
         {
           "nummer": 3,
-          "tekst": "Bak 20 minuten in de voorverwarmde oven, verkruimel vervolgens de feta erover en besprenkel met balsamico-crème."
+          "tekst": "Pel de rode ui, snijd hem doormidden en daarna in partjes of halve ringen. Plet de knoflookteentjes."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Leg de feta als heel blok in het midden van de bakplaat en de gnocchi eromheen. Verdeel de rode ui, de knoflook en de trostomaatjes erover — de tomaatjes blijven heel, die poffen open in de oven."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Besprenkel alles met de olijfolie en de balsamico-crème. Breng op smaak met peper en zout."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Bak de traybake ongeveer 20 minuten in het midden van de oven, tot de tomaatjes gepoft zijn en de rode ui halfzacht. Hussel het gerecht pas aan tafel door elkaar."
         }
       ],
       "voedingswaarden": {
