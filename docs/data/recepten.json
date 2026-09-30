@@ -3476,6 +3476,1119 @@
         "grillpan"
       ],
       "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD147728_1024x748_JPG.jpg"
+    },
+    {
+      "id": "r1774543362",
+      "titel": "Gennaro's Klassieke Spaghetti Carbonara",
+      "slug": "gennaro-s-klassieke-spaghetti-carbonara",
+      "beschrijving": "Een authentieke Italiaanse pasta met pancetta, ei en Parmezaanse kaas.",
+      "afbeelding": "img/recept/gennaro-s-klassieke-spaghetti-carbonara.jpg",
+      "bereidingstijd": 25,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "Italiaans",
+        "vlees",
+        "comfort food",
+        "diner",
+        "snel"
+      ],
+      "ingredienten": [
+        {
+          "naam": "eierdooiers",
+          "hoeveelheid": 3.0,
+          "eenheid": "stuks",
+          "ah": "eierdooiers"
+        },
+        {
+          "naam": "Parmezaanse kaas",
+          "hoeveelheid": 80.0,
+          "eenheid": "g",
+          "ah": "parmezaanse kaas"
+        },
+        {
+          "naam": "pancetta",
+          "hoeveelheid": 300.0,
+          "eenheid": "g",
+          "ah": "pancetta"
+        },
+        {
+          "naam": "gedroogde spaghetti",
+          "hoeveelheid": 400.0,
+          "eenheid": "g",
+          "ah": "gedroogde spaghetti"
+        },
+        {
+          "naam": "knoflook",
+          "hoeveelheid": 2.0,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "Extra vierge olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "Zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "zout"
+        },
+        {
+          "naam": "Peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "peper"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Doe 3 eierdooiers in een kom, rasp 80 g Parmezaanse kaas erbij, breng op smaak met peper en meng goed met een vork. Hak ondertussen 300 g pancetta fijn."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Kook 400 g spaghetti in een grote pan met kokend gezouten water tot al dente. Verwarm intussen een medium koekenpan op middelhoog vuur, pel 2 knoflookteentjes, plet deze en voeg toe aan de pan, laat 1 minuut de olie op smaak brengen. Roer de gehakte pancetta erdoor en bak 4 minuten tot het knapperig begint te worden."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Verwijder de knoflook uit de pan, giet de spaghetti af en voeg toe aan de pancetta. Hussel goed door, haal de pan van het vuur en voeg een scheut kookwater toe."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Giet het eimengsel erbij en hussel goed door – de warmte gaart het ei zachtjes. Voeg meer kookwater toe tot het mooi glanzend is en breng op smaak met peper."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Serveer direct met geraspte Parmezaanse kaas en een extra draai peper."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 620,
+        "eiwitten": 26,
+        "koolhydraten": 68,
+        "vetten": 26
+      },
+      "bron": "https://www.jamieoliver.com/recipes/pasta/gennaro-s-classic-spaghetti-carbonara/",
+      "bron_naam": "Jamie Oliver",
+      "bron_type": "notitie",
+      "datum_toegevoegd": "2026-03-26",
+      "actieve_tijd": 15,
+      "passieve_tijd": 10,
+      "bron_afbeelding": "https://cdn.sanity.io/images/cq7w2e71/production/08ae0b8293235129bbe7d55a3f89c2fc4f1a36d7-973x1300.jpg"
+    },
+    {
+      "id": "r1777223515",
+      "titel": "Krokante gnocchi met paprika & rozemarijn",
+      "slug": "krokante-gnocchi-met-paprika-en-rozemarijn",
+      "beschrijving": "Nooit genoeg manieren om krokante gnocchi te maken. Deze variant met rode paprika en rozemarijn is een heerlijk alternatief. Gebruik een grote, liefst metalen bakplaat zodat de gnocchi extra knapperig worden.",
+      "afbeelding": "https://koken.maruc.nl/storage/media/66/conversions/krokante-gnocchi-met-paprika-en-rozemarijn-1689881117-show.jpg",
+      "bereidingstijd": 45,
+      "actieve_tijd": 15,
+      "passieve_tijd": 30,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "gnocchi",
+          "hoeveelheid": 500,
+          "eenheid": "g",
+          "ah": "gnocchi"
+        },
+        {
+          "naam": "gemengde rode, gele en babypaprika's, in stukjes",
+          "hoeveelheid": 500,
+          "eenheid": "g",
+          "ah": "gemengde rode"
+        },
+        {
+          "naam": "kerstomaten, gehalveerd",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "kerstomaten"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "laurierblaadjes",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "laurierblaadjes"
+        },
+        {
+          "naam": "knoflook",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "chilivlokken",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "chilivlokken"
+        },
+        {
+          "naam": "rozemarijn (flinke takjes)",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "rozemarijn"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "versgemalen zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "versgemalen zwarte peper"
+        },
+        {
+          "naam": "ricotta",
+          "hoeveelheid": 4,
+          "eenheid": "el",
+          "ah": "ricotta"
+        },
+        {
+          "naam": "versgesneden peterselie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "versgesneden peterselie"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 200°C hetelucht / 220°C elektrisch."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Laat de gnocchi in een grote schaal glijden, schenk er een volle ketel kokend water over en laat ze zo 2 minuten staan. Giet ze af en laat ze uitlekken."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Doe de gnocchi en alle overige ingrediënten, behalve de ricotta en peterselie, in een grote bakplaat waar alles in een enkele laag op past. Zet het geheel 30 minuten in de oven, tot de gnocchi knapperig en goudkleurig zijn."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Proef en voeg indien nodig wat zout en peper toe. Verdeel de ricotta erover en bestrooi met de peterselie. Direct serveren."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 380,
+        "eiwitten": 12,
+        "koolhydraten": 48,
+        "vetten": 16
+      },
+      "bron": "",
+      "bron_naam": "Rukmini Iyer — De Groene Bakplaat",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-04-26"
+    },
+    {
+      "id": "r1778095207",
+      "titel": "Pittige tonijnsalade",
+      "slug": "pittige-tonijnsalade",
+      "beschrijving": "Een makkelijk recept voor pittige tonijnsalade, perfect op brood of als borrelhapje.",
+      "afbeelding": "img/recept/pittige-tonijnsalade.jpg",
+      "bereidingstijd": 5,
+      "actieve_tijd": 5,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vis",
+        "snel",
+        "lunch",
+        "snack"
+      ],
+      "ingredienten": [
+        {
+          "naam": "tonijn (op water, MSC)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "tonijn"
+        },
+        {
+          "naam": "limoen",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks",
+          "ah": "limoen"
+        },
+        {
+          "naam": "rode peper",
+          "hoeveelheid": 0.25,
+          "eenheid": "stuks",
+          "ah": "rode peper"
+        },
+        {
+          "naam": "augurken",
+          "hoeveelheid": 3,
+          "eenheid": "stuks",
+          "ah": "augurken"
+        },
+        {
+          "naam": "verse bieslook",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "bieslook"
+        },
+        {
+          "naam": "mayonaise",
+          "hoeveelheid": 1.0,
+          "eenheid": "el",
+          "ah": "mayonaise"
+        },
+        {
+          "naam": "Griekse yoghurt",
+          "hoeveelheid": 1.0,
+          "eenheid": "el",
+          "ah": "griekse yoghurt"
+        },
+        {
+          "naam": "mosterd",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl",
+          "ah": "mosterd"
+        },
+        {
+          "naam": "sambal",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl",
+          "ah": "sambal"
+        },
+        {
+          "naam": "kurkuma",
+          "hoeveelheid": 1.0,
+          "eenheid": "tl",
+          "ah": "kurkuma"
+        },
+        {
+          "naam": "komijn",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl",
+          "ah": "komijn"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Laat het blikje tonijn uitlekken en schep de tonijn in een schaaltje."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snij de kop en kont van de augurken af en snij daarna heel fijn. Verwijder de zaadjes van de rode peper en snij de peper in kleine blokjes."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Maak de dressing in een tweede schaaltje door het sap van ½ limoen te mengen met de mayonaise, Griekse yoghurt, mosterd, sambal, kurkuma en komijn."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg de augurk en rode peper toe aan de tonijn, schenk de dressing erbij en meng goed door. Knip vers bieslook over de salade en serveer op brood of als borrelhapje."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 94,
+        "eiwitten": 15,
+        "koolhydraten": 5,
+        "vetten": 2
+      },
+      "bron": "https://www.mindyourfeed.nl/recepten/lunch/pittige-tonijnsalade/",
+      "bron_naam": "Mindyourfeed",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-05-06",
+      "bron_afbeelding": "https://www.mindyourfeed.nl/wp-content/uploads/2017/02/pittige-tonijnsalade-1.jpg"
+    },
+    {
+      "id": "r1778095438",
+      "titel": "Bio Bietjesstamppot",
+      "slug": "bio-bietjesstamppot",
+      "beschrijving": "Een heerlijke, plantaardige stamppot met biologische bietjes en aardappelen, afgemaakt met mosterd en ketjap manis.",
+      "afbeelding": "img/bio-bietjesstamppot.jpg",
+      "bereidingstijd": 45,
+      "actieve_tijd": 25,
+      "passieve_tijd": 20,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "diner",
+        "babyvriendelijk"
+      ],
+      "ingredienten": [
+        {
+          "naam": "aardappelen",
+          "hoeveelheid": 1000.0,
+          "eenheid": "g",
+          "ah": "aardappelen"
+        },
+        {
+          "naam": "voorgekookte biologische bietjes",
+          "hoeveelheid": 500.0,
+          "eenheid": "g",
+          "ah": "voorgekookte bietjes"
+        },
+        {
+          "naam": "plantaardige boter",
+          "hoeveelheid": 50.0,
+          "eenheid": "g",
+          "ah": "plantaardige boter"
+        },
+        {
+          "naam": "plantaardige melk",
+          "hoeveelheid": 100.0,
+          "eenheid": "ml",
+          "ah": "plantaardige melk"
+        },
+        {
+          "naam": "mosterd",
+          "hoeveelheid": 1.0,
+          "eenheid": "el",
+          "ah": "mosterd"
+        },
+        {
+          "naam": "ketjap manis",
+          "hoeveelheid": 3.0,
+          "eenheid": "el",
+          "ah": "ketjap manis"
+        },
+        {
+          "naam": "peper naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "peper"
+        },
+        {
+          "naam": "zout naar smaak",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "zout"
+        },
+        {
+          "naam": "ui (geel of rood)",
+          "hoeveelheid": 1.0,
+          "eenheid": "stuks",
+          "ah": "ui"
+        },
+        {
+          "naam": "plantaardige spekjes (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "plantaardige spekjes"
+        },
+        {
+          "naam": "plantaardige gehaktballen (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "plantaardige gehaktballen"
+        },
+        {
+          "naam": "jus (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "jus"
+        },
+        {
+          "naam": "rucola",
+          "hoeveelheid": 50,
+          "eenheid": "g",
+          "ah": "rucola"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Kook de aardappelen volgens de verpakkingsinstructies voor stamppot."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd de ui klein en bak die samen met de plantaardige spekjes op. Snijd de bietjes in blokjes van een halve centimeter en bewaar het bietensap."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Stamp de aardappelen samen met het bietensap, boter, melk, mosterd, ketjap manis, peper en zout tot een stampot. Voeg op het laatste moment de bietjes toe en stamp nog even door."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Schep de spekjes en ui erdoor heen en serveer met rucola, gehaktballen en jus."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 280,
+        "eiwitten": 6,
+        "koolhydraten": 42,
+        "vetten": 10
+      },
+      "bron": "https://www.instagram.com/reel/DRMNCVsCBB1/",
+      "bron_naam": "Titia Hoogendoorn via Instagram",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-05-06"
+    },
+    {
+      "id": "r1778096916",
+      "titel": "Spaghetti met tonijn- en ansjovisaus",
+      "slug": "spaghetti-met-tonijn-en-ansjovisaus",
+      "beschrijving": "Een intensieve Italiaanse pastaschotel met tonijn, ansjovis en kappertjes, traditioneel gerecht voor Vasten.",
+      "afbeelding": "img/recept/spaghetti-met-tonijn-en-ansjovisaus.jpg",
+      "bereidingstijd": 30,
+      "actieve_tijd": 10,
+      "passieve_tijd": 20,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 2,
+      "tags": [
+        "vis",
+        "Italiaans",
+        "diner",
+        "lunch"
+      ],
+      "ingredienten": [
+        {
+          "naam": "Spaghetti",
+          "hoeveelheid": 200.0,
+          "eenheid": "g",
+          "ah": "spaghetti"
+        },
+        {
+          "naam": "Tomatenpuree",
+          "hoeveelheid": 160.0,
+          "eenheid": "g",
+          "ah": "tomatenpuree"
+        },
+        {
+          "naam": "Tonijn in olie",
+          "hoeveelheid": 80.0,
+          "eenheid": "g",
+          "ah": "tonijn"
+        },
+        {
+          "naam": "Kappertjes",
+          "hoeveelheid": 1.0,
+          "eenheid": "el",
+          "ah": "kappertjes"
+        },
+        {
+          "naam": "Ansjovis onder zout",
+          "hoeveelheid": 4.0,
+          "eenheid": "stuks",
+          "ah": "ansjovis onder zout"
+        },
+        {
+          "naam": "peterselie",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "peterselie"
+        },
+        {
+          "naam": "knoflook",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "olijfolie extra vierge",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "zout"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Zet de ansjovis en kappertjes in twee aparte schaaltjes om uit te weken."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit een beetje olijfolie in een pan met fijngehakte knoflook op laag vuur gedurende 1 minuut."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de uitgelekte tonijn toe en laat deze 2 minuten fruiten."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg de in stukken gebroken ansjovis en fijngestampte kappertjes toe, samen met fijngehakte peterselie."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Giet de tomatenpuree erbij met een pollepel warm water en laat dit ongeveer 20 minuten op laag vuur sudderen terwijl je af en toe roert, tot je een mooie saus hebt; kruid af met zout."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Kook de pasta in ruim kokend gezout water en giet af tot al dente; voeg toe aan de pan met saus."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Meng de pasta met de saus op hoog vuur gedurende 2 minuten. Serveer met fijngehakte peterselie en eventueel rode peper naar wens."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 420,
+        "eiwitten": 28,
+        "koolhydraten": 48,
+        "vetten": 12
+      },
+      "bron": "https://blog.giallozafferano.it/ricettedilibellula/spaghetti-sugo-tonno-acciughe/",
+      "bron_naam": "Le ricette di Libellula via Blog",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-05-06",
+      "bron_afbeelding": "https://blog.giallozafferano.it/ricettedilibellula/wp-content/uploads/2020/03/Pasta-sugo-tonno-acciughe.jpg"
+    },
+    {
+      "id": "r1779695622",
+      "slug": "groene-orzo-vegan-pesto",
+      "titel": "Groene orzo met vegan pesto en prei",
+      "beschrijving": "Bio en babyvriendelijke variatie op groene orzo. De vegan pesto op basis van basilicum, spinazie en kokosmelk maakt het gerecht romig en voedzaam — ook geschikt als puree voor baby's.",
+      "afbeelding": "img/groene-orzo-vegan-pesto.jpg",
+      "bereidingstijd": 30,
+      "actieve_tijd": 30,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegan",
+        "diner",
+        "snel",
+        "babyvriendelijk"
+      ],
+      "datum_toegevoegd": "2026-05-25",
+      "bron": "https://imginn.com/p/DYOq24qo4D3/",
+      "bron_naam": "Instagram",
+      "voedingswaarden": {},
+      "ingredienten": [
+        {
+          "naam": "basilicum",
+          "hoeveelheid": 50,
+          "eenheid": "g",
+          "ah": "basilicum"
+        },
+        {
+          "naam": "knoflook (voor pesto)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "cashew- of walnoten",
+          "hoeveelheid": 40,
+          "eenheid": "g",
+          "ah": "cashew-"
+        },
+        {
+          "naam": "edelgist vlokken",
+          "hoeveelheid": 3,
+          "eenheid": "el",
+          "ah": "edelgist vlokken"
+        },
+        {
+          "naam": "notenpasta (optioneel)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "notenpasta"
+        },
+        {
+          "naam": "extra vierge olijfolie",
+          "hoeveelheid": 80,
+          "eenheid": "ml",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "spinazie (voor pesto)",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "spinazie"
+        },
+        {
+          "naam": "kokosmelk",
+          "hoeveelheid": 400,
+          "eenheid": "ml",
+          "ah": "kokosmelk"
+        },
+        {
+          "naam": "orzo",
+          "hoeveelheid": 400,
+          "eenheid": "g",
+          "ah": "orzo"
+        },
+        {
+          "naam": "prei",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "prei"
+        },
+        {
+          "naam": "knoflook",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "ui",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "ui"
+        },
+        {
+          "naam": "bouillon",
+          "hoeveelheid": 500,
+          "eenheid": "ml",
+          "ah": "bouillon"
+        },
+        {
+          "naam": "doperwten (diepvries)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "doperwten"
+        },
+        {
+          "naam": "citroen",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "citroen"
+        },
+        {
+          "naam": "spinazie (voor gerecht)",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "spinazie"
+        },
+        {
+          "naam": "peper en zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "peper en zout"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Maak de vegan pesto: doe de basilicum, knoflook, (geweekte) noten en edelgist vlokken in een blender samen met de olijfolie en blend tot een grove massa."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Voeg de kokosmelk en de helft van de spinazie (100 g) toe aan de blender en blend tot een gladde, romige saus."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Maak de preien schoon, halveer ze in de lengte en snij in reepjes. Snipper de ui en het teentje knoflook fijn."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Verhit een scheutje olijfolie in een ruime pan. Bak de prei, ui en knoflook 5 minuten op middelhoog vuur."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Voeg de orzo toe en bak 1 minuut mee. Giet daarna de groene pestosaus erbij en roer goed door."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Laat de orzo in ongeveer 10 minuten gaar worden op laag-middelhoog vuur. Schep regelmatig door en proef of de orzo zacht genoeg is. Voeg bouillon toe als het te droog wordt."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Rasp de schil van de citroen over de pan en voeg het sap van een halve citroen toe."
+        },
+        {
+          "nummer": 8,
+          "tekst": "Voeg de rest van de spinazie (100 g) en de doperwten toe. Schep door en laat de spinazie slinken."
+        },
+        {
+          "nummer": 9,
+          "tekst": "Voor baby: schep een deel uit de pan vóórdat je peper en zout toevoegt. Staafmix tot puree of prak grover naar behoefte."
+        },
+        {
+          "nummer": 10,
+          "tekst": "Breng de rest op smaak met peper en zout. Voeg eventueel vegan gehakt toe en laat nog 2 minuten meebakken."
+        }
+      ]
+    },
+    {
+      "id": "r1780140773",
+      "slug": "vegetarische-lasagna-geroosterde-groenten",
+      "titel": "Vegetarische lasagna met geroosterde groenten",
+      "beschrijving": "Laagjes geroosterde champignons, paprika, courgette en spinazie met romige ricotta, tomatensaus en gesmolten mozzarella.",
+      "afbeelding": "img/vegetarische-lasagna.jpg",
+      "bereidingstijd": 90,
+      "actieve_tijd": 40,
+      "passieve_tijd": 50,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 8,
+      "tags": [
+        "vegetarisch",
+        "comfort food",
+        "Italiaans",
+        "diner",
+        "babyvriendelijk"
+      ],
+      "datum_toegevoegd": "2026-05-30",
+      "bron": "https://www.loveandlemons.com/vegetarian-lasagna/",
+      "bron_naam": "Love and Lemons",
+      "voedingswaarden": {},
+      "ingredienten": [
+        {
+          "naam": "champignons (gehalveerd)",
+          "hoeveelheid": 225,
+          "eenheid": "g",
+          "ah": "champignons"
+        },
+        {
+          "naam": "rode paprika (in stukken van 2 cm)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "rode paprika"
+        },
+        {
+          "naam": "courgette (in blokjes van 1 cm)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "courgette"
+        },
+        {
+          "naam": "ui (in stukken)",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks",
+          "ah": "ui"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "lasagnebladen",
+          "hoeveelheid": 15,
+          "eenheid": "stuks",
+          "ah": "lasagnebladen"
+        },
+        {
+          "naam": "tomatensaus (marinara)",
+          "hoeveelheid": 700,
+          "eenheid": "ml",
+          "ah": "tomatensaus"
+        },
+        {
+          "naam": "verse spinazie",
+          "hoeveelheid": 75,
+          "eenheid": "g",
+          "ah": "spinazie"
+        },
+        {
+          "naam": "mozzarella (geraspt)",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "mozzarella"
+        },
+        {
+          "naam": "pecorino (geraspt)",
+          "hoeveelheid": 50,
+          "eenheid": "g",
+          "ah": "pecorino"
+        },
+        {
+          "naam": "ricotta",
+          "hoeveelheid": 700,
+          "eenheid": "g",
+          "ah": "ricotta"
+        },
+        {
+          "naam": "knoflook (geraspt)",
+          "hoeveelheid": 3,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "citroenrasp",
+          "hoeveelheid": 2,
+          "eenheid": "tl",
+          "ah": "citroenrasp"
+        },
+        {
+          "naam": "peper en zout",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "peper en zout"
+        },
+        {
+          "naam": "verse basilicum of peterselie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "basilicum"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 220°C. Bekleed een bakplaat met bakpapier en vet een ovenschaal van 23x33 cm in met olijfolie."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Meng de champignons, paprika, courgette en ui met olijfolie, zout en peper. Rooster 20-25 minuten in de oven tot de groenten gaar en licht gekleurd zijn. Verlaag de oventemperatuur daarna naar 200°C."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Kook de lasagnebladen volgens de verpakking al dente. Giet af en schep om met een scheut olijfolie zodat ze niet aan elkaar kleven."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Meng de ricotta met de knoflook, citroenrasp, zout en peper in een kom."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Schep 200 ml tomatensaus op de bodem van de ovenschaal. Leg er een laag lasagnebladen op, schep de helft van het ricottamengsel erover, verdeel de helft van de 75 g spinazie en de helft van de geroosterde groenten, en druppel 200 ml saus erover."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Herhaal: lasagnebladen, rest van de ricotta, spinazie, groenten en 200 ml saus. Sluit af met de laatste lasagnebladen."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Verdeel de resterende saus over de bovenkant. Bestrooi met 200 g mozzarella en 50 g pecorino. Bak 30 minuten tot de kaas goudbruin en bubbelend is."
+        },
+        {
+          "nummer": 8,
+          "tekst": "Laat de lasagna 20 minuten rusten voor het aansnijden. Garneer met verse basilicum of peterselie."
+        }
+      ]
+    },
+    {
+      "id": "r1751158800",
+      "slug": "kokoskoek",
+      "titel": "Kokoskoek(taart)",
+      "beschrijving": "Smeuïge kokoskoek die iets tussen een cake en een taart in zit. Alles in een kom, roeren en bakken — makkelijker wordt het niet.",
+      "afbeelding": "img/recept/kokoskoek.jpg",
+      "bereidingstijd": 40,
+      "actieve_tijd": 10,
+      "passieve_tijd": 30,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 8,
+      "tags": [
+        "vegetarisch",
+        "snack"
+      ],
+      "datum_toegevoegd": "2026-06-29",
+      "bron": "https://www.carolabaktzoethoudertjes.nl/post/kokoskoek-of-kokostaart-of-toch-kokoskoektaart",
+      "bron_type": "website",
+      "bron_naam": "Carola Bakt Zoethoudertjes",
+      "ingredienten": [
+        {
+          "naam": "roomboter (kamertemperatuur)",
+          "hoeveelheid": 125,
+          "eenheid": "g",
+          "ah": "roomboter"
+        },
+        {
+          "naam": "fijne kristalsuiker",
+          "hoeveelheid": 275,
+          "eenheid": "g",
+          "ah": "fijne kristalsuiker"
+        },
+        {
+          "naam": "vanillesuiker",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "vanillesuiker"
+        },
+        {
+          "naam": "eieren",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "eieren"
+        },
+        {
+          "naam": "geraspte kokos",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "geraspte kokos"
+        },
+        {
+          "naam": "zout",
+          "hoeveelheid": 1,
+          "eenheid": "snuf",
+          "ah": "zout"
+        },
+        {
+          "naam": "zelfrijzend bakmeel",
+          "hoeveelheid": 125,
+          "eenheid": "g",
+          "ah": "zelfrijzend bakmeel"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 200°C. Bekleed een springvorm van 20-22 cm met bakpapier en vet de rand in."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Doe de zachte boter, suiker, vanillesuiker, eieren, geraspte kokos, snuf zout en zelfrijzend bakmeel in een kom. Roer alles goed door elkaar tot een glad beslag."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Schep het beslag in de springvorm en verdeel gelijkmatig."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Bak de kokoskoek 25-30 minuten goudbruin in het midden van de oven."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Laat de koek een paar uur afkoelen in de vorm voor het aansnijden."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 380,
+        "eiwitten": 4,
+        "koolhydraten": 48,
+        "vetten": 20
+      },
+      "bron_afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2022/03/kokoskoek-scaled-1200x0-c-default-1024x0-c-default.jpg"
+    },
+    {
+      "id": "r1751158900",
+      "slug": "falafel-wraps-flatbread-feta",
+      "titel": "Falafel wraps met flatbread en feta",
+      "beschrijving": "Snelle vegetarische wraps met krokante falafel, frisse tomatensalade, ingelegde rode ui en een romige hummus-yoghurtsaus.",
+      "afbeelding": "img/recept/falafel-wraps-flatbread-feta.jpg",
+      "bereidingstijd": 30,
+      "actieve_tijd": 15,
+      "passieve_tijd": 15,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "snel",
+        "lunch",
+        "diner"
+      ],
+      "datum_toegevoegd": "2026-07-23",
+      "bron": "https://denisekortlever.com/falafel-wraps-met-flatbread-en-feta/",
+      "bron_type": "website",
+      "bron_naam": "Denise Kortlever",
+      "ingredienten": [
+        {
+          "naam": "falafelballetjes (kant-en-klaar)",
+          "hoeveelheid": 12,
+          "eenheid": "stuks",
+          "ah": "falafelballetjes"
+        },
+        {
+          "naam": "flatbreads",
+          "hoeveelheid": 4,
+          "eenheid": "stuks",
+          "ah": "flatbreads"
+        },
+        {
+          "naam": "feta",
+          "hoeveelheid": 50,
+          "eenheid": "g",
+          "ah": "feta"
+        },
+        {
+          "naam": "cherrytomaatjes, gehalveerd",
+          "hoeveelheid": 150,
+          "eenheid": "g",
+          "ah": "cherrytomaatjes"
+        },
+        {
+          "naam": "komkommer, in blokjes",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks",
+          "ah": "komkommer"
+        },
+        {
+          "naam": "ingelegde citroenschil, fijngehakt",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "ingelegde citroenschil"
+        },
+        {
+          "naam": "rode ui, in ringen",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "rode ui"
+        },
+        {
+          "naam": "azijn (voor inleggen ui)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "azijn"
+        },
+        {
+          "naam": "hummus",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "hummus"
+        },
+        {
+          "naam": "yoghurt",
+          "hoeveelheid": 4,
+          "eenheid": "el",
+          "ah": "yoghurt"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "zout en peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "zout en peper"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Snijd 1 rode ui in ringen en leg in een potje. Overgiet met azijn tot alles bedekt is. Laat minimaal 15 minuten staan (of maak een dag van tevoren)."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Meng 2 el hummus met 4 el yoghurt en eventueel een scheut citroensap tot een gladde saus. Zet koel weg."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Verhit een flinke scheut olijfolie in een grote koekenpan. Bak de falafelballetjes circa 3 minuten per kant tot ze goudbruin en krokant zijn. Laat uitlekken op keukenpapier."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Meng de gehalveerde cherrytomaatjes, halve komkommer in blokjes en 1 el fijngehakte ingelegde citroenschil in een kom. Breng op smaak met peper, zout en een scheutje olijfolie."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Verwarm de 4 flatbreads kort in de oven of magnetron. Verdeel de tomatensalade, falafel, 50g verkruimelde feta en ingelegde uiringen erover. Lepel de saus erop en serveer direct."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 620,
+        "eiwitten": 22,
+        "koolhydraten": 68,
+        "vetten": 28
+      },
+      "bron_afbeelding": "https://denisekortlever.com/wp-content/uploads/2021/02/falafel-flatbread-wrap-roze-ui-2-846x1024-1.jpg"
     }
   ]
 }
