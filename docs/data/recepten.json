@@ -3496,7 +3496,7 @@
       "ingredienten": [
         {
           "naam": "eierdooiers",
-          "hoeveelheid": 3.0,
+          "hoeveelheid": 6,
           "eenheid": "stuks",
           "ah": "eierdooiers"
         },
@@ -3546,7 +3546,7 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Doe 3 eierdooiers in een kom, rasp 80 g Parmezaanse kaas erbij, breng op smaak met peper en meng goed met een vork. Hak ondertussen 300 g pancetta fijn."
+          "tekst": "Doe 6 eierdooiers in een kom, rasp 80 g Parmezaanse kaas erbij, breng op smaak met peper en meng goed met een vork. Hak ondertussen 300 g pancetta fijn."
         },
         {
           "nummer": 2,
@@ -3584,7 +3584,7 @@
       "titel": "Krokante gnocchi met paprika & rozemarijn",
       "slug": "krokante-gnocchi-met-paprika-en-rozemarijn",
       "beschrijving": "Nooit genoeg manieren om krokante gnocchi te maken. Deze variant met rode paprika en rozemarijn is een heerlijk alternatief. Gebruik een grote, liefst metalen bakplaat zodat de gnocchi extra knapperig worden.",
-      "afbeelding": "https://koken.maruc.nl/storage/media/66/conversions/krokante-gnocchi-met-paprika-en-rozemarijn-1689881117-show.jpg",
+      "afbeelding": "",
       "bereidingstijd": 45,
       "actieve_tijd": 15,
       "passieve_tijd": 30,
@@ -3697,7 +3697,8 @@
       "bron": "",
       "bron_naam": "Rukmini Iyer — De Groene Bakplaat",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-04-26"
+      "datum_toegevoegd": "2026-04-26",
+      "bron_afbeelding": "https://koken.maruc.nl/storage/media/66/conversions/krokante-gnocchi-met-paprika-en-rozemarijn-1689881117-show.jpg"
     },
     {
       "id": "r1778095207",
@@ -3965,7 +3966,7 @@
           "ah": "spaghetti"
         },
         {
-          "naam": "Tomatenpuree",
+          "naam": "Gezeefde tomaten (passata)",
           "hoeveelheid": 160.0,
           "eenheid": "g",
           "ah": "tomatenpuree"
@@ -4032,7 +4033,7 @@
         },
         {
           "nummer": 5,
-          "tekst": "Giet de tomatenpuree erbij met een pollepel warm water en laat dit ongeveer 20 minuten op laag vuur sudderen terwijl je af en toe roert, tot je een mooie saus hebt; kruid af met zout."
+          "tekst": "Giet de gezeefde tomaten erbij met een pollepel warm water en laat dit ongeveer 20 minuten op laag vuur sudderen terwijl je af en toe roert, tot je een mooie saus hebt; kruid af met zout."
         },
         {
           "nummer": 6,
@@ -4471,7 +4472,7 @@
       "titel": "Falafel wraps met flatbread en feta",
       "beschrijving": "Snelle vegetarische wraps met krokante falafel, frisse tomatensalade, ingelegde rode ui en een romige hummus-yoghurtsaus.",
       "afbeelding": "img/recept/falafel-wraps-flatbread-feta.jpg",
-      "bereidingstijd": 30,
+      "bereidingstijd": 15,
       "actieve_tijd": 15,
       "passieve_tijd": 15,
       "moeilijkheidsgraad": "makkelijk",
