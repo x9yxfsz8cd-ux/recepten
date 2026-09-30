@@ -133,17 +133,6 @@
     "titel": "AH Bacon",
     "url": "https://www.ah.nl/producten/product/wi543389"
   },
-  "badia kruiden": {
-    "afbeelding": "img/ah/badia-kruiden.jpg",
-    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_324f6c46476a5231513761416e4d6532575933376751?revLabel=1&rendition=400x400_WEBP&fileType=binary",
-    "eenheid": "15 g",
-    "id": 238968,
-    "prijs": 1.29,
-    "schap": "Groente, aardappelen",
-    "subschap": "Verse kruiden",
-    "titel": "AH Koriander",
-    "url": "https://www.ah.nl/producten/product/wi238968"
-  },
   "balsamico-crème": null,
   "basilicum": {
     "afbeelding": "img/ah/basilicum.jpg",
@@ -626,14 +615,14 @@
   },
   "flatbreads": {
     "afbeelding": "img/ah/flatbreads.jpg",
-    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_6a6e6136444a666b546e3642786561695159355f6d51?revLabel=1&rendition=400x400_WEBP&fileType=binary",
-    "eenheid": "200 g",
-    "id": 591856,
-    "prijs": 2.99,
-    "schap": "Pasta, rijst, wereldkeuken",
-    "subschap": "Flatbreads",
-    "titel": "Souq Simit",
-    "url": "https://www.ah.nl/producten/product/wi591856"
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313036373231?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "210 g",
+    "id": 498340,
+    "prijs": 2.39,
+    "schap": "Bakkerij",
+    "subschap": "Pitabroodjes, flatbread, bao buns",
+    "titel": "AH Flatbread",
+    "url": "https://www.ah.nl/producten/product/wi498340"
   },
   "gedroogde oregano": {
     "afbeelding": "img/ah/gedroogde-oregano.jpg",
@@ -2375,14 +2364,14 @@
   },
   "tortillawraps": {
     "afbeelding": "img/ah/tortillawraps.jpg",
-    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4358374e444e466554454b6c5962346a4e336d4a5a67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
-    "eenheid": "5 stuks",
-    "id": 399573,
-    "prijs": 2.99,
-    "schap": "Groente, aardappelen",
-    "subschap": "Groentewraps",
-    "titel": "No Fairytales Bieten tortilla wraps",
-    "url": "https://www.ah.nl/producten/product/wi399573"
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313035333937?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "232 g",
+    "id": 164955,
+    "prijs": 1.09,
+    "schap": "Pasta, rijst, wereldkeuken",
+    "subschap": "Taco, tortilla, wrap, burrito",
+    "titel": "AH Tortilla naturel wraps mini",
+    "url": "https://www.ah.nl/producten/product/wi164955"
   },
   "tros pruimtomaatjes": null,
   "trostomaten": {

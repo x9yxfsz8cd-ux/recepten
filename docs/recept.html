@@ -10,7 +10,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=801125">
+  <link rel="stylesheet" href="./css/style.css?v=810088">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
@@ -59,9 +59,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=801125"></script>
-  <script src="./js/ingredient-icoon.js?v=801125"></script>
-  <script src="./js/opslag.js?v=801125"></script>
+  <script src="./js/gedeeld.js?v=810088"></script>
+  <script src="./js/ingredient-icoon.js?v=810088"></script>
+  <script src="./js/opslag.js?v=810088"></script>
 
   <script>
     let recept = null;
@@ -832,6 +832,13 @@
         bron = r.bron
           ? `<span class="bron-label">Originele bron: <a class="bron-link" href="${r.bron}" target="_blank" rel="noopener">${naam}</a></span>`
           : `<span class="bron-label">Originele bron: ${naam}</span>`;
+      }
+      // Foto's onder een CC-licentie moeten de maker noemen
+      if (r.foto_maker) {
+        const wie = r.bron_afbeelding
+          ? `<a class="bron-link" href="${r.bron_afbeelding}" target="_blank" rel="noopener">${r.foto_maker}</a>`
+          : r.foto_maker;
+        bron += `<span class="bron-label">Foto: ${wie}, ${r.foto_licentie || 'CC'}</span>`;
       }
 
       document.getElementById('app').innerHTML = `

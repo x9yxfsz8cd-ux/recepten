@@ -5,7 +5,7 @@
       "titel": "Pasta al limone",
       "slug": "pasta-al-limone",
       "beschrijving": "De klassieke versie van de Amalfikust: geen room, maar een romige saus die je klopt van koude boter, veel citroen, Parmigiano en pastawater. Drie ingrediënten, dus koop ze goed.",
-      "afbeelding": "",
+      "afbeelding": "img/recept/pasta-al-limone.jpg",
       "bereidingstijd": 20,
       "actieve_tijd": 20,
       "passieve_tijd": 0,
@@ -100,7 +100,10 @@
       "bron": "",
       "bron_naam": "Klassiek Italiaans recept (Amalfikust)",
       "bron_type": "klassiek",
-      "datum_toegevoegd": "2026-09-30"
+      "datum_toegevoegd": "2026-09-30",
+      "bron_afbeelding": "https://commons.wikimedia.org/wiki/File:Lemon_Spaghetti_(14179778117).jpg",
+      "foto_maker": "Luca Nebuloni",
+      "foto_licentie": "CC BY 2.0"
     },
     {
       "id": "r1774465753",
@@ -672,7 +675,7 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Verwarm de oven voor op 200 graden. Maak de marinade door alle ingrediënten goed te mengen."
+          "tekst": "Verwarm de oven voor op 200 °C. Meng voor de marinade de oregano, het knoflookpoeder, uienpoeder, gerookt paprikapoeder, de maple syrup, olijfolie, ketchup en het zout tot een glad geheel."
         },
         {
           "nummer": 2,
@@ -941,7 +944,7 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 10,
+      "passieve_tijd": 15,
       "bron_afbeelding": "https://www.projectgezond.nl/content/uploads/2020/09/BroccolisoepGerookteZalmBieslook-384x512.png"
     },
     {
@@ -1414,7 +1417,7 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 0,
+      "passieve_tijd": 10,
       "bron_afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/8b1dc6655be5477960fd169798f7cde0fe8e444b4990eb1a9d4ae414769d9dce/filled-600x600.webp"
     },
     {
@@ -1867,7 +1870,7 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
-      "passieve_tijd": 15,
+      "passieve_tijd": 10,
       "bron_afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/3d9c5d7de8dd71aed368e11deccc431d84fccdcb165594417a52054714488403/filled-600x600.webp"
     },
     {
@@ -2084,7 +2087,7 @@
       "titel": "Zalm met citroen",
       "slug": "zalm-met-citroen",
       "beschrijving": "Zacht gestoomde zalm in zilverpapier met citroenboterdressing.",
-      "afbeelding": "",
+      "afbeelding": "img/recept/zalm-met-citroen.jpg",
       "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 1,
@@ -2150,7 +2153,10 @@
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
-      "passieve_tijd": 20
+      "passieve_tijd": 20,
+      "bron_afbeelding": "https://commons.wikimedia.org/wiki/File:Salmon_baked_in_an_oven_with_lemons.jpg",
+      "foto_maker": "Gatorfan252525",
+      "foto_licentie": "CC BY-SA 4.0"
     },
     {
       "id": "r1774543383",
@@ -2331,7 +2337,7 @@
         },
         {
           "nummer": 5,
-          "tekst": "Leg op bakplaat of pizzasteen."
+          "tekst": "Leg de uitgerolde bodem op een met bakpapier beklede bakplaat, of op een voorverwarmde pizzasteen — die geeft een krokantere bodem."
         }
       ],
       "voedingswaarden": {
@@ -4461,7 +4467,7 @@
       "afbeelding": "img/recept/falafel-wraps-flatbread-feta.jpg",
       "bereidingstijd": 15,
       "actieve_tijd": 15,
-      "passieve_tijd": 15,
+      "passieve_tijd": 0,
       "moeilijkheidsgraad": "makkelijk",
       "porties": 2,
       "tags": [
@@ -5754,7 +5760,7 @@
       "titel": "Cacio e pepe",
       "slug": "cacio-e-pepe",
       "beschrijving": "De Romeinse klassieker met precies drie ingrediënten: pasta, Pecorino Romano en zwarte peper. Geen boter, geen olie, geen room — de romigheid komt volledig uit kaas en zetmeelrijk kookwater.",
-      "afbeelding": "",
+      "afbeelding": "img/recept/cacio-e-pepe.jpg",
       "bereidingstijd": 20,
       "actieve_tijd": 20,
       "passieve_tijd": 0,
@@ -5835,7 +5841,10 @@
       "bron": "",
       "bron_naam": "Klassiek Romeins recept",
       "bron_type": "klassiek",
-      "datum_toegevoegd": "2026-09-30"
+      "datum_toegevoegd": "2026-09-30",
+      "bron_afbeelding": "https://commons.wikimedia.org/wiki/File:Spaghetti_cacio_e_pepe_(creamy_as_it_should_be).jpg",
+      "foto_maker": "Der Zahir",
+      "foto_licentie": "CC BY-SA 4.0"
     }
   ]
 }

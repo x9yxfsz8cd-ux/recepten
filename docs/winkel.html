@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>In de winkel</title>
-  <link rel="stylesheet" href="./css/style.css?v=801125">
+  <link rel="stylesheet" href="./css/style.css?v=810088">
   <link rel="manifest" href="./manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
@@ -49,8 +49,8 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=801125"></script>
-  <script src="./js/ingredient-icoon.js?v=801125"></script>
+  <script src="./js/gedeeld.js?v=810088"></script>
+  <script src="./js/ingredient-icoon.js?v=810088"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -152,11 +152,17 @@
       const regel = ({ ing, i, p }) => {
         const aan = gekocht.includes(String(i));
         const pakken = p ? aantalVerpakkingen(ing.hoeveelheid, ing.eenheid, p.eenheid) : null;
+        // De AH-naam is het woord waar je in het schap naar zoekt: 'kerstomaten'
+        // heten daar 'cherrytomaten', 'lente-uitjes' heten 'bosui'. Die naam mag
+        // dus nooit wegvallen — ook niet als je meer dan één pak nodig hebt.
+        // "geen AH-product gevonden" laten we weg: dat zegt de klant niets, en
+        // het icoontje maakt al duidelijk waar het om gaat.
         const onder = p
-          ? (pakken && pakken > 1
-              ? `<span class="ingredient-ah let">${pakken} pakken van ${p.eenheid}</span>`
-              : `<span class="ingredient-ah">${p.titel}${p.eenheid ? ' · ' + p.eenheid : ''}</span>`)
-          : `<span class="ingredient-ah">geen AH-product gevonden</span>`;
+          ? `<span class="ingredient-ah${pakken && pakken > 1 ? ' let' : ''}">${p.titel}${
+              pakken && pakken > 1
+                ? ` · ${pakken} pakken van ${p.eenheid}`
+                : (p.eenheid ? ' · ' + p.eenheid : '')}</span>`
+          : '';
         const foto = ingredientVakje(ing.naam, p);
         const hoev = ing.eenheid === 'naar smaak' || !ing.hoeveelheid
           ? 'naar smaak'

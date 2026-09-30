@@ -62,6 +62,7 @@ VOORRAADKAST = {
     # Gecombineerde regels ('zout en peper') slaan nooit op één product.
     "zout en peper", "peper en zout", "zout en zwarte peper",
     "zout en gemalen zwarte",
+    "badia kruiden",
 }
 
 
@@ -157,6 +158,8 @@ ALIAS = {
     "tonijn op oliebasis": "tonijn in olijfolie",
     "witte wijn": "droge witte wijn",
     "aubergines": "aubergine",
+    "flatbreads": "flatbread",
+    "tortillawraps": "tortilla naturel wraps",
 }
 
 

@@ -108,11 +108,14 @@ a{ color:inherit }
 
 /* ── ZOEKEN EN FILTEREN ──────────────────────────────────────────────────── */
 .search-bar{ display:flex; gap:.6rem; align-items:center; margin:1rem 0 .9rem }
-.zoekveld{ flex:1; display:flex; align-items:center; gap:.5rem;
+/* Minstens 44px hoog: je tikt hier met een mandje in je andere hand. */
+.zoekveld{ flex:1; display:flex; align-items:center; gap:.5rem; min-height:44px;
   background:var(--vlak); border-radius:var(--r-ctl); padding:.5rem .75rem }
 .zoekveld .ic{ color:var(--inkt-3) }
+/* iOS Safari zoomt het hele scherm in zodra je in een veld tikt dat kleiner
+   is dan 16px. Vandaar de ondergrens; var(--t-sub) mag groter worden. */
 input[type="search"],input[type="text"],textarea,select{
-  font-family:inherit; font-size:var(--t-sub); color:var(--inkt);
+  font-family:inherit; font-size:max(16px,var(--t-sub)); color:var(--inkt);
   background:transparent; border:none; width:100%; padding:0 }
 input[type="search"]::placeholder{ color:var(--inkt-3) }
 input[type="search"]:focus,textarea:focus,select:focus{ outline:none }
@@ -187,8 +190,8 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:.5rem .75rem
   box-shadow:inset 0 .5px 0 var(--lijn);
   padding:.5rem 0 calc(.3rem + env(safe-area-inset-bottom));
   display:grid; grid-template-columns:repeat(3,1fr) }
-.tab{ display:flex; flex-direction:column; align-items:center; gap:.22rem;
-  color:var(--inkt-3); text-decoration:none; padding:.1rem 0 }
+.tab{ display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:.22rem; min-height:44px; color:var(--inkt-3); text-decoration:none; padding:.1rem 0 }
 .tab[aria-current="page"]{ color:var(--inkt) }
 .tab em{ font-size:min(var(--t-cap),13px); font-style:normal; font-weight:500; letter-spacing:0 }
 .tab[aria-current="page"] svg{ stroke-width:2 }
