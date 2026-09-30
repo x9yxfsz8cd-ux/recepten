@@ -6,8 +6,9 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>Recept importeren</title>
-  <link rel="stylesheet" href="./css/style.css?v=6">
+  <link rel="stylesheet" href="./css/style.css?v=759001">
   <link rel="manifest" href="./manifest.json">
+  <script src="./js/opslag.js?v=759001"></script>
   <style>
     /* De importpagina gebruikte de oude kleurnamen. Die vertalen we hier naar
        de huidige tokens, zodat hij meekleurt met licht en donker. */
@@ -97,8 +98,10 @@
       font-weight: 500;
     }
     .status-balk.laden { display: block; background: var(--surface); color: var(--mid); }
-    .status-balk.fout { display: block; background: #f5e6e6; color: #8b2020; }
-    .status-balk.ok { display: block; background: #e6f0e6; color: #1a5c1a; }
+    .status-balk.fout { display: block; background: var(--vlak); color: var(--waarschuwing);
+      font-weight: 600; }
+    .status-balk.ok { display: block; background: var(--vlak); color: var(--actief);
+      font-weight: 600; }
 
     /* Tabbladen */
     .tab-bar {
@@ -706,29 +709,28 @@ BELANGRIJKE REGELS:
 
     async function opslaanRecept() {
       if (!huidigRecept) return;
-
-      // Bron bijwerken vanuit het bewerkbare veld
       huidigRecept.bron_naam = document.getElementById('pv-bron').value.trim();
 
-      let bestaand = { recepten: [] };
-      try {
-        const res = await fetch('./data/recepten.json', { cache: 'no-cache' });
-        bestaand = await res.json();
-      } catch {}
-
-      if (!bestaand.recepten.some(r => r.id === huidigRecept.id)) {
-        bestaand.recepten.push(huidigRecept);
+      if (!heeftToken()) {
+        toonStatus('Eenmalig een GitHub-token nodig om op te slaan.', 'laden');
+        vraagToken(document.querySelector('.opslaan-sectie'), opslaanRecept);
+        return;
       }
 
-      // Download bijgewerkt bestand
-      const blob = new Blob([JSON.stringify(bestaand, null, 2)], { type: 'application/json' });
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'recepten.json';
-      a.click();
-      URL.revokeObjectURL(a.href);
-
-      toonStatus('Recept opgeslagen! Vervang docs/data/recepten.json met het gedownloade bestand.', 'ok');
+      const knop = document.getElementById('opslaan-btn');
+      const oudeTekst = knop.textContent;
+      knop.disabled = true;
+      knop.textContent = 'Opslaan...';
+      toonStatus('Bezig met opslaan op GitHub...', 'laden');
+      try {
+        const aantal = await bewaarRecept(huidigRecept);
+        toonStatus(`Opgeslagen. Er staan nu ${aantal} recepten. De site is binnen een minuut bijgewerkt.`, 'ok');
+        knop.textContent = 'Opgeslagen';
+      } catch (e) {
+        knop.disabled = false;
+        knop.textContent = oudeTekst;
+        toonStatus('Opslaan mislukt: ' + e.message, 'fout');
+      }
     }
 
     // ── EVENT LISTENERS ──

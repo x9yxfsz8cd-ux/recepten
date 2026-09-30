@@ -10,7 +10,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=6">
+  <link rel="stylesheet" href="./css/style.css?v=759001">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
@@ -58,8 +58,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=6"></script>
-  <script src="./js/ingredient-icoon.js?v=6"></script>
+  <script src="./js/gedeeld.js?v=759001"></script>
+  <script src="./js/ingredient-icoon.js?v=759001"></script>
+  <script src="./js/opslag.js?v=759001"></script>
 
   <script>
     let recept = null;
@@ -389,6 +390,56 @@
         if (e.key === 'Enter') { input.blur(); }
         if (e.key === 'Escape') { updateIngredientHoeveelheden(); }
       });
+    }
+
+    // ── VERWIJDEREN ──
+    // Twee tikken: de eerste vraagt, de tweede doet het. Zo gooi je niets weg
+    // met een misklik terwijl het nog steeds snel gaat.
+
+    let verwijderBevestigd = false;
+
+    async function vraagVerwijderen() {
+      const knop = document.getElementById('verwijder-btn');
+      const uitleg = document.getElementById('verwijder-uitleg');
+
+      if (!heeftToken()) {
+        uitleg.hidden = false;
+        uitleg.textContent = 'Om te verwijderen heb ik eenmalig een GitHub-token nodig.';
+        vraagToken(knop.parentElement, vraagVerwijderen);
+        return;
+      }
+
+      if (!verwijderBevestigd) {
+        verwijderBevestigd = true;
+        knop.textContent = 'Zeker weten? Tik nog een keer';
+        knop.classList.add('verwijder-btn--zeker');
+        uitleg.hidden = false;
+        uitleg.textContent = 'Dit haalt het recept van de site af.';
+        setTimeout(() => {
+          if (!verwijderBevestigd) return;
+          verwijderBevestigd = false;
+          knop.textContent = 'Verwijder dit recept';
+          knop.classList.remove('verwijder-btn--zeker');
+          uitleg.hidden = true;
+        }, 6000);
+        return;
+      }
+
+      knop.disabled = true;
+      knop.textContent = 'Bezig met verwijderen...';
+      try {
+        const over = await verwijderRecept(recept.id, recept.titel);
+        knop.textContent = 'Verwijderd';
+        uitleg.textContent = `Nog ${over} recepten. De site is binnen een minuut bijgewerkt.`;
+        setTimeout(() => { window.location.href = './index.html'; }, 1800);
+      } catch (e) {
+        knop.disabled = false;
+        verwijderBevestigd = false;
+        knop.textContent = 'Verwijder dit recept';
+        knop.classList.remove('verwijder-btn--zeker');
+        uitleg.hidden = false;
+        uitleg.textContent = e.message;
+      }
     }
 
     // ── FAVORIETEN ──
@@ -749,11 +800,11 @@
             <div class="fase-tabs" role="tablist">
               <span class="fase-tabs__pil" id="fase-pil"></span>
               <button class="fase-tab" role="tab" data-fase="ingredienten" aria-selected="true"
-                      aria-controls="paneel-ingredienten">Ingrediënten<span class="fase-tab__badge" id="badge-ingredienten"></span></button>
+                      aria-controls="paneel-ingredienten"><span class="fase-tab__label">Ingrediënten</span><span class="fase-tab__badge" id="badge-ingredienten"></span></button>
               <button class="fase-tab" role="tab" data-fase="bereiding" aria-selected="false"
-                      aria-controls="paneel-bereiding">Bereiding<span class="fase-tab__badge" id="badge-bereiding"></span></button>
+                      aria-controls="paneel-bereiding"><span class="fase-tab__label">Bereiding</span><span class="fase-tab__badge" id="badge-bereiding"></span></button>
               <button class="fase-tab" role="tab" data-fase="info" aria-selected="false"
-                      aria-controls="paneel-info">Info</button>
+                      aria-controls="paneel-info"><span class="fase-tab__label">Info</span></button>
             </div>
           </div>
 
@@ -782,6 +833,8 @@
             <div style="margin-top:1.5rem;">
               ${bron}
               <button class="print-btn" id="print-btn">Print recept</button>
+              <button class="verwijder-btn" id="verwijder-btn">Verwijder dit recept</button>
+              <p class="verwijder-uitleg" id="verwijder-uitleg" hidden></p>
             </div>
           </div>
         </div>`;
@@ -803,6 +856,9 @@
 
       // Print knop
       document.getElementById('print-btn').addEventListener('click', () => window.print());
+
+      // Verwijderen
+      document.getElementById('verwijder-btn').addEventListener('click', vraagVerwijderen);
 
       // Fase-tabs, hartje en de timerknoppen in de stappen
       zetFaseTabsOp();
