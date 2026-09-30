@@ -653,6 +653,17 @@
     "titel": "AH Gnocchi",
     "url": "https://www.ah.nl/producten/product/wi210482"
   },
+  "granaatappel": {
+    "afbeelding": "img/ah/granaatappel.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4930396246324e46514575793663515879534d365051?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "per stuk",
+    "id": 108021,
+    "prijs": 1.99,
+    "schap": "Fruit, verse sappen",
+    "subschap": "Exotisch fruit",
+    "titel": "AH Granaatappel",
+    "url": "https://www.ah.nl/producten/product/wi108021"
+  },
   "granaatappelpitjes": {
     "afbeelding": "img/ah/granaatappelpitjes.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239393435353130?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -914,6 +925,7 @@
     "titel": "AH Knoflook",
     "url": "https://www.ah.nl/producten/product/wi4160"
   },
+  "kokende groentebouillon": null,
   "kokosmelk": {
     "afbeelding": "img/ah/kokosmelk.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_3462626452364d5751634b764e30455a43324a332d41?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -958,6 +970,17 @@
     "subschap": "Kookroom",
     "titel": "AH Kookroom",
     "url": "https://www.ah.nl/producten/product/wi509631"
+  },
+  "koriander": {
+    "afbeelding": "img/ah/koriander.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_324f6c46476a5231513761416e4d6532575933376751?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "15 g",
+    "id": 238968,
+    "prijs": 1.29,
+    "schap": "Groente, aardappelen",
+    "subschap": "Verse kruiden",
+    "titel": "AH Koriander",
+    "url": "https://www.ah.nl/producten/product/wi238968"
   },
   "kruimige aardappelen": {
     "afbeelding": "img/ah/kruimige-aardappelen.jpg",
@@ -1004,6 +1027,7 @@
     "url": "https://www.ah.nl/producten/product/wi467978"
   },
   "laurierblaadjes": null,
+  "lente-uitjes": null,
   "limoen": {
     "afbeelding": "img/ah/limoen.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323033333232?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1491,6 +1515,7 @@
     "titel": "AH Terra Witte bonen",
     "url": "https://www.ah.nl/producten/product/wi585656"
   },
+  "radijsjes": null,
   "ravioli": null,
   "ricotta": {
     "afbeelding": "img/ah/ricotta.jpg",
@@ -1893,6 +1918,17 @@
     "url": "https://www.ah.nl/producten/product/wi399573"
   },
   "tros pruimtomaatjes": null,
+  "trostomaten": {
+    "afbeelding": "img/ah/trostomaten.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239373537383636?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "los per 500 g",
+    "id": 354172,
+    "prijs": 0.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Tomaten",
+    "titel": "AH Trostomaten",
+    "url": "https://www.ah.nl/producten/product/wi354172"
+  },
   "udon noedels": {
     "afbeelding": "img/ah/udon-noedels.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4e486d55716e5937514b47766736545a46544a4e7751?revLabel=1&rendition=400x400_WEBP&fileType=binary",

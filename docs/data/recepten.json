@@ -683,123 +683,6 @@
       "passieve_tijd": 15
     },
     {
-      "id": "r1774537596",
-      "titel": "Broccoli Pesto Pasta met Halloumi",
-      "slug": "broccoli-pesto-pasta-met-halloumi",
-      "beschrijving": "Een verrukkelijke pasta met romige broccoli pesto, goudbruine halloumi en frisse basilicum.",
-      "afbeelding": "img/recept/broccoli-pesto-pasta-met-halloumi.jpg",
-      "bereidingstijd": 30,
-      "moeilijkheidsgraad": "gemiddeld",
-      "porties": 4,
-      "tags": [
-        "vegetarisch",
-        "comfort food",
-        "Italiaans",
-        "diner"
-      ],
-      "ingredienten": [
-        {
-          "naam": "pasta (bijv. conchiglie)",
-          "hoeveelheid": 350,
-          "eenheid": "g",
-          "ah": "pasta"
-        },
-        {
-          "naam": "broccoli",
-          "hoeveelheid": 300,
-          "eenheid": "g",
-          "ah": "broccoli"
-        },
-        {
-          "naam": "halloumi",
-          "hoeveelheid": 200,
-          "eenheid": "g",
-          "ah": "halloumi"
-        },
-        {
-          "naam": "knoflook, fijngehakt",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
-          "ah": "knoflook"
-        },
-        {
-          "naam": "pijnboompitten",
-          "hoeveelheid": 50,
-          "eenheid": "g",
-          "ah": "pijnboompitten"
-        },
-        {
-          "naam": "Parmezaanse kaas",
-          "hoeveelheid": 50,
-          "eenheid": "g",
-          "ah": "parmezaanse kaas"
-        },
-        {
-          "naam": "olijfolie",
-          "hoeveelheid": 100,
-          "eenheid": "ml",
-          "ah": "olijfolie"
-        },
-        {
-          "naam": "enkele takjes basilicum",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak",
-          "ah": "enkele takjes basilicum"
-        },
-        {
-          "naam": "scheutje citroensap (optioneel)",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak",
-          "ah": "citroensap"
-        },
-        {
-          "naam": "zout en vers gemalen zwarte peper",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak",
-          "ah": "zout en gemalen zwarte"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Broccoli in water koken tot zacht (ongeveer 8-10 minuten), afgieten en apart zetten."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Broccoli, pijnboompitten, Parmezaanse kaas en knoflook in een staafmixer pureren; genoeg olijfolie toevoegen zodat de pesto goed mengbaar is, op smaak afmaken met zout en peper."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Pasta gelijktijdig volgens pakketinstructies koken en afgieten."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Halloumi in blokjes snijden en in een pan tot goudbruin frituren."
-        },
-        {
-          "nummer": 5,
-          "tekst": "Warme pasta met broccoli pesto mengen, halloumi toevoegen en enkele druppels citroensap (optioneel) erbij doen."
-        },
-        {
-          "nummer": 6,
-          "tekst": "Aanvullen met geraspte Parmezaanse kaas en basilicum als garnering serveren."
-        }
-      ],
-      "voedingswaarden": {
-        "kcal": 580,
-        "eiwitten": 24,
-        "koolhydraten": 58,
-        "vetten": 28
-      },
-      "bron": "https://hoe-lang-broccoli-koken.nl/broccoli-pesto-pasta-recept/",
-      "bron_naam": "Kookboek (onbekend)",
-      "bron_type": "url",
-      "datum_toegevoegd": "2026-03-26",
-      "actieve_tijd": 20,
-      "passieve_tijd": 10,
-      "bron_afbeelding": "https://hoe-lang-broccoli-koken.nl/wp-content/uploads/2024/09/2773-broccoli-pesto-pasta-recept.jpg"
-    },
-    {
       "id": "r1774543194",
       "titel": "Aubergines in kaneel met feta, olijven & bulgur",
       "slug": "aubergines-in-kaneel-met-feta-olijven-bulgur",
@@ -2629,10 +2512,10 @@
           "ah": "pasta"
         },
         {
-          "naam": "bacon",
+          "naam": "pancetta (Italiaans buikspek)",
           "hoeveelheid": 150,
           "eenheid": "g",
-          "ah": "bacon"
+          "ah": "pancetta"
         },
         {
           "naam": "olijfolie",
@@ -2674,7 +2557,7 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Zet water op voor pasta en snijd tomaten doormidden. Bak tomaten met olijfolie, zout, peper en suiker 20-25 minuten op middelvuur. Bak bacon apart 5 minuten knapperig."
+          "tekst": "Zet water op voor pasta en snijd tomaten doormidden. Bak tomaten met olijfolie, zout, peper en suiker 20-25 minuten op middelvuur. Bak pancetta apart 5 minuten knapperig."
         },
         {
           "nummer": 2,
@@ -2682,7 +2565,7 @@
         },
         {
           "nummer": 3,
-          "tekst": "Voeg pasta kookwater, Parmigiano, bacon en olijfolie toe en blijf mengen tot je de perfecte consistentie bereikt hebt (circa 2 minuten)."
+          "tekst": "Voeg pasta kookwater, Parmigiano, pancetta en olijfolie toe en blijf mengen tot je de perfecte consistentie bereikt hebt (circa 2 minuten)."
         }
       ],
       "voedingswaarden": {
@@ -4672,6 +4555,135 @@
         "vetten": 28
       },
       "bron_afbeelding": "https://denisekortlever.com/wp-content/uploads/2021/02/falafel-flatbread-wrap-roze-ui-2-846x1024-1.jpg"
+    },
+    {
+      "id": "r1790900100",
+      "titel": "Regenboogtabouleh met avocado, radijs & granaatappel",
+      "slug": "regenboogtabouleh-met-avocado-radijs-granaatappel",
+      "beschrijving": "Bij deze tabouleh gaat er meer bulgur in dan bij de traditionele versie, die juist veel peterselie bevat. De bulgur gaart samen met de tomaten en krijgt daardoor extra smaak.",
+      "afbeelding": "img/recept/regenboogtabouleh-met-avocado-radijs-granaatappel.jpg",
+      "bereidingstijd": 35,
+      "actieve_tijd": 15,
+      "passieve_tijd": 20,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 3,
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "lunch",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "bulgur",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "bulgur"
+        },
+        {
+          "naam": "kokende groentebouillon",
+          "hoeveelheid": 250,
+          "eenheid": "ml",
+          "ah": "kokende groentebouillon"
+        },
+        {
+          "naam": "kleine trostomaten, fijngesneden",
+          "hoeveelheid": 6,
+          "eenheid": "stuks",
+          "ah": "trostomaten"
+        },
+        {
+          "naam": "biologische citroen (geraspte schil en sap)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "citroen"
+        },
+        {
+          "naam": "verse koriander, fijngesneden",
+          "hoeveelheid": 25,
+          "eenheid": "g",
+          "ah": "koriander"
+        },
+        {
+          "naam": "verse bladpeterselie, fijngesneden",
+          "hoeveelheid": 50,
+          "eenheid": "g",
+          "ah": "bladpeterselie"
+        },
+        {
+          "naam": "extra vergine olijfolie",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "versgemalen zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "versgemalen zwarte peper"
+        },
+        {
+          "naam": "lente-uitjes, in ringetjes",
+          "hoeveelheid": 4,
+          "eenheid": "stuks",
+          "ah": "lente-uitjes"
+        },
+        {
+          "naam": "radijsjes, in dunne plakjes",
+          "hoeveelheid": 6,
+          "eenheid": "stuks",
+          "ah": "radijsjes"
+        },
+        {
+          "naam": "avocado, in dunne plakjes",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "avocado"
+        },
+        {
+          "naam": "granaatappel (de pitjes)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "granaatappel"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht of 200 °C elektrisch."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd de trostomaten fijn, rasp de schil van de citroen en pers hem uit. Snijd de koriander en bladpeterselie fijn, de lente-uitjes in ringetjes en de radijsjes in dunne plakjes."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Roer de bulgur, de kokende bouillon, de tomaten en de geraspte citroenschil door elkaar in een braadslede en zet het geheel 20 minuten in de oven."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Haal het uit de oven, roer door en laat 5 minuten uitstomen. Roer dan het citroensap, de koriander, de peterselie, de olijfolie, het zout en de zwarte peper erdoor."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Proef en voeg zo nodig nog zout en peper toe. Roer de lente-uitjes en radijsjes erdoor. Leg tot slot de avocadoplakjes erop en bestrooi alles met de granaatappelpitjes."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Dien warm op of op kamertemperatuur. De volgende dag is het als lunch ook nog lekker."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "Vegan — Lekker snel (kookboek, p. 30)",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-09-30"
     }
   ]
 }
