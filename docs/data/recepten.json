@@ -2,83 +2,105 @@
   "recepten": [
     {
       "id": "r001",
-      "titel": "Pasta al Limone",
+      "titel": "Pasta al limone",
       "slug": "pasta-al-limone",
-      "beschrijving": "Romige Italiaanse pasta met verse citroen en Parmezaan. Klaar in 20 minuten.",
-      "afbeelding": "img/recept/pasta-al-limone.jpg",
-      "bereidingstijd": 25,
+      "beschrijving": "De klassieke versie van de Amalfikust: geen room, maar een romige saus die je klopt van koude boter, veel citroen, Parmigiano en pastawater. Drie ingrediënten, dus koop ze goed.",
+      "afbeelding": "",
+      "bereidingstijd": 20,
+      "actieve_tijd": 20,
+      "passieve_tijd": 0,
       "moeilijkheidsgraad": "makkelijk",
-      "porties": 2,
+      "porties": 4,
       "tags": [
         "vegetarisch",
+        "Italiaans",
         "snel",
-        "Italiaans"
+        "diner"
       ],
+      "benodigdheden": [],
       "ingredienten": [
         {
-          "naam": "spaghetti",
-          "hoeveelheid": 200,
+          "naam": "spaghetti of linguine",
+          "hoeveelheid": 400,
           "eenheid": "g",
           "ah": "spaghetti"
         },
         {
-          "naam": "citroen (rasp + sap)",
-          "hoeveelheid": 1,
+          "naam": "biologische citroenen (rasp van 3, sap van 2)",
+          "hoeveelheid": 3,
           "eenheid": "stuks",
-          "ah": "citroen"
+          "ah": "citroenen"
         },
         {
-          "naam": "slagroom",
+          "naam": "koude roomboter, in blokjes",
           "hoeveelheid": 100,
-          "eenheid": "ml",
-          "ah": "slagroom"
-        },
-        {
-          "naam": "Parmezaan, geraspt",
-          "hoeveelheid": 50,
           "eenheid": "g",
-          "ah": "parmezaan"
+          "ah": "roomboter"
         },
         {
-          "naam": "boter",
-          "hoeveelheid": 2,
-          "eenheid": "el",
-          "ah": "boter"
+          "naam": "Parmigiano Reggiano, heel fijn geraspt",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "parmigiano reggiano"
         },
         {
-          "naam": "zout en peper",
+          "naam": "grof zeezout (voor het kookwater)",
           "hoeveelheid": 0,
           "eenheid": "naar smaak",
-          "ah": "zout en peper"
+          "ah": "zeezout"
+        },
+        {
+          "naam": "versgemalen zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "versgemalen zwarte peper"
+        },
+        {
+          "naam": "verse basilicum (optioneel)",
+          "hoeveelheid": 10,
+          "eenheid": "g",
+          "ah": "basilicum"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Kook de spaghetti al dente in ruim gezouten water. Bewaar een kopje kookwater voordat je afgiet."
+          "tekst": "Boen de citroenen schoon onder warm water. Rasp de gele schil van alle drie heel fijn — stop zodra je het witte ziet, dat is bitter. Pers er daarna twee uit en zeef het sap."
         },
         {
           "nummer": 2,
-          "tekst": "Smelt de boter in een koekenpan op middelhoog vuur. Voeg de citroenrasp toe en bak 30 seconden. Schenk de slagroom erbij en laat even inkoken."
+          "tekst": "Rasp de Parmigiano zo fijn mogelijk, bij voorkeur op een microplane. Grof geraspte kaas smelt niet glad en gaat klonteren. Snijd de koude boter in blokjes."
         },
         {
           "nummer": 3,
-          "tekst": "Haal de pan van het vuur. Voeg de pasta, het citroensap en de Parmezaan toe. Schep goed door en voeg een scheutje kookwater toe voor de juiste sausdikte. Breng op smaak met zout en peper."
+          "tekst": "Meng in een ruime kom de citroenrasp met de geraspte Parmigiano en flink wat versgemalen zwarte peper. Wrijf het met je vingers door elkaar, zodat de olie uit de schil in de kaas trekt."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Breng een ruime pan water aan de kook en zout het als zeewater. Kook de pasta 1 minuut korter dan de verpakking zegt. Schep vlak voor het afgieten twee volle kopjes kookwater weg — daar zit het zetmeel in dat de saus bindt."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Smelt de boter in een brede pan op laag vuur met een flinke scheut van het kookwater erbij. Zwenk de pan tot boter en water één gladde, licht gebonden saus worden. Laat het niet koken."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Haal de pan van het vuur. Doe de pasta erbij, samen met het citroen-kaasmengsel en nog een scheut kookwater. Schep en zwenk stevig door tot de kaas gesmolten is en de saus de pasta overal bedekt. Van het vuur af, anders wordt de kaas draderig."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Roer nu pas het citroensap erdoor, beetje bij beetje — te vroeg toegevoegd laat het de saus schiften. Proef, en voeg zo nodig nog sap, zout of peper toe."
+        },
+        {
+          "nummer": 8,
+          "tekst": "Is de saus te dik, voeg dan nog wat kookwater toe; te dun, zwenk hem dan nog even door boven laag vuur. Dien direct op, eventueel met een paar blaadjes basilicum."
         }
       ],
-      "voedingswaarden": {
-        "kcal": 580,
-        "eiwitten": 18,
-        "koolhydraten": 72,
-        "vetten": 24
-      },
+      "voedingswaarden": {},
       "bron": "",
-      "bron_type": "handmatig",
-      "datum_toegevoegd": "2026-03-23",
-      "bron_naam": "Handmatig",
-      "actieve_tijd": 15,
-      "passieve_tijd": 10,
-      "bron_afbeelding": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80"
+      "bron_naam": "Klassiek Italiaans recept (Amalfikust)",
+      "bron_type": "klassiek",
+      "datum_toegevoegd": "2026-09-30"
     },
     {
       "id": "r1774465753",
@@ -4681,8 +4703,1138 @@
       ],
       "voedingswaarden": {},
       "bron": "",
-      "bron_naam": "Vegan — Lekker snel (kookboek, p. 30)",
+      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 30",
       "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-09-30"
+    },
+    {
+      "id": "r1790980000",
+      "titel": "Waterkersrisotto met geitenkaas",
+      "slug": "waterkersrisotto-met-geitenkaas",
+      "beschrijving": "Een showstopper met een oogverblindend groene kleur en een heerlijk peperige smaak. Je kunt de risotto van tevoren maken en de waterkers vlak voor het serveren pureren en toevoegen.",
+      "afbeelding": "img/recept/waterkersrisotto-met-geitenkaas.jpg",
+      "bereidingstijd": 45,
+      "actieve_tijd": 45,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vis",
+        "diner",
+        "comfort food"
+      ],
+      "benodigdheden": [
+        "blender"
+      ],
+      "ingredienten": [
+        {
+          "naam": "extra vergine olijfolie",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "boter",
+          "hoeveelheid": 50,
+          "eenheid": "g",
+          "ah": "boter"
+        },
+        {
+          "naam": "bleekselderij, in kleine blokjes",
+          "hoeveelheid": 1,
+          "eenheid": "stengel",
+          "ah": "bleekselderij"
+        },
+        {
+          "naam": "ui, gesnipperd",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "ui"
+        },
+        {
+          "naam": "knoflooktenen, fijngehakt",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "knoflooktenen"
+        },
+        {
+          "naam": "ansjovisfilets, fijngehakt",
+          "hoeveelheid": 3,
+          "eenheid": "stuks",
+          "ah": "ansjovisfilets"
+        },
+        {
+          "naam": "risottorijst",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "risottorijst"
+        },
+        {
+          "naam": "witte wijn",
+          "hoeveelheid": 200,
+          "eenheid": "ml",
+          "ah": "witte wijn"
+        },
+        {
+          "naam": "wittewijnazijn",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "wittewijnazijn"
+        },
+        {
+          "naam": "groentebouillon",
+          "hoeveelheid": 750,
+          "eenheid": "ml",
+          "ah": "groentebouillon"
+        },
+        {
+          "naam": "Parmezaanse kaaskorst (optioneel)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "parmezaanse kaaskorst"
+        },
+        {
+          "naam": "waterkers",
+          "hoeveelheid": 250,
+          "eenheid": "g",
+          "ah": "waterkers"
+        },
+        {
+          "naam": "biologische citroen (sap en rasp)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "citroen"
+        },
+        {
+          "naam": "zachte geitenkaas",
+          "hoeveelheid": 125,
+          "eenheid": "g",
+          "ah": "zachte geitenkaas"
+        },
+        {
+          "naam": "hazelnoten, geroosterd en grof gehakt",
+          "hoeveelheid": 50,
+          "eenheid": "g",
+          "ah": "hazelnoten"
+        },
+        {
+          "naam": "zout en peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "zout en peper"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Snijd de bleekselderij in kleine blokjes, snipper de ui en hak de knoflook en de ansjovisfilets fijn. Rasp de schil van de citroen en pers hem uit. Rooster de hazelnoten kort in een droge pan en hak ze grof."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit de olijfolie en de boter op laag tot middelhoog vuur in een grote pan. Voeg de bleekselderij, ui, knoflook en ansjovis toe en bak het geheel ongeveer 15 minuten, tot de ui glazig is."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de risottorijst toe en roer door tot de korrels half doorzichtig zijn. Giet de wijn erbij en roer tot die is opgenomen en je de alcohol niet meer ruikt."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg de azijn, een kwart van de bouillon en de Parmezaanse-kaaskorst toe. Roer tot het vocht bijna helemaal is opgenomen. Giet er weer een kwart van de bouillon bij en blijf roeren tot het opnieuw is opgenomen. Herhaal tot de rijst de gewenste gaarheid heeft; reken op 750 ml tot 1 liter bouillon."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Haal de kaaskorst eruit en breng de risotto op smaak met zout en peper."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Zet een kom klaar met koud water en ijsblokjes. Breng een pan water aan de kook en blancheer de waterkers 2 minuten. Dompel hem daarna direct in het ijskoude water, zodat het koken stopt."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Giet het water af en pureer de waterkers met de citroenrasp en het citroensap in een blender. Breng op smaak met zout. Voeg eventueel een paar eetlepels water toe, zodat het makkelijker glad draait."
+        },
+        {
+          "nummer": 8,
+          "tekst": "Giet de waterkerspuree bij de risotto en roer tot alles goed gemengd en heet is, maar niet kokend. Schep direct op en verdeel de geitenkaas en de hazelnoten erover."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "KekMama (tijdschrift, p. 180) — recept van Welmoed",
+      "bron_type": "tijdschrift",
+      "datum_toegevoegd": "2026-09-30"
+    },
+    {
+      "id": "r1790980007",
+      "titel": "Paddenstoelen met paksoi & asperges",
+      "slug": "paddenstoelen-met-paksoi-en-asperges",
+      "beschrijving": "Als je een lichte maaltijd wilt eten én haast hebt, is dit de perfecte keuze. Gebruik een grote grillplaat die precies in je oven past, zodat alle groenten in een enkele laag liggen.",
+      "afbeelding": "img/recept/paddenstoelen-met-paksoi-en-asperges.jpg",
+      "bereidingstijd": 20,
+      "actieve_tijd": 10,
+      "passieve_tijd": 10,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "snel",
+        "diner"
+      ],
+      "benodigdheden": [],
+      "ingredienten": [
+        {
+          "naam": "mini-portobello's",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "mini-portobello"
+        },
+        {
+          "naam": "shiitakes of gemengde paddenstoelen",
+          "hoeveelheid": 120,
+          "eenheid": "g",
+          "ah": "shiitakes"
+        },
+        {
+          "naam": "groene asperges",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "groene asperges"
+        },
+        {
+          "naam": "paksoi",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "paksoi"
+        },
+        {
+          "naam": "sesamolie",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "sesamolie"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "biologische limoen (geraspte schil en 2 el sap)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "limoen"
+        },
+        {
+          "naam": "sesamolie (voor de dressing)",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "sesamolie"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "sojasaus"
+        },
+        {
+          "naam": "verse koriander, grof gesneden",
+          "hoeveelheid": 25,
+          "eenheid": "g",
+          "ah": "koriander"
+        },
+        {
+          "naam": "jasmijnrijst",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "jasmijnrijst"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de grill voor tot de hoogste stand."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Halveer de grotere mini-portobello's en laat de kleine heel. Snijd de shiitakes in plakjes. Snijd de houtige onderkant van de asperges af. Halveer de paksoi in de lengte, of snijd grote struiken in vieren. Snijd de koriander grof."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Leg de paddenstoelen, asperges en paksoi in een enkele laag op een grote grillplaat. Voeg de sesamolie en het zeezout toe en schep alles goed om."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Zet het geheel 5 tot 10 minuten onder de grill, tot de paddenstoelen gaar zijn en de groenten een beetje geslonken."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Rasp intussen de schil van de limoen en pers er 2 eetlepels sap uit. Roer de limoenschil, het limoensap, de sesamolie en de sojasaus door elkaar."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Sprenkel de dressing over de gegrilde groenten zodra ze uit de oven komen. Bestrooi met de verse koriander en dien op met witte of jasmijnrijst."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 48",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-09-30"
+    },
+    {
+      "id": "r1790980014",
+      "titel": "Groene groenten met bulgur & ricotta",
+      "slug": "groene-groenten-met-bulgur-en-ricotta",
+      "beschrijving": "Een heerlijk eenpansgerecht dat mooi in evenwicht wordt gebracht door de romige ricotta. In plaats van ricotta kun je ook dikke Griekse yoghurt gebruiken.",
+      "afbeelding": "img/recept/groene-groenten-met-bulgur-en-ricotta.jpg",
+      "bereidingstijd": 35,
+      "actieve_tijd": 10,
+      "passieve_tijd": 25,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 2,
+      "tags": [
+        "vegetarisch",
+        "diner"
+      ],
+      "benodigdheden": [],
+      "ingredienten": [
+        {
+          "naam": "bulgur, afgespoeld",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "bulgur"
+        },
+        {
+          "naam": "kokende groentebouillon",
+          "hoeveelheid": 400,
+          "eenheid": "ml",
+          "ah": "kokende groentebouillon"
+        },
+        {
+          "naam": "bimi (baby-broccoli)",
+          "hoeveelheid": 225,
+          "eenheid": "g",
+          "ah": "bimi"
+        },
+        {
+          "naam": "sperziebonen",
+          "hoeveelheid": 180,
+          "eenheid": "g",
+          "ah": "sperziebonen"
+        },
+        {
+          "naam": "splijtkool of boerenkool, grof gesneden",
+          "hoeveelheid": 270,
+          "eenheid": "g",
+          "ah": "splijtkool"
+        },
+        {
+          "naam": "ras el hanout",
+          "hoeveelheid": 2,
+          "eenheid": "tl",
+          "ah": "ras el hanout"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "teentjes knoflook, geperst",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "biologische citroen (geraspte schil en sap)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "citroen"
+        },
+        {
+          "naam": "olijfolie (voor de dressing)",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "versgemalen zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "versgemalen zwarte peper"
+        },
+        {
+          "naam": "munt, fijngesneden",
+          "hoeveelheid": 25,
+          "eenheid": "g",
+          "ah": "munt"
+        },
+        {
+          "naam": "geroosterde amandelen",
+          "hoeveelheid": 40,
+          "eenheid": "g",
+          "ah": "geroosterde amandelen"
+        },
+        {
+          "naam": "ricotta",
+          "hoeveelheid": 4,
+          "eenheid": "el",
+          "ah": "ricotta"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht of 200 °C elektrisch."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Spoel de bulgur af onder koud water. Snijd de splijtkool of boerenkool grof, haal de puntjes van de sperziebonen en pers de knoflook. Snijd de munt fijn en rasp de schil van de citroen; pers hem daarna uit."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Doe de bulgur en de kokende groentebouillon in een braadslede."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Schep de bimi, sperziebonen en splijtkool in een schaal om met de ras el hanout, de olijfolie, de knoflook en het zeezout. Verdeel dit mengsel over de bulgur en zet het geheel 25 minuten in de oven."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Roer intussen voor de dressing de geraspte citroenschil, het citroensap, de olijfolie, het zeezout en de zwarte peper door elkaar."
+        },
+        {
+          "nummer": 6,
+          "tekst": "De groenten en bulgur zijn gaar als de bulgur zacht is en de groenten nog knapperig. Schenk de dressing erover, voeg de munt toe en schep alles goed om."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Bestrooi met de geroosterde amandelen, verdeel de ricotta erover en strooi er tot slot een flinke snuf ras el hanout over."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 132",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-09-30"
+    },
+    {
+      "id": "r1790980021",
+      "titel": "Polenta met zoete aardappel & paddenstoelen",
+      "slug": "polenta-met-zoete-aardappel-en-paddenstoelen",
+      "beschrijving": "Polenta uit de oven: een heerlijke en eenvoudige manier om de korreltjes te koken. Met knoflookpaddenstoelen en zachte, gebakken tomaten erbij.",
+      "afbeelding": "img/recept/polenta-met-zoete-aardappel-en-paddenstoelen.jpg",
+      "bereidingstijd": 65,
+      "actieve_tijd": 10,
+      "passieve_tijd": 55,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 2,
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "diner",
+        "comfort food"
+      ],
+      "benodigdheden": [],
+      "ingredienten": [
+        {
+          "naam": "polenta",
+          "hoeveelheid": 150,
+          "eenheid": "g",
+          "ah": "polenta"
+        },
+        {
+          "naam": "groentebouillon",
+          "hoeveelheid": 400,
+          "eenheid": "ml",
+          "ah": "groentebouillon"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 3,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "zoete aardappels, geschild en in blokjes van 5 mm",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "zoete aardappels"
+        },
+        {
+          "naam": "mini-portobello's of kastanjechampignons, in plakjes",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "mini-portobello"
+        },
+        {
+          "naam": "kerstomaten, gehalveerd",
+          "hoeveelheid": 250,
+          "eenheid": "g",
+          "ah": "kerstomaten"
+        },
+        {
+          "naam": "teentjes knoflook, geperst",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "versgemalen zwarte peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "versgemalen zwarte peper"
+        },
+        {
+          "naam": "verse bladpeterselie, fijngesneden",
+          "hoeveelheid": 15,
+          "eenheid": "g",
+          "ah": "bladpeterselie"
+        },
+        {
+          "naam": "citroen (sap)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "citroen"
+        },
+        {
+          "naam": "extra vergine olijfolie (voor de dressing)",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "chilivlokken",
+          "hoeveelheid": 0.5,
+          "eenheid": "tl",
+          "ah": "chilivlokken"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht of 200 °C elektrisch."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Schil de zoete aardappels en snijd ze in blokjes van 5 mm — hoe kleiner, hoe gelijkmatiger ze garen. Snijd de paddenstoelen in plakjes, halveer de kerstomaten, pers de knoflook en snijd de peterselie fijn."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Bekleed een braadslede met bakpapier en doe de polenta, de groentebouillon, 2 eetlepels van de olijfolie en de zoete aardappel erin. Schep alles goed om, strooi er flink wat zwarte peper over en zet het geheel 40 minuten in de oven."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Roer intussen voor de dressing de peterselie, het citroensap, de extra vergine olijfolie en de chilivlokken door elkaar."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Schep de paddenstoelen om met de tomaten, de knoflook, het zout, peper en de resterende eetlepel olijfolie en zet weg."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Haal de braadslede na 40 minuten uit de oven en schep alles om. Verdeel het paddenstoelen-tomatenmengsel erover en zet alles nog 15 minuten in de oven, tot de paddenstoelen gaar zijn en de polenta krokant is."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Dien op met de dressing in een apart schaaltje en geef er een groene salade bij."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 108",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-09-30"
+    },
+    {
+      "id": "r1790980028",
+      "titel": "Zoete aardappel met mozzarella & uien",
+      "slug": "zoete-aardappel-met-mozzarella-en-uien",
+      "beschrijving": "Een gepofte zoete aardappel met gebakken rode ui en knoflook, plakken mozzarella en een frisse basilicumdressing. Perfect comfortfood.",
+      "afbeelding": "",
+      "bereidingstijd": 75,
+      "actieve_tijd": 15,
+      "passieve_tijd": 60,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "diner",
+        "comfort food"
+      ],
+      "benodigdheden": [],
+      "ingredienten": [
+        {
+          "naam": "zoete aardappels (ongeveer 1 kilo)",
+          "hoeveelheid": 4,
+          "eenheid": "stuks",
+          "ah": "zoete aardappels"
+        },
+        {
+          "naam": "rode uien, in vieren",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "rode uien"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "citroentijm",
+          "hoeveelheid": 1,
+          "eenheid": "handje",
+          "ah": "citroentijm"
+        },
+        {
+          "naam": "mozzarella, in dikke plakken",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "mozzarella"
+        },
+        {
+          "naam": "vers basilicum, heel fijn gesneden",
+          "hoeveelheid": 30,
+          "eenheid": "g",
+          "ah": "basilicum"
+        },
+        {
+          "naam": "olijfolie (voor de dressing)",
+          "hoeveelheid": 3,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "teentje knoflook, fijn geraspt",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "zeezout (voor de dressing)",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "citroensap",
+          "hoeveelheid": 0.5,
+          "eenheid": "el",
+          "ah": "citroensap"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht of 200 °C elektrisch."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Prik de zoete aardappels rondom in met een vork. Snijd de rode uien in vieren, van boven naar beneden door de wortel, zodat de partjes bij elkaar blijven. Snijd het basilicum heel fijn en rasp de knoflook."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Laat de aardappels in een braadslede glijden met de gesneden uien erbij. Wrijf de aardappels en uien in met de olie en het zout en bestrooi ze met de citroentijm. Zet het geheel 55 minuten in de oven."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Roer intussen voor de dressing het basilicum, de olijfolie, de knoflook, het zeezout en het citroensap door elkaar en zet weg."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Haal de braadslede na 55 minuten uit de oven en snijd een diep kruis in elke aardappel — ze moeten heerlijk zacht zijn vanbinnen."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Snijd de mozzarella in dikke plakken, leg ze in de aardappels en zet ze nog 5 minuten in de oven, zodat de kaas smelt."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Dien heet op en geef de uien en de dressing er apart bij."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 210",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-09-30"
+    },
+    {
+      "id": "r1790980035",
+      "titel": "Miso-aubergines met tofu",
+      "slug": "miso-aubergines-met-tofu",
+      "beschrijving": "Miso-aubergines zijn hot, en terecht: de smaken passen heel goed bij elkaar. Een pittige sesam-limoendressing geeft de aubergines en de knapperige tofu extra pit.",
+      "afbeelding": "",
+      "bereidingstijd": 55,
+      "actieve_tijd": 10,
+      "passieve_tijd": 45,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "Aziatisch",
+        "diner"
+      ],
+      "benodigdheden": [],
+      "ingredienten": [
+        {
+          "naam": "aubergines, in de lengte gehalveerd",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "aubergines"
+        },
+        {
+          "naam": "stevige biologische tofu, in plakjes van 1,5 cm",
+          "hoeveelheid": 250,
+          "eenheid": "g",
+          "ah": "stevige tofu"
+        },
+        {
+          "naam": "miso",
+          "hoeveelheid": 75,
+          "eenheid": "g",
+          "ah": "miso"
+        },
+        {
+          "naam": "sesamolie",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "sesamolie"
+        },
+        {
+          "naam": "gember, geschild en geraspt (2,5 cm)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "gember"
+        },
+        {
+          "naam": "teentjes knoflook, geperst",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "splijtkool of boerenkool, in brede repen",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "splijtkool"
+        },
+        {
+          "naam": "rode chilipeper, fijngesneden",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "rode chilipeper"
+        },
+        {
+          "naam": "teentjes knoflook (voor de dressing), geraspt",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "biologische limoenen (schil van 1, sap van 2)",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "limoenen"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "sojasaus"
+        },
+        {
+          "naam": "sesamolie (voor de dressing)",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "sesamolie"
+        },
+        {
+          "naam": "lente-uitjes, in ringetjes",
+          "hoeveelheid": 3,
+          "eenheid": "stuks",
+          "ah": "lente-uitjes"
+        },
+        {
+          "naam": "sesamzaad",
+          "hoeveelheid": 30,
+          "eenheid": "g",
+          "ah": "sesamzaad"
+        },
+        {
+          "naam": "witte rijst",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "witte rijst"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht of 200 °C elektrisch."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Halveer de aubergines in de lengte en snijd de gesneden kanten in een ruitpatroon in — niet door de schil heen, zodat het mengsel goed intrekt. Snijd de tofu in plakjes van 1,5 cm. Leg alles in een braadslede."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Roer de miso, 1 eetlepel sesamolie, de geraspte gember en de geperste knoflook door elkaar en wrijf de aubergines en de tofu ermee in. Zet het geheel 25 minuten in de oven."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Snijd intussen de splijtkool in brede repen. Meng ze met de resterende eetlepel sesamolie, verdeel ze over de aubergines en tofu en zet alles nog 20 minuten in de oven."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Snijd voor de dressing de chilipeper fijn, rasp de gember en de knoflook, rasp de schil van 1 limoen en pers 2 limoenen uit, en snijd de lente-uitjes in ringetjes."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Roer de chilipeper, gember, knoflook, limoenschil, het limoensap, de sojasaus, de sesamolie en de lente-uitjes door elkaar."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Schenk de dressing over de aubergines en de tofu zodra ze uit de oven komen en strooi het sesamzaad erover. Dien heet op en geef de rijst er apart bij."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 66",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-09-30"
+    },
+    {
+      "id": "r1790980042",
+      "titel": "Aubergine met tomaten, harissa & amandelen",
+      "slug": "aubergine-met-tomaten-harissa-en-amandelen",
+      "beschrijving": "Een eenvoudig auberginegerecht uit de oven met harissa, dat lekker vullend is. Geef er een kom citroencouscous bij.",
+      "afbeelding": "img/recept/aubergine-met-tomaten-harissa-en-amandelen.jpg",
+      "bereidingstijd": 55,
+      "actieve_tijd": 10,
+      "passieve_tijd": 45,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "diner"
+      ],
+      "benodigdheden": [],
+      "ingredienten": [
+        {
+          "naam": "aubergines, in plakjes van 1 cm",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "aubergines"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2.5,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "harissa",
+          "hoeveelheid": 20,
+          "eenheid": "g",
+          "ah": "harissa"
+        },
+        {
+          "naam": "rode ui, in dikke halvemaantjes",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "rode ui"
+        },
+        {
+          "naam": "grote trostomaten, gehalveerd",
+          "hoeveelheid": 8,
+          "eenheid": "stuks",
+          "ah": "trostomaten"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "amandelschaafsel",
+          "hoeveelheid": 40,
+          "eenheid": "g",
+          "ah": "amandelschaafsel"
+        },
+        {
+          "naam": "verse koriander, fijngesneden",
+          "hoeveelheid": 25,
+          "eenheid": "g",
+          "ah": "koriander"
+        },
+        {
+          "naam": "couscous",
+          "hoeveelheid": 250,
+          "eenheid": "g",
+          "ah": "couscous"
+        },
+        {
+          "naam": "vegan yoghurt",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "vegan yoghurt"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht of 200 °C elektrisch."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd de aubergines in plakjes van 1 cm. Halveer de rode ui en snijd hem in dikke halvemaantjes. Halveer de trostomaten en snijd de koriander fijn."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Leg de aubergines in een enkele laag op een grote bakplaat en bestrijk ze aan beide kanten met de harissa en 2 eetlepels van de olie."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Schep de rode ui om met de overgebleven halve eetlepel olijfolie en verdeel de halvemaantjes over de aubergines."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Zet de tomaten tussen de aubergines op de bakplaat, bestrooi alles met zeezout en zet het geheel 30 minuten in de oven."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Strooi het amandelschaafsel erover en zet alles nog 15 minuten in de oven, tot de aubergines gaar zijn."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Bestrooi met de koriander en dien op met couscous en yoghurt."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "De Wereldse Bakplaat (kookboek)",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-09-30"
+    },
+    {
+      "id": "r1790980049",
+      "titel": "Pittige harissa-spruitjes & broccoli met halloumi",
+      "slug": "pittige-harissa-spruitjes-en-broccoli",
+      "beschrijving": "Een snelle, eenvoudige maaltijd. De halloumi combineert heel mooi met de specerijen, spruitjes en broccoli. Schep het mengsel met een lepeltje yoghurt op platbrood.",
+      "afbeelding": "img/recept/pittige-harissa-spruitjes-en-broccoli.jpg",
+      "bereidingstijd": 35,
+      "actieve_tijd": 10,
+      "passieve_tijd": 25,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "snel",
+        "diner"
+      ],
+      "benodigdheden": [],
+      "ingredienten": [
+        {
+          "naam": "stronk broccoli, in roosjes",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "stronk broccoli"
+        },
+        {
+          "naam": "spruitjes",
+          "hoeveelheid": 500,
+          "eenheid": "g",
+          "ah": "spruitjes"
+        },
+        {
+          "naam": "halloumi, in blokjes",
+          "hoeveelheid": 250,
+          "eenheid": "g",
+          "ah": "halloumi"
+        },
+        {
+          "naam": "harissa",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "harissa"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "spinazie, grof gesneden",
+          "hoeveelheid": 150,
+          "eenheid": "g",
+          "ah": "spinazie"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 0,
+          "eenheid": "snufje",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "citroen (sap van een halve)",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks",
+          "ah": "citroen"
+        },
+        {
+          "naam": "platbrood",
+          "hoeveelheid": 4,
+          "eenheid": "stuks",
+          "ah": "platbrood"
+        },
+        {
+          "naam": "yoghurt",
+          "hoeveelheid": 4,
+          "eenheid": "el",
+          "ah": "yoghurt"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht of 200 °C elektrisch."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Snijd de broccoli in roosjes en halveer de dikkere roosjes, zodat alles even snel gaart. Maak de spruitjes schoon en halveer de grote. Snijd de halloumi in blokjes en de spinazie grof."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Schep de broccoli in een braadslede om met de spruitjes, de halloumi, de harissa en de olijfolie. Zet het geheel 25 minuten in de oven."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Schep de gesneden spinazie erdoor — die slinkt in de restwarmte. Proef en voeg nog wat zout en het citroensap toe."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Schep het mengsel met een lepel yoghurt op platbrood en dien op."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "De Wereldse Bakplaat (kookboek)",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-09-30"
+    },
+    {
+      "id": "r1790980056",
+      "titel": "Cacio e pepe",
+      "slug": "cacio-e-pepe",
+      "beschrijving": "De Romeinse klassieker met precies drie ingrediënten: pasta, Pecorino Romano en zwarte peper. Geen boter, geen olie, geen room — de romigheid komt volledig uit kaas en zetmeelrijk kookwater.",
+      "afbeelding": "",
+      "bereidingstijd": 20,
+      "actieve_tijd": 20,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "gemiddeld",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "Italiaans",
+        "snel",
+        "diner"
+      ],
+      "benodigdheden": [],
+      "ingredienten": [
+        {
+          "naam": "tonnarelli of spaghetti",
+          "hoeveelheid": 400,
+          "eenheid": "g",
+          "ah": "tonnarelli"
+        },
+        {
+          "naam": "Pecorino Romano, heel fijn geraspt",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "pecorino romano"
+        },
+        {
+          "naam": "zwarte peperkorrels",
+          "hoeveelheid": 1.5,
+          "eenheid": "el",
+          "ah": "zwarte peperkorrels"
+        },
+        {
+          "naam": "grof zeezout (voor het kookwater)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "zeezout"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Rasp de Pecorino Romano heel fijn, op een microplane of de fijnste kant van je rasp. Dit is de belangrijkste stap: grof geraspte kaas smelt niet en wordt een klont."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Stamp de peperkorrels grof in een vijzel, of plet ze onder de bodem van een pan. Versgemalen peper uit een molen kan ook, maar gestampt geeft meer geur."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Rooster de peper een halve minuut in een droge koekenpan op middelhoog vuur, tot je hem ruikt. Zet de pan opzij."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Breng een pan water aan de kook met wat minder zout dan je gewend bent — de pecorino is zelf al flink zout. Gebruik bewust weinig water, ongeveer 2 liter, zodat het extra zetmeelrijk wordt."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Kook de pasta 2 minuten korter dan de verpakking zegt. Schep onderwijl een paar kopjes kookwater weg."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Maak de kaascrème: doe de geraspte pecorino in een kom en roer er lepel voor lepel lauw kookwater door, tot je een gladde pasta hebt zo dik als yoghurt. Laat het water eerst een minuut afkoelen — kokend water laat de kaas meteen schiften."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Giet de pasta af en doe hem in de koekenpan met de geroosterde peper. Zwenk hem er een halve minuut door op laag vuur, met een klein scheutje kookwater."
+        },
+        {
+          "nummer": 8,
+          "tekst": "Haal de pan van het vuur en wacht tot je hem met je hand kunt aanraken. Roer dan pas de kaascrème erdoor en zwenk stevig tot de saus de pasta overal glanzend bedekt."
+        },
+        {
+          "nummer": 9,
+          "tekst": "Is hij te dik, voeg dan druppelsgewijs kookwater toe. Schift hij toch, haal de pan dan van het vuur en klop er een scheutje koud water door. Dien direct op met nog wat pecorino en peper erover."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "",
+      "bron_naam": "Klassiek Romeins recept",
+      "bron_type": "klassiek",
       "datum_toegevoegd": "2026-09-30"
     }
   ]

@@ -22,7 +22,29 @@
     "url": "https://www.ah.nl/producten/product/wi155600"
   },
   "aardpeer": null,
+  "amandelschaafsel": {
+    "afbeelding": "img/ah/amandelschaafsel.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313839383230?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "55 g",
+    "id": 161499,
+    "prijs": 1.99,
+    "schap": "Bakkerij",
+    "subschap": "Noten garnering",
+    "titel": "AH Amandelschaafsel",
+    "url": "https://www.ah.nl/producten/product/wi161499"
+  },
   "ansjovis onder zout": null,
+  "ansjovisfilets": {
+    "afbeelding": "img/ah/ansjovisfilets.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_6e33774c69334d6a517a3239485f767462716a4a4751?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "95 g",
+    "id": 537132,
+    "prijs": 4.59,
+    "schap": "Vis",
+    "subschap": "Ansjovis (conserven)",
+    "titel": "Princes Ansjovis in olijfolie",
+    "url": "https://www.ah.nl/producten/product/wi537132"
+  },
   "appels": {
     "afbeelding": "img/ah/appels.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_7a49626c7545304c515f7563536c49463939444a4d51?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -47,6 +69,17 @@
   },
   "aubergine": {
     "afbeelding": "img/ah/aubergine.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_784378722d333068534461397a434f74717656575767?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "per stuk",
+    "id": 4180,
+    "prijs": 1.05,
+    "schap": "Groente, aardappelen",
+    "subschap": "Aubergine",
+    "titel": "AH Aubergine",
+    "url": "https://www.ah.nl/producten/product/wi4180"
+  },
+  "aubergines": {
+    "afbeelding": "img/ah/aubergines.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_784378722d333068534461397a434f74717656575767?revLabel=1&rendition=400x400_WEBP&fileType=binary",
     "eenheid": "per stuk",
     "id": 4180,
@@ -145,7 +178,39 @@
     "titel": "Verstegen Bieslook",
     "url": "https://www.ah.nl/producten/product/wi216610"
   },
-  "bladpeterselie": null,
+  "bimi": {
+    "afbeelding": "img/ah/bimi.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_676d33515f646b465379573964477836336b4f696877?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "200 g",
+    "id": 192851,
+    "prijs": 2.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Broccoli",
+    "titel": "AH Bimi",
+    "url": "https://www.ah.nl/producten/product/wi192851"
+  },
+  "bladpeterselie": {
+    "afbeelding": "img/ah/bladpeterselie.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_7839664259395a5f52552d4b58384b41496e614d5151?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "15 g",
+    "id": 238971,
+    "prijs": 1.29,
+    "schap": "Groente, aardappelen",
+    "subschap": "Verse kruiden",
+    "titel": "AH Platte peterselie",
+    "url": "https://www.ah.nl/producten/product/wi238971"
+  },
+  "bleekselderij": {
+    "afbeelding": "img/ah/bleekselderij.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323031353439?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "per stuk",
+    "id": 4178,
+    "prijs": 1.49,
+    "schap": "Groente, aardappelen",
+    "subschap": "Bleekselderij",
+    "titel": "AH Bleekselderij",
+    "url": "https://www.ah.nl/producten/product/wi4178"
+  },
   "bleekselderij blaadjes": null,
   "bloem": {
     "afbeelding": "img/ah/bloem.jpg",
@@ -158,7 +223,17 @@
     "titel": "AH Tarwebloem",
     "url": "https://www.ah.nl/producten/product/wi36783"
   },
-  "bospenen": null,
+  "bospenen": {
+    "afbeelding": "img/ah/bospenen.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_476b56353661647454746d725051545a396a78772d67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "per bos",
+    "id": 127590,
+    "prijs": 1.59,
+    "schap": "Groente, aardappelen",
+    "subschap": "Wortel en peen",
+    "titel": "AH Bospeen",
+    "url": "https://www.ah.nl/producten/product/wi127590"
+  },
   "bosui": {
     "afbeelding": "img/ah/bosui.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323031313433?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -237,7 +312,17 @@
     "titel": "AH Kastanjechampignons",
     "url": "https://www.ah.nl/producten/product/wi41203"
   },
-  "cherrytomaatjes": null,
+  "cherrytomaatjes": {
+    "afbeelding": "img/ah/cherrytomaatjes.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130303637303134?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "250 g",
+    "id": 4137,
+    "prijs": 0.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Tomaten",
+    "titel": "AH Cherrytomaten",
+    "url": "https://www.ah.nl/producten/product/wi4137"
+  },
   "cherrytomaten": {
     "afbeelding": "img/ah/cherrytomaten.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130303637303134?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -316,6 +401,17 @@
     "titel": "AH Citroensap",
     "url": "https://www.ah.nl/producten/product/wi199088"
   },
+  "citroentijm": {
+    "afbeelding": "img/ah/citroentijm.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_78396c7a6961767951593256457a414b58685f765051?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "14 g",
+    "id": 216629,
+    "prijs": 2.79,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Rozemarijn en tijm",
+    "titel": "Verstegen Tijm",
+    "url": "https://www.ah.nl/producten/product/wi216629"
+  },
   "courgette": {
     "afbeelding": "img/ah/courgette.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323031313936?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -326,6 +422,17 @@
     "subschap": "Courgette",
     "titel": "AH Courgette",
     "url": "https://www.ah.nl/producten/product/wi4164"
+  },
+  "couscous": {
+    "afbeelding": "img/ah/couscous.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239393031303539?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "400 g",
+    "id": 525361,
+    "prijs": 1.39,
+    "schap": "Pasta, rijst, wereldkeuken",
+    "subschap": "Couscous",
+    "titel": "AH Couscous",
+    "url": "https://www.ah.nl/producten/product/wi525361"
   },
   "cranberries": {
     "afbeelding": "img/ah/cranberries.jpg",
@@ -449,7 +556,17 @@
     "titel": "AH Biologisch Eieren S M L 4-pack",
     "url": "https://www.ah.nl/producten/product/wi617815"
   },
-  "eierdooiers": null,
+  "eierdooiers": {
+    "afbeelding": "img/ah/eierdooiers.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_6b4c6f72794f722d53454b34563633665f6b59627a77?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "15 stuks",
+    "id": 442940,
+    "prijs": 6.49,
+    "schap": "Zuivel, eieren",
+    "subschap": "Vrije uitloop eieren",
+    "titel": "AH Biologisch Eieren S M L",
+    "url": "https://www.ah.nl/producten/product/wi442940"
+  },
   "eieren": {
     "afbeelding": "img/ah/eieren.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_51434b364b53696a53636d4f726f68396b4663696c41?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -551,6 +668,17 @@
     "titel": "AH Geitenkaas ongesneden",
     "url": "https://www.ah.nl/producten/product/wi236942"
   },
+  "gember": {
+    "afbeelding": "img/ah/gember.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239363430383534?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "150 g",
+    "id": 104818,
+    "prijs": 2.19,
+    "schap": "Groente, aardappelen",
+    "subschap": "Gember en pepers",
+    "titel": "AH Biologisch Gember",
+    "url": "https://www.ah.nl/producten/product/wi104818"
+  },
   "gemberplakje": null,
   "gemengde rode": {
     "afbeelding": "img/ah/gemengde-rode.jpg",
@@ -585,7 +713,17 @@
     "titel": "AH Excellent Comté stuk",
     "url": "https://www.ah.nl/producten/product/wi444965"
   },
-  "geraspte grana padano dop": null,
+  "geraspte grana padano dop": {
+    "afbeelding": "img/ah/geraspte-grana-padano-dop.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4f496d632d5970375468796251453852536971683351?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "150 g",
+    "id": 497553,
+    "prijs": 3.69,
+    "schap": "Kaas",
+    "subschap": "Parmezaanse kaas, grano padano, pecorino",
+    "titel": "AH Grana Padano poeder",
+    "url": "https://www.ah.nl/producten/product/wi497553"
+  },
   "geraspte kokos": null,
   "geraspte pecorino dop": {
     "afbeelding": "img/ah/geraspte-pecorino-dop.jpg",
@@ -631,6 +769,17 @@
     "titel": "AH Gerookte zalm",
     "url": "https://www.ah.nl/producten/product/wi130191"
   },
+  "geroosterde amandelen": {
+    "afbeelding": "img/ah/geroosterde-amandelen.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313935353336?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "200 g",
+    "id": 447633,
+    "prijs": 2.49,
+    "schap": "Borrel, chips, snacks",
+    "subschap": "Amandelen",
+    "titel": "AH Terra Ongebrande amandelen",
+    "url": "https://www.ah.nl/producten/product/wi447633"
+  },
   "gezeefde tomaten": {
     "afbeelding": "img/ah/gezeefde-tomaten.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_636d306d3370705754593243536d564b497551774d67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -675,7 +824,17 @@
     "titel": "AH Verse granaatappelpitjes",
     "url": "https://www.ah.nl/producten/product/wi388475"
   },
-  "granaatappelpitten": null,
+  "granaatappelpitten": {
+    "afbeelding": "img/ah/granaatappelpitten.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4930396246324e46514575793663515879534d365051?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "per stuk",
+    "id": 108021,
+    "prijs": 1.99,
+    "schap": "Fruit, verse sappen",
+    "subschap": "Exotisch fruit",
+    "titel": "AH Granaatappel",
+    "url": "https://www.ah.nl/producten/product/wi108021"
+  },
   "griekse yoghurt": {
     "afbeelding": "img/ah/griekse-yoghurt.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_7976634356517165545861654a4e6453753255397467?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -709,7 +868,17 @@
     "titel": "AH Groene olijven zonder pit",
     "url": "https://www.ah.nl/producten/product/wi60607"
   },
-  "groentebouillon": null,
+  "groentebouillon": {
+    "afbeelding": "img/ah/groentebouillon.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_494f5957316a4c485434324d72624d54507934706151?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "120 g",
+    "id": 492034,
+    "prijs": 0.55,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Bouillonblokjes groenten",
+    "titel": "AH Bouillon groente",
+    "url": "https://www.ah.nl/producten/product/wi492034"
+  },
   "gyoza kip": {
     "afbeelding": "img/ah/gyoza-kip.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_7444643444655347544e327061474e33752d4d635941?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -743,7 +912,17 @@
     "titel": "Souq Milde harissa",
     "url": "https://www.ah.nl/producten/product/wi450246"
   },
-  "hazelnoten": null,
+  "hazelnoten": {
+    "afbeelding": "img/ah/hazelnoten.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313735373030?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "360 g",
+    "id": 469387,
+    "prijs": 7.69,
+    "schap": "Ontbijtgranen, beleg",
+    "subschap": "Fruit en pittenmix",
+    "titel": "AH Biologisch Hazelnoten ongebrand",
+    "url": "https://www.ah.nl/producten/product/wi469387"
+  },
   "honing": {
     "afbeelding": "img/ah/honing.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_67575a664a557a3951472d71545437707846746a5867?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -800,7 +979,18 @@
     "titel": "AH Parmigiano reggiano",
     "url": "https://www.ah.nl/producten/product/wi163822"
   },
-  "jalapenopepers": null,
+  "jalapenopepers": {
+    "afbeelding": "img/ah/jalapenopepers.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313135333833?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "295 g",
+    "id": 416511,
+    "prijs": 2.49,
+    "schap": "Pasta, rijst, wereldkeuken",
+    "subschap": "Jalapeno, pepers",
+    "titel": "AH Jalapeno plakjes",
+    "url": "https://www.ah.nl/producten/product/wi416511"
+  },
+  "jasmijnrijst": null,
   "jus": {
     "afbeelding": "img/ah/jus.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_3067506d65596a79516e2d54793961767a632d586d67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -834,7 +1024,17 @@
     "titel": "AH Biologisch Kappertjes",
     "url": "https://www.ah.nl/producten/product/wi577543"
   },
-  "kastanjechampignonplakjes": null,
+  "kastanjechampignonplakjes": {
+    "afbeelding": "img/ah/kastanjechampignonplakjes.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_59706945444331445436696a5562516367304f6a6f41?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "250 g",
+    "id": 41203,
+    "prijs": 1.89,
+    "schap": "Groente, aardappelen",
+    "subschap": "Champignons",
+    "titel": "AH Kastanjechampignons",
+    "url": "https://www.ah.nl/producten/product/wi41203"
+  },
   "kastanjechampignons": {
     "afbeelding": "img/ah/kastanjechampignons.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_59706945444331445436696a5562516367304f6a6f41?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -846,7 +1046,17 @@
     "titel": "AH Kastanjechampignons",
     "url": "https://www.ah.nl/producten/product/wi41203"
   },
-  "kerstomaten": null,
+  "kerstomaten": {
+    "afbeelding": "img/ah/kerstomaten.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130303637303134?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "250 g",
+    "id": 4137,
+    "prijs": 0.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Tomaten",
+    "titel": "AH Cherrytomaten",
+    "url": "https://www.ah.nl/producten/product/wi4137"
+  },
   "ketjap manis": {
     "afbeelding": "img/ah/ketjap-manis.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323038393135?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -903,6 +1113,17 @@
     "titel": "AH Knoflook",
     "url": "https://www.ah.nl/producten/product/wi4160"
   },
+  "knoflook voor dressing": {
+    "afbeelding": "img/ah/knoflook-voor-dressing.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313839393634?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "300 ml",
+    "id": 430910,
+    "prijs": 1.79,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Caesar dressing",
+    "titel": "AH Caesar dressing",
+    "url": "https://www.ah.nl/producten/product/wi430910"
+  },
   "knoflookpoeder": {
     "afbeelding": "img/ah/knoflookpoeder.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_74343170716b6f69545f754f3563434552466f4e7151?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -925,7 +1146,17 @@
     "titel": "AH Knoflook",
     "url": "https://www.ah.nl/producten/product/wi4160"
   },
-  "kokende groentebouillon": null,
+  "kokende groentebouillon": {
+    "afbeelding": "img/ah/kokende-groentebouillon.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_494f5957316a4c485434324d72624d54507934706151?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "120 g",
+    "id": 492034,
+    "prijs": 0.55,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Bouillonblokjes groenten",
+    "titel": "AH Bouillon groente",
+    "url": "https://www.ah.nl/producten/product/wi492034"
+  },
   "kokosmelk": {
     "afbeelding": "img/ah/kokosmelk.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_3462626452364d5751634b764e30455a43324a332d41?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1026,8 +1257,28 @@
     "titel": "AH Lasagne",
     "url": "https://www.ah.nl/producten/product/wi467978"
   },
-  "laurierblaadjes": null,
-  "lente-uitjes": null,
+  "laurierblaadjes": {
+    "afbeelding": "img/ah/laurierblaadjes.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_37644174314a456f536b3251596a3138354c71516c77?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "10 g",
+    "id": 195385,
+    "prijs": 4.99,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Laurierblad",
+    "titel": "Verstegen Laurierblad heel",
+    "url": "https://www.ah.nl/producten/product/wi195385"
+  },
+  "lente-uitjes": {
+    "afbeelding": "img/ah/lente-uitjes.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323031313433?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "per bosje",
+    "id": 169813,
+    "prijs": 0.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Ui",
+    "titel": "AH Bosui",
+    "url": "https://www.ah.nl/producten/product/wi169813"
+  },
   "limoen": {
     "afbeelding": "img/ah/limoen.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323033333232?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1038,6 +1289,17 @@
     "subschap": "Limoenen",
     "titel": "AH Limoen",
     "url": "https://www.ah.nl/producten/product/wi231211"
+  },
+  "limoenen": {
+    "afbeelding": "img/ah/limoenen.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_676f796d41756b2d546a4f51354a455f313254725a67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "4 stuks",
+    "id": 519646,
+    "prijs": 1.29,
+    "schap": "Fruit, verse sappen",
+    "subschap": "Limoenen",
+    "titel": "AH Limoenen",
+    "url": "https://www.ah.nl/producten/product/wi519646"
   },
   "linguine": {
     "afbeelding": "img/ah/linguine.jpg",
@@ -1095,6 +1357,17 @@
     "titel": "AH Hamburger broodjes",
     "url": "https://www.ah.nl/producten/product/wi564552"
   },
+  "mini-portobello": {
+    "afbeelding": "img/ah/mini-portobello.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_5a70443947773063524957647947507762614d786241?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "2 stuks",
+    "id": 525262,
+    "prijs": 1.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Champignons",
+    "titel": "AH Biologisch Portobello",
+    "url": "https://www.ah.nl/producten/product/wi525262"
+  },
   "miso": {
     "afbeelding": "img/ah/miso.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313935323335?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1127,6 +1400,17 @@
     "subschap": "Mozzarella",
     "titel": "AH Mozzarella light",
     "url": "https://www.ah.nl/producten/product/wi613286"
+  },
+  "munt": {
+    "afbeelding": "img/ah/munt.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_376f394c6b6e573954396546623978784b4644564a67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "15 g",
+    "id": 386198,
+    "prijs": 3.09,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Munt en salie",
+    "titel": "Verstegen Munt",
+    "url": "https://www.ah.nl/producten/product/wi386198"
   },
   "nootmuskaat": {
     "afbeelding": "img/ah/nootmuskaat.jpg",
@@ -1282,6 +1566,17 @@
     "titel": "AH Parmigiano reggiano",
     "url": "https://www.ah.nl/producten/product/wi163822"
   },
+  "parmezaanse kaaskorst": {
+    "afbeelding": "img/ah/parmezaanse-kaaskorst.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_496a4c52397942645331327273444b79703352323051?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "ca. 165 g",
+    "id": 163822,
+    "prijs": 6.39,
+    "schap": "Kaas",
+    "subschap": "Parmezaanse kaas, grano padano, pecorino",
+    "titel": "AH Parmigiano reggiano",
+    "url": "https://www.ah.nl/producten/product/wi163822"
+  },
   "parmigiano geraspte kaas": {
     "afbeelding": "img/ah/parmigiano-geraspte-kaas.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_496a4c52397942645331327273444b79703352323051?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1329,6 +1624,17 @@
   "pasta kookwater": null,
   "pecorino": {
     "afbeelding": "img/ah/pecorino.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_645430525f7a4a7a537843393130704e5a5965305a67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "ca. 190 g",
+    "id": 163821,
+    "prijs": 6.99,
+    "schap": "Kaas",
+    "subschap": "Parmezaanse kaas, grano padano, pecorino",
+    "titel": "AH Pecorino romano",
+    "url": "https://www.ah.nl/producten/product/wi163821"
+  },
+  "pecorino romano": {
+    "afbeelding": "img/ah/pecorino-romano.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_645430525f7a4a7a537843393130704e5a5965305a67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
     "eenheid": "ca. 190 g",
     "id": 163821,
@@ -1482,6 +1788,17 @@
     "titel": "AH Platte peterselie",
     "url": "https://www.ah.nl/producten/product/wi238971"
   },
+  "polenta": {
+    "afbeelding": "img/ah/polenta.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_364c554250756a7354476953327a745a4968706a7451?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "400 g",
+    "id": 227849,
+    "prijs": 2.69,
+    "schap": "Glutenvrij",
+    "subschap": "Glutenvrij meel",
+    "titel": "Smaakt Polenta",
+    "url": "https://www.ah.nl/producten/product/wi227849"
+  },
   "prei": {
     "afbeelding": "img/ah/prei.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323031303836?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1515,8 +1832,39 @@
     "titel": "AH Terra Witte bonen",
     "url": "https://www.ah.nl/producten/product/wi585656"
   },
-  "radijsjes": null,
-  "ravioli": null,
+  "radijsjes": {
+    "afbeelding": "img/ah/radijsjes.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_6c52355639495135534a7155456e4672557631333351?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "200 g",
+    "id": 441049,
+    "prijs": 0.95,
+    "schap": "Groente, aardappelen",
+    "subschap": "Radijs",
+    "titel": "AH Radijs",
+    "url": "https://www.ah.nl/producten/product/wi441049"
+  },
+  "ras el hanout": {
+    "afbeelding": "img/ah/ras-el-hanout.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_644a73714a66354152642d6d6f48374f6d44506d5151?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "34 g",
+    "id": 518449,
+    "prijs": 2.99,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Maaltijd Kruidenmixen",
+    "titel": "Verstegen World spice blend ras el hanout",
+    "url": "https://www.ah.nl/producten/product/wi518449"
+  },
+  "ravioli": {
+    "afbeelding": "img/ah/ravioli.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_5a32774b756f636154476169457a5744586d767a7377?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "250 g",
+    "id": 142435,
+    "prijs": 2.49,
+    "schap": "Maaltijden, salades",
+    "subschap": "Verse pasta",
+    "titel": "AH Verse ravioli 5 formaggio",
+    "url": "https://www.ah.nl/producten/product/wi142435"
+  },
   "ricotta": {
     "afbeelding": "img/ah/ricotta.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239373537333239?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1560,6 +1908,17 @@
     "subschap": "Tomaten",
     "titel": "AH Cherrytomaten",
     "url": "https://www.ah.nl/producten/product/wi4137"
+  },
+  "rode chilipeper": {
+    "afbeelding": "img/ah/rode-chilipeper.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323031303938?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "per stuk",
+    "id": 387770,
+    "prijs": 0.49,
+    "schap": "Groente, aardappelen",
+    "subschap": "Gember en pepers",
+    "titel": "AH Rode peper",
+    "url": "https://www.ah.nl/producten/product/wi387770"
   },
   "rode paprika": {
     "afbeelding": "img/ah/rode-paprika.jpg",
@@ -1616,6 +1975,17 @@
     "titel": "AH Rode uien",
     "url": "https://www.ah.nl/producten/product/wi490280"
   },
+  "rode uien": {
+    "afbeelding": "img/ah/rode-uien.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239383834353837?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "3 stuks",
+    "id": 490280,
+    "prijs": 1.09,
+    "schap": "Groente, aardappelen",
+    "subschap": "Ui",
+    "titel": "AH Rode uien",
+    "url": "https://www.ah.nl/producten/product/wi490280"
+  },
   "roomboter": {
     "afbeelding": "img/ah/roomboter.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313032323032?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1649,7 +2019,17 @@
     "titel": "AH Rucola",
     "url": "https://www.ah.nl/producten/product/wi111767"
   },
-  "salieblaadjes": null,
+  "salieblaadjes": {
+    "afbeelding": "img/ah/salieblaadjes.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_506245737162387a536d79596331732d444269384567?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "15 g",
+    "id": 200547,
+    "prijs": 1.29,
+    "schap": "Groente, aardappelen",
+    "subschap": "Verse kruiden",
+    "titel": "AH Salie",
+    "url": "https://www.ah.nl/producten/product/wi200547"
+  },
   "salsa": {
     "afbeelding": "img/ah/salsa.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239393438353239?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1682,6 +2062,28 @@
     "subschap": "Sesamolie",
     "titel": "AH Sesamolie",
     "url": "https://www.ah.nl/producten/product/wi496224"
+  },
+  "sesamzaad": {
+    "afbeelding": "img/ah/sesamzaad.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_50746c725765596e545232685a4147506a5577596641?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "44 g",
+    "id": 216622,
+    "prijs": 2.79,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Sesamzaad, maanzaad",
+    "titel": "Verstegen Sesamzaad",
+    "url": "https://www.ah.nl/producten/product/wi216622"
+  },
+  "shiitakes": {
+    "afbeelding": "img/ah/shiitakes.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_754d4a4e49516a51543069615a54757152444e624867?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "125 g",
+    "id": 525265,
+    "prijs": 2.29,
+    "schap": "Groente, aardappelen",
+    "subschap": "Paddenstoelen",
+    "titel": "AH Biologisch Shiitake",
+    "url": "https://www.ah.nl/producten/product/wi525265"
   },
   "shoarmakruiden": null,
   "sjalot": {
@@ -1750,6 +2152,17 @@
     "titel": "AH Spaghetti",
     "url": "https://www.ah.nl/producten/product/wi159760"
   },
+  "sperziebonen": {
+    "afbeelding": "img/ah/sperziebonen.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313836363137?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "400 g",
+    "id": 395946,
+    "prijs": 2.49,
+    "schap": "Groente, aardappelen",
+    "subschap": "Sperziebonen",
+    "titel": "AH Sperziebonen",
+    "url": "https://www.ah.nl/producten/product/wi395946"
+  },
   "spinazie": {
     "afbeelding": "img/ah/spinazie.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_636b496366304549524569687165324c6b786f6e5751?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1761,6 +2174,17 @@
     "titel": "AH Spinazie kleinverpakking",
     "url": "https://www.ah.nl/producten/product/wi395948"
   },
+  "splijtkool": {
+    "afbeelding": "img/ah/splijtkool.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313834333237?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "300 g",
+    "id": 51768,
+    "prijs": 1.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Boerenkool",
+    "titel": "AH Boerenkool",
+    "url": "https://www.ah.nl/producten/product/wi51768"
+  },
   "spruitjes": {
     "afbeelding": "img/ah/spruitjes.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313835353032?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1771,6 +2195,28 @@
     "subschap": "Spruitjes",
     "titel": "AH Spruitjes",
     "url": "https://www.ah.nl/producten/product/wi4095"
+  },
+  "stevige tofu": {
+    "afbeelding": "img/ah/stevige-tofu.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_6b74766d69563678516e2d51545a786770705a783277?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "300 g",
+    "id": 622330,
+    "prijs": 1.99,
+    "schap": "Vegetarisch, vegan en plantaardig",
+    "subschap": "Tofu",
+    "titel": "AH Terra Silken tofu",
+    "url": "https://www.ah.nl/producten/product/wi622330"
+  },
+  "stronk broccoli": {
+    "afbeelding": "img/ah/stronk-broccoli.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_7a6278725f39727854566d4d744c306f4c5370783177?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "per stuk",
+    "id": 466127,
+    "prijs": 2.79,
+    "schap": "Groente, aardappelen",
+    "subschap": "Broccoli",
+    "titel": "AH Biologisch Broccoli",
+    "url": "https://www.ah.nl/producten/product/wi466127"
   },
   "sui kau": null,
   "suiker": {
@@ -1905,7 +2351,28 @@
     "titel": "AH Tonijnsteak wit 2-pack",
     "url": "https://www.ah.nl/producten/product/wi598204"
   },
-  "tonijn op oliebasis": null,
+  "tonijn op oliebasis": {
+    "afbeelding": "img/ah/tonijn-op-oliebasis.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43466b796b3272515378616a6944754e764675614f67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "160 g",
+    "id": 451669,
+    "prijs": 1.99,
+    "schap": "Vis",
+    "subschap": "Tonijn in olijfolie",
+    "titel": "Statesman Tonijn stukken in olijfolie",
+    "url": "https://www.ah.nl/producten/product/wi451669"
+  },
+  "tonnarelli": {
+    "afbeelding": "img/ah/tonnarelli.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4c39664267337642533147716e326d61517a55306d41?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "500 g",
+    "id": 159760,
+    "prijs": 0.69,
+    "schap": "Pasta, rijst, wereldkeuken",
+    "subschap": "Spaghetti",
+    "titel": "AH Spaghetti",
+    "url": "https://www.ah.nl/producten/product/wi159760"
+  },
   "tortillawraps": {
     "afbeelding": "img/ah/tortillawraps.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4358374e444e466554454b6c5962346a4e336d4a5a67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1995,6 +2462,17 @@
     "titel": "AH Terra Oven vega nuggets",
     "url": "https://www.ah.nl/producten/product/wi486327"
   },
+  "vegan yoghurt": {
+    "afbeelding": "img/ah/vegan-yoghurt.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313835333139?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "500 g",
+    "id": 570908,
+    "prijs": 0.99,
+    "schap": "Vegetarisch, vegan en plantaardig",
+    "subschap": "Plantaardige romige variant",
+    "titel": "AH Terra Plantaardig alternatief voor yoghurt",
+    "url": "https://www.ah.nl/producten/product/wi570908"
+  },
   "versgemalen zwarte peper": {
     "afbeelding": "img/ah/versgemalen-zwarte-peper.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313439393235?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -2072,8 +2550,52 @@
     "titel": "AH Terra Ongebrande walnoten",
     "url": "https://www.ah.nl/producten/product/wi460465"
   },
+  "waterkers": {
+    "afbeelding": "img/ah/waterkers.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43756a4e33434851517753562d325a673933644a3441?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "75 g",
+    "id": 107669,
+    "prijs": 1.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Sla",
+    "titel": "AH Biologisch Waterkers",
+    "url": "https://www.ah.nl/producten/product/wi107669"
+  },
   "witte balsamicoazijn": null,
   "witte basterdsuiker": null,
+  "witte rijst": {
+    "afbeelding": "img/ah/witte-rijst.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313836363138?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "1 kg",
+    "id": 421641,
+    "prijs": 1.99,
+    "schap": "Pasta, rijst, wereldkeuken",
+    "subschap": "Witte rijst",
+    "titel": "AH Witte rijst",
+    "url": "https://www.ah.nl/producten/product/wi421641"
+  },
+  "witte wijn": {
+    "afbeelding": "img/ah/witte-wijn.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_566b4b576431344c5252696472706c46644938776951?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "250 ml",
+    "id": 222370,
+    "prijs": 2.49,
+    "schap": "Bier, wijn, aperitieven",
+    "subschap": "Witte wijn klein",
+    "titel": "AH Fris & droge Franse huiswijn wit",
+    "url": "https://www.ah.nl/producten/product/wi222370"
+  },
+  "wittewijnazijn": {
+    "afbeelding": "img/ah/wittewijnazijn.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130303632313838?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "250 ml",
+    "id": 185775,
+    "prijs": 1.39,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Wijnazijn",
+    "titel": "AH Biologisch Witte wijnazijn",
+    "url": "https://www.ah.nl/producten/product/wi185775"
+  },
   "wonton bouillonpoeder": null,
   "yoghurt": {
     "afbeelding": "img/ah/yoghurt.jpg",
@@ -2107,6 +2629,17 @@
     "subschap": "Viskruiden",
     "titel": "Mill & Mortar Za'atar",
     "url": "https://www.ah.nl/producten/product/wi589864"
+  },
+  "zachte geitenkaas": {
+    "afbeelding": "img/ah/zachte-geitenkaas.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313732353138?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "180 g",
+    "id": 236942,
+    "prijs": 2.39,
+    "schap": "Kaas",
+    "subschap": "Geitenkaas (stuk)",
+    "titel": "AH Geitenkaas ongesneden",
+    "url": "https://www.ah.nl/producten/product/wi236942"
   },
   "zalm": {
     "afbeelding": "img/ah/zalm.jpg",
@@ -2174,6 +2707,17 @@
     "titel": "AH Zoete aardappelblokjes",
     "url": "https://www.ah.nl/producten/product/wi582492"
   },
+  "zoete aardappels": {
+    "afbeelding": "img/ah/zoete-aardappels.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130303632353638?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "1 kg",
+    "id": 164358,
+    "prijs": 3.49,
+    "schap": "Groente, aardappelen",
+    "subschap": "Zoete aardappelen",
+    "titel": "AH Oranje zoete aardappel",
+    "url": "https://www.ah.nl/producten/product/wi164358"
+  },
   "zonnebloemolie": {
     "afbeelding": "img/ah/zonnebloemolie.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323034303136?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -2207,7 +2751,17 @@
     "titel": "AH Keukenzout met jodium",
     "url": "https://www.ah.nl/producten/product/wi3372"
   },
-  "zoutarme groentebouillon": null,
+  "zoutarme groentebouillon": {
+    "afbeelding": "img/ah/zoutarme-groentebouillon.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_494f5957316a4c485434324d72624d54507934706151?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "120 g",
+    "id": 492034,
+    "prijs": 0.55,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Bouillonblokjes groenten",
+    "titel": "AH Bouillon groente",
+    "url": "https://www.ah.nl/producten/product/wi492034"
+  },
   "zwart sesamzaad": {
     "afbeelding": "img/ah/zwart-sesamzaad.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_50746c725765596e545232685a4147506a5577596641?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -2230,6 +2784,17 @@
     "subschap": "Zwarte peper",
     "titel": "AH Zwarte peper gemalen",
     "url": "https://www.ah.nl/producten/product/wi197974"
+  },
+  "zwarte peperkorrels": {
+    "afbeelding": "img/ah/zwarte-peperkorrels.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_684852334472424954414f73354e304e39756f4d4267?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "50 g",
+    "id": 414981,
+    "prijs": 3.29,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Zwarte peper",
+    "titel": "Verstegen Zwarte peper heel",
+    "url": "https://www.ah.nl/producten/product/wi414981"
   },
   "zwarte sesamzaadjes": null
 }

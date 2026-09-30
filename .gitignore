@@ -1,3 +1,5 @@
 .claude/
 .DS_Store
 Scripts/bronvergelijking.json
+Scripts/fotoscan.json
+Scripts/ocr
