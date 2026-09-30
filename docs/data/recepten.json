@@ -2432,10 +2432,10 @@
           "ah": "rode puntpaprika"
         },
         {
-          "naam": "Geraspte pecorino DOP",
-          "hoeveelheid": 100,
+          "naam": "Geraspte Grana Padano DOP",
+          "hoeveelheid": 80,
           "eenheid": "g",
-          "ah": "geraspte pecorino dop"
+          "ah": "geraspte grana padano dop"
         },
         {
           "naam": "Uien",
@@ -2469,7 +2469,7 @@
         },
         {
           "naam": "Honing",
-          "hoeveelheid": 2,
+          "hoeveelheid": 4,
           "eenheid": "el",
           "ah": "honing"
         },
@@ -2552,7 +2552,7 @@
         "koolhydraten": 64,
         "vetten": 24
       },
-      "bron": "https://www.hellofresh.nl/recipes/gerookte-paprikarisotto-met-gegratineerde-geitenkaas",
+      "bron": "https://www.hellofresh.nl/recipes/gerookte-paprikarisotto-met-gegratineerde-geitenkaas-66447cc3c72b4f891e5446c9",
       "bron_naam": "HelloFresh",
       "bron_type": "notitie",
       "datum_toegevoegd": "2026-03-26",
@@ -4433,7 +4433,7 @@
         "snack"
       ],
       "datum_toegevoegd": "2026-06-29",
-      "bron": "https://www.carolabaktzoethoudertjes.nl/post/kokoskoek-of-kokostaart-of-toch-kokoskoektaart",
+      "bron": "https://web.archive.org/web/20260607205054/https://www.carolabaktzoethoudertjes.nl/post/kokoskoek-of-kokostaart-of-toch-kokoskoektaart",
       "bron_type": "website",
       "bron_naam": "Carola Bakt Zoethoudertjes",
       "ingredienten": [
@@ -4445,15 +4445,9 @@
         },
         {
           "naam": "fijne kristalsuiker",
-          "hoeveelheid": 275,
+          "hoeveelheid": 300,
           "eenheid": "g",
           "ah": "fijne kristalsuiker"
-        },
-        {
-          "naam": "vanillesuiker",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
-          "ah": "vanillesuiker"
         },
         {
           "naam": "eieren",
@@ -4487,7 +4481,7 @@
         },
         {
           "nummer": 2,
-          "tekst": "Doe de zachte boter, suiker, vanillesuiker, eieren, geraspte kokos, snuf zout en zelfrijzend bakmeel in een kom. Roer alles goed door elkaar tot een glad beslag."
+          "tekst": "Doe de zachte boter, suiker, eieren, geraspte kokos, snuf zout en zelfrijzend bakmeel in een kom. Roer alles goed door elkaar tot een glad beslag."
         },
         {
           "nummer": 3,
@@ -4499,7 +4493,11 @@
         },
         {
           "nummer": 5,
-          "tekst": "Laat de koek een paar uur afkoelen in de vorm voor het aansnijden."
+          "tekst": "Laat de koek na het bakken nog even in de oven staan met de deur op een kier. Hij neigt anders tot inzakken."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Laat de kokoskoek een paar uur afkoelen in de vorm voor je hem aansnijdt. De boter moet eerst opstijven, anders valt de koek uit elkaar."
         }
       ],
       "voedingswaarden": {
