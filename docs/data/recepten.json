@@ -2205,7 +2205,7 @@
       "slug": "pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie",
       "beschrijving": "Een pittige oven-schotel met geroosterde groenten, halloumi en spinazie, geserveerd op platbrood met yoghurt.",
       "afbeelding": "img/recept/pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie.jpg",
-      "bereidingstijd": 25,
+      "bereidingstijd": 35,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -2252,8 +2252,8 @@
         },
         {
           "naam": "zeezout",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
           "ah": "zeezout"
         },
         {
@@ -2286,7 +2286,7 @@
         },
         {
           "nummer": 3,
-          "tekst": "Schep de spinazie erdoor en laat nog 1 minuut garen. Proef en voeg zeezout en citroensap toe."
+          "tekst": "Schep de gesneden spinazie erdoor. Proef en voeg zeezout en citroensap toe."
         },
         {
           "nummer": 4,
@@ -2299,13 +2299,13 @@
         "koolhydraten": 22,
         "vetten": 20
       },
-      "bron": "",
-      "bron_naam": "De Vegetarische Bakplaat (kookboek)",
-      "bron_type": "notitie",
+      "bron": "https://thehappyfoodie.co.uk/recipes/spicy-harissa-sprouts-and-broccoli-with-halloumi-and-spinach/",
+      "bron_naam": "Rukmini Iyer — De Vegetarische Bakplaat",
+      "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
-      "passieve_tijd": 15,
-      "bron_afbeelding": "https://www.groentenabonnement.nl/wp-content/uploads/2020/10/Broccoli-met-halloumi.jpg"
+      "passieve_tijd": 25,
+      "bron_afbeelding": "https://thehappyfoodie.co.uk/wp-content/uploads/2023/01/HARRISSA_SPROUTS_HALOUMI_11811-scaled-2-683x1024.jpg"
     },
     {
       "id": "r1774543390",
@@ -2761,7 +2761,7 @@
       "titel": "Citroenpasta met chili vlokken",
       "slug": "citroenpasta-met-chili-vlokken",
       "beschrijving": "Fijne Italiaanse pasta met gekarameliseerde citroen, chili en Parmezaanse kaas.",
-      "afbeelding": "",
+      "afbeelding": "img/recept/citroenpasta-met-chili-vlokken.jpg",
       "bereidingstijd": 37,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
@@ -2797,9 +2797,9 @@
           "ah": "keukenzout"
         },
         {
-          "naam": "suiker",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "naam": "suiker (snufje)",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
           "ah": "suiker"
         },
         {
@@ -2873,20 +2873,21 @@
         "koolhydraten": 72,
         "vetten": 18
       },
-      "bron": "",
-      "bron_naam": "Handmatig",
-      "bron_type": "notitie",
+      "bron": "https://www.diningandcooking.com/33651/pasta-with-fried-lemons-and-chile-flakes/",
+      "bron_naam": "NYT Cooking — Melissa Clark",
+      "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 25,
-      "passieve_tijd": 12
+      "passieve_tijd": 12,
+      "bron_afbeelding": "https://www.diningandcooking.com/wp-content/uploads/2015/08/01/Pasta-With-Fried-Lemons-and-Chile-Flakes-1024x576.jpg"
     },
     {
       "id": "r1774683772",
-      "titel": "Tomatenrisotto met Kokosmelk en Basilicum",
-      "slug": "tomatenrisotto-met-kokosmelk-en-basilicum",
-      "beschrijving": "Een romig en aromatisch risotto met verse tomaten, kokosmelk en basilicum voor een Italiaans-tropische fusiegerecht.",
-      "afbeelding": "",
-      "bereidingstijd": 25,
+      "titel": "Basilicum-tomatenrisotto met kokosmelk",
+      "slug": "basilicum-tomatenrisotto-met-kokosmelk",
+      "beschrijving": "Romige risotto met cherrytomaten en kokosmelk, afgemaakt met Parmigiano Reggiano, geroosterde zonnebloempitten en rucola.",
+      "afbeelding": "img/recept/basilicum-tomatenrisotto-met-kokosmelk.jpg",
+      "bereidingstijd": 40,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -2897,112 +2898,127 @@
       ],
       "ingredienten": [
         {
-          "naam": "arborio rijst",
-          "hoeveelheid": 300,
+          "naam": "verse basilicum",
+          "hoeveelheid": 20,
           "eenheid": "g",
-          "ah": "arborio rijst"
-        },
-        {
-          "naam": "tomatenpassata",
-          "hoeveelheid": 400,
-          "eenheid": "ml",
-          "ah": "tomatenpassata"
-        },
-        {
-          "naam": "kokosmelk",
-          "hoeveelheid": 200,
-          "eenheid": "ml",
-          "ah": "kokosmelk"
-        },
-        {
-          "naam": "groentebouillon",
-          "hoeveelheid": 1,
-          "eenheid": "l",
-          "ah": "groentebouillon"
-        },
-        {
-          "naam": "ui",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
-          "ah": "ui"
+          "ah": "basilicum"
         },
         {
           "naam": "knoflook",
-          "hoeveelheid": 3,
+          "hoeveelheid": 2,
           "eenheid": "stuks",
           "ah": "knoflook"
         },
         {
-          "naam": "olijfolie",
+          "naam": "ui",
           "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "ui"
+        },
+        {
+          "naam": "rode cherrytomaten",
+          "hoeveelheid": 500,
+          "eenheid": "g",
+          "ah": "rode cherrytomaten"
+        },
+        {
+          "naam": "tomatenpuree",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "tomatenpuree"
+        },
+        {
+          "naam": "risottorijst",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "risottorijst"
+        },
+        {
+          "naam": "kokosmelk",
+          "hoeveelheid": 300,
+          "eenheid": "ml",
+          "ah": "kokosmelk"
+        },
+        {
+          "naam": "zonnebloempitten",
+          "hoeveelheid": 40,
+          "eenheid": "g",
+          "ah": "zonnebloempitten"
+        },
+        {
+          "naam": "Parmigiano Reggiano",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "parmigiano reggiano"
+        },
+        {
+          "naam": "rucola",
+          "hoeveelheid": 120,
+          "eenheid": "g",
+          "ah": "rucola"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 4,
           "eenheid": "el",
           "ah": "olijfolie"
         },
         {
-          "naam": "droge witte wijn",
-          "hoeveelheid": 100,
+          "naam": "zoutarme groentebouillon",
+          "hoeveelheid": 900,
           "eenheid": "ml",
-          "ah": "droge witte wijn"
+          "ah": "zoutarme groentebouillon"
         },
         {
-          "naam": "parmezaan",
-          "hoeveelheid": 50,
-          "eenheid": "g",
-          "ah": "parmezaan"
+          "naam": "zwarte balsamicoazijn",
+          "hoeveelheid": 4,
+          "eenheid": "tl",
+          "ah": "zwarte balsamicoazijn"
         },
         {
-          "naam": "basilicum",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
-          "ah": "basilicum"
+          "naam": "roomboter",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "roomboter"
         },
         {
-          "naam": "zout en peper naar smaak",
+          "naam": "peper en zout",
           "hoeveelheid": 0,
           "eenheid": "naar smaak",
-          "ah": "zout en peper"
-        },
-        {
-          "naam": "suiker",
-          "hoeveelheid": 1,
-          "eenheid": "tl",
-          "ah": "suiker"
+          "ah": "peper en zout"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Snipper de ui en knoflook fijn. Verhit de olijfolie in een grote pan en fruit ui en knoflook tot glazig, voeg vervolgens de arborio rijst toe en roer 2 minuten."
+          "tekst": "Pluk de basilicumblaadjes en houd de takjes apart. Bereid de bouillon en doe de takjes erbij. Pers de knoflook, snipper de ui, halveer de cherrytomaten en rasp de Parmigiano Reggiano."
         },
         {
           "nummer": 2,
-          "tekst": "Blus af met witte wijn, laat deze volledig opkoken. Voeg vervolgens tomatenpassata toe en roer goed door."
+          "tekst": "Rooster de zonnebloempitten in een droge hapjespan tot ze kleuren en haal ze uit de pan. Verhit de olijfolie in dezelfde pan en roerbak de ui met driekwart van de cherrytomaten en de knoflook. Voeg de tomatenpuree en de risottorijst toe en bak kort mee."
         },
         {
           "nummer": 3,
-          "tekst": "Voeg de groentebouillon geleidelijk toe, één schep tegelijk, en roer regelmatig totdat de rijst zacht en romig is (ongeveer 18-20 minuten). Laat de rijst goed gaar worden voordat je nieuwe bouillon toevoegt."
+          "tekst": "Zet het vuur lager. Voeg de kokosmelk en een derde van de bouillon toe en laat de rijst het vocht langzaam opnemen; roer regelmatig. Voeg telkens een derde van de bouillon toe zodra het vorige is opgenomen, tot de rijst gaar is."
         },
         {
           "nummer": 4,
-          "tekst": "Stir in de kokosmelk, parmezaan en fijngesneden basilicum. Breng op smaak met zout, peper en een snufje suiker."
-        },
-        {
-          "nummer": 5,
-          "tekst": "Serveer direct en garneer met extra basilicum en parmezaan naar wens."
+          "tekst": "Roer de roomboter erdoor met de helft van de basilicum, de Parmigiano en de zonnebloempitten. Breng op smaak met peper en zout. Verdeel de rucola over diepe borden, schep de risotto erop en maak af met de rest van de basilicum, kaas en pitten, de overgebleven cherrytomaten en een scheutje balsamicoazijn."
         }
       ],
       "voedingswaarden": {
-        "kcal": 480,
-        "eiwitten": 12,
-        "koolhydraten": 62,
-        "vetten": 18
+        "kcal": 802,
+        "eiwitten": 19,
+        "koolhydraten": 77,
+        "vetten": 45
       },
-      "bron": "https://www.hellofresh.nl/recipes/tomatenrisotto-met-kokosmelk-en-basilicum-5e7a7cd8e2a0d42fee652d72",
+      "bron": "https://www.hellofresh.nl/recipes/tomatenrisotto-met-kokosmelk-en-basilicum-672249873fa8b036e634aedb",
       "bron_naam": "HelloFresh",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-28",
-      "actieve_tijd": 25,
-      "passieve_tijd": 0
+      "actieve_tijd": 40,
+      "passieve_tijd": 0,
+      "bron_afbeelding": "https://img.hellofresh.com/f_auto,fl_lossy,h_640,q_auto,w_1200/hellofresh_s3/image/HF_Y24_R05_W07_NL_R3241-14_Main__4low-5761385c.jpg"
     },
     {
       "id": "r1775131494",
@@ -3969,7 +3985,7 @@
           "naam": "Gezeefde tomaten (passata)",
           "hoeveelheid": 160.0,
           "eenheid": "g",
-          "ah": "tomatenpuree"
+          "ah": "gezeefde tomaten"
         },
         {
           "naam": "Tonijn in olie",

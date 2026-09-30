@@ -630,6 +630,17 @@
     "titel": "AH Gerookte zalm",
     "url": "https://www.ah.nl/producten/product/wi130191"
   },
+  "gezeefde tomaten": {
+    "afbeelding": "img/ah/gezeefde-tomaten.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_636d306d3370705754593243536d564b497551774d67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "400 g",
+    "id": 543629,
+    "prijs": 2.99,
+    "schap": "Pasta, rijst, wereldkeuken",
+    "subschap": "Gezeefde tomaten, frito, passata",
+    "titel": "Mutti Passata datterini gezeefde tomaten",
+    "url": "https://www.ah.nl/producten/product/wi543629"
+  },
   "gnocchi": {
     "afbeelding": "img/ah/gnocchi.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313135383434?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1257,6 +1268,17 @@
     "titel": "AH Parmigiano reggiano",
     "url": "https://www.ah.nl/producten/product/wi163822"
   },
+  "parmigiano reggiano": {
+    "afbeelding": "img/ah/parmigiano-reggiano.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_496a4c52397942645331327273444b79703352323051?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "ca. 165 g",
+    "id": 163822,
+    "prijs": 6.39,
+    "schap": "Kaas",
+    "subschap": "Parmezaanse kaas, grano padano, pecorino",
+    "titel": "AH Parmigiano reggiano",
+    "url": "https://www.ah.nl/producten/product/wi163822"
+  },
   "passata": {
     "afbeelding": "img/ah/passata.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_58744238314c4b78534b5369496a697775436d515f77?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1501,6 +1523,17 @@
     "subschap": "Risottorijst",
     "titel": "AH Risotto rijst",
     "url": "https://www.ah.nl/producten/product/wi124193"
+  },
+  "rode cherrytomaten": {
+    "afbeelding": "img/ah/rode-cherrytomaten.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130303637303134?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "250 g",
+    "id": 4137,
+    "prijs": 0.99,
+    "schap": "Groente, aardappelen",
+    "subschap": "Tomaten",
+    "titel": "AH Cherrytomaten",
+    "url": "https://www.ah.nl/producten/product/wi4137"
   },
   "rode paprika": {
     "afbeelding": "img/ah/rode-paprika.jpg",
@@ -2115,6 +2148,17 @@
     "titel": "AH Zonnebloemolie",
     "url": "https://www.ah.nl/producten/product/wi906"
   },
+  "zonnebloempitten": {
+    "afbeelding": "img/ah/zonnebloempitten.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313839323737?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "95 g",
+    "id": 161494,
+    "prijs": 1.69,
+    "schap": "Ontbijtgranen, beleg",
+    "subschap": "Fruit en pittenmix",
+    "titel": "AH Zonnebloempitten",
+    "url": "https://www.ah.nl/producten/product/wi161494"
+  },
   "zout": {
     "afbeelding": "img/ah/zout.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_43545239393830363435?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -2138,6 +2182,7 @@
     "titel": "Verstegen Sesamzaad",
     "url": "https://www.ah.nl/producten/product/wi216622"
   },
+  "zwarte balsamicoazijn": null,
   "zwarte peper": {
     "afbeelding": "img/ah/zwarte-peper.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313439393235?revLabel=1&rendition=400x400_WEBP&fileType=binary",
