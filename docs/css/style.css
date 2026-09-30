@@ -353,6 +353,12 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:.5rem .75rem
   margin-top:.5rem; line-height:1.4 }
 .verwijder-uitleg[hidden]{ display:none }
 
+/* Melding bij het toevoegen van een foto */
+.foto-status{ position:relative; z-index:5; margin:.6rem var(--marge) 0;
+  background:var(--laag); border:1px solid var(--lijn); border-radius:var(--r-groep);
+  padding:.7rem .82rem; font-size:var(--t-foot); color:var(--inkt-2) }
+.foto-status[hidden]{ display:none }
+
 /* Eenmalig tokenveld, in de pagina zelf */
 .token-veld{ margin-top:.7rem; background:var(--laag); border:1px solid var(--lijn);
   border-radius:var(--r-groep); padding:.8rem; display:flex; flex-wrap:wrap;

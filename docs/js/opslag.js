@@ -126,3 +126,60 @@ function vraagToken(plek, klaar) {
   blok.querySelector('.token-bewaar').addEventListener('click', opslaan);
   invoer.addEventListener('keydown', e => { if (e.key === 'Enter') opslaan(); });
 }
+
+/* ── FOTO'S ──
+   Een foto die je net gemaakt hebt is zo 4 MB. Die verkleinen we in de browser
+   voordat hij de repo in gaat: 1000px breed is ruim genoeg voor de hero en
+   scheelt een factor twintig in de cache die je in de supermarkt meesleept. */
+
+function verkleinFoto(bestand, maxBreedte = 1000, kwaliteit = 0.72) {
+  return new Promise((klaar, mislukt) => {
+    const lezer = new FileReader();
+    lezer.onerror = () => mislukt(new Error('Kan het bestand niet lezen.'));
+    lezer.onload = () => {
+      const img = new Image();
+      img.onerror = () => mislukt(new Error('Dit lijkt geen afbeelding te zijn.'));
+      img.onload = () => {
+        const schaal = Math.min(1, maxBreedte / img.naturalWidth);
+        const doek = document.createElement('canvas');
+        doek.width = Math.round(img.naturalWidth * schaal);
+        doek.height = Math.round(img.naturalHeight * schaal);
+        doek.getContext('2d').drawImage(img, 0, 0, doek.width, doek.height);
+        klaar(doek.toDataURL('image/jpeg', kwaliteit).split(',')[1]);
+      };
+      img.src = lezer.result;
+    };
+    lezer.readAsDataURL(bestand);
+  });
+}
+
+/* Zet de foto in de repo en koppelt hem aan het recept. */
+async function bewaarFoto(recept, bestand) {
+  const base64 = await verkleinFoto(bestand);
+  const pad = `docs/img/recept/${recept.slug || recept.id}.jpg`;
+
+  // Bestaat er al een foto, dan hebben we zijn sha nodig om te overschrijven
+  let sha;
+  try {
+    const res = await githubVerzoek(`contents/${encodeURIComponent(pad)}?ref=${tak()}`);
+    sha = (await res.json()).sha;
+  } catch { /* nog geen foto, dan maken we hem aan */ }
+
+  await githubVerzoek(`contents/${encodeURIComponent(pad)}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      message: `Foto bij ${recept.titel}`,
+      content: base64,
+      branch: tak(),
+      ...(sha ? { sha } : {}),
+    }),
+  });
+
+  // En het recept naar die foto laten wijzen
+  const { sha: jsonSha, data } = await haalRecepten();
+  const r = data.recepten.find(x => x.id === recept.id);
+  if (!r) throw new Error('Recept niet gevonden in de lijst.');
+  r.afbeelding = pad.replace('docs/', '');
+  await schrijfRecepten(data, jsonSha, `Foto gekoppeld aan ${recept.titel}`);
+  return r.afbeelding;
+}
