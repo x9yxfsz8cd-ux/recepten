@@ -1,0 +1,197 @@
+#!/usr/bin/env python3
+"""
+Licht elk recept door op de dingen die tijdens het koken misgaan.
+
+Geen smaakoordeel — dat kan een script niet. Wel: staat elk ingrediënt in een
+stap, kloppen de hoeveelheden tussen lijst en stappen, loopt de volgorde,
+kloppen de tijden, en liegen de tags niet.
+
+    python3 Scripts/doorlicht.py            alle bevindingen
+    python3 Scripts/doorlicht.py <zoekterm> alleen die recepten
+"""
+import json
+import pathlib
+import re
+import sys
+import unicodedata
+
+WORTEL = pathlib.Path(__file__).resolve().parent.parent
+RECEPTEN = WORTEL / "docs" / "data" / "recepten.json"
+
+VLEES = ["kip", "rund", "varken", "spek", "pancetta", "gehakt", "worst", "ham",
+         "chorizo", "bacon", "lam", "kalkoen", "shoarma", "biefstuk"]
+VIS = ["zalm", "tonijn", "ansjovis", "garnaal", "garnalen", "vis", "kabeljauw",
+       "makreel", "sardine", "wonton"]
+DIERLIJK = ["kaas", "boter", "room", "melk", "yoghurt", "ei", "eieren", "honing",
+            "parmigiano", "parmezaan", "pecorino", "mozzarella", "feta", "ricotta",
+            "halloumi", "mascarpone", "geitenkaas", "grana", "creme fraiche",
+            "crème fraîche", "sour cream", "cheddar", "comté", "burrata"]
+
+
+def plat(t):
+    t = unicodedata.normalize("NFKD", t.lower())
+    return re.sub(r"[^a-z0-9 ]", " ", t)
+
+
+def kernwoorden(naam):
+    """De woorden die ertoe doen in een ingrediëntnaam."""
+    n = plat(naam).split("(")[0].split(",")[0]
+    ruis = {"verse", "vers", "grote", "kleine", "fijngesneden", "gesneden",
+            "geraspte", "geraspt", "gehakt", "fijngehakt", "biologische",
+            "biologisch", "naar", "smaak", "optioneel", "voor", "het", "een",
+            "van", "met", "dikke", "dunne", "extra", "vergine", "vierge",
+            "goede", "kwaliteit", "stuks", "blokjes", "plakjes", "reepjes",
+            "roosjes", "ringetjes", "partjes", "stukjes", "halve", "hele"}
+    return [w for w in n.split() if len(w) > 3 and w not in ruis]
+
+
+def controleer(r):
+    """Geeft een lijst (ernst, tekst) terug. ernst: 'fout' of 'let op'."""
+    uit = []
+    stapt = " ".join(s["tekst"] for s in r["stappen"])
+    sp = plat(stapt)
+    namen = [i["naam"] for i in r["ingredienten"]]
+
+    # 1. Ingrediënt dat nergens in een stap voorkomt
+    for i in r["ingredienten"]:
+        ws = kernwoorden(i["naam"])
+        if not ws:
+            continue
+        # Samenstellingen ook op hun staart proberen: een stap die 'bouillon'
+        # zegt dekt 'groentebouillon', en 'champignons' dekt
+        # 'kastanjechampignonplakjes'.
+        kandidaten = set()
+        for w in ws:
+            kandidaten.add(w[:6])
+            for staart in ("bouillon", "champignon", "tomaat", "tomaten", "peterselie",
+                           "aardappel", "ui", "olie", "azijn", "kaas", "noten", "rijst",
+                           "zout", "peper", "broodje", "brood", "suiker", "melk", "room"):
+                if staart in w and len(w) > len(staart):
+                    kandidaten.add(staart[:6])
+        if not any(k in sp for k in kandidaten):
+            uit.append(("let op", f"'{i['naam']}' komt in geen enkele stap voor"))
+
+    # 2. Oven gebruikt zonder voorverwarmen
+    if re.search(r"\bin de oven\b|\bovenschaal\b|\bbraadslede\b", sp) \
+            and not re.search(r"kort.{0,40}oven|oven.{0,30}magnetron|magnetron", sp):
+        if not re.search(r"verwarm de (oven|grill)|oven voor|zet de oven op|oven aan op|oven op \d", sp):
+            uit.append(("fout", "de oven wordt gebruikt maar nergens voorverwarmd"))
+
+    # 3. Voorverwarmen hoort in stap 1 te staan
+    for n, s in enumerate(r["stappen"], 1):
+        if re.search(r"verwarm de oven", plat(s["tekst"])) and n > 2:
+            uit.append(("let op", f"de oven wordt pas in stap {n} voorverwarmd"))
+
+    # 4. 'de rest van X' zonder dat eerder een deel is gebruikt
+    for n, s in enumerate(r["stappen"], 1):
+        m = re.search(r"\b(de rest van de|resterende|overgebleven)\s+([a-zà-ÿ]+)", plat(s["tekst"]))
+        if m:
+            eerder = " ".join(plat(x["tekst"]) for x in r["stappen"][:n-1])
+            if m.group(2)[:6] not in eerder:
+                uit.append(("let op", f"stap {n} noemt '{m.group(0)}' maar dat is nog niet eerder gebruikt"))
+
+    # 5. Pastawater bewaren
+    if re.search(r"pastawater|kookwater|kookvocht", sp):
+        if not re.search(r"bewaar|reserveer|achterblijft|apart|\bweg\b|houd.{0,20}achter|giet.{0,24}losjes|schep.{0,60}kookwater|kopje.{0,20}(kookwater|pastawater)", sp):
+            uit.append(("fout", "er wordt kookwater gebruikt maar nergens apart gehouden"))
+
+    # 6. Tags tegen de ingrediënten
+    tags = [t.lower() for t in r.get("tags", [])]
+
+    def bevat(lijst):
+        """Alleen hele woorden, en 'plantaardige spekjes' telt niet als spek.
+        Zonder dit vindt hij vlees in 'gehakte peterselie', 'hamburgerbol'
+        en 'granaatappel'."""
+        raak = []
+        for naam in namen:
+            n = plat(naam)
+            plantaardig = re.search(r"\bvegan\b|\bvega\b|\bvegetarisch|\bplantaardig", n)
+            eerste = (kernwoorden(naam) or [""])[0]
+            for w in lijst:
+                # 'gehakt' is meestal een deelwoord ('peterselie gehakt').
+                # Als vlees staat het vooraan, niet achter een ander woord.
+                if w == "gehakt" and eerste != "gehakt":
+                    continue
+                if re.search(rf"\b{w}(s|e|en|je|jes)?\b", n) and not plantaardig:
+                    raak.append(f"{w} (in '{naam}')")
+        return raak
+    if "vegetarisch" in tags:
+        for w in bevat(VLEES) + bevat(VIS):
+            uit.append(("fout", f"tag 'vegetarisch' maar bevat {w}"))
+    if "vegan" in tags:
+        for w in bevat(VLEES) + bevat(VIS) + bevat(DIERLIJK):
+            if w in ("ei",) and not re.search(r"\bei\b|\beieren\b", alles):
+                continue
+            uit.append(("fout", f"tag 'vegan' maar bevat {w}"))
+
+    # 7. Tijden
+    a, p, b = r.get("actieve_tijd"), r.get("passieve_tijd"), r.get("bereidingstijd")
+    if a is not None and p is not None and b and a + p != b:
+        uit.append(("fout", f"actief {a} + passief {p} is niet {b}"))
+    oventijden = [int(x) for x in re.findall(r"(\d{1,3})\s*minuten in de oven", sp)]
+    if oventijden and p is not None and max(oventijden) > p:
+        uit.append(("let op", f"een stap noemt {max(oventijden)} min oven, passieve tijd is {p}"))
+
+    # 8. Hoeveelheden tussen lijst en stap
+    for i in r["ingredienten"]:
+        if i["eenheid"] not in ("el", "tl") or not i["hoeveelheid"]:
+            continue
+        ws = kernwoorden(i["naam"])
+        if not ws:
+            continue
+        kern = ws[0][:6]
+        ruw = stapt.lower()
+        for m in re.finditer(rf"(?<![\d/])(\d+(?:[.,]\d+)?)(?!\s*/)\s*(el|tl|eetlepels?|theelepels?)\s+(?:\w+\s+){{0,2}}{kern}", ruw):
+            genoemd = float(m.group(1).replace(",", "."))
+            if genoemd > i["hoeveelheid"]:
+                uit.append(("fout", f"stap noemt {m.group(0)} maar de lijst heeft "
+                                    f"{i['hoeveelheid']} {i['eenheid']} {i['naam']}"))
+
+    # 9. Zout en peper wel in de lijst, nooit in een stap
+    heeft_zout = any(re.search(r"\bzout\b|\bpeper\b", plat(n)) for n in namen)
+    if heeft_zout and not re.search(r"\bzout\b|\bpeper\b|op smaak", sp):
+        uit.append(("let op", "zout/peper staat in de lijst maar wordt nergens toegevoegd"))
+
+    # 10. Stappen zonder werkwoord aan het begin lezen als een notitie
+    for n, s in enumerate(r["stappen"], 1):
+        if len(s["tekst"]) < 30:
+            uit.append(("let op", f"stap {n} is erg kort: \"{s['tekst']}\""))
+
+    # 11. Porties en hoeveelheden
+    if not r.get("porties"):
+        uit.append(("fout", "geen aantal porties"))
+    for i in r["ingredienten"]:
+        if i["hoeveelheid"] and i["eenheid"] == "naar smaak":
+            uit.append(("let op", f"'{i['naam']}' heeft hoeveelheid {i['hoeveelheid']} én eenheid 'naar smaak'"))
+    return uit
+
+
+def main():
+    data = json.loads(RECEPTEN.read_text())
+    lijst = data if isinstance(data, list) else data["recepten"]
+    filt = sys.argv[1].lower() if len(sys.argv) > 1 else None
+
+    totaal_fout = totaal_let = schoon = 0
+    for r in sorted(lijst, key=lambda x: x["titel"]):
+        if filt and filt not in r["titel"].lower():
+            continue
+        bev = controleer(r)
+        fouten = [b for b in bev if b[0] == "fout"]
+        letop = [b for b in bev if b[0] == "let op"]
+        totaal_fout += len(fouten)
+        totaal_let += len(letop)
+        if not bev:
+            schoon += 1
+            continue
+        print(f"\n### {r['titel']}  ({r['porties']} porties, {r['bereidingstijd']} min)")
+        for _, t in fouten:
+            print(f"   FOUT    {t}")
+        for _, t in letop:
+            print(f"   let op  {t}")
+
+    print(f"\n{'='*70}")
+    print(f"{totaal_fout} fouten, {totaal_let} aandachtspunten, {schoon} recepten schoon")
+
+
+if __name__ == "__main__":
+    main()
