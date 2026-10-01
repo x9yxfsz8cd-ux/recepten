@@ -10,7 +10,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=836033">
+  <link rel="stylesheet" href="./css/style.css?v=844464">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
@@ -59,9 +59,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=836033"></script>
-  <script src="./js/ingredient-icoon.js?v=836033"></script>
-  <script src="./js/opslag.js?v=836033"></script>
+  <script src="./js/gedeeld.js?v=844464"></script>
+  <script src="./js/ingredient-icoon.js?v=844464"></script>
+  <script src="./js/opslag.js?v=844464"></script>
 
   <script>
     let recept = null;
@@ -877,12 +877,22 @@
             </div>
           </div>
 
+          ${r.tags.includes('babyvriendelijk') ? `
+          <div class="mae-melding" id="mae-melding" hidden>
+            <span class="mae-melding__kop">Mae modus aan</span>
+            <span>Schep haar portie apart vóór de gemarkeerde stappen. Wat zij niet
+            meekrijgt staat bij de ingrediënten aangegeven.</span>
+          </div>` : ''}
+
           <div class="fase-paneel" id="paneel-ingredienten" role="tabpanel">
             <div class="portie-schaler">
               <label>Porties</label>
               <button class="portie-btn" id="min-btn" aria-label="Minder porties"><svg class="ic klein" viewBox="0 0 24 24"><use href="#i-min"/></svg></button>
               <span class="portie-aantal">${huidigPorties}</span>
               <button class="portie-btn" id="plus-btn" aria-label="Meer porties"><svg class="ic klein" viewBox="0 0 24 24"><use href="#i-plus"/></svg></button>
+              ${r.tags.includes('babyvriendelijk')
+                ? `<button class="mae-schakel" id="mae-schakel" aria-pressed="false">Mae modus</button>`
+                : ''}
             </div>
             <div class="ingredienten-blok">
               <ul class="ingredienten-lijst">${ingredienten}</ul>
@@ -916,6 +926,61 @@
         huidigPorties++;
         updateIngredientHoeveelheden();
       });
+
+      // ── MAE MODUS ──
+      // Mae eet mee, maar zout en pittige kruiden nog niet. Deze schakelaar
+      // markeert precies de stappen waarvoor je haar portie apart moet scheppen.
+      const maeSchakel = document.getElementById('mae-schakel');
+      if (maeSchakel) {
+        const maeSleutel = `mae_${r.id}`;
+        let maeAan = localStorage.getItem(maeSleutel) === 'true';
+        // Op smaak brengen: schep haar portie eruit vóór deze stap.
+        const PITTIG = /\bzout|peper|kruiden|chili|harissa|sojasaus|ketjap|tabasco|sambal|cayenne|paprikapoeder|mosterd|za'?atar|shoarma|ras el hanout|miso|currypasta|kerrie|bouillon/i;
+        // Een ander soort 'niet voor Mae': dit laat je gewoon van haar bordje weg.
+        const WEGLATEN = /honing|walnoot|walnoten|hazelnoot|hazelnoten|amandel|amandelen|cashew|pinda|pistache|pijnboompitten/i;
+
+        function tekenMae() {
+          maeSchakel.setAttribute('aria-pressed', String(maeAan));
+          maeSchakel.classList.toggle('mae-schakel--aan', maeAan);
+          const melding = document.getElementById('mae-melding');
+          if (melding) melding.hidden = !maeAan;
+
+          document.querySelectorAll('.stap').forEach(stap => {
+            stap.querySelector('.mae-tip')?.remove();
+            stap.classList.remove('stap--mae');
+            const tekst = stap.querySelector('.stap-tekst')?.textContent || '';
+            if (maeAan && PITTIG.test(tekst)) {
+              stap.classList.add('stap--mae');
+              const tip = document.createElement('p');
+              tip.className = 'mae-tip';
+              tip.textContent = 'Schep Mae’s portie apart vóór deze stap';
+              stap.appendChild(tip);
+            }
+          });
+
+          // Via data-i, niet via de positie in de lijst: die kan verschuiven.
+          document.querySelectorAll('.ingredienten-lijst li').forEach(li => {
+            li.querySelector('.mae-skip')?.remove();
+            const i = li.querySelector('.vink')?.dataset.i;
+            const naam = (i != null && r.ingredienten[i]) ? r.ingredienten[i].naam : '';
+            if (maeAan && (PITTIG.test(naam) || WEGLATEN.test(naam))) {
+              const skip = document.createElement('span');
+              skip.className = 'mae-skip';
+              skip.textContent = WEGLATEN.test(naam)
+                ? 'laat weg voor Mae'
+                : 'niet voor Mae';
+              li.appendChild(skip);
+            }
+          });
+        }
+
+        maeSchakel.addEventListener('click', () => {
+          maeAan = !maeAan;
+          localStorage.setItem(maeSleutel, String(maeAan));
+          tekenMae();
+        });
+        if (maeAan) tekenMae();
+      }
 
       // Kookmodus knop
       document.getElementById('kookmodus-btn').addEventListener('click', openKookmodus);

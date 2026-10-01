@@ -322,7 +322,7 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:var(--s-2) v
 
 /* ── STAPPEN ─────────────────────────────────────────────────────────────── */
 .stappen-blok{ display:flex; flex-direction:column; gap:var(--s-2) }
-.stap{ display:flex; gap:var(--s-3); align-items:flex-start; background:var(--laag);
+.stap{ display:flex; flex-wrap:wrap; gap:var(--s-3); align-items:flex-start; background:var(--laag);
   border-radius:var(--r-groep); padding:var(--s-3) var(--s-3); cursor:pointer }
 .stap--gedaan{ opacity:.42 }
 .stap--gedaan .stap-tekst{ text-decoration:line-through }
@@ -330,7 +330,7 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:var(--s-2) v
   background:var(--vlak); color:var(--inkt-2); font-size:var(--t-cap);
   font-weight:600; display:grid; place-items:center; font-variant-numeric:tabular-nums }
 .stap--gedaan .stap-nummer{ background:var(--actief); color:#FFF }
-.stap-tekst{ font-size:var(--t-sub); line-height:1.5 }
+.stap-tekst{ flex:1 1 0; min-width:0; font-size:var(--t-sub); line-height:1.5 }
 .stap-timer-knop{ display:inline-flex; align-items:center; gap:var(--s-1);
   margin-left:var(--s-2); padding:2px var(--s-2); border:1px solid var(--lijn-sterk);
   border-radius:var(--r-pil); background:none; color:var(--inkt);
@@ -427,6 +427,33 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:var(--s-2) v
   font-variant-numeric:tabular-nums }
 .voeding-label{ display:block; font-size:var(--t-cap); color:var(--inkt-3);
   margin-top:2px }
+/* ── MAE MODUS ───────────────────────────────────────────────────────────── */
+/* Mae eet mee maar nog zonder zout en pittige kruiden. De markering moet
+   opvallen tussen de stappen zonder het recept over te nemen. */
+.mae-schakel{ margin-left:auto; display:inline-flex; align-items:center; gap:var(--s-2);
+  min-height:32px; padding:var(--s-1) var(--s-3); border-radius:var(--r-pil);
+  border:1px solid var(--lijn-sterk); background:none; color:var(--inkt-2);
+  font-family:inherit; font-size:var(--t-foot); font-weight:600; cursor:pointer }
+.mae-schakel::before{ content:""; width:8px; height:8px; border-radius:50%;
+  background:var(--lijn-sterk) }
+.mae-schakel--aan{ border-color:var(--inkt); color:var(--inkt) }
+.mae-schakel--aan::before{ background:var(--actief) }
+
+.mae-melding{ display:flex; flex-direction:column; gap:var(--s-1);
+  background:var(--vlak); border-radius:var(--r-ctl);
+  padding:var(--s-3) var(--s-4); margin-bottom:var(--s-4);
+  font-size:var(--t-foot); color:var(--inkt-2); line-height:1.45 }
+.mae-melding__kop{ font-size:var(--t-cap); font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--inkt-3) }
+
+.stap--mae{ box-shadow:inset 2px 0 0 var(--actief) }
+.mae-tip{ flex-basis:100%; margin:calc(var(--s-2) * -1) 0 0 calc(1.3rem + var(--s-3));
+  font-size:var(--t-foot); font-weight:600; color:var(--actief) }
+.mae-skip{ flex-basis:100%; margin-left:calc(var(--s-4) + 2.35rem);
+  font-size:var(--t-cap); font-weight:600; color:var(--actief) }
+
+@media print{ .mae-melding,.mae-tip,.mae-skip,.mae-schakel{ display:none!important } }
+
 /* De voet: fotovermelding en de zeldzame acties. Die hoorden niet thuis in
    een tabblad naast Ingrediënten en Bereiding — daar kook je mee. */
 .recept-voet{ margin-top:var(--s-7); padding-top:var(--s-5);
