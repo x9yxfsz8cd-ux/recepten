@@ -18,7 +18,9 @@
         "diner",
         "babyvriendelijk"
       ],
-      "benodigdheden": [],
+      "benodigdheden": [
+        "microplane"
+      ],
       "ingredienten": [
         {
           "naam": "spaghetti of linguine",
@@ -707,7 +709,12 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
-      "passieve_tijd": 15
+      "passieve_tijd": 15,
+      "benodigdheden": [
+        "bakplaat",
+        "bakpapier",
+        "schone theedoek"
+      ]
     },
     {
       "id": "r1774543194",
@@ -847,7 +854,10 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
       "passieve_tijd": 25,
-      "bron_afbeelding": "https://www.foodiesmagazine.nl/app/uploads/2019/11/78-79-aubergines-in-kaneel-met-feta-olijven-en-gekruide-bulgur-klein.jpg"
+      "bron_afbeelding": "https://www.foodiesmagazine.nl/app/uploads/2019/11/78-79-aubergines-in-kaneel-met-feta-olijven-en-gekruide-bulgur-klein.jpg",
+      "benodigdheden": [
+        "braadslede"
+      ]
     },
     {
       "id": "r1774543204",
@@ -948,7 +958,10 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
       "passieve_tijd": 15,
-      "bron_afbeelding": "https://www.projectgezond.nl/content/uploads/2020/09/BroccolisoepGerookteZalmBieslook-384x512.png"
+      "bron_afbeelding": "https://www.projectgezond.nl/content/uploads/2020/09/BroccolisoepGerookteZalmBieslook-384x512.png",
+      "benodigdheden": [
+        "blender of staafmixer"
+      ]
     },
     {
       "id": "r1774543212",
@@ -1055,7 +1068,10 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
       "passieve_tijd": 20,
-      "bron_afbeelding": "https://www.leckerbeckje.nl/wp-content/uploads/2023/05/IMG_8249.jpeg"
+      "bron_afbeelding": "https://www.leckerbeckje.nl/wp-content/uploads/2023/05/IMG_8249.jpeg",
+      "benodigdheden": [
+        "ovenschaal"
+      ]
     },
     {
       "id": "r1774543219",
@@ -1176,7 +1192,10 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
       "passieve_tijd": 10,
-      "bron_afbeelding": "https://uitpaulineskeuken.nl/wp-content/uploads/2026/04/ravioli-uit-de-oven-7455.jpg"
+      "bron_afbeelding": "https://uitpaulineskeuken.nl/wp-content/uploads/2026/04/ravioli-uit-de-oven-7455.jpg",
+      "benodigdheden": [
+        "ovenschaal"
+      ]
     },
     {
       "id": "r1774543228",
@@ -1879,7 +1898,10 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
       "passieve_tijd": 10,
-      "bron_afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/3d9c5d7de8dd71aed368e11deccc431d84fccdcb165594417a52054714488403/filled-600x600.webp"
+      "bron_afbeelding": "https://storefront-prod.nl.picnicinternational.com/static/images/recipes/3d9c5d7de8dd71aed368e11deccc431d84fccdcb165594417a52054714488403/filled-600x600.webp",
+      "benodigdheden": [
+        "pureestamper"
+      ]
     },
     {
       "id": "r1774543355",
@@ -1991,7 +2013,10 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
       "passieve_tijd": 20,
-      "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD151850_1024x748_JPG.jpg"
+      "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD151850_1024x748_JPG.jpg",
+      "benodigdheden": [
+        "bakplaat"
+      ]
     },
     {
       "id": "r1774543369",
@@ -2090,7 +2115,10 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
       "passieve_tijd": 25,
-      "bron_afbeelding": "https://uitpaulineskeuken.nl/wp-content/uploads/2026/04/gepofte-zoete-aardappel-1.jpg"
+      "bron_afbeelding": "https://uitpaulineskeuken.nl/wp-content/uploads/2026/04/gepofte-zoete-aardappel-1.jpg",
+      "benodigdheden": [
+        "ovenschaal"
+      ]
     },
     {
       "id": "r1774543376",
@@ -2167,13 +2195,17 @@
       "passieve_tijd": 20,
       "bron_afbeelding": "https://commons.wikimedia.org/wiki/File:Salmon_baked_in_an_oven_with_lemons.jpg",
       "foto_maker": "Gatorfan252525",
-      "foto_licentie": "CC BY-SA 4.0"
+      "foto_licentie": "CC BY-SA 4.0",
+      "benodigdheden": [
+        "ovenschaal",
+        "aluminiumfolie"
+      ]
     },
     {
       "id": "r1774543383",
       "titel": "Pittige harissa-spruitjes & broccoli met halloumi & spinazie",
       "slug": "pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie",
-      "beschrijving": "Een pittige oven-schotel met geroosterde groenten, halloumi en spinazie, geserveerd op platbrood met yoghurt.",
+      "beschrijving": "Een snelle, eenvoudige maaltijd. De halloumi combineert heel mooi met de specerijen, spruitjes en broccoli. Schep het mengsel met een lepeltje yoghurt op platbrood.",
       "afbeelding": "img/recept/pittige-harissa-spruitjes-broccoli-met-halloumi-spinazie.jpg",
       "bereidingstijd": 35,
       "moeilijkheidsgraad": "gemiddeld",
@@ -2181,14 +2213,15 @@
       "tags": [
         "vegetarisch",
         "comfort food",
-        "diner"
+        "diner",
+        "snel"
       ],
       "ingredienten": [
         {
-          "naam": "broccoli, in roosjes",
+          "naam": "stronk broccoli, in roosjes",
           "hoeveelheid": 1,
           "eenheid": "stuks",
-          "ah": "broccoli"
+          "ah": "stronk broccoli"
         },
         {
           "naam": "spruitjes",
@@ -2223,23 +2256,23 @@
         {
           "naam": "zeezout",
           "hoeveelheid": 0,
-          "eenheid": "naar smaak",
+          "eenheid": "snufje",
           "ah": "zeezout"
         },
         {
-          "naam": "citroen, sap",
+          "naam": "citroen (sap van een halve)",
           "hoeveelheid": 0.5,
           "eenheid": "stuks",
           "ah": "citroen"
         },
         {
-          "naam": "platbrood, om te serveren",
-          "hoeveelheid": 0,
-          "eenheid": "naar smaak",
+          "naam": "platbrood",
+          "hoeveelheid": 4,
+          "eenheid": "stuks",
           "ah": "platbrood"
         },
         {
-          "naam": "yoghurt, om te serveren",
+          "naam": "yoghurt",
           "hoeveelheid": 4,
           "eenheid": "el",
           "ah": "yoghurt"
@@ -2248,23 +2281,23 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Verwarm de oven voor op 180°C hetelucht of 200°C elektrisch."
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht of 200 °C elektrisch."
         },
         {
           "nummer": 2,
-          "tekst": "Snijd de broccoli in roosjes en de halloumi in blokjes. Halveer de spruitjes als ze groot zijn."
+          "tekst": "Snijd de broccoli in roosjes en halveer de dikkere roosjes, zodat alles even snel gaart. Maak de spruitjes schoon en halveer de grote. Snijd de halloumi in blokjes en de spinazie grof."
         },
         {
           "nummer": 3,
-          "tekst": "Schep broccoli, spruitjes, halloumi, harissa en olijfolie in een braadslede en zet deze in de oven voor 25 minuten."
+          "tekst": "Schep de broccoli in een braadslede om met de spruitjes, de halloumi, de harissa en de olijfolie. Zet het geheel 25 minuten in de oven."
         },
         {
           "nummer": 4,
-          "tekst": "Schep de gesneden spinazie erdoor. Proef en voeg zeezout en citroensap toe."
+          "tekst": "Schep de gesneden spinazie erdoor — die slinkt in de restwarmte. Proef en voeg nog wat zout en het citroensap toe."
         },
         {
           "nummer": 5,
-          "tekst": "Schep het mengsel met yoghurt op platbrood en serveer direct."
+          "tekst": "Schep het mengsel met een lepel yoghurt op platbrood en dien op."
         }
       ],
       "voedingswaarden": {
@@ -2274,12 +2307,15 @@
         "vetten": 20
       },
       "bron": "https://thehappyfoodie.co.uk/recipes/spicy-harissa-sprouts-and-broccoli-with-halloumi-and-spinach/",
-      "bron_naam": "Rukmini Iyer — De Vegetarische Bakplaat",
+      "bron_naam": "The Happy Foodie — De Wereldse Bakplaat",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
       "passieve_tijd": 25,
-      "bron_afbeelding": "https://thehappyfoodie.co.uk/wp-content/uploads/2023/01/HARRISSA_SPROUTS_HALOUMI_11811-scaled-2-683x1024.jpg"
+      "bron_afbeelding": "https://thehappyfoodie.co.uk/wp-content/uploads/2023/01/HARRISSA_SPROUTS_HALOUMI_11811-scaled-2-683x1024.jpg",
+      "benodigdheden": [
+        "braadslede"
+      ]
     },
     {
       "id": "r1774543390",
@@ -2363,7 +2399,14 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
       "passieve_tijd": 60,
-      "bron_afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2019/01/pizzadee-recept-1200x630-c-default.jpg"
+      "bron_afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2019/01/pizzadee-recept-1200x630-c-default.jpg",
+      "benodigdheden": [
+        "bakplaat",
+        "bakpapier",
+        "pizzasteen",
+        "deegroller",
+        "schone theedoek"
+      ]
     },
     {
       "id": "r1774543401",
@@ -2520,7 +2563,12 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 30,
       "passieve_tijd": 20,
-      "bron_afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/gerookte-paprikarisotto-met-gegratineerde-geitenkaas-68e0799f-1ef24d02.jpg"
+      "bron_afbeelding": "https://img.hellofresh.com/hellofresh_s3/image/gerookte-paprikarisotto-met-gegratineerde-geitenkaas-68e0799f-1ef24d02.jpg",
+      "benodigdheden": [
+        "staafmixer",
+        "bakplaat",
+        "bakpapier"
+      ]
     },
     {
       "id": "r1774543409",
@@ -2728,7 +2776,12 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 20,
       "passieve_tijd": 35,
-      "bron_afbeelding": "https://www.laurasbakery.nl/wp-content/smush-webp/2013/07/omas-appeltaart-nieuw-uitgelicht.jpg.webp"
+      "bron_afbeelding": "https://www.laurasbakery.nl/wp-content/smush-webp/2013/07/omas-appeltaart-nieuw-uitgelicht.jpg.webp",
+      "benodigdheden": [
+        "bakpapier",
+        "aluminiumfolie",
+        "springvorm"
+      ]
     },
     {
       "id": "r1774543430",
@@ -2853,7 +2906,11 @@
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 25,
       "passieve_tijd": 12,
-      "bron_afbeelding": "https://www.diningandcooking.com/wp-content/uploads/2015/08/01/Pasta-With-Fried-Lemons-and-Chile-Flakes-1024x576.jpg"
+      "bron_afbeelding": "https://www.diningandcooking.com/wp-content/uploads/2015/08/01/Pasta-With-Fried-Lemons-and-Chile-Flakes-1024x576.jpg",
+      "benodigdheden": [
+        "schuimspaan",
+        "schone theedoek"
+      ]
     },
     {
       "id": "r1774683772",
@@ -3702,7 +3759,10 @@
       "bron_naam": "Rukmini Iyer — De Groene Bakplaat",
       "bron_type": "url",
       "datum_toegevoegd": "2026-04-26",
-      "bron_afbeelding": "https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/gnochi_pepper_ricotta_1236-147221bf-ef98-4bf0-8553-b8504965238c_s900x0_c3840x2243_l0x1701.jpg"
+      "bron_afbeelding": "https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/gnochi_pepper_ricotta_1236-147221bf-ef98-4bf0-8553-b8504965238c_s900x0_c3840x2243_l0x1701.jpg",
+      "benodigdheden": [
+        "bakplaat"
+      ]
     },
     {
       "id": "r1778095207",
@@ -3943,7 +4003,10 @@
       "bron": "https://www.instagram.com/reel/DRMNCVsCBB1/",
       "bron_naam": "Titia Hoogendoorn via Instagram",
       "bron_type": "url",
-      "datum_toegevoegd": "2026-05-06"
+      "datum_toegevoegd": "2026-05-06",
+      "benodigdheden": [
+        "pureestamper"
+      ]
     },
     {
       "id": "r1778096916",
@@ -4226,6 +4289,9 @@
           "nummer": 10,
           "tekst": "Breng de rest op smaak met peper en zout. Voeg eventueel vegan gehakt toe en laat nog 2 minuten meebakken."
         }
+      ],
+      "benodigdheden": [
+        "blender"
       ]
     },
     {
@@ -4379,6 +4445,11 @@
           "nummer": 9,
           "tekst": "Laat de lasagna 20 minuten rusten voor het aansnijden. Garneer met verse basilicum of peterselie."
         }
+      ],
+      "benodigdheden": [
+        "bakplaat",
+        "ovenschaal",
+        "bakpapier"
       ]
     },
     {
@@ -4470,7 +4541,11 @@
         "koolhydraten": 48,
         "vetten": 20
       },
-      "bron_afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2022/03/kokoskoek-scaled-1200x0-c-default-1024x0-c-default.jpg"
+      "bron_afbeelding": "https://rutgerbakt.nl/wp-content/uploads/2022/03/kokoskoek-scaled-1200x0-c-default-1024x0-c-default.jpg",
+      "benodigdheden": [
+        "bakpapier",
+        "springvorm"
+      ]
     },
     {
       "id": "r1751158900",
@@ -4724,7 +4799,10 @@
       "bron": "",
       "bron_naam": "De Wereldse Bakplaat (kookboek), p. 30",
       "bron_type": "kookboek",
-      "datum_toegevoegd": "2026-09-30"
+      "datum_toegevoegd": "2026-09-30",
+      "benodigdheden": [
+        "braadslede"
+      ]
     },
     {
       "id": "r1790980000",
@@ -4900,7 +4978,9 @@
         "snel",
         "diner"
       ],
-      "benodigdheden": [],
+      "benodigdheden": [
+        "grillpan"
+      ],
       "ingredienten": [
         {
           "naam": "mini-portobello's",
@@ -5016,7 +5096,9 @@
         "vegetarisch",
         "diner"
       ],
-      "benodigdheden": [],
+      "benodigdheden": [
+        "braadslede"
+      ],
       "ingredienten": [
         {
           "naam": "bulgur, afgespoeld",
@@ -5162,7 +5244,10 @@
         "diner",
         "comfort food"
       ],
-      "benodigdheden": [],
+      "benodigdheden": [
+        "braadslede",
+        "bakpapier"
+      ],
       "ingredienten": [
         {
           "naam": "polenta",
@@ -5295,7 +5380,9 @@
         "diner",
         "comfort food"
       ],
-      "benodigdheden": [],
+      "benodigdheden": [
+        "braadslede"
+      ],
       "ingredienten": [
         {
           "naam": "zoete aardappels (ongeveer 1 kilo)",
@@ -5417,7 +5504,9 @@
         "Aziatisch",
         "diner"
       ],
-      "benodigdheden": [],
+      "benodigdheden": [
+        "braadslede"
+      ],
       "ingredienten": [
         {
           "naam": "aubergines, in de lengte gehalveerd",
@@ -5562,7 +5651,9 @@
         "vegetarisch",
         "diner"
       ],
-      "benodigdheden": [],
+      "benodigdheden": [
+        "bakplaat"
+      ],
       "ingredienten": [
         {
           "naam": "aubergines, in plakjes van 1 cm",
@@ -5662,113 +5753,6 @@
       "datum_toegevoegd": "2026-09-30"
     },
     {
-      "id": "r1790980049",
-      "titel": "Pittige harissa-spruitjes & broccoli met halloumi",
-      "slug": "pittige-harissa-spruitjes-en-broccoli",
-      "beschrijving": "Een snelle, eenvoudige maaltijd. De halloumi combineert heel mooi met de specerijen, spruitjes en broccoli. Schep het mengsel met een lepeltje yoghurt op platbrood.",
-      "afbeelding": "img/recept/pittige-harissa-spruitjes-en-broccoli.jpg",
-      "bereidingstijd": 35,
-      "actieve_tijd": 10,
-      "passieve_tijd": 25,
-      "moeilijkheidsgraad": "makkelijk",
-      "porties": 4,
-      "tags": [
-        "vegetarisch",
-        "snel",
-        "diner"
-      ],
-      "benodigdheden": [],
-      "ingredienten": [
-        {
-          "naam": "stronk broccoli, in roosjes",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
-          "ah": "stronk broccoli"
-        },
-        {
-          "naam": "spruitjes",
-          "hoeveelheid": 500,
-          "eenheid": "g",
-          "ah": "spruitjes"
-        },
-        {
-          "naam": "halloumi, in blokjes",
-          "hoeveelheid": 250,
-          "eenheid": "g",
-          "ah": "halloumi"
-        },
-        {
-          "naam": "harissa",
-          "hoeveelheid": 2,
-          "eenheid": "el",
-          "ah": "harissa"
-        },
-        {
-          "naam": "olijfolie",
-          "hoeveelheid": 2,
-          "eenheid": "el",
-          "ah": "olijfolie"
-        },
-        {
-          "naam": "spinazie, grof gesneden",
-          "hoeveelheid": 150,
-          "eenheid": "g",
-          "ah": "spinazie"
-        },
-        {
-          "naam": "zeezout",
-          "hoeveelheid": 0,
-          "eenheid": "snufje",
-          "ah": "zeezout"
-        },
-        {
-          "naam": "citroen (sap van een halve)",
-          "hoeveelheid": 0.5,
-          "eenheid": "stuks",
-          "ah": "citroen"
-        },
-        {
-          "naam": "platbrood",
-          "hoeveelheid": 4,
-          "eenheid": "stuks",
-          "ah": "platbrood"
-        },
-        {
-          "naam": "yoghurt",
-          "hoeveelheid": 4,
-          "eenheid": "el",
-          "ah": "yoghurt"
-        }
-      ],
-      "stappen": [
-        {
-          "nummer": 1,
-          "tekst": "Verwarm de oven voor tot 180 °C hetelucht of 200 °C elektrisch."
-        },
-        {
-          "nummer": 2,
-          "tekst": "Snijd de broccoli in roosjes en halveer de dikkere roosjes, zodat alles even snel gaart. Maak de spruitjes schoon en halveer de grote. Snijd de halloumi in blokjes en de spinazie grof."
-        },
-        {
-          "nummer": 3,
-          "tekst": "Schep de broccoli in een braadslede om met de spruitjes, de halloumi, de harissa en de olijfolie. Zet het geheel 25 minuten in de oven."
-        },
-        {
-          "nummer": 4,
-          "tekst": "Schep de gesneden spinazie erdoor — die slinkt in de restwarmte. Proef en voeg nog wat zout en het citroensap toe."
-        },
-        {
-          "nummer": 5,
-          "tekst": "Schep het mengsel met een lepel yoghurt op platbrood en dien op."
-        }
-      ],
-      "voedingswaarden": {},
-      "bron": "",
-      "bron_naam": "De Wereldse Bakplaat (kookboek)",
-      "bron_type": "kookboek",
-      "datum_toegevoegd": "2026-09-30"
-    },
-    {
       "id": "r1790980056",
       "titel": "Cacio e pepe",
       "slug": "cacio-e-pepe",
@@ -5785,7 +5769,10 @@
         "snel",
         "diner"
       ],
-      "benodigdheden": [],
+      "benodigdheden": [
+        "vijzel",
+        "microplane"
+      ],
       "ingredienten": [
         {
           "naam": "tonnarelli of spaghetti",
