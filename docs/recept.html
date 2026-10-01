@@ -10,7 +10,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=811316">
+  <link rel="stylesheet" href="./css/style.css?v=836033">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
@@ -59,9 +59,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=811316"></script>
-  <script src="./js/ingredient-icoon.js?v=811316"></script>
-  <script src="./js/opslag.js?v=811316"></script>
+  <script src="./js/gedeeld.js?v=836033"></script>
+  <script src="./js/ingredient-icoon.js?v=836033"></script>
+  <script src="./js/opslag.js?v=836033"></script>
 
   <script>
     let recept = null;
@@ -805,7 +805,7 @@
       const heeftVoeding = r.voedingswaarden && (r.voedingswaarden.kcal || r.voedingswaarden.eiwitten || r.voedingswaarden.koolhydraten || r.voedingswaarden.vetten);
       const voeding = heeftVoeding ? `
         <div class="voeding-sectie">
-          <div class="blok-titel">Voedingswaarden per portie</div>
+          <div class="blok-titel">Schatting per portie</div>
           <div class="voeding-grid">
             <div class="voeding-item">
               <span class="voeding-waarde">${r.voedingswaarden.kcal}</span>
@@ -826,13 +826,13 @@
           </div>
         </div>` : '';
 
+      const benodigd = (r.benodigdheden && r.benodigdheden.length) ? `
+        <div class="benodigd">
+          <span class="benodigd__kop">Pak alvast</span>
+          <span>${r.benodigdheden.map(metHoofdletter).join(' · ')}</span>
+        </div>` : '';
+
       let bron = '';
-      if (r.bron_naam && r.bron_naam !== 'Handmatig') {
-        const naam = r.bron_naam;
-        bron = r.bron
-          ? `<span class="bron-label">Originele bron: <a class="bron-link" href="${r.bron}" target="_blank" rel="noopener">${naam}</a></span>`
-          : `<span class="bron-label">Originele bron: ${naam}</span>`;
-      }
       // Foto's onder een CC-licentie moeten de maker noemen
       if (r.foto_maker) {
         const wie = r.bron_afbeelding
@@ -854,7 +854,10 @@
               <span class="pip"></span>
               <span>${r.moeilijkheidsgraad}</span>
               ${r.passieve_tijd ? `<span class="pip"></span><span>${r.passieve_tijd} min oven</span>` : ''}
-              ${r.bron_naam && r.bron_naam !== 'Handmatig' ? `<span class="pip"></span><span>${r.bron_naam}</span>` : ''}
+              ${r.bron_naam && r.bron_naam !== 'Handmatig' ? `<span class="pip"></span><span>${
+                r.bron
+                  ? `<a class="bron-link" href="${r.bron}" target="_blank" rel="noopener">${r.bron_naam}</a>`
+                  : r.bron_naam}</span>` : ''}
             </div>
             <div class="gemaakt" id="gemaakt-regel">
               <svg class="ic klein" viewBox="0 0 24 24"><use href="#i-vink"/></svg>
@@ -871,8 +874,6 @@
                       aria-controls="paneel-ingredienten"><span class="fase-tab__label">Ingrediënten</span><span class="fase-tab__badge" id="badge-ingredienten"></span></button>
               <button class="fase-tab" role="tab" data-fase="bereiding" aria-selected="false"
                       aria-controls="paneel-bereiding"><span class="fase-tab__label">Bereiding</span><span class="fase-tab__badge" id="badge-bereiding"></span></button>
-              <button class="fase-tab" role="tab" data-fase="info" aria-selected="false"
-                      aria-controls="paneel-info"><span class="fase-tab__label">Info</span></button>
             </div>
           </div>
 
@@ -887,24 +888,24 @@
               <ul class="ingredienten-lijst">${ingredienten}</ul>
               <button class="boodschappen-btn" id="boodschappen-btn">Zet op boodschappenlijst</button>
             </div>
+            ${voeding}
           </div>
 
           <div class="fase-paneel" id="paneel-bereiding" role="tabpanel" hidden>
+            ${benodigd}
             <div class="stappen-blok">
               <button class="kookmodus-btn" id="kookmodus-btn">Start kookmodus</button>
               ${stappen}
             </div>
           </div>
 
-          <div class="fase-paneel" id="paneel-info" role="tabpanel" hidden>
-            ${voeding}
-            <div style="margin-top:1.5rem;">
-              ${bron}
-              <button class="print-btn" id="print-btn">Print recept</button>
-              <button class="verwijder-btn" id="verwijder-btn">Verwijder dit recept</button>
-              <p class="verwijder-uitleg" id="verwijder-uitleg" hidden></p>
-            </div>
+          <div class="recept-voet">
+            ${bron}
+            <button class="print-btn" id="print-btn">Print recept</button>
+            <button class="verwijder-btn" id="verwijder-btn">Verwijder dit recept</button>
+            <p class="verwijder-uitleg" id="verwijder-uitleg" hidden></p>
           </div>
+
         </div>`;
 
       // Portie knoppen

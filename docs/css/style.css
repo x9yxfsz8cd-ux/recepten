@@ -427,6 +427,19 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:var(--s-2) v
   font-variant-numeric:tabular-nums }
 .voeding-label{ display:block; font-size:var(--t-cap); color:var(--inkt-3);
   margin-top:2px }
+/* De voet: fotovermelding en de zeldzame acties. Die hoorden niet thuis in
+   een tabblad naast Ingrediënten en Bereiding — daar kook je mee. */
+.recept-voet{ margin-top:var(--s-7); padding-top:var(--s-5);
+  border-top:1px solid var(--lijn); display:flex; flex-direction:column; gap:var(--s-2) }
+
+/* Dat je een blender nodig hebt wil je lezen vóór je begint. */
+.benodigd{ display:flex; flex-wrap:wrap; align-items:baseline; gap:var(--s-2);
+  background:var(--vlak); border-radius:var(--r-ctl);
+  padding:var(--s-3) var(--s-4); margin-bottom:var(--s-3);
+  font-size:var(--t-sub); color:var(--inkt-2) }
+.benodigd__kop{ font-size:var(--t-cap); font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--inkt-3) }
+
 .bron-label{ font-size:var(--t-foot); color:var(--inkt-3); display:block }
 .bron-link{ color:var(--inkt-2); text-decoration:underline }
 
