@@ -79,9 +79,24 @@ en is wél omgerekend: 220 -> 200, en de tweede fase 200 -> 180.
 
 ## Onze keuken staat nu in het recept
 
-Bij Bereiding staat een regel 'Onze keuken': welke oven en, bij pannengerechten,
-dat de Demeyere-pannen op inductie lang warmte vasthouden. Een braadslede of
-bakplaat past alleen in de SteamPro.
+Bij Bereiding staat een regel 'Onze keuken' met het aanbevolen ovenprogramma,
+afgestemd op de AEG SteamPro. Dat advies komt uit `Scripts/ovenprogramma.py` en
+staat bewust niet in een bereidingsstap: het is onze eigen aanbeveling, niet
+wat de bron voorschreef.
+
+| Soort gerecht | Programma | Waarom |
+|---|---|---|
+| Traybake, geroosterde groenten | Hetelucht, plaat in het midden | Gelijkmatig, goede kleur |
+| Gegratineerd, kaas erover | Hetelucht + laatste 5-10 min Turbogrill | Korst zonder de rest uit te drogen |
+| Cake en taart in een vorm | Boven + onderwarmte | Hetelucht sluit de bovenkant voordat het midden gaar is |
+| Gistdeeg | Gistdeeg rijzen, dan Pizza-instelling | Extra onderwarmte voor een krokante bodem |
+| Onder de grill | Turbogrill, hoogste stand | Straling van boven, rondgeblazen |
+| Vis in folie | Hetelucht, of Steamify zonder folie | Stoom houdt de zalm zachter |
+| Brood opwarmen | Regenereren met stoom | Zacht in plaats van droog |
+
+Bij pannengerechten staat er dat de Demeyere-pannen op inductie lang warmte
+vasthouden. Een braadslede of bakplaat past alleen in de SteamPro (70 l);
+een springvorm van 24 cm past ook in de CombiQuick.
 
 ## Wat ik niet kan beslissen
 

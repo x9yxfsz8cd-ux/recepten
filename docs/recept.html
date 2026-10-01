@@ -10,7 +10,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=862482">
+  <link rel="stylesheet" href="./css/style.css?v=866195">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
@@ -59,9 +59,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=862482"></script>
-  <script src="./js/ingredient-icoon.js?v=862482"></script>
-  <script src="./js/opslag.js?v=862482"></script>
+  <script src="./js/gedeeld.js?v=866195"></script>
+  <script src="./js/ingredient-icoon.js?v=866195"></script>
+  <script src="./js/opslag.js?v=866195"></script>
 
   <script>
     let recept = null;
@@ -827,19 +827,20 @@
         </div>` : '';
 
       // ── ONZE KEUKEN ──
-      // Twee AEG-ovens, allebei hetelucht: de SteamPro (70 l) en de CombiQuick
-      // (43 l). Een braadslede past alleen in de grote. De Bora is inductie en
-      // Demeyere-pannen houden de warmte lang vast, dus daar stook je lager.
+      // Twee AEG-ovens, allebei hetelucht: de SteamPro (70 l, met stoom) en de
+      // CombiQuick (43 l, met magnetron). Het programma-advies komt uit
+      // Scripts/ovenprogramma.py en staat bewust níét in een bereidingsstap:
+      // het is onze eigen aanbeveling, niet wat de bron voorschreef.
       const alleStappen = r.stappen.map(s => s.tekst).join(' ').toLowerCase();
       const keukenTips = [];
-      if (/\boven\b|braadslede|ovenschaal|bakplaat|grill/.test(alleStappen)) {
-        const groot = /braadslede|bakplaat|ovenschaal|lasagne|springvorm/.test(alleStappen);
-        keukenTips.push(groot
-          ? 'Hetelucht, in de SteamPro — een braadslede of bakplaat past niet in de CombiQuick (43 l).'
-          : 'Hetelucht. Past in allebei de ovens.');
+      if (r.ovenprogramma) {
+        const groot = /braadslede|bakplaat/.test(alleStappen);
+        keukenTips.push(r.ovenprogramma + (groot
+          ? ' Een braadslede of bakplaat past alleen in de SteamPro (70 l).'
+          : ''));
       }
-      if (/koekenpan|hapjespan|sauteerpan|braadpan|wok|steelpan|soeppan/.test(alleStappen)) {
-        keukenTips.push('Inductie: de Demeyere-pannen houden warmte lang vast. Zet een stand lager zodra de pan op temperatuur is.');
+      if (/koekenpan|hapjespan|sauteerpan|braadpan|grillpan|wok|steelpan|soeppan/.test(alleStappen)) {
+        keukenTips.push('De Demeyere-pannen houden op inductie lang warmte vast; zet een stand lager zodra de pan op temperatuur is.');
       }
       const keuken = keukenTips.length ? `
         <div class="keuken-tip">
