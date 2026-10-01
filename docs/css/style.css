@@ -427,6 +427,14 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:var(--s-2) v
   font-variant-numeric:tabular-nums }
 .voeding-label{ display:block; font-size:var(--t-cap); color:var(--inkt-3);
   margin-top:2px }
+/* Welke oven, welke stand. Staat bij Bereiding, vlak voor je begint. */
+.keuken-tip{ display:flex; flex-wrap:wrap; align-items:baseline; gap:var(--s-2);
+  border-left:2px solid var(--lijn-sterk); padding:0 0 0 var(--s-3);
+  margin:0 0 var(--s-4) var(--s-1);
+  font-size:var(--t-foot); color:var(--inkt-3); line-height:1.5 }
+.keuken-tip__kop{ font-size:var(--t-cap); font-weight:600; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--inkt-3) }
+
 /* ── MAE MODUS ───────────────────────────────────────────────────────────── */
 /* Mae eet mee maar nog zonder zout en pittige kruiden. De markering moet
    opvallen tussen de stappen zonder het recept over te nemen. */

@@ -10,7 +10,7 @@
   <meta property="og:description" content="Persoonlijke receptenverzameling van Shar &amp; Robin">
   <meta property="og:type" content="website">
   <title>Onze Recepten</title>
-  <link rel="stylesheet" href="./css/style.css?v=850019">
+  <link rel="stylesheet" href="./css/style.css?v=862482">
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./img/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -55,7 +55,7 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=850019"></script>
+  <script src="./js/gedeeld.js?v=862482"></script>
   <script>
     const ALLE_TAGS = ['vegetarisch','vegan','vis','vlees','snel','comfort food',
                        'Aziatisch','Italiaans','ontbijt','lunch','diner','snack'];
@@ -64,7 +64,13 @@
     let actiefTag = null;
     let zoekterm = '';
     let alleenFavorieten = new URLSearchParams(location.search).get('favoriet') === '1';
-    let kookfilter = null;          // 'vaak' | 'nooit' | null
+    let kookfilter = null;          // 'werk' | 'vaak' | 'nooit' | null
+
+    /* Weinig werk: hooguit een kwartier snijden, en daarna doet de oven of de
+       koelkast het. Dat is de reden om voor een traybake te kiezen. */
+    function weinigWerk(r) {
+      return (r.actieve_tijd || 99) <= 15 && (r.passieve_tijd || 0) >= 15;
+    }
 
     async function laadRecepten() {
       const res = await fetch('./data/recepten.json', { cache: 'no-cache' });
@@ -82,6 +88,7 @@
     function renderTags() {
       const c = document.getElementById('tag-filters');
       const chips = [
+        { id: 'werk',  label: 'Weinig werk',  aan: kookfilter === 'werk' },
         { id: 'vaak',  label: 'Vaak gemaakt',  aan: kookfilter === 'vaak' },
         { id: 'nooit', label: 'Nog niet gemaakt', aan: kookfilter === 'nooit' },
       ].map(x => `<button class="tag-btn${x.aan ? ' active' : ''}" data-kook="${x.id}">${x.label}</button>`);
@@ -114,6 +121,7 @@
         const fav = laadFavorieten();
         lijst = lijst.filter(r => fav.includes(r.id));
       }
+      if (kookfilter === 'werk')  lijst = lijst.filter(weinigWerk);
       if (kookfilter === 'vaak')  lijst = lijst.filter(r => aantalGemaakt(r.id) > 0);
       if (kookfilter === 'nooit') lijst = lijst.filter(r => aantalGemaakt(r.id) === 0);
       if (actiefTag) lijst = lijst.filter(r => r.tags.includes(actiefTag));
@@ -141,8 +149,14 @@
           ? `<img class="recept-card__img" src="${r.afbeelding}" alt="" loading="lazy">`
           : `<div class="recept-card__img-placeholder"><span>${r.titel.trim()[0] || '?'}</span></div>`;
         const aan = fav.includes(r.id);
-        // De totale tijd, want daar plan je op — niet de actieve tijd
-        const tijd = r.bereidingstijd || r.actieve_tijd;
+        // Normaal is de totale tijd het getal waar je op plant. Maar bij een
+        // traybake kies je juist op hoe lang je zélf bezig bent — de rest
+        // staat in de oven. Dan noemen we allebei.
+        const totaal = r.bereidingstijd || r.actieve_tijd;
+        const tijd = weinigWerk(r)
+          ? `${r.actieve_tijd} min werk · ${totaal} min`
+          : `${totaal} min`;
+        const gemaakt = aantalGemaakt(r.id) ? ` · ${gemaaktTekst(r.id)}` : '';
         return `
           <a class="recept-card" href="./recept.html?id=${r.id}">
             ${img}
@@ -150,7 +164,7 @@
                     aria-label="${aan ? 'Uit favorieten' : 'Aan favorieten'}">
               <svg viewBox="0 0 24 24"><use href="#i-hart"/></svg></button>
             <span class="recept-card__title">${r.titel}</span>
-            <span class="recept-card__meta">${tijd} min · ${gemaaktTekst(r.id)}</span>
+            <span class="recept-card__meta">${tijd}${gemaakt}</span>
           </a>`;
       }).join('');
 

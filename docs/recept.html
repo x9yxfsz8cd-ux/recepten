@@ -10,7 +10,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=850019">
+  <link rel="stylesheet" href="./css/style.css?v=862482">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
@@ -59,9 +59,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=850019"></script>
-  <script src="./js/ingredient-icoon.js?v=850019"></script>
-  <script src="./js/opslag.js?v=850019"></script>
+  <script src="./js/gedeeld.js?v=862482"></script>
+  <script src="./js/ingredient-icoon.js?v=862482"></script>
+  <script src="./js/opslag.js?v=862482"></script>
 
   <script>
     let recept = null;
@@ -826,6 +826,27 @@
           </div>
         </div>` : '';
 
+      // ── ONZE KEUKEN ──
+      // Twee AEG-ovens, allebei hetelucht: de SteamPro (70 l) en de CombiQuick
+      // (43 l). Een braadslede past alleen in de grote. De Bora is inductie en
+      // Demeyere-pannen houden de warmte lang vast, dus daar stook je lager.
+      const alleStappen = r.stappen.map(s => s.tekst).join(' ').toLowerCase();
+      const keukenTips = [];
+      if (/\boven\b|braadslede|ovenschaal|bakplaat|grill/.test(alleStappen)) {
+        const groot = /braadslede|bakplaat|ovenschaal|lasagne|springvorm/.test(alleStappen);
+        keukenTips.push(groot
+          ? 'Hetelucht, in de SteamPro — een braadslede of bakplaat past niet in de CombiQuick (43 l).'
+          : 'Hetelucht. Past in allebei de ovens.');
+      }
+      if (/koekenpan|hapjespan|sauteerpan|braadpan|wok|steelpan|soeppan/.test(alleStappen)) {
+        keukenTips.push('Inductie: de Demeyere-pannen houden warmte lang vast. Zet een stand lager zodra de pan op temperatuur is.');
+      }
+      const keuken = keukenTips.length ? `
+        <div class="keuken-tip">
+          <span class="keuken-tip__kop">Onze keuken</span>
+          <span>${keukenTips.join(' ')}</span>
+        </div>` : '';
+
       const benodigd = (r.benodigdheden && r.benodigdheden.length) ? `
         <div class="benodigd">
           <span class="benodigd__kop">Pak alvast</span>
@@ -903,6 +924,7 @@
 
           <div class="fase-paneel" id="paneel-bereiding" role="tabpanel" hidden>
             ${benodigd}
+            ${keuken}
             <div class="stappen-blok">
               <button class="kookmodus-btn" id="kookmodus-btn">Start kookmodus</button>
               ${stappen}

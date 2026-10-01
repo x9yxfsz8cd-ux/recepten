@@ -61,15 +61,29 @@ want daar maakt het wel uit welke olie waar in gaat.
 - Geen dubbele recepten meer (de harissa-spruitjes stonden er twee keer, al
   samengevoegd).
 
-## Wat ik niet kan beslissen
+## Oventemperaturen: opgelost
 
-**Oventemperaturen.** Negen recepten zeggen "180 °C hetelucht / 200 °C
-elektrisch". Twaalf noemen maar één getal. Dat scheelt 20 graden, en welke
-bedoeld is staat nergens. Ik ga niet gokken wat de bron bedoelde.
-De twaalf: Halloumi-pita's, Aubergines in kaneel, Traybake met orzo, Pita
-shoarma, Gnocchi-traybake, Gepofte zoete aardappel, Zalm met citroen,
-Gerookte-paprikarisotto, Elly's appeltaart, Vegetarische lasagna,
-Kokoskoek, Falafel wraps.
+Beide ovens in huis zijn hetelucht — AEG SteamPro BSK792280B (70 l, met stoom)
+en AEG CombiQuick KMK761080B (43 l, met magnetron). Alle 21 oventemperaturen
+staan nu als één getal met 'hetelucht' erbij; de 'of X °C elektrisch' is weg.
+
+Dertien keer zei de bron niet welke stand bedoeld was. Daar is het getal
+gelezen als hetelucht, omdat Nederlandse recepten voor de eigen oven van de
+schrijver geschreven zijn en die vrijwel altijd hetelucht is. Mocht een gerecht
+te licht uit de oven komen, dan is dat de plek om 20 graden bij te zetten:
+Halloumi-pita's, Aubergines in kaneel, Traybake met orzo, Pita shoarma,
+Gnocchi-traybake, Gepofte zoete aardappel, Zalm met citroen,
+Gerookte-paprikarisotto, Elly's appeltaart, Kokoskoek, Falafel wraps.
+De vegetarische lasagna komt van een Amerikaanse site (425 °F, conventioneel)
+en is wél omgerekend: 220 -> 200, en de tweede fase 200 -> 180.
+
+## Onze keuken staat nu in het recept
+
+Bij Bereiding staat een regel 'Onze keuken': welke oven en, bij pannengerechten,
+dat de Demeyere-pannen op inductie lang warmte vasthouden. Een braadslede of
+bakplaat past alleen in de SteamPro.
+
+## Wat ik niet kan beslissen
 
 **Edamame in de noedelsoep** gaan er pas aan het eind bij, zonder te garen.
 Uit de diepvries wil je ze even meekoken. De bron (eefkooktzo) blokkeert
