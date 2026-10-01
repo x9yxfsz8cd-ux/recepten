@@ -249,8 +249,8 @@
         },
         {
           "naam": "tijm",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "hoeveelheid": 4,
+          "eenheid": "takjes",
           "ah": "tijm"
         },
         {
@@ -1017,8 +1017,8 @@
         },
         {
           "naam": "hazelnoten, kleingehakt en kort geroosterd",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "hoeveelheid": 50,
+          "eenheid": "g",
           "ah": "hazelnoten"
         },
         {
@@ -1148,7 +1148,7 @@
         {
           "naam": "basilicum",
           "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "eenheid": "bosje",
           "ah": "basilicum"
         },
         {
@@ -1627,13 +1627,13 @@
         {
           "naam": "verse tijm, blaadjes van 4 takjes",
           "hoeveelheid": 4,
-          "eenheid": "stuks",
+          "eenheid": "takjes",
           "ah": "tijm"
         },
         {
           "naam": "platte peterselie, gehakt",
           "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "eenheid": "bosje",
           "ah": "platte peterselie"
         },
         {
@@ -2087,7 +2087,7 @@
         {
           "naam": "peterselie",
           "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "eenheid": "bosje",
           "ah": "peterselie"
         },
         {
@@ -3127,13 +3127,13 @@
         {
           "naam": "dragon en peterselie, fijngehakt",
           "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "eenheid": "bosje",
           "ah": "dragon en peterselie"
         },
         {
           "naam": "salieblaadjes",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "hoeveelheid": 10,
+          "eenheid": "blaadjes",
           "ah": "salieblaadjes"
         },
         {
@@ -3725,7 +3725,7 @@
         {
           "naam": "rozemarijn (flinke takjes)",
           "hoeveelheid": 2,
-          "eenheid": "stuks",
+          "eenheid": "takjes",
           "ah": "rozemarijn"
         },
         {
@@ -3835,7 +3835,7 @@
         {
           "naam": "verse bieslook",
           "hoeveelheid": 2,
-          "eenheid": "stuks",
+          "eenheid": "el",
           "ah": "bieslook"
         },
         {
@@ -4085,7 +4085,7 @@
         {
           "naam": "peterselie",
           "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "eenheid": "bosje",
           "ah": "peterselie"
         },
         {

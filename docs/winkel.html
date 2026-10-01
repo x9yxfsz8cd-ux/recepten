@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>In de winkel</title>
-  <link rel="stylesheet" href="./css/style.css?v=844464">
+  <link rel="stylesheet" href="./css/style.css?v=850019">
   <link rel="manifest" href="./manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
@@ -49,8 +49,8 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=844464"></script>
-  <script src="./js/ingredient-icoon.js?v=844464"></script>
+  <script src="./js/gedeeld.js?v=850019"></script>
+  <script src="./js/ingredient-icoon.js?v=850019"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -123,10 +123,34 @@
       }
 
       const gekocht = gekochtVoor(huidig.id);
-      const nodig = [], kast = [];
+      const ruw = [], kast = [];
       huidig.ingredienten.forEach((ing, i) => {
-        (isVoorraad(ing.naam) ? kast : nodig).push({ ing, i });
+        (isVoorraad(ing.naam) ? kast : ruw).push({ ing, i });
       });
+
+      // Olijfolie voor de groenten en olijfolie voor de dressing zijn in de
+      // winkel één fles. Zelfde product en zelfde eenheid gaan samen op één
+      // regel, met de hoeveelheden opgeteld; afvinken vinkt ze allebei af.
+      // Geldt ook voor de voorraadkast, want juist daar staan olie en zout
+      // vaak twee keer.
+      const voegSamen = (lijst) => {
+        const samen = new Map();
+        lijst.forEach(x => {
+          const sleutel = `${x.ing.ah || x.ing.naam.toLowerCase()}|${x.ing.eenheid}`;
+          const bestaand = samen.get(sleutel);
+          if (bestaand) {
+            bestaand.ing = { ...bestaand.ing,
+              hoeveelheid: (bestaand.ing.hoeveelheid || 0) + (x.ing.hoeveelheid || 0),
+              naam: bestaand.ing.naam.split('(')[0].trim() };
+            bestaand.idx.push(x.i);
+          } else {
+            samen.set(sleutel, { ing: x.ing, i: x.i, idx: [x.i] });
+          }
+        });
+        return [...samen.values()];
+      };
+      const nodig = voegSamen(ruw);
+      const kastSamen = voegSamen(kast);
 
       // Groeperen op het schap waar AH het product heeft staan
       const groepen = new Map();
@@ -141,7 +165,7 @@
         return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
       });
 
-      const open = nodig.filter(x => !gekocht.includes(String(x.i))).length;
+      const open = nodig.filter(x => !(x.idx || [x.i]).every(n => gekocht.includes(String(n)))).length;
       document.getElementById('samenvatting').textContent =
         `${huidig.titel} · ${huidig.porties} porties · ${open} te halen`;
 
@@ -149,8 +173,9 @@
       // winkel uit zonder de spullen die je toen al had afgestreept.
       const kanResetten = gekocht.length > 0;
 
-      const regel = ({ ing, i, p }) => {
-        const aan = gekocht.includes(String(i));
+      const regel = ({ ing, i, p, idx }) => {
+        const indexen = idx || [i];
+        const aan = indexen.every(n => gekocht.includes(String(n)));
         const pakken = p ? aantalVerpakkingen(ing.hoeveelheid, ing.eenheid, p.eenheid) : null;
         // De AH-naam is het woord waar je in het schap naar zoekt: 'kerstomaten'
         // heten daar 'cherrytomaten', 'lente-uitjes' heten 'bosui'. Die naam mag
@@ -168,7 +193,7 @@
           ? 'naar smaak'
           : `${formatHoeveelheid(ing.hoeveelheid, huidig.porties, huidig.porties)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();
         return `<li class="${aan ? 'ing--gedaan' : ''}">
-          <button class="vink" data-i="${i}" aria-pressed="${aan}" aria-label="Gekocht">
+          <button class="vink" data-i="${indexen.join(',')}" aria-pressed="${aan}" aria-label="Gekocht">
             <svg viewBox="0 0 24 24"><use href="#i-vink"/></svg></button>
           ${foto}
           <span class="ingredient-naam">${metHoofdletter(ing.naam)}${onder}</span>
@@ -185,15 +210,20 @@
         <ul class="ingredienten-lijst">${items.map(regel).join('')}</ul>`).join('')
         + (kast.length ? `
         <button class="inklap" id="kast-knop" aria-expanded="false">
-          <span>Heb je waarschijnlijk al — ${kast.length}</span>
+          <span>Heb je waarschijnlijk al — ${kastSamen.length}</span>
           <svg class="ic klein" viewBox="0 0 24 24"><use href="#i-chevron"/></svg>
         </button>
         <ul class="ingredienten-lijst" id="kast-lijst" hidden>
-          ${kast.map(x => regel({ ...x, p: x.ing.ah ? producten[x.ing.ah] : null })).join('')}
+          ${kastSamen.map(x => regel({ ...x, p: x.ing.ah ? producten[x.ing.ah] : null })).join('')}
         </ul>` : '');
 
       el.querySelectorAll('.vink').forEach(k => k.addEventListener('click', () => {
-        wisselGekocht(huidig.id, k.dataset.i);
+        const delen = k.dataset.i.split(',');
+        const naarAan = k.getAttribute('aria-pressed') !== 'true';
+        delen.forEach(n => {
+          const nuAan = gekochtVoor(huidig.id).includes(n);
+          if (nuAan !== naarAan) wisselGekocht(huidig.id, n);
+        });
         renderLijst();
       }));
       const reset = document.getElementById('reset-knop');
