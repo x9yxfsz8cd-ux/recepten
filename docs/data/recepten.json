@@ -833,7 +833,7 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Verwarm de oven voor tot 200°C. Doe de bulgur, bouillon en olijven in een kleine braadslede. Snijd de aubergine en ui en meng ze in een tweede braadslede met kaneel, nootmuskaat, zout en olijfolie, zodat alles in één laag ligt."
+          "tekst": "Verwarm de oven voor tot 200°C. Doe de bulgur, bouillon en olijven in een kleine braadslede. Snijd de aubergine in blokjes van 2 cm en de rode ui in dikke halve ringen, en meng ze in een tweede braadslede met kaneel, nootmuskaat, zout en olijfolie, zodat alles in één laag ligt."
         },
         {
           "nummer": 2,
@@ -890,9 +890,9 @@
           "ah": "ui"
         },
         {
-          "naam": "teentje knoflook",
+          "naam": "knoflook",
           "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "eenheid": "teentje",
           "ah": "knoflook"
         },
         {
@@ -1134,9 +1134,9 @@
           "ah": "knoflook"
         },
         {
-          "naam": "grote bol mozzarella",
+          "naam": "mozzarella (grote bol)",
           "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "eenheid": "bol",
           "ah": "mozzarella"
         },
         {
@@ -1410,7 +1410,7 @@
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Verwarm de oven voor op 230 °C."
+          "tekst": "Verwarm de oven voor op 200 °C; daarin warm je straks de pitabroodjes op."
         },
         {
           "nummer": 2,
@@ -1430,7 +1430,7 @@
         },
         {
           "nummer": 6,
-          "tekst": "Verwarm de pitabroodjes volgens de aanwijzingen op de verpakking."
+          "tekst": "Verwarm de pitabroodjes 3-4 minuten in de oven, tot ze warm en net iets krokant zijn."
         },
         {
           "nummer": 7,
@@ -2374,8 +2374,8 @@
         },
         {
           "naam": "olijfolie",
-          "hoeveelheid": 3.5,
-          "eenheid": "g",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
           "ah": "olijfolie"
         }
       ],
@@ -2997,8 +2997,8 @@
         },
         {
           "naam": "Parmigiano Reggiano",
-          "hoeveelheid": 2,
-          "eenheid": "stuks",
+          "hoeveelheid": 50,
+          "eenheid": "g",
           "ah": "parmigiano reggiano"
         },
         {
@@ -3811,7 +3811,7 @@
         {
           "naam": "tonijn (op water, MSC)",
           "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "eenheid": "blik",
           "ah": "tonijn"
         },
         {
@@ -4327,9 +4327,9 @@
       "titel": "Vegetarische lasagna met geroosterde groenten",
       "beschrijving": "Laagjes geroosterde champignons, paprika, courgette en spinazie met romige ricotta, tomatensaus en gesmolten mozzarella.",
       "afbeelding": "img/vegetarische-lasagna.jpg",
-      "bereidingstijd": 90,
+      "bereidingstijd": 115,
       "actieve_tijd": 40,
-      "passieve_tijd": 50,
+      "passieve_tijd": 75,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 8,
       "tags": [
