@@ -202,7 +202,7 @@
         },
         {
           "nummer": 3,
-          "tekst": "Schaaf de komkommer en bospeen in lange linten met een kaasschaaf of dunschiller. Besprenkel met de rest van de rijstazijn. Snijd de bosuien in schuine ringetjes. Snijd de avocado's overlangs doormidden, verwijder de pit en snijd in plakjes."
+          "tekst": "Schil de bospeen. Schaaf de komkommer en bospeen in lange linten met een kaasschaaf of dunschiller. Besprenkel met de rest van de rijstazijn. Snijd de bosuien in schuine ringetjes. Snijd de avocado's overlangs doormidden, verwijder de pit en snijd in plakjes."
         },
         {
           "nummer": 4,
@@ -327,7 +327,7 @@
         },
         {
           "nummer": 2,
-          "tekst": "Smelt de boter in de pan, voeg knoflook en tijm toe, bak 30 seconden en voeg de champignonplakjes toe. Roerbak 6-8 minuten totdat ze mooi bruin zijn en voeg dan de sojasaus toe, roerbak nog 1-2 minuten."
+          "tekst": "Smelt de boter in de pan, voeg knoflook en tijm toe, bak 30 seconden en voeg de champignonplakjes toe. Roerbak 6-8 minuten totdat ze mooi bruin zijn en voeg dan de sojasaus toe, roerbak nog 1-2 minuten. Hak intussen de geroosterde walnoten grof."
         },
         {
           "nummer": 3,
@@ -499,9 +499,9 @@
           "ah": "knoflook"
         },
         {
-          "naam": "peterselie, gewassen",
-          "hoeveelheid": 1,
-          "eenheid": "stuks",
+          "naam": "platte peterselie, fijngehakt",
+          "hoeveelheid": 30,
+          "eenheid": "g",
           "ah": "peterselie"
         },
         {
@@ -527,16 +527,22 @@
           "hoeveelheid": 0.5,
           "eenheid": "stuks",
           "ah": "citroen"
+        },
+        {
+          "naam": "zout en peper",
+          "hoeveelheid": 0,
+          "eenheid": "naar smaak",
+          "ah": "zout en peper"
         }
       ],
       "stappen": [
         {
           "nummer": 1,
-          "tekst": "Breng een grote pot met veel zout en water aan de kook. Snijd de knoflookteentjes dun en hak de peterseliebladerenerg fijn (zonder de dikke stengels)."
+          "tekst": "Breng een grote pot met veel zout en water aan de kook. Snijd de knoflookteentjes dun en hak de peterselieblaadjes heel fijn (zonder de dikke stengels)."
         },
         {
           "nummer": 2,
-          "tekst": "Verwarm de olijfolie in een grote sautépan op middelhoog vuur tot het glinster, voeg de gesneden knoflook toe en roer constant tot deze licht bruin begint te worden. Voeg de rode pepervlokken toe en haal de pan van het vuur zodat de knoflook zacht goudbruin verder gaat bakken."
+          "tekst": "Verwarm de olijfolie in een grote sautépan op middelhoog vuur tot het glinster, voeg de gesneden knoflook toe en roer constant tot deze licht bruin begint te worden. Voeg de rode pepervlokken toe en zet het vuur laag."
         },
         {
           "nummer": 3,
@@ -550,7 +556,7 @@
         "vetten": 36
       },
       "bron": "https://www.youtube.com/watch?v=bJUiWdM__Qw",
-      "bron_naam": "YouTube",
+      "bron_naam": "Binging with Babish — Aglio e Olio uit de film Chef",
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
@@ -705,8 +711,8 @@
         "vetten": 28
       },
       "bron": "https://www.instagram.com/reel/C680GO8K7Cz/",
-      "bron_naam": "@lauracvm (Instagram)",
-      "bron_type": "url",
+      "bron_naam": "veggilaine op Instagram",
+      "bron_type": "instagram",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 15,
       "passieve_tijd": 15,
@@ -2307,8 +2313,8 @@
         "vetten": 20
       },
       "bron": "https://thehappyfoodie.co.uk/recipes/spicy-harissa-sprouts-and-broccoli-with-halloumi-and-spinach/",
-      "bron_naam": "The Happy Foodie — De Wereldse Bakplaat",
-      "bron_type": "url",
+      "bron_naam": "De Groene Bakplaat — Rukmini Iyer",
+      "bron_type": "kookboek",
       "datum_toegevoegd": "2026-03-26",
       "actieve_tijd": 10,
       "passieve_tijd": 25,
@@ -4001,8 +4007,8 @@
         "vetten": 10
       },
       "bron": "https://www.instagram.com/reel/DRMNCVsCBB1/",
-      "bron_naam": "Titia Hoogendoorn via Instagram",
-      "bron_type": "url",
+      "bron_naam": "titiahoogendoorn op Instagram",
+      "bron_type": "instagram",
       "datum_toegevoegd": "2026-05-06",
       "benodigdheden": [
         "pureestamper"
@@ -4141,8 +4147,8 @@
         "babyvriendelijk"
       ],
       "datum_toegevoegd": "2026-05-25",
-      "bron": "https://imginn.com/p/DYOq24qo4D3/",
-      "bron_naam": "Instagram",
+      "bron": "https://www.instagram.com/p/DYOq24qo4D3/",
+      "bron_naam": "titiahoogendoorn op Instagram",
       "voedingswaarden": {},
       "ingredienten": [
         {
@@ -4292,7 +4298,8 @@
       ],
       "benodigdheden": [
         "blender"
-      ]
+      ],
+      "bron_type": "instagram"
     },
     {
       "id": "r1780140773",
@@ -4796,8 +4803,8 @@
         }
       ],
       "voedingswaarden": {},
-      "bron": "",
-      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 30",
+      "bron": "https://thehappyfoodie.co.uk/recipes/rainbow-tabbouleh-with-avocado-radishes-and-pomegranate/",
+      "bron_naam": "De Groene Bakplaat — Rukmini Iyer, p. 30",
       "bron_type": "kookboek",
       "datum_toegevoegd": "2026-09-30",
       "benodigdheden": [
@@ -5076,8 +5083,8 @@
         }
       ],
       "voedingswaarden": {},
-      "bron": "",
-      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 48",
+      "bron": "https://thehappyfoodie.co.uk/recipes/lime-and-coriander-mushrooms-with-pak-choi-and-asparagus/",
+      "bron_naam": "De Groene Bakplaat — Rukmini Iyer, p. 48",
       "bron_type": "kookboek",
       "datum_toegevoegd": "2026-09-30"
     },
@@ -5202,28 +5209,32 @@
         },
         {
           "nummer": 3,
-          "tekst": "Doe de bulgur en de kokende groentebouillon in een braadslede."
+          "tekst": "Doe de bimi in een hittebestendige kom en giet er net genoeg kokend water over om hem onder te zetten. Laat 2 minuten blancheren en giet goed af. Dat houdt de bimi mooi groen en geeft een betere beet."
         },
         {
           "nummer": 4,
-          "tekst": "Schep de bimi, sperziebonen en splijtkool in een schaal om met de ras el hanout, de olijfolie, de knoflook en het zeezout. Verdeel dit mengsel over de bulgur en zet het geheel 25 minuten in de oven."
+          "tekst": "Doe de bulgur en de kokende groentebouillon in een braadslede."
         },
         {
           "nummer": 5,
-          "tekst": "Roer intussen voor de dressing de geraspte citroenschil, het citroensap, de olijfolie, het zeezout en de zwarte peper door elkaar."
+          "tekst": "Schep de bimi, sperziebonen en splijtkool in een schaal om met de ras el hanout, de olijfolie, de knoflook en het zeezout. Verdeel dit mengsel over de bulgur en zet het geheel 25 minuten in de oven."
         },
         {
           "nummer": 6,
-          "tekst": "De groenten en bulgur zijn gaar als de bulgur zacht is en de groenten nog knapperig. Schenk de dressing erover, voeg de munt toe en schep alles goed om."
+          "tekst": "Roer intussen voor de dressing de geraspte citroenschil, het citroensap, de olijfolie, het zeezout en de zwarte peper door elkaar."
         },
         {
           "nummer": 7,
+          "tekst": "De groenten en bulgur zijn gaar als de bulgur zacht is en de groenten nog knapperig. Schenk de dressing erover, voeg de munt toe en schep alles goed om."
+        },
+        {
+          "nummer": 8,
           "tekst": "Bestrooi met de geroosterde amandelen, verdeel de ricotta erover en strooi er tot slot een flinke snuf ras el hanout over."
         }
       ],
       "voedingswaarden": {},
-      "bron": "",
-      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 132",
+      "bron": "https://thehappyfoodie.co.uk/recipes/green-machine-roasted-greens-with-ras-el-hanout-bulgur-wheat-and-ricotta/",
+      "bron_naam": "De Groene Bakplaat — Rukmini Iyer, p. 132",
       "bron_type": "kookboek",
       "datum_toegevoegd": "2026-09-30"
     },
@@ -5359,8 +5370,8 @@
         }
       ],
       "voedingswaarden": {},
-      "bron": "",
-      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 108",
+      "bron": "https://thehappyfoodie.co.uk/recipes/warming-sweet-potato-and-mushroom-polenta-with-tomatoes/",
+      "bron_naam": "De Groene Bakplaat — Rukmini Iyer, p. 108",
       "bron_type": "kookboek",
       "datum_toegevoegd": "2026-09-30"
     },
@@ -5482,8 +5493,8 @@
         }
       ],
       "voedingswaarden": {},
-      "bron": "",
-      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 210",
+      "bron": "https://thehappyfoodie.co.uk/recipes/sweet-potato-with-mozzarella-onions-and-basil/",
+      "bron_naam": "De Groene Bakplaat — Rukmini Iyer, p. 210",
       "bron_type": "kookboek",
       "datum_toegevoegd": "2026-09-30"
     },
@@ -5630,8 +5641,8 @@
         }
       ],
       "voedingswaarden": {},
-      "bron": "",
-      "bron_naam": "De Wereldse Bakplaat (kookboek), p. 66",
+      "bron": "https://thehappyfoodie.co.uk/recipes/miso-aubergines-with-tofu-sesame-and-chilli/",
+      "bron_naam": "De Groene Bakplaat — Rukmini Iyer, p. 66",
       "bron_type": "kookboek",
       "datum_toegevoegd": "2026-09-30"
     },
@@ -5747,8 +5758,8 @@
         }
       ],
       "voedingswaarden": {},
-      "bron": "",
-      "bron_naam": "De Wereldse Bakplaat (kookboek)",
+      "bron": "https://thehappyfoodie.co.uk/recipes/aubergine-with-tomatoes-harissa-and-almonds/",
+      "bron_naam": "De Groene Bakplaat — Rukmini Iyer",
       "bron_type": "kookboek",
       "datum_toegevoegd": "2026-09-30"
     },
