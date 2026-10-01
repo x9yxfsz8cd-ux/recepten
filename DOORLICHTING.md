@@ -107,3 +107,18 @@ automatisch ophalen, dus ik heb het niet kunnen nakijken.
 **Groene orzo**: de ingrediënten kloppen met de bron, maar de bereidingswijze
 staat bij die Instagram-post in de reacties en is zonder inloggen niet te
 lezen. De stappen die erin staan zijn plausibel maar niet geverifieerd.
+
+## Kookmodus
+
+De tekst stond op ongeveer 21 px in een kolom van 21 tekens breed, waardoor hij
+elke vier woorden afbrak, en de ingrediëntenregel stond op bijschriftgrootte.
+Dat is het scherm waar grootte juist het meest uitmaakt: je leest het van een
+meter afstand, met natte handen.
+
+  staptekst      21 -> 29 px, regel van 21 naar 26 tekens breed
+  ingredienten   12 -> 17 px
+  timerknop      14 -> 17 px, minstens 52 px hoog
+  navigatie      16 -> 17 px, minstens 56 px hoog
+
+De maten staan in rem zodat ze met Dynamic Type meegroeien; de min() is alleen
+een rem op hele grote schermen.

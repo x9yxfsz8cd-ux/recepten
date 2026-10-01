@@ -490,28 +490,36 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:var(--s-2) v
 .km-sluiten{ border:none; background:none; color:var(--inkt-2); font-family:inherit;
   font-size:var(--t-foot); cursor:pointer; flex-shrink:0 }
 .km-voortgang{ display:flex; gap:var(--s-1); margin:var(--s-4) 0 var(--s-2) }
-.km-dot{ flex:1; height:2.5px; border-radius:2px; background:var(--vlak) }
+.km-dot{ flex:1; height:3px; border-radius:2px; background:var(--vlak) }
 .km-dot.gedaan{ background:var(--inkt-3) }
 .km-dot.actief{ background:var(--inkt) }
-.km-teller{ font-size:var(--t-cap); color:var(--inkt-3); text-align:center;
-  letter-spacing:.1em; text-transform:uppercase; font-weight:600 }
+.km-teller{ font-size:var(--t-foot); color:var(--inkt-3); text-align:center;
+  letter-spacing:.1em; text-transform:uppercase; font-weight:600;
+  margin-bottom:var(--s-2) }
 .km-inhoud{ flex:1; display:flex; flex-direction:column; align-items:center;
   justify-content:center; gap:var(--s-5); padding:var(--s-4) 0; overflow-y:auto;
   cursor:pointer; -webkit-tap-highlight-color:transparent }
-.km-ingredienten{ display:flex; flex-direction:column; gap:2px; align-items:center }
+/* Dit scherm lees je van een meter afstand, met natte handen, terwijl er iets
+   in de pan ligt. Alles mag hier groter dan elders in de app. De maten staan
+   in rem zodat ze met Dynamic Type meegroeien; de min() is alleen een rem op
+   hele grote schermen. */
+.km-ingredienten{ display:flex; flex-direction:column; gap:var(--s-1);
+  align-items:center; max-width:30ch }
 .km-ingredienten[hidden]{ display:none }
-.km-ing{ font-size:var(--t-foot); color:var(--inkt-2) }
+.km-ing{ font-size:min(1.05rem,21px); color:var(--inkt-3); line-height:1.35 }
 .km-ing b{ color:var(--inkt); font-weight:600; font-variant-numeric:tabular-nums }
-.km-stap-tekst{ font-size:var(--t-title); font-weight:400; line-height:1.42;
-  letter-spacing:-.018em; text-align:center; max-width:21ch }
+.km-stap-tekst{ font-size:min(1.8rem,36px); font-weight:400; line-height:1.3;
+  letter-spacing:-.022em; text-align:center; max-width:26ch }
 .km-timer-knop{ border:1px solid var(--lijn-sterk); border-radius:var(--r-pil);
-  background:none; color:var(--inkt); font-family:inherit; font-size:var(--t-sub);
-  font-weight:600; padding:var(--s-3) var(--s-5); cursor:pointer;
+  background:none; color:var(--inkt); font-family:inherit; font-size:min(1.05rem,21px);
+  font-weight:600; min-height:52px; padding:var(--s-3) var(--s-6); cursor:pointer;
   display:flex; align-items:center; gap:var(--s-2) }
 .km-timer-knop[hidden]{ display:none }
 .km-nav{ display:flex; gap:var(--s-2) }
-.km-nav-btn{ flex:1; padding:var(--s-3) var(--s-4); border:none; border-radius:var(--r-groep);
-  font-family:inherit; font-size:var(--t-body); font-weight:600; cursor:pointer }
+.km-nav-btn{ flex:1; min-height:56px; padding:var(--s-3) var(--s-4); border:none;
+  border-radius:var(--r-groep); font-family:inherit; font-size:min(1.05rem,21px);
+  font-weight:600; cursor:pointer }
+.km-nav-btn:disabled{ opacity:.32 }
 .km-nav-btn--vorige{ background:var(--vlak); color:var(--inkt) }
 .km-nav-btn--volgende,.km-nav-btn--klaar{ background:var(--inkt); color:var(--inkt-om) }
 
