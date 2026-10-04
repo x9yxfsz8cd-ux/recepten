@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>Recept importeren</title>
-  <link rel="stylesheet" href="./css/style.css?v=887120">
+  <link rel="stylesheet" href="./css/style.css?v=143842">
   <link rel="manifest" href="./manifest.json">
-  <script src="./js/opslag.js?v=887120"></script>
+  <script src="./js/opslag.js?v=143842"></script>
   <style>
     /* De importpagina gebruikte de oude kleurnamen. Die vertalen we hier naar
        de huidige tokens, zodat hij meekleurt met licht en donker. */
@@ -355,6 +355,7 @@
     const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
     let huidigRecept = null;
     let fotoBase64 = null;
+    let fotoType = 'image/jpeg';
     let actiefTab = 'url';
 
     // ── API SLEUTEL ──
@@ -395,14 +396,35 @@
       if (fotoInput.files[0]) verwerkFoto(fotoInput.files[0]);
     });
 
-    function verwerkFoto(file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        fotoBase64 = reader.result.split(',')[1];
-        document.getElementById('foto-img').src = reader.result;
+    // Een foto van je telefoon is zo 4 MB en 5712 px breed. Onverkleind
+    // opsturen loopt tegen de limiet van de API aan, en een HEIC als
+    // 'image/jpeg' aanbieden wordt geweigerd. Daarom gaat alles eerst door
+    // een canvas: dat verkleint én maakt er altijd een JPEG van.
+    const MAX_ZIJDE = 1568;   // boven deze breedte wordt een foto toch geschaald
+
+    async function verwerkFoto(file) {
+      toonStatus('Foto klaarmaken…');
+      try {
+        const bitmap = await createImageBitmap(file);
+        const schaal = Math.min(1, MAX_ZIJDE / Math.max(bitmap.width, bitmap.height));
+        const c = document.createElement('canvas');
+        c.width = Math.round(bitmap.width * schaal);
+        c.height = Math.round(bitmap.height * schaal);
+        c.getContext('2d').drawImage(bitmap, 0, 0, c.width, c.height);
+        const dataUrl = c.toDataURL('image/jpeg', 0.85);
+        fotoBase64 = dataUrl.split(',')[1];
+        fotoType = 'image/jpeg';
+        document.getElementById('foto-img').src = dataUrl;
         document.getElementById('foto-preview').style.display = 'block';
-      };
-      reader.readAsDataURL(file);
+        const kb = Math.round(fotoBase64.length * 3 / 4 / 1024);
+        toonStatus(`Foto klaar — ${c.width}×${c.height}, ${kb} kB`, 'klaar');
+      } catch (e) {
+        fotoBase64 = null;
+        // Chrome op de Mac kan HEIC niet openen; Safari en je telefoon wel.
+        toonStatus(file.type === 'image/heic' || /\.heic$/i.test(file.name)
+          ? 'Deze HEIC kan deze browser niet openen. Probeer het in Safari, of exporteer de foto als JPEG.'
+          : 'Kon deze afbeelding niet lezen. Probeer een JPEG of PNG.', 'fout');
+      }
     }
 
     // ── HELPERS ──
@@ -558,6 +580,8 @@
   "beschrijving": "",
   "afbeelding": "${gevondenAfbeelding}",
   "bereidingstijd": 0,
+  "actieve_tijd": 0,
+  "passieve_tijd": 0,
   "moeilijkheidsgraad": "makkelijk",
   "porties": 4,
   "tags": [],
@@ -576,14 +600,25 @@ Schema:
 ${schema}
 
 BELANGRIJKE REGELS:
-- Neem ALLE stappen over, sla er GEEN over. Elk stap mag maximaal 3 zinnen bevatten.
+- Neem ALLE stappen over, sla er GEEN over. Elke stap mag maximaal 3 zinnen bevatten.
+- Schrijf erbij HOE iets gesneden moet worden als de bron dat zegt: "in blokjes
+  van 2 cm", "in dunne halve ringen", "grof gehakt". Zet het snijwerk zo veel
+  mogelijk in een eigen stap aan het begin.
 - beschrijving: 1 zin
 - afbeelding: gebruik "${gevondenAfbeelding}" als die gevuld is, verander hem NIET
-- Eenheden: g, ml, el, tl, stuks, snuf, naar smaak
+- Eenheden: g, ml, el, tl, stuks, snuf, takjes, blaadjes, bosje, teentje, blik,
+  bol, stengel, naar smaak. Gebruik "stuks" NIET voor kruiden of noten.
 - moeilijkheidsgraad: makkelijk / gemiddeld / moeilijk
-- tags alleen uit: vegetarisch, vegan, vis, vlees, snel, comfort food, Aziatisch, Italiaans, ontbijt, lunch, diner, snack
+- tags alleen uit: vegetarisch, vegan, vis, vlees, snel, comfort food, Aziatisch,
+  Italiaans, ontbijt, brunch, lunch, diner, snack, bijgerecht, babyvriendelijk
 - hoeveelheid 0 + eenheid "naar smaak" voor ongemeten ingrediënten
 - Schat voedingswaarden redelijk in als ze niet gegeven zijn
+- TIJDEN: actieve_tijd is wat je er zelf mee bezig bent, passieve_tijd is wachten
+  (oven, rijzen, koelkast, rusten). Ze moeten samen precies bereidingstijd zijn.
+  Bakken in een pan waar je bij staat telt als actief.
+- OVEN: schrijf de temperatuur altijd als "180 °C hetelucht". Noemt de bron een
+  conventionele oven of twee waardes, neem dan de heteluchtwaarde. Noemt de bron
+  één getal zonder uitleg, gebruik dat getal met "hetelucht" erachter.
 - bron_naam: de naam van de bron (bijv. "${bronNaam || 'onbekend'}")`;
 
       // Bouw API-bericht
@@ -592,7 +627,7 @@ BELANGRIJKE REGELS:
       if (heeftFoto) {
         content.push({
           type: 'image',
-          source: { type: 'base64', media_type: 'image/jpeg', data: fotoBase64 }
+          source: { type: 'base64', media_type: fotoType, data: fotoBase64 }
         });
         content.push({ type: 'text', text: instructie + (invoerTekst ? `\n\nExtra context:\n${invoerTekst}` : '') });
       } else {
@@ -629,6 +664,7 @@ BELANGRIJKE REGELS:
         if (!huidigRecept.slug) huidigRecept.slug = slugify(huidigRecept.titel);
         if (!huidigRecept.afbeelding && gevondenAfbeelding) huidigRecept.afbeelding = gevondenAfbeelding;
         if (!huidigRecept.bron_naam && bronNaam) huidigRecept.bron_naam = bronNaam;
+        vulAfgeleideVelden(huidigRecept);
 
         verbergStatus();
         toonPreview(huidigRecept);
@@ -642,6 +678,72 @@ BELANGRIJKE REGELS:
 
     // ── PREVIEW ──
 
+    /* Twee velden die de app gebruikt maar die geen enkele bron noemt: wat je
+       uit de kast moet halen, en op welk ovenprogramma het hoort. Dezelfde
+       regels als Scripts/benodigdheden.py en Scripts/ovenprogramma.py, zodat
+       een recept dat je hier toevoegt meteen compleet is.
+       Woordgrenzen overal: zonder \b zit 'folie' in 'olijfolie', 'koek' in
+       'koekenpan' en 'rijzen' in 'zelfrijzend bakmeel'. */
+    const GEREEDSCHAP = [
+      ['blender', /\bblender\b|\bblenden\b/], ['staafmixer', /\bstaafmixer\b/],
+      ['keukenmachine', /\bkeukenmachine\b|\bfoodprocessor\b/],
+      ['grillpan', /\bgrillpan\b|\bgrillplaat\b/], ['braadslede', /\bbraadslede\b/],
+      ['bakplaat', /\bbakplaat\b|\bbakplaten\b/], ['ovenschaal', /\bovenschaal\b/],
+      ['bakpapier', /\bbakpapier\b/], ['aluminiumfolie', /\baluminiumfolie\b|\bzilverpapier\b/],
+      ['vijzel', /\bvijzel\b/], ['pureestamper', /\bstamper\b|\bstamppot\b|stamp.{0,24}\b(aardappel|puree)/],
+      ['springvorm', /\bspringvorm\b|\btaartvorm\b|\bbakvorm\b/], ['pizzasteen', /\bpizzasteen\b/],
+      ['deegroller', /\bdeegroller\b|\brol\b.{0,30}\buit\b|\buitgerold/],
+      ['mandoline', /\bmandoline\b/], ['vergiet', /\bvergiet\b/],
+      ['schuimspaan', /\bschuimspaan\b/], ['schone theedoek', /\btheedoek\b/],
+      ['keukenthermometer', /\bthermometer\b/], ['stoommandje', /\bstoommandje\b|\bstoompan\b/],
+      ['microplane', /\bmicroplane\b/],
+    ];
+
+    function vulAfgeleideVelden(r) {
+      const stappen = (r.stappen || []).map(s => s.tekst).join(' ').toLowerCase();
+      const ing = (r.ingredienten || []).map(i => i.naam).join(' ').toLowerCase();
+      const alles = stappen + ' ' + ing;
+
+      let spullen = GEREEDSCHAP.filter(([, pat]) => pat.test(alles)).map(([n]) => n);
+      if (spullen.includes('blender') && spullen.includes('staafmixer')) {
+        spullen = spullen.filter(n => n !== 'blender' && n !== 'staafmixer');
+        spullen.unshift('blender of staafmixer');
+      } else if (/\bpureer\b|\bpureren\b/.test(alles) &&
+                 !spullen.some(n => /blender|staafmixer|keukenmachine/.test(n))) {
+        spullen.push('staafmixer of blender');
+      }
+      r.benodigdheden = spullen;
+
+      // Ovenprogramma, afgestemd op de AEG SteamPro
+      const zonderPan = stappen.replace(/grillpan\w*/g, ' ');
+      if (!/\boven\b|\bovenschaal\b|\bbraadslede\b|\bbakplaat\b|\bgrill\w*\b/.test(zonderPan)) {
+        delete r.ovenprogramma;
+      } else if (/\bonder de grill\b|\bgrill voor\b|\bgrillplaat\b/.test(stappen)) {
+        r.ovenprogramma = 'Turbogrill op de hoogste stand. Houd hem in de gaten, dit gaat snel.';
+      } else if (/\bgist\b|\bgistdeeg\b/.test(alles)) {
+        r.ovenprogramma = 'Laat rijzen met Gistdeeg rijzen; bak daarna op Pizza-instelling — die geeft extra onderwarmte voor een krokante bodem.';
+      } else if (/\bspringvorm\b|\btaart\b|\bkoek\b|\bbeslag\b|\bbakvorm\b/.test(stappen)) {
+        r.ovenprogramma = 'Boven + onderwarmte. Hetelucht droogt de bovenkant uit voordat het midden gaar is.';
+      } else if (/\bgegratineerde?\b|\bgratin\b|kaas.{0,30}goudbruin|\bbubbelend\b|(mozzarella|kaas)\w*\s+(is\s+)?gesmolten|smelt/.test(stappen)) {
+        r.ovenprogramma = 'Hetelucht, en de laatste 5-10 minuten Turbogrill voor de kaaskorst.';
+      } else if (/\bzilverpapier\b|\baluminiumfolie\b/.test(stappen) && /\bzalm\b|\bvis\b/.test(ing)) {
+        r.ovenprogramma = 'Hetelucht in de folie, of Steamify op dezelfde temperatuur zonder folie — dat houdt de vis zachter.';
+      } else if (/verwarm de \w*\s?(pita|flatbread|brood)/.test(stappen)) {
+        r.ovenprogramma = 'Regenereren met stoom houdt het brood zacht in plaats van droog.';
+      } else {
+        r.ovenprogramma = 'Hetelucht. Zet de plaat in het midden.';
+      }
+
+      // Tijden moeten optellen; anders klopt de planning op het overzicht niet
+      const a = r.actieve_tijd || 0, pz = r.passieve_tijd || 0;
+      if (r.bereidingstijd && a + pz !== r.bereidingstijd) {
+        r.passieve_tijd = Math.max(r.bereidingstijd - a, 0);
+        if (r.actieve_tijd + r.passieve_tijd !== r.bereidingstijd) {
+          r.actieve_tijd = r.bereidingstijd; r.passieve_tijd = 0;
+        }
+      }
+    }
+
     function toonPreview(r) {
       const afbEl = document.getElementById('pv-afbeelding');
       if (r.afbeelding) {
@@ -654,7 +756,27 @@ BELANGRIJKE REGELS:
 
       document.getElementById('pv-titel').textContent = r.titel;
       document.getElementById('pv-meta').innerHTML =
-        `<span>${r.bereidingstijd} min</span><span>${r.moeilijkheidsgraad}</span><span>${r.porties} porties</span>`;
+        `<span>${r.actieve_tijd || r.bereidingstijd} min werk</span>`
+        + `<span>${r.bereidingstijd} min totaal</span>`
+        + `<span>${r.moeilijkheidsgraad}</span><span>${r.porties} porties</span>`;
+
+      // Laat zien wat er automatisch bij gezet is, zodat je ziet dat het klopt
+      // voordat je opslaat.
+      const afgeleid = [];
+      if (r.benodigdheden && r.benodigdheden.length)
+        afgeleid.push(`<b>Pak alvast</b> ${r.benodigdheden.join(' · ')}`);
+      if (r.ovenprogramma) afgeleid.push(`<b>Oven</b> ${r.ovenprogramma}`);
+      let extra = document.getElementById('pv-afgeleid');
+      if (!extra) {
+        extra = document.createElement('div');
+        extra.id = 'pv-afgeleid';
+        extra.style.cssText = 'font-size:var(--t-foot);color:var(--inkt-3);'
+          + 'line-height:1.5;margin:var(--s-3) 0 0;display:flex;'
+          + 'flex-direction:column;gap:var(--s-1)';
+        document.getElementById('pv-tags').after(extra);
+      }
+      extra.innerHTML = afgeleid.map(x => `<span>${x}</span>`).join('');
+      extra.hidden = afgeleid.length === 0;
       document.getElementById('pv-tags').innerHTML =
         r.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
