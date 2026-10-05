@@ -5,310 +5,164 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
-  <title>Recept importeren</title>
-  <link rel="stylesheet" href="./css/style.css?v=195115">
+  <title>Recept toevoegen</title>
+  <link rel="stylesheet" href="./css/style.css?v=195473">
   <link rel="manifest" href="./manifest.json">
-  <script src="./js/opslag.js?v=195115"></script>
+  <script src="./js/opslag.js?v=195473"></script>
   <style>
-    /* De importpagina gebruikte de oude kleurnamen. Die vertalen we hier naar
-       de huidige tokens, zodat hij meekleurt met licht en donker. */
-    :root{
-      --bg:var(--grond); --surface:var(--vlak); --card-light:var(--laag);
-      --mid:var(--inkt-3); --dark:var(--inkt);
-    }
-    .import-wrap {
-      max-width: 680px;
-      margin: 3rem auto;
-      padding: 0 1.5rem 4rem;
-    }
-    .import-titel {
-      font-family: var(--serif);
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-    .import-sub {
-      color: var(--mid);
-      font-size: 0.95rem;
-      margin-bottom: 2rem;
-    }
-    .import-sectie {
-      background: var(--surface);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.25rem;
-    }
-    .import-label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 0.6rem;
-    }
-    .import-input,
-    .import-textarea {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      font-family: inherit;
-      font-size: 0.95rem;
-      background: var(--card-light);
-      border: 2px solid transparent;
-      border-radius: 8px;
-      color: var(--dark);
-      outline: none;
-      transition: border-color 0.2s;
-      resize: vertical;
-    }
-    .import-input:focus,
-    .import-textarea:focus { border-color: var(--dark); }
-    .import-input::placeholder,
-    .import-textarea::placeholder { color: var(--mid); }
-    .import-textarea { min-height: 140px; }
-    .import-hint {
-      font-size: 0.8rem;
-      color: var(--mid);
-      margin-top: 0.5rem;
-      line-height: 1.5;
-    }
-    .import-btn {
-      width: 100%;
-      padding: 1rem;
-      background: var(--inkt);
-      color: var(--inkt-om);
-      border: none;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.15s;
-      margin-top: 0.5rem;
-    }
-    .import-btn:hover:not(:disabled) { opacity: 0.85; }
-    .import-btn:disabled { opacity: 0.4; cursor: default; }
+    /* Deze pagina had een eigen opmaak met eigen maten, en verwees naar
+       var(--serif) die sinds de herziening niet meer bestaat. Nu staat alles
+       op dezelfde tokens als de rest van de app: --s-* voor ruimte, --t-* voor
+       tekst, --r-* voor hoeken. */
 
-    .status-balk {
-      display: none;
-      padding: 1rem 1.25rem;
-      border-radius: 10px;
-      margin-top: 1.25rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .status-balk.laden { display: block; background: var(--surface); color: var(--mid); }
-    .status-balk.fout { display: block; background: var(--vlak); color: var(--waarschuwing);
-      font-weight: 600; }
-    .status-balk.ok { display: block; background: var(--vlak); color: var(--actief);
-      font-weight: 600; }
+    .import-wrap{ max-width:44rem; margin:0 auto; padding:0 var(--marge) var(--s-9) }
+    .import-kop{ padding:var(--s-6) 0 var(--s-5) }
+    .import-titel{ font-size:var(--t-kop); font-weight:700; letter-spacing:-.03em;
+      line-height:1.1 }
+    .import-sub{ font-size:var(--t-sub); color:var(--inkt-3); margin-top:var(--s-2) }
 
-    /* Tabbladen */
-    .tab-bar {
-      display: flex;
-      gap: 0;
-      margin-bottom: 1.25rem;
-    }
-    .tab-btn {
-      flex: 1;
-      padding: 0.7rem;
-      border: 2px solid var(--dark);
-      background: transparent;
-      color: var(--dark);
-      font-family: inherit;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .tab-btn:first-child { border-radius: 8px 0 0 8px; }
-    .tab-btn:last-child { border-radius: 0 8px 8px 0; }
-    .tab-btn.active { background: var(--inkt); color: var(--inkt-om); }
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
+    .import-sectie{ margin-bottom:var(--s-5) }
+    .import-label{ display:block; font-size:var(--t-cap); font-weight:600;
+      letter-spacing:.09em; text-transform:uppercase; color:var(--inkt-3);
+      margin-bottom:var(--s-2) }
+    .import-input,.import-textarea{ width:100%; background:var(--vlak); border:none;
+      border-radius:var(--r-ctl); padding:var(--s-3) var(--s-4); color:var(--inkt);
+      font-family:inherit; font-size:max(16px,var(--t-body)); min-height:48px }
+    .import-textarea{ min-height:9rem; resize:vertical; line-height:1.5 }
+    .import-input:focus,.import-textarea:focus{ outline:2px solid var(--inkt-3);
+      outline-offset:-2px }
+    .import-hint{ font-size:var(--t-foot); color:var(--inkt-3); margin-top:var(--s-2);
+      line-height:1.5 }
 
-    /* Foto upload */
-    .foto-drop {
-      border: 2px dashed var(--mid);
-      border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
-      color: var(--mid);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .foto-drop:hover, .foto-drop.dragover {
-      border-color: var(--dark);
-      background: var(--card-light);
-    }
-    .foto-drop input { display: none; }
-    .foto-preview {
-      margin-top: 1rem;
-      display: none;
-    }
-    .foto-preview img {
-      max-width: 100%;
-      max-height: 300px;
-      object-fit: contain;
-      border-radius: 8px;
-    }
+    /* Drie bronnen als één keuze, zoals de fasebalk op de receptpagina */
+    .bron-keuze{ position:relative; display:grid; grid-auto-flow:column;
+      grid-auto-columns:minmax(0,1fr); background:var(--vlak);
+      border-radius:var(--r-ctl); padding:2px; margin-bottom:var(--s-5) }
+    .bron-keuze .tab-btn{ position:relative; z-index:1; background:none; border:none;
+      font-family:inherit; font-size:var(--t-sub); font-weight:600; color:var(--inkt-3);
+      min-height:44px; border-radius:calc(var(--r-ctl) - 2px); cursor:pointer }
+    .bron-keuze .tab-btn.active{ background:var(--grond); color:var(--inkt);
+      box-shadow:0 1px 3px rgba(0,0,0,.10) }
+    .tab-content{ display:none }
+    .tab-content.active{ display:block }
 
-    /* Preview */
-    .preview-blok { display: none; margin-top: 1.5rem; }
-    .preview-blok.zichtbaar { display: block; }
-    .preview-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-      gap: 1rem;
-    }
-    .preview-titel {
-      font-family: var(--serif);
-      font-size: 1.4rem;
-      font-weight: 700;
-    }
-    .preview-meta {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: var(--mid);
-      margin-top: 0.3rem;
-    }
-    .preview-content {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    @media (max-width: 560px) { .preview-content { grid-template-columns: 1fr; } }
-    .preview-ingredienten {
-      background: var(--inkt);
-      color: var(--inkt-om);
-      border-radius: 10px;
-      padding: 1.25rem;
-      font-size: 0.9rem;
-    }
-    .preview-stappen {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .preview-stap {
-      background: var(--mid);
-      color: var(--card-light);
-      border-radius: 10px;
-      padding: 1rem 1.25rem;
-      font-size: 0.88rem;
-      line-height: 1.6;
-      display: flex;
-      gap: 0.75rem;
-    }
-    .preview-stap-nr { font-weight: 700; opacity: 0.6; min-width: 1.2rem; }
+    .foto-drop{ position:relative; display:grid; place-items:center; gap:var(--s-1);
+      text-align:center; min-height:11rem; padding:var(--s-6) var(--s-4);
+      background:var(--vlak); border:1px dashed var(--lijn-sterk);
+      border-radius:var(--r-groep); cursor:pointer }
+    .foto-drop.dragover{ border-color:var(--inkt); background:var(--laag-2) }
+    .foto-drop p{ font-size:var(--t-sub); color:var(--inkt-2); margin:0 }
+    .foto-drop p + p{ font-size:var(--t-foot); color:var(--inkt-3) }
+    .foto-drop input[type=file]{ position:absolute; inset:0; opacity:0; cursor:pointer }
+    .foto-preview{ display:none; margin-top:var(--s-3) }
+    .foto-preview img{ width:100%; border-radius:var(--r-groep); display:block }
 
-    /* Bron bewerkbaar */
-    .bron-edit {
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-      margin-top: 1rem;
-      font-size: 0.85rem;
-      color: var(--mid);
-    }
-    .bron-edit label { white-space: nowrap; font-weight: 600; }
-    .bron-edit input {
-      flex: 1;
-      padding: 0.4rem 0.6rem;
-      font-family: inherit;
-      font-size: 0.85rem;
-      background: var(--card-light);
-      border: 1px solid transparent;
-      border-radius: 4px;
-      color: var(--dark);
-      outline: none;
-    }
-    .bron-edit input:focus { border-color: var(--dark); }
+    .import-btn{ width:100%; min-height:52px; padding:var(--s-3) var(--s-4);
+      background:var(--inkt); color:var(--inkt-om); border:none;
+      border-radius:var(--r-groep); font-family:inherit;
+      font-size:var(--t-body); font-weight:600; cursor:pointer }
+    .import-btn:disabled{ opacity:.4; cursor:default }
 
-    .opslaan-sectie {
-      margin-top: 1.5rem;
-      display: flex;
-      gap: 0.75rem;
-    }
-    .opslaan-btn {
-      flex: 1;
-      padding: 0.9rem;
-      border-radius: 10px;
-      border: none;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.15s;
-    }
-    .opslaan-btn:hover { opacity: 0.85; }
-    .opslaan-btn--opslaan { background: var(--dark); color: var(--card-light); }
-    .opslaan-btn--nieuw { background: var(--card-light); color: var(--dark); }
+    .status-balk{ display:none; margin-top:var(--s-4); padding:var(--s-3) var(--s-4);
+      border-radius:var(--r-ctl); font-size:var(--t-sub); line-height:1.5 }
+    .status-balk.laden{ display:block; background:var(--vlak); color:var(--inkt-2) }
+    .status-balk.klaar{ display:block; background:var(--vlak); color:var(--actief) }
+    .status-balk.fout{ display:block; background:var(--vlak); color:var(--waarschuwing) }
+
+    .preview-blok{ display:none; margin-top:var(--s-7); padding-top:var(--s-6);
+      border-top:1px solid var(--lijn) }
+    .preview-blok.zichtbaar{ display:block }
+    .preview-header{ display:flex; justify-content:space-between;
+      align-items:flex-start; gap:var(--s-4); margin-bottom:var(--s-3) }
+    .preview-titel{ font-size:var(--t-title); font-weight:700; letter-spacing:-.022em }
+    .preview-meta{ display:flex; flex-wrap:wrap; gap:var(--s-3);
+      font-size:var(--t-foot); color:var(--inkt-3); margin-top:var(--s-1) }
+    .preview-stappen{ display:flex; flex-direction:column; gap:var(--s-2) }
+    .preview-stap{ display:flex; gap:var(--s-3); align-items:flex-start;
+      background:var(--laag); border-radius:var(--r-groep); padding:var(--s-3) }
+    .preview-stap-nr{ flex-shrink:0; width:1.3rem; height:1.3rem; border-radius:50%;
+      background:var(--vlak); color:var(--inkt-2); font-size:var(--t-cap);
+      font-weight:600; display:grid; place-items:center }
+    .preview-stap span:last-child{ flex:1 1 0; min-width:0; font-size:var(--t-sub);
+      line-height:1.5 }
+
+    .opslaan-rij{ display:flex; gap:var(--s-2); margin-top:var(--s-6) }
+    .opslaan-btn{ flex:1; min-height:52px; border:none; border-radius:var(--r-groep);
+      font-family:inherit; font-size:var(--t-body); font-weight:600; cursor:pointer }
+    .opslaan-btn--opslaan{ background:var(--inkt); color:var(--inkt-om) }
+    .opslaan-btn--nieuw{ background:var(--vlak); color:var(--inkt) }
+
+    /* De sleutel vul je één keer in; hij hoeft niet bovenaan te schreeuwen. */
+    .sleutel-lade{ margin-top:var(--s-7); padding-top:var(--s-5);
+      border-top:1px solid var(--lijn) }
+    .sleutel-lade summary{ font-size:var(--t-foot); color:var(--inkt-3);
+      cursor:pointer; list-style:none; min-height:32px; display:flex;
+      align-items:center }
+    .sleutel-lade summary::-webkit-details-marker{ display:none }
+    .sleutel-lade[open] summary{ margin-bottom:var(--s-4) }
   </style>
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-boek"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H5.5A1.5 1.5 0 0 1 4 15.5z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h4.5a1.5 1.5 0 0 0 1.5-1.5z"/></g>
+  <g id="i-mand"><path d="M4.5 9h15l-1.4 9.2a2 2 0 0 1-2 1.8H7.9a2 2 0 0 1-2-1.8z"/><path d="M8.5 9l2.2-4.6M15.5 9l-2.2-4.6"/></g>
+  <g id="i-hart"><path d="M12 20s-7.5-4.7-7.5-10A4.2 4.2 0 0 1 8.7 6c1.4 0 2.6.7 3.3 1.9C12.7 6.7 13.9 6 15.3 6a4.2 4.2 0 0 1 4.2 4c0 5.3-7.5 10-7.5 10z"/></g>
+</defs></svg>
+
   <div class="import-wrap">
-    <a class="terug-link" href="./index.html" style="margin-bottom:1.5rem;display:inline-flex;">Alle recepten</a>
-
-    <h1 class="import-titel">Recept importeren</h1>
-    <p class="import-sub">Voeg een recept toe via URL, tekst of foto.</p>
-
-    <!-- API sleutel -->
-    <div class="import-sectie">
-      <label class="import-label" for="api-sleutel">Claude API-sleutel</label>
-      <input class="import-input" type="password" id="api-sleutel" placeholder="sk-ant-…" autocomplete="off">
-      <p class="import-hint">
-        Wordt lokaal opgeslagen. Nooit verstuurd behalve naar api.anthropic.com.
-        <a href="https://console.anthropic.com" target="_blank" rel="noopener" style="color:var(--dark)">Sleutel aanmaken</a>
-      </p>
+    <div class="import-kop">
+      <a class="terug-link" href="./index.html">Alle recepten</a>
+      <h1 class="import-titel">Recept toevoegen</h1>
+      <p class="import-sub">Plak een link, plak de tekst, of maak een foto van een kookboekpagina.</p>
     </div>
 
-    <!-- Tabbladen -->
-    <div class="tab-bar">
-      <button class="tab-btn active" data-tab="url">URL</button>
-      <button class="tab-btn" data-tab="tekst">Tekst</button>
-      <button class="tab-btn" data-tab="foto">Foto</button>
+    <div class="bron-keuze" role="tablist">
+      <button class="tab-btn active" data-tab="url" role="tab" aria-selected="true">Link</button>
+      <button class="tab-btn" data-tab="tekst" role="tab" aria-selected="false">Tekst</button>
+      <button class="tab-btn" data-tab="foto" role="tab" aria-selected="false">Foto</button>
     </div>
 
-    <!-- URL tab -->
     <div class="tab-content active" id="tab-url">
       <div class="import-sectie">
-        <label class="import-label" for="invoer-url">Recept-URL</label>
-        <input class="import-input" type="url" id="invoer-url" placeholder="https://www.ah.nl/allerhande/recept/…">
-        <p class="import-hint">Albert Heijn, HelloFresh, NYT Cooking, Instagram, blogs, etc.</p>
+        <input class="import-input" type="url" id="invoer-url"
+               placeholder="https://…" inputmode="url" autocapitalize="off" spellcheck="false">
+        <p class="import-hint">Werkt met Albert Heijn, HelloFresh, Instagram, blogs en kookboeksites.
+          Staat je kookboek online bij de uitgever, dan geeft een link een schoner recept dan een foto.</p>
       </div>
     </div>
 
-    <!-- Tekst tab -->
     <div class="tab-content" id="tab-tekst">
       <div class="import-sectie">
-        <label class="import-label" for="invoer-tekst">Recepttekst</label>
-        <textarea class="import-textarea" id="invoer-tekst" placeholder="Plak hier een recepttekst, Instagram-bijschrift, WhatsApp-bericht, of typ een beschrijving…"></textarea>
+        <textarea class="import-textarea" id="invoer-tekst"
+                  placeholder="Plak hier een recepttekst, een Instagram-bijschrift of een appje."></textarea>
       </div>
     </div>
 
-    <!-- Foto tab -->
     <div class="tab-content" id="tab-foto">
       <div class="import-sectie">
         <div class="foto-drop" id="foto-drop">
-          <p>Klik om een foto te kiezen of sleep hem hierin</p>
-          <p style="font-size:0.8rem;margin-top:0.5rem;">Screenshot van Instagram, foto van kookboek, etc.</p>
+          <p>Kies een foto of sleep hem hierheen</p>
+          <p>Een kookboekpagina of een schermafbeelding. Staat de gerechtfoto erbij, dan pak ik die mee.</p>
           <input type="file" id="foto-input" accept="image/*">
         </div>
         <div class="foto-preview" id="foto-preview">
-          <img id="foto-img">
+          <img id="foto-img" alt="">
         </div>
       </div>
     </div>
 
-    <button class="import-btn" id="importeer-btn">Recept extraheren</button>
+    <button class="import-btn" id="importeer-btn">Recept uitlezen</button>
 
     <div class="status-balk" id="status-balk"></div>
+
+    <details class="sleutel-lade" id="sleutel-lade">
+      <summary>Claude API-sleutel</summary>
+      <input class="import-input" type="password" id="api-sleutel" placeholder="sk-ant-…"
+             autocomplete="off" spellcheck="false">
+      <p class="import-hint">Blijft op dit toestel staan en gaat alleen naar api.anthropic.com.
+        <a href="https://console.anthropic.com" target="_blank" rel="noopener">Sleutel aanmaken</a></p>
+    </details>
 
     <!-- Preview -->
     <div class="preview-blok" id="preview-blok">
@@ -349,6 +203,16 @@
       </div>
     </div>
   </div>
+
+  <nav class="tabbalk" aria-label="Hoofdnavigatie">
+    <a class="tab" href="./index.html">
+      <svg class="ic" viewBox="0 0 24 24"><use href="#i-boek"/></svg><em>Recepten</em></a>
+    <a class="tab" href="./winkel.html">
+      <svg class="ic" viewBox="0 0 24 24"><use href="#i-mand"/></svg><em>Winkel</em></a>
+    <a class="tab" href="./index.html?favoriet=1">
+      <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
+  </nav>
+
 
   <script>
     const CLAUDE_API = 'https://api.anthropic.com/v1/messages';
