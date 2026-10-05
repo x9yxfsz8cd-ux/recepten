@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>In de winkel</title>
-  <link rel="stylesheet" href="./css/style.css?v=197418">
+  <link rel="stylesheet" href="./css/style.css?v=198000">
   <link rel="manifest" href="./manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
@@ -49,8 +49,8 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=197418"></script>
-  <script src="./js/ingredient-icoon.js?v=197418"></script>
+  <script src="./js/gedeeld.js?v=198000"></script>
+  <script src="./js/ingredient-icoon.js?v=198000"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -116,6 +116,18 @@
         </a>`).join('');
     }
 
+    /* Hetzelfde als op de receptpagina: je kookt voor twee dagen, dus vier
+       porties. Zo klopt de boodschappenlijst met wat je straks opschept. */
+    const STANDAARD_PORTIES = 4;
+
+    function portiesVoor(r) {
+      const vasteVorm = (r.benodigdheden || [])
+        .some(b => /springvorm|bakvorm|taartvorm|pizzasteen/i.test(b));
+      const eigen = parseInt(localStorage.getItem(`porties_${r.id}`) || '', 10);
+      if (Number.isFinite(eigen) && eigen > 0) return eigen;
+      return vasteVorm ? r.porties : STANDAARD_PORTIES;
+    }
+
     function renderLijst() {
       const el = document.getElementById('lijst');
       if (!huidig) {
@@ -169,7 +181,7 @@
 
       const open = nodig.filter(x => !(x.idx || [x.i]).every(n => gekocht.includes(String(n)))).length;
       document.getElementById('samenvatting').textContent =
-        `${huidig.titel} · ${huidig.porties} porties · ${open} te halen`;
+        `${huidig.titel} · ${portiesVoor(huidig)} porties · ${open} te halen`;
 
       // Vinkjes van een vorige keer blijven anders staan, en dan loop je de
       // winkel uit zonder de spullen die je toen al had afgestreept.
@@ -193,7 +205,7 @@
         const foto = ingredientVakje(ing.naam, p);
         const hoev = ing.eenheid === 'naar smaak' || !ing.hoeveelheid
           ? 'naar smaak'
-          : `${formatHoeveelheid(ing.hoeveelheid, huidig.porties, huidig.porties)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();
+          : `${formatHoeveelheid(ing.hoeveelheid, portiesVoor(huidig), huidig.porties)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();
         return `<li class="${aan ? 'ing--gedaan' : ''}">
           <button class="vink" data-i="${indexen.join(',')}" aria-pressed="${aan}" aria-label="Gekocht">
             <svg viewBox="0 0 24 24"><use href="#i-vink"/></svg></button>
