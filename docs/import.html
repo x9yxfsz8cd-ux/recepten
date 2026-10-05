@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>Recept importeren</title>
-  <link rel="stylesheet" href="./css/style.css?v=194566">
+  <link rel="stylesheet" href="./css/style.css?v=195115">
   <link rel="manifest" href="./manifest.json">
-  <script src="./js/opslag.js?v=194566"></script>
+  <script src="./js/opslag.js?v=195115"></script>
   <style>
     /* De importpagina gebruikte de oude kleurnamen. Die vertalen we hier naar
        de huidige tokens, zodat hij meekleurt met licht en donker. */
@@ -359,12 +359,41 @@
     let actiefTab = 'url';
 
     // ── API SLEUTEL ──
+    // Zelfde verhaal als op de andere pagina's: vraag de browser de opslag
+    // vast te houden, anders is je sleutel na een week weer weg.
+    (async () => {
+      try {
+        if (navigator.storage && navigator.storage.persist &&
+            !(await navigator.storage.persisted())) await navigator.storage.persist();
+      } catch {}
+    })();
 
+
+    const sleutelVeld = document.getElementById('api-sleutel');
     const opgeslagenSleutel = localStorage.getItem('claude_api_key') || '';
-    if (opgeslagenSleutel) document.getElementById('api-sleutel').value = opgeslagenSleutel;
+    if (opgeslagenSleutel) sleutelVeld.value = opgeslagenSleutel;
 
-    document.getElementById('api-sleutel').addEventListener('change', e => {
-      localStorage.setItem('claude_api_key', e.target.value.trim());
+    // Een wachtwoordveld met stippen zegt niet of je sleutel er nog staat.
+    // Daarom een regel eronder die dat wél zegt.
+    function toonSleutelStand() {
+      let regel = document.getElementById('sleutel-stand');
+      if (!regel) {
+        regel = document.createElement('p');
+        regel.id = 'sleutel-stand';
+        regel.style.cssText = 'font-size:var(--t-foot);color:var(--inkt-3);margin:var(--s-2) 0 0';
+        sleutelVeld.after(regel);
+      }
+      const k = localStorage.getItem('claude_api_key') || '';
+      regel.textContent = k
+        ? `Onthouden — eindigt op …${k.slice(-4)}. Je hoeft hem niet opnieuw in te vullen.`
+        : 'Nog geen sleutel opgeslagen. Je vult hem één keer in en daarna onthoudt de app hem.';
+    }
+    toonSleutelStand();
+
+    sleutelVeld.addEventListener('input', e => {
+      const v = e.target.value.trim();
+      if (v) localStorage.setItem('claude_api_key', v);
+      toonSleutelStand();
     });
 
     // ── TABBLADEN ──

@@ -1,3 +1,18 @@
+/* Safari ruimt na zeven dagen zonder bezoek alles op wat een site zelf heeft
+   opgeslagen. Hier staat niet alleen de API-sleutel in, maar ook je
+   favorieten, hoe vaak je iets hebt gemaakt, je GitHub-token en de afvinkjes
+   in de winkel. Met persist() vraagt de app of dat mag blijven staan.
+   Op de iPhone krijg je dat automatisch zodra je de app op je beginscherm
+   zet; in de browser hangt het af van hoe vaak je de site gebruikt. */
+async function houdOpslagVast() {
+  try {
+    if (!navigator.storage || !navigator.storage.persist) return null;
+    if (await navigator.storage.persisted()) return true;
+    return await navigator.storage.persist();
+  } catch { return null; }
+}
+houdOpslagVast();
+
 /* Gedeeld tussen overzicht, receptpagina en winkel.
    Alles staat in localStorage, dus per apparaat. Dat is bewust: in de winkel
    sta je met je eigen telefoon, en tijdens het koken wil je niet dat iemand
