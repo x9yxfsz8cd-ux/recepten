@@ -6018,7 +6018,8 @@
         {
           "naam": "geroosterd brood of pitabrood",
           "hoeveelheid": 4,
-          "eenheid": "stuks"
+          "eenheid": "stuks",
+          "ah": "pitabrood"
         }
       ],
       "stappen": [

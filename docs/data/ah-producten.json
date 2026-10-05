@@ -1778,6 +1778,17 @@
     "titel": "AH Witte pita's",
     "url": "https://www.ah.nl/producten/product/wi221857"
   },
+  "pitabrood": {
+    "afbeelding": "img/ah/pitabrood.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313230323938?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "10 stuks",
+    "id": 221858,
+    "prijs": 0.76,
+    "schap": "Bakkerij",
+    "subschap": "Pitabroodjes, flatbread, bao buns",
+    "titel": "AH Pita broodjes",
+    "url": "https://www.ah.nl/producten/product/wi221858"
+  },
   "pitabroodjes": {
     "afbeelding": "img/ah/pitabroodjes.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313230323938?revLabel=1&rendition=400x400_WEBP&fileType=binary",

@@ -66,13 +66,9 @@ VOORRAADKAST = {
 }
 
 
-def norm(naam: str) -> str:
-    """Maakt van een rommelige ingrediëntregel een bruikbare zoekterm."""
-    s = naam.lower().strip()
-    s = re.sub(r"\(.*?\)", " ", s)          # (30 g), (optioneel)
-    s = s.split(",")[0]                      # alles na de komma is bereiding
-    s = re.split(r"\bof\b", s)[0]            # "halloumi of oesterzwam" -> halloumi
-    s = re.sub(r"[0-9]+([.,][0-9]+)?", " ", s)
+def _zoekterm(deel: str) -> str:
+    """Eén alternatief omzetten in een zoekterm; leeg als er niets overblijft."""
+    s = re.sub(r"[0-9]+([.,][0-9]+)?", " ", deel)
     s = re.sub(r"[^a-zà-ÿ\s-]", " ", s)
 
     woorden = []
@@ -86,6 +82,23 @@ def norm(naam: str) -> str:
     # Meervoud laten we staan: de AH-zoekmachine gaat daar zelf goed mee om,
     # terwijl afkappen in het Nederlands te vaak misgaat (citroen -> citro).
     return " ".join(woorden[:4]).strip()
+
+
+def norm(naam: str) -> str:
+    """Maakt van een rommelige ingrediëntregel een bruikbare zoekterm."""
+    s = naam.lower().strip()
+    s = re.sub(r"\(.*?\)", " ", s)          # (30 g), (optioneel)
+    s = s.split(",")[0]                      # alles na de komma is bereiding
+
+    # "halloumi of oesterzwam" -> halloumi: het eerste alternatief is wat we
+    # kopen. Maar begint dat met een bereiding, zoals "geroosterd brood of
+    # pitabrood", dan blijft er niets over en viel het hele ingrediënt uit de
+    # boodschappenlijst. Dan is het volgende alternatief de bruikbare term.
+    for deel in re.split(r"\bof\b", s):
+        term = _zoekterm(deel)
+        if term:
+            return term
+    return ""
 
 
 # Termen waar de AH-zoekmachine op zichzelf de verkeerde kant op gaat.
@@ -119,7 +132,6 @@ ALIAS = {
     "preien": "prei",
     "bosuien": "bosui",
     "zoete aardappelen": "zoete aardappel",
-    "tros pruimtomaatjes": "pruimtomaten",
     # AH's zoekmachine leidt hier zelf de verkeerde kant op
     "rode uien": "rode ui",
     "vegan yoghurt": "plantaardige yoghurt",
@@ -160,6 +172,7 @@ ALIAS = {
     "aubergines": "aubergine",
     "flatbreads": "flatbread",
     "tortillawraps": "tortilla naturel wraps",
+    "pitabrood": "pitabroodjes",
 }
 
 
