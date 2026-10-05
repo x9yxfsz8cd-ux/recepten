@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>In de winkel</title>
-  <link rel="stylesheet" href="./css/style.css?v=196562">
+  <link rel="stylesheet" href="./css/style.css?v=197418">
   <link rel="manifest" href="./manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
@@ -49,8 +49,8 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=196562"></script>
-  <script src="./js/ingredient-icoon.js?v=196562"></script>
+  <script src="./js/gedeeld.js?v=197418"></script>
+  <script src="./js/ingredient-icoon.js?v=197418"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -108,7 +108,9 @@
       el.innerHTML = lijst.map(r => `
         <a class="winkel-rk" href="?id=${r.id}" ${huidig && r.id === huidig.id ? 'aria-current="true"' : ''}>
           ${r.afbeelding
-            ? `<img src="${r.afbeelding}" alt="" loading="lazy">`
+            ? `<img src="${r.afbeelding.startsWith('http') ? r.afbeelding
+                 : r.afbeelding.replace('img/recept/', 'img/kaart/')}" alt="" loading="lazy"
+                 onerror="this.onerror=null;this.src='${r.afbeelding}'">`
             : `<div class="winkel-rk__leeg">${r.titel.trim()[0] || '?'}</div>`}
           <span>${r.titel}</span>
         </a>`).join('');

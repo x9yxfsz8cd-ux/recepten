@@ -10,7 +10,7 @@
   <meta property="og:description" content="Persoonlijke receptenverzameling van Shar &amp; Robin">
   <meta property="og:type" content="website">
   <title>Onze Recepten</title>
-  <link rel="stylesheet" href="./css/style.css?v=196562">
+  <link rel="stylesheet" href="./css/style.css?v=197418">
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./img/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -55,7 +55,7 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=196562"></script>
+  <script src="./js/gedeeld.js?v=197418"></script>
   <script>
     const ALLE_TAGS = ['vegetarisch','vegan','vis','vlees','snel','comfort food',
                        'Aziatisch','Italiaans','ontbijt','lunch','diner','snack'];
@@ -108,9 +108,17 @@
       }));
     }
 
+    /* Zoeken op 'ui' gaf 43 van de 52 recepten, want 'ui' zit ook in bouillon,
+       kristalsuiker en linguine. En 'ei' in kwaliteit en kleingehakt.
+       Daarom: korte termen moeten aan het begin van een woord staan. Vanaf
+       vier letters mag het ook middenin, want dan zoek je meestal op een
+       samenstelling — 'kool' hoort boerenkool en bloemkool te vinden. */
     function zoekMatch(r, term) {
-      return r.titel.toLowerCase().includes(term)
-          || r.ingredienten.some(i => i.naam.toLowerCase().includes(term));
+      const woordBegin = new RegExp('(^|[^a-zà-ÿ])' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+      const raak = (tekst) => term.length >= 4
+        ? tekst.toLowerCase().includes(term)
+        : woordBegin.test(tekst);
+      return raak(r.titel) || r.ingredienten.some(i => raak(i.naam));
     }
 
     function renderRecepten() {
@@ -145,8 +153,15 @@
 
       const fav = laadFavorieten();
       grid.innerHTML = lijst.map(r => {
+        // Het overzicht gebruikt de kleine versie uit img/kaart: een kaartje is
+        // 171px breed, de grote foto 1400px. Scheelt zeventig procent over
+        // mobiel internet. Bestaat die niet, dan valt hij terug op de grote.
+        const kaartFoto = r.afbeelding && !r.afbeelding.startsWith('http')
+          ? r.afbeelding.replace('img/recept/', 'img/kaart/')
+          : r.afbeelding;
         const img = r.afbeelding
-          ? `<img class="recept-card__img" src="${r.afbeelding}" alt="" loading="lazy">`
+          ? `<img class="recept-card__img" src="${kaartFoto}" alt="" loading="lazy"
+                  onerror="this.onerror=null;this.src='${r.afbeelding}'">`
           : `<div class="recept-card__img-placeholder"><span>${r.titel.trim()[0] || '?'}</span></div>`;
         const aan = fav.includes(r.id);
         // Normaal is de totale tijd het getal waar je op plant. Maar bij een
