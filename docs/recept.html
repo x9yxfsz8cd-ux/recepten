@@ -10,7 +10,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=198000">
+  <link rel="stylesheet" href="./css/style.css?v=198625">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
@@ -59,9 +59,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=198000"></script>
-  <script src="./js/ingredient-icoon.js?v=198000"></script>
-  <script src="./js/opslag.js?v=198000"></script>
+  <script src="./js/gedeeld.js?v=198625"></script>
+  <script src="./js/ingredient-icoon.js?v=198625"></script>
+  <script src="./js/opslag.js?v=198625"></script>
 
   <script>
     let recept = null;
@@ -110,7 +110,7 @@
         .filter(ing => !isVoorraad(ing.naam))
         .map(ing => {
           if (ing.eenheid === 'naar smaak' || ing.hoeveelheid === 0) return ing.naam;
-          const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
+          const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties, ing.eenheid);
           const eenheid = ing.eenheid === 'stuks' ? 'x' : ing.eenheid;
           return `${ing.naam} (${hoeveelheid} ${eenheid})`.replace(' x)', 'x)');
         });
@@ -250,7 +250,7 @@
       strook.innerHTML = nodig.map(ing => {
         const hoeveelheid = ing.eenheid === 'naar smaak' || ing.hoeveelheid === 0
           ? 'naar smaak'
-          : `${formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();
+          : `${formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties, ing.eenheid)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();
         return `<span class="km-ing"><b>${hoeveelheid}</b> ${metHoofdletter(ing.naam)}</span>`;
       }).join('');
       strook.hidden = nodig.length === 0;
@@ -362,7 +362,7 @@
     function updateIngredientHoeveelheden() {
       document.querySelectorAll('.ingredienten-lijst li').forEach((li, i) => {
         const ing = recept.ingredienten[i];
-        const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
+        const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties, ing.eenheid);
         const eenheid = ing.eenheid === 'naar smaak' ? '' : ing.eenheid;
         const rechts = ing.eenheid === 'naar smaak'
           ? 'naar smaak'
@@ -380,7 +380,7 @@
       if (ing.hoeveelheid === 0 || ing.eenheid === 'naar smaak') return;
 
       const hSpan = li.querySelector('.ingredient-hoeveelheid');
-      const huidigeWaarde = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
+      const huidigeWaarde = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties, ing.eenheid);
 
       // Vervang span door input
       const input = document.createElement('input');
@@ -626,6 +626,16 @@
     }
 
     function startTimer(seconden, label) {
+      wekGeluid();                       // nu nog tijdens de tik; straks mag het niet meer
+      // De timer in de pagina loopt alleen zolang het scherm aan staat en
+      // Safari vooraan is. Daarom eenmalig wijzen op het klokje, dat hem
+      // overdraagt aan de Klok-app — die loopt wél door en maakt geluid.
+      try {
+        if (!localStorage.getItem('klok_tip_gezien')) {
+          localStorage.setItem('klok_tip_gezien', '1');
+          setTimeout(() => toonToast('Scherm uit? Tik op het klokje — dan loopt hij door in de Klok-app.'), 900);
+        }
+      } catch {}
       clearInterval(timer.tik);
       timer = { resterend: seconden, totaal: seconden, label, loopt: true, tik: null };
       const el = timerBalk();
@@ -669,9 +679,24 @@
     }
 
     // Kort geluid zonder extern bestand
+    /* Safari laat geluid alleen toe als de AudioContext tijdens een tik is
+       aangemaakt. Deden we dat pas bij het aflopen — vijfentwintig minuten
+       later — dan startte hij 'suspended' en hoorde je niets. Daarom maken we
+       hem bij het starten van de timer en houden we hem wakker. */
+    let geluidCtx = null;
+
+    function wekGeluid() {
+      try {
+        if (!geluidCtx) geluidCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (geluidCtx.state === 'suspended') geluidCtx.resume();
+      } catch {}
+    }
+
     function piep() {
       try {
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        wekGeluid();
+        const ctx = geluidCtx;
+        if (!ctx) return;
         [0, 0.35, 0.7].forEach(vertraging => {
           const osc = ctx.createOscillator(), gain = ctx.createGain();
           osc.frequency.value = 880;
@@ -725,7 +750,7 @@
     let ahProducten = {};
 
     function renderIngredient(ing, index) {
-      const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties);
+      const hoeveelheid = formatHoeveelheid(ing.hoeveelheid, huidigPorties, basisPorties, ing.eenheid);
       const eenheid = ing.eenheid === 'naar smaak' ? '' : ing.eenheid;
       const rechts = ing.eenheid === 'naar smaak'
         ? 'naar smaak'

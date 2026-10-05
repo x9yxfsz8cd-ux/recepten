@@ -2,7 +2,7 @@
    De productfoto's moeten offline beschikbaar zijn: juist in de kelder van een
    supermarkt heb je geen bereik, en daar is het winkelscherm voor bedoeld. */
 
-const CACHE = 'recepten-v198000';
+const CACHE = 'recepten-v198625';
 
 const STATISCH = [
   './',
@@ -10,10 +10,10 @@ const STATISCH = [
   './recept.html',
   './winkel.html',
   './import.html',
-  './css/style.css?v=198000',
-  './js/gedeeld.js?v=198000',
-  './js/ingredient-icoon.js?v=198000',
-  './js/opslag.js?v=198000',
+  './css/style.css?v=198625',
+  './js/gedeeld.js?v=198625',
+  './js/ingredient-icoon.js?v=198625',
+  './js/opslag.js?v=198625',
   './manifest.json',
 ];
 

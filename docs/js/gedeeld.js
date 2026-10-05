@@ -98,9 +98,24 @@ function metHoofdletter(tekst) {
 
 /* ── Hoeveelheden ── */
 
-function formatHoeveelheid(basis, huidig, basisPorties) {
+/* Dingen die je per stuk koopt kun je niet in tienden afrekenen. Schaal je een
+   recept voor drie naar vier porties, dan kwam daar '1,3 aubergine' uit, of
+   '0,2 ui'. Daarom worden telbare dingen afgerond op iets wat je in je hand
+   kunt houden: onder de drie op halven, daarboven op hele stuks. Gewicht en
+   inhoud blijven gewoon precies. */
+const TELBAAR = ['stuks', 'teentje', 'teentjes', 'takjes', 'blaadjes', 'bosje',
+                 'blik', 'bol', 'stengel', 'plakken', 'bollen'];
+
+function formatHoeveelheid(basis, huidig, basisPorties, eenheid) {
   if (!basis) return '';
-  const waarde = (basis / basisPorties) * huidig;
+  let waarde = (basis / basisPorties) * huidig;
+
+  if (eenheid && TELBAAR.includes(String(eenheid).toLowerCase())) {
+    waarde = waarde >= 3
+      ? Math.round(waarde)
+      : Math.max(0.5, Math.round(waarde * 2) / 2);
+  }
+
   const afgerond = Math.round(waarde * 10) / 10;
   return afgerond % 1 === 0 ? String(afgerond | 0) : String(afgerond).replace('.', ',');
 }
