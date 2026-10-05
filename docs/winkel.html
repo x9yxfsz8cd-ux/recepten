@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>In de winkel</title>
-  <link rel="stylesheet" href="./css/style.css?v=199035">
+  <link rel="stylesheet" href="./css/style.css?v=208844">
   <link rel="manifest" href="./manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
@@ -49,8 +49,8 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=199035"></script>
-  <script src="./js/ingredient-icoon.js?v=199035"></script>
+  <script src="./js/gedeeld.js?v=208844"></script>
+  <script src="./js/ingredient-icoon.js?v=208844"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -128,6 +128,48 @@
       return vasteVorm ? r.porties : STANDAARD_PORTIES;
     }
 
+    /* Alles afvinken in de winkel werkt, maar soms wil je de lijst gewoon
+       meesturen. Dit stuurt alleen wat nog openstaat naar Herinneringen, via
+       dezelfde Apple Shortcut als op de receptpagina. In het AH-mandje leggen
+       kan niet: daar is een token uit je eigen inlog voor nodig, en dat heeft
+       een site zonder server niet. Daarom is de productnaam wel een link naar
+       dat exacte product, zodat je in de AH-app alleen nog op plus hoeft. */
+    const SHORTCUT_NAAM = 'Boodschappen';
+
+    async function naarHerinneringen() {
+      if (!huidig) return;
+      const gekocht = gekochtVoor(huidig.id);
+      const open = [];
+      huidig.ingredienten.forEach((ing, i) => {
+        if (isVoorraad(ing.naam) || gekocht.includes(String(i))) return;
+        const hoev = ing.eenheid === 'naar smaak' || !ing.hoeveelheid
+          ? ''
+          : `${formatHoeveelheid(ing.hoeveelheid, portiesVoor(huidig), huidig.porties, ing.eenheid)} ${ing.eenheid === 'stuks' ? '' : ing.eenheid}`.trim();
+        open.push(`${hoev} ${ing.naam.split('(')[0].trim()}`.trim());
+      });
+      if (!open.length) { melding('Alles al afgevinkt'); return; }
+
+      const tekst = open.join('\n');
+      try { await navigator.clipboard.writeText(tekst); } catch {}
+      window.location.href = `shortcuts://run-shortcut?name=${encodeURIComponent(SHORTCUT_NAAM)}`
+        + `&input=text&text=${encodeURIComponent(tekst)}`;
+      melding(`${open.length} naar je boodschappenlijst`);
+    }
+
+    function melding(tekst) {
+      let el = document.getElementById('winkel-toast');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = 'winkel-toast';
+        el.className = 'boodschappen-toast';
+        document.body.appendChild(el);
+      }
+      el.textContent = tekst;
+      el.classList.add('zichtbaar');
+      clearTimeout(el._t);
+      el._t = setTimeout(() => el.classList.remove('zichtbaar'), 3200);
+    }
+
     function renderLijst() {
       const el = document.getElementById('lijst');
       if (!huidig) {
@@ -197,7 +239,10 @@
         // "geen AH-product gevonden" laten we weg: dat zegt de klant niets, en
         // het icoontje maakt al duidelijk waar het om gaat.
         const onder = p
-          ? `<span class="ingredient-ah${pakken && pakken > 1 ? ' let' : ''}">${p.titel}${
+          ? `<span class="ingredient-ah${pakken && pakken > 1 ? ' let' : ''}">${
+              p.url
+                ? `<a class="ah-link" href="${p.url}" target="_blank" rel="noopener">${p.titel}</a>`
+                : p.titel}${
               pakken && pakken > 1
                 ? ` · ${pakken} pakken van ${p.eenheid}`
                 : (p.eenheid ? ' · ' + p.eenheid : '')}</span>`
@@ -222,6 +267,8 @@
         + gesorteerd.map(([schap, items]) => `
         <div class="groepkop">${schap}</div>
         <ul class="ingredienten-lijst">${items.map(regel).join('')}</ul>`).join('')
+        + (nodig.length ? `
+        <button class="boodschappen-btn" id="stuur-btn">Zet wat nog open staat op de boodschappenlijst</button>` : '')
         + (kast.length ? `
         <button class="inklap" id="kast-knop" aria-expanded="false">
           <span>Heb je waarschijnlijk al — ${kastSamen.length}</span>
@@ -240,6 +287,9 @@
         });
         renderLijst();
       }));
+      const stuur = document.getElementById('stuur-btn');
+      if (stuur) stuur.addEventListener('click', naarHerinneringen);
+
       const reset = document.getElementById('reset-knop');
       if (reset) reset.addEventListener('click', () => {
         let alles = {};

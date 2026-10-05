@@ -435,6 +435,9 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:var(--s-2) v
 .keuken-tip__kop{ font-size:var(--t-cap); font-weight:600; letter-spacing:.09em;
   text-transform:uppercase; color:var(--inkt-3) }
 
+.ah-link{ color:inherit; text-decoration:underline; text-underline-offset:2px;
+  text-decoration-color:var(--lijn-sterk) }
+
 /* ── MAE MODUS ───────────────────────────────────────────────────────────── */
 /* Mae eet mee maar nog zonder zout en pittige kruiden. De markering moet
    opvallen tussen de stappen zonder het recept over te nemen. */
