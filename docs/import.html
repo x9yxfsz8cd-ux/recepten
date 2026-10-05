@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>Recept importeren</title>
-  <link rel="stylesheet" href="./css/style.css?v=184914">
+  <link rel="stylesheet" href="./css/style.css?v=194566">
   <link rel="manifest" href="./manifest.json">
-  <script src="./js/opslag.js?v=184914"></script>
+  <script src="./js/opslag.js?v=194566"></script>
   <style>
     /* De importpagina gebruikte de oude kleurnamen. Die vertalen we hier naar
        de huidige tokens, zodat hij meekleurt met licht en donker. */
@@ -406,6 +406,7 @@
       toonStatus('Foto klaarmaken…');
       try {
         const bitmap = await createImageBitmap(file);
+        origineleFoto = bitmap;
         const schaal = Math.min(1, MAX_ZIJDE / Math.max(bitmap.width, bitmap.height));
         const c = document.createElement('canvas');
         c.width = Math.round(bitmap.width * schaal);
@@ -591,7 +592,8 @@
   "bron": "${url}",
   "bron_naam": "${bronNaam}",
   "bron_type": "${url ? 'url' : heeftFoto ? 'foto' : 'tekst'}",
-  "datum_toegevoegd": "${vandaag()}"
+  "datum_toegevoegd": "${vandaag()}"${heeftFoto ? `,
+  "_fotokader": {"links": 0, "boven": 0, "rechts": 0, "onder": 0}` : ''}
 }`;
 
       const instructie = `Extraheer het recept en vertaal ALLES naar het Nederlands. Geef ALLEEN geldige JSON terug, geen uitleg, geen markdown.
@@ -619,7 +621,12 @@ BELANGRIJKE REGELS:
 - OVEN: schrijf de temperatuur altijd als "180 °C hetelucht". Noemt de bron een
   conventionele oven of twee waardes, neem dan de heteluchtwaarde. Noemt de bron
   één getal zonder uitleg, gebruik dat getal met "hetelucht" erachter.
-- bron_naam: de naam van de bron (bijv. "${bronNaam || 'onbekend'}")`;
+- bron_naam: de naam van de bron (bijv. "${bronNaam || 'onbekend'}")${heeftFoto ? `
+- _fotokader: staat er op de foto OOK een foto van het afgemaakte gerecht
+  (meestal op de pagina ernaast), geef dan het kader daarvan als breukdelen van
+  de hele afbeelding: links/boven/rechts/onder tussen 0 en 1. Kader strak om de
+  gerechtfoto heen, zonder paginarand of vingers. Staat er geen gerechtfoto op,
+  zet dan alle vier op 0.` : ''}`;
 
       // Bouw API-bericht
       const content = [];
@@ -665,6 +672,12 @@ BELANGRIJKE REGELS:
         if (!huidigRecept.afbeelding && gevondenAfbeelding) huidigRecept.afbeelding = gevondenAfbeelding;
         if (!huidigRecept.bron_naam && bronNaam) huidigRecept.bron_naam = bronNaam;
         vulAfgeleideVelden(huidigRecept);
+        const ahRaak = await koppelAanAH(huidigRecept);
+        if (huidigRecept._fotokader && !huidigRecept.afbeelding) {
+          const uitsnede = await snijdGerechtfotoUit(huidigRecept._fotokader);
+          if (uitsnede) huidigRecept.afbeelding = uitsnede;
+        }
+        delete huidigRecept._fotokader;
 
         verbergStatus();
         toonPreview(huidigRecept);
@@ -698,6 +711,82 @@ BELANGRIJKE REGELS:
       ['keukenthermometer', /\bthermometer\b/], ['stoommandje', /\bstoommandje\b|\bstoompan\b/],
       ['microplane', /\bmicroplane\b/],
     ];
+
+    /* Een recept dat je hier toevoegt had tot nu toe geen AH-producten: geen
+       productfoto in de winkel, geen indeling per schap. Dat kwam doordat de
+       koppeling een bouwstap was (Scripts/ah_verrijken.py) die de AH-API
+       aanroept, en die API heeft geen CORS — vanuit de browser kan dat niet.
+       Maar het hoeft ook niet: 77% van de ingrediëntnamen staat al in
+       docs/data/ah-producten.json, dat we toch al downloaden. Daar zoeken we
+       nu eerst in. Wat niet gevonden wordt blijft leeg en krijgt een icoon;
+       de volgende keer dat ah_verrijken.py draait wordt dat alsnog aangevuld.
+       De normalisatie is dezelfde als in dat script. */
+    const RUIS = new Set(['grote','kleine','middelgrote','grof','fijn','dunne','dikke',
+      'halve','hele','stuk','stukje','blik','pak','zak','bosje','bol','teentje','teentjes',
+      'snufje','scheutje','handje','handvol','goede','kwaliteit','biologische','koud',
+      'koude','warm','warme','vers','verse','extra','vierge','vergine','rijpe','eetrijpe',
+      'van','met','om','te','het','de','een','bijv','keuze']);
+    const BEREIDING = new Set(['fijngehakt','gehakt','kleingehakt','grofgehakt','gesnipperd',
+      'gesneden','geraspt','geplet','geperst','geroosterd','gerooster','verwijderd',
+      'schoongemaakt','gewassen','uitgelekt','afgespoeld','gepeld','geschild','ontpit',
+      'in','naar','optioneel','alleen','eventueel']);
+
+    function normaliseerIngredient(naam) {
+      let s = String(naam).toLowerCase().trim();
+      s = s.replace(/\(.*?\)/g, ' ');
+      s = s.split(',')[0];
+      s = s.split(/\bof\b/)[0];
+      s = s.replace(/[0-9]+([.,][0-9]+)?/g, ' ');
+      s = s.replace(/[^a-zà-ÿ\s-]/g, ' ');
+      const uit = [];
+      for (const w of s.split(/\s+/).filter(Boolean)) {
+        if (BEREIDING.has(w)) break;
+        if (RUIS.has(w) || w.length < 2) continue;
+        uit.push(w);
+      }
+      return uit.slice(0, 4).join(' ').trim();
+    }
+
+    /* Op een kookboekpagina staat de gerechtfoto er meestal naast. Die werd
+       tot nu toe genegeerd, waardoor ik hem er elke keer met de hand uit
+       moest snijden. Het model geeft nu het kader terug en we knippen het
+       hier uit de foto die je toch al hebt geüpload. */
+    let origineleFoto = null;   // de volledige foto als bitmap
+
+    async function snijdGerechtfotoUit(kader) {
+      if (!origineleFoto || !kader) return null;
+      const {links, boven, rechts, onder} = kader;
+      const b = rechts - links, h = onder - boven;
+      if (!(b > 0.08 && h > 0.08)) return null;     // niets bruikbaars
+      const W = origineleFoto.width, H = origineleFoto.height;
+      const c = document.createElement('canvas');
+      const schaal = Math.min(1, 1400 / Math.max(b * W, h * H));
+      c.width = Math.round(b * W * schaal);
+      c.height = Math.round(h * H * schaal);
+      c.getContext('2d').drawImage(origineleFoto,
+        links * W, boven * H, b * W, h * H, 0, 0, c.width, c.height);
+      return c.toDataURL('image/jpeg', 0.85);
+    }
+
+    let productLijst = null;
+    async function koppelAanAH(r) {
+      if (!productLijst) {
+        try {
+          productLijst = await (await fetch('./data/ah-producten.json', {cache:'no-cache'})).json();
+        } catch { productLijst = {}; }
+      }
+      let raak = 0;
+      for (const ing of r.ingredienten || []) {
+        const sleutel = normaliseerIngredient(ing.naam);
+        if (sleutel && productLijst[sleutel] && productLijst[sleutel].titel) {
+          ing.ah = sleutel;
+          raak++;
+        } else if (sleutel) {
+          ing.ah = sleutel;   // de bouwstap zoekt hem later alsnog op
+        }
+      }
+      return raak;
+    }
 
     function vulAfgeleideVelden(r) {
       const stappen = (r.stappen || []).map(s => s.tekst).join(' ').toLowerCase();
