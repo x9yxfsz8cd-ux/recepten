@@ -502,7 +502,7 @@
           "naam": "platte peterselie, fijngehakt",
           "hoeveelheid": 30,
           "eenheid": "g",
-          "ah": "peterselie"
+          "ah": "platte peterselie"
         },
         {
           "naam": "olijfolie van goede kwaliteit",
@@ -5899,6 +5899,596 @@
       "bron_afbeelding": "https://commons.wikimedia.org/wiki/File:Spaghetti_cacio_e_pepe_(creamy_as_it_should_be).jpg",
       "foto_maker": "Der Zahir",
       "foto_licentie": "CC BY-SA 4.0"
+    },
+    {
+      "id": "r1791230000",
+      "titel": "Shakshuka uit de oven met paprika, tomaten & eieren",
+      "slug": "shakshuka-uit-de-oven",
+      "beschrijving": "Een ovenversie van shakshuka, zodat je niet twintig minuten in een pan staat te roeren. Bij Rukmini thuis inmiddels een standaard weekendontbijt.",
+      "afbeelding": "img/recept/shakshuka-uit-de-oven.jpg",
+      "bereidingstijd": 60,
+      "actieve_tijd": 15,
+      "passieve_tijd": 45,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "brunch",
+        "diner",
+        "comfort food"
+      ],
+      "benodigdheden": [
+        "braadslede"
+      ],
+      "ingredienten": [
+        {
+          "naam": "rode ui, grof gehakt",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "rode ui"
+        },
+        {
+          "naam": "rode paprika's, in stukjes",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "rode paprika"
+        },
+        {
+          "naam": "gele paprika's, in stukjes",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "gele paprika"
+        },
+        {
+          "naam": "trostomaten, in vieren",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "trostomaten"
+        },
+        {
+          "naam": "rode chilipepers, zonder pitjes en grof gehakt",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "rode chilipepers"
+        },
+        {
+          "naam": "teentjes knoflook, geperst",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "gemalen komijn",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "gemalen komijn"
+        },
+        {
+          "naam": "gemalen koriander",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "gemalen koriander"
+        },
+        {
+          "naam": "gerookt paprikapoeder",
+          "hoeveelheid": 1.5,
+          "eenheid": "tl",
+          "ah": "gerookt paprikapoeder"
+        },
+        {
+          "naam": "tomatenblokjes (blik van 400 g)",
+          "hoeveelheid": 400,
+          "eenheid": "g",
+          "ah": "tomatenblokjes"
+        },
+        {
+          "naam": "scharreleieren",
+          "hoeveelheid": 4,
+          "eenheid": "stuks",
+          "ah": "scharreleieren"
+        },
+        {
+          "naam": "za'atar (optioneel)",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "za atar"
+        },
+        {
+          "naam": "verse koriander, grof gesneden",
+          "hoeveelheid": 25,
+          "eenheid": "g",
+          "ah": "koriander"
+        },
+        {
+          "naam": "geroosterd brood of pitabrood",
+          "hoeveelheid": 4,
+          "eenheid": "stuks"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Hak de rode ui grof, snijd de paprika's in stukjes en de trostomaten in vieren. Verwijder de pitjes uit de chilipepers en hak ze grof. Pers de knoflook."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Leg de ui, paprika's, tomaten, chilipepers en knoflook in een grote braadslede. Voeg de olie, het zout, de komijn, de gemalen koriander en het gerookt paprikapoeder toe en schep alles goed om. Zet het geheel 30 minuten in de oven."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Verlaag de temperatuur naar 160 °C hetelucht. Druk de gegaarde tomaten met een houten lepel plat, voeg de tomatenblokjes toe en schep alles weer goed om."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Maak vier kuiltjes in het tomatenmengsel en breek in elk kuiltje een ei. Zet het geheel nog 10 minuten in de oven, of tot de eieren zo gaar zijn als je wilt. Komen de eieren rechtstreeks uit de koelkast, dan hebben ze wat langer nodig."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Bestrooi met de za'atar en de verse koriander. Dien op met flink wat heet, beboterd brood of pitabrood."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "https://thehappyfoodie.co.uk/recipes/oven-baked-shakshuka-roasted-peppers-tomatoes-and-chilli-with-eggs/",
+      "bron_naam": "De Groene Bakplaat — Rukmini Iyer, p. 100",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-10-05",
+      "ovenprogramma": "Hetelucht. Zet de plaat in het midden."
+    },
+    {
+      "id": "r1791230011",
+      "titel": "Zalm met soja-honingsaus, asperges & sugarsnaps",
+      "slug": "zalm-met-soja-honingsaus-asperges-sugarsnaps",
+      "beschrijving": "Eenvoudig maar smaakvol, en snel genoeg voor doordeweeks. De restjes zijn de volgende dag een prima lunch.",
+      "afbeelding": "img/recept/zalm-met-soja-honingsaus-asperges-sugarsnaps.jpg",
+      "bereidingstijd": 30,
+      "actieve_tijd": 5,
+      "passieve_tijd": 25,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vis",
+        "snel",
+        "diner"
+      ],
+      "benodigdheden": [
+        "braadslede"
+      ],
+      "ingredienten": [
+        {
+          "naam": "bimi",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "bimi"
+        },
+        {
+          "naam": "aspergetips",
+          "hoeveelheid": 125,
+          "eenheid": "g",
+          "ah": "aspergetips"
+        },
+        {
+          "naam": "sugarsnaps",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "sugarsnaps"
+        },
+        {
+          "naam": "diepvriesdoperwten",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "diepvriesdoperwten"
+        },
+        {
+          "naam": "zeezoutvlokken",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezoutvlokken"
+        },
+        {
+          "naam": "sesamolie",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "sesamolie"
+        },
+        {
+          "naam": "zalmfilets",
+          "hoeveelheid": 4,
+          "eenheid": "stuks",
+          "ah": "zalmfilets"
+        },
+        {
+          "naam": "sojasaus van goede kwaliteit",
+          "hoeveelheid": 0.5,
+          "eenheid": "el",
+          "ah": "sojasaus"
+        },
+        {
+          "naam": "sesamolie (voor de zalm)",
+          "hoeveelheid": 0.5,
+          "eenheid": "el",
+          "ah": "sesamolie"
+        },
+        {
+          "naam": "honing",
+          "hoeveelheid": 0.5,
+          "eenheid": "el",
+          "ah": "honing"
+        },
+        {
+          "naam": "verse gember, geraspt (6 cm)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "gember"
+        },
+        {
+          "naam": "limoen (sap)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "limoen"
+        },
+        {
+          "naam": "sesamolie (voor de dressing)",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "sesamolie"
+        },
+        {
+          "naam": "lente-uitjes, fijngehakt",
+          "hoeveelheid": 3,
+          "eenheid": "stuks",
+          "ah": "lente-uitjes"
+        },
+        {
+          "naam": "pinda's, grof gehakt",
+          "hoeveelheid": 40,
+          "eenheid": "g",
+          "ah": "pinda"
+        },
+        {
+          "naam": "rode chilipeper, in ringetjes",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "rode chilipeper"
+        },
+        {
+          "naam": "snelkooknoedels of rijst (optioneel)",
+          "hoeveelheid": 250,
+          "eenheid": "g",
+          "ah": "snelkooknoedels"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 180 °C hetelucht."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Doe de bimi in een grote kom en giet er een volle waterkoker kokend water overheen. Laat 1 minuut staan en giet goed af. Dit verbetert de structuur bij het roosteren; gebruik je gewone broccoli, sla deze stap dan over."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Meng de bimi, aspergetips, sugarsnaps, doperwten, het zeezout en de sesamolie in een braadslede en leg de zalmfilets tussen de groenten."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Roer de sojasaus, sesamolie en honing door elkaar en verdeel dit over de zalmfilets. Zet 20-25 minuten in de oven, tot de zalm gaar is."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Rasp intussen de gember, pers de limoen en hak de lente-uitjes fijn. Roer de gemberrasp, het limoensap, de sesamolie en de lente-uitjes door elkaar."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Giet de dressing over de groenten zodra de zalm gaar is. Strooi de grof gehakte pinda's en de chilipeper erover. Proef en voeg zo nodig nog limoensap en zout toe. Dien heet op."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "https://thehappyfoodie.co.uk/recipes/sticky-soy-and-honey-roasted-salmon-with-asparagus-and-sugar-snap-peas/",
+      "bron_naam": "De Snelle Bakplaat — Rukmini Iyer, p. 116",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-10-05",
+      "ovenprogramma": "Hetelucht. Zet de plaat in het midden."
+    },
+    {
+      "id": "r1791230022",
+      "titel": "Koreaanse aubergines met lente-uitjes & sesamrijst",
+      "slug": "koreaanse-aubergines-met-sesamrijst",
+      "beschrijving": "De oven stoomt de aubergines terwijl de basmatirijst en prei eronder garen. Gochugaru, Koreaanse chilivlokken, maken hier echt het verschil.",
+      "afbeelding": "img/recept/koreaanse-aubergines-met-sesamrijst.jpg",
+      "bereidingstijd": 45,
+      "actieve_tijd": 15,
+      "passieve_tijd": 30,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "Aziatisch",
+        "diner"
+      ],
+      "benodigdheden": [
+        "braadslede",
+        "aluminiumfolie"
+      ],
+      "ingredienten": [
+        {
+          "naam": "basmatirijst, afgespoeld",
+          "hoeveelheid": 200,
+          "eenheid": "g",
+          "ah": "basmatirijst"
+        },
+        {
+          "naam": "tenen knoflook, ongepeld",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "tenen knoflook"
+        },
+        {
+          "naam": "preien of 1 kleine Chinese kool, fijngesneden",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "preien"
+        },
+        {
+          "naam": "groentebouillon",
+          "hoeveelheid": 400,
+          "eenheid": "ml",
+          "ah": "groentebouillon"
+        },
+        {
+          "naam": "sesamolie",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "sesamolie"
+        },
+        {
+          "naam": "aubergines, in plakken van 1,5 cm",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "aubergines"
+        },
+        {
+          "naam": "zeezoutvlokken",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezoutvlokken"
+        },
+        {
+          "naam": "dikke lente-uitjes, in heel dunne ringen",
+          "hoeveelheid": 3,
+          "eenheid": "stuks",
+          "ah": "lente-uitjes"
+        },
+        {
+          "naam": "sesamzaad",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "sesamzaad"
+        },
+        {
+          "naam": "Koreaanse chilivlokken (gochugaru)",
+          "hoeveelheid": 15,
+          "eenheid": "g",
+          "ah": "koreaanse chilivlokken"
+        },
+        {
+          "naam": "sesamolie (voor de dressing)",
+          "hoeveelheid": 30,
+          "eenheid": "ml",
+          "ah": "sesamolie"
+        },
+        {
+          "naam": "rijstazijn",
+          "hoeveelheid": 30,
+          "eenheid": "ml",
+          "ah": "rijstazijn"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 30,
+          "eenheid": "ml",
+          "ah": "sojasaus"
+        },
+        {
+          "naam": "verse gember, geraspt (5 cm)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "gember"
+        },
+        {
+          "naam": "teen knoflook, fijngeraspt",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "teen knoflook"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 210 °C hetelucht."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Spoel de rijst af. Snijd de preien of de Chinese kool fijn en de aubergines in plakken van 1,5 cm."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Laat de rijst en de ongepelde knoflooktenen in een grote braadpan met deksel of een middelgrote braadslede glijden en verdeel de prei erover. Schenk de groentebouillon en de sesamolie erover."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Leg de aubergines er in een enkele laag bovenop en bestrooi met de zeezoutvlokken. Dek goed af met het deksel of aluminiumfolie — dit is belangrijk, anders wordt de rijst niet gaar. Zet 30 minuten in de oven."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Vermeng intussen de gochugaru, sesamolie, rijstazijn, sojasaus, geraspte gember en knoflook tot een dressing."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Haal de braadslede uit de oven, verwijder het deksel of de folie en schenk de chilidressing over de aubergines. Bestrooi met de lente-uitjes en het sesamzaad en dien heet op."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "https://thehappyfoodie.co.uk/recipes/one-tin-korean-style-aubergines-with-spring-onions-and-sesame-rice/",
+      "bron_naam": "De Wereldse Bakplaat — Rukmini Iyer",
+      "bron_type": "kookboek",
+      "datum_toegevoegd": "2026-10-05",
+      "ovenprogramma": "Hetelucht. Zet de plaat in het midden."
+    },
+    {
+      "id": "r1791230033",
+      "titel": "Hele geroosterde bloemkool met ras el hanout, parelgort & granaatappel",
+      "slug": "hele-geroosterde-bloemkool-met-parelgort",
+      "beschrijving": "Een hele bloemkool die een uur afgedekt boven parelgort gaart, met ras el hanout, granaatappel en amandelen erover.",
+      "afbeelding": "",
+      "bereidingstijd": 75,
+      "actieve_tijd": 15,
+      "passieve_tijd": 60,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegan",
+        "vegetarisch",
+        "diner",
+        "comfort food"
+      ],
+      "benodigdheden": [
+        "braadslede",
+        "aluminiumfolie"
+      ],
+      "ingredienten": [
+        {
+          "naam": "parelgort, afgespoeld",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "parelgort"
+        },
+        {
+          "naam": "groentebouillon",
+          "hoeveelheid": 700,
+          "eenheid": "ml",
+          "ah": "groentebouillon"
+        },
+        {
+          "naam": "verse gember, geraspt (5 cm)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "gember"
+        },
+        {
+          "naam": "bloemkool (of 4 mini-bloemkolen)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "bloemkool"
+        },
+        {
+          "naam": "ras el hanout",
+          "hoeveelheid": 2,
+          "eenheid": "tl",
+          "ah": "ras el hanout"
+        },
+        {
+          "naam": "zeezout",
+          "hoeveelheid": 1,
+          "eenheid": "tl",
+          "ah": "zeezout"
+        },
+        {
+          "naam": "teentje knoflook, geperst",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "knoflook"
+        },
+        {
+          "naam": "olijfolie",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "olijfolie"
+        },
+        {
+          "naam": "spinazie, fijngesneden",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "spinazie"
+        },
+        {
+          "naam": "citroen (sap van een halve)",
+          "hoeveelheid": 0.5,
+          "eenheid": "stuks",
+          "ah": "citroen"
+        },
+        {
+          "naam": "granaatappel (alleen de pitjes)",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "granaatappel"
+        },
+        {
+          "naam": "geroosterde amandelen",
+          "hoeveelheid": 40,
+          "eenheid": "g",
+          "ah": "geroosterde amandelen"
+        },
+        {
+          "naam": "verse koriander, gehakt",
+          "hoeveelheid": 25,
+          "eenheid": "g",
+          "ah": "koriander"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor tot 160 °C hetelucht."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Spoel de parelgort af en rasp de gember. Meng de parelgort met de groentebouillon en de gember in een diepe braadslede."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Gebruik je een grote bloemkool, haal dan de bladeren eraf, hak ze grof en roer ze door de parelgort."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Wrijf de bloemkool rondom in met de ras el hanout, het zeezout, de geperste knoflook en 1 eetlepel olijfolie. Zet hem boven op de parelgort."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Dek de braadslede strak af met aluminiumfolie en zet hem 1 uur in de oven."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Haal de bloemkool eruit en roer de fijngesneden spinazie, het citroensap en de tweede eetlepel olijfolie door de parelgort. Breng op smaak met extra zout en citroensap."
+        },
+        {
+          "nummer": 7,
+          "tekst": "Zet de bloemkool terug, strooi de granaatappelpitjes, amandelen en gehakte koriander over alles en dien heet op."
+        }
+      ],
+      "voedingswaarden": {},
+      "bron": "https://thehappyfoodie.co.uk/recipes/rukmini-iyers-whole-roasted-cauliflower-with-ras-el-hanout-pearl-barley-and-pomegranate/",
+      "bron_naam": "Rukmini Iyer — via The Happy Foodie",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-10-05",
+      "ovenprogramma": "Hetelucht. Zet de plaat in het midden."
     }
   ]
 }

@@ -22,7 +22,7 @@ const INGREDIENT_ICONEN = [
                                    // includes-regel, dus die staan er voluit bij
                                    'jasmijnrijst', 'langgraanrijst', 'sushirijst',
                                    'risottorijst', 'basmatirijst', 'zilvervliesrijst',
-                                   'pandanrijst'] },
+                                   'pandanrijst', 'parelgort', 'gort', 'spelt', 'farro'] },
   { sleutel: 'noten',    woorden: ['noten', 'walnoten', 'hazelnoten', 'amandelen', 'cashew',
                                    'pistache', 'amandelschaafsel', 'pijnboompitten'] },
   { sleutel: 'zaad',     woorden: ['sesamzaad', 'sesamzaadjes', 'zonnebloempitten',
@@ -34,8 +34,10 @@ const INGREDIENT_ICONEN = [
                                    'harissa', 'miso', 'currypasta', 'vissaus'] },
   { sleutel: 'tomaat',   woorden: ['tomaat', 'tomaten', 'tomaatjes', 'passata', 'tomatenpuree'] },
   { sleutel: 'groente',  woorden: ['aardpeer', 'bleekselderij', 'knolselderij', 'pastinaak',
-                                   'koolraap', 'rammenas'] },
+                                   'koolraap', 'rammenas', 'doperwten', 'erwten', 'tuinbonen'] },
   { sleutel: 'bal',      woorden: ['falafel', 'wontons', 'balletjes', 'gyoza', 'dumplings'] },
+  { sleutel: 'brood',    woorden: ['brood', 'pitabrood', 'platbrood', 'flatbread',
+                                   'stokbrood', 'ciabatta', 'boterham'] },
 ];
 
 const ICOON_PADEN = {
@@ -59,6 +61,7 @@ const ICOON_PADEN = {
   tomaat:   '<circle cx="12" cy="13.5" r="6.5"/><path d="M12 7V5"/><path d="M12 7c-1.4-.2-2.4-1-3-2.2 1.4-.3 2.4.2 3 1.2.6-1 1.6-1.5 3-1.2-.6 1.2-1.6 2-3 2.2z"/>',
   groente:  '<path d="M12 20c-2.8 0-4.8-2.3-4.8-5.4 0-3 2-5.6 4.8-5.6s4.8 2.6 4.8 5.6C16.8 17.7 14.8 20 12 20z"/><path d="M12 9V4.5"/><path d="M12 6.5c1.6 0 2.8-.9 3.4-2.3-1.7-.4-2.9.3-3.4 1.5"/>',
   bal:      '<circle cx="8.5" cy="14.5" r="4"/><circle cx="15.5" cy="14.5" r="4"/><circle cx="12" cy="8" r="4"/>',
+  brood:    '<path d="M4.5 11.5c0-3.3 3.4-5.5 7.5-5.5s7.5 2.2 7.5 5.5v5.5a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5z"/><path d="M8 9.2c.9-.7 1.9-1.1 3-1.2M13 8c1.1.1 2.1.5 3 1.2"/>',
 };
 
 /* Welk icoon past bij deze ingrediëntnaam? Null als we het niet weten. */
