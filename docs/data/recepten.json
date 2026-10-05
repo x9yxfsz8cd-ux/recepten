@@ -3206,7 +3206,7 @@
       "titel": "Pastasalade tonijn",
       "slug": "pastasalade-tonijn",
       "beschrijving": "Simpele koude pastasalade met tonijn, olijven, augurk en rode ui. Binnen 20 minuten klaar en juist lekkerder als hij even heeft staan intrekken.",
-      "afbeelding": "https://www.eefkooktzo.nl/wp-content/uploads/2023/05/Pasta-salade-met-tonijn.jpg",
+      "afbeelding": "img/recept/pastasalade-tonijn.jpg",
       "bereidingstijd": 20,
       "moeilijkheidsgraad": "makkelijk",
       "porties": 2,
@@ -3301,7 +3301,8 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-09-29",
       "actieve_tijd": 5,
-      "passieve_tijd": 15
+      "passieve_tijd": 15,
+      "bron_afbeelding": "https://www.eefkooktzo.nl/wp-content/uploads/2023/05/Pasta-salade-met-tonijn.jpg"
     },
     {
       "id": "r1790714176",
@@ -5420,7 +5421,7 @@
       "titel": "Zoete aardappel met mozzarella & uien",
       "slug": "zoete-aardappel-met-mozzarella-en-uien",
       "beschrijving": "Een gepofte zoete aardappel met gebakken rode ui en knoflook, plakken mozzarella en een frisse basilicumdressing. Perfect comfortfood.",
-      "afbeelding": "",
+      "afbeelding": "img/recept/zoete-aardappel-met-mozzarella-en-uien.jpg",
       "bereidingstijd": 75,
       "actieve_tijd": 15,
       "passieve_tijd": 60,
@@ -5537,14 +5538,15 @@
       "bron_naam": "De Groene Bakplaat — Rukmini Iyer, p. 210",
       "bron_type": "kookboek",
       "datum_toegevoegd": "2026-09-30",
-      "ovenprogramma": "Hetelucht, en de laatste 5-10 minuten Turbogrill voor de kaaskorst."
+      "ovenprogramma": "Hetelucht, en de laatste 5-10 minuten Turbogrill voor de kaaskorst.",
+      "bron_afbeelding": "https://thehappyfoodie.co.uk/wp-content/uploads/2023/01/SWEETPOTATO_TELEGIO_00351-scaled-2-683x1024.jpg"
     },
     {
       "id": "r1790980035",
       "titel": "Miso-aubergines met tofu",
       "slug": "miso-aubergines-met-tofu",
       "beschrijving": "Miso-aubergines zijn hot, en terecht: de smaken passen heel goed bij elkaar. Een pittige sesam-limoendressing geeft de aubergines en de knapperige tofu extra pit.",
-      "afbeelding": "",
+      "afbeelding": "img/recept/miso-aubergines-met-tofu.jpg",
       "bereidingstijd": 55,
       "actieve_tijd": 10,
       "passieve_tijd": 45,
@@ -5686,7 +5688,8 @@
       "bron_naam": "De Groene Bakplaat — Rukmini Iyer, p. 66",
       "bron_type": "kookboek",
       "datum_toegevoegd": "2026-09-30",
-      "ovenprogramma": "Hetelucht. Zet de plaat in het midden."
+      "ovenprogramma": "Hetelucht. Zet de plaat in het midden.",
+      "bron_afbeelding": "https://thehappyfoodie.co.uk/wp-content/uploads/2023/01/AUBERGINE_MISO_-scaled.jpg"
     },
     {
       "id": "r1790980042",
@@ -6357,7 +6360,7 @@
       "titel": "Hele geroosterde bloemkool met ras el hanout, parelgort & granaatappel",
       "slug": "hele-geroosterde-bloemkool-met-parelgort",
       "beschrijving": "Een hele bloemkool die een uur afgedekt boven parelgort gaart, met ras el hanout, granaatappel en amandelen erover.",
-      "afbeelding": "",
+      "afbeelding": "img/recept/hele-geroosterde-bloemkool-met-parelgort.jpg",
       "bereidingstijd": 75,
       "actieve_tijd": 15,
       "passieve_tijd": 60,
@@ -6488,7 +6491,8 @@
       "bron_naam": "Rukmini Iyer — via The Happy Foodie",
       "bron_type": "url",
       "datum_toegevoegd": "2026-10-05",
-      "ovenprogramma": "Hetelucht. Zet de plaat in het midden."
+      "ovenprogramma": "Hetelucht. Zet de plaat in het midden.",
+      "bron_afbeelding": "https://thehappyfoodie.co.uk/wp-content/uploads/2022/09/RASALHANOUT_CAULIFLOWER_1126-scaled.jpg"
     }
   ]
 }
