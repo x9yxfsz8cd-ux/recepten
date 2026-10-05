@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>In de winkel</title>
-  <link rel="stylesheet" href="./css/style.css?v=208844">
+  <link rel="stylesheet" href="./css/style.css?v=226917">
   <link rel="manifest" href="./manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
@@ -49,8 +49,8 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=208844"></script>
-  <script src="./js/ingredient-icoon.js?v=208844"></script>
+  <script src="./js/gedeeld.js?v=226917"></script>
+  <script src="./js/ingredient-icoon.js?v=226917"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -68,15 +68,38 @@
       'Bier, wijn, aperitieven',
     ];
 
-    // Wat je standaard in huis hebt. Dit is een aanname, dus je kunt hem openklappen.
-    const VOORRAADKAST = ['zout','peper','olie','olijfolie','zonnebloemolie','boter',
-      'roomboter','water','suiker','bloem','azijn'];
+    /* Wat je standaard in huis hebt. Het is een aanname, dus het groepje is in
+       te klappen.
+
+       De test gaat over de hele naam, niet over losse woorden. Dat was de bug:
+       met losse woorden valt 'bloemkool' onder bloem en 'waterkers' onder water,
+       en dan verdween bij Hele geroosterde bloemkool juist het hoofdingrediënt
+       onder "heb je waarschijnlijk al". Een rode peper hoort er ook niet bij —
+       alleen gemalen peper staat in het rek, een verse peper koop je. */
+    const VOORRAADKAST = new Set([
+      'zout', 'zeezout', 'zeezoutvlokken', 'zeezout vlokken', 'keukenzout',
+      'peper', 'peperkorrels', 'peper en zout', 'zout en peper',
+      'olie', 'olijfolie', 'zonnebloemolie', 'sesamolie', 'chili olie',
+      'boter', 'roomboter',
+      'water', 'kookwater', 'pasta kookwater',
+      'suiker', 'kristalsuiker', 'basterdsuiker',
+      'bloem',
+      'azijn', 'rijstazijn', 'wittewijnazijn', 'balsamicoazijn',
+    ]);
+
+    // Bepalingen die het product zelf niet veranderen: zwarte peper is peper.
+    const BEPALING = /\b(extra|vierge|vergine|goede|van goede kwaliteit|versgemalen|gemalen|grof|grove|fijne|fijn|witte|wit|zwarte|ongezouten|plantaardige|koude|lauw|naar smaak|snufje|voor \w+)\b/g;
 
     let recepten = [], producten = {}, huidig = null, zoekterm = '';
 
     function isVoorraad(naam) {
-      return naam.toLowerCase().split(/[^a-zà-ÿ]+/).filter(Boolean)
-        .some(w => VOORRAADKAST.some(v => w.startsWith(v)));
+      const kern = naam.toLowerCase()
+        .replace(/\(.*?\)/g, ' ')   // (voor de dressing), (type 00)
+        .split(',')[0]               // ', in blokjes'
+        .split(' of ')[0]            // 'boter of olijfolie'
+        .replace(BEPALING, ' ')
+        .replace(/\s+/g, ' ').trim();
+      return VOORRAADKAST.has(kern);
     }
 
     function gekochtVoor(id) {

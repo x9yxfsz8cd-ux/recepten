@@ -4,9 +4,8 @@
 
 set -euo pipefail
 
-REPO_DIR="$HOME/Recepten"
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 JSON_FILE="$REPO_DIR/docs/data/recepten.json"
-GH="/tmp/gh/gh_2.67.0_macOS_arm64/bin/gh"
 NOTES_FOLDER="Recepten"
 
 # ---------------------------------------------------------------------------
@@ -56,12 +55,12 @@ fi
 echo ""
 echo "Recepten synchroniseren naar Apple Notes..."
 
-python3 << 'PYEOF'
+JSON_FILE="$JSON_FILE" python3 << 'PYEOF'
 import json
 import subprocess
 import os
 
-JSON_PATH = os.path.expanduser("~/Recepten/docs/data/recepten.json")
+JSON_PATH = os.environ["JSON_FILE"]
 NOTES_FOLDER = "Recepten"
 
 with open(JSON_PATH, "r") as f:
@@ -165,6 +164,6 @@ if [ "${1:-}" = "--push" ]; then
   cd "$REPO_DIR"
   git add docs/data/recepten.json
   git commit -m "Recepten bijgewerkt $(date '+%Y-%m-%d')" || echo "Geen wijzigingen om te committen."
-  GIT_ASKPASS="$GH" GH_TOKEN=$("$GH" auth token) git push
+  git push
   echo "Push voltooid."
 fi

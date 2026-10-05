@@ -568,7 +568,7 @@
       "titel": "Halloumi & Oesterzwam Pita's met Tzatziki",
       "slug": "halloumi-oesterzwam-pita-s-met-tzatziki",
       "beschrijving": "Geroosterde halloumi of oesterzwammen in een heerlijke kruidige marinade, geserveerd op pita's met zelfgemaakte tzatziki en verse toppings.",
-      "afbeelding": "img/halloumi-oesterzwam-pita.jpg",
+      "afbeelding": "img/recept/halloumi-oesterzwam-pita.jpg",
       "bereidingstijd": 30,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 2,
@@ -3924,7 +3924,7 @@
       "titel": "Bio Bietjesstamppot",
       "slug": "bio-bietjesstamppot",
       "beschrijving": "Een heerlijke, plantaardige stamppot met biologische bietjes en aardappelen, afgemaakt met mosterd en ketjap manis.",
-      "afbeelding": "img/bio-bietjesstamppot.jpg",
+      "afbeelding": "img/recept/bio-bietjesstamppot.jpg",
       "bereidingstijd": 45,
       "actieve_tijd": 25,
       "passieve_tijd": 20,
@@ -4168,7 +4168,7 @@
       "slug": "groene-orzo-vegan-pesto",
       "titel": "Groene orzo met vegan pesto en prei",
       "beschrijving": "Bio en babyvriendelijke variatie op groene orzo. De vegan pesto op basis van basilicum, spinazie en kokosmelk maakt het gerecht romig en voedzaam — ook geschikt als puree voor baby's.",
-      "afbeelding": "img/groene-orzo-vegan-pesto.jpg",
+      "afbeelding": "img/recept/groene-orzo-vegan-pesto.jpg",
       "bereidingstijd": 30,
       "actieve_tijd": 30,
       "passieve_tijd": 0,
@@ -4340,7 +4340,7 @@
       "slug": "vegetarische-lasagna-geroosterde-groenten",
       "titel": "Vegetarische lasagna met geroosterde groenten",
       "beschrijving": "Laagjes geroosterde champignons, paprika, courgette en spinazie met romige ricotta, tomatensaus en gesmolten mozzarella.",
-      "afbeelding": "img/vegetarische-lasagna.jpg",
+      "afbeelding": "img/recept/vegetarische-lasagna.jpg",
       "bereidingstijd": 115,
       "actieve_tijd": 40,
       "passieve_tijd": 75,
@@ -4492,7 +4492,8 @@
         "ovenschaal",
         "bakpapier"
       ],
-      "ovenprogramma": "Hetelucht, en de laatste 5-10 minuten Turbogrill voor de kaaskorst."
+      "ovenprogramma": "Hetelucht, en de laatste 5-10 minuten Turbogrill voor de kaaskorst.",
+      "bron_type": "url"
     },
     {
       "id": "r1751158800",
@@ -4511,7 +4512,7 @@
       ],
       "datum_toegevoegd": "2026-06-29",
       "bron": "https://web.archive.org/web/20260607205054/https://www.carolabaktzoethoudertjes.nl/post/kokoskoek-of-kokostaart-of-toch-kokoskoektaart",
-      "bron_type": "website",
+      "bron_type": "url",
       "bron_naam": "Carola Bakt Zoethoudertjes",
       "ingredienten": [
         {
@@ -4609,7 +4610,7 @@
       ],
       "datum_toegevoegd": "2026-07-23",
       "bron": "https://denisekortlever.com/falafel-wraps-met-flatbread-en-feta/",
-      "bron_type": "website",
+      "bron_type": "url",
       "bron_naam": "Denise Kortlever",
       "ingredienten": [
         {

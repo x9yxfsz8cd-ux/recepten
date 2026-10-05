@@ -18,6 +18,10 @@ import unicodedata
 WORTEL = pathlib.Path(__file__).resolve().parent.parent
 RECEPTEN = WORTEL / "docs" / "data" / "recepten.json"
 
+# Hetzelfde rijtje als import.html hanteert; anders staat er na een jaar
+# 'foto', 'website' en 'url' naast elkaar voor hetzelfde.
+SOORTEN = ["url", "kookboek", "tijdschrift", "instagram", "notitie", "klassiek"]
+
 VLEES = ["kip", "rund", "varken", "spek", "pancetta", "gehakt", "worst", "ham",
          "chorizo", "bacon", "lam", "kalkoen", "shoarma", "biefstuk"]
 VIS = ["zalm", "tonijn", "ansjovis", "garnaal", "garnalen", "vis", "kabeljauw",
@@ -163,6 +167,38 @@ def controleer(r):
     for i in r["ingredienten"]:
         if i["hoeveelheid"] and i["eenheid"] == "naar smaak":
             uit.append(("let op", f"'{i['naam']}' heeft hoeveelheid {i['hoeveelheid']} én eenheid 'naar smaak'"))
+
+    # 12. Foto's. Het overzicht maakt van img/recept/x.jpg zelf img/kaart/x.jpg;
+    #     staat een foto ergens anders, dan laadt een kaartje stil de volle
+    #     1400 px. Vier recepten stonden zo los in img/ zonder dat iets het liet
+    #     zien, dus dit hoort een controle te zijn en geen oplettendheid.
+    afb = r.get("afbeelding") or ""
+    if not afb:
+        uit.append(("let op", "geen afbeelding"))
+    elif afb.startswith("http"):
+        uit.append(("let op", f"foto staat op een andere site, werkt niet offline: {afb}"))
+    elif not afb.startswith("img/recept/"):
+        uit.append(("fout", f"foto hoort in img/recept/ te staan, niet in {afb.rsplit('/', 1)[0]}/"))
+    else:
+        if not (WORTEL / "docs" / afb).exists():
+            uit.append(("fout", f"afbeelding bestaat niet: {afb}"))
+        klein = afb.replace("img/recept/", "img/kaart/")
+        if not (WORTEL / "docs" / klein).exists():
+            uit.append(("fout", f"kaartfoto ontbreekt, draai Scripts/kaartfotos.py: {klein}"))
+
+    # 13. Bron
+    if not r.get("bron_type"):
+        uit.append(("fout", "geen bron_type"))
+    elif r["bron_type"] not in SOORTEN:
+        uit.append(("fout", f"bron_type '{r['bron_type']}' staat niet in het vaste rijtje {'/'.join(SOORTEN)}"))
+    if not r.get("bron_naam"):
+        uit.append(("let op", "geen bron_naam"))
+
+    # 14. AH-koppeling, want zonder sleutel geen productfoto en geen regel in
+    #     de boodschappenlijst met de juiste naam.
+    for i in r["ingredienten"]:
+        if "ah" not in i:
+            uit.append(("let op", f"'{i['naam']}' is niet aan een AH-product gekoppeld"))
     return uit
 
 

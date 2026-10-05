@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>Recept toevoegen</title>
-  <link rel="stylesheet" href="./css/style.css?v=208844">
+  <link rel="stylesheet" href="./css/style.css?v=226917">
   <link rel="manifest" href="./manifest.json">
-  <script src="./js/opslag.js?v=208844"></script>
+  <script src="./js/opslag.js?v=226917"></script>
   <style>
     /* Deze pagina had een eigen opmaak met eigen maten, en verwees naar
        var(--serif) die sinds de herziening niet meer bestaat. Nu staat alles
@@ -490,7 +490,7 @@
   "voedingswaarden": {"kcal": 0, "eiwitten": 0, "koolhydraten": 0, "vetten": 0},
   "bron": "${url}",
   "bron_naam": "${bronNaam}",
-  "bron_type": "${url ? 'url' : heeftFoto ? 'foto' : 'tekst'}",
+  "bron_type": "${url ? 'url' : 'notitie'}",
   "datum_toegevoegd": "${vandaag()}"${heeftFoto ? `,
   "_fotokader": {"links": 0, "boven": 0, "rechts": 0, "onder": 0}` : ''}
 }`;
@@ -520,6 +520,9 @@ BELANGRIJKE REGELS:
 - OVEN: schrijf de temperatuur altijd als "180 °C hetelucht". Noemt de bron een
   conventionele oven of twee waardes, neem dan de heteluchtwaarde. Noemt de bron
   één getal zonder uitleg, gebruik dat getal met "hetelucht" erachter.
+- bron_type: kies precies één van url, kookboek, tijdschrift, instagram, notitie,
+  klassiek. Zie je een pagina uit een kookboek, dan kookboek. Een tijdschrift,
+  dan tijdschrift. Weet je het niet, laat "${url ? 'url' : heeftFoto ? 'notitie' : 'notitie'}" staan.
 - bron_naam: de naam van de bron (bijv. "${bronNaam || 'onbekend'}")${heeftFoto ? `
 - _fotokader: staat er op de foto OOK een foto van het afgemaakte gerecht
   (meestal op de pagina ernaast), geef dan het kader daarvan als breukdelen van
@@ -720,6 +723,17 @@ BELANGRIJKE REGELS:
         r.ovenprogramma = 'Regenereren met stoom houdt het brood zacht in plaats van droog.';
       } else {
         r.ovenprogramma = 'Hetelucht. Zet de plaat in het midden.';
+      }
+
+      /* Eén vast rijtje woorden voor bron_type, anders staat er na een jaar
+         'foto', 'website' en 'url' naast elkaar voor hetzelfde. Het model mag
+         'kookboek' kiezen als het een boekpagina ziet; bij elk ander woord
+         vallen we terug op wat we zeker weten uit de bron zelf. */
+      const SOORTEN = ['url', 'kookboek', 'tijdschrift', 'instagram', 'notitie', 'klassiek'];
+      if (!SOORTEN.includes(r.bron_type)) {
+        r.bron_type = /^https?:\/\//.test(r.bron || '')
+          ? (/instagram\.com/.test(r.bron) ? 'instagram' : 'url')
+          : 'notitie';
       }
 
       // Tijden moeten optellen; anders klopt de planning op het overzicht niet
