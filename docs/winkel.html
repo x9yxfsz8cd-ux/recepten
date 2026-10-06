@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <title>In de winkel</title>
-  <link rel="stylesheet" href="./css/style.css?v=226917">
+  <link rel="stylesheet" href="./css/style.css?v=309345">
   <link rel="manifest" href="./manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
@@ -49,8 +49,8 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=226917"></script>
-  <script src="./js/ingredient-icoon.js?v=226917"></script>
+  <script src="./js/gedeeld.js?v=309345"></script>
+  <script src="./js/ingredient-icoon.js?v=309345"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -89,6 +89,11 @@
 
     // Bepalingen die het product zelf niet veranderen: zwarte peper is peper.
     const BEPALING = /\b(extra|vierge|vergine|goede|van goede kwaliteit|versgemalen|gemalen|grof|grove|fijne|fijn|witte|wit|zwarte|ongezouten|plantaardige|koude|lauw|naar smaak|snufje|voor \w+)\b/g;
+
+    const KAST_OPEN = 'winkel_kast_open';
+    function kastStaatOpen() {
+      try { return localStorage.getItem(KAST_OPEN) === '1'; } catch { return false; }
+    }
 
     let recepten = [], producten = {}, huidig = null, zoekterm = '';
 
@@ -230,6 +235,7 @@
       };
       const nodig = voegSamen(ruw);
       const kastSamen = voegSamen(kast);
+      const kastOpen = kastStaatOpen();
 
       // Groeperen op het schap waar AH het product heeft staan
       const groepen = new Map();
@@ -290,16 +296,18 @@
         + gesorteerd.map(([schap, items]) => `
         <div class="groepkop">${schap}</div>
         <ul class="ingredienten-lijst">${items.map(regel).join('')}</ul>`).join('')
-        + (nodig.length ? `
-        <button class="boodschappen-btn" id="stuur-btn">Zet wat nog open staat op de boodschappenlijst</button>` : '')
         + (kast.length ? `
-        <button class="inklap" id="kast-knop" aria-expanded="false">
+        <button class="inklap" id="kast-knop" aria-expanded="${kastOpen}">
           <span>Heb je waarschijnlijk al — ${kastSamen.length}</span>
           <svg class="ic klein" viewBox="0 0 24 24"><use href="#i-chevron"/></svg>
         </button>
-        <ul class="ingredienten-lijst" id="kast-lijst" hidden>
+        <ul class="ingredienten-lijst" id="kast-lijst"${kastOpen ? '' : ' hidden'}>
           ${kastSamen.map(x => regel({ ...x, p: x.ing.ah ? producten[x.ing.ah] : null })).join('')}
-        </ul>` : '');
+        </ul>` : '')
+        // De knop sluit de lijst af, dus die hoort onderaan. Het kastgroepje
+        // stond eronder en daardoor zag je het niet: je was al klaar.
+        + (nodig.length ? `
+        <button class="boodschappen-btn" id="stuur-btn">Zet wat nog open staat op de boodschappenlijst</button>` : '');
 
       el.querySelectorAll('.vink').forEach(k => k.addEventListener('click', () => {
         const delen = k.dataset.i.split(',');
@@ -327,6 +335,8 @@
         const l = document.getElementById('kast-lijst');
         l.hidden = !l.hidden;
         knop.setAttribute('aria-expanded', String(!l.hidden));
+        // Wie hem openzet wil hem meestal bij het volgende recept ook open.
+        try { localStorage.setItem(KAST_OPEN, l.hidden ? '0' : '1'); } catch {}
       });
     }
 
