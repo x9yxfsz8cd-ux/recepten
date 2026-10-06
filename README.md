@@ -11,7 +11,7 @@ Gepubliceerd op <https://x9yxfsz8cd-ux.github.io/recepten/>
 docs/                        de website zelf (GitHub Pages serveert deze map)
   index.html                 overzicht: zoeken, filteren, favorieten
   recept.html                recept met kookmodus, timers en porties schalen
-  winkel.html                boodschappenlijst per recept, met AH-productfoto's
+  winkel.html                boodschappenlijst over één of meer recepten tegelijk
   import.html                recept toevoegen uit een link, foto of tekst
   css/style.css              het hele ontwerp, opgebouwd uit tokens
   js/gedeeld.js              favorieten, porties schalen, opslag vastzetten

@@ -39,14 +39,64 @@ def plat(t):
 
 def kernwoorden(naam):
     """De woorden die ertoe doen in een ingrediëntnaam."""
-    n = plat(naam).split("(")[0].split(",")[0]
-    ruis = {"verse", "vers", "grote", "kleine", "fijngesneden", "gesneden",
+    # Haakjes eerst weg: plat() maakt er spaties van, waardoor de split hieronder
+    # niets meer deed en 'ui (geel of rood)' als kernwoorden 'geel' en 'rood'
+    # overhield. Die staan natuurlijk in geen enkele stap.
+    n = re.sub(r"\(.*?\)", " ", naam).split(",")[0]
+    n = plat(n)
+    ruis = {"rode", "gele", "groene", "witte", "bruine", "zwarte", "blauwe",
+            "paarse", "rood", "geel", "groen", "bruin", "zwart",
+            "verse", "vers", "grote", "kleine", "fijngesneden", "gesneden", "gesnipperd",
             "geraspte", "geraspt", "gehakt", "fijngehakt", "biologische",
             "biologisch", "naar", "smaak", "optioneel", "voor", "het", "een",
             "van", "met", "dikke", "dunne", "extra", "vergine", "vierge",
             "goede", "kwaliteit", "stuks", "blokjes", "plakjes", "reepjes",
             "roosjes", "ringetjes", "partjes", "stukjes", "halve", "hele"}
     return [w for w in n.split() if len(w) > 3 and w not in ruis]
+
+
+# Een stap mag de rest ook als groep noemen: "alle overige ingrediënten".
+# Dan valt er over losse ingrediënten niets te zeggen.
+SAMEN = re.compile(r"(alle |de |rest van de )?overige ingredi|alle ingredi")
+
+# Het recept noemt de soort, de stap het soortnaam-woord: je koopt linguine,
+# maar in stap 3 staat "kook de pasta".
+SOORT = {
+    "pasta": ["spaghetti", "linguine", "tagliatelle", "penne", "fusilli", "orzo",
+              "tonnarelli", "macaroni", "farfalle", "rigatoni", "pappardelle",
+              "lasagne", "ravioli", "orecchiette", "gnocchi"],
+    "noedel": ["eiernoedels", "snelkooknoedels", "ramen", "udon", "mihoen",
+               "wonton", "noedels"],
+    "rijst": ["jasmijnrijst", "basmatirijst", "risottorijst", "arborio", "sushirijst"],
+    "ei": ["scharreleieren", "eieren", "eierdooiers"],
+    "zalm": ["sushizalm", "zalmfilets"],
+    "paddenstoel": ["portobello", "champignon", "shiitake", "oesterzwam",
+                    "cantharel", "eekhoorntjesbrood"],
+}
+
+
+def haakjeswoorden(naam):
+    """Woorden tussen haakjes. Bij 'queen butter beans (of andere witte bonen)'
+    staat het woord dat de stap gebruikt juist daar."""
+    uit = []
+    for stuk in re.findall(r"\((.*?)\)", naam):
+        uit += [w for w in plat(stuk).split() if len(w) > 3]
+    return uit
+
+
+def getallen_en_meervoud(w):
+    """Enkelvoud en meervoud met open lettergreep: 'tomaten' hoort bij een stap
+    over 'tomaat', en 'bospenen' bij 'bospeen'."""
+    uit = set()
+    if w.endswith("en") and len(w) > 4:
+        stam = w[:-2]
+        uit.add(stam)
+        if len(stam) > 2 and stam[-1] not in "aeiou" and stam[-2] in "aeiou":
+            uit.add(stam[:-1] + stam[-2] + stam[-1])
+    for dubbel in ("aa", "ee", "oo", "uu"):
+        if dubbel in w:
+            uit.add(w.replace(dubbel, dubbel[0]) + "en")
+    return {x for x in uit if len(x) > 3}
 
 
 def controleer(r):
@@ -57,23 +107,39 @@ def controleer(r):
     namen = [i["naam"] for i in r["ingredienten"]]
 
     # 1. Ingrediënt dat nergens in een stap voorkomt
-    for i in r["ingredienten"]:
-        ws = kernwoorden(i["naam"])
-        if not ws:
-            continue
-        # Samenstellingen ook op hun staart proberen: een stap die 'bouillon'
-        # zegt dekt 'groentebouillon', en 'champignons' dekt
-        # 'kastanjechampignonplakjes'.
-        kandidaten = set()
-        for w in ws:
-            kandidaten.add(w[:6])
-            for staart in ("bouillon", "champignon", "tomaat", "tomaten", "peterselie",
-                           "aardappel", "ui", "olie", "azijn", "kaas", "noten", "rijst",
-                           "zout", "peper", "broodje", "brood", "suiker", "melk", "room"):
-                if staart in w and len(w) > len(staart):
-                    kandidaten.add(staart[:6])
-        if not any(k in sp for k in kandidaten):
-            uit.append(("let op", f"'{i['naam']}' komt in geen enkele stap voor"))
+    #
+    # Alleen zinvol als de stappen de ingrediënten ook echt bij naam noemen.
+    # Zegt er één "en alle overige ingrediënten", dan is elk los ingrediënt
+    # gedekt en valt er niets te controleren.
+    if not SAMEN.search(sp):
+        for i in r["ingredienten"]:
+            ws = kernwoorden(i["naam"])
+            if not ws:
+                continue
+            kandidaten = set(haakjeswoorden(i["naam"]))
+            for w in ws:
+                kandidaten.add(w[:6])
+                kandidaten |= getallen_en_meervoud(w)
+                # Een samenstelling mag ook op zijn staart gevonden worden: een
+                # stap die 'doperwten' zegt dekt 'diepvriesdoperwten', en
+                # 'eieren' dekt 'scharreleieren'. Vanaf vijf letters, want
+                # korter levert toevalstreffers op.
+                for k in range(1, len(w) - 4):
+                    kandidaten.add(w[k:])
+                # Korte staarten kunnen dat niet zelf, dus die staan er los bij:
+                # 'zeezout' hoort bij een stap over zout, 'sesamolie' bij olie.
+                for staart in ("bouillon", "champignon", "tomaat", "tomaten",
+                               "peterselie", "aardappel", "ui", "olie", "azijn",
+                               "kaas", "noten", "rijst", "zout", "peper",
+                               "broodje", "brood", "suiker", "melk", "room", "meel"):
+                    if staart in w and len(w) > len(staart):
+                        kandidaten.add(staart[:6])
+                # En de soortnaam: 'linguine' hoort bij een stap over 'pasta'.
+                for generiek, soorten in SOORT.items():
+                    if any(so in w for so in soorten):
+                        kandidaten.add(generiek)
+            if not any(k in sp for k in kandidaten):
+                uit.append(("let op", f"'{i['naam']}' komt in geen enkele stap voor"))
 
     # 2. Oven gebruikt zonder voorverwarmen
     if re.search(r"\bin de oven\b|\bovenschaal\b|\bbraadslede\b", sp) \

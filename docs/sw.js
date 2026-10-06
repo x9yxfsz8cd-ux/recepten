@@ -2,7 +2,7 @@
    De productfoto's moeten offline beschikbaar zijn: juist in de kelder van een
    supermarkt heb je geen bereik, en daar is het winkelscherm voor bedoeld. */
 
-const CACHE = 'recepten-v309345';
+const CACHE = 'recepten-v311950';
 
 const STATISCH = [
   './',
@@ -10,10 +10,10 @@ const STATISCH = [
   './recept.html',
   './winkel.html',
   './import.html',
-  './css/style.css?v=309345',
-  './js/gedeeld.js?v=309345',
-  './js/ingredient-icoon.js?v=309345',
-  './js/opslag.js?v=309345',
+  './css/style.css?v=311950',
+  './js/gedeeld.js?v=311950',
+  './js/ingredient-icoon.js?v=311950',
+  './js/opslag.js?v=311950',
   './manifest.json',
 ];
 
@@ -32,9 +32,19 @@ async function vulCache() {
       new Response(JSON.stringify({ recepten: recepten.recepten }),
         { headers: { 'Content-Type': 'application/json' } }));
 
+    /* Vooraf alleen wat je meteen ziet of in de winkel offline nodig hebt: de
+       kleine kaartfoto's van het overzicht en de productfoto's hieronder.
+
+       De grote gerechtfoto's zijn samen 11 MB en heb je pas nodig als je dat
+       ene recept opent. Die stonden hier wél in en de kaartfoto's niet, dus het
+       eerste bezoek trok 11 MB binnen die je nog niet nodig had en moest de
+       kaartjes er daarna alsnog los bij halen. De fetch-handler hieronder vangt
+       een grote foto vanzelf op zodra je het recept een keer bekijkt. */
     const paden = new Set();
     recepten.recepten.forEach(r => {
-      if (r.afbeelding && !r.afbeelding.startsWith('http')) paden.add('./' + r.afbeelding);
+      if (r.afbeelding && !r.afbeelding.startsWith('http')) {
+        paden.add('./' + r.afbeelding.replace('img/recept/', 'img/kaart/'));
+      }
     });
     Object.values(producten).forEach(p => {
       if (p && p.afbeelding && !String(p.afbeelding).startsWith('http')) {
