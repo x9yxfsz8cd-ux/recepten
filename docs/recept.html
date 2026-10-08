@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-  <meta property="og:title" content="Recept">
-  <meta property="og:description" content="">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
+  <!-- WhatsApp en iMessage draaien geen javascript, dus wat hieronder staat is
+       wat zij zien. De regels hieronder worden pas in de browser per recept
+       ingevuld; deze waarden zijn de terugval voor wie dat niet doet. -->
+  <meta name="description" content="Persoonlijke receptenverzameling van Shar &amp; Robin">
+  <meta property="og:title" content="Onze Recepten">
+  <meta property="og:description" content="Persoonlijke receptenverzameling van Shar &amp; Robin">
   <meta property="og:type" content="article">
-  <meta property="og:image" content="">
+  <meta property="og:image" content="https://x9yxfsz8cd-ux.github.io/recepten/img/icon-512.png">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=448033">
+  <link rel="stylesheet" href="./css/style.css?v=450773">
   <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./img/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
 
@@ -59,9 +65,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=448033"></script>
-  <script src="./js/ingredient-icoon.js?v=448033"></script>
-  <script src="./js/opslag.js?v=448033"></script>
+  <script src="./js/gedeeld.js?v=450773"></script>
+  <script src="./js/ingredient-icoon.js?v=450773"></script>
+  <script src="./js/opslag.js?v=450773"></script>
 
   <script>
     let recept = null;
@@ -839,9 +845,12 @@
       }
       setMeta('property', 'og:title', r.titel);
       setMeta('property', 'og:description', r.beschrijving || '');
+        setMeta('name', 'description', r.beschrijving || '');
       setMeta('property', 'og:type', 'article');
       if (r.afbeelding) {
-        setMeta('property', 'og:image', r.afbeelding);
+        // Open Graph wil een volledige url; een pad als img/recept/x.jpg
+        // levert bij de meeste lezers niets op.
+        setMeta('property', 'og:image', new URL(r.afbeelding, location.href).href);
       }
 
       const img = `
