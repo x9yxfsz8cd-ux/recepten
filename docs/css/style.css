@@ -390,15 +390,21 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:var(--s-2) v
 .boodschappen-toast.zichtbaar{ opacity:1; transform:translateX(-50%) translateY(0) }
 
 /* ── TIMER ───────────────────────────────────────────────────────────────── */
-.timer-balk{ position:fixed; left:50%; bottom:calc(4.6rem + env(safe-area-inset-bottom));
-  transform:translateX(-50%) translateY(140%); width:min(26rem,calc(100vw - 2rem));
-  display:flex; align-items:center; gap:var(--s-3); padding:var(--s-2) var(--s-3);
+/* Meerdere timers stapelen boven de tabbalk, de nieuwste onderaan. De stapel
+   vangt zelf geen tikken op, de balken erin wel — anders ligt er een onzichtbare
+   laag over de pagina. */
+.timer-stapel{ position:fixed; left:50%; bottom:calc(4.6rem + env(safe-area-inset-bottom));
+  transform:translateX(-50%); width:min(26rem,calc(100vw - 2rem));
+  display:flex; flex-direction:column; gap:var(--s-2); z-index:900;
+  pointer-events:none }
+.timer-balk{ display:flex; align-items:center; gap:var(--s-3); padding:var(--s-2) var(--s-3);
   background:rgba(var(--grond-rgb),.82);
   -webkit-backdrop-filter:blur(24px) saturate(180%);
   backdrop-filter:blur(24px) saturate(180%);
-  border:.5px solid var(--lijn); border-radius:var(--r-groep); z-index:900;
-  transition:transform .36s cubic-bezier(.32,.72,0,1) }
-.timer-balk.zichtbaar{ transform:translateX(-50%) translateY(0) }
+  border:.5px solid var(--lijn); border-radius:var(--r-groep);
+  pointer-events:auto; opacity:0; transform:translateY(45%);
+  transition:opacity .26s ease,transform .36s cubic-bezier(.32,.72,0,1) }
+.timer-balk.zichtbaar{ opacity:1; transform:translateY(0) }
 .timer-ring{ width:1.9rem; height:1.9rem; flex-shrink:0; transform:rotate(-90deg) }
 .timer-ring circle{ fill:none; stroke-width:2.6 }
 .timer-ring__baan{ stroke:var(--vlak) }
@@ -565,7 +571,7 @@ select{ background:var(--vlak); border-radius:var(--r-ctl); padding:var(--s-2) v
 
 /* ── PRINT ───────────────────────────────────────────────────────────────── */
 @media print{
-  .tabbalk,.fase-balk,.timer-balk,.boodschappen-toast,.kookmodus-overlay,
+  .tabbalk,.fase-balk,.timer-stapel,.boodschappen-toast,.kookmodus-overlay,
   .hart-btn,.hero-acties,.portie-schaler,.kookmodus-btn,.boodschappen-btn,
   .print-btn,.stap-timer-knop,.echo,.search-bar,.tag-filters,.vink,
   .ingredient-foto,.ingredient-foto--leeg{ display:none!important }

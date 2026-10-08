@@ -10,7 +10,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=311950">
+  <link rel="stylesheet" href="./css/style.css?v=448033">
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
@@ -59,9 +59,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=311950"></script>
-  <script src="./js/ingredient-icoon.js?v=311950"></script>
-  <script src="./js/opslag.js?v=311950"></script>
+  <script src="./js/gedeeld.js?v=448033"></script>
+  <script src="./js/ingredient-icoon.js?v=448033"></script>
+  <script src="./js/opslag.js?v=448033"></script>
 
   <script>
     let recept = null;
@@ -572,19 +572,37 @@
 
     // ── TIMER ──
 
-    let timer = { resterend: 0, totaal: 0, label: '', loopt: false, tik: null };
+    /* Meer dan één timer tegelijk. Elke stap met een tijd erin krijgt een eigen
+       knop, dus je tikt er zo twee achter elkaar aan: de oven van 30 minuten en
+       daarna de pasta van 10. Daarvoor overschreef de tweede de eerste zonder
+       iets te zeggen, en stond je ovenschotel stil te verbranden. */
+    let timers = [];
+    let timerNr = 0;
 
     function tijdTekst(seconden) {
       const m = Math.floor(seconden / 60), s = seconden % 60;
       return `${m}:${String(s).padStart(2, '0')}`;
     }
 
-    function timerBalk() {
-      let el = document.getElementById('timer-balk');
-      if (el) return el;
-      el = document.createElement('div');
-      el.id = 'timer-balk';
+    function timerStapel() {
+      let el = document.getElementById('timer-stapel');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = 'timer-stapel';
+        el.className = 'timer-stapel';
+        document.body.appendChild(el);
+      }
+      return el;
+    }
+
+    function balkVan(id) {
+      return timerStapel().querySelector(`.timer-balk[data-id="${id}"]`);
+    }
+
+    function maakBalk(t) {
+      const el = document.createElement('div');
       el.className = 'timer-balk';
+      el.dataset.id = t.id;
       el.innerHTML = `
         <svg class="timer-ring" viewBox="0 0 44 44" aria-hidden="true">
           <circle class="timer-ring__baan" cx="22" cy="22" r="19"></circle>
@@ -592,37 +610,39 @@
                   stroke-dasharray="119.4" stroke-dashoffset="0"></circle>
         </svg>
         <div class="timer-info">
-          <div class="timer-tijd" id="timer-tijd">0:00</div>
-          <div class="timer-label" id="timer-label"></div>
+          <div class="timer-tijd">0:00</div>
+          <div class="timer-label"></div>
         </div>
         <div class="timer-acties">
-          <button class="timer-btn" id="timer-klok" aria-label="Ook in Klok-app zetten" title="Zet in Klok-app">
+          <button class="timer-btn timer-klok" aria-label="Ook in Klok-app zetten" title="Zet in Klok-app">
             <svg viewBox="0 0 16 16"><path d="M8 1.2a6.8 6.8 0 100 13.6A6.8 6.8 0 008 1.2zm0 1.6a5.2 5.2 0 110 10.4A5.2 5.2 0 018 2.8zm-.8 1.6v4l3.2 1.9.8-1.3-2.4-1.4V4.4z"/></svg>
           </button>
-          <button class="timer-btn" id="timer-pauze" aria-label="Pauzeer"></button>
-          <button class="timer-btn" id="timer-stop" aria-label="Stop">
+          <button class="timer-btn timer-pauze" aria-label="Pauzeer"></button>
+          <button class="timer-btn timer-stop" aria-label="Stop">
             <svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" rx="2"/></svg>
           </button>
         </div>`;
-      document.body.appendChild(el);
-      el.querySelector('#timer-pauze').addEventListener('click', pauzeerTimer);
-      el.querySelector('#timer-stop').addEventListener('click', stopTimer);
-      el.querySelector('#timer-klok').addEventListener('click', zetTimerInKlok);
+      timerStapel().appendChild(el);
+      el.querySelector('.timer-pauze').addEventListener('click', () => pauzeerTimer(t.id));
+      el.querySelector('.timer-stop').addEventListener('click', () => stopTimer(t.id));
+      el.querySelector('.timer-klok').addEventListener('click', () => zetTimerInKlok(t.id));
+      requestAnimationFrame(() => el.classList.add('zichtbaar'));
       return el;
     }
 
-    function tekenTimer() {
-      const el = timerBalk();
-      el.querySelector('#timer-tijd').textContent = tijdTekst(timer.resterend);
-      el.querySelector('#timer-label').textContent = timer.label;
+    function tekenTimer(t) {
+      const el = balkVan(t.id);
+      if (!el) return;
+      el.querySelector('.timer-tijd').textContent = tijdTekst(t.resterend);
+      el.querySelector('.timer-label').textContent = t.label;
       const ring = el.querySelector('.timer-ring__voortgang');
       const omtrek = 119.4;
-      const deel = timer.totaal ? timer.resterend / timer.totaal : 0;
+      const deel = t.totaal ? t.resterend / t.totaal : 0;
       ring.style.strokeDashoffset = String(omtrek * (1 - deel));
-      el.querySelector('#timer-pauze').innerHTML = timer.loopt
+      el.querySelector('.timer-pauze').innerHTML = t.loopt
         ? '<svg viewBox="0 0 16 16"><rect x="4" y="3" width="3" height="10" rx="1"/><rect x="9" y="3" width="3" height="10" rx="1"/></svg>'
         : '<svg viewBox="0 0 16 16"><path d="M4 3l9 5-9 5z"/></svg>';
-      el.classList.toggle('afgelopen', timer.resterend === 0 && timer.totaal > 0);
+      el.classList.toggle('afgelopen', t.resterend === 0 && t.totaal > 0);
     }
 
     function startTimer(seconden, label) {
@@ -636,46 +656,66 @@
           setTimeout(() => toonToast('Scherm uit? Tik op het klokje — dan loopt hij door in de Klok-app.'), 900);
         }
       } catch {}
-      clearInterval(timer.tik);
-      timer = { resterend: seconden, totaal: seconden, label, loopt: true, tik: null };
-      const el = timerBalk();
-      el.classList.add('zichtbaar');
-      tekenTimer();
-      timer.tik = setInterval(() => {
-        if (!timer.loopt) return;
-        timer.resterend = Math.max(0, timer.resterend - 1);
-        tekenTimer();
-        if (timer.resterend === 0) {
-          clearInterval(timer.tik);
-          timer.loopt = false;
+
+      // Dezelfde stap nog eens aantikken zet díé timer opnieuw. Hem stoppen en
+      // een nieuwe maken gaf heel even twee gelijke balken naast elkaar.
+      let t = timers.find(x => x.label === label);
+      if (t) {
+        Object.assign(t, { resterend: seconden, totaal: seconden, loopt: true });
+      } else {
+        t = { id: ++timerNr, resterend: seconden, totaal: seconden,
+              label, loopt: true, tik: null };
+        timers.push(t);
+        maakBalk(t);
+      }
+      tekenTimer(t);
+      laatLopen(t);
+    }
+
+    function laatLopen(t) {
+      clearInterval(t.tik);
+      t.tik = setInterval(() => {
+        if (!t.loopt) return;
+        t.resterend = Math.max(0, t.resterend - 1);
+        tekenTimer(t);
+        if (t.resterend === 0) {
+          clearInterval(t.tik);
+          t.loopt = false;
           piep();
-          toonToast(`Timer klaar — ${timer.label}`);
+          toonToast(`Timer klaar — ${t.label}`);
         }
       }, 1000);
     }
 
-    // Draagt de lopende timer over aan de Klok-app. De timer in de pagina is
+    // Draagt een lopende timer over aan de Klok-app. De timer in de pagina is
     // alleen betrouwbaar zolang het scherm aan staat en Safari vooraan is;
     // de Klok-app loopt door en geeft een melding.
-    function zetTimerInKlok() {
-      if (!timer.resterend) return;
-      const naam = `${timer.label} — ${recept.titel}`;
-      const invoer = `${timer.resterend}|${naam}`;
+    function zetTimerInKlok(id) {
+      const t = timers.find(x => x.id === id);
+      if (!t || !t.resterend) return;
+      const naam = `${t.label} — ${recept.titel}`;
+      const invoer = `${t.resterend}|${naam}`;
       window.location.href = `shortcuts://run-shortcut?name=${encodeURIComponent(SHORTCUT_TIMER)}`
         + `&input=text&text=${encodeURIComponent(invoer)}`;
     }
 
-    function pauzeerTimer() {
-      if (timer.resterend === 0) return;
-      timer.loopt = !timer.loopt;
-      tekenTimer();
+    function pauzeerTimer(id) {
+      const t = timers.find(x => x.id === id);
+      if (!t || t.resterend === 0) return;
+      t.loopt = !t.loopt;
+      tekenTimer(t);
     }
 
-    function stopTimer() {
-      clearInterval(timer.tik);
-      timer.loopt = false;
-      const el = document.getElementById('timer-balk');
-      if (el) { el.classList.remove('zichtbaar', 'afgelopen'); }
+    function stopTimer(id) {
+      const t = timers.find(x => x.id === id);
+      if (!t) return;
+      clearInterval(t.tik);
+      timers = timers.filter(x => x.id !== id);
+      const el = balkVan(id);
+      if (el) {
+        el.classList.remove('zichtbaar');
+        setTimeout(() => el.remove(), 400);
+      }
     }
 
     // Kort geluid zonder extern bestand
