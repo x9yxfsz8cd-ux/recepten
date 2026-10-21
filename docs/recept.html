@@ -14,7 +14,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://x9yxfsz8cd-ux.github.io/recepten/img/icon-512.png">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=586787">
+  <link rel="stylesheet" href="./css/style.css?v=586922">
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./img/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -66,9 +66,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=586787"></script>
-  <script src="./js/ingredient-icoon.js?v=586787"></script>
-  <script src="./js/opslag.js?v=586787"></script>
+  <script src="./js/gedeeld.js?v=586922"></script>
+  <script src="./js/ingredient-icoon.js?v=586922"></script>
+  <script src="./js/opslag.js?v=586922"></script>
 
   <script>
     let recept = null;
@@ -984,7 +984,14 @@
           : ' Past in allebei de ovens.'));
       }
       if (/koekenpan|hapjespan|sauteerpan|braadpan|grillpan|wok|steelpan|soeppan/.test(alleStappen)) {
-        keukenTips.push('De Demeyere-pannen houden op inductie lang warmte vast; zet een stand lager zodra de pan op temperatuur is.');
+        // Demeyere is roestvrij staal met een dikke bodem. Zwilling raadt aan
+        // voor te verwarmen op 70 tot 80 procent van het maximum — op de Bora
+        // dus 6-7, ook als het recept 'hoog vuur' zegt. Leeg voorverwarmen mag,
+        // maar het duurt een paar minuten voor hij op temperatuur is.
+        keukenTips.push('Demeyere is dik roestvrij staal: verwarm voor op stand 6-7 '
+          + '(zo\'n 70-80% van het maximum) en geef hem een paar minuten, ook als '
+          + 'het recept hoog vuur zegt. Daarna houdt hij de warmte lang vast, dus '
+          + 'een stand lager zodra hij heet is.');
       }
       const keuken = keukenTips.length ? `
         <div class="keuken-tip">
