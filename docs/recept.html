@@ -14,7 +14,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://x9yxfsz8cd-ux.github.io/recepten/img/icon-512.png">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=450773">
+  <link rel="stylesheet" href="./css/style.css?v=586787">
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./img/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -48,6 +48,7 @@
     <div class="km-inhoud">
       <div class="km-ingredienten" id="km-ingredienten"></div>
       <p class="km-stap-tekst" id="km-stap-tekst"></p>
+      <div class="km-stand" id="km-stand" hidden></div>
       <button class="km-timer-knop" id="km-timer-knop" hidden></button>
     </div>
     <div class="km-nav">
@@ -65,9 +66,9 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=450773"></script>
-  <script src="./js/ingredient-icoon.js?v=450773"></script>
-  <script src="./js/opslag.js?v=450773"></script>
+  <script src="./js/gedeeld.js?v=586787"></script>
+  <script src="./js/ingredient-icoon.js?v=586787"></script>
+  <script src="./js/opslag.js?v=586787"></script>
 
   <script>
     let recept = null;
@@ -260,6 +261,19 @@
         return `<span class="km-ing"><b>${hoeveelheid}</b> ${metHoofdletter(ing.naam)}</span>`;
       }).join('');
       strook.hidden = nodig.length === 0;
+
+      // Welke stand op de plaat. Met natte handen wil je dat niet uit de
+      // zinnen hoeven vissen.
+      const standEl = document.getElementById('km-stand');
+      const stand = boraStand(stap.tekst);
+      if (stand === 'P') {
+        standEl.textContent = 'Bora op Power, daarna terugzetten';
+      } else if (stand === 'warmhoud 3') {
+        standEl.textContent = 'Bora warmhoudstand 3';
+      } else if (stand) {
+        standEl.textContent = `Bora stand ${stand}`;
+      }
+      standEl.hidden = !stand;
 
       // Staat er een tijd in de stap, dan één grote knop om die timer te zetten
       const timerKnop = document.getElementById('km-timer-knop');
@@ -769,6 +783,50 @@
       return (!seconden || seconden > 4 * 3600) ? 0 : seconden;
     }
 
+    /* Welke stand op de Bora X Pure. De plaat heeft stand 1 tot 9 en een
+       Power-stand, en daarnaast drie warmhoudstanden: 1 smelten (~42 °C),
+       2 warmhouden (~74 °C) en 3 sudderen (~94 °C).
+
+       Dit is onze vertaling van wat het recept zelf zegt, net als het
+       ovenprogramma — geen voorschrift van de bron. Staat er geen vuurhoogte
+       in de stap, dan zeggen we niets: 'bak de ui' zonder meer is te vaag om
+       een getal aan te hangen, en een stand die níét klopt is erger dan geen.
+
+       De volgorde telt twee keer. Het samengestelde geval moet eerst, anders
+       pakt 'middelhoog vuur' ook de helft van 'laag tot middelhoog vuur'. En
+       wat het recept letterlijk zegt gaat voor op wat wij uit een werkwoord
+       afleiden: staat er 'fruit de sjalot op middelhoog vuur', dan is
+       middelhoog het antwoord en niet ons vermoeden bij fruiten. */
+    const BORA_STANDEN = [
+      [/\b(laag|zacht)[\s-]*(tot|-)?[\s-]*middelhoo?g\w* vuur\b/i, '5'],
+      [/\bhalfhoog tot hoog vuur\b|\bmiddelhoog tot hoog vuur\b/i,   '7-8'],
+      [/\b(hoogste|hoog) vuur\b/i,                                   '8-9'],
+      [/\bmiddelhoog vuur\b|\bmiddelhoge (stand|vuur)\b/i,          '6-7'],
+      [/\b(laag|zacht) vuur\b|\blage stand\b/i,                     '3-4'],
+      [/\bsudder\w*|\bpruttel\w*/i,                                 'warmhoud 3'],
+      [/\baan de kook\b|\bbreng\b[^.]{0,30}\bkook\b/i,            'P'],
+      [/\bfruit\w*/i,                                                '4-5'],
+    ];
+
+    function boraStand(tekst) {
+      for (const [patroon, stand] of BORA_STANDEN) {
+        if (patroon.test(tekst)) return stand;
+      }
+      return null;
+    }
+
+    function stapMetStand(tekst) {
+      const stand = boraStand(tekst);
+      if (!stand) return '';
+      const uitleg = stand === 'P'
+        ? 'Bora op Power om snel aan de kook te komen, daarna terugzetten'
+        : stand === 'warmhoud 3'
+          ? 'Bora warmhoudstand 3, ongeveer 94 graden'
+          : `Bora stand ${stand}`;
+      return `<span class="stap-stand" title="${uitleg}">${
+        stand === 'warmhoud 3' ? 'warmhoud 3' : stand}</span>`;
+    }
+
     function stapMetTimer(tekst, nummer) {
       const seconden = secondenInTekst(tekst);
       if (!seconden) return '';
@@ -885,7 +943,7 @@
       const stappen = r.stappen.map(s => `
         <div class="stap" data-stap="${s.nummer}" role="button" tabindex="0" aria-label="Stap ${s.nummer}">
           <span class="stap-nummer">${s.nummer}</span>
-          <p class="stap-tekst">${s.tekst}${stapMetTimer(s.tekst, s.nummer)}</p>
+          <p class="stap-tekst">${s.tekst}${stapMetStand(s.tekst)}${stapMetTimer(s.tekst, s.nummer)}</p>
         </div>`).join('');
 
       const heeftVoeding = r.voedingswaarden && (r.voedingswaarden.kcal || r.voedingswaarden.eiwitten || r.voedingswaarden.koolhydraten || r.voedingswaarden.vetten);
@@ -922,8 +980,8 @@
       if (r.ovenprogramma) {
         const groot = /braadslede|bakplaat/.test(alleStappen);
         keukenTips.push(r.ovenprogramma + (groot
-          ? ' Een braadslede of bakplaat past alleen in de SteamPro (70 l).'
-          : ''));
+          ? ' Pak de SteamPro (70 l) — een braadslede of bakplaat past niet in de CombiQuick.'
+          : ' Past in allebei de ovens.'));
       }
       if (/koekenpan|hapjespan|sauteerpan|braadpan|grillpan|wok|steelpan|soeppan/.test(alleStappen)) {
         keukenTips.push('De Demeyere-pannen houden op inductie lang warmte vast; zet een stand lager zodra de pan op temperatuur is.');
