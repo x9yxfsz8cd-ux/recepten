@@ -234,6 +234,23 @@ def controleer(r):
         if i["hoeveelheid"] and i["eenheid"] == "naar smaak":
             uit.append(("let op", f"'{i['naam']}' heeft hoeveelheid {i['hoeveelheid']} én eenheid 'naar smaak'"))
 
+    # 11b. Een wachttijd die niet in de totale tijd zit
+    #      De poké bowl liet de rijst een uur afkoelen maar stond op 35 minuten
+    #      totaal. Plan je daarop, dan sta je een uur te wachten.
+    for s in r["stappen"]:
+        m = re.search(r"(\d+)\s*(?:-|–|\s*tot\s*|\s*à\s*)?\s*(\d+)?\s*"
+                      r"(min(?:uut|uten)?|uur)\b", s["tekst"], re.I)
+        if not m:
+            continue
+        waarde = int(m.group(2) or m.group(1))
+        minuten = waarde * 60 if m.group(3).lower() == "uur" else waarde
+        # 'het lekkerst is als' en 'eventueel' zijn een suggestie, geen wachttijd
+        vrijblijvend = re.search(r"lekkerst|eventueel|desgewenst|je kunt|liefst",
+                                 s["tekst"], re.I)
+        if minuten > (r.get("bereidingstijd") or 0) and not vrijblijvend:
+            uit.append(("fout", f"stap {s['nummer']} duurt {minuten} min maar het recept "
+                                f"zegt {r.get('bereidingstijd')} min in totaal"))
+
     # 12. Foto's. Het overzicht maakt van img/recept/x.jpg zelf img/kaart/x.jpg;
     #     staat een foto ergens anders, dan laadt een kaartje stil de volle
     #     1400 px. Vier recepten stonden zo los in img/ zonder dat iets het liet

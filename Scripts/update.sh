@@ -72,6 +72,31 @@ if [ "$mislukt" = 1 ]; then
 fi
 
 # ---------------------------------------------------------------------------
+# Tests
+# ---------------------------------------------------------------------------
+# Draaien tegen de echte recepten.json, dus ze vangen ook datafouten.
+if command -v node >/dev/null 2>&1; then
+  printf '\n\033[1mTests\033[0m\n'
+  testfout=0
+  for t in Scripts/tests/qa-*.mjs; do
+    [ -e "$t" ] || continue
+    uitslag="$(node "$t" 2>&1)"
+    laatste="$(printf '%s' "$uitslag" | tail -1)"
+    if printf '%s' "$laatste" | grep -q ' 0 fout'; then
+      printf '   %-24s %s\n' "$(basename "$t")" "$laatste"
+    else
+      printf '   %-24s \033[1mMISLUKT\033[0m\n' "$(basename "$t")"
+      printf '%s\n' "$uitslag" | grep FOUT | sed 's/^/      /'
+      testfout=1
+    fi
+  done
+  if [ "$testfout" = 1 ]; then
+    printf '\n\033[1mEen test faalt.\033[0m Niet gepusht.\n'
+    exit 1
+  fi
+fi
+
+# ---------------------------------------------------------------------------
 # Nakijken
 # ---------------------------------------------------------------------------
 printf '\n\033[1mRecepten nakijken\033[0m\n'

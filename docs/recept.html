@@ -14,7 +14,7 @@
   <meta property="og:type" content="article">
   <meta property="og:image" content="https://x9yxfsz8cd-ux.github.io/recepten/img/icon-512.png">
   <title>Recept</title>
-  <link rel="stylesheet" href="./css/style.css?v=587055">
+  <link rel="stylesheet" href="./css/style.css?v=684057">
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./img/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -66,14 +66,13 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=587055"></script>
-  <script src="./js/ingredient-icoon.js?v=587055"></script>
-  <script src="./js/opslag.js?v=587055"></script>
+  <script src="./js/gedeeld.js?v=684057"></script>
+  <script src="./js/ingredient-icoon.js?v=684057"></script>
+  <script src="./js/opslag.js?v=684057"></script>
 
   <script>
     let recept = null;
     // Hoeveel porties je standaard wilt zien. Vier: koken voor twee dagen.
-    const STANDAARD_PORTIES = 4;
 
     let huidigPorties = 1;
     let basisPorties = 1;
@@ -883,12 +882,8 @@
       // staan vaak op twee; die worden standaard verdubbeld. Een taart of
       // pizzadeeg laten we met rust: die zit vast aan een vorm en halveren of
       // verdubbelen werkt daar niet. Zet je het zelf anders, dan onthoudt hij dat.
-      const vasteVorm = (r.benodigdheden || [])
-        .some(b => /springvorm|bakvorm|taartvorm|pizzasteen/i.test(b));
-      const eigenKeuze = parseInt(localStorage.getItem(`porties_${r.id}`) || '', 10);
-      huidigPorties = Number.isFinite(eigenKeuze) && eigenKeuze > 0
-        ? eigenKeuze
-        : (vasteVorm ? r.porties : STANDAARD_PORTIES);
+      huidigPorties = portiesVoor(r);     // staat in gedeeld.js, zodat de
+                                          // winkelpagina hetzelfde rekent
       document.title = `${r.titel} — Onze Recepten`;
 
       // Dynamische OG meta tags

@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#0B0B0A" media="(prefers-color-scheme: dark)">
   <meta name="description" content="Boodschappenlijst per recept, op schapvolgorde">
   <title>In de winkel</title>
-  <link rel="stylesheet" href="./css/style.css?v=587055">
+  <link rel="stylesheet" href="./css/style.css?v=684057">
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./img/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,8 +51,8 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=587055"></script>
-  <script src="./js/ingredient-icoon.js?v=587055"></script>
+  <script src="./js/gedeeld.js?v=684057"></script>
+  <script src="./js/ingredient-icoon.js?v=684057"></script>
   <script>
     /* De winkelweergave beantwoordt één vraag: ik sta hier en wil dit maken,
        wat moet ik hebben? Daarom op schapvolgorde en niet op receptvolgorde. */
@@ -174,18 +174,6 @@
         </button>`).join('');
       el.querySelectorAll('.winkel-rk').forEach(k =>
         k.addEventListener('click', () => wisselRecept(k.dataset.id)));
-    }
-
-    /* Hetzelfde als op de receptpagina: je kookt voor twee dagen, dus vier
-       porties. Zo klopt de boodschappenlijst met wat je straks opschept. */
-    const STANDAARD_PORTIES = 4;
-
-    function portiesVoor(r) {
-      const vasteVorm = (r.benodigdheden || [])
-        .some(b => /springvorm|bakvorm|taartvorm|pizzasteen/i.test(b));
-      const eigen = parseInt(localStorage.getItem(`porties_${r.id}`) || '', 10);
-      if (Number.isFinite(eigen) && eigen > 0) return eigen;
-      return vasteVorm ? r.porties : STANDAARD_PORTIES;
     }
 
     /* Alles afvinken in de winkel werkt, maar soms wil je de lijst gewoon

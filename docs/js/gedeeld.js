@@ -103,6 +103,23 @@ function metHoofdletter(tekst) {
    '0,2 ui'. Daarom worden telbare dingen afgerond op iets wat je in je hand
    kunt houden: onder de drie op halven, daarboven op hele stuks. Gewicht en
    inhoud blijven gewoon precies. */
+/* Hoeveel porties tonen we. Je kookt voor twee dagen, dus standaard vier.
+   Een taart in een springvorm verdubbel je niet, dus daar houden we het
+   aantal van het recept aan. Zet je het zelf anders, dan onthoudt hij dat.
+
+   Deze stond twee keer: op de receptpagina en op de winkelpagina. Lopen die
+   uit elkaar, dan koop je andere hoeveelheden dan je straks kookt, en dat
+   merk je pas in de winkel. */
+const STANDAARD_PORTIES = 4;
+
+function portiesVoor(r) {
+  const vasteVorm = (r.benodigdheden || [])
+    .some(b => /springvorm|bakvorm|taartvorm|pizzasteen/i.test(b));
+  const eigen = parseInt(localStorage.getItem(`porties_${r.id}`) || '', 10);
+  if (Number.isFinite(eigen) && eigen > 0) return eigen;
+  return vasteVorm ? r.porties : STANDAARD_PORTIES;
+}
+
 const TELBAAR = ['stuks', 'teentje', 'teentjes', 'takjes', 'blaadjes', 'bosje',
                  'blik', 'bol', 'stengel', 'plakken', 'bollen'];
 

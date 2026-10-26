@@ -10,7 +10,7 @@
   <meta property="og:description" content="Persoonlijke receptenverzameling van Shar &amp; Robin">
   <meta property="og:type" content="website">
   <title>Onze Recepten</title>
-  <link rel="stylesheet" href="./css/style.css?v=587055">
+  <link rel="stylesheet" href="./css/style.css?v=684057">
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./img/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -55,7 +55,7 @@
       <svg class="ic" viewBox="0 0 24 24"><use href="#i-hart"/></svg><em>Favorieten</em></a>
   </nav>
 
-  <script src="./js/gedeeld.js?v=587055"></script>
+  <script src="./js/gedeeld.js?v=684057"></script>
   <script>
     const ALLE_TAGS = ['vegetarisch','vegan','vis','vlees','snel','comfort food',
                        'Aziatisch','Italiaans','ontbijt','lunch','diner','snack'];
@@ -113,11 +113,25 @@
        Daarom: korte termen moeten aan het begin van een woord staan. Vanaf
        vier letters mag het ook middenin, want dan zoek je meestal op een
        samenstelling — 'kool' hoort boerenkool en bloemkool te vinden. */
+    /* Woorden die wel met een korte zoekterm beginnen maar nooit een
+       ingrediënt zijn. Zonder deze lijst geeft 'ui' ook Ravioli úít de oven en
+       'knoflook, úíteen en geschild'. */
+    const GEEN_INGREDIENT = /^(uit|uiteen|uiterst|uiteindelijk|uitgelekte|uitgeperste|een|eens|eerst|en|eetlepel|eetlepels)$/i;
+
     function zoekMatch(r, term) {
-      const woordBegin = new RegExp('(^|[^a-zà-ÿ])' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
-      const raak = (tekst) => term.length >= 4
-        ? tekst.toLowerCase().includes(term)
-        : woordBegin.test(tekst);
+      const veilig = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const woorden = new RegExp('(^|[^a-zà-ÿ])(' + veilig + '[a-zà-ÿ]*)', 'gi');
+      const raak = (tekst) => {
+        if (term.length >= 4) return tekst.toLowerCase().includes(term);
+        // Korte term: aan het begin van een woord, en dat woord moet een
+        // ingrediënt kúnnen zijn.
+        woorden.lastIndex = 0;
+        let m;
+        while ((m = woorden.exec(tekst)) !== null) {
+          if (!GEEN_INGREDIENT.test(m[2])) return true;
+        }
+        return false;
+      };
       return raak(r.titel) || r.ingredienten.some(i => raak(i.naam));
     }
 

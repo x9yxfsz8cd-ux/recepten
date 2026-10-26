@@ -114,7 +114,7 @@
       "slug": "poke-bowl-met-zalm",
       "beschrijving": "Een Hawaiiaans gerecht met verse blokjes zalm op rijst en groenten.",
       "afbeelding": "img/recept/poke-bowl-met-zalm.jpg",
-      "bereidingstijd": 35,
+      "bereidingstijd": 80,
       "moeilijkheidsgraad": "gemiddeld",
       "porties": 4,
       "tags": [
@@ -220,7 +220,7 @@
       "bron_type": "url",
       "datum_toegevoegd": "2026-03-25",
       "actieve_tijd": 20,
-      "passieve_tijd": 15,
+      "passieve_tijd": 60,
       "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD123759_1024x748_JPG.jpg"
     },
     {
