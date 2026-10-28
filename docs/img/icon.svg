@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"
+     role="img" aria-label="Onze Recepten">
+  <title>Onze Recepten</title>
+  <!-- Papier en inkt komen uit style.css (de tokens grond en inkt). De vulling
+       is warm in plaats van het groene accent: in een pan hoort eten te liggen,
+       geen knopkleur. Van bovenaf gezien, net als elke foto in de app. -->
+  <rect width="512" height="512" fill="#F4F3EF"/>
+  <g transform="rotate(-38 256 256)">
+    <rect x="236" y="246" width="238" height="46" rx="23" fill="#14120F"/>
+    <circle cx="222" cy="269" r="132" fill="#14120F"/>
+    <circle cx="222" cy="269" r="84" fill="#C8552B"/>
+  </g>
+</svg>
