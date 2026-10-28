@@ -131,7 +131,7 @@ def controleer(r):
                 for staart in ("bouillon", "champignon", "tomaat", "tomaten",
                                "peterselie", "aardappel", "ui", "olie", "azijn",
                                "kaas", "noten", "rijst", "zout", "peper",
-                               "broodje", "brood", "suiker", "melk", "room", "meel"):
+                               "broodje", "brood", "suiker", "melk", "room", "meel", "deeg"):
                     if staart in w and len(w) > len(staart):
                         kandidaten.add(staart[:6])
                 # En de soortnaam: 'linguine' hoort bij een stap over 'pasta'.
@@ -156,7 +156,10 @@ def controleer(r):
     for n, s in enumerate(r["stappen"], 1):
         m = re.search(r"\b(de rest van de|resterende|overgebleven)\s+([a-zà-ÿ]+)", plat(s["tekst"]))
         if m:
+            # Ook wat eerder in déze stap staat telt mee: 'meng met de helft van
+            # de olie ... en de rest van de olie' hoort in één stap te mogen.
             eerder = " ".join(plat(x["tekst"]) for x in r["stappen"][:n-1])
+            eerder += " " + plat(s["tekst"])[:m.start()]
             if m.group(2)[:6] not in eerder:
                 uit.append(("let op", f"stap {n} noemt '{m.group(0)}' maar dat is nog niet eerder gebruikt"))
 

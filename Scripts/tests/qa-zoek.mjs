@@ -12,10 +12,21 @@ const hoogstens=(n,t,max)=>{const a=tel(t);const g=a<=max;g?ok++:fout++;
 const minstens=(n,t,min)=>{const a=tel(t);const g=a>=min;g?ok++:fout++;
   console.log(`  ${g?'ok  ':'FOUT'}  "${t}" geeft ${a} recepten${g?'':` — te weinig, minstens ${min}`}`);};
 
-console.log('── korte termen mogen niet alles raken ────────────────────');
-hoogstens('ui','ui',22);
-hoogstens('ei','ei',8);
-hoogstens('ui','ui',22);
+console.log('── korte termen mogen alleen echte treffers geven ────────');
+/* Niet op een vast aantal toetsen: dat loopt op zodra je een recept met ui
+   toevoegt, en dan faalt de test terwijl er niets stuk is. De eis is dat elke
+   treffer het ingrediënt ook echt bevat. */
+const echtIn = (r, pat) =>
+  pat.test(r.titel) || r.ingredienten.some(i => pat.test(i.naam));
+const alleenEcht = (term, pat) => {
+  const hits = rs.filter(r => zoekMatch(r, term));
+  const mis = hits.filter(r => !echtIn(r, pat));
+  const g = mis.length === 0; g ? ok++ : fout++;
+  console.log(`  ${g?'ok  ':'FOUT'}  "${term}" geeft ${hits.length} recepten, allemaal terecht` +
+    (g ? '' : `\n          onterecht: ${mis.map(r=>r.titel).join(', ')}`));
+};
+alleenEcht('ui', /\bui\b|uien|uitjes|sjalot/i);
+alleenEcht('ei',  /\bei\b|eieren|eierdooier/i);
 
 console.log('\n── maar moeten wel vinden wat er is ───────────────────────');
 minstens('zalm','zalm',3);

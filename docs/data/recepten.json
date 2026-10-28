@@ -6495,6 +6495,380 @@
       "datum_toegevoegd": "2026-10-05",
       "ovenprogramma": "Hetelucht. Zet de plaat in het midden.",
       "bron_afbeelding": "https://thehappyfoodie.co.uk/wp-content/uploads/2022/09/RASALHANOUT_CAULIFLOWER_1126-scaled.jpg"
+    },
+    {
+      "id": "r1793200001",
+      "titel": "Dumplingsoep met noedels en paksoi",
+      "slug": "dumplingsoep-met-noedels-en-paksoi",
+      "beschrijving": "Heldere gemberbouillon met steranijs, gyoza, udon en geroerbakte paksoi.",
+      "afbeelding": "img/recept/dumplingsoep-met-noedels-en-paksoi.jpg",
+      "bereidingstijd": 20,
+      "actieve_tijd": 20,
+      "passieve_tijd": 0,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegan",
+        "Aziatisch",
+        "snel",
+        "diner"
+      ],
+      "ingredienten": [
+        {
+          "naam": "bosuien",
+          "hoeveelheid": 3,
+          "eenheid": "stuks",
+          "ah": "bosuien"
+        },
+        {
+          "naam": "tenen knoflook",
+          "hoeveelheid": 3,
+          "eenheid": "stuks",
+          "ah": "tenen knoflook"
+        },
+        {
+          "naam": "verse gember",
+          "hoeveelheid": 30,
+          "eenheid": "g",
+          "ah": "gember"
+        },
+        {
+          "naam": "shiitakes",
+          "hoeveelheid": 125,
+          "eenheid": "g",
+          "ah": "shiitakes"
+        },
+        {
+          "naam": "zonnebloemolie",
+          "hoeveelheid": 4,
+          "eenheid": "el",
+          "ah": "zonnebloemolie"
+        },
+        {
+          "naam": "steranijs",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "steranijs"
+        },
+        {
+          "naam": "vegan groentebouillonblokje",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "vegan groentebouillonblokje"
+        },
+        {
+          "naam": "kokend water",
+          "hoeveelheid": 1,
+          "eenheid": "l",
+          "ah": "kokend water"
+        },
+        {
+          "naam": "sojasaus",
+          "hoeveelheid": 3,
+          "eenheid": "el",
+          "ah": "sojasaus"
+        },
+        {
+          "naam": "rijstazijn",
+          "hoeveelheid": 3,
+          "eenheid": "el",
+          "ah": "rijstazijn"
+        },
+        {
+          "naam": "vega gyoza (dumplings)",
+          "hoeveelheid": 270,
+          "eenheid": "g",
+          "ah": "vega gyoza"
+        },
+        {
+          "naam": "udon noedels",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "udon noedels"
+        },
+        {
+          "naam": "Shanghai paksoi",
+          "hoeveelheid": 550,
+          "eenheid": "g",
+          "ah": "shanghai paksoi"
+        },
+        {
+          "naam": "sesamolie",
+          "hoeveelheid": 4,
+          "eenheid": "tl",
+          "ah": "sesamolie"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Snijd het witte deel van de bosui grof en het groene deel fijn. Snijd de knoflook fijn. Rasp de gember fijn. Halveer de shiitake."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Verhit een soeppan met de helft van de olie op middelhoog vuur en bak de shiitake 3 minuten tot lichtbruin. Schep af en toe om."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Voeg de steranijs, knoflook, gember en het witte deel van de bosui toe en bak nog 2 minuten."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Voeg het bouillonblokje en kokend water toe en breng aan de kook. Voeg de sojasaus en rijstazijn toe. Laat 10 minuten koken. Voeg na 8 minuten de dumplings toe. Breng op smaak met peper en eventueel zout."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Haal ondertussen de noedels uit de verpakking en spoel ze af onder warm water. Laat uitlekken en verdeel over kommen. Snijd de paksoistronken in de lengte in kwarten. Verhit de rest van de olie in een koekenpan of wok op hoog vuur en roerbak de paksoi 5 minuten. Haal van het vuur en schep de helft van de sesamolie erdoor."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Verdeel de soep en dumplings over de kommen met de noedels. Verdeel de paksoi erover. Bestrooi met de rest van de bosui en besprenkel met de rest van de sesamolie."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 450,
+        "eiwitten": 13,
+        "koolhydraten": 48,
+        "vetten": 22
+      },
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1198762/dumplingsoep-met-noedels-en-paksoi-advertentie",
+      "bron_naam": "Albert Heijn Allerhande (advertorial van Amoy)",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-10-28",
+      "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD180561_1024x748_JPG.jpg"
+    },
+    {
+      "id": "r1793200002",
+      "titel": "Plaattaart van zoete aardappel, rode biet en feta",
+      "slug": "plaattaart-zoete-aardappel-rode-biet-feta",
+      "beschrijving": "Bladerdeeg met muhammara en mascarpone, daarop dakpansgewijs zoete aardappel en biet.",
+      "afbeelding": "img/recept/plaattaart-zoete-aardappel-rode-biet-feta.jpg",
+      "bereidingstijd": 35,
+      "actieve_tijd": 15,
+      "passieve_tijd": 20,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vegetarisch",
+        "diner",
+        "comfort food"
+      ],
+      "ingredienten": [
+        {
+          "naam": "rollen vers bladerdeeg",
+          "hoeveelheid": 270,
+          "eenheid": "g",
+          "ah": "rollen bladerdeeg"
+        },
+        {
+          "naam": "mascarpone",
+          "hoeveelheid": 125,
+          "eenheid": "g",
+          "ah": "mascarpone"
+        },
+        {
+          "naam": "muhammara",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "muhammara"
+        },
+        {
+          "naam": "zoete aardappelen",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "zoete aardappelen"
+        },
+        {
+          "naam": "milde olijfolie",
+          "hoeveelheid": 2,
+          "eenheid": "el",
+          "ah": "milde olijfolie"
+        },
+        {
+          "naam": "rauwe rode bieten",
+          "hoeveelheid": 300,
+          "eenheid": "g",
+          "ah": "rauwe rode bieten"
+        },
+        {
+          "naam": "feta 43+",
+          "hoeveelheid": 100,
+          "eenheid": "g",
+          "ah": "feta"
+        },
+        {
+          "naam": "verse platte peterselie",
+          "hoeveelheid": 15,
+          "eenheid": "g",
+          "ah": "platte peterselie"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 200 °C. Rol het deeg met het bakpapier uit op een bakplaat. Meng de mascarpone met de muhammara en bestrijk het deeg met dit mengsel."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Schil de zoete aardappelen, halveer ze in de lengte en snijd in halve plakjes van ongeveer 2 mm. Meng met de helft van de olie, peper en eventueel zout. Snijd ook de bieten in plakjes van ongeveer 2 mm en meng die in een aparte kom met de rest van de olie, peper en eventueel zout."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Verdeel de plakjes aardappel en biet om en om over het deeg."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Bak de plaattaart ongeveer 20 minuten onder het midden in de oven gaar. Dek hem af met aluminiumfolie als het deeg te donker wordt."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Verkruimel ondertussen de feta in kleine stukjes en snijd de peterselie fijn. Bestrooi de plaattaart ermee voor het serveren."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 695,
+        "eiwitten": 13,
+        "koolhydraten": 53,
+        "vetten": 46
+      },
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1192268/plaattaart-van-zoete-aardappel-rode-biet-en-feta",
+      "bron_naam": "Albert Heijn Allerhande",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-10-28",
+      "benodigdheden": [
+        "bakplaat",
+        "bakpapier",
+        "aluminiumfolie",
+        "deegroller"
+      ],
+      "ovenprogramma": "Hetelucht. Zet de plaat in het midden.",
+      "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD137139_1024x748_JPG.jpg"
+    },
+    {
+      "id": "r1793200003",
+      "titel": "Enchilada's met gehakt en tomatensalsa",
+      "slug": "enchiladas-met-gehakt-en-tomatensalsa",
+      "beschrijving": "Wraps gevuld met gehakt en Mexicaanse groente, uit de oven onder passata en cheddar.",
+      "afbeelding": "img/recept/enchiladas-met-gehakt-en-tomatensalsa.jpg",
+      "bereidingstijd": 50,
+      "actieve_tijd": 25,
+      "passieve_tijd": 25,
+      "moeilijkheidsgraad": "makkelijk",
+      "porties": 4,
+      "tags": [
+        "vlees",
+        "diner",
+        "comfort food"
+      ],
+      "ingredienten": [
+        {
+          "naam": "milde olijfolie",
+          "hoeveelheid": 1,
+          "eenheid": "el",
+          "ah": "milde olijfolie"
+        },
+        {
+          "naam": "mager rundergehakt",
+          "hoeveelheid": 500,
+          "eenheid": "g",
+          "ah": "mager rundergehakt"
+        },
+        {
+          "naam": "picadillo kruiden",
+          "hoeveelheid": 14,
+          "eenheid": "g",
+          "ah": "picadillo kruiden"
+        },
+        {
+          "naam": "Mexicaanse roerbakgroente",
+          "hoeveelheid": 400,
+          "eenheid": "g",
+          "ah": "mexicaanse roerbakgroente"
+        },
+        {
+          "naam": "passata",
+          "hoeveelheid": 540,
+          "eenheid": "g",
+          "ah": "passata"
+        },
+        {
+          "naam": "jalapeñopeper",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "jalapeñopeper"
+        },
+        {
+          "naam": "tortillawraps",
+          "hoeveelheid": 8,
+          "eenheid": "stuks",
+          "ah": "tortillawraps"
+        },
+        {
+          "naam": "geraspte cheddar",
+          "hoeveelheid": 150,
+          "eenheid": "g",
+          "ah": "geraspte cheddar"
+        },
+        {
+          "naam": "tomaten",
+          "hoeveelheid": 4,
+          "eenheid": "stuks",
+          "ah": "tomaten"
+        },
+        {
+          "naam": "salade-uitjes",
+          "hoeveelheid": 2,
+          "eenheid": "stuks",
+          "ah": "salade-uitjes"
+        },
+        {
+          "naam": "limoen",
+          "hoeveelheid": 1,
+          "eenheid": "stuks",
+          "ah": "limoen"
+        }
+      ],
+      "stappen": [
+        {
+          "nummer": 1,
+          "tekst": "Verwarm de oven voor op 180 °C. Verhit de olie in de hapjespan en bak het rundergehakt met de picadillo in 3 minuten op middelhoog vuur rul."
+        },
+        {
+          "nummer": 2,
+          "tekst": "Voeg de roerbakgroente toe en bak 7 minuten mee. Voeg de laatste minuut de helft van de passata toe. Breng op smaak met peper en eventueel zout."
+        },
+        {
+          "nummer": 3,
+          "tekst": "Snijd ondertussen het steeltje van de jalapeñopeper. Rol de peper tussen je handen zodat de zaadjes eruit vallen en snijd het vruchtvlees in ringetjes."
+        },
+        {
+          "nummer": 4,
+          "tekst": "Verdeel het gehaktmengsel over de wraps, rol ze strak op en leg ze in de ingevette ovenschaal. Verdeel de rest van de passata, de geraspte cheddar en de jalapeñoringetjes erover. Bak ongeveer 25 minuten in het midden van de oven gaar."
+        },
+        {
+          "nummer": 5,
+          "tekst": "Snijd ondertussen de tomaten in blokjes van een halve centimeter en de salade-uitjes in dunne ringetjes. Boen de limoen schoon, rasp de groene schil en pers de vrucht uit."
+        },
+        {
+          "nummer": 6,
+          "tekst": "Meng de salade-ui met de tomatenblokjes, het limoenrasp en 1 el limoensap, peper en eventueel zout. Serveer de enchilada's met deze tomatensalsa."
+        }
+      ],
+      "voedingswaarden": {
+        "kcal": 805,
+        "eiwitten": 47,
+        "koolhydraten": 64,
+        "vetten": 38
+      },
+      "bron": "https://www.ah.nl/allerhande/recept/R-R1193093/enchiladas-met-gehakt-en-tomatensalsa",
+      "bron_naam": "Albert Heijn Allerhande",
+      "bron_type": "url",
+      "datum_toegevoegd": "2026-10-28",
+      "benodigdheden": [
+        "ovenschaal"
+      ],
+      "ovenprogramma": "Hetelucht. Zet de plaat in het midden.",
+      "bron_afbeelding": "https://static.ah.nl/static/recepten/img_RAM_PRD124087_1024x748_JPG.jpg"
     }
   ]
 }

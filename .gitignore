@@ -3,3 +3,7 @@
 Scripts/bronvergelijking.json
 Scripts/fotoscan.json
 Scripts/ocr
+
+# Eigen notities en plannen blijven lokaal. Deze repo is openbaar en in de
+# plannen staan paden naar de NAS en de huisautomatisering.
+PLAN-*.md

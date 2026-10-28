@@ -1046,6 +1046,17 @@
     "titel": "AH Jalapeno plakjes",
     "url": "https://www.ah.nl/producten/product/wi416511"
   },
+  "jalapeñopeper": {
+    "afbeelding": "img/ah/jalape-opeper.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130323031313733?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "per stuk",
+    "id": 415244,
+    "prijs": 0.59,
+    "schap": "Groente, aardappelen",
+    "subschap": "Gember en pepers",
+    "titel": "AH Jalapeño peper groen",
+    "url": "https://www.ah.nl/producten/product/wi415244"
+  },
   "jasmijnrijst": null,
   "jus": {
     "afbeelding": "img/ah/jus.jpg",
@@ -1201,6 +1212,17 @@
     "subschap": "Knoflook",
     "titel": "AH Knoflook",
     "url": "https://www.ah.nl/producten/product/wi4160"
+  },
+  "kokend water": {
+    "afbeelding": "img/ah/kokend-water.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_646f6c744c6f4a6b5164617a48514630756936356577?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "160 g",
+    "id": 420789,
+    "prijs": 1.49,
+    "schap": "Vis",
+    "subschap": "Tonijn in water",
+    "titel": "Statesman Tonijn stukken in water",
+    "url": "https://www.ah.nl/producten/product/wi420789"
   },
   "kokende groentebouillon": {
     "afbeelding": "img/ah/kokende-groentebouillon.jpg",
@@ -1379,6 +1401,17 @@
     "titel": "AH Excellent Linguine bio",
     "url": "https://www.ah.nl/producten/product/wi613952"
   },
+  "mager rundergehakt": {
+    "afbeelding": "img/ah/mager-rundergehakt.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_682d4c423039716a5462714d7a2d4c417443695f6841?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "500 g",
+    "id": 187592,
+    "prijs": 6.79,
+    "schap": "Vlees",
+    "subschap": "Rundergehakt",
+    "titel": "AH Mager rundergehakt",
+    "url": "https://www.ah.nl/producten/product/wi187592"
+  },
   "mangoketchup": null,
   "maple syrup": {
     "afbeelding": "img/ah/maple-syrup.jpg",
@@ -1391,6 +1424,17 @@
     "titel": "BioToday Maple syrup",
     "url": "https://www.ah.nl/producten/product/wi232992"
   },
+  "mascarpone": {
+    "afbeelding": "img/ah/mascarpone.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_77394e5a4e33737852656561506b5770515f4a467741?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "250 g",
+    "id": 497554,
+    "prijs": 1.99,
+    "schap": "Kaas",
+    "subschap": "Mascarpone",
+    "titel": "AH Mascarpone 80+",
+    "url": "https://www.ah.nl/producten/product/wi497554"
+  },
   "mayonaise": {
     "afbeelding": "img/ah/mayonaise.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4956376936696a7853546d4f6d6b667336536a383377?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1402,6 +1446,17 @@
     "titel": "AH Mayonaise",
     "url": "https://www.ah.nl/producten/product/wi467626"
   },
+  "mexicaanse roerbakgroente": {
+    "afbeelding": "img/ah/mexicaanse-roerbakgroente.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_6174626f32573169524a755139546864524a684c3267?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "400 g",
+    "id": 185765,
+    "prijs": 2.49,
+    "schap": "Groente, aardappelen",
+    "subschap": "Roerbakgroente",
+    "titel": "AH Roerbakgroente Mexicaans",
+    "url": "https://www.ah.nl/producten/product/wi185765"
+  },
   "milde mosterd": {
     "afbeelding": "img/ah/milde-mosterd.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_6d433342454a50305266694778646b31446961636a41?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1412,6 +1467,17 @@
     "subschap": "Mosterd",
     "titel": "AH Mosterd mild",
     "url": "https://www.ah.nl/producten/product/wi436523"
+  },
+  "milde olijfolie": {
+    "afbeelding": "img/ah/milde-olijfolie.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313136303138?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "0,5 l",
+    "id": 54443,
+    "prijs": 4.79,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Olijfolie mild",
+    "titel": "AH Olijfolie mild",
+    "url": "https://www.ah.nl/producten/product/wi54443"
   },
   "mini-hamburgerbol": {
     "afbeelding": "img/ah/mini-hamburgerbol.jpg",
@@ -1468,6 +1534,7 @@
     "titel": "AH Mozzarella light",
     "url": "https://www.ah.nl/producten/product/wi613286"
   },
+  "muhammara": null,
   "munt": {
     "afbeelding": "img/ah/munt.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_376f394c6b6e573954396546623978784b4644564a67?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1734,6 +1801,17 @@
     "titel": "Verstegen Peterselie",
     "url": "https://www.ah.nl/producten/product/wi216611"
   },
+  "picadillo kruiden": {
+    "afbeelding": "img/ah/picadillo-kruiden.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_487650624f554559536b6967495075795a394c414677?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "80 g",
+    "id": 398783,
+    "prijs": 4.99,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Overige kruiden en specerijen",
+    "titel": "Santa Maria Pasta rossa",
+    "url": "https://www.ah.nl/producten/product/wi398783"
+  },
   "pijnboompitten": {
     "afbeelding": "img/ah/pijnboompitten.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313838303532?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -1944,6 +2022,17 @@
     "titel": "Verstegen World spice blend ras el hanout",
     "url": "https://www.ah.nl/producten/product/wi518449"
   },
+  "rauwe rode bieten": {
+    "afbeelding": "img/ah/rauwe-rode-bieten.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_7641633077765f3952544f33314a3734313338567951?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "500 g",
+    "id": 218641,
+    "prijs": 1.49,
+    "schap": "Groente, aardappelen",
+    "subschap": "Rode bieten",
+    "titel": "AH Biologisch Rode bieten gekookt",
+    "url": "https://www.ah.nl/producten/product/wi218641"
+  },
   "ravioli": {
     "afbeelding": "img/ah/ravioli.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_5a32774b756f636154476169457a5744586d767a7377?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -2077,6 +2166,17 @@
     "titel": "AH Rode uien",
     "url": "https://www.ah.nl/producten/product/wi490280"
   },
+  "rollen bladerdeeg": {
+    "afbeelding": "img/ah/rollen-bladerdeeg.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313935343433?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "450 g",
+    "id": 449579,
+    "prijs": 2.79,
+    "schap": "Diepvries",
+    "subschap": "Diepvries bladerdeeg, filodeeg",
+    "titel": "AH Bladerdeeg roomboter",
+    "url": "https://www.ah.nl/producten/product/wi449579"
+  },
   "roomboter": {
     "afbeelding": "img/ah/roomboter.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4354523130313032323032?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -2110,6 +2210,7 @@
     "titel": "AH Rucola",
     "url": "https://www.ah.nl/producten/product/wi111767"
   },
+  "salade-uitjes": null,
   "salieblaadjes": {
     "afbeelding": "img/ah/salieblaadjes.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_506245737162387a536d79596331732d444269384567?revLabel=1&rendition=400x400_WEBP&fileType=binary",
@@ -2175,6 +2276,17 @@
     "subschap": "Sesamzaad, maanzaad",
     "titel": "Verstegen Sesamzaad",
     "url": "https://www.ah.nl/producten/product/wi216622"
+  },
+  "shanghai paksoi": {
+    "afbeelding": "img/ah/shanghai-paksoi.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_62434b6d664a6c555378714377634c75775744354e77?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "2 stuks",
+    "id": 395577,
+    "prijs": 2.49,
+    "schap": "Groente, aardappelen",
+    "subschap": "Paksoi",
+    "titel": "AH Shanghai paksoi",
+    "url": "https://www.ah.nl/producten/product/wi395577"
   },
   "shiitakes": {
     "afbeelding": "img/ah/shiitakes.jpg",
@@ -2298,6 +2410,17 @@
     "subschap": "Spruitjes",
     "titel": "AH Spruitjes",
     "url": "https://www.ah.nl/producten/product/wi4095"
+  },
+  "steranijs": {
+    "afbeelding": "img/ah/steranijs.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4d335433572d6c6454524b424a6d4167317a4a657277?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "18 g",
+    "id": 607546,
+    "prijs": 4.29,
+    "schap": "Soepen, sauzen, kruiden, olie",
+    "subschap": "Steranijs",
+    "titel": "Euroma Steranijs",
+    "url": "https://www.ah.nl/producten/product/wi607546"
   },
   "stevige tofu": {
     "afbeelding": "img/ah/stevige-tofu.jpg",
@@ -2598,6 +2721,18 @@
     "titel": "AH Vanillesuiker",
     "url": "https://www.ah.nl/producten/product/wi54149"
   },
+  "vega gyoza": {
+    "afbeelding": "img/ah/vega-gyoza.jpg",
+    "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_4371616953417a7a53686933304f485a4f676f6f7477?revLabel=1&rendition=400x400_WEBP&fileType=binary",
+    "eenheid": "270 g",
+    "id": 538746,
+    "prijs": 4.89,
+    "schap": "Diepvries",
+    "subschap": "Gyoza's (diepvries)",
+    "titel": "Itsu Vega gyoza",
+    "url": "https://www.ah.nl/producten/product/wi538746"
+  },
+  "vegan groentebouillonblokje": null,
   "vegan nuggets": {
     "afbeelding": "img/ah/vegan-nuggets.jpg",
     "bron_afbeelding": "https://static.ah.nl/dam/product/AHI_7139575f4f4e7a5153762d6a336873344546724b7a77?revLabel=1&rendition=400x400_WEBP&fileType=binary",
