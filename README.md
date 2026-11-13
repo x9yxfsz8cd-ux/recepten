@@ -54,6 +54,30 @@ Je ziet een voorbeeld met alles wat er automatisch bij gezet is voordat je opsla
 Opslaan commit rechtstreeks naar GitHub. Draai daarna `Scripts/update.sh`, zodat
 de AH-koppeling, de foto's en de kaartversies kloppen.
 
+## AH-recepten ophalen
+
+Recepten die Shar in de Albert Heijn-app aantikt komen in haar Allerhande-favorieten
+terecht, gegroepeerd per week. Die pagina zit achter haar inlog, dus alleen haar
+eigen browser kan erbij — de bestelmail bevat ze niet en een server kan ze niet
+ophalen. Elke dinsdagochtend stuurt de NAS daarom een duwtje via Signal, tenzij er
+de afgelopen acht dagen al iets is toegevoegd.
+
+Typt ze **ah-recepten**, doe dan dit:
+
+1. Open <https://www.ah.nl/allerhande/favorieten/eerder-gekocht> in haar Chrome
+   (Claude in Chrome, haar eigen sessie).
+2. Lees de kopjes "Deze week" en "Vorige week" en verzamel de recept-links.
+3. Sla over wat al in `recepten.json` staat; vergelijk op titel én op `bron`-url.
+4. Haal per recept de volle tekst op met `get_page_text`, en de foto uit de
+   `og:image`-metatag — die staat niet in de toegankelijkheidsboom.
+5. Zet `afbeelding` op de **externe** url; `foto_lokaal.py` haalt hem binnen en
+   zet hem zelf op `img/recept/<slug>.jpg`. Andersom slaat hij hem over.
+6. Draai `Scripts/update.sh` en sluit het tabblad.
+
+Het duwtje zit in `publiceer-dashboards.sh` op de NAS, met
+`_recepten_leeftijd.py` ernaast dat de openbare `recepten.json` leest om te
+bepalen of er iets te melden valt.
+
 ## Wijziging doorvoeren
 
 ```bash
